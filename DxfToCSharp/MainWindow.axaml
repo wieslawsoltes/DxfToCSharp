@@ -1,0 +1,63 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        x:Class="DxfToCSharp.MainWindow"
+        Title="Dxf to C#"
+        Width="1024" Height="768">
+  <DockPanel>
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8" Spacing="8">
+      <Button Name="OpenButton" Content="Open DXF..." Click="OnOpenClicked"/>
+      <Button Name="RunButton" Content="Compile &amp; Run" Click="OnRunClicked"/>
+    </StackPanel>
+    <!-- Notification Area -->
+    <Border Name="NotificationBorder" DockPanel.Dock="Top" 
+            Background="#4CAF50" Margin="8,0,8,8" Padding="12,8" 
+            CornerRadius="4" IsVisible="False">
+      <DockPanel>
+        <Button Name="CloseNotificationButton" Content="×" 
+                Background="Transparent" Foreground="White" 
+                BorderThickness="0" DockPanel.Dock="Right" 
+                Click="OnCloseNotificationClicked"/>
+        <TextBlock Name="NotificationText" Foreground="White" FontWeight="Medium"/>
+      </DockPanel>
+    </Border>
+    <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="*" Margin="8">
+      <Grid.Styles>
+        <Style Selector="TextBox">
+          <Setter Property="FontFamily" Value="Consolas, Menlo, Monaco, 'Courier New', monospace"/>
+          <Setter Property="FontSize" Value="13"/>
+        </Style>
+      </Grid.Styles>
+      <Border Grid.Column="0" BorderBrush="#3A3A3A" BorderThickness="1" CornerRadius="4">
+        <AvaloniaEdit:TextEditor Name="LeftTextBox"
+                                 IsReadOnly="True"
+                                 ShowLineNumbers="True"
+                                 WordWrap="False"
+                                 FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
+      </Border>
+      <GridSplitter Grid.Column="1" Width="8" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+      <Border Grid.Column="2" BorderBrush="#3A3A3A" BorderThickness="1" CornerRadius="4">
+        <TabControl Name="RightTabControl">
+          <TabItem Header="Code">
+            <AvaloniaEdit:TextEditor Name="RightTextBox"
+                                     IsReadOnly="True"
+                                     ShowLineNumbers="True"
+                                     WordWrap="True"
+                                     FontFamily="Cascadia Code,Consolas,Menlo,Monospace"/>
+          </TabItem>
+          <TabItem Header="Errors">
+            <ScrollViewer>
+              <TextBox Name="ErrorsTextBox"
+                       AcceptsReturn="True"
+                       AcceptsTab="True"
+                       TextWrapping="Wrap"
+                       IsReadOnly="True"
+                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                       ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            </ScrollViewer>
+          </TabItem>
+        </TabControl>
+      </Border>
+    </Grid>
+  </DockPanel>
+</Window>
