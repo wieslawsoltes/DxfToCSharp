@@ -14,6 +14,7 @@ using netDxf;
 using netDxf.Entities;
 using DxfToCSharp.Core;
 using AvaloniaEdit;
+using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
 using TextMateSharp.Grammars;
 
@@ -23,6 +24,8 @@ namespace DxfToCSharp
     {
         private TextEditor? _leftTextBox;
         private TextEditor? _rightTextBox;
+        private FoldingManager? _leftFoldingManager;
+        private FoldingManager? _rightFoldingManager;
         private TextBox? _errorsTextBox;
         private TabControl? _leftTabControl;
         private TabControl? _rightTabControl;
@@ -93,6 +96,10 @@ namespace DxfToCSharp
                 _leftTextBox.SyntaxHighlighting = null;
                 _leftTextBox.Options.EnableHyperlinks = false;
                 _leftTextBox.Options.EnableEmailHyperlinks = false;
+                
+                // Enable folding for left text editor (DXF content)
+                _leftFoldingManager = FoldingManager.Install(_leftTextBox.TextArea);
+                UpdateLeftFolding();
             }
             
             if (_rightTextBox != null)
@@ -100,6 +107,10 @@ namespace DxfToCSharp
                 _rightTextBox.SyntaxHighlighting = null;
                 _rightTextBox.Options.EnableHyperlinks = false;
                 _rightTextBox.Options.EnableEmailHyperlinks = false;
+                
+                // Enable folding for right text editor (C# code)
+                _rightFoldingManager = FoldingManager.Install(_rightTextBox.TextArea);
+                UpdateRightFolding();
             }
             
             // Initialize options UI controls
@@ -155,18 +166,52 @@ namespace DxfToCSharp
             if (_leftTextBox != null)
             {
                 _leftTextBox.TextChanged += OnDxfContentChanged;
+                _leftTextBox.TextChanged += (s, e) => UpdateLeftFolding();
+            }
+            
+            // Set up text editor event handler for C# code changes
+            if (_rightTextBox != null)
+            {
+                _rightTextBox.TextChanged += (s, e) => UpdateRightFolding();
             }
             
             InitializeTextMate();
         }
         
-        private void InitializeTextMate()
+        private async void InitializeTextMate()
         {
             if (_rightTextBox != null)
             {
-                var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
-                var textMateInstallation = _rightTextBox.InstallTextMate(registryOptions);
-                textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(registryOptions.GetLanguageByExtension(".cs").Id));
+                try
+                {
+                    // Use async/await pattern for better thread safety
+                    await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
+                    {
+                        try
+                        {
+                            // Additional null check before TextMate operations
+                            if (_rightTextBox?.Document != null)
+                            {
+                                var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
+                                var textMateInstallation = _rightTextBox.InstallTextMate(registryOptions);
+                                var language = registryOptions.GetLanguageByExtension(".cs");
+                                if (language != null)
+                                {
+                                    textMateInstallation.SetGrammar(registryOptions.GetScopeByLanguageId(language.Id));
+                                }
+                            }
+                        }
+                        catch (Exception innerEx)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Inner TextMate error: {innerEx.Message}");
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    // Log TextMate initialization errors but don't crash the application
+                    System.Diagnostics.Debug.WriteLine($"TextMate initialization error: {ex.Message}");
+                }
             }
         }
 
@@ -195,7 +240,10 @@ namespace DxfToCSharp
             // Load text to left panel
             string text = await System.IO.File.ReadAllTextAsync(path);
             if (_leftTextBox != null)
+            {
                 _leftTextBox.Text = text;
+                UpdateLeftFolding();
+            }
 
             // Parse with netDxf and generate C# code
             try
@@ -289,10 +337,52 @@ namespace DxfToCSharp
                 _leftTextBox.Text = text;
         }
 
-        private void SetRightText(string text)
+        private async void SetRightText(string text)
         {
             if (_rightTextBox != null)
-                _rightTextBox.Text = text;
+            {
+                try
+                {
+                    // Use async/await for better thread safety with TextMate
+                    await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(async () =>
+                    {
+                        try
+                        {
+                            // Ensure document exists before any operations
+                            if (_rightTextBox.Document == null)
+                                return;
+                            
+                            // Clear text first to prevent TextMate threading issues
+                            _rightTextBox.Text = "";
+                            
+                            // Use async delay instead of Thread.Sleep for better performance
+                            await System.Threading.Tasks.Task.Delay(20);
+                            
+                            // Double-check document still exists after delay
+                            if (_rightTextBox.Document != null)
+                            {
+                                _rightTextBox.Text = text ?? "";
+                                
+                                // Update folding after text is set
+                                UpdateRightFolding();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Fallback: set text without TextMate features if there's an error
+                            System.Diagnostics.Debug.WriteLine($"Text update error: {ex.Message}");
+                            if (_rightTextBox.Document != null)
+                            {
+                                _rightTextBox.Text = text ?? "";
+                            }
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"SetRightText error: {ex.Message}");
+                }
+            }
             if (_rightTabControl != null)
                 _rightTabControl.SelectedIndex = 0; // Code tab
         }
@@ -688,6 +778,50 @@ namespace DxfToCSharp
                 _generateSaveCommentCheckBox.IsCheckedChanged += OnOptionChanged;
             if (_generateReturnStatementCheckBox != null)
                 _generateReturnStatementCheckBox.IsCheckedChanged += OnOptionChanged;
+        }
+        
+        private void UpdateLeftFolding()
+        {
+            if (_leftFoldingManager != null && _leftTextBox != null)
+            {
+                try
+                {
+                    // Ensure document is ready before creating foldings
+                    if (_leftTextBox.Document != null && _leftTextBox.Document.TextLength > 0)
+                    {
+                        var foldingStrategy = new DxfFoldingStrategy();
+                        var newFoldings = foldingStrategy.CreateNewFoldings(_leftTextBox.Document, out int firstErrorOffset);
+                        _leftFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log folding errors but don't crash the application
+                    System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+                }
+            }
+        }
+        
+        private void UpdateRightFolding()
+        {
+            if (_rightFoldingManager != null && _rightTextBox != null)
+            {
+                try
+                {
+                    // Ensure document is ready before creating foldings
+                    if (_rightTextBox.Document != null && _rightTextBox.Document.TextLength > 0)
+                    {
+                        var foldingStrategy = new CSharpFoldingStrategy();
+                        var newFoldings = foldingStrategy.CreateNewFoldings(_rightTextBox.Document, out int firstErrorOffset);
+                        _rightFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log folding errors but don't crash the application
+                    System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+                }
+            }
         }
     }
 }
