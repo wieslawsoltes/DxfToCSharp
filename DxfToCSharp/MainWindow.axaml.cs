@@ -555,10 +555,10 @@ public partial class MainWindow : Window
             GenerateDimensionStyles = _generateDimensionStylesCheckBox?.IsChecked ?? true,
             GenerateMLineStyles = _generateMLineStylesCheckBox?.IsChecked ?? true,
             GenerateObjects = _generateObjectsCheckBox?.IsChecked ?? true,
-            GenerateGroups = _generateGroupsCheckBox?.IsChecked ?? true,
-            GenerateLayouts = _generateLayoutsCheckBox?.IsChecked ?? true,
-            GenerateImageDefinitions = _generateImageDefinitionsCheckBox?.IsChecked ?? true,
-            GenerateUnderlayDefinitions = _generateUnderlayDefinitionsCheckBox?.IsChecked ?? true,
+            GenerateGroupObjects = _generateGroupsCheckBox?.IsChecked ?? true,
+            GenerateLayoutObjects = _generateLayoutsCheckBox?.IsChecked ?? true,
+            GenerateImageDefinitionObjects = _generateImageDefinitionsCheckBox?.IsChecked ?? true,
+            GenerateUnderlayDefinitionObjects = _generateUnderlayDefinitionsCheckBox?.IsChecked ?? true,
             GenerateXRecordObjects = _generateXRecordObjectsCheckBox?.IsChecked ?? true,
             GenerateDictionaryObjects = _generateDictionaryObjectsCheckBox?.IsChecked ?? true,
             GenerateRasterVariablesObjects = _generateRasterVariablesObjectsCheckBox?.IsChecked ?? true,
@@ -688,10 +688,10 @@ public partial class MainWindow : Window
         if (_generateDimensionStylesCheckBox != null) _generateDimensionStylesCheckBox.IsChecked = options.GenerateDimensionStyles;
         if (_generateMLineStylesCheckBox != null) _generateMLineStylesCheckBox.IsChecked = options.GenerateMLineStyles;
         if (_generateObjectsCheckBox != null) _generateObjectsCheckBox.IsChecked = options.GenerateObjects;
-        if (_generateGroupsCheckBox != null) _generateGroupsCheckBox.IsChecked = options.GenerateGroups;
-        if (_generateLayoutsCheckBox != null) _generateLayoutsCheckBox.IsChecked = options.GenerateLayouts;
-        if (_generateImageDefinitionsCheckBox != null) _generateImageDefinitionsCheckBox.IsChecked = options.GenerateImageDefinitions;
-        if (_generateUnderlayDefinitionsCheckBox != null) _generateUnderlayDefinitionsCheckBox.IsChecked = options.GenerateUnderlayDefinitions;
+        if (_generateGroupsCheckBox != null) _generateGroupsCheckBox.IsChecked = options.GenerateGroupObjects;
+        if (_generateLayoutsCheckBox != null) _generateLayoutsCheckBox.IsChecked = options.GenerateLayoutObjects;
+        if (_generateImageDefinitionsCheckBox != null) _generateImageDefinitionsCheckBox.IsChecked = options.GenerateImageDefinitionObjects;
+        if (_generateUnderlayDefinitionsCheckBox != null) _generateUnderlayDefinitionsCheckBox.IsChecked = options.GenerateUnderlayDefinitionObjects;
         if (_generateXRecordObjectsCheckBox != null) _generateXRecordObjectsCheckBox.IsChecked = options.GenerateXRecordObjects;
         if (_generateDictionaryObjectsCheckBox != null) _generateDictionaryObjectsCheckBox.IsChecked = options.GenerateDictionaryObjects;
         if (_generateRasterVariablesObjectsCheckBox != null) _generateRasterVariablesObjectsCheckBox.IsChecked = options.GenerateRasterVariablesObjects;
