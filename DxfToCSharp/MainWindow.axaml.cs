@@ -24,6 +24,7 @@ namespace DxfToCSharp
         private TextEditor? _leftTextBox;
         private TextEditor? _rightTextBox;
         private TextBox? _errorsTextBox;
+        private TabControl? _leftTabControl;
         private TabControl? _rightTabControl;
         private Border? _notificationBorder;
         private TextBlock? _notificationText;
@@ -81,9 +82,25 @@ namespace DxfToCSharp
             _leftTextBox = this.FindControl<TextEditor>("LeftTextBox");
             _rightTextBox = this.FindControl<TextEditor>("RightTextBox");
             _errorsTextBox = this.FindControl<TextBox>("ErrorsTextBox");
+            _leftTabControl = this.FindControl<TabControl>("LeftTabControl");
             _rightTabControl = this.FindControl<TabControl>("RightTabControl");
             _notificationBorder = this.FindControl<Border>("NotificationBorder");
             _notificationText = this.FindControl<TextBlock>("NotificationText");
+            
+            // Configure text editors to prevent TextMate exceptions
+            if (_leftTextBox != null)
+            {
+                _leftTextBox.SyntaxHighlighting = null;
+                _leftTextBox.Options.EnableHyperlinks = false;
+                _leftTextBox.Options.EnableEmailHyperlinks = false;
+            }
+            
+            if (_rightTextBox != null)
+            {
+                _rightTextBox.SyntaxHighlighting = null;
+                _rightTextBox.Options.EnableHyperlinks = false;
+                _rightTextBox.Options.EnableEmailHyperlinks = false;
+            }
             
             // Initialize options UI controls
             _generateHeaderCheckBox = this.FindControl<CheckBox>("GenerateHeaderCheckBox");
@@ -264,10 +281,7 @@ namespace DxfToCSharp
             }
         }
 
-        private void OnOptionsClicked(object? sender, RoutedEventArgs e)
-        {
-            // Flyout will handle the popup automatically
-        }
+
 
         private void SetLeftText(string text)
         {
