@@ -75,6 +75,9 @@ namespace DxfToCSharp
     private DxfDocument? _loadedDocument;
     private string? _loadedFilePath;
     
+    // Flag to prevent recursive event handling during programmatic checkbox changes
+    private bool _isHandlingEvents = false;
+    
 
         public MainWindow()
         {
@@ -112,6 +115,12 @@ namespace DxfToCSharp
                 _rightTextBox.SyntaxHighlighting = null;
                 _rightTextBox.Options.EnableHyperlinks = false;
                 _rightTextBox.Options.EnableEmailHyperlinks = false;
+                
+                // Ensure document is initialized with at least one line to prevent TextMate issues
+                if (_rightTextBox.Document != null && _rightTextBox.Document.LineCount == 0)
+                {
+                    _rightTextBox.Document.Insert(0, " ");
+                }
                 
                 // Enable folding for right text editor (C# code)
                 _rightFoldingManager = FoldingManager.Install(_rightTextBox.TextArea);
@@ -195,8 +204,14 @@ namespace DxfToCSharp
                         try
                         {
                             // Additional null check before TextMate operations
-                            if (_rightTextBox?.Document != null)
+                            if (_rightTextBox?.Document != null && _rightTextBox.TextArea != null)
                             {
+                                // Ensure the document has at least one line to prevent TMModel.InvalidateLine exceptions
+                                if (_rightTextBox.Document.LineCount == 0)
+                                {
+                                    _rightTextBox.Document.Insert(0, " "); // Insert a space to ensure at least one line
+                                }
+                                
                                 var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
                                 var textMateInstallation = _rightTextBox.InstallTextMate(registryOptions);
                                 var language = registryOptions.GetLanguageByExtension(".cs");
@@ -209,6 +224,15 @@ namespace DxfToCSharp
                         catch (Exception innerEx)
                         {
                             System.Diagnostics.Debug.WriteLine($"Inner TextMate error: {innerEx.Message}");
+                            // Disable TextMate on error to prevent further issues
+                            try
+                            {
+                                if (_rightTextBox?.Document != null)
+                                {
+                                    _rightTextBox.SyntaxHighlighting = null;
+                                }
+                            }
+                            catch { /* Ignore cleanup errors */ }
                         }
                     });
                 }
@@ -357,18 +381,23 @@ namespace DxfToCSharp
                             if (_rightTextBox.Document == null)
                                 return;
                             
-                            // Clear text first to prevent TextMate threading issues
-                            _rightTextBox.Text = "";
+                            // Safely clear and set text to prevent TextMate threading issues
+                            var textToSet = text ?? "";
                             
-                            // Use async delay instead of Thread.Sleep for better performance
-                            await System.Threading.Tasks.Task.Delay(20);
+                            // If text is empty, ensure we have at least a space to prevent TMModel issues
+                            if (string.IsNullOrEmpty(textToSet))
+                            {
+                                textToSet = " ";
+                            }
                             
-                            // Double-check document still exists after delay
+                            _rightTextBox.Text = textToSet;
+                            
+                            // Use async delay for better performance
+                            await System.Threading.Tasks.Task.Delay(10);
+                            
+                            // Update folding after text is set
                             if (_rightTextBox.Document != null)
                             {
-                                _rightTextBox.Text = text ?? "";
-                                
-                                // Update folding after text is set
                                 UpdateRightFolding();
                             }
                         }
@@ -376,9 +405,17 @@ namespace DxfToCSharp
                         {
                             // Fallback: set text without TextMate features if there's an error
                             System.Diagnostics.Debug.WriteLine($"Text update error: {ex.Message}");
-                            if (_rightTextBox.Document != null)
+                            try
                             {
-                                _rightTextBox.Text = text ?? "";
+                                if (_rightTextBox?.Document != null)
+                                {
+                                    var fallbackText = text ?? " "; // Ensure non-empty text
+                                    _rightTextBox.Text = fallbackText;
+                                }
+                            }
+                            catch (Exception fallbackEx)
+                            {
+                                System.Diagnostics.Debug.WriteLine($"Fallback text setting error: {fallbackEx.Message}");
                             }
                         }
                     });
@@ -467,6 +504,7 @@ namespace DxfToCSharp
                 GenerateMTextEntities = _generateMTextsCheckBox?.IsChecked ?? true,
                 GeneratePointEntities = _generatePointsCheckBox?.IsChecked ?? true,
                 GenerateInsertEntities = _generateInsertCheckBox?.IsChecked ?? true,
+                GenerateHatchEntities = _generateHatchesCheckBox?.IsChecked ?? true,
                 GenerateSolidEntities = _generateSolidsCheckBox?.IsChecked ?? true,
                 GenerateFace3dEntities = _generateFacesCheckBox?.IsChecked ?? true,
                 GenerateWipeoutEntities = _generateWipeoutsCheckBox?.IsChecked ?? true,
@@ -564,7 +602,8 @@ namespace DxfToCSharp
             if (_generateBlocksCheckBox != null) _generateBlocksCheckBox.IsChecked = options.GenerateBlocks;
             if (_generateDimensionStylesCheckBox != null) _generateDimensionStylesCheckBox.IsChecked = options.GenerateDimensionStyles;
             if (_generateMLineStylesCheckBox != null) _generateMLineStylesCheckBox.IsChecked = options.GenerateMLineStyles;
-            if (_generateEntitiesCheckBox != null) _generateEntitiesCheckBox.IsChecked = options.GenerateEntities;
+            if (_generateEntitiesCheckBox != null)
+                _generateEntitiesCheckBox.IsChecked = options.GenerateEntities;
             if (_generateLinesCheckBox != null) _generateLinesCheckBox.IsChecked = options.GenerateLineEntities;
             if (_generateArcsCheckBox != null) _generateArcsCheckBox.IsChecked = options.GenerateArcEntities;
             if (_generateCirclesCheckBox != null) _generateCirclesCheckBox.IsChecked = options.GenerateCircleEntities;
@@ -577,7 +616,7 @@ namespace DxfToCSharp
             if (_generateMTextsCheckBox != null) _generateMTextsCheckBox.IsChecked = options.GenerateMTextEntities;
             if (_generatePointsCheckBox != null) _generatePointsCheckBox.IsChecked = options.GeneratePointEntities;
             if (_generateInsertCheckBox != null) _generateInsertCheckBox.IsChecked = options.GenerateInsertEntities;
-            if (_generateHatchesCheckBox != null) _generateHatchesCheckBox.IsChecked = options.GenerateEntities;
+            if (_generateHatchesCheckBox != null) _generateHatchesCheckBox.IsChecked = options.GenerateHatchEntities;
             if (_generateSolidsCheckBox != null) _generateSolidsCheckBox.IsChecked = options.GenerateSolidEntities;
             if (_generateFacesCheckBox != null) _generateFacesCheckBox.IsChecked = options.GenerateFace3dEntities;
             if (_generateWipeoutsCheckBox != null) _generateWipeoutsCheckBox.IsChecked = options.GenerateWipeoutEntities;
@@ -592,63 +631,79 @@ namespace DxfToCSharp
 
         private void OnEntitiesCheckBoxChanged(object? sender, RoutedEventArgs e)
         {
-            if (_generateEntitiesCheckBox?.IsChecked == true)
+            // Temporarily disable event handlers to prevent recursive calls during programmatic changes
+            bool wasHandlingEvents = _isHandlingEvents;
+            _isHandlingEvents = true;
+            
+            try
             {
-                // Enable all entity checkboxes when master is checked
-                if (_generateLinesCheckBox != null) _generateLinesCheckBox.IsChecked = true;
-                if (_generateArcsCheckBox != null) _generateArcsCheckBox.IsChecked = true;
-                if (_generateCirclesCheckBox != null) _generateCirclesCheckBox.IsChecked = true;
-                if (_generateEllipsesCheckBox != null) _generateEllipsesCheckBox.IsChecked = true;
-                if (_generatePolylines2DCheckBox != null) _generatePolylines2DCheckBox.IsChecked = true;
-                if (_generatePolylines3DCheckBox != null) _generatePolylines3DCheckBox.IsChecked = true;
-            if (_generateLwPolylinesCheckBox != null) _generateLwPolylinesCheckBox.IsChecked = true;
-            if (_generateSplinesCheckBox != null) _generateSplinesCheckBox.IsChecked = true;
-            if (_generateTextsCheckBox != null) _generateTextsCheckBox.IsChecked = true;
-            if (_generateMTextsCheckBox != null) _generateMTextsCheckBox.IsChecked = true;
-            if (_generatePointsCheckBox != null) _generatePointsCheckBox.IsChecked = true;
-            if (_generateInsertCheckBox != null) _generateInsertCheckBox.IsChecked = true;
-            if (_generateHatchesCheckBox != null) _generateHatchesCheckBox.IsChecked = true;
-            if (_generateSolidsCheckBox != null) _generateSolidsCheckBox.IsChecked = true;
-            if (_generateFacesCheckBox != null) _generateFacesCheckBox.IsChecked = true;
-            if (_generateWipeoutsCheckBox != null) _generateWipeoutsCheckBox.IsChecked = true;
-                if (_generateDimensionsCheckBox != null) _generateDimensionsCheckBox.IsChecked = true;
-                if (_generateLeadersCheckBox != null) _generateLeadersCheckBox.IsChecked = true;
-                if (_generateMlinesCheckBox != null) _generateMlinesCheckBox.IsChecked = true;
-                if (_generateRaysCheckBox != null) _generateRaysCheckBox.IsChecked = true;
-                if (_generateXlinesCheckBox != null) _generateXlinesCheckBox.IsChecked = true;
+                if (_generateEntitiesCheckBox?.IsChecked == true)
+                {
+                    // Check all entity checkboxes and disable them when master is checked
+                    if (_generateLinesCheckBox != null) { _generateLinesCheckBox.IsChecked = true; _generateLinesCheckBox.IsEnabled = false; }
+                    if (_generateArcsCheckBox != null) { _generateArcsCheckBox.IsChecked = true; _generateArcsCheckBox.IsEnabled = false; }
+                    if (_generateCirclesCheckBox != null) { _generateCirclesCheckBox.IsChecked = true; _generateCirclesCheckBox.IsEnabled = false; }
+                    if (_generateEllipsesCheckBox != null) { _generateEllipsesCheckBox.IsChecked = true; _generateEllipsesCheckBox.IsEnabled = false; }
+                    if (_generatePolylines2DCheckBox != null) { _generatePolylines2DCheckBox.IsChecked = true; _generatePolylines2DCheckBox.IsEnabled = false; }
+                    if (_generatePolylines3DCheckBox != null) { _generatePolylines3DCheckBox.IsChecked = true; _generatePolylines3DCheckBox.IsEnabled = false; }
+                    if (_generateLwPolylinesCheckBox != null) { _generateLwPolylinesCheckBox.IsChecked = true; _generateLwPolylinesCheckBox.IsEnabled = false; }
+                    if (_generateSplinesCheckBox != null) { _generateSplinesCheckBox.IsChecked = true; _generateSplinesCheckBox.IsEnabled = false; }
+                    if (_generateTextsCheckBox != null) { _generateTextsCheckBox.IsChecked = true; _generateTextsCheckBox.IsEnabled = false; }
+                    if (_generateMTextsCheckBox != null) { _generateMTextsCheckBox.IsChecked = true; _generateMTextsCheckBox.IsEnabled = false; }
+                    if (_generatePointsCheckBox != null) { _generatePointsCheckBox.IsChecked = true; _generatePointsCheckBox.IsEnabled = false; }
+                    if (_generateInsertCheckBox != null) { _generateInsertCheckBox.IsChecked = true; _generateInsertCheckBox.IsEnabled = false; }
+                    if (_generateHatchesCheckBox != null) { _generateHatchesCheckBox.IsChecked = true; _generateHatchesCheckBox.IsEnabled = false; }
+                    if (_generateSolidsCheckBox != null) { _generateSolidsCheckBox.IsChecked = true; _generateSolidsCheckBox.IsEnabled = false; }
+                    if (_generateFacesCheckBox != null) { _generateFacesCheckBox.IsChecked = true; _generateFacesCheckBox.IsEnabled = false; }
+                    if (_generateWipeoutsCheckBox != null) { _generateWipeoutsCheckBox.IsChecked = true; _generateWipeoutsCheckBox.IsEnabled = false; }
+                    if (_generateDimensionsCheckBox != null) { _generateDimensionsCheckBox.IsChecked = true; _generateDimensionsCheckBox.IsEnabled = false; }
+                    if (_generateLeadersCheckBox != null) { _generateLeadersCheckBox.IsChecked = true; _generateLeadersCheckBox.IsEnabled = false; }
+                    if (_generateMlinesCheckBox != null) { _generateMlinesCheckBox.IsChecked = true; _generateMlinesCheckBox.IsEnabled = false; }
+                    if (_generateRaysCheckBox != null) { _generateRaysCheckBox.IsChecked = true; _generateRaysCheckBox.IsEnabled = false; }
+                    if (_generateXlinesCheckBox != null) { _generateXlinesCheckBox.IsChecked = true; _generateXlinesCheckBox.IsEnabled = false; }
+                }
+                else
+                {
+                    // When "All Entities" is unchecked, uncheck all individual entity checkboxes and enable them
+                    if (_generateLinesCheckBox != null) { _generateLinesCheckBox.IsChecked = false; _generateLinesCheckBox.IsEnabled = true; }
+                    if (_generateArcsCheckBox != null) { _generateArcsCheckBox.IsChecked = false; _generateArcsCheckBox.IsEnabled = true; }
+                    if (_generateCirclesCheckBox != null) { _generateCirclesCheckBox.IsChecked = false; _generateCirclesCheckBox.IsEnabled = true; }
+                    if (_generateEllipsesCheckBox != null) { _generateEllipsesCheckBox.IsChecked = false; _generateEllipsesCheckBox.IsEnabled = true; }
+                    if (_generatePolylines2DCheckBox != null) { _generatePolylines2DCheckBox.IsChecked = false; _generatePolylines2DCheckBox.IsEnabled = true; }
+                    if (_generatePolylines3DCheckBox != null) { _generatePolylines3DCheckBox.IsChecked = false; _generatePolylines3DCheckBox.IsEnabled = true; }
+                    if (_generateLwPolylinesCheckBox != null) { _generateLwPolylinesCheckBox.IsChecked = false; _generateLwPolylinesCheckBox.IsEnabled = true; }
+                    if (_generateSplinesCheckBox != null) { _generateSplinesCheckBox.IsChecked = false; _generateSplinesCheckBox.IsEnabled = true; }
+                    if (_generateTextsCheckBox != null) { _generateTextsCheckBox.IsChecked = false; _generateTextsCheckBox.IsEnabled = true; }
+                    if (_generateMTextsCheckBox != null) { _generateMTextsCheckBox.IsChecked = false; _generateMTextsCheckBox.IsEnabled = true; }
+                    if (_generatePointsCheckBox != null) { _generatePointsCheckBox.IsChecked = false; _generatePointsCheckBox.IsEnabled = true; }
+                    if (_generateInsertCheckBox != null) { _generateInsertCheckBox.IsChecked = false; _generateInsertCheckBox.IsEnabled = true; }
+                    if (_generateHatchesCheckBox != null) { _generateHatchesCheckBox.IsChecked = false; _generateHatchesCheckBox.IsEnabled = true; }
+                    if (_generateSolidsCheckBox != null) { _generateSolidsCheckBox.IsChecked = false; _generateSolidsCheckBox.IsEnabled = true; }
+                    if (_generateFacesCheckBox != null) { _generateFacesCheckBox.IsChecked = false; _generateFacesCheckBox.IsEnabled = true; }
+                    if (_generateWipeoutsCheckBox != null) { _generateWipeoutsCheckBox.IsChecked = false; _generateWipeoutsCheckBox.IsEnabled = true; }
+                    if (_generateDimensionsCheckBox != null) { _generateDimensionsCheckBox.IsChecked = false; _generateDimensionsCheckBox.IsEnabled = true; }
+                    if (_generateLeadersCheckBox != null) { _generateLeadersCheckBox.IsChecked = false; _generateLeadersCheckBox.IsEnabled = true; }
+                    if (_generateMlinesCheckBox != null) { _generateMlinesCheckBox.IsChecked = false; _generateMlinesCheckBox.IsEnabled = true; }
+                    if (_generateRaysCheckBox != null) { _generateRaysCheckBox.IsChecked = false; _generateRaysCheckBox.IsEnabled = true; }
+                    if (_generateXlinesCheckBox != null) { _generateXlinesCheckBox.IsChecked = false; _generateXlinesCheckBox.IsEnabled = true; }
+                }
             }
-            else
+            finally
             {
-                // Disable all entity checkboxes when master is unchecked
-                if (_generateLinesCheckBox != null) _generateLinesCheckBox.IsChecked = false;
-                if (_generateArcsCheckBox != null) _generateArcsCheckBox.IsChecked = false;
-                if (_generateCirclesCheckBox != null) _generateCirclesCheckBox.IsChecked = false;
-                if (_generateEllipsesCheckBox != null) _generateEllipsesCheckBox.IsChecked = false;
-                if (_generatePolylines2DCheckBox != null) _generatePolylines2DCheckBox.IsChecked = false;
-                if (_generatePolylines3DCheckBox != null) _generatePolylines3DCheckBox.IsChecked = false;
-            if (_generateLwPolylinesCheckBox != null) _generateLwPolylinesCheckBox.IsChecked = false;
-            if (_generateSplinesCheckBox != null) _generateSplinesCheckBox.IsChecked = false;
-            if (_generateTextsCheckBox != null) _generateTextsCheckBox.IsChecked = false;
-            if (_generateMTextsCheckBox != null) _generateMTextsCheckBox.IsChecked = false;
-            if (_generatePointsCheckBox != null) _generatePointsCheckBox.IsChecked = false;
-            if (_generateInsertCheckBox != null) _generateInsertCheckBox.IsChecked = false;
-            if (_generateHatchesCheckBox != null) _generateHatchesCheckBox.IsChecked = false;
-            if (_generateSolidsCheckBox != null) _generateSolidsCheckBox.IsChecked = false;
-            if (_generateFacesCheckBox != null) _generateFacesCheckBox.IsChecked = false;
-            if (_generateWipeoutsCheckBox != null) _generateWipeoutsCheckBox.IsChecked = false;
-                if (_generateDimensionsCheckBox != null) _generateDimensionsCheckBox.IsChecked = false;
-                if (_generateLeadersCheckBox != null) _generateLeadersCheckBox.IsChecked = false;
-                if (_generateMlinesCheckBox != null) _generateMlinesCheckBox.IsChecked = false;
-                if (_generateRaysCheckBox != null) _generateRaysCheckBox.IsChecked = false;
-                if (_generateXlinesCheckBox != null) _generateXlinesCheckBox.IsChecked = false;
+                _isHandlingEvents = wasHandlingEvents;
             }
             
+            // Always regenerate code after changing checkbox states
             RegenerateCodeIfLoaded();
         }
         
         private void OnOptionChanged(object? sender, RoutedEventArgs e)
         {
-            RegenerateCodeIfLoaded();
+            // Skip regeneration if we're in the middle of programmatic checkbox changes
+            if (!_isHandlingEvents)
+            {
+                RegenerateCodeIfLoaded();
+            }
         }
         
         private void OnDxfContentChanged(object? sender, EventArgs e)
