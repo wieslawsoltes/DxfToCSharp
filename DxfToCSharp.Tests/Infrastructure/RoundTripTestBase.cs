@@ -121,7 +121,7 @@ public abstract class RoundTripTestBase
     /// <summary>
     /// Compiles and executes the generated C# code to create a DxfDocument
     /// </summary>
-    private DxfDocument CompileAndExecuteCode(string code)
+    protected DxfDocument CompileAndExecuteCode(string code)
     {
         // Compile to memory using shared service
         var result = _compilationService.CompileToMemory(code);
