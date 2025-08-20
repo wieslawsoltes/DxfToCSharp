@@ -73,7 +73,6 @@
               <CheckBox Name="GenerateLayoutsCheckBox" Content="Layouts" IsChecked="True" Margin="20,2,0,2" />
               <CheckBox Name="GenerateImageDefinitionsCheckBox" Content="Image Definitions" IsChecked="True" Margin="20,2,0,2" />
               <CheckBox Name="GenerateUnderlayDefinitionsCheckBox" Content="Underlay Definitions" IsChecked="True" Margin="20,2,0,2" />
-              <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLine Entities" IsChecked="True" Margin="20,2,0,2" />
               <CheckBox Name="GenerateXRecordObjectsCheckBox" Content="XRecord Objects" IsChecked="True" Margin="20,2,0,2" />
               <CheckBox Name="GenerateDictionaryObjectsCheckBox" Content="Dictionary Objects" IsChecked="True" Margin="20,2,0,2" />
               <CheckBox Name="GenerateRasterVariablesObjectsCheckBox" Content="Raster Variables" IsChecked="True" Margin="20,2,0,2" />
