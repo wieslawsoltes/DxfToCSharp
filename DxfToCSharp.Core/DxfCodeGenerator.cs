@@ -822,13 +822,13 @@ public class DxfCodeGenerator
 
     private void GeneratePolyline3D(StringBuilder sb, Polyline3D poly3d)
     {
-        sb.AppendLine("        doc.Entities.Add(new Polyline3D(new List<Polyline3DVertex>()");
+        sb.AppendLine("        doc.Entities.Add(new Polyline3D(new List<Vector3>()");
         sb.AppendLine("        {");
         foreach (var v in poly3d.Vertexes)
         {
-            sb.AppendLine($"            new Polyline3DVertex({F(v.X)}, {F(v.Y)}, {F(v.Z)}),");
+            sb.AppendLine($"            new Vector3({F(v.X)}, {F(v.Y)}, {F(v.Z)}),");
         }
-        sb.AppendLine($"        }}, {(poly3d.IsClosed ? "true" : "false")});");
+        sb.AppendLine($"        }}, {(poly3d.IsClosed ? "true" : "false")})");
         sb.AppendLine("        {");
         GenerateEntityPropertiesCore(sb, poly3d);
         sb.AppendLine("        }");
