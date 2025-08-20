@@ -2115,26 +2115,21 @@ public class DxfCodeGenerator
         
         if (hasNonDefaultValues)
         {
-            sb.AppendLine("        doc.RasterVariables = new RasterVariables(doc)");
-            sb.AppendLine("        {");
-            
             // Only set properties if they differ from defaults
             if (!rasterVars.DisplayFrame)
             {
-                sb.AppendLine("            DisplayFrame = false,");
+                sb.AppendLine("        doc.RasterVariables.DisplayFrame = false;");
             }
             
             if (rasterVars.DisplayQuality != ImageDisplayQuality.High)
             {
-                sb.AppendLine($"            DisplayQuality = ImageDisplayQuality.{rasterVars.DisplayQuality},");
+                sb.AppendLine($"        doc.RasterVariables.DisplayQuality = ImageDisplayQuality.{rasterVars.DisplayQuality};");
             }
             
             if (rasterVars.Units != ImageUnits.Unitless)
             {
-                sb.AppendLine($"            Units = ImageUnits.{rasterVars.Units},");
+                sb.AppendLine($"        doc.RasterVariables.Units = ImageUnits.{rasterVars.Units};");
             }
-            
-            sb.AppendLine("        };");
         }
         else if (options.GenerateDetailedComments)
         {
