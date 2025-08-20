@@ -53,6 +53,16 @@ public class DxfCodeGenerationOptions
     public bool GenerateMLineStyles { get; set; } = true;
 
     /// <summary>
+    /// Whether to generate UCS (User Coordinate System) definitions
+    /// </summary>
+    public bool GenerateUCS { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate VPort (Viewport) definitions
+    /// </summary>
+    public bool GenerateVPorts { get; set; } = true;
+
+    /// <summary>
     /// Whether to generate entity objects
     /// </summary>
     public bool GenerateEntities { get; set; } = true;
@@ -198,7 +208,9 @@ public class DxfCodeGenerationOptions
             GenerateTextStyles = false,
             GenerateBlocks = false,
             GenerateDimensionStyles = false,
-            GenerateMLineStyles = false
+            GenerateMLineStyles = false,
+            GenerateUCS = false,
+            GenerateVPorts = false
         };
     }
 
