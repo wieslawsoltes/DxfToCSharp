@@ -3,9 +3,9 @@ using netDxf.Blocks;
 using netDxf.Entities;
 using DxfToCSharp.Tests.Infrastructure;
 
-namespace DxfToCSharp.Tests.Entities;
+namespace DxfToCSharp.Tests.Blocks;
 
-public class BlockEntityTests : RoundTripTestBase, IDisposable
+public class BlockTests : RoundTripTestBase, IDisposable
 {
     [Fact]
     public void Block_BasicRoundTrip_ShouldPreserveBlockProperties()
