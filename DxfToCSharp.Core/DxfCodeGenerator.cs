@@ -44,6 +44,7 @@ public class DxfCodeGenerator
     private readonly HashSet<string> _usedBlocks = new();
     private readonly HashSet<string> _usedDimensionStyles = new();
     private readonly HashSet<string> _usedMLineStyles = new();
+    private int _insertCounter = 0;
 
     public string Generate(DxfDocument doc, string? sourcePath, string? className = null, DxfCodeGenerationOptions? options = null)
     {
@@ -59,6 +60,7 @@ public class DxfCodeGenerator
         _usedBlocks.Clear();
         _usedDimensionStyles.Clear();
         _usedMLineStyles.Clear();
+        _insertCounter = 0;
 
         var sb = new StringBuilder();
         
@@ -845,7 +847,8 @@ public class DxfCodeGenerator
             return;
         }
         var safeBlk = SafeName(blkName!);
-        sb.AppendLine($"        var ins_{safeBlk} = new Insert(block{safeBlk})");
+        var insertVarName = $"ins_{safeBlk}_{_insertCounter++}";
+        sb.AppendLine($"        var {insertVarName} = new Insert(block{safeBlk})");
         sb.AppendLine("        {");
         sb.AppendLine($"            Position = new Vector3({F(insert.Position.X)}, {F(insert.Position.Y)}, {F(insert.Position.Z)}),");
         if (Math.Abs(insert.Scale.X - 1.0) > 1e-12 || Math.Abs(insert.Scale.Y - 1.0) > 1e-12 || Math.Abs(insert.Scale.Z - 1.0) > 1e-12)
@@ -864,13 +867,13 @@ public class DxfCodeGenerator
                 // Assign value by tag when possible
                 if (!string.IsNullOrEmpty(att.Tag))
                 {
-                    sb.AppendLine($"        var attr_{SafeName(att.Tag)} = ins_{safeBlk}.Attributes.AttributeWithTag(\"{Escape(att.Tag)}\");");
+                    sb.AppendLine($"        var attr_{SafeName(att.Tag)} = {insertVarName}.Attributes.AttributeWithTag(\"{Escape(att.Tag)}\");");
                     sb.AppendLine($"        if (attr_{SafeName(att.Tag)} != null) attr_{SafeName(att.Tag)}.Value = \"{Escape(att.Value)}\";");
                 }
             }
         }
 
-        sb.AppendLine($"        doc.Entities.Add(ins_{safeBlk});");
+        sb.AppendLine($"        doc.Entities.Add({insertVarName});");
         sb.AppendLine();
     }
 
@@ -912,7 +915,7 @@ public class DxfCodeGenerator
             {
                 var path = hatch.BoundaryPaths[i];
                 sb.AppendLine($"            // Boundary path {i + 1}");
-                sb.AppendLine("            var pathEntities = new List<EntityObject>();");
+                sb.AppendLine($"            var pathEntities{i} = new List<EntityObject>();");
                 
                 // Extract entities from the boundary path edges
                 if (path.Edges.Count > 0)
@@ -922,12 +925,12 @@ public class DxfCodeGenerator
                         var entityObj = edge.ConvertTo();
                         if (entityObj != null)
                         {
-                            GenerateBoundaryEntity(sb, entityObj, options);
+                            GenerateBoundaryEntity(sb, entityObj, options, i);
                         }
                     }
                 }
                 
-                sb.AppendLine("            boundaryPaths.Add(new HatchBoundaryPath(pathEntities));");
+                sb.AppendLine($"            boundaryPaths.Add(new HatchBoundaryPath(pathEntities{i}));");
                 sb.AppendLine();
             }
         }
@@ -964,10 +967,10 @@ public class DxfCodeGenerator
         sb.AppendLine();
     }
 
-    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options)
+    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options, int pathIndex)
     {
         // Generate entity creation code for boundary paths without properties
-        sb.AppendLine("            pathEntities.Add(");
+        sb.AppendLine($"            pathEntities{pathIndex}.Add(");
         
         switch (entity)
         {
