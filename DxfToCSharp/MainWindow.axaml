@@ -124,7 +124,7 @@
             </TabControl>
             
             <!-- Splitter -->
-            <GridSplitter Grid.Column="1" Background="Gray"/>
+            <GridSplitter Grid.Column="1" Background="Transparent"/>
             
             <!-- Right side with tabs for Code and Errors -->
             <TabControl Grid.Column="2" Name="RightTabControl">
