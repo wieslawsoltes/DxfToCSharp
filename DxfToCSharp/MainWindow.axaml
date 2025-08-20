@@ -8,6 +8,118 @@
     <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8" Spacing="8">
       <Button Name="OpenButton" Content="Open DXF..." Click="OnOpenClicked"/>
       <Button Name="RunButton" Content="Compile &amp; Run" Click="OnRunClicked"/>
+      <Button Name="OptionsButton" Content="Options" Click="OnOptionsClicked">
+        <Button.Flyout>
+          <Flyout Placement="BottomEdgeAlignedLeft">
+            <Border Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="8" 
+                      Padding="12" Width="400">
+               <ScrollViewer MaxHeight="600" VerticalScrollBarVisibility="Auto">
+                 <StackPanel Spacing="8">
+                   <!-- Header -->
+                   <TextBlock Text="Generation Options" FontSize="16" FontWeight="Bold" 
+                              Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+                   
+                   <!-- Quick Presets -->
+                   <Expander Header="Quick Presets" IsExpanded="True" HorizontalAlignment="Stretch">
+                     <StackPanel Spacing="6" Margin="0,6,0,0">
+                       <ComboBox Name="PresetComboBox" PlaceholderText="Select a preset..." 
+                                 SelectionChanged="OnPresetSelectionChanged" HorizontalAlignment="Stretch">
+                         <ComboBoxItem Content="All Options" Tag="all"/>
+                         <ComboBoxItem Content="Entities Only" Tag="entities"/>
+                         <ComboBoxItem Content="Basic Geometry" Tag="basic"/>
+                         <ComboBoxItem Content="Tables Only" Tag="tables"/>
+                         <ComboBoxItem Content="Custom" Tag="custom" IsSelected="True"/>
+                       </ComboBox>
+                       <Button Name="ResetOptionsButton" Content="Reset to Defaults" 
+                               Click="OnPresetResetClicked" HorizontalAlignment="Stretch"
+                               Background="#F44336" Foreground="White" Padding="6"/>
+                     </StackPanel>
+                   </Expander>
+                   
+                   <!-- General Options -->
+                   <Expander Header="General &amp; Code Structure" IsExpanded="True" HorizontalAlignment="Stretch">
+                     <StackPanel Spacing="6" Margin="0,6,0,0">
+                       <CheckBox Name="GenerateHeaderCheckBox" Content="Generate Header" IsChecked="True"/>
+                       <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Generate Using Statements" IsChecked="True"/>
+                       <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Generate Detailed Comments" IsChecked="False"/>
+                       <CheckBox Name="GroupEntitiesByTypeCheckBox" Content="Group Entities by Type" IsChecked="False"/>
+                       <CheckBox Name="GenerateSaveCommentCheckBox" Content="Generate Save Comment" IsChecked="True"/>
+                       <CheckBox Name="GenerateReturnStatementCheckBox" Content="Generate Return Statement" IsChecked="True"/>
+                     </StackPanel>
+                   </Expander>
+                   
+                   <!-- Table Definitions -->
+                   <Expander Header="Table Definitions" IsExpanded="True" HorizontalAlignment="Stretch">
+                     <StackPanel Spacing="6" Margin="0,6,0,0">
+                       <CheckBox Name="GenerateLayersCheckBox" Content="Generate Layers" IsChecked="True"/>
+                       <CheckBox Name="GenerateLinetypesCheckBox" Content="Generate Linetypes" IsChecked="True"/>
+                       <CheckBox Name="GenerateTextStylesCheckBox" Content="Generate Text Styles" IsChecked="True"/>
+                       <CheckBox Name="GenerateBlocksCheckBox" Content="Generate Blocks" IsChecked="True"/>
+                       <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Generate Dimension Styles" IsChecked="True"/>
+                       <CheckBox Name="GenerateMLineStylesCheckBox" Content="Generate MLine Styles" IsChecked="True"/>
+                     </StackPanel>
+                   </Expander>
+                   
+                   <!-- Entity Types -->
+                   <Expander Header="Entity Types" IsExpanded="True" HorizontalAlignment="Stretch">
+                     <StackPanel Spacing="6" Margin="0,6,0,0">
+                       <StackPanel Orientation="Horizontal" Spacing="6">
+                         <CheckBox Name="GenerateEntitiesCheckBox" Content="Enable All Entities" IsChecked="True" 
+                                   Checked="OnEntitiesCheckBoxChanged" Unchecked="OnEntitiesCheckBoxChanged"
+                                   FontWeight="Medium" Foreground="#007ACC"/>
+                       </StackPanel>
+                       
+                       <StackPanel Name="EntityOptionsPanel" Spacing="4">
+                         <!-- Basic Geometry Group -->
+                         <Expander Header="Basic Geometry" IsExpanded="True" Margin="0,2,0,0" HorizontalAlignment="Stretch">
+                           <StackPanel Spacing="3" Margin="12,4,0,0">
+                             <CheckBox Name="GenerateLineEntitiesCheckBox" Content="Lines" IsChecked="True"/>
+                             <CheckBox Name="GenerateArcEntitiesCheckBox" Content="Arcs" IsChecked="True"/>
+                             <CheckBox Name="GenerateCircleEntitiesCheckBox" Content="Circles" IsChecked="True"/>
+                             <CheckBox Name="GenerateEllipseEntitiesCheckBox" Content="Ellipses" IsChecked="True"/>
+                             <CheckBox Name="GeneratePolylineEntitiesCheckBox" Content="Polylines" IsChecked="True"/>
+                             <CheckBox Name="GenerateSplineEntitiesCheckBox" Content="Splines" IsChecked="True"/>
+                           </StackPanel>
+                         </Expander>
+                         
+                         <!-- Text &amp; Annotations Group -->
+                         <Expander Header="Text &amp; Annotations" IsExpanded="True" Margin="0,2,0,0" HorizontalAlignment="Stretch">
+                           <StackPanel Spacing="3" Margin="12,4,0,0">
+                             <CheckBox Name="GenerateTextEntitiesCheckBox" Content="Text" IsChecked="True"/>
+                             <CheckBox Name="GenerateMTextEntitiesCheckBox" Content="MText" IsChecked="True"/>
+                             <CheckBox Name="GenerateDimensionEntitiesCheckBox" Content="Dimensions" IsChecked="True"/>
+                             <CheckBox Name="GenerateLeaderEntitiesCheckBox" Content="Leaders" IsChecked="True"/>
+                           </StackPanel>
+                         </Expander>
+                         
+                         <!-- 3D &amp; Complex Entities Group -->
+                         <Expander Header="3D &amp; Complex Entities" IsExpanded="True" Margin="0,2,0,0" HorizontalAlignment="Stretch">
+                           <StackPanel Spacing="3" Margin="12,4,0,0">
+                             <CheckBox Name="GenerateSolidEntitiesCheckBox" Content="Solids" IsChecked="True"/>
+                             <CheckBox Name="GenerateFace3dEntitiesCheckBox" Content="Face3D" IsChecked="True"/>
+                             <CheckBox Name="GenerateInsertEntitiesCheckBox" Content="Inserts" IsChecked="True"/>
+                             <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLines" IsChecked="True"/>
+                           </StackPanel>
+                         </Expander>
+                         
+                         <!-- Other Entities Group -->
+                         <Expander Header="Other Entities" IsExpanded="True" Margin="0,2,0,0" HorizontalAlignment="Stretch">
+                           <StackPanel Spacing="3" Margin="12,4,0,0">
+                             <CheckBox Name="GeneratePointEntitiesCheckBox" Content="Points" IsChecked="True"/>
+                             <CheckBox Name="GenerateRayEntitiesCheckBox" Content="Rays" IsChecked="True"/>
+                             <CheckBox Name="GenerateXLineEntitiesCheckBox" Content="XLines" IsChecked="True"/>
+                             <CheckBox Name="GenerateWipeoutEntitiesCheckBox" Content="Wipeouts" IsChecked="True"/>
+                           </StackPanel>
+                         </Expander>
+                       </StackPanel>
+                     </StackPanel>
+                   </Expander>
+                 </StackPanel>
+               </ScrollViewer>
+            </Border>
+          </Flyout>
+        </Button.Flyout>
+      </Button>
     </StackPanel>
     <!-- Notification Area -->
     <Border Name="NotificationBorder" DockPanel.Dock="Top" 
