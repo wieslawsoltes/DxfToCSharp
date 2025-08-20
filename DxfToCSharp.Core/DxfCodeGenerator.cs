@@ -44,6 +44,8 @@ public class DxfCodeGenerator
     private readonly HashSet<string> _usedBlocks = new();
     private readonly HashSet<string> _usedDimensionStyles = new();
     private readonly HashSet<string> _usedMLineStyles = new();
+    private readonly HashSet<string> _usedUCS = new();
+    private readonly HashSet<string> _usedVPorts = new();
     private int _insertCounter = 0;
 
     public string Generate(DxfDocument doc, string? sourcePath, string? className = null, DxfCodeGenerationOptions? options = null)
@@ -60,6 +62,8 @@ public class DxfCodeGenerator
         _usedBlocks.Clear();
         _usedDimensionStyles.Clear();
         _usedMLineStyles.Clear();
+        _usedUCS.Clear();
+        _usedVPorts.Clear();
         _insertCounter = 0;
 
         var sb = new StringBuilder();
@@ -72,7 +76,7 @@ public class DxfCodeGenerator
         
         // Analyze what tables we need (only if generating any tables)
         if (options.GenerateLayers || options.GenerateLinetypes || options.GenerateTextStyles || 
-            options.GenerateBlocks || options.GenerateDimensionStyles || options.GenerateMLineStyles)
+            options.GenerateBlocks || options.GenerateDimensionStyles || options.GenerateMLineStyles || options.GenerateUCS || options.GenerateVPorts)
         {
             AnalyzeUsedTables(allEntities, options);
         }
@@ -176,6 +180,35 @@ public class DxfCodeGenerator
             if (options.GenerateMLineStyles && entity is MLine mline && mline.Style != null)
                 _usedMLineStyles.Add(mline.Style.Name);
         }
+        
+        // Analyze UCS objects (they are not directly referenced by entities but are part of document structure)
+        if (options.GenerateUCS)
+        {
+            AnalyzeUsedUCS(entities, options);
+        }
+        
+        // Analyze VPort objects (they are not directly referenced by entities but are part of document structure)
+        if (options.GenerateVPorts)
+        {
+            AnalyzeUsedVPorts(entities, options);
+        }
+    }
+
+    private void AnalyzeUsedUCS(List<EntityObject> entities, DxfCodeGenerationOptions options)
+    {
+        // For now, we'll include all UCS objects in the document since they are typically
+        // standalone coordinate system definitions that may be referenced by name
+        // In a more sophisticated implementation, we could track which UCS objects are actually used
+    }
+
+    private void AnalyzeUsedVPorts(List<EntityObject> entities, DxfCodeGenerationOptions options)
+    {
+        // For now, we'll include all VPort objects in the document since they are typically
+        // viewport definitions that may be referenced by name
+        // In a more sophisticated implementation, we could track which VPort objects are actually used
+        
+        // Always include the active viewport (*Active) as it's commonly modified
+        _usedVPorts.Add("*Active");
     }
 
     private void GenerateTableDefinitions(StringBuilder sb, DxfDocument doc, DxfCodeGenerationOptions options)
@@ -334,6 +367,64 @@ public class DxfCodeGenerator
                     sb.AppendLine($"        doc.MLineStyles.Add(mlineStyle{SafeName(styleName)});");
                 }
             }
+            sb.AppendLine();
+        }
+        
+        // Generate UCS definitions (if any custom ones)
+        if (options.GenerateUCS && doc.UCSs.Count > 0)
+        {
+            sb.AppendLine("        // UCS definitions");
+            foreach (var ucs in doc.UCSs.Where(u => u.Name != "*ACTIVE"))
+             {
+                 sb.AppendLine($"        var ucs{SafeName(ucs.Name)} = new UCS(");
+                 sb.AppendLine($"            \"{Escape(ucs.Name)}\",");
+                 sb.AppendLine($"            new Vector3({F(ucs.Origin.X)}, {F(ucs.Origin.Y)}, {F(ucs.Origin.Z)}),");
+                 sb.AppendLine($"            new Vector3({F(ucs.XAxis.X)}, {F(ucs.XAxis.Y)}, {F(ucs.XAxis.Z)}),");
+                 sb.AppendLine($"            new Vector3({F(ucs.YAxis.X)}, {F(ucs.YAxis.Y)}, {F(ucs.YAxis.Z)}));");
+                 sb.AppendLine($"        doc.UCSs.Add(ucs{SafeName(ucs.Name)});");
+                 sb.AppendLine();
+             }
+        }
+        
+        // Generate VPort definitions (modify the active viewport)
+        if (options.GenerateVPorts && _usedVPorts.Count > 0 && doc.Viewport != null)
+        {
+            var vport = doc.Viewport;
+            sb.AppendLine("        // VPort (Viewport) configuration");
+            sb.AppendLine("        var activeViewport = doc.Viewport;");
+            
+            // Only set properties that differ from defaults
+            
+            if (vport.ViewCenter.X != 0 || vport.ViewCenter.Y != 0)
+                sb.AppendLine($"        activeViewport.ViewCenter = new Vector2({F(vport.ViewCenter.X)}, {F(vport.ViewCenter.Y)});");
+            
+            if (Math.Abs(vport.ViewHeight - 10) > 1e-6) // Default height is 10
+                sb.AppendLine($"        activeViewport.ViewHeight = {F(vport.ViewHeight)};");
+            
+            if (Math.Abs(vport.ViewAspectRatio - 1.0) > 1e-6) // Default aspect ratio is 1.0
+                sb.AppendLine($"        activeViewport.ViewAspectRatio = {F(vport.ViewAspectRatio)};");
+            
+            if (vport.ViewTarget.X != 0 || vport.ViewTarget.Y != 0 || vport.ViewTarget.Z != 0)
+                sb.AppendLine($"        activeViewport.ViewTarget = new Vector3({F(vport.ViewTarget.X)}, {F(vport.ViewTarget.Y)}, {F(vport.ViewTarget.Z)});");
+            
+            if (vport.ViewDirection.X != 0 || vport.ViewDirection.Y != 0 || Math.Abs(vport.ViewDirection.Z - 1) > 1e-6) // Default direction is UnitZ
+                sb.AppendLine($"        activeViewport.ViewDirection = new Vector3({F(vport.ViewDirection.X)}, {F(vport.ViewDirection.Y)}, {F(vport.ViewDirection.Z)});");
+            
+            if (!vport.ShowGrid) // Default is true
+                sb.AppendLine("        activeViewport.ShowGrid = false;");
+            
+            if (vport.SnapMode) // Default is false
+                sb.AppendLine("        activeViewport.SnapMode = true;");
+            
+            if (Math.Abs(vport.SnapSpacing.X - 0.5) > 1e-6 || Math.Abs(vport.SnapSpacing.Y - 0.5) > 1e-6) // Default is 0.5
+                sb.AppendLine($"        activeViewport.SnapSpacing = new Vector2({F(vport.SnapSpacing.X)}, {F(vport.SnapSpacing.Y)});");
+            
+            if (Math.Abs(vport.GridSpacing.X - 10.0) > 1e-6 || Math.Abs(vport.GridSpacing.Y - 10.0) > 1e-6) // Default is 10.0
+                sb.AppendLine($"        activeViewport.GridSpacing = new Vector2({F(vport.GridSpacing.X)}, {F(vport.GridSpacing.Y)});");
+            
+            if (vport.SnapBasePoint.X != 0 || vport.SnapBasePoint.Y != 0)
+                sb.AppendLine($"        activeViewport.SnapBasePoint = new Vector2({F(vport.SnapBasePoint.X)}, {F(vport.SnapBasePoint.Y)});");
+            
             sb.AppendLine();
         }
     }
@@ -1114,6 +1205,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"        doc.Entities.Add(new RadialDimension(");
         sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
+        sb.AppendLine($"        )");
         GenerateEntityProperties(sb, dimension);
         sb.AppendLine("        );");
     }
