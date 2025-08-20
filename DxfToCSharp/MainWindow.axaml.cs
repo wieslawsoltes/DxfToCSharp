@@ -31,6 +31,7 @@ public partial class MainWindow : Window
         
     // Options UI controls
     private readonly CheckBox? _generateHeaderCheckBox;
+    private readonly CheckBox? _generateHeaderVariablesCheckBox;
     private readonly CheckBox? _generateUsingStatementsCheckBox;
     private readonly CheckBox? _generateDetailedCommentsCheckBox;
     private readonly CheckBox? _groupEntitiesByTypeCheckBox;
@@ -142,6 +143,7 @@ public partial class MainWindow : Window
             
         // Initialize options UI controls
         _generateHeaderCheckBox = this.FindControl<CheckBox>("GenerateHeaderCheckBox");
+        _generateHeaderVariablesCheckBox = this.FindControl<CheckBox>("GenerateHeaderVariablesCheckBox");
         _generateUsingStatementsCheckBox = this.FindControl<CheckBox>("GenerateUsingStatementsCheckBox");
         _generateDetailedCommentsCheckBox = this.FindControl<CheckBox>("GenerateDetailedCommentsCheckBox");
         _groupEntitiesByTypeCheckBox = this.FindControl<CheckBox>("GroupEntitiesByTypeCheckBox");
@@ -513,6 +515,7 @@ public partial class MainWindow : Window
         return new DxfCodeGenerationOptions
         {
             GenerateHeader = _generateHeaderCheckBox?.IsChecked ?? true,
+            GenerateHeaderVariables = _generateHeaderVariablesCheckBox?.IsChecked ?? true,
             GenerateUsingStatements = _generateUsingStatementsCheckBox?.IsChecked ?? true,
             GenerateDetailedComments = _generateDetailedCommentsCheckBox?.IsChecked ?? false,
             GroupEntitiesByType = _groupEntitiesByTypeCheckBox?.IsChecked ?? false,
@@ -617,6 +620,7 @@ public partial class MainWindow : Window
         var options = new DxfCodeGenerationOptions
         {
             GenerateHeader = true,
+            GenerateHeaderVariables = true,
             GenerateUsingStatements = true,
             GenerateDetailedComments = false,
             GroupEntitiesByType = false,
@@ -636,6 +640,7 @@ public partial class MainWindow : Window
     private void SetAllOptions(DxfCodeGenerationOptions options)
     {
         if (_generateHeaderCheckBox != null) _generateHeaderCheckBox.IsChecked = options.GenerateHeader;
+        if (_generateHeaderVariablesCheckBox != null) _generateHeaderVariablesCheckBox.IsChecked = options.GenerateHeaderVariables;
         if (_generateUsingStatementsCheckBox != null) _generateUsingStatementsCheckBox.IsChecked = options.GenerateUsingStatements;
         if (_generateDetailedCommentsCheckBox != null) _generateDetailedCommentsCheckBox.IsChecked = options.GenerateDetailedComments;
         if (_groupEntitiesByTypeCheckBox != null) _groupEntitiesByTypeCheckBox.IsChecked = options.GroupEntitiesByType;
@@ -831,6 +836,8 @@ public partial class MainWindow : Window
         // Add event handlers to all checkboxes for auto-regeneration
         if (_generateHeaderCheckBox != null)
             _generateHeaderCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateHeaderVariablesCheckBox != null)
+            _generateHeaderVariablesCheckBox.IsCheckedChanged += OnOptionChanged;
         if (_generateUsingStatementsCheckBox != null)
             _generateUsingStatementsCheckBox.IsCheckedChanged += OnOptionChanged;
         if (_generateDetailedCommentsCheckBox != null)

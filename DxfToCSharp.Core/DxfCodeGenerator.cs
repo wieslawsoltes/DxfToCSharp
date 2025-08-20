@@ -5,8 +5,10 @@ using System.Text;
 using System.Globalization;
 using netDxf;
 using netDxf.Entities;
+using netDxf.Header;
 using netDxf.Objects;
 using netDxf.Tables;
+using netDxf.Units;
 using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Core;
@@ -89,6 +91,12 @@ public class DxfCodeGenerator
         sb.AppendLine("        var doc = new DxfDocument();");
         sb.AppendLine();
         
+        // Generate header variables
+        if (options.GenerateHeaderVariables)
+        {
+            GenerateHeaderVariables(sb, doc, options);
+        }
+        
         // Generate table definitions
         GenerateTableDefinitions(sb, doc, options);
         
@@ -137,10 +145,153 @@ public class DxfCodeGenerator
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine("using netDxf;");
             sb.AppendLine("using netDxf.Entities;");
+            sb.AppendLine("using netDxf.Header;");
             sb.AppendLine("using netDxf.Objects;");
             sb.AppendLine("using netDxf.Tables;");
             sb.AppendLine("using netDxf.Blocks;");
             sb.AppendLine("using netDxf.Units;");
+            sb.AppendLine();
+        }
+    }
+
+    private void GenerateHeaderVariables(StringBuilder sb, DxfDocument doc, DxfCodeGenerationOptions options)
+    {
+        var headerVars = doc.DrawingVariables;
+        var hasNonDefaultValues = false;
+        
+        // Check if any header variables have non-default values
+        var tempSb = new StringBuilder();
+        
+        // Generate Vector3 properties
+        if (headerVars.InsBase != Vector3.Zero)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.InsBase = new Vector3({F(headerVars.InsBase.X)}, {F(headerVars.InsBase.Y)}, {F(headerVars.InsBase.Z)});");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate double properties
+        if (Math.Abs(headerVars.TextSize - 2.5) > 1e-9)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.TextSize = {F(headerVars.TextSize)};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs(headerVars.LtScale - 1.0) > 1e-9)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.LtScale = {F(headerVars.LtScale)};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs(headerVars.CeLtScale - 1.0) > 1e-9)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.CeLtScale = {F(headerVars.CeLtScale)};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs(headerVars.PdSize - 0.0) > 1e-9)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.PdSize = {F(headerVars.PdSize)};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate enum properties
+        if (headerVars.InsUnits != DrawingUnits.Unitless)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.InsUnits = DrawingUnits.{headerVars.InsUnits};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.AttMode != AttMode.Normal)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.AttMode = AttMode.{headerVars.AttMode};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.PdMode != PointShape.Dot)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.PdMode = PointShape.{headerVars.PdMode};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.CeLweight != Lineweight.ByLayer)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.CeLweight = Lineweight.{headerVars.CeLweight};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.AUnits != AngleUnitType.DecimalDegrees)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.AUnits = AngleUnitType.{headerVars.AUnits};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.LUnits != LinearUnitType.Decimal)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.LUnits = LinearUnitType.{headerVars.LUnits};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate integer properties
+        if (headerVars.AUprec != 0)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.AUprec = {headerVars.AUprec};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.LUprec != 4)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.LUprec = {headerVars.LUprec};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.PLineGen != 0)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.PLineGen = {headerVars.PLineGen};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.PsLtScale != 1)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.PsLtScale = {headerVars.PsLtScale};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.SplineSegs != 8)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.SplineSegs = {headerVars.SplineSegs};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.SurfU != 6)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.SurfU = {headerVars.SurfU};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.SurfV != 6)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.SurfV = {headerVars.SurfV};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate boolean properties
+        if (headerVars.MirrText != false)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.MirrText = {headerVars.MirrText.ToString().ToLower()};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.LwDisplay != false)
+        {
+            tempSb.AppendLine($"        doc.DrawingVariables.LwDisplay = {headerVars.LwDisplay.ToString().ToLower()};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Only add the header variables section if there are non-default values
+        if (hasNonDefaultValues)
+        {
+            sb.AppendLine("        // Header variables (drawing variables)");
+            sb.Append(tempSb.ToString());
             sb.AppendLine();
         }
     }

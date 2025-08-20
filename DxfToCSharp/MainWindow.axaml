@@ -129,6 +129,7 @@
               <!-- General Code Structure -->
               <TextBlock Text="General Code Structure" FontWeight="Bold" Margin="0,15,0,5" />
               <CheckBox Name="GenerateHeaderCheckBox" Content="Generate Header Comment" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateHeaderVariablesCheckBox" Content="Generate Header Variables" IsChecked="True" Margin="0,2" />
               <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Generate Using Statements" IsChecked="True"
                         Margin="0,2" />
               <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Generate Detailed Comments" IsChecked="True"

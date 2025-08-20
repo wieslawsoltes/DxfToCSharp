@@ -15,7 +15,10 @@ public class DxfCodeGenerationOptions
     /// </summary>
     public bool GenerateUsingStatements { get; set; } = true;
 
-
+    /// <summary>
+    /// Whether to generate header variables (drawing variables)
+    /// </summary>
+    public bool GenerateHeaderVariables { get; set; } = true;
 
     /// <summary>
     /// Whether to generate layer definitions
