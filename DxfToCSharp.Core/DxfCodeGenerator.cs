@@ -493,7 +493,7 @@ public class DxfCodeGenerator
 
     private void GeneratePolyline2D(StringBuilder sb, Polyline2D poly2d)
     {
-        sb.AppendLine("        doc.Entities.Add(new Polyline2D(new List<Polyline2DVertex>");
+        sb.AppendLine("        doc.Entities.Add(new Polyline2D(new List<Polyline2DVertex>()");
         sb.AppendLine("        {");
         foreach (var vertex in poly2d.Vertexes)
         {
@@ -513,7 +513,7 @@ public class DxfCodeGenerator
 
     private void GeneratePolyline3D(StringBuilder sb, Polyline3D poly3d)
     {
-        sb.AppendLine("        doc.Entities.Add(new Polyline3D(new List<Polyline3DVertex>");
+        sb.AppendLine("        doc.Entities.Add(new Polyline3D(new List<Polyline3DVertex>()");
         sb.AppendLine("        {");
         foreach (var v in poly3d.Vertexes)
         {
