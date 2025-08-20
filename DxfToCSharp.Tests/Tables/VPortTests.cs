@@ -326,12 +326,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         var generatedCode = _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-        
-        // Debug: Write generated code to file
-        var debugFile = "/Users/wieslawsoltes/GitHub/DxfToCSharp/debug_vport_generated.cs";
-        File.WriteAllText(debugFile, generatedCode);
-        Console.WriteLine($"Generated code written to: {debugFile}");
-
+   
         // Step 4: Compile and execute the generated code
         var recreatedDoc = CompileAndExecuteCode(generatedCode);
         Assert.NotNull(recreatedDoc);
