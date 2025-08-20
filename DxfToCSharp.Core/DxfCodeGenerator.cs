@@ -6,7 +6,6 @@ using System.Globalization;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using netDxf.Header;
 using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Core;

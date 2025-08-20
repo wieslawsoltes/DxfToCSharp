@@ -1,5 +1,3 @@
-using System;
-
 namespace DxfToCSharp.Core;
 
 /// <summary>

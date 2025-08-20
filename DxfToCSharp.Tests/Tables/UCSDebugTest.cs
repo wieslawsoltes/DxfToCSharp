@@ -1,8 +1,5 @@
-using System;
-using System.IO;
 using netDxf;
 using netDxf.Tables;
-using Xunit;
 using Xunit.Abstractions;
 
 namespace DxfToCSharp.Tests.Tables

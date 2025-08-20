@@ -1,10 +1,6 @@
-using System;
-using System.IO;
 using netDxf;
 using netDxf.Tables;
 using DxfToCSharp.Tests.Infrastructure;
-using Xunit;
-using netDxf.Entities;
 
 namespace DxfToCSharp.Tests.Tables;
 

@@ -1,4 +1,3 @@
-using System;
 using DxfToCSharp.Compilation;
 
 namespace DxfToCSharp.Services

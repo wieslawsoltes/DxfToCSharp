@@ -1,8 +1,6 @@
 using netDxf;
-using netDxf.Entities;
 using netDxf.Tables;
 using DxfToCSharp.Tests.Infrastructure;
-using Xunit;
 using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Tests.Entities;
