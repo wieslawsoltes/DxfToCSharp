@@ -6,148 +6,155 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DxfToCSharp.MainWindow"
         Title="DxfToCSharp" Width="1200" Height="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <!-- Top toolbar -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <Button Name="OpenButton" Content="Open DXF..." Margin="0,0,10,0" Click="OnOpenClicked"/>
-            <Button Name="RunButton" Content="Compile &amp; Run" Margin="0,0,10,0" Click="OnRunClicked"/>
-        </StackPanel>
-        
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
 
-        
-        <!-- Main content area -->
-        <Grid Grid.Row="1" Margin="10,0,10,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            
-            <!-- Left side with tabs for DXF and Options -->
-            <TabControl Grid.Column="0" Name="LeftTabControl">
-                <TabItem Header="Dxf">
-                    <AvaloniaEdit:TextEditor Name="LeftTextBox" 
-                                           FontFamily="Consolas,Monaco,'Courier New',monospace" 
-                                           FontSize="13" 
-                                           ShowLineNumbers="True" 
-                                           WordWrap="False" 
-                                           Background="#1E1E1E" 
-                                           Foreground="#D4D4D4"
-                                           LineNumbersForeground="#858585"
-                                           SyntaxHighlighting="{x:Null}"
-                                           Margin="2"
-                                           Padding="4"/>
-                </TabItem>
-                <TabItem Header="Options">
-                    <ScrollViewer>
-                        <StackPanel Margin="10">
-                            <!-- Presets Section -->
-                            <TextBlock Text="Presets" FontWeight="Bold" Margin="0,0,0,5"/>
-                            <ComboBox Name="PresetComboBox" Width="200" HorizontalAlignment="Left" Margin="0,0,0,15" SelectionChanged="OnPresetSelectionChanged">
-                                <ComboBoxItem Content="Default" IsSelected="True"/>
-                                <ComboBoxItem Content="Minimal"/>
-                                <ComboBoxItem Content="Complete"/>
-                                <ComboBoxItem Content="Entities Only"/>
-                                <ComboBoxItem Content="Tables Only"/>
-                            </ComboBox>
-                            
-                            <!-- Table Definitions Section -->
-                            <TextBlock Text="Generate Table Definitions" FontWeight="Bold" Margin="0,0,0,5"/>
-                            <CheckBox Name="GenerateLayersCheckBox" Content="Layers" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateLinetypesCheckBox" Content="Linetypes" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateTextStylesCheckBox" Content="Text Styles" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateBlocksCheckBox" Content="Blocks" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Dimension Styles" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateMLineStylesCheckBox" Content="MLine Styles" IsChecked="True" Margin="0,2"/>
-                            
-                            <!-- Entity Types Section -->
-                            <TextBlock Text="Generate Entity Types" FontWeight="Bold" Margin="0,15,0,5"/>
-                            <CheckBox Name="GenerateEntitiesCheckBox" Content="All Entities (Master)" IsChecked="True" Margin="0,2" FontWeight="Bold"/>
-                            
-                            <!-- Basic Geometry -->
-                            <TextBlock Text="Basic Geometry" FontWeight="SemiBold" Margin="0,10,0,2"/>
-                            <CheckBox Name="GenerateLineEntitiesCheckBox" Content="Lines" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateArcEntitiesCheckBox" Content="Arcs" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateCircleEntitiesCheckBox" Content="Circles" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateEllipseEntitiesCheckBox" Content="Ellipses" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GeneratePolylineEntitiesCheckBox" Content="Polylines" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateSplineEntitiesCheckBox" Content="Splines" IsChecked="True" Margin="20,2,0,2"/>
-                            
-                            <!-- Text & Annotations -->
-                            <TextBlock Text="Text &amp; Annotations" FontWeight="SemiBold" Margin="0,10,0,2"/>
-                            <CheckBox Name="GenerateTextEntitiesCheckBox" Content="Text" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateMTextEntitiesCheckBox" Content="MText" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GeneratePointEntitiesCheckBox" Content="Points" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateInsertEntitiesCheckBox" Content="Inserts (Blocks)" IsChecked="True" Margin="20,2,0,2"/>
-                            
-                            <!-- 3D & Complex Entities -->
-                            <TextBlock Text="3D &amp; Complex Entities" FontWeight="SemiBold" Margin="0,10,0,2"/>
-                            <CheckBox Name="GenerateSolidEntitiesCheckBox" Content="Solids" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateFace3dEntitiesCheckBox" Content="3D Faces" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateWipeoutEntitiesCheckBox" Content="Wipeouts" IsChecked="True" Margin="20,2,0,2"/>
-                            
-                            <!-- Other Entities -->
-                            <TextBlock Text="Other Entities" FontWeight="SemiBold" Margin="0,10,0,2"/>
-                            <CheckBox Name="GenerateDimensionEntitiesCheckBox" Content="Dimensions" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateLeaderEntitiesCheckBox" Content="Leaders" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLines" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateRayEntitiesCheckBox" Content="Rays" IsChecked="True" Margin="20,2,0,2"/>
-                            <CheckBox Name="GenerateXLineEntitiesCheckBox" Content="XLines" IsChecked="True" Margin="20,2,0,2"/>
-                            
-                            <!-- General Code Structure -->
-                            <TextBlock Text="General Code Structure" FontWeight="Bold" Margin="0,15,0,5"/>
-                            <CheckBox Name="GenerateHeaderCheckBox" Content="Generate Header Comment" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Generate Using Statements" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Generate Detailed Comments" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GroupEntitiesByTypeCheckBox" Content="Group Entities by Type" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateSaveCommentCheckBox" Content="Generate Save Comment" IsChecked="True" Margin="0,2"/>
-                            <CheckBox Name="GenerateReturnStatementCheckBox" Content="Generate Return Statement" IsChecked="True" Margin="0,2"/>
-                        </StackPanel>
-                    </ScrollViewer>
-                </TabItem>
-            </TabControl>
-            
-            <!-- Splitter -->
-            <GridSplitter Grid.Column="1" Background="Transparent"/>
-            
-            <!-- Right side with tabs for Code and Errors -->
-            <TabControl Grid.Column="2" Name="RightTabControl">
-                <TabItem Header="Code">
-                    <AvaloniaEdit:TextEditor Name="RightTextBox" 
-                                           FontFamily="Consolas,Monaco,'Courier New',monospace" 
-                                           FontSize="13" 
-                                           ShowLineNumbers="True" 
-                                           WordWrap="True" 
-                                           Background="#1E1E1E" 
-                                           Foreground="#D4D4D4"
-                                           LineNumbersForeground="#858585"
-                                           SyntaxHighlighting="{x:Null}"
-                                           Margin="2"
-                                           Padding="4"/>
-                </TabItem>
-                <TabItem Header="Errors">
-                    <ScrollViewer>
-                        <TextBox Name="ErrorsTextBox" 
-                               AcceptsReturn="True" 
-                               AcceptsTab="True" 
-                               TextWrapping="Wrap" 
-                               IsReadOnly="True" 
-                               ScrollViewer.HorizontalScrollBarVisibility="Auto" 
-                               ScrollViewer.VerticalScrollBarVisibility="Auto"
-                               FontFamily="Consolas,Monaco,'Courier New',monospace"
-                               FontSize="12"
-                               Background="#1E1E1E"
-                               Foreground="#F44747"
-                               Margin="2"
-                               Padding="4"/>
-                    </ScrollViewer>
-                </TabItem>
-            </TabControl>
-        </Grid>
+    <!-- Top toolbar -->
+    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+      <Button Name="OpenButton" Content="Open DXF..." Margin="0,0,10,0" Click="OnOpenClicked" />
+      <Button Name="RunButton" Content="Compile &amp; Run" Margin="0,0,10,0" Click="OnRunClicked" />
+    </StackPanel>
+
+
+    <!-- Main content area -->
+    <Grid Grid.Row="1" Margin="10,0,10,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="5" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <!-- Left side with tabs for DXF and Options -->
+      <TabControl Grid.Column="0" Name="LeftTabControl">
+        <TabItem Header="Dxf">
+          <AvaloniaEdit:TextEditor Name="LeftTextBox"
+                                   FontFamily="Consolas,Monaco,'Courier New',monospace"
+                                   FontSize="13"
+                                   ShowLineNumbers="True"
+                                   WordWrap="False"
+                                   Background="#1E1E1E"
+                                   Foreground="#D4D4D4"
+                                   LineNumbersForeground="#858585"
+                                   SyntaxHighlighting="{x:Null}"
+                                   Margin="2"
+                                   Padding="4" />
+        </TabItem>
+        <TabItem Header="Options">
+          <ScrollViewer>
+            <StackPanel Margin="10">
+              <!-- Presets Section -->
+              <TextBlock Text="Presets" FontWeight="Bold" Margin="0,0,0,5" />
+              <ComboBox Name="PresetComboBox" Width="200" HorizontalAlignment="Left" Margin="0,0,0,15"
+                        SelectionChanged="OnPresetSelectionChanged">
+                <ComboBoxItem Content="Default" IsSelected="True" />
+                <ComboBoxItem Content="Minimal" />
+                <ComboBoxItem Content="Complete" />
+                <ComboBoxItem Content="Entities Only" />
+                <ComboBoxItem Content="Tables Only" />
+              </ComboBox>
+
+              <!-- Table Definitions Section -->
+              <TextBlock Text="Generate Table Definitions" FontWeight="Bold" Margin="0,0,0,5" />
+              <CheckBox Name="GenerateLayersCheckBox" Content="Layers" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateLinetypesCheckBox" Content="Linetypes" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateTextStylesCheckBox" Content="Text Styles" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateBlocksCheckBox" Content="Blocks" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Dimension Styles" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateMLineStylesCheckBox" Content="MLine Styles" IsChecked="True" Margin="0,2" />
+
+              <!-- Entity Types Section -->
+              <TextBlock Text="Generate Entity Types" FontWeight="Bold" Margin="0,15,0,5" />
+              <CheckBox Name="GenerateEntitiesCheckBox" Content="All Entities (Master)" IsChecked="True" Margin="0,2"
+                        FontWeight="Bold" />
+
+              <!-- Basic Geometry -->
+              <TextBlock Text="Basic Geometry" FontWeight="SemiBold" Margin="0,10,0,2" />
+              <CheckBox Name="GenerateLineEntitiesCheckBox" Content="Lines" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateArcEntitiesCheckBox" Content="Arcs" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateCircleEntitiesCheckBox" Content="Circles" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateEllipseEntitiesCheckBox" Content="Ellipses" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GeneratePolylineEntitiesCheckBox" Content="Polylines" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateSplineEntitiesCheckBox" Content="Splines" IsChecked="True" Margin="20,2,0,2" />
+
+              <!-- Text & Annotations -->
+              <TextBlock Text="Text &amp; Annotations" FontWeight="SemiBold" Margin="0,10,0,2" />
+              <CheckBox Name="GenerateTextEntitiesCheckBox" Content="Text" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateMTextEntitiesCheckBox" Content="MText" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GeneratePointEntitiesCheckBox" Content="Points" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateInsertEntitiesCheckBox" Content="Inserts (Blocks)" IsChecked="True"
+                        Margin="20,2,0,2" />
+
+              <!-- 3D & Complex Entities -->
+              <TextBlock Text="3D &amp; Complex Entities" FontWeight="SemiBold" Margin="0,10,0,2" />
+              <CheckBox Name="GenerateSolidEntitiesCheckBox" Content="Solids" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateFace3dEntitiesCheckBox" Content="3D Faces" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateWipeoutEntitiesCheckBox" Content="Wipeouts" IsChecked="True" Margin="20,2,0,2" />
+
+              <!-- Other Entities -->
+              <TextBlock Text="Other Entities" FontWeight="SemiBold" Margin="0,10,0,2" />
+              <CheckBox Name="GenerateDimensionEntitiesCheckBox" Content="Dimensions" IsChecked="True"
+                        Margin="20,2,0,2" />
+              <CheckBox Name="GenerateLeaderEntitiesCheckBox" Content="Leaders" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLines" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateRayEntitiesCheckBox" Content="Rays" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateXLineEntitiesCheckBox" Content="XLines" IsChecked="True" Margin="20,2,0,2" />
+
+              <!-- General Code Structure -->
+              <TextBlock Text="General Code Structure" FontWeight="Bold" Margin="0,15,0,5" />
+              <CheckBox Name="GenerateHeaderCheckBox" Content="Generate Header Comment" IsChecked="True" Margin="0,2" />
+              <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Generate Using Statements" IsChecked="True"
+                        Margin="0,2" />
+              <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Generate Detailed Comments" IsChecked="True"
+                        Margin="0,2" />
+              <CheckBox Name="GroupEntitiesByTypeCheckBox" Content="Group Entities by Type" IsChecked="True"
+                        Margin="0,2" />
+              <CheckBox Name="GenerateSaveCommentCheckBox" Content="Generate Save Comment" IsChecked="True"
+                        Margin="0,2" />
+              <CheckBox Name="GenerateReturnStatementCheckBox" Content="Generate Return Statement" IsChecked="True"
+                        Margin="0,2" />
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+      </TabControl>
+      <!-- Splitter -->
+      <GridSplitter Grid.Column="1" Background="Transparent" />
+
+      <!-- Right side with tabs for Code and Errors -->
+      <TabControl Grid.Column="2" Name="RightTabControl">
+        <TabItem Header="Code">
+          <AvaloniaEdit:TextEditor Name="RightTextBox"
+                                   FontFamily="Consolas,Monaco,'Courier New',monospace"
+                                   FontSize="13"
+                                   ShowLineNumbers="True"
+                                   WordWrap="True"
+                                   Background="#1E1E1E"
+                                   Foreground="#D4D4D4"
+                                   LineNumbersForeground="#858585"
+                                   SyntaxHighlighting="{x:Null}"
+                                   Margin="2"
+                                   Padding="4" />
+        </TabItem>
+        <TabItem Header="Errors">
+          <ScrollViewer>
+            <TextBox Name="ErrorsTextBox"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     TextWrapping="Wrap"
+                     IsReadOnly="True"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     FontFamily="Consolas,Monaco,'Courier New',monospace"
+                     FontSize="12"
+                     Background="#1E1E1E"
+                     Foreground="#F44747"
+                     Margin="2"
+                     Padding="4" />
+          </ScrollViewer>
+        </TabItem>
+      </TabControl>
     </Grid>
+  </Grid>
 </Window>
