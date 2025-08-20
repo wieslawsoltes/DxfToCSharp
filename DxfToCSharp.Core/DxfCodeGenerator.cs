@@ -458,29 +458,47 @@ public class DxfCodeGenerator
 
     private void GenerateLine(StringBuilder sb, Line line)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Line(");
-        sb.AppendLine($"            new Vector3({F(line.StartPoint.X)}, {F(line.StartPoint.Y)}, {F(line.StartPoint.Z)}),");
-        sb.AppendLine($"            new Vector3({F(line.EndPoint.X)}, {F(line.EndPoint.Y)}, {F(line.EndPoint.Z)}))");
+        sb.AppendLine("        doc.Entities.Add(");
+        GenerateLineConstructor(sb, line, "        ");
         GenerateEntityProperties(sb, line);
         sb.AppendLine("        );");
     }
 
+    private void GenerateLineConstructor(StringBuilder sb, Line line, string indent)
+    {
+        sb.AppendLine($"{indent}new Line(");
+        sb.AppendLine($"{indent}    new Vector3({F(line.StartPoint.X)}, {F(line.StartPoint.Y)}, {F(line.StartPoint.Z)}),");
+        sb.AppendLine($"{indent}    new Vector3({F(line.EndPoint.X)}, {F(line.EndPoint.Y)}, {F(line.EndPoint.Z)}))");
+    }
+
     private void GenerateArc(StringBuilder sb, Arc arc)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Arc(");
-        sb.AppendLine($"            new Vector3({F(arc.Center.X)}, {F(arc.Center.Y)}, {F(arc.Center.Z)}),");
-        sb.AppendLine($"            {F(arc.Radius)}, {F(arc.StartAngle)}, {F(arc.EndAngle)})");
+        sb.AppendLine("        doc.Entities.Add(");
+        GenerateArcConstructor(sb, arc, "        ");
         GenerateEntityProperties(sb, arc);
         sb.AppendLine("        );");
     }
 
+    private void GenerateArcConstructor(StringBuilder sb, Arc arc, string indent)
+    {
+        sb.AppendLine($"{indent}new Arc(");
+        sb.AppendLine($"{indent}    new Vector3({F(arc.Center.X)}, {F(arc.Center.Y)}, {F(arc.Center.Z)}),");
+        sb.AppendLine($"{indent}    {F(arc.Radius)}, {F(arc.StartAngle)}, {F(arc.EndAngle)})");
+    }
+
     private void GenerateCircle(StringBuilder sb, Circle circle)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Circle(");
-        sb.AppendLine($"            new Vector3({F(circle.Center.X)}, {F(circle.Center.Y)}, {F(circle.Center.Z)}),");
-        sb.AppendLine($"            {F(circle.Radius)})");
+        sb.AppendLine("        doc.Entities.Add(");
+        GenerateCircleConstructor(sb, circle, "        ");
         GenerateEntityProperties(sb, circle);
         sb.AppendLine("        );");
+    }
+
+    private void GenerateCircleConstructor(StringBuilder sb, Circle circle, string indent)
+    {
+        sb.AppendLine($"{indent}new Circle(");
+        sb.AppendLine($"{indent}    new Vector3({F(circle.Center.X)}, {F(circle.Center.Y)}, {F(circle.Center.Z)}),");
+        sb.AppendLine($"{indent}    {F(circle.Radius)})");
     }
 
     private void GeneratePoint(StringBuilder sb, PointEntity point)
@@ -493,14 +511,8 @@ public class DxfCodeGenerator
 
     private void GeneratePolyline2D(StringBuilder sb, Polyline2D poly2d)
     {
-        sb.AppendLine("        doc.Entities.Add(new Polyline2D(new List<Polyline2DVertex>()");
-        sb.AppendLine("        {");
-        foreach (var vertex in poly2d.Vertexes)
-        {
-            string bulgeStr = Math.Abs(vertex.Bulge) > 1e-12 ? $" {{ Bulge = {F(vertex.Bulge)} }}" : "";
-            sb.AppendLine($"            new Polyline2DVertex({F(vertex.Position.X)}, {F(vertex.Position.Y)}){bulgeStr},");
-        }
-        sb.AppendLine($"        }}, {(poly2d.IsClosed ? "true" : "false")})");
+        sb.AppendLine("        doc.Entities.Add(");
+        GeneratePolyline2DConstructor(sb, poly2d, "        ");
         sb.AppendLine("        {");
         GenerateEntityPropertiesCore(sb, poly2d);
         if (Math.Abs(poly2d.Elevation) > 1e-12)
@@ -509,6 +521,18 @@ public class DxfCodeGenerator
         }
         sb.AppendLine("        }");
         sb.AppendLine("        );");
+    }
+
+    private void GeneratePolyline2DConstructor(StringBuilder sb, Polyline2D poly2d, string indent)
+    {
+        sb.AppendLine($"{indent}new Polyline2D(new List<Polyline2DVertex>()");
+        sb.AppendLine($"{indent}{{");
+        foreach (var vertex in poly2d.Vertexes)
+        {
+            string bulgeStr = Math.Abs(vertex.Bulge) > 1e-12 ? $" {{ Bulge = {F(vertex.Bulge)} }}" : "";
+            sb.AppendLine($"{indent}    new Polyline2DVertex({F(vertex.Position.X)}, {F(vertex.Position.Y)}){bulgeStr},");
+        }
+        sb.AppendLine($"{indent}}}, {(poly2d.IsClosed ? "true" : "false")})");
     }
 
     private void GeneratePolyline3D(StringBuilder sb, Polyline3D poly3d)
@@ -585,6 +609,26 @@ public class DxfCodeGenerator
         sb.AppendLine("        }");
     }
 
+    private void GenerateSplineConstructor(StringBuilder sb, Spline spline, string indent)
+    {
+        sb.AppendLine($"{indent}new Spline(");
+        sb.AppendLine($"{indent}    new List<Vector3>()");
+        sb.AppendLine($"{indent}    {{");
+        foreach (var cp in spline.ControlPoints)
+        {
+            sb.AppendLine($"{indent}        new Vector3({F(cp.X)}, {F(cp.Y)}, {F(cp.Z)}),");
+        }
+        sb.AppendLine($"{indent}    }},");
+        sb.AppendLine($"{indent}    new List<double>()");
+        sb.AppendLine($"{indent}    {{");
+        foreach (var weight in spline.Weights)
+        {
+            sb.AppendLine($"{indent}        {F(weight)},");
+        }
+        sb.AppendLine($"{indent}    }},");
+        sb.AppendLine($"{indent}    {spline.Degree})");
+    }
+
     private void GenerateText(StringBuilder sb, Text text)
     {
         sb.AppendLine($"        doc.Entities.Add(new Text(");
@@ -627,9 +671,8 @@ public class DxfCodeGenerator
 
     private void GenerateEllipse(StringBuilder sb, Ellipse ellipse)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Ellipse(");
-        sb.AppendLine($"            new Vector3({F(ellipse.Center.X)}, {F(ellipse.Center.Y)}, {F(ellipse.Center.Z)}),");
-        sb.AppendLine($"            {F(ellipse.MajorAxis)}, {F(ellipse.MinorAxis)})");
+        sb.AppendLine("        doc.Entities.Add(");
+        GenerateEllipseConstructor(sb, ellipse, "        ");
         sb.AppendLine("        {");
         GenerateEntityPropertiesCore(sb, ellipse);
         if (Math.Abs(ellipse.StartAngle) > 1e-12 || Math.Abs(ellipse.EndAngle - 360) > 1e-12)
@@ -639,6 +682,13 @@ public class DxfCodeGenerator
         }
         sb.AppendLine("        }");
         sb.AppendLine("        );");
+    }
+
+    private void GenerateEllipseConstructor(StringBuilder sb, Ellipse ellipse, string indent)
+    {
+        sb.AppendLine($"{indent}new Ellipse(");
+        sb.AppendLine($"{indent}    new Vector3({F(ellipse.Center.X)}, {F(ellipse.Center.Y)}, {F(ellipse.Center.Z)}),");
+        sb.AppendLine($"{indent}    {F(ellipse.MajorAxis)}, {F(ellipse.MinorAxis)})");
     }
 
     private void GenerateEntityProperties(StringBuilder sb, EntityObject entity)
@@ -916,72 +966,37 @@ public class DxfCodeGenerator
 
     private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options)
     {
-        // Generate entity creation code for boundary paths by reusing existing methods
-        var tempSb = new StringBuilder();
+        // Generate entity creation code for boundary paths without properties
+        sb.AppendLine("            pathEntities.Add(");
         
-        // Generate the entity using existing methods
-        GenerateEntity(tempSb, entity, options);
-        
-        // Transform the output to work for boundary paths
-        var entityCode = tempSb.ToString();
-        
-        // Replace "doc.Entities.Add(" with "pathEntities.Add("
-        // and remove the property block and closing semicolon
-        var lines = entityCode.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-        var inPropertyBlock = false;
-        var braceCount = 0;
-        
-        foreach (var line in lines)
+        switch (entity)
         {
-            var trimmedLine = line.Trim();
-            
-            // Skip empty lines and comments
-            if (string.IsNullOrWhiteSpace(trimmedLine) || trimmedLine.StartsWith("//"))
-                continue;
-                
-            // Replace the doc.Entities.Add with pathEntities.Add
-            if (trimmedLine.StartsWith("doc.Entities.Add("))
-            {
-                var modifiedLine = line.Replace("doc.Entities.Add(", "            pathEntities.Add(");
-                sb.AppendLine(modifiedLine);
-                continue;
-            }
-            
-            // Track property blocks (lines with just "{" or "}")
-            if (trimmedLine == "{")
-            {
-                inPropertyBlock = true;
-                braceCount++;
-                continue;
-            }
-            
-            if (trimmedLine == "}")
-            {
-                braceCount--;
-                if (braceCount == 0)
-                {
-                    inPropertyBlock = false;
-                }
-                continue;
-            }
-            
-            // Skip property assignments inside property blocks
-            if (inPropertyBlock)
-                continue;
-                
-            // Handle the closing line - remove the property block and just close the constructor
-            if (trimmedLine == ");")
-            {
-                sb.AppendLine("            );");
-                continue;
-            }
-            
-            // For constructor parameters, keep them but adjust indentation
-            if (!inPropertyBlock && !string.IsNullOrWhiteSpace(trimmedLine))
-            {
-                sb.AppendLine(line);
-            }
+            case Line line:
+                GenerateLineConstructor(sb, line, "            ");
+                break;
+            case Arc arc:
+                GenerateArcConstructor(sb, arc, "            ");
+                break;
+            case Circle circle:
+                GenerateCircleConstructor(sb, circle, "            ");
+                break;
+            case Polyline2D poly2d:
+                GeneratePolyline2DConstructor(sb, poly2d, "            ");
+                break;
+            case Ellipse ellipse:
+                GenerateEllipseConstructor(sb, ellipse, "            ");
+                break;
+            case Spline spline:
+                GenerateSplineConstructor(sb, spline, "            ");
+                break;
+            default:
+                // Fallback for other entity types
+                sb.AppendLine($"            // Unsupported boundary entity type: {entity.GetType().Name}");
+                sb.AppendLine("            null");
+                break;
         }
+        
+        sb.AppendLine("            );");
     }
 
     private void GenerateWipeout(StringBuilder sb, Wipeout wipeout)
