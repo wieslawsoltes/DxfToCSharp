@@ -17,10 +17,7 @@ public class DxfCodeGenerationOptions
     /// </summary>
     public bool GenerateUsingStatements { get; set; } = true;
 
-    /// <summary>
-    /// Whether to generate all entity types (when true, individual entity type flags are ignored)
-    /// </summary>
-    public bool GenerateAllEntities { get; set; } = true;
+
 
     /// <summary>
     /// Whether to generate layer definitions
@@ -106,6 +103,11 @@ public class DxfCodeGenerationOptions
     /// Whether to generate insert entities (block references)
     /// </summary>
     public bool GenerateInsertEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate hatch entities
+    /// </summary>
+    public bool GenerateHatchEntities { get; set; } = true;
 
     /// <summary>
     /// Whether to generate dimension entities
@@ -202,7 +204,6 @@ public class DxfCodeGenerationOptions
     {
         return new DxfCodeGenerationOptions
         {
-            GenerateAllEntities = false,
             GenerateLayers = false,
             GenerateLinetypes = false,
             GenerateTextStyles = false,
@@ -220,7 +221,6 @@ public class DxfCodeGenerationOptions
     public static DxfCodeGenerationOptions CreateBasicGeometryOnly()
     {
         var options = CreateEntitiesOnly();
-        options.GenerateAllEntities = false;
         options.GenerateTextEntities = false;
         options.GenerateMTextEntities = false;
         options.GenerateInsertEntities = false;
@@ -232,12 +232,11 @@ public class DxfCodeGenerationOptions
     }
 
     /// <summary>
-    /// Creates a new instance with individual entity type control (GenerateAllEntities = false)
+    /// Creates a new instance with individual entity type control
     /// </summary>
     public static DxfCodeGenerationOptions CreateWithIndividualEntityControl()
     {
         var options = CreateDefault();
-        options.GenerateAllEntities = false;
         return options;
     }
 }

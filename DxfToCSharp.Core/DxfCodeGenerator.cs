@@ -465,82 +465,82 @@ public class DxfCodeGenerator
         
         switch (entity)
         {
-            case Line line when options.GenerateAllEntities || options.GenerateLineEntities:
+            case Line line when options.GenerateLineEntities:
                 GenerateLine(sb, line);
                 break;
-            case Arc arc when options.GenerateAllEntities || options.GenerateArcEntities:
+            case Arc arc when options.GenerateArcEntities:
                 GenerateArc(sb, arc);
                 break;
-            case Circle circle when options.GenerateAllEntities || options.GenerateCircleEntities:
+            case Circle circle when options.GenerateCircleEntities:
                 GenerateCircle(sb, circle);
                 break;
-            case PointEntity point when options.GenerateAllEntities || options.GeneratePointEntities:
+            case PointEntity point when options.GeneratePointEntities:
                 GeneratePoint(sb, point);
                 break;
-            case Polyline2D poly2d when options.GenerateAllEntities || options.GeneratePolylineEntities:
+            case Polyline2D poly2d when options.GeneratePolylineEntities:
                 GeneratePolyline2D(sb, poly2d);
                 break;
-            case Polyline3D poly3d when options.GenerateAllEntities || options.GeneratePolylineEntities:
+            case Polyline3D poly3d when options.GeneratePolylineEntities:
                 GeneratePolyline3D(sb, poly3d);
                 break;
-            case Spline spline when options.GenerateAllEntities || options.GenerateSplineEntities:
+            case Spline spline when options.GenerateSplineEntities:
                 GenerateSpline(sb, spline);
                 break;
-            case Text text when options.GenerateAllEntities || options.GenerateTextEntities:
+            case Text text when options.GenerateTextEntities:
                 GenerateText(sb, text);
                 break;
-            case MText mtext when options.GenerateAllEntities || options.GenerateMTextEntities:
+            case MText mtext when options.GenerateMTextEntities:
                 GenerateMText(sb, mtext);
                 break;
-            case Ellipse ellipse when options.GenerateAllEntities || options.GenerateEllipseEntities:
+            case Ellipse ellipse when options.GenerateEllipseEntities:
                 GenerateEllipse(sb, ellipse);
                 break;
-            case Insert insert when options.GenerateAllEntities || options.GenerateInsertEntities:
+            case Insert insert when options.GenerateInsertEntities:
                 GenerateInsert(sb, insert);
                 break;
-            case Hatch hatch when options.GenerateAllEntities:
+            case Hatch hatch when options.GenerateHatchEntities:
                 GenerateHatch(sb, hatch, options);
                 break;
-            case Wipeout wipeout when options.GenerateAllEntities || options.GenerateWipeoutEntities:
+            case Wipeout wipeout when options.GenerateWipeoutEntities:
                 GenerateWipeout(sb, wipeout);
                 break;
-            case Leader leader when options.GenerateAllEntities || options.GenerateLeaderEntities:
+            case Leader leader when options.GenerateLeaderEntities:
                 GenerateLeader(sb, leader);
                 break;
-            case Face3D face3d when options.GenerateAllEntities || options.GenerateFace3dEntities:
+            case Face3D face3d when options.GenerateFace3dEntities:
                 GenerateFace3D(sb, face3d);
                 break;
-            case LinearDimension linearDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case LinearDimension linearDim when options.GenerateDimensionEntities:
                 GenerateLinearDimension(sb, linearDim);
                 break;
-            case AlignedDimension alignedDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case AlignedDimension alignedDim when options.GenerateDimensionEntities:
                 GenerateAlignedDimension(sb, alignedDim);
                 break;
-            case RadialDimension radialDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case RadialDimension radialDim when options.GenerateDimensionEntities:
                 GenerateRadialDimension(sb, radialDim);
                 break;
-            case DiametricDimension diametricDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case DiametricDimension diametricDim when options.GenerateDimensionEntities:
                 GenerateDiametricDimension(sb, diametricDim);
                 break;
-            case Angular2LineDimension angular2LineDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case Angular2LineDimension angular2LineDim when options.GenerateDimensionEntities:
                 GenerateAngular2LineDimension(sb, angular2LineDim);
                 break;
-            case Angular3PointDimension angular3PointDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case Angular3PointDimension angular3PointDim when options.GenerateDimensionEntities:
                 GenerateAngular3PointDimension(sb, angular3PointDim);
                 break;
-            case OrdinateDimension ordinateDim when options.GenerateAllEntities || options.GenerateDimensionEntities:
+            case OrdinateDimension ordinateDim when options.GenerateDimensionEntities:
                 GenerateOrdinateDimension(sb, ordinateDim);
                 break;
-            case Ray ray when options.GenerateAllEntities || options.GenerateRayEntities:
+            case Ray ray when options.GenerateRayEntities:
                 GenerateRay(sb, ray);
                 break;
-            case XLine xline when options.GenerateAllEntities || options.GenerateXLineEntities:
+            case XLine xline when options.GenerateXLineEntities:
                 GenerateXLine(sb, xline);
                 break;
-            case Solid solid when options.GenerateAllEntities || options.GenerateSolidEntities:
+            case Solid solid when options.GenerateSolidEntities:
                 GenerateSolid(sb, solid);
                 break;
-            case MLine mline when options.GenerateAllEntities || options.GenerateMLineEntities:
+            case MLine mline when options.GenerateMLineEntities:
                 GenerateMLine(sb, mline);
                 break;
             default:
