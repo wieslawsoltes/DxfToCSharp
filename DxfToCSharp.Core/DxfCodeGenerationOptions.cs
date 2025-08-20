@@ -113,6 +113,41 @@ public class DxfCodeGenerationOptions
     public bool GenerateDimensionEntities { get; set; } = true;
 
     /// <summary>
+    /// Whether to generate linear dimension entities
+    /// </summary>
+    public bool GenerateLinearDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate aligned dimension entities
+    /// </summary>
+    public bool GenerateAlignedDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate radial dimension entities
+    /// </summary>
+    public bool GenerateRadialDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate diametric dimension entities
+    /// </summary>
+    public bool GenerateDiametricDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate angular 2-line dimension entities
+    /// </summary>
+    public bool GenerateAngular2LineDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate angular 3-point dimension entities
+    /// </summary>
+    public bool GenerateAngular3PointDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate ordinate dimension entities
+    /// </summary>
+    public bool GenerateOrdinateDimensionEntities { get; set; } = true;
+
+    /// <summary>
     /// Whether to generate leader entities
     /// </summary>
     public bool GenerateLeaderEntities { get; set; } = true;
@@ -156,6 +191,51 @@ public class DxfCodeGenerationOptions
     /// Whether to generate wipeout entities
     /// </summary>
     public bool GenerateWipeoutEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate image entities.
+    /// </summary>
+    public bool GenerateImageEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate mesh entities.
+    /// </summary>
+    public bool GenerateMeshEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate polyface mesh entities.
+    /// </summary>
+    public bool GeneratePolyfaceMeshEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate polygon mesh entities.
+    /// </summary>
+    public bool GeneratePolygonMeshEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate shape entities.
+    /// </summary>
+    public bool GenerateShapeEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate tolerance entities.
+    /// </summary>
+    public bool GenerateToleranceEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate trace entities.
+    /// </summary>
+    public bool GenerateTraceEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate underlay entities.
+    /// </summary>
+    public bool GenerateUnderlayEntities { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to generate viewport entities.
+    /// </summary>
+    public bool GenerateViewportEntities { get; set; } = true;
 
     /// <summary>
     /// Whether to generate the document save comment
@@ -223,9 +303,25 @@ public class DxfCodeGenerationOptions
         options.GenerateMTextEntities = false;
         options.GenerateInsertEntities = false;
         options.GenerateDimensionEntities = false;
+        options.GenerateLinearDimensionEntities = false;
+        options.GenerateAlignedDimensionEntities = false;
+        options.GenerateRadialDimensionEntities = false;
+        options.GenerateDiametricDimensionEntities = false;
+        options.GenerateAngular2LineDimensionEntities = false;
+        options.GenerateAngular3PointDimensionEntities = false;
+        options.GenerateOrdinateDimensionEntities = false;
         options.GenerateLeaderEntities = false;
         options.GenerateMLineEntities = false;
         options.GenerateWipeoutEntities = false;
+        options.GenerateImageEntities = false;
+        options.GenerateMeshEntities = false;
+        options.GeneratePolyfaceMeshEntities = false;
+        options.GeneratePolygonMeshEntities = false;
+        options.GenerateShapeEntities = false;
+        options.GenerateToleranceEntities = false;
+        options.GenerateTraceEntities = false;
+        options.GenerateUnderlayEntities = false;
+        options.GenerateViewportEntities = false;
         return options;
     }
 

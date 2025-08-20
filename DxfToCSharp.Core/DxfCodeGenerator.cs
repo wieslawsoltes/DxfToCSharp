@@ -5,6 +5,7 @@ using System.Text;
 using System.Globalization;
 using netDxf;
 using netDxf.Entities;
+using netDxf.Objects;
 using netDxf.Tables;
 using PointEntity = netDxf.Entities.Point;
 
@@ -136,8 +137,10 @@ public class DxfCodeGenerator
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine("using netDxf;");
             sb.AppendLine("using netDxf.Entities;");
+            sb.AppendLine("using netDxf.Objects;");
             sb.AppendLine("using netDxf.Tables;");
             sb.AppendLine("using netDxf.Blocks;");
+            sb.AppendLine("using netDxf.Units;");
             sb.AppendLine();
         }
     }
@@ -509,25 +512,25 @@ public class DxfCodeGenerator
             case Face3D face3d when options.GenerateFace3dEntities:
                 GenerateFace3D(sb, face3d);
                 break;
-            case LinearDimension linearDim when options.GenerateDimensionEntities:
+            case LinearDimension linearDim when options.GenerateDimensionEntities && options.GenerateLinearDimensionEntities:
                 GenerateLinearDimension(sb, linearDim);
                 break;
-            case AlignedDimension alignedDim when options.GenerateDimensionEntities:
+            case AlignedDimension alignedDim when options.GenerateDimensionEntities && options.GenerateAlignedDimensionEntities:
                 GenerateAlignedDimension(sb, alignedDim);
                 break;
-            case RadialDimension radialDim when options.GenerateDimensionEntities:
+            case RadialDimension radialDim when options.GenerateDimensionEntities && options.GenerateRadialDimensionEntities:
                 GenerateRadialDimension(sb, radialDim);
                 break;
-            case DiametricDimension diametricDim when options.GenerateDimensionEntities:
+            case DiametricDimension diametricDim when options.GenerateDimensionEntities && options.GenerateDiametricDimensionEntities:
                 GenerateDiametricDimension(sb, diametricDim);
                 break;
-            case Angular2LineDimension angular2LineDim when options.GenerateDimensionEntities:
+            case Angular2LineDimension angular2LineDim when options.GenerateDimensionEntities && options.GenerateAngular2LineDimensionEntities:
                 GenerateAngular2LineDimension(sb, angular2LineDim);
                 break;
-            case Angular3PointDimension angular3PointDim when options.GenerateDimensionEntities:
+            case Angular3PointDimension angular3PointDim when options.GenerateDimensionEntities && options.GenerateAngular3PointDimensionEntities:
                 GenerateAngular3PointDimension(sb, angular3PointDim);
                 break;
-            case OrdinateDimension ordinateDim when options.GenerateDimensionEntities:
+            case OrdinateDimension ordinateDim when options.GenerateDimensionEntities && options.GenerateOrdinateDimensionEntities:
                 GenerateOrdinateDimension(sb, ordinateDim);
                 break;
             case Ray ray when options.GenerateRayEntities:
@@ -542,6 +545,33 @@ public class DxfCodeGenerator
             case MLine mline when options.GenerateMLineEntities:
                 GenerateMLine(sb, mline);
                 break;
+            case Image image when options.GenerateImageEntities:
+                GenerateImage(sb, image);
+                break;
+            case Mesh mesh when options.GenerateMeshEntities:
+                GenerateMesh(sb, mesh);
+                break;
+            case PolyfaceMesh polyfaceMesh when options.GeneratePolyfaceMeshEntities:
+                GeneratePolyfaceMesh(sb, polyfaceMesh);
+                break;
+            case PolygonMesh polygonMesh when options.GeneratePolygonMeshEntities:
+                GeneratePolygonMesh(sb, polygonMesh);
+                break;
+            case Shape shape when options.GenerateShapeEntities:
+                GenerateShape(sb, shape);
+                break;
+            case Tolerance tolerance when options.GenerateToleranceEntities:
+                GenerateTolerance(sb, tolerance);
+                break;
+            case Trace trace when options.GenerateTraceEntities:
+                GenerateTrace(sb, trace);
+                break;
+            case Underlay underlay when options.GenerateUnderlayEntities:
+                GenerateUnderlay(sb, underlay);
+                break;
+            case Viewport viewport when options.GenerateViewportEntities:
+                GenerateViewport(sb, viewport);
+                break;
             default:
                  if (options.GenerateDetailedComments)
                  {
@@ -555,7 +585,9 @@ public class DxfCodeGenerator
     {
         sb.AppendLine("        doc.Entities.Add(");
         GenerateLineConstructor(sb, line, "        ");
-        GenerateEntityProperties(sb, line);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, line);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -570,7 +602,9 @@ public class DxfCodeGenerator
     {
         sb.AppendLine("        doc.Entities.Add(");
         GenerateArcConstructor(sb, arc, "        ");
-        GenerateEntityProperties(sb, arc);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, arc);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -585,7 +619,9 @@ public class DxfCodeGenerator
     {
         sb.AppendLine("        doc.Entities.Add(");
         GenerateCircleConstructor(sb, circle, "        ");
-        GenerateEntityProperties(sb, circle);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, circle);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -598,9 +634,12 @@ public class DxfCodeGenerator
 
     private void GeneratePoint(StringBuilder sb, PointEntity point)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Point(");
+        sb.AppendLine($"        doc.Entities.Add(");
+        sb.AppendLine($"        new Point(");
         sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
-        GenerateEntityProperties(sb, point);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, point);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -638,8 +677,10 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"            new Polyline3DVertex({F(v.X)}, {F(v.Y)}, {F(v.Z)}),");
         }
-        sb.AppendLine($"        }}, {(poly3d.IsClosed ? "true" : "false")})");
-        GenerateEntityProperties(sb, poly3d);
+        sb.AppendLine($"        }}, {(poly3d.IsClosed ? "true" : "false")});");
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, poly3d);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1185,7 +1226,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
         sb.AppendLine($"            {F(dimension.Offset)}, {F(dimension.Rotation)})");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1195,7 +1238,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
         sb.AppendLine($"            {F(dimension.Offset)})");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1205,7 +1250,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
         sb.AppendLine($"        )");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1215,7 +1262,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
         sb.AppendLine($"        )");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1227,7 +1276,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.StartSecondLine.X)}, {F(dimension.StartSecondLine.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.EndSecondLine.X)}, {F(dimension.EndSecondLine.Y)}),");
         sb.AppendLine($"            {F(dimension.Offset)})");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1238,7 +1289,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.StartPoint.X)}, {F(dimension.StartPoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.EndPoint.X)}, {F(dimension.EndPoint.Y)}),");
         sb.AppendLine($"            {F(dimension.Offset)})");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1249,7 +1302,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(dimension.FeaturePoint.X)}, {F(dimension.FeaturePoint.Y)}),");
         sb.AppendLine($"            new Vector2({F(dimension.LeaderEndPoint.X)}, {F(dimension.LeaderEndPoint.Y)}),");
         sb.AppendLine($"            OrdinateDimensionAxis.{dimension.Axis})");
-        GenerateEntityProperties(sb, dimension);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, dimension);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1257,8 +1312,11 @@ public class DxfCodeGenerator
     {
         sb.AppendLine($"        doc.Entities.Add(new Ray(");
         sb.AppendLine($"            new Vector3({F(ray.Origin.X)}, {F(ray.Origin.Y)}, {F(ray.Origin.Z)}),");
-        sb.AppendLine($"            new Vector3({F(ray.Direction.X)}, {F(ray.Direction.Y)}, {F(ray.Direction.Z)}))");
-        GenerateEntityProperties(sb, ray);
+        sb.AppendLine($"            new Vector3({F(ray.Direction.X)}, {F(ray.Direction.Y)}, {F(ray.Direction.Z)})");
+        sb.AppendLine("        )");
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, ray);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1267,7 +1325,9 @@ public class DxfCodeGenerator
         sb.AppendLine($"        doc.Entities.Add(new XLine(");
         sb.AppendLine($"            new Vector3({F(xline.Origin.X)}, {F(xline.Origin.Y)}, {F(xline.Origin.Z)}),");
         sb.AppendLine($"            new Vector3({F(xline.Direction.X)}, {F(xline.Direction.Y)}, {F(xline.Direction.Z)}))");
-        GenerateEntityProperties(sb, xline);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, xline);
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1278,7 +1338,13 @@ public class DxfCodeGenerator
         sb.AppendLine($"            new Vector2({F(solid.SecondVertex.X)}, {F(solid.SecondVertex.Y)}),");
         sb.AppendLine($"            new Vector2({F(solid.ThirdVertex.X)}, {F(solid.ThirdVertex.Y)}),");
         sb.AppendLine($"            new Vector2({F(solid.FourthVertex.X)}, {F(solid.FourthVertex.Y)}))");
-        GenerateEntityProperties(sb, solid);
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, solid);
+        if (Math.Abs(solid.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"            Thickness = {F(solid.Thickness)},");
+        }
+        sb.AppendLine("        }");
         sb.AppendLine("        );");
     }
 
@@ -1316,5 +1382,323 @@ public class DxfCodeGenerator
         sb.AppendLine("            doc.Entities.Add(mlineEntity);");
         sb.AppendLine("        }");
         sb.AppendLine();
+    }
+
+    private void GenerateImage(StringBuilder sb, Image image)
+    {
+        sb.AppendLine("        {");
+        sb.AppendLine($"            var imageDefinition = new ImageDefinition(\"{image.Definition.Name}\", {image.Definition.Width}, {F(image.Definition.HorizontalResolution)}, {image.Definition.Height}, {F(image.Definition.VerticalResolution)}, ImageResolutionUnits.{image.Definition.ResolutionUnits});");
+        sb.AppendLine($"            var imageEntity = new Image(imageDefinition,");
+        sb.AppendLine($"                new Vector3({F(image.Position.X)}, {F(image.Position.Y)}, {F(image.Position.Z)}),");
+        sb.AppendLine($"                {F(image.Width)}, {F(image.Height)});");
+        
+        // Apply entity properties
+        if (image.Layer != null && _usedLayers.Contains(image.Layer.Name))
+        {
+            sb.AppendLine($"            imageEntity.Layer = layer{SafeName(image.Layer.Name)};");
+        }
+        
+        // Color handling
+        if (image.Color.Index != 256) // Not ByLayer
+        {
+            if (image.Color.Index == 0)
+                sb.AppendLine("            imageEntity.Color = AciColor.ByBlock;");
+            else
+                sb.AppendLine($"            imageEntity.Color = new AciColor({image.Color.Index});");
+        }
+        
+        // Image-specific properties
+        if (image.Rotation != 0)
+        {
+            sb.AppendLine($"            imageEntity.Rotation = {F(image.Rotation)};");
+        }
+        if (image.Brightness != 50) // Default brightness is 50
+        {
+            sb.AppendLine($"            imageEntity.Brightness = {image.Brightness};");
+        }
+        if (image.Contrast != 50) // Default contrast is 50
+        {
+            sb.AppendLine($"            imageEntity.Contrast = {image.Contrast};");
+        }
+        if (image.Fade != 0) // Default fade is 0
+        {
+            sb.AppendLine($"            imageEntity.Fade = {image.Fade};");
+        }
+        
+        // ClippingBoundary
+        if (image.ClippingBoundary != null && image.ClippingBoundary.Vertexes.Count > 0)
+        {
+            if (image.ClippingBoundary.Type == ClippingBoundaryType.Rectangular && image.ClippingBoundary.Vertexes.Count == 2)
+            {
+                // Rectangular boundary with two opposite corners
+                var firstCorner = image.ClippingBoundary.Vertexes[0];
+                var secondCorner = image.ClippingBoundary.Vertexes[1];
+                sb.AppendLine($"            imageEntity.ClippingBoundary = new ClippingBoundary(new Vector2({F(firstCorner.X)}, {F(firstCorner.Y)}), new Vector2({F(secondCorner.X)}, {F(secondCorner.Y)}));");
+            }
+            else
+            {
+                // Polygonal boundary with 3 or more vertices
+                sb.AppendLine("            var clippingVertices = new List<Vector2>");
+                sb.AppendLine("            {");
+                for (int i = 0; i < image.ClippingBoundary.Vertexes.Count; i++)
+                {
+                    var vertex = image.ClippingBoundary.Vertexes[i];
+                    var comma = i < image.ClippingBoundary.Vertexes.Count - 1 ? "," : "";
+                    sb.AppendLine($"                new Vector2({F(vertex.X)}, {F(vertex.Y)}){comma}");
+                }
+                sb.AppendLine("            };");
+                sb.AppendLine("            imageEntity.ClippingBoundary = new ClippingBoundary(clippingVertices);");
+            }
+        }
+        
+        sb.AppendLine("            doc.Entities.Add(imageEntity);");
+        sb.AppendLine("        }");
+        sb.AppendLine();
+    }
+
+    private void GenerateMesh(StringBuilder sb, Mesh mesh)
+    {
+        sb.AppendLine("        var meshVertexes = new List<Vector3>");
+        sb.AppendLine("        {");
+        for (int i = 0; i < mesh.Vertexes.Count; i++)
+        {
+            var vertex = mesh.Vertexes[i];
+            sb.AppendLine($"            new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){(i < mesh.Vertexes.Count - 1 ? "," : "")}");
+        }
+        sb.AppendLine("        };");
+        sb.AppendLine();
+        
+        sb.AppendLine("        var meshFaces = new List<int[]>");
+        sb.AppendLine("        {");
+        for (int i = 0; i < mesh.Faces.Count; i++)
+        {
+            var face = mesh.Faces[i];
+            sb.Append("            new int[] { ");
+            for (int j = 0; j < face.Length; j++)
+            {
+                sb.Append(face[j]);
+                if (j < face.Length - 1) sb.Append(", ");
+            }
+            sb.AppendLine($" }}{(i < mesh.Faces.Count - 1 ? "," : "")}");
+        }
+        sb.AppendLine("        };");
+        sb.AppendLine();
+        
+        // Generate mesh edges if they exist
+        if (mesh.Edges != null && mesh.Edges.Count > 0)
+        {
+            sb.AppendLine("        var meshEdges = new List<MeshEdge>");
+            sb.AppendLine("        {");
+            for (int i = 0; i < mesh.Edges.Count; i++)
+            {
+                var edge = mesh.Edges[i];
+                sb.AppendLine($"            new MeshEdge({edge.StartVertexIndex}, {edge.EndVertexIndex}){(i < mesh.Edges.Count - 1 ? "," : "")}");
+            }
+            sb.AppendLine("        };");
+            sb.AppendLine();
+            
+            sb.AppendLine("        var mesh = new Mesh(meshVertexes, meshFaces, meshEdges)");
+        }
+        else
+        {
+            sb.AppendLine("        var mesh = new Mesh(meshVertexes, meshFaces)");
+        }
+        
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, mesh);
+        sb.AppendLine($"            SubdivisionLevel = {mesh.SubdivisionLevel}");
+        sb.AppendLine("        };");
+        sb.AppendLine("        doc.Entities.Add(mesh);");
+    }
+
+    private void GeneratePolyfaceMesh(StringBuilder sb, PolyfaceMesh polyfaceMesh)
+    {
+        sb.AppendLine("        // Generate PolyfaceMesh vertexes");
+        sb.AppendLine("        var polyfaceMeshVertexes = new Vector3[]");
+        sb.AppendLine("        {");
+        for (int i = 0; i < polyfaceMesh.Vertexes.Length; i++)
+        {
+            var vertex = polyfaceMesh.Vertexes[i];
+            string comma = i < polyfaceMesh.Vertexes.Length - 1 ? "," : "";
+            sb.AppendLine($"            new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
+        }
+        sb.AppendLine("        };");
+        sb.AppendLine();
+        
+        sb.AppendLine("        // Generate PolyfaceMesh faces");
+        sb.AppendLine("        var polyfaceMeshFaces = new PolyfaceMeshFace[]");
+        sb.AppendLine("        {");
+        for (int i = 0; i < polyfaceMesh.Faces.Count; i++)
+        {
+            var face = polyfaceMesh.Faces[i];
+            string comma = i < polyfaceMesh.Faces.Count - 1 ? "," : "";
+            string vertexIndexes = string.Join(", ", face.VertexIndexes);
+            sb.AppendLine($"            new PolyfaceMeshFace(new short[] {{ {vertexIndexes} }}){comma}");
+        }
+        sb.AppendLine("        };");
+        sb.AppendLine();
+        
+        sb.AppendLine("        var polyfaceMesh = new PolyfaceMesh(polyfaceMeshVertexes, polyfaceMeshFaces)");
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, polyfaceMesh);
+        sb.AppendLine("        };");
+        sb.AppendLine("        doc.Entities.Add(polyfaceMesh);");
+        sb.AppendLine();
+    }
+
+    private void GeneratePolygonMesh(StringBuilder sb, PolygonMesh polygonMesh)
+    {
+        sb.AppendLine("        // Generate PolygonMesh vertexes");
+        sb.AppendLine("        var polygonMeshVertexes = new Vector3[]");
+        sb.AppendLine("        {");
+        for (int i = 0; i < polygonMesh.Vertexes.Length; i++)
+        {
+            var vertex = polygonMesh.Vertexes[i];
+            string comma = i < polygonMesh.Vertexes.Length - 1 ? "," : "";
+            sb.AppendLine($"            new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
+        }
+        sb.AppendLine("        };");
+        sb.AppendLine();
+        
+        sb.AppendLine($"        var polygonMesh = new PolygonMesh({polygonMesh.U}, {polygonMesh.V}, polygonMeshVertexes)");
+        sb.AppendLine("        {");
+        GenerateEntityPropertiesCore(sb, polygonMesh);
+        // Ensure DensityU and DensityV are within valid range (3-201)
+        var densityU = (short)Math.Max(3, Math.Min(201, (int)polygonMesh.DensityU));
+        var densityV = (short)Math.Max(3, Math.Min(201, (int)polygonMesh.DensityV));
+        sb.AppendLine($"            DensityU = {densityU},");
+        sb.AppendLine($"            DensityV = {densityV},");
+        sb.AppendLine($"            SmoothType = PolylineSmoothType.{polygonMesh.SmoothType},");
+        sb.AppendLine($"            IsClosedInU = {polygonMesh.IsClosedInU.ToString().ToLower()},");
+        sb.AppendLine($"            IsClosedInV = {polygonMesh.IsClosedInV.ToString().ToLower()}");
+        sb.AppendLine("        };");
+        sb.AppendLine("        doc.Entities.Add(polygonMesh);");
+        sb.AppendLine();
+    }
+
+    private void GenerateShape(StringBuilder sb, Shape shape)
+    {
+        sb.AppendLine($"        doc.Entities.Add(new Shape(\"{shape.Name}\",");
+        sb.AppendLine($"            new ShapeStyle(\"{shape.Style.Name}\", \"{shape.Style.File}\"),");
+        sb.AppendLine($"            new Vector3({F(shape.Position.X)}, {F(shape.Position.Y)}, {F(shape.Position.Z)}),");
+        sb.AppendLine($"            {F(shape.Size)}, {F(shape.Rotation)})");
+        sb.AppendLine($"        {{");
+        GenerateEntityPropertiesCore(sb, shape);
+        sb.AppendLine($"        }});");
+    }
+
+    private void GenerateTolerance(StringBuilder sb, Tolerance tolerance)
+    {
+        sb.AppendLine($"        doc.Entities.Add(new Tolerance(");
+        sb.AppendLine($"            new ToleranceEntry(),");
+        sb.AppendLine($"            new Vector3({F(tolerance.Position.X)}, {F(tolerance.Position.Y)}, {F(tolerance.Position.Z)})");
+        sb.AppendLine($"        )");
+        sb.AppendLine($"        {{");
+        sb.AppendLine($"            TextHeight = {F(tolerance.TextHeight)},");
+        sb.AppendLine($"            Rotation = {F(tolerance.Rotation)},");
+        GenerateEntityPropertiesCore(sb, tolerance);
+        sb.AppendLine($"        }});");
+    }
+
+    private void GenerateTrace(StringBuilder sb, Trace trace)
+    {
+        sb.AppendLine($"        doc.Entities.Add(new Trace(");
+        sb.AppendLine($"            new Vector2({F(trace.FirstVertex.X)}, {F(trace.FirstVertex.Y)}),");
+        sb.AppendLine($"            new Vector2({F(trace.SecondVertex.X)}, {F(trace.SecondVertex.Y)}),");
+        sb.AppendLine($"            new Vector2({F(trace.ThirdVertex.X)}, {F(trace.ThirdVertex.Y)}),");
+        sb.AppendLine($"            new Vector2({F(trace.FourthVertex.X)}, {F(trace.FourthVertex.Y)})");
+        sb.AppendLine($"        )");
+        sb.AppendLine($"        {{");
+        GenerateEntityPropertiesCore(sb, trace);
+        sb.AppendLine($"        }});");
+    }
+
+    private void GenerateUnderlay(StringBuilder sb, Underlay underlay)
+    {
+        sb.AppendLine("        // Note: Underlay requires UnderlayDefinition to be added to document first");
+        sb.AppendLine($"        // Create underlay definition for {underlay.Definition.Type} type");
+        // Generate the correct underlay definition class name
+        string definitionClassName = underlay.Definition.Type switch
+        {
+            UnderlayType.DGN => "UnderlayDgnDefinition",
+            UnderlayType.DWF => "UnderlayDwfDefinition", 
+            UnderlayType.PDF => "UnderlayPdfDefinition",
+            _ => $"Underlay{underlay.Definition.Type}Definition"
+        };
+        sb.AppendLine($"        var underlayDef = new {definitionClassName}(\"{underlay.Definition.Name}\", \"{underlay.Definition.File}\");");
+        sb.AppendLine();
+        
+        sb.AppendLine("        doc.Entities.Add(new Underlay(underlayDef)");
+        sb.AppendLine("        {");
+        sb.AppendLine($"            Position = new Vector3({F(underlay.Position.X)}, {F(underlay.Position.Y)}, {F(underlay.Position.Z)}),");
+            sb.AppendLine($"            Scale = new Vector2({F(underlay.Scale.X)}, {F(underlay.Scale.Y)}),");
+            sb.AppendLine($"            Rotation = {F(underlay.Rotation)},");
+        sb.AppendLine($"            Contrast = {underlay.Contrast},");
+        sb.AppendLine($"            Fade = {underlay.Fade},");
+        sb.AppendLine($"            DisplayOptions = UnderlayDisplayFlags.{underlay.DisplayOptions},");
+        if (underlay.ClippingBoundary != null)
+        {
+            sb.AppendLine($"            // ClippingBoundary = clippingBoundary, // Custom clipping boundary implementation needed");
+        }
+        GenerateEntityPropertiesCore(sb, underlay);
+        sb.AppendLine("        });");
+        sb.AppendLine();
+    }
+
+    private void GenerateViewport(StringBuilder sb, Viewport viewport)
+    {
+        var statusFlags = GenerateViewportStatusFlags(viewport.Status);
+        if (statusFlags.Length > 80) // If the line is too long, use a variable
+        {
+            sb.AppendLine($"        var viewportStatus = {statusFlags};");
+        }
+        
+        sb.AppendLine($"        doc.Entities.Add(");
+        sb.AppendLine($"        new Viewport(");
+        sb.AppendLine($"            new Vector2({F(viewport.Center.X)}, {F(viewport.Center.Y)}),");
+        sb.AppendLine($"            {F(viewport.Width)}, {F(viewport.Height)})");
+        sb.AppendLine($"        {{");
+        GenerateEntityPropertiesCore(sb, viewport);
+        // Set Center property if Z coordinate is not zero
+        if (Math.Abs(viewport.Center.Z) > 1e-6)
+        {
+            sb.AppendLine($"            Center = new Vector3({F(viewport.Center.X)}, {F(viewport.Center.Y)}, {F(viewport.Center.Z)}),");
+        }
+        sb.AppendLine($"            ViewCenter = new Vector2({F(viewport.ViewCenter.X)}, {F(viewport.ViewCenter.Y)}),");
+        sb.AppendLine($"            ViewHeight = {F(viewport.ViewHeight)},");
+        sb.AppendLine($"            ViewTarget = new Vector3({F(viewport.ViewTarget.X)}, {F(viewport.ViewTarget.Y)}, {F(viewport.ViewTarget.Z)}),");
+        sb.AppendLine($"            ViewDirection = new Vector3({F(viewport.ViewDirection.X)}, {F(viewport.ViewDirection.Y)}, {F(viewport.ViewDirection.Z)}),");
+        sb.AppendLine($"            LensLength = {F(viewport.LensLength)},");
+        sb.AppendLine($"            TwistAngle = {F(viewport.TwistAngle)},");
+        sb.AppendLine($"            CircleZoomPercent = {viewport.CircleZoomPercent},");
+        
+        if (statusFlags.Length > 80)
+        {
+            sb.AppendLine($"            Status = viewportStatus,");
+        }
+        else
+        {
+            sb.AppendLine($"            Status = {statusFlags},");
+        }
+        sb.AppendLine($"        }}");
+        sb.AppendLine($"        );");
+    }
+
+    private string GenerateViewportStatusFlags(ViewportStatusFlags flags)
+    {
+        if ((int)flags == 0)
+            return "(ViewportStatusFlags)0";
+
+        var flagNames = new List<string>();
+        
+        foreach (ViewportStatusFlags flag in Enum.GetValues(typeof(ViewportStatusFlags)))
+        {
+            if ((int)flag != 0 && flags.HasFlag(flag))
+            {
+                flagNames.Add($"ViewportStatusFlags.{flag}");
+            }
+        }
+        
+        return flagNames.Count > 0 ? string.Join(" | ", flagNames) : "(ViewportStatusFlags)0";
     }
 }
