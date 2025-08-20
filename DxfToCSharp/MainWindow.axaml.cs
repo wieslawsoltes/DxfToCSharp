@@ -20,53 +20,53 @@ namespace DxfToCSharp;
 
 public partial class MainWindow : Window
 {
-    private TextEditor? _leftTextBox;
-    private TextEditor? _rightTextBox;
-    private FoldingManager? _leftFoldingManager;
-    private FoldingManager? _rightFoldingManager;
-    private TextBox? _errorsTextBox;
+    private readonly TextEditor? _leftTextBox;
+    private readonly TextEditor? _rightTextBox;
+    private readonly FoldingManager? _leftFoldingManager;
+    private readonly FoldingManager? _rightFoldingManager;
+    private readonly TextBox? _errorsTextBox;
     private TabControl? _leftTabControl;
-    private TabControl? _rightTabControl;
-    private WindowNotificationManager? _notificationManager;
+    private readonly TabControl? _rightTabControl;
+    private readonly WindowNotificationManager? _notificationManager;
         
     // Options UI controls
-    private CheckBox? _generateHeaderCheckBox;
-    private CheckBox? _generateUsingStatementsCheckBox;
-    private CheckBox? _generateDetailedCommentsCheckBox;
-    private CheckBox? _groupEntitiesByTypeCheckBox;
-    private CheckBox? _generateLayersCheckBox;
-    private CheckBox? _generateLinetypesCheckBox;
-    private CheckBox? _generateTextStylesCheckBox;
-    private CheckBox? _generateBlocksCheckBox;
-    private CheckBox? _generateDimensionStylesCheckBox;
-    private CheckBox? _generateMLineStylesCheckBox;
-    private CheckBox? _generateEntitiesCheckBox;
-    private CheckBox? _generateLinesCheckBox;
-    private CheckBox? _generateArcsCheckBox;
-    private CheckBox? _generateCirclesCheckBox;
-    private CheckBox? _generateEllipsesCheckBox;
-    private CheckBox? _generatePolylines2DCheckBox;
-    private CheckBox? _generatePolylines3DCheckBox;
-    private CheckBox? _generateLwPolylinesCheckBox;
-    private CheckBox? _generateSplinesCheckBox;
-    private CheckBox? _generateTextsCheckBox;
-    private CheckBox? _generateMTextsCheckBox;
-    private CheckBox? _generatePointsCheckBox;
-    private CheckBox? _generateInsertCheckBox;
-    private CheckBox? _generateHatchesCheckBox;
-    private CheckBox? _generateSolidsCheckBox;
-    private CheckBox? _generateFacesCheckBox;
-    private CheckBox? _generateWipeoutsCheckBox;
-    private CheckBox? _generateDimensionsCheckBox;
-    private CheckBox? _generateLeadersCheckBox;
-    private CheckBox? _generateMlinesCheckBox;
-    private CheckBox? _generateRaysCheckBox;
-    private CheckBox? _generateXlinesCheckBox;
-    private CheckBox? _generateSaveCommentCheckBox;
-    private CheckBox? _generateReturnStatementCheckBox;
+    private readonly CheckBox? _generateHeaderCheckBox;
+    private readonly CheckBox? _generateUsingStatementsCheckBox;
+    private readonly CheckBox? _generateDetailedCommentsCheckBox;
+    private readonly CheckBox? _groupEntitiesByTypeCheckBox;
+    private readonly CheckBox? _generateLayersCheckBox;
+    private readonly CheckBox? _generateLinetypesCheckBox;
+    private readonly CheckBox? _generateTextStylesCheckBox;
+    private readonly CheckBox? _generateBlocksCheckBox;
+    private readonly CheckBox? _generateDimensionStylesCheckBox;
+    private readonly CheckBox? _generateMLineStylesCheckBox;
+    private readonly CheckBox? _generateEntitiesCheckBox;
+    private readonly CheckBox? _generateLinesCheckBox;
+    private readonly CheckBox? _generateArcsCheckBox;
+    private readonly CheckBox? _generateCirclesCheckBox;
+    private readonly CheckBox? _generateEllipsesCheckBox;
+    private readonly CheckBox? _generatePolylines2DCheckBox;
+    private readonly CheckBox? _generatePolylines3DCheckBox;
+    private readonly CheckBox? _generateLwPolylinesCheckBox;
+    private readonly CheckBox? _generateSplinesCheckBox;
+    private readonly CheckBox? _generateTextsCheckBox;
+    private readonly CheckBox? _generateMTextsCheckBox;
+    private readonly CheckBox? _generatePointsCheckBox;
+    private readonly CheckBox? _generateInsertCheckBox;
+    private readonly CheckBox? _generateHatchesCheckBox;
+    private readonly CheckBox? _generateSolidsCheckBox;
+    private readonly CheckBox? _generateFacesCheckBox;
+    private readonly CheckBox? _generateWipeoutsCheckBox;
+    private readonly CheckBox? _generateDimensionsCheckBox;
+    private readonly CheckBox? _generateLeadersCheckBox;
+    private readonly CheckBox? _generateMlinesCheckBox;
+    private readonly CheckBox? _generateRaysCheckBox;
+    private readonly CheckBox? _generateXlinesCheckBox;
+    private readonly CheckBox? _generateSaveCommentCheckBox;
+    private readonly CheckBox? _generateReturnStatementCheckBox;
     
     // New ComboBox for presets
-    private ComboBox? _presetComboBox;
+    private readonly ComboBox? _presetComboBox;
     
     // Track loaded DXF document and path for auto-regeneration
     private DxfDocument? _loadedDocument;
