@@ -82,6 +82,17 @@ public partial class MainWindow : Window
     private readonly CheckBox? _generateSaveCommentCheckBox;
     private readonly CheckBox? _generateReturnStatementCheckBox;
     
+    // Objects section checkboxes
+    private readonly CheckBox? _generateObjectsCheckBox;
+    private readonly CheckBox? _generateGroupsCheckBox;
+    private readonly CheckBox? _generateLayoutsCheckBox;
+    private readonly CheckBox? _generateImageDefinitionsCheckBox;
+    private readonly CheckBox? _generateUnderlayDefinitionsCheckBox;
+    private readonly CheckBox? _generateMLineEntitiesCheckBox;
+    private readonly CheckBox? _generateXRecordObjectsCheckBox;
+    private readonly CheckBox? _generateDictionaryObjectsCheckBox;
+    private readonly CheckBox? _generateRasterVariablesObjectsCheckBox;
+    
     // New ComboBox for presets
     private readonly ComboBox? _presetComboBox;
     
@@ -193,6 +204,17 @@ public partial class MainWindow : Window
         _generateViewportsCheckBox = this.FindControl<CheckBox>("GenerateViewportEntitiesCheckBox");
         _generateSaveCommentCheckBox = this.FindControl<CheckBox>("GenerateSaveCommentCheckBox");
         _generateReturnStatementCheckBox = this.FindControl<CheckBox>("GenerateReturnStatementCheckBox");
+        
+        // Initialize Objects section checkboxes
+        _generateObjectsCheckBox = this.FindControl<CheckBox>("GenerateObjectsCheckBox");
+        _generateGroupsCheckBox = this.FindControl<CheckBox>("GenerateGroupsCheckBox");
+        _generateLayoutsCheckBox = this.FindControl<CheckBox>("GenerateLayoutsCheckBox");
+        _generateImageDefinitionsCheckBox = this.FindControl<CheckBox>("GenerateImageDefinitionsCheckBox");
+        _generateUnderlayDefinitionsCheckBox = this.FindControl<CheckBox>("GenerateUnderlayDefinitionsCheckBox");
+        _generateMLineEntitiesCheckBox = this.FindControl<CheckBox>("GenerateMLineEntitiesCheckBox");
+        _generateXRecordObjectsCheckBox = this.FindControl<CheckBox>("GenerateXRecordObjectsCheckBox");
+        _generateDictionaryObjectsCheckBox = this.FindControl<CheckBox>("GenerateDictionaryObjectsCheckBox");
+        _generateRasterVariablesObjectsCheckBox = this.FindControl<CheckBox>("GenerateRasterVariablesObjectsCheckBox");
             
         // Initialize preset ComboBox
         _presetComboBox = this.FindControl<ComboBox>("PresetComboBox");
@@ -202,6 +224,13 @@ public partial class MainWindow : Window
         {
             _generateEntitiesCheckBox.Checked += OnEntitiesCheckBoxChanged;
             _generateEntitiesCheckBox.Unchecked += OnEntitiesCheckBoxChanged;
+        }
+        
+        // Set up event handler for master objects checkbox
+        if (_generateObjectsCheckBox != null)
+        {
+            _generateObjectsCheckBox.Checked += OnObjectsCheckBoxChanged;
+            _generateObjectsCheckBox.Unchecked += OnObjectsCheckBoxChanged;
         }
             
         // Set up event handlers for all option checkboxes to trigger auto-regeneration
@@ -525,6 +554,14 @@ public partial class MainWindow : Window
             GenerateBlocks = _generateBlocksCheckBox?.IsChecked ?? true,
             GenerateDimensionStyles = _generateDimensionStylesCheckBox?.IsChecked ?? true,
             GenerateMLineStyles = _generateMLineStylesCheckBox?.IsChecked ?? true,
+            GenerateObjects = _generateObjectsCheckBox?.IsChecked ?? true,
+            GenerateGroups = _generateGroupsCheckBox?.IsChecked ?? true,
+            GenerateLayouts = _generateLayoutsCheckBox?.IsChecked ?? true,
+            GenerateImageDefinitions = _generateImageDefinitionsCheckBox?.IsChecked ?? true,
+            GenerateUnderlayDefinitions = _generateUnderlayDefinitionsCheckBox?.IsChecked ?? true,
+            GenerateXRecordObjects = _generateXRecordObjectsCheckBox?.IsChecked ?? true,
+            GenerateDictionaryObjects = _generateDictionaryObjectsCheckBox?.IsChecked ?? true,
+            GenerateRasterVariablesObjects = _generateRasterVariablesObjectsCheckBox?.IsChecked ?? true,
             GenerateLineEntities = _generateLinesCheckBox?.IsChecked ?? true,
             GenerateArcEntities = _generateArcsCheckBox?.IsChecked ?? true,
             GenerateCircleEntities = _generateCirclesCheckBox?.IsChecked ?? true,
@@ -650,6 +687,14 @@ public partial class MainWindow : Window
         if (_generateBlocksCheckBox != null) _generateBlocksCheckBox.IsChecked = options.GenerateBlocks;
         if (_generateDimensionStylesCheckBox != null) _generateDimensionStylesCheckBox.IsChecked = options.GenerateDimensionStyles;
         if (_generateMLineStylesCheckBox != null) _generateMLineStylesCheckBox.IsChecked = options.GenerateMLineStyles;
+        if (_generateObjectsCheckBox != null) _generateObjectsCheckBox.IsChecked = options.GenerateObjects;
+        if (_generateGroupsCheckBox != null) _generateGroupsCheckBox.IsChecked = options.GenerateGroups;
+        if (_generateLayoutsCheckBox != null) _generateLayoutsCheckBox.IsChecked = options.GenerateLayouts;
+        if (_generateImageDefinitionsCheckBox != null) _generateImageDefinitionsCheckBox.IsChecked = options.GenerateImageDefinitions;
+        if (_generateUnderlayDefinitionsCheckBox != null) _generateUnderlayDefinitionsCheckBox.IsChecked = options.GenerateUnderlayDefinitions;
+        if (_generateXRecordObjectsCheckBox != null) _generateXRecordObjectsCheckBox.IsChecked = options.GenerateXRecordObjects;
+        if (_generateDictionaryObjectsCheckBox != null) _generateDictionaryObjectsCheckBox.IsChecked = options.GenerateDictionaryObjects;
+        if (_generateRasterVariablesObjectsCheckBox != null) _generateRasterVariablesObjectsCheckBox.IsChecked = options.GenerateRasterVariablesObjects;
         if (_generateEntitiesCheckBox != null)
             _generateEntitiesCheckBox.IsChecked = options.GenerateEntities;
         if (_generateLinesCheckBox != null) _generateLinesCheckBox.IsChecked = options.GenerateLineEntities;
@@ -771,6 +816,48 @@ public partial class MainWindow : Window
         // Always regenerate code after changing checkbox states
         RegenerateCodeIfLoaded();
     }
+    
+    private void OnObjectsCheckBoxChanged(object? sender, RoutedEventArgs e)
+    {
+        // Temporarily disable event handlers to prevent recursive calls during programmatic changes
+        bool wasHandlingEvents = _isHandlingEvents;
+        _isHandlingEvents = true;
+            
+        try
+        {
+            if (_generateObjectsCheckBox?.IsChecked == true)
+            {
+                // Check all object checkboxes and disable them when master is checked
+                if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = true; _generateGroupsCheckBox.IsEnabled = false; }
+                if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = true; _generateLayoutsCheckBox.IsEnabled = false; }
+                if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = true; _generateImageDefinitionsCheckBox.IsEnabled = false; }
+                if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = true; _generateUnderlayDefinitionsCheckBox.IsEnabled = false; }
+                if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = true; _generateMLineEntitiesCheckBox.IsEnabled = false; }
+                if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = true; _generateXRecordObjectsCheckBox.IsEnabled = false; }
+                if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = true; _generateDictionaryObjectsCheckBox.IsEnabled = false; }
+                if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = true; _generateRasterVariablesObjectsCheckBox.IsEnabled = false; }
+            }
+            else
+            {
+                // When "All Objects" is unchecked, uncheck all individual object checkboxes and enable them
+                if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = false; _generateGroupsCheckBox.IsEnabled = true; }
+                if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = false; _generateLayoutsCheckBox.IsEnabled = true; }
+                if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = false; _generateImageDefinitionsCheckBox.IsEnabled = true; }
+                if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = false; _generateUnderlayDefinitionsCheckBox.IsEnabled = true; }
+                if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = false; _generateMLineEntitiesCheckBox.IsEnabled = true; }
+                if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = false; _generateXRecordObjectsCheckBox.IsEnabled = true; }
+                if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = false; _generateDictionaryObjectsCheckBox.IsEnabled = true; }
+                if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = false; _generateRasterVariablesObjectsCheckBox.IsEnabled = true; }
+            }
+        }
+        finally
+        {
+            _isHandlingEvents = wasHandlingEvents;
+        }
+            
+        // Always regenerate code after changing checkbox states
+        RegenerateCodeIfLoaded();
+    }
         
     private void OnOptionChanged(object? sender, RoutedEventArgs e)
     {
@@ -856,6 +943,26 @@ public partial class MainWindow : Window
             _generateDimensionStylesCheckBox.IsCheckedChanged += OnOptionChanged;
         if (_generateMLineStylesCheckBox != null)
             _generateMLineStylesCheckBox.IsCheckedChanged += OnOptionChanged;
+            
+        // Objects section checkboxes
+        if (_generateObjectsCheckBox != null)
+            _generateObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateGroupsCheckBox != null)
+            _generateGroupsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateLayoutsCheckBox != null)
+            _generateLayoutsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateImageDefinitionsCheckBox != null)
+            _generateImageDefinitionsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateUnderlayDefinitionsCheckBox != null)
+            _generateUnderlayDefinitionsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateMLineEntitiesCheckBox != null)
+            _generateMLineEntitiesCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateXRecordObjectsCheckBox != null)
+            _generateXRecordObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateDictionaryObjectsCheckBox != null)
+            _generateDictionaryObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
+        if (_generateRasterVariablesObjectsCheckBox != null)
+            _generateRasterVariablesObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
             
         // Entity-specific checkboxes (excluding master entities checkbox as it has special handling)
         if (_generateLinesCheckBox != null)

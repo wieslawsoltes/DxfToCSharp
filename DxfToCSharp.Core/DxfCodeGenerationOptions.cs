@@ -61,6 +61,46 @@ public class DxfCodeGenerationOptions
     public bool GenerateVPorts { get; set; } = true;
 
     /// <summary>
+    /// Whether to generate Objects section
+    /// </summary>
+    public bool GenerateObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate Group objects
+    /// </summary>
+    public bool GenerateGroupObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate Layout objects
+    /// </summary>
+    public bool GenerateLayoutObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate ImageDefinition objects
+    /// </summary>
+    public bool GenerateImageDefinitionObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate UnderlayDefinition objects (PDF, DWF, DGN)
+    /// </summary>
+    public bool GenerateUnderlayDefinitionObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate XRecord objects
+    /// </summary>
+    public bool GenerateXRecordObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate DictionaryObject objects
+    /// </summary>
+    public bool GenerateDictionaryObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate RasterVariables objects
+    /// </summary>
+    public bool GenerateRasterVariablesObjects { get; set; } = true;
+
+    /// <summary>
     /// Whether to generate entity objects
     /// </summary>
     public bool GenerateEntities { get; set; } = true;
@@ -279,7 +319,7 @@ public class DxfCodeGenerationOptions
     }
 
     /// <summary>
-    /// Creates a new instance with only entities enabled (no table definitions)
+    /// Creates a new instance with only entities enabled (no table definitions or objects)
     /// </summary>
     public static DxfCodeGenerationOptions CreateEntitiesOnly()
     {
@@ -292,7 +332,8 @@ public class DxfCodeGenerationOptions
             GenerateDimensionStyles = false,
             GenerateMLineStyles = false,
             GenerateUCS = false,
-            GenerateVPorts = false
+            GenerateVPorts = false,
+            GenerateObjects = false
         };
     }
 

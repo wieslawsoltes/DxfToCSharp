@@ -65,6 +65,19 @@
               <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Dimension Styles" IsChecked="True" Margin="0,2" />
               <CheckBox Name="GenerateMLineStylesCheckBox" Content="MLine Styles" IsChecked="True" Margin="0,2" />
 
+              <!-- Objects Section -->
+              <TextBlock Text="Generate Objects" FontWeight="Bold" Margin="0,15,0,5" />
+              <CheckBox Name="GenerateObjectsCheckBox" Content="All Objects (Master)" IsChecked="True" Margin="0,2"
+                        FontWeight="Bold" />
+              <CheckBox Name="GenerateGroupsCheckBox" Content="Groups" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateLayoutsCheckBox" Content="Layouts" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateImageDefinitionsCheckBox" Content="Image Definitions" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateUnderlayDefinitionsCheckBox" Content="Underlay Definitions" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLine Entities" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateXRecordObjectsCheckBox" Content="XRecord Objects" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateDictionaryObjectsCheckBox" Content="Dictionary Objects" IsChecked="True" Margin="20,2,0,2" />
+              <CheckBox Name="GenerateRasterVariablesObjectsCheckBox" Content="Raster Variables" IsChecked="True" Margin="20,2,0,2" />
+
               <!-- Entity Types Section -->
               <TextBlock Text="Generate Entity Types" FontWeight="Bold" Margin="0,15,0,5" />
               <CheckBox Name="GenerateEntitiesCheckBox" Content="All Entities (Master)" IsChecked="True" Margin="0,2"

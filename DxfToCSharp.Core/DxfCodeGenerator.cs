@@ -48,6 +48,7 @@ public class DxfCodeGenerator
     private readonly HashSet<string> _usedMLineStyles = new();
     private readonly HashSet<string> _usedUCS = new();
     private readonly HashSet<string> _usedVPorts = new();
+    private readonly HashSet<string> _entitiesNeedingVariables = new();
     private int _insertCounter = 0;
 
     public string Generate(DxfDocument doc, string? sourcePath, string? className = null, DxfCodeGenerationOptions? options = null)
@@ -83,6 +84,9 @@ public class DxfCodeGenerator
             AnalyzeUsedTables(allEntities, options);
         }
         
+        // Analyze which entities need to be generated as variables (for group references)
+        AnalyzeEntitiesReferencedByGroups(doc, options);
+        
         // Class definition start
         sb.AppendLine($"public static class {finalClassName}");
         sb.AppendLine("{");
@@ -104,6 +108,12 @@ public class DxfCodeGenerator
         if (options.GenerateEntities)
         {
             GenerateEntities(sb, allEntities, options);
+        }
+        
+        // Generate objects
+        if (options.GenerateObjects)
+        {
+            GenerateObjects(sb, doc, options);
         }
         
         // Footer
@@ -346,6 +356,19 @@ public class DxfCodeGenerator
             AnalyzeUsedVPorts(entities, options);
         }
     }
+    
+    private void AnalyzeEntitiesReferencedByGroups(DxfDocument doc, DxfCodeGenerationOptions options)
+    {
+        if (!options.GenerateGroupObjects) return;
+        
+        foreach (var group in doc.Groups)
+        {
+            foreach (var entity in group.Entities)
+            {
+                _entitiesNeedingVariables.Add(entity.Handle);
+            }
+        }
+    }
 
     private void AnalyzeUsedUCS(List<EntityObject> entities, DxfCodeGenerationOptions options)
     {
@@ -516,8 +539,7 @@ public class DxfCodeGenerator
                 var style = doc.MlineStyles.FirstOrDefault(ms => ms.Name == styleName);
                 if (style != null)
                 {
-                    sb.AppendLine($"        var mlineStyle{SafeName(styleName)} = new MLineStyle(\"{Escape(styleName)}\");");
-                    sb.AppendLine($"        doc.MLineStyles.Add(mlineStyle{SafeName(styleName)});");
+                    GenerateMLineStyle(sb, style);
                 }
             }
             sb.AppendLine();
@@ -616,19 +638,22 @@ public class DxfCodeGenerator
             sb.AppendLine($"        // {entity.GetType().Name}: {entity.Handle}");
         }
         
+        // Check if this entity needs to be generated as a variable
+        bool needsVariable = _entitiesNeedingVariables.Contains(entity.Handle);
+        
         switch (entity)
         {
             case Line line when options.GenerateLineEntities:
-                GenerateLine(sb, line);
+                GenerateLine(sb, line, needsVariable);
                 break;
             case Arc arc when options.GenerateArcEntities:
-                GenerateArc(sb, arc);
+                GenerateArc(sb, arc, needsVariable);
                 break;
             case Circle circle when options.GenerateCircleEntities:
-                GenerateCircle(sb, circle);
+                GenerateCircle(sb, circle, needsVariable);
                 break;
             case PointEntity point when options.GeneratePointEntities:
-                GeneratePoint(sb, point);
+                GeneratePoint(sb, point, needsVariable);
                 break;
             case Polyline2D poly2d when options.GeneratePolylineEntities:
                 GeneratePolyline2D(sb, poly2d);
@@ -732,14 +757,121 @@ public class DxfCodeGenerator
         }
     }
 
-    private void GenerateLine(StringBuilder sb, Line line)
+    private void GenerateObjects(StringBuilder sb, DxfDocument doc, DxfCodeGenerationOptions options)
     {
-        sb.AppendLine("        doc.Entities.Add(");
-        GenerateLineConstructor(sb, line, "        ");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, line);
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine("        // Objects");
+        
+        // Generate Groups
+        if (options.GenerateGroupObjects && doc.Groups.Count > 0)
+        {
+            sb.AppendLine("        // Groups");
+            foreach (var group in doc.Groups)
+            {
+                GenerateGroup(sb, group, options);
+            }
+            sb.AppendLine();
+        }
+        
+        // Generate Layouts
+        if (options.GenerateLayoutObjects && doc.Layouts.Count > 0)
+        {
+            // Skip the default "Model" layout as it's automatically created
+            var customLayouts = doc.Layouts.Where(layout => !string.Equals(layout.Name, "Model", StringComparison.OrdinalIgnoreCase));
+            if (customLayouts.Any())
+            {
+                sb.AppendLine("        // Layouts");
+                foreach (var layout in customLayouts)
+                {
+                    GenerateLayout(sb, layout, options);
+                }
+                sb.AppendLine();
+            }
+        }
+        
+        // Generate Image Definitions
+        if (options.GenerateImageDefinitionObjects)
+        {
+            var imageDefinitions = doc.ImageDefinitions.Items.Where(item => item != null);
+            if (imageDefinitions.Any())
+            {
+                sb.AppendLine("        // Image Definitions");
+                foreach (var imageDef in imageDefinitions)
+                {
+                    GenerateImageDefinition(sb, imageDef, options);
+                }
+                sb.AppendLine();
+            }
+        }
+        
+        // Generate Underlay Definitions
+        if (options.GenerateUnderlayDefinitionObjects)
+        {
+            var underlayDefinitions = doc.UnderlayDgnDefinitions.Items.Cast<UnderlayDefinition>()
+                .Concat(doc.UnderlayDwfDefinitions.Items.Cast<UnderlayDefinition>())
+                .Concat(doc.UnderlayPdfDefinitions.Items.Cast<UnderlayDefinition>())
+                .Where(item => item != null);
+            if (underlayDefinitions.Any())
+            {
+                sb.AppendLine("        // Underlay Definitions");
+                foreach (var underlayDef in underlayDefinitions)
+                {
+                    GenerateUnderlayDefinition(sb, underlayDef, options);
+                }
+                sb.AppendLine();
+            }
+        }
+        
+        // Generate RasterVariables
+        if (options.GenerateRasterVariablesObjects && doc.RasterVariables != null)
+        {
+            sb.AppendLine("        // Raster Variables");
+            GenerateRasterVariables(sb, doc.RasterVariables, options);
+            sb.AppendLine();
+        }
+        
+        // Generate XRecord objects
+        if (options.GenerateXRecordObjects)
+        {
+            // Note: XRecord objects are typically stored in dictionaries
+            // This is a placeholder for when XRecord access is available
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine("        // XRecord objects (stored in dictionaries - not directly accessible)");
+            }
+        }
+        
+        // Generate Dictionary objects
+        if (options.GenerateDictionaryObjects)
+        {
+            // Note: Dictionary objects are internal to netDxf
+            // This is a placeholder for when Dictionary access is available
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine("        // Dictionary objects (internal to netDxf - not directly accessible)");
+            }
+        }
+    }
+
+    private void GenerateLine(StringBuilder sb, Line line, bool asVariable = false)
+    {
+        if (asVariable)
+        {
+            sb.AppendLine($"        var entity{line.Handle} = ");
+            GenerateLineConstructor(sb, line, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, line);
+            sb.AppendLine("        };");
+            sb.AppendLine($"        doc.Entities.Add(entity{line.Handle});");
+        }
+        else
+        {
+            sb.AppendLine("        doc.Entities.Add(");
+            GenerateLineConstructor(sb, line, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, line);
+            sb.AppendLine("        }");
+            sb.AppendLine("        );");
+        }
     }
 
     private void GenerateLineConstructor(StringBuilder sb, Line line, string indent)
@@ -749,14 +881,26 @@ public class DxfCodeGenerator
         sb.AppendLine($"{indent}    new Vector3({F(line.EndPoint.X)}, {F(line.EndPoint.Y)}, {F(line.EndPoint.Z)}))");
     }
 
-    private void GenerateArc(StringBuilder sb, Arc arc)
+    private void GenerateArc(StringBuilder sb, Arc arc, bool asVariable = false)
     {
-        sb.AppendLine("        doc.Entities.Add(");
-        GenerateArcConstructor(sb, arc, "        ");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, arc);
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        if (asVariable)
+        {
+            sb.AppendLine($"        var entity{arc.Handle} = ");
+            GenerateArcConstructor(sb, arc, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, arc);
+            sb.AppendLine("        };");
+            sb.AppendLine($"        doc.Entities.Add(entity{arc.Handle});");
+        }
+        else
+        {
+            sb.AppendLine("        doc.Entities.Add(");
+            GenerateArcConstructor(sb, arc, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, arc);
+            sb.AppendLine("        }");
+            sb.AppendLine("        );");
+        }
     }
 
     private void GenerateArcConstructor(StringBuilder sb, Arc arc, string indent)
@@ -766,14 +910,26 @@ public class DxfCodeGenerator
         sb.AppendLine($"{indent}    {F(arc.Radius)}, {F(arc.StartAngle)}, {F(arc.EndAngle)})");
     }
 
-    private void GenerateCircle(StringBuilder sb, Circle circle)
+    private void GenerateCircle(StringBuilder sb, Circle circle, bool asVariable = false)
     {
-        sb.AppendLine("        doc.Entities.Add(");
-        GenerateCircleConstructor(sb, circle, "        ");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, circle);
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        if (asVariable)
+        {
+            sb.AppendLine($"        var entity{circle.Handle} = ");
+            GenerateCircleConstructor(sb, circle, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, circle);
+            sb.AppendLine("        };");
+            sb.AppendLine($"        doc.Entities.Add(entity{circle.Handle});");
+        }
+        else
+        {
+            sb.AppendLine("        doc.Entities.Add(");
+            GenerateCircleConstructor(sb, circle, "        ");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, circle);
+            sb.AppendLine("        }");
+            sb.AppendLine("        );");
+        }
     }
 
     private void GenerateCircleConstructor(StringBuilder sb, Circle circle, string indent)
@@ -783,15 +939,28 @@ public class DxfCodeGenerator
         sb.AppendLine($"{indent}    {F(circle.Radius)})");
     }
 
-    private void GeneratePoint(StringBuilder sb, PointEntity point)
+    private void GeneratePoint(StringBuilder sb, PointEntity point, bool asVariable = false)
     {
-        sb.AppendLine($"        doc.Entities.Add(");
-        sb.AppendLine($"        new Point(");
-        sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, point);
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        if (asVariable)
+        {
+            sb.AppendLine($"        var entity{point.Handle} = ");
+            sb.AppendLine($"        new Point(");
+            sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, point);
+            sb.AppendLine("        };");
+            sb.AppendLine($"        doc.Entities.Add(entity{point.Handle});");
+        }
+        else
+        {
+            sb.AppendLine($"        doc.Entities.Add(");
+            sb.AppendLine($"        new Point(");
+            sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
+            sb.AppendLine("        {");
+            GenerateEntityPropertiesCore(sb, point);
+            sb.AppendLine("        }");
+            sb.AppendLine("        );");
+        }
     }
 
     private void GeneratePolyline2D(StringBuilder sb, Polyline2D poly2d)
@@ -1499,6 +1668,64 @@ public class DxfCodeGenerator
         sb.AppendLine("        );");
     }
 
+    private void GenerateMLineStyle(StringBuilder sb, MLineStyle style)
+    {
+        // Generate MLineStyle elements if any
+        if (style.Elements.Count > 0)
+        {
+            var elementsVarName = $"elements{SafeName(style.Name)}";
+            sb.AppendLine($"        var {elementsVarName} = new List<MLineStyleElement>();");
+            foreach (var element in style.Elements)
+            {
+                sb.AppendLine($"        {elementsVarName}.Add(new MLineStyleElement({F(element.Offset)})");
+                sb.AppendLine("        {");
+                if (element.Color.Index != 256) // Not ByLayer
+                {
+                    if (element.Color.Index == 0)
+                        sb.AppendLine("            Color = AciColor.ByBlock,");
+                    else
+                        sb.AppendLine($"            Color = new AciColor({element.Color.Index}),");
+                }
+                if (element.Linetype != null && element.Linetype.Name != "Continuous" && element.Linetype.Name != "ByLayer" && element.Linetype.Name != "ByBlock")
+                {
+                    sb.AppendLine($"            Linetype = linetype{SafeName(element.Linetype.Name)},");
+                }
+                sb.AppendLine("        });");
+            }
+            sb.AppendLine($"        var mlineStyle{SafeName(style.Name)} = new MLineStyle(\"{Escape(style.Name)}\", {elementsVarName});");
+        }
+        else
+        {
+            sb.AppendLine($"        var mlineStyle{SafeName(style.Name)} = new MLineStyle(\"{Escape(style.Name)}\");");
+        }
+        
+        // Set additional properties
+        if (!string.IsNullOrEmpty(style.Description))
+        {
+            sb.AppendLine($"        mlineStyle{SafeName(style.Name)}.Description = \"{Escape(style.Description)}\";");
+        }
+        
+        if (style.FillColor.Index != 256) // Not ByLayer
+        {
+            if (style.FillColor.Index == 0)
+                sb.AppendLine($"        mlineStyle{SafeName(style.Name)}.FillColor = AciColor.ByBlock;");
+            else
+                sb.AppendLine($"        mlineStyle{SafeName(style.Name)}.FillColor = new AciColor({style.FillColor.Index});");
+        }
+        
+        if (Math.Abs(style.StartAngle - 90.0) > 1e-10)
+        {
+            sb.AppendLine($"        mlineStyle{SafeName(style.Name)}.StartAngle = {F(style.StartAngle)};");
+        }
+        
+        if (Math.Abs(style.EndAngle - 90.0) > 1e-10)
+        {
+            sb.AppendLine($"        mlineStyle{SafeName(style.Name)}.EndAngle = {F(style.EndAngle)};");
+        }
+        
+        sb.AppendLine($"        doc.MlineStyles.Add(mlineStyle{SafeName(style.Name)});");
+    }
+
     private void GenerateMLine(StringBuilder sb, MLine mline)
     {
         sb.AppendLine("        {");
@@ -1514,6 +1741,12 @@ public class DxfCodeGenerator
         }
         
         sb.AppendLine("            var mlineEntity = new MLine(mlineVertices);");
+        
+        // Apply MLineStyle if not default
+        if (mline.Style != null && mline.Style.Name != "Standard" && _usedMLineStyles.Contains(mline.Style.Name))
+        {
+            sb.AppendLine($"            mlineEntity.Style = mlineStyle{SafeName(mline.Style.Name)};");
+        }
         
         // Apply entity properties
         if (mline.Layer != null && _usedLayers.Contains(mline.Layer.Name))
@@ -1794,6 +2027,119 @@ public class DxfCodeGenerator
         GenerateEntityPropertiesCore(sb, underlay);
         sb.AppendLine("        });");
         sb.AppendLine();
+    }
+
+    private void GenerateGroup(StringBuilder sb, Group group, DxfCodeGenerationOptions options)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"        // Group: {group.Name} ({group.Handle})");
+        }
+        
+        sb.AppendLine($"        var group{group.Handle} = new Group(\"{Escape(group.Name)}\");");
+        sb.AppendLine($"        doc.Groups.Add(group{group.Handle});");
+        
+        // Add entities to group if any
+        if (group.Entities.Count > 0)
+        {
+            sb.AppendLine($"        // Add entities to group {group.Name}");
+            foreach (var entity in group.Entities)
+            {
+                sb.AppendLine($"        group{group.Handle}.Entities.Add(entity{entity.Handle});");
+            }
+        }
+        sb.AppendLine();
+    }
+
+    private void GenerateLayout(StringBuilder sb, Layout layout, DxfCodeGenerationOptions options)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"        // Layout: {layout.Name} ({layout.Handle})");
+        }
+        
+        sb.AppendLine($"        var layout{layout.Handle} = new Layout(\"{Escape(layout.Name)}\");");
+        sb.AppendLine($"        doc.Layouts.Add(layout{layout.Handle});");
+        sb.AppendLine();
+    }
+
+    private void GenerateImageDefinition(StringBuilder sb, ImageDefinition imageDef, DxfCodeGenerationOptions options)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"        // Image Definition: {imageDef.Name} ({imageDef.Handle})");
+        }
+        
+        sb.AppendLine($"        var imageDef{imageDef.Handle} = new ImageDefinition(\"{Escape(imageDef.Name)}\", \"{Escape(imageDef.File)}\", {imageDef.Width}, {F(imageDef.HorizontalResolution)}, {imageDef.Height}, {F(imageDef.VerticalResolution)}, ImageResolutionUnits.{imageDef.ResolutionUnits});");
+        sb.AppendLine($"        doc.ImageDefinitions.Add(imageDef{imageDef.Handle});");
+        sb.AppendLine();
+    }
+
+    private void GenerateUnderlayDefinition(StringBuilder sb, UnderlayDefinition underlayDef, DxfCodeGenerationOptions options)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"        // Underlay Definition: {underlayDef.Name} ({underlayDef.Handle})");
+        }
+        
+        var typeName = underlayDef.GetType().Name;
+        sb.AppendLine($"        var underlayDef{underlayDef.Handle} = new {typeName}(\"{Escape(underlayDef.Name)}\", \"{Escape(underlayDef.File)}\");");
+        
+        // Add to appropriate collection based on type
+        if (underlayDef is UnderlayDgnDefinition)
+        {
+            sb.AppendLine($"        doc.UnderlayDgnDefinitions.Add((UnderlayDgnDefinition)underlayDef{underlayDef.Handle});");
+        }
+        else if (underlayDef is UnderlayDwfDefinition)
+        {
+            sb.AppendLine($"        doc.UnderlayDwfDefinitions.Add((UnderlayDwfDefinition)underlayDef{underlayDef.Handle});");
+        }
+        else if (underlayDef is UnderlayPdfDefinition)
+        {
+            sb.AppendLine($"        doc.UnderlayPdfDefinitions.Add((UnderlayPdfDefinition)underlayDef{underlayDef.Handle});");
+        }
+        sb.AppendLine();
+    }
+
+    private void GenerateRasterVariables(StringBuilder sb, RasterVariables rasterVars, DxfCodeGenerationOptions options)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"        // Raster Variables ({rasterVars.Handle})");
+        }
+        
+        // Check if any properties differ from defaults
+        bool hasNonDefaultValues = !rasterVars.DisplayFrame || 
+                                   rasterVars.DisplayQuality != ImageDisplayQuality.High || 
+                                   rasterVars.Units != ImageUnits.Unitless;
+        
+        if (hasNonDefaultValues)
+        {
+            sb.AppendLine("        doc.RasterVariables = new RasterVariables(doc)");
+            sb.AppendLine("        {");
+            
+            // Only set properties if they differ from defaults
+            if (!rasterVars.DisplayFrame)
+            {
+                sb.AppendLine("            DisplayFrame = false,");
+            }
+            
+            if (rasterVars.DisplayQuality != ImageDisplayQuality.High)
+            {
+                sb.AppendLine($"            DisplayQuality = ImageDisplayQuality.{rasterVars.DisplayQuality},");
+            }
+            
+            if (rasterVars.Units != ImageUnits.Unitless)
+            {
+                sb.AppendLine($"            Units = ImageUnits.{rasterVars.Units},");
+            }
+            
+            sb.AppendLine("        };");
+        }
+        else if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine("        // RasterVariables uses default values");
+        }
     }
 
     private void GenerateViewport(StringBuilder sb, Viewport viewport)
