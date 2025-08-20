@@ -8,6 +8,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Selection;
+using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using netDxf;
@@ -29,8 +30,7 @@ namespace DxfToCSharp
         private TextBox? _errorsTextBox;
         private TabControl? _leftTabControl;
         private TabControl? _rightTabControl;
-        private Border? _notificationBorder;
-        private TextBlock? _notificationText;
+        private WindowNotificationManager? _notificationManager;
         
         // Options UI controls
         private CheckBox? _generateHeaderCheckBox;
@@ -87,8 +87,13 @@ namespace DxfToCSharp
             _errorsTextBox = this.FindControl<TextBox>("ErrorsTextBox");
             _leftTabControl = this.FindControl<TabControl>("LeftTabControl");
             _rightTabControl = this.FindControl<TabControl>("RightTabControl");
-            _notificationBorder = this.FindControl<Border>("NotificationBorder");
-            _notificationText = this.FindControl<TextBlock>("NotificationText");
+            
+            // Initialize notification manager
+            _notificationManager = new WindowNotificationManager(this)
+            {
+                Position = NotificationPosition.TopRight,
+                MaxItems = 3
+            };
             
             // Configure text editors to prevent TextMate exceptions
             if (_leftTextBox != null)
@@ -403,31 +408,20 @@ namespace DxfToCSharp
 
         private void ShowNotification(string message, bool isError = false)
         {
-            if (_notificationText != null && _notificationBorder != null)
+            if (_notificationManager != null)
             {
-                _notificationText.Text = message;
-                _notificationBorder.Background = isError ? 
-                    Avalonia.Media.Brushes.Red : 
-                    Avalonia.Media.Brushes.Green;
-                _notificationBorder.IsVisible = true;
+                var notification = new Notification(
+                    title: isError ? "Error" : "Success",
+                    message: message,
+                    type: isError ? NotificationType.Error : NotificationType.Success,
+                    expiration: TimeSpan.FromSeconds(5)
+                );
                 
-                // Auto-hide after 5 seconds
-                Task.Delay(5000).ContinueWith(_ => 
-                {
-                    Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() => 
-                    {
-                        if (_notificationBorder != null)
-                            _notificationBorder.IsVisible = false;
-                    });
-                });
+                _notificationManager.Show(notification);
             }
         }
 
-        private void OnCloseNotificationClicked(object? sender, RoutedEventArgs e)
-        {
-            if (_notificationBorder != null)
-                _notificationBorder.IsVisible = false;
-        }
+
         
         private void RegenerateCodeIfLoaded()
         {

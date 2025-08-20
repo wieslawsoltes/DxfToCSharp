@@ -18,18 +18,7 @@
             <Button Name="RunButton" Content="Compile &amp; Run" Margin="0,0,10,0" Click="OnRunClicked"/>
         </StackPanel>
         
-        <!-- Notification Area -->
-        <Border Name="NotificationBorder" Grid.Row="0" 
-                Background="#4CAF50" Margin="10,40,10,0" Padding="12,8" 
-                CornerRadius="4" IsVisible="False">
-            <DockPanel>
-                <Button Name="CloseNotificationButton" Content="×" 
-                        Background="Transparent" Foreground="White" 
-                        BorderThickness="0" DockPanel.Dock="Right" 
-                        Click="OnCloseNotificationClicked"/>
-                <TextBlock Name="NotificationText" Foreground="White" FontWeight="Medium"/>
-            </DockPanel>
-        </Border>
+
         
         <!-- Main content area -->
         <Grid Grid.Row="1" Margin="10,0,10,10">
