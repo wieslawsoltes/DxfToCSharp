@@ -14,10 +14,13 @@
     </Grid.RowDefinitions>
 
     <!-- Top toolbar -->
-    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-      <Button Name="OpenButton" Content="Open DXF..." Margin="0,0,10,0" Click="OnOpenClicked" />
-      <Button Name="RunButton" Content="Compile &amp; Run" Margin="0,0,10,0" Click="OnRunClicked" />
-    </StackPanel>
+    <DockPanel Grid.Row="0" Margin="10">
+      <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+        <Button Name="OpenButton" Content="Open DXF..." Margin="0,0,10,0" Click="OnOpenClicked" />
+        <Button Name="RunButton" Content="Compile &amp; Run" Margin="0,0,10,0" Click="OnRunClicked" />
+      </StackPanel>
+      <CheckBox Name="FileWatchingCheckBox" DockPanel.Dock="Right" Content="Enable File Watching" IsChecked="True" VerticalAlignment="Center" />
+    </DockPanel>
 
 
     <!-- Main content area -->

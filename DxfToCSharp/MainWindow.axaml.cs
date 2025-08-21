@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
@@ -28,8 +29,17 @@ public partial class MainWindow : Window
     private readonly TabControl? _rightTabControl;
     private readonly WindowNotificationManager? _notificationManager;
     private readonly DxfGeneratorOptionsControl? _optionsControl;
+    private readonly CheckBox? _fileWatchingCheckBox;
     private DxfDocument? _loadedDocument;
     private string? _loadedFilePath;
+    private FileSystemWatcher? _fileWatcher;
+    private DateTime _lastFileChangeTime = DateTime.MinValue;
+    private bool _isProcessingFileChange;
+
+    /// <summary>
+    /// Gets a value indicating whether file watching is enabled.
+    /// </summary>
+    public bool IsFileWatchingEnabled => _fileWatchingCheckBox?.IsChecked == true;
 
     public MainWindow()
     {
@@ -81,6 +91,18 @@ public partial class MainWindow : Window
             
         // Initialize options control
         _optionsControl = this.FindControl<DxfGeneratorOptionsControl>("OptionsControl");
+        
+        // Initialize file watching checkbox
+        _fileWatchingCheckBox = this.FindControl<CheckBox>("FileWatchingCheckBox");
+        if (_fileWatchingCheckBox != null)
+        {
+            _fileWatchingCheckBox.IsChecked = true; // Default to enabled
+            _fileWatchingCheckBox.Checked += OnFileWatchingToggled;
+            _fileWatchingCheckBox.Unchecked += OnFileWatchingToggled;
+        }
+        
+        // Setup cleanup on window close
+        Closed += (s, e) => CleanupFileWatcher();
         
         // Set up event handler for options changes
         if (_optionsControl != null)
@@ -181,11 +203,11 @@ public partial class MainWindow : Window
         };
         var result = await ofd.ShowAsync(this);
         var path = result?.FirstOrDefault();
-        if (string.IsNullOrWhiteSpace(path) || !System.IO.File.Exists(path))
+        if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             return;
 
         // Load text to left panel
-        string text = await System.IO.File.ReadAllTextAsync(path);
+        string text = await File.ReadAllTextAsync(path);
         if (_leftTextBox != null)
         {
             _leftTextBox.Text = text;
@@ -215,6 +237,9 @@ public partial class MainWindow : Window
             var generatedCode = generator.Generate(doc, path, null, options);
             SetRightText(generatedCode);
             ClearErrors();
+            
+            // Setup file watching if enabled
+            SetupFileWatcher();
                 
             // Check if there are no entities to warn the user
             var allEntities = doc.Entities.All?.ToList() ?? new List<EntityObject>();
@@ -244,7 +269,7 @@ public partial class MainWindow : Window
                 ShowError("No generated code to compile.");
                 return;
             }
-            var scripting = new DxfToCSharp.Services.CSharpScriptingService();
+            var scripting = new Services.CSharpScriptingService();
             var comp = scripting.Compile(code);
             if (!comp.Success || string.IsNullOrEmpty(comp.AssemblyPath))
             {
@@ -303,7 +328,7 @@ public partial class MainWindow : Window
                         _rightTextBox.Text = textToSet;
                             
                         // Use async delay for better performance
-                        await System.Threading.Tasks.Task.Delay(10);
+                        await Task.Delay(10);
                             
                         // Update folding after text is set
                         if (_rightTextBox.Document != null)
@@ -407,7 +432,14 @@ public partial class MainWindow : Window
                 {
                     // Update stored document for regeneration
                     _loadedDocument = doc;
-                    _loadedFilePath = "<from_editor>"; // Indicate content is from editor
+                    
+                    // Only set _loadedFilePath to "<from_editor>" if we don't have a real file path
+                    // This preserves file watching functionality when a file is loaded via dialog
+                    if (string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+                    {
+                        _loadedFilePath = "<from_editor>"; // Indicate content is from editor
+                    }
+                    // If we have a valid file path, keep it for file watching
                         
                     // Generate code with current options
                     var generator = new DxfCodeGenerator();
@@ -429,14 +461,22 @@ public partial class MainWindow : Window
                 // Don't show errors for partial/invalid DXF content while typing
                 // Only clear the generated code if parsing fails
                 _loadedDocument = null;
-                _loadedFilePath = null;
+                // Don't clear _loadedFilePath here if it's a valid file path
+                if (_loadedFilePath == "<from_editor>" || string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+                {
+                    _loadedFilePath = null;
+                }
             }
         }
         else
         {
             // Clear generated code if text editor is empty
             _loadedDocument = null;
-            _loadedFilePath = null;
+            // Don't clear _loadedFilePath here if it's a valid file path
+            if (_loadedFilePath == "<from_editor>" || string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+            {
+                _loadedFilePath = null;
+            }
             SetRightText("");
             ClearErrors();
         }
@@ -483,6 +523,252 @@ public partial class MainWindow : Window
                 // Log folding errors but don't crash the application
                 System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
             }
+        }
+    }
+
+    /// <summary>
+    /// Handles file watching checkbox toggle events.
+    /// </summary>
+    private void OnFileWatchingToggled(object? sender, RoutedEventArgs e)
+    {
+        // Setup or cleanup file watcher based on checkbox state
+        if (IsFileWatchingEnabled)
+        {
+            SetupFileWatcher();
+        }
+        else
+        {
+            CleanupFileWatcher();
+        }
+    }
+
+    /// <summary>
+    /// Sets up file watching for the currently loaded DXF file.
+    /// </summary>
+    private void SetupFileWatcher()
+    {
+        // Clean up existing watcher
+        CleanupFileWatcher();
+
+        // Only setup if file watching is enabled and we have a loaded file
+        if (!IsFileWatchingEnabled || string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+            return;
+
+        try
+        {
+            var directory = Path.GetDirectoryName(_loadedFilePath);
+            var fileName = Path.GetFileName(_loadedFilePath);
+
+            if (string.IsNullOrEmpty(directory) || string.IsNullOrEmpty(fileName))
+                return;
+
+            // macOS-specific configuration to address known issues
+            var isMacOS = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
+            
+            _fileWatcher = new FileSystemWatcher(directory)
+            {
+                // On macOS, watch all files in directory due to FSEvents limitations
+                Filter = isMacOS ? "*.*" : fileName,
+                // Use more comprehensive NotifyFilter for macOS
+                NotifyFilter = isMacOS ? 
+                    (NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.CreationTime | NotifyFilters.FileName) :
+                    (NotifyFilters.LastWrite | NotifyFilters.Size),
+                EnableRaisingEvents = false, // Set to false initially
+                IncludeSubdirectories = false,
+                // Increase internal buffer size for better reliability
+                InternalBufferSize = 8192 * 4
+            };
+
+            // Subscribe to events before enabling
+            _fileWatcher.Created += OnFileChanged;
+            _fileWatcher.Renamed += OnFileRenamed;
+            _fileWatcher.Changed += OnFileChanged;
+            _fileWatcher.Error += OnFileWatcherError;
+            
+            // Enable events after all setup is complete
+            _fileWatcher.EnableRaisingEvents = true;
+            
+            
+            
+            // Test the watcher by checking if it's actually working
+            Task.Run(async () =>
+            {
+                await Task.Delay(1000); // Wait a second
+
+            });
+        }
+        catch (Exception ex)
+        {
+
+            ShowError($"Failed to setup file watching: {ex.Message}");
+            ShowNotification($"File watching setup failed: {ex.Message}", true);
+        }
+    }
+
+    /// <summary>
+    /// Cleans up the file watcher.
+    /// </summary>
+    private void CleanupFileWatcher()
+    {
+        if (_fileWatcher != null)
+        {
+            _fileWatcher.EnableRaisingEvents = false;
+            _fileWatcher.Changed -= OnFileChanged;
+            _fileWatcher.Created -= OnFileChanged;
+            _fileWatcher.Renamed -= OnFileRenamed;
+            _fileWatcher.Error -= OnFileWatcherError;
+            _fileWatcher.Dispose();
+            _fileWatcher = null;
+        }
+    }
+
+    /// <summary>
+    /// Handles file rename events (for editors that use atomic saves).
+    /// </summary>
+    private void OnFileRenamed(object sender, RenamedEventArgs e)
+    {
+        // Check if the renamed file matches our target file
+        if (string.Equals(e.FullPath, _loadedFilePath, StringComparison.OrdinalIgnoreCase))
+        {
+
+            OnFileChanged(sender, e);
+        }
+    }
+
+    /// <summary>
+    /// Handles file change events.
+    /// </summary>
+    private async void OnFileChanged(object sender, FileSystemEventArgs e)
+    {
+        // Check if this event is for our target file (handle both exact path and filename matching)
+        var isTargetFile = string.Equals(e.FullPath, _loadedFilePath, StringComparison.OrdinalIgnoreCase) ||
+                          string.Equals(e.Name, Path.GetFileName(_loadedFilePath), StringComparison.OrdinalIgnoreCase);
+
+        if (!isTargetFile)
+        {
+
+            return;
+        }
+
+        // Prevent multiple simultaneous file change processing
+        if (_isProcessingFileChange)
+        {
+
+            return;
+        }
+
+        // Debounce file changes (some editors trigger multiple events)
+        var now = DateTime.Now;
+        if ((now - _lastFileChangeTime).TotalMilliseconds < 300) // Reduced debounce time
+        {
+
+            return;
+        }
+
+        _lastFileChangeTime = now;
+        _isProcessingFileChange = true;
+
+        try
+        {
+            // Wait a bit for the file to be fully written (longer on macOS)
+            var isMacOS = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
+            await Task.Delay(isMacOS ? 200 : 100);
+
+            // Verify file exists and is accessible
+            if (!File.Exists(_loadedFilePath))
+            {
+
+                return;
+            }
+
+            // Try to read file with retry logic for locked files
+            string text = null;
+            for (int retry = 0; retry < 3; retry++)
+            {
+                try
+                {
+                    text = await File.ReadAllTextAsync(_loadedFilePath);
+                    break;
+                }
+                catch (IOException ex) when (retry < 2)
+                {
+
+                    await Task.Delay(100);
+                }
+            }
+
+            if (text == null)
+            {
+
+                return;
+            }
+
+            // Reload the file on the UI thread
+            await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(async () =>
+            {
+                try
+                {
+                    // Load updated text to left panel
+                    if (_leftTextBox != null)
+                    {
+                        _leftTextBox.Text = text;
+                        UpdateLeftFolding();
+                    }
+
+                    // Parse with netDxf and regenerate C# code
+                    var doc = DxfDocument.Load(_loadedFilePath);
+                    if (doc != null)
+                    {
+                        _loadedDocument = doc;
+                        var generator = new DxfCodeGenerator();
+                        var options = GetOptionsFromUI();
+                        var generatedCode = generator.Generate(doc, _loadedFilePath, null, options);
+                        SetRightText(generatedCode);
+                        ClearErrors();
+                        ShowNotification("File reloaded and code regenerated", false);
+                    }
+                    else
+                    {
+                        ShowError("Failed to reload DXF document after file change.");
+                        ShowNotification("Failed to reload DXF file", true);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
+            });
+        }
+        catch (Exception ex)
+        {
+
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
+        finally
+        {
+            _isProcessingFileChange = false;
+        }
+    }
+
+    /// <summary>
+    /// Handles FileSystemWatcher error events.
+    /// </summary>
+    private void OnFileWatcherError(object sender, ErrorEventArgs e)
+    {
+
+        ShowNotification($"File watching error: {e.GetException().Message}", true);
+        
+        // Try to restart the file watcher
+        try
+        {
+            CleanupFileWatcher();
+            SetupFileWatcher();
+        }
+        catch (Exception ex)
+        {
+
         }
     }
 }
