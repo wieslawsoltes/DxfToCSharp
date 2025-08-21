@@ -56,7 +56,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateUnderlaysCheckBox;
     private CheckBox? _generateViewportsCheckBox;
     private CheckBox? _generateSaveCommentCheckBox;
-    private CheckBox? _generateReturnStatementCheckBox;
+    private CheckBox? _generateClassCheckBox;
     private CheckBox? _generateObjectsCheckBox;
     private CheckBox? _generateGroupsCheckBox;
     private CheckBox? _generateLayoutsCheckBox;
@@ -129,7 +129,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
         _generateUnderlaysCheckBox = this.FindControl<CheckBox>("GenerateUnderlayEntitiesCheckBox");
         _generateViewportsCheckBox = this.FindControl<CheckBox>("GenerateViewportEntitiesCheckBox");
         _generateSaveCommentCheckBox = this.FindControl<CheckBox>("GenerateSaveCommentCheckBox");
-        _generateReturnStatementCheckBox = this.FindControl<CheckBox>("GenerateReturnStatementCheckBox");
+        _generateClassCheckBox = this.FindControl<CheckBox>("GenerateClassCheckBox");
             
         // Initialize Objects section checkboxes
         _generateObjectsCheckBox = this.FindControl<CheckBox>("GenerateObjectsCheckBox");
@@ -187,7 +187,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
             _generateLeadersCheckBox, _generateMlinesCheckBox, _generateRaysCheckBox, _generateXlinesCheckBox,
             _generateImagesCheckBox, _generateMeshesCheckBox, _generatePolyfaceMeshesCheckBox, _generatePolygonMeshesCheckBox,
             _generateShapesCheckBox, _generateTolerancesCheckBox, _generateTracesCheckBox, _generateUnderlaysCheckBox,
-            _generateViewportsCheckBox, _generateSaveCommentCheckBox, _generateReturnStatementCheckBox,
+            _generateViewportsCheckBox, _generateSaveCommentCheckBox, _generateClassCheckBox,
             _generateObjectsCheckBox, _generateGroupsCheckBox, _generateLayoutsCheckBox, _generateImageDefinitionsCheckBox,
             _generateUnderlayDefinitionsCheckBox, _generateMLineEntitiesCheckBox, _generateXRecordObjectsCheckBox,
             _generateDictionaryObjectsCheckBox, _generateRasterVariablesObjectsCheckBox
@@ -273,7 +273,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
             GenerateUnderlayEntities = _generateUnderlaysCheckBox?.IsChecked ?? true,
             GenerateViewportEntities = _generateViewportsCheckBox?.IsChecked ?? true,
             GenerateSaveComment = _generateSaveCommentCheckBox?.IsChecked ?? true,
-            GenerateReturnStatement = _generateReturnStatementCheckBox?.IsChecked ?? true
+            GenerateClass = _generateClassCheckBox?.IsChecked ?? true
         };
     }
 
@@ -360,7 +360,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateEntitiesCheckBox != null) _generateEntitiesCheckBox.IsChecked = allEntitiesEnabled;
             
             if (_generateSaveCommentCheckBox != null) _generateSaveCommentCheckBox.IsChecked = options.GenerateSaveComment;
-            if (_generateReturnStatementCheckBox != null) _generateReturnStatementCheckBox.IsChecked = options.GenerateReturnStatement;
+            if (_generateClassCheckBox != null) _generateClassCheckBox.IsChecked = options.GenerateClass;
         }
         finally
         {

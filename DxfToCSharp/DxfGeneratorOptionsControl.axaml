@@ -17,7 +17,7 @@
                 Margin="0,2" />
       <CheckBox Name="GenerateSaveCommentCheckBox" Content="Save Comment"
                 Margin="0,2" />
-      <CheckBox Name="GenerateReturnStatementCheckBox" Content="Return Statement"
+      <CheckBox Name="GenerateClassCheckBox" Content="Class &amp; Method"
                 Margin="0,2" />
 
       <TextBlock Text="Tables" FontWeight="Bold" Margin="0,15,0,5" />

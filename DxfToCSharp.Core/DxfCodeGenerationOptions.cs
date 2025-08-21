@@ -13,12 +13,12 @@ public class DxfCodeGenerationOptions
     /// <summary>
     /// Whether to generate the document save comment
     /// </summary>
-    public bool GenerateSaveComment { get; set; } = true;
+    public bool GenerateSaveComment { get; set; }
 
     /// <summary>
-    /// Whether to generate the return statement
+    /// Whether to generate the class, create method and return statement
     /// </summary>
-    public bool GenerateReturnStatement { get; set; } = true;
+    public bool GenerateClass { get; set; } = true;
 
     /// <summary>
     /// Whether to include detailed comments for each entity
