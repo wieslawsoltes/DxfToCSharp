@@ -54,7 +54,7 @@ public class DxfCodeGenerator
     public string Generate(DxfDocument doc, string? sourcePath, string? className = null, DxfCodeGenerationOptions? options = null)
     {
         // Use provided options or create default
-        options ??= DxfCodeGenerationOptions.CreateDefault();
+        options ??= new DxfCodeGenerationOptions();
         
         var allEntities = doc.Entities.All?.ToList() ?? new List<EntityObject>();
         
@@ -607,27 +607,10 @@ public class DxfCodeGenerator
     private void GenerateEntities(StringBuilder sb, List<EntityObject> entities, DxfCodeGenerationOptions options)
     {
         sb.AppendLine("        // Entities");
-        
-        // Group entities by type if requested
-        if (options.GroupEntitiesByType)
+
+        foreach (var entity in entities)
         {
-            var groupedEntities = entities.GroupBy(e => e.GetType()).OrderBy(g => g.Key.Name);
-            foreach (var group in groupedEntities)
-            {
-                sb.AppendLine($"        // {group.Key.Name} entities");
-                foreach (var entity in group)
-                {
-                    GenerateEntity(sb, entity, options);
-                }
-                sb.AppendLine();
-            }
-        }
-        else
-        {
-            foreach (var entity in entities)
-            {
-                GenerateEntity(sb, entity, options);
-            }
+            GenerateEntity(sb, entity, options);
         }
     }
 

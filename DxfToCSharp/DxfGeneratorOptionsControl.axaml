@@ -6,17 +6,6 @@
              x:Class="DxfToCSharp.DxfGeneratorOptionsControl">
   <ScrollViewer>
     <StackPanel Margin="10">
-      <!-- Presets Section -->
-      <TextBlock Text="Presets" FontWeight="Bold" Margin="0,0,0,5" />
-      <ComboBox Name="PresetComboBox" Width="200" HorizontalAlignment="Left" Margin="0,0,0,15"
-                SelectionChanged="OnPresetSelectionChanged">
-        <ComboBoxItem Content="Default" IsSelected="True" />
-        <ComboBoxItem Content="Minimal" />
-        <ComboBoxItem Content="Complete" />
-        <ComboBoxItem Content="Entities Only" />
-        <ComboBoxItem Content="Tables Only" />
-      </ComboBox>
-
       <!-- Table Definitions Section -->
       <TextBlock Text="Generate Table Definitions" FontWeight="Bold" Margin="0,0,0,5" />
       <CheckBox Name="GenerateLayersCheckBox" Content="Layers" IsChecked="True" Margin="0,2" />
@@ -106,8 +95,6 @@
       <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Generate Using Statements" IsChecked="True"
                 Margin="0,2" />
       <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Generate Detailed Comments" IsChecked="True"
-                Margin="0,2" />
-      <CheckBox Name="GroupEntitiesByTypeCheckBox" Content="Group Entities by Type" IsChecked="True"
                 Margin="0,2" />
       <CheckBox Name="GenerateSaveCommentCheckBox" Content="Generate Save Comment" IsChecked="True"
                 Margin="0,2" />

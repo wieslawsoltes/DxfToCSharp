@@ -388,7 +388,7 @@ public partial class MainWindow : Window
 
     private DxfCodeGenerationOptions GetOptionsFromUI()
     {
-        return _optionsControl?.GetOptionsFromUI() ?? DxfCodeGenerationOptions.CreateDefault();
+        return _optionsControl?.GetOptionsFromUI() ?? new DxfCodeGenerationOptions();
     }
 
     private void OnDxfContentChanged(object? sender, EventArgs e)

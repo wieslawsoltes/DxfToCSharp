@@ -12,7 +12,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateHeaderVariablesCheckBox;
     private CheckBox? _generateUsingStatementsCheckBox;
     private CheckBox? _generateDetailedCommentsCheckBox;
-    private CheckBox? _groupEntitiesByTypeCheckBox;
     private CheckBox? _generateLayersCheckBox;
     private CheckBox? _generateLinetypesCheckBox;
     private CheckBox? _generateTextStylesCheckBox;
@@ -70,11 +69,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateXRecordObjectsCheckBox;
     private CheckBox? _generateDictionaryObjectsCheckBox;
     private CheckBox? _generateRasterVariablesObjectsCheckBox;
-        
-    // Preset ComboBox
-    private ComboBox? _presetComboBox;
-        
-    // Flag to prevent recursive event handling during programmatic checkbox changes
     private bool _isHandlingEvents = true;
         
     /// <summary>
@@ -96,7 +90,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
         _generateHeaderVariablesCheckBox = this.FindControl<CheckBox>("GenerateHeaderVariablesCheckBox");
         _generateUsingStatementsCheckBox = this.FindControl<CheckBox>("GenerateUsingStatementsCheckBox");
         _generateDetailedCommentsCheckBox = this.FindControl<CheckBox>("GenerateDetailedCommentsCheckBox");
-        _groupEntitiesByTypeCheckBox = this.FindControl<CheckBox>("GroupEntitiesByTypeCheckBox");
         _generateLayersCheckBox = this.FindControl<CheckBox>("GenerateLayersCheckBox");
         _generateLinetypesCheckBox = this.FindControl<CheckBox>("GenerateLinetypesCheckBox");
         _generateTextStylesCheckBox = this.FindControl<CheckBox>("GenerateTextStylesCheckBox");
@@ -154,9 +147,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
         _generateXRecordObjectsCheckBox = this.FindControl<CheckBox>("GenerateXRecordObjectsCheckBox");
         _generateDictionaryObjectsCheckBox = this.FindControl<CheckBox>("GenerateDictionaryObjectsCheckBox");
         _generateRasterVariablesObjectsCheckBox = this.FindControl<CheckBox>("GenerateRasterVariablesObjectsCheckBox");
-                
-        // Initialize preset ComboBox
-        _presetComboBox = this.FindControl<ComboBox>("PresetComboBox");
     }
         
     private void SetupEventHandlers()
@@ -184,7 +174,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
         var checkboxes = new[]
         {
             _generateHeaderCheckBox, _generateHeaderVariablesCheckBox, _generateUsingStatementsCheckBox,
-            _generateDetailedCommentsCheckBox, _groupEntitiesByTypeCheckBox, _generateLayersCheckBox,
             _generateLinetypesCheckBox, _generateTextStylesCheckBox, _generateBlocksCheckBox,
             _generateDimensionStylesCheckBox, _generateMLineStylesCheckBox, _generateEntitiesCheckBox,
             _generateLinesCheckBox, _generateArcsCheckBox, _generateCirclesCheckBox, _generateEllipsesCheckBox,
@@ -239,7 +228,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
             GenerateHeaderVariables = _generateHeaderVariablesCheckBox?.IsChecked ?? true,
             GenerateUsingStatements = _generateUsingStatementsCheckBox?.IsChecked ?? true,
             GenerateDetailedComments = _generateDetailedCommentsCheckBox?.IsChecked ?? false,
-            GroupEntitiesByType = _groupEntitiesByTypeCheckBox?.IsChecked ?? false,
             GenerateLayers = _generateLayersCheckBox?.IsChecked ?? true,
             GenerateLinetypes = _generateLinetypesCheckBox?.IsChecked ?? true,
             GenerateTextStyles = _generateTextStylesCheckBox?.IsChecked ?? true,
@@ -308,7 +296,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateHeaderVariablesCheckBox != null) _generateHeaderVariablesCheckBox.IsChecked = options.GenerateHeaderVariables;
             if (_generateUsingStatementsCheckBox != null) _generateUsingStatementsCheckBox.IsChecked = options.GenerateUsingStatements;
             if (_generateDetailedCommentsCheckBox != null) _generateDetailedCommentsCheckBox.IsChecked = options.GenerateDetailedComments;
-            if (_groupEntitiesByTypeCheckBox != null) _groupEntitiesByTypeCheckBox.IsChecked = options.GroupEntitiesByType;
             if (_generateLayersCheckBox != null) _generateLayersCheckBox.IsChecked = options.GenerateLayers;
             if (_generateLinetypesCheckBox != null) _generateLinetypesCheckBox.IsChecked = options.GenerateLinetypes;
             if (_generateTextStylesCheckBox != null) _generateTextStylesCheckBox.IsChecked = options.GenerateTextStyles;
@@ -441,128 +428,5 @@ public partial class DxfGeneratorOptionsControl : UserControl
             
         // Always raise options changed event after changing checkbox states
         RaiseOptionsChanged();
-    }
-        
-    public void OnPresetSelectionChanged(object? sender, SelectionChangedEventArgs e)
-    {
-        if (_presetComboBox?.SelectedItem is ComboBoxItem selectedItem)
-        {
-            var presetName = selectedItem.Content?.ToString();
-                
-            switch (presetName)
-            {
-                case "Default":
-                    SetAllOptions(CreateDefaultOptions());
-                    break;
-                case "Minimal":
-                    SetAllOptions(CreateMinimalOptions());
-                    break;
-                case "Complete":
-                    SetAllOptions(CreateCompleteOptions());
-                    break;
-                case "Entities Only":
-                    SetAllOptions(CreateEntitiesOnlyOptions());
-                    break;
-                case "Tables Only":
-                    SetAllOptions(CreateTablesOnlyOptions());
-                    break;
-            }
-        }
-    }
-        
-    private DxfCodeGenerationOptions CreateDefaultOptions()
-    {
-        return new DxfCodeGenerationOptions();
-    }
-        
-    private DxfCodeGenerationOptions CreateMinimalOptions()
-    {
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateHeader = false,
-            GenerateHeaderVariables = false,
-            GenerateUsingStatements = true,
-            GenerateDetailedComments = false,
-            GroupEntitiesByType = false,
-            GenerateLayers = false,
-            GenerateLinetypes = false,
-            GenerateTextStyles = false,
-            GenerateBlocks = false,
-            GenerateDimensionStyles = false,
-            GenerateMLineStyles = false,
-            GenerateObjects = false,
-            GenerateEntities = true,
-            GenerateSaveComment = false,
-            GenerateReturnStatement = true
-        };
-        return options;
-    }
-        
-    private DxfCodeGenerationOptions CreateCompleteOptions()
-    {
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateHeader = true,
-            GenerateHeaderVariables = true,
-            GenerateUsingStatements = true,
-            GenerateDetailedComments = true,
-            GroupEntitiesByType = true,
-            GenerateLayers = true,
-            GenerateLinetypes = true,
-            GenerateTextStyles = true,
-            GenerateBlocks = true,
-            GenerateDimensionStyles = true,
-            GenerateMLineStyles = true,
-            GenerateObjects = true,
-            GenerateEntities = true,
-            GenerateSaveComment = true,
-            GenerateReturnStatement = true
-        };
-        return options;
-    }
-        
-    private DxfCodeGenerationOptions CreateEntitiesOnlyOptions()
-    {
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateHeader = true,
-            GenerateHeaderVariables = false,
-            GenerateUsingStatements = true,
-            GenerateDetailedComments = false,
-            GroupEntitiesByType = false,
-            GenerateLayers = false,
-            GenerateLinetypes = false,
-            GenerateTextStyles = false,
-            GenerateBlocks = false,
-            GenerateDimensionStyles = false,
-            GenerateMLineStyles = false,
-            GenerateObjects = false,
-            GenerateEntities = true,
-            GenerateSaveComment = true,
-            GenerateReturnStatement = true
-        };
-        return options;
-    }
-        
-    private DxfCodeGenerationOptions CreateTablesOnlyOptions()
-    {
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateHeader = true,
-            GenerateHeaderVariables = true,
-            GenerateUsingStatements = true,
-            GenerateDetailedComments = false,
-            GroupEntitiesByType = false,
-            GenerateLayers = true,
-            GenerateLinetypes = true,
-            GenerateTextStyles = true,
-            GenerateBlocks = true,
-            GenerateDimensionStyles = true,
-            GenerateMLineStyles = true,
-            GenerateEntities = false,
-            GenerateSaveComment = true,
-            GenerateReturnStatement = true
-        };
-        return options;
     }
 }
