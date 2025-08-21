@@ -6,6 +6,26 @@ namespace DxfToCSharp.Core;
 public class DxfCodeGenerationOptions
 {
     /// <summary>
+    /// Custom class name for the generated code (null for default)
+    /// </summary>
+    public string? CustomClassName { get; set; }
+
+    /// <summary>
+    /// Whether to generate the document save comment
+    /// </summary>
+    public bool GenerateSaveComment { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate the return statement
+    /// </summary>
+    public bool GenerateReturnStatement { get; set; } = true;
+
+    /// <summary>
+    /// Whether to include detailed comments for each entity
+    /// </summary>
+    public bool GenerateDetailedComments { get; set; } = false;
+
+    /// <summary>
     /// Whether to generate header comments with source file info and timestamp
     /// </summary>
     public bool GenerateHeader { get; set; } = true;
@@ -279,24 +299,4 @@ public class DxfCodeGenerationOptions
     /// Gets or sets a value indicating whether to generate viewport entities.
     /// </summary>
     public bool GenerateViewportEntities { get; set; } = true;
-
-    /// <summary>
-    /// Whether to generate the document save comment
-    /// </summary>
-    public bool GenerateSaveComment { get; set; } = true;
-
-    /// <summary>
-    /// Whether to generate the return statement
-    /// </summary>
-    public bool GenerateReturnStatement { get; set; } = true;
-
-    /// <summary>
-    /// Custom class name for the generated code (null for default)
-    /// </summary>
-    public string? CustomClassName { get; set; }
-
-    /// <summary>
-    /// Whether to include detailed comments for each entity
-    /// </summary>
-    public bool GenerateDetailedComments { get; set; } = false;
 }

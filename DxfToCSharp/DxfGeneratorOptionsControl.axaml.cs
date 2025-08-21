@@ -35,7 +35,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateSolidsCheckBox;
     private CheckBox? _generateFacesCheckBox;
     private CheckBox? _generateWipeoutsCheckBox;
-    private CheckBox? _generateDimensionsCheckBox;
     private CheckBox? _generateLinearDimensionsCheckBox;
     private CheckBox? _generateAlignedDimensionsCheckBox;
     private CheckBox? _generateRadialDimensionsCheckBox;
@@ -113,7 +112,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
         _generateSolidsCheckBox = this.FindControl<CheckBox>("GenerateSolidEntitiesCheckBox");
         _generateFacesCheckBox = this.FindControl<CheckBox>("GenerateFace3dEntitiesCheckBox");
         _generateWipeoutsCheckBox = this.FindControl<CheckBox>("GenerateWipeoutEntitiesCheckBox");
-        _generateDimensionsCheckBox = this.FindControl<CheckBox>("GenerateDimensionEntitiesCheckBox");
         _generateLinearDimensionsCheckBox = this.FindControl<CheckBox>("GenerateLinearDimensionEntitiesCheckBox");
         _generateAlignedDimensionsCheckBox = this.FindControl<CheckBox>("GenerateAlignedDimensionEntitiesCheckBox");
         _generateRadialDimensionsCheckBox = this.FindControl<CheckBox>("GenerateRadialDimensionEntitiesCheckBox");
@@ -180,7 +178,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
             _generatePolylines2DCheckBox, _generatePolylines3DCheckBox, _generateLwPolylinesCheckBox,
             _generateSplinesCheckBox, _generateTextsCheckBox, _generateMTextsCheckBox, _generatePointsCheckBox,
             _generateInsertCheckBox, _generateHatchesCheckBox, _generateSolidsCheckBox, _generateFacesCheckBox,
-            _generateWipeoutsCheckBox, _generateDimensionsCheckBox, _generateLinearDimensionsCheckBox,
+            _generateWipeoutsCheckBox, _generateLinearDimensionsCheckBox,
             _generateAlignedDimensionsCheckBox, _generateRadialDimensionsCheckBox, _generateDiametricDimensionsCheckBox,
             _generateAngular2LineDimensionsCheckBox, _generateAngular3PointDimensionsCheckBox, _generateOrdinateDimensionsCheckBox,
             _generateLeadersCheckBox, _generateMlinesCheckBox, _generateRaysCheckBox, _generateXlinesCheckBox,
@@ -375,7 +373,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
                 _generatePolylines2DCheckBox, _generatePolylines3DCheckBox, _generateLwPolylinesCheckBox,
                 _generateSplinesCheckBox, _generateTextsCheckBox, _generateMTextsCheckBox, _generatePointsCheckBox,
                 _generateInsertCheckBox, _generateHatchesCheckBox, _generateSolidsCheckBox, _generateFacesCheckBox,
-                _generateWipeoutsCheckBox, _generateDimensionsCheckBox, _generateLinearDimensionsCheckBox,
+                _generateWipeoutsCheckBox, _generateLinearDimensionsCheckBox,
                 _generateAlignedDimensionsCheckBox, _generateRadialDimensionsCheckBox, _generateDiametricDimensionsCheckBox,
                 _generateAngular2LineDimensionsCheckBox, _generateAngular3PointDimensionsCheckBox, _generateOrdinateDimensionsCheckBox,
                 _generateLeadersCheckBox, _generateMlinesCheckBox, _generateRaysCheckBox, _generateXlinesCheckBox,
@@ -416,10 +414,10 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = isChecked; _generateLayoutsCheckBox.IsEnabled = isChecked; }
             if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = isChecked; _generateImageDefinitionsCheckBox.IsEnabled = isChecked; }
             if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = isChecked; _generateUnderlayDefinitionsCheckBox.IsEnabled = isChecked; }
-            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = false; _generateMLineEntitiesCheckBox.IsEnabled = true; }
+            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = false; _generateMLineEntitiesCheckBox.IsEnabled = isChecked; }
             if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = isChecked; _generateXRecordObjectsCheckBox.IsEnabled = isChecked; }
             if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = isChecked; _generateDictionaryObjectsCheckBox.IsEnabled = isChecked; }
-            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = false; _generateRasterVariablesObjectsCheckBox.IsEnabled = true; }
+            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = false; _generateRasterVariablesObjectsCheckBox.IsEnabled = isChecked; }
         }
         finally
         {
