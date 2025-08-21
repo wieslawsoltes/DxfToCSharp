@@ -7,11 +7,11 @@ namespace DxfToCSharp;
 
 public partial class DxfGeneratorOptionsControl : UserControl
 {
-    // Options UI controls
     private CheckBox? _generateHeaderCheckBox;
     private CheckBox? _generateHeaderVariablesCheckBox;
     private CheckBox? _generateUsingStatementsCheckBox;
     private CheckBox? _generateDetailedCommentsCheckBox;
+    private CheckBox? _generateTablesCheckBox;
     private CheckBox? _generateLayersCheckBox;
     private CheckBox? _generateLinetypesCheckBox;
     private CheckBox? _generateTextStylesCheckBox;
@@ -57,8 +57,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateViewportsCheckBox;
     private CheckBox? _generateSaveCommentCheckBox;
     private CheckBox? _generateReturnStatementCheckBox;
-        
-    // Objects section checkboxes
     private CheckBox? _generateObjectsCheckBox;
     private CheckBox? _generateGroupsCheckBox;
     private CheckBox? _generateLayoutsCheckBox;
@@ -69,10 +67,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
     private CheckBox? _generateDictionaryObjectsCheckBox;
     private CheckBox? _generateRasterVariablesObjectsCheckBox;
     private bool _isHandlingEvents = true;
-        
-    /// <summary>
-    /// Event raised when options are changed
-    /// </summary>
+
     public event EventHandler<OptionsChangedEventArgs>? OptionsChanged;
         
     public DxfGeneratorOptionsControl()
@@ -89,6 +84,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
         _generateHeaderVariablesCheckBox = this.FindControl<CheckBox>("GenerateHeaderVariablesCheckBox");
         _generateUsingStatementsCheckBox = this.FindControl<CheckBox>("GenerateUsingStatementsCheckBox");
         _generateDetailedCommentsCheckBox = this.FindControl<CheckBox>("GenerateDetailedCommentsCheckBox");
+        _generateTablesCheckBox = this.FindControl<CheckBox>("GenerateTablesCheckBox");
         _generateLayersCheckBox = this.FindControl<CheckBox>("GenerateLayersCheckBox");
         _generateLinetypesCheckBox = this.FindControl<CheckBox>("GenerateLinetypesCheckBox");
         _generateTextStylesCheckBox = this.FindControl<CheckBox>("GenerateTextStylesCheckBox");
@@ -162,6 +158,13 @@ public partial class DxfGeneratorOptionsControl : UserControl
             _generateObjectsCheckBox.Checked += OnObjectsCheckBoxChanged;
             _generateObjectsCheckBox.Unchecked += OnObjectsCheckBoxChanged;
         }
+            
+        // Set up event handler for master tables checkbox
+        if (_generateTablesCheckBox != null)
+        {
+            _generateTablesCheckBox.Checked += OnTablesCheckBoxChanged;
+            _generateTablesCheckBox.Unchecked += OnTablesCheckBoxChanged;
+        }
                 
         // Set up event handlers for all option checkboxes to trigger options changed event
         SetupOptionEventHandlers();
@@ -172,7 +175,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
         var checkboxes = new[]
         {
             _generateHeaderCheckBox, _generateHeaderVariablesCheckBox, _generateUsingStatementsCheckBox,
-            _generateLinetypesCheckBox, _generateTextStylesCheckBox, _generateBlocksCheckBox,
+            _generateTablesCheckBox, _generateLinetypesCheckBox, _generateTextStylesCheckBox, _generateBlocksCheckBox,
             _generateDimensionStylesCheckBox, _generateMLineStylesCheckBox, _generateEntitiesCheckBox,
             _generateLinesCheckBox, _generateArcsCheckBox, _generateCirclesCheckBox, _generateEllipsesCheckBox,
             _generatePolylines2DCheckBox, _generatePolylines3DCheckBox, _generateLwPolylinesCheckBox,
@@ -213,11 +216,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
         var options = GetOptionsFromUI();
         OptionsChanged?.Invoke(this, new OptionsChangedEventArgs(options));
     }
-        
-    /// <summary>
-    /// Gets the current options from the UI controls
-    /// </summary>
-    /// <returns>The current DxfCodeGenerationOptions</returns>
+
     public DxfCodeGenerationOptions GetOptionsFromUI()
     {
         return new DxfCodeGenerationOptions
@@ -232,7 +231,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
             GenerateBlocks = _generateBlocksCheckBox?.IsChecked ?? true,
             GenerateDimensionStyles = _generateDimensionStylesCheckBox?.IsChecked ?? true,
             GenerateMLineStyles = _generateMLineStylesCheckBox?.IsChecked ?? true,
-            GenerateObjects = _generateObjectsCheckBox?.IsChecked ?? true,
             GenerateGroupObjects = _generateGroupsCheckBox?.IsChecked ?? true,
             GenerateLayoutObjects = _generateLayoutsCheckBox?.IsChecked ?? true,
             GenerateImageDefinitionObjects = _generateImageDefinitionsCheckBox?.IsChecked ?? true,
@@ -278,11 +276,7 @@ public partial class DxfGeneratorOptionsControl : UserControl
             GenerateReturnStatement = _generateReturnStatementCheckBox?.IsChecked ?? true
         };
     }
-        
-    /// <summary>
-    /// Sets all options in the UI from the provided options object
-    /// </summary>
-    /// <param name="options">The options to set</param>
+
     public void SetAllOptions(DxfCodeGenerationOptions options)
     {
         var wasHandlingEvents = _isHandlingEvents;
@@ -300,7 +294,15 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateBlocksCheckBox != null) _generateBlocksCheckBox.IsChecked = options.GenerateBlocks;
             if (_generateDimensionStylesCheckBox != null) _generateDimensionStylesCheckBox.IsChecked = options.GenerateDimensionStyles;
             if (_generateMLineStylesCheckBox != null) _generateMLineStylesCheckBox.IsChecked = options.GenerateMLineStyles;
-            if (_generateObjectsCheckBox != null) _generateObjectsCheckBox.IsChecked = options.GenerateObjects;
+
+            var allTablesEnabled = options.GenerateLayers && options.GenerateLinetypes && options.GenerateTextStyles && 
+                                   options.GenerateBlocks && options.GenerateDimensionStyles && options.GenerateMLineStyles;
+            if (_generateTablesCheckBox != null) _generateTablesCheckBox.IsChecked = allTablesEnabled;
+            
+            var allObjectsEnabled = options.GenerateGroupObjects && options.GenerateLayoutObjects &&
+                                   options.GenerateImageDefinitionObjects && options.GenerateUnderlayDefinitionObjects &&
+                                   options.GenerateXRecordObjects && options.GenerateDictionaryObjects && options.GenerateRasterVariablesObjects;
+            if (_generateObjectsCheckBox != null) _generateObjectsCheckBox.IsChecked = allObjectsEnabled;
             if (_generateGroupsCheckBox != null) _generateGroupsCheckBox.IsChecked = options.GenerateGroupObjects;
             if (_generateLayoutsCheckBox != null) _generateLayoutsCheckBox.IsChecked = options.GenerateLayoutObjects;
             if (_generateImageDefinitionsCheckBox != null) _generateImageDefinitionsCheckBox.IsChecked = options.GenerateImageDefinitionObjects;
@@ -342,6 +344,21 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateTracesCheckBox != null) _generateTracesCheckBox.IsChecked = options.GenerateTraceEntities;
             if (_generateUnderlaysCheckBox != null) _generateUnderlaysCheckBox.IsChecked = options.GenerateUnderlayEntities;
             if (_generateViewportsCheckBox != null) _generateViewportsCheckBox.IsChecked = options.GenerateViewportEntities;
+            
+            var allEntitiesEnabled = options.GenerateLineEntities && options.GenerateArcEntities && options.GenerateCircleEntities &&
+                                    options.GenerateEllipseEntities && options.GeneratePolylineEntities && options.GenerateSplineEntities &&
+                                    options.GenerateTextEntities && options.GenerateMTextEntities && options.GeneratePointEntities &&
+                                    options.GenerateInsertEntities && options.GenerateHatchEntities && options.GenerateSolidEntities &&
+                                    options.GenerateFace3dEntities && options.GenerateWipeoutEntities && options.GenerateLinearDimensionEntities &&
+                                    options.GenerateAlignedDimensionEntities && options.GenerateRadialDimensionEntities && options.GenerateDiametricDimensionEntities &&
+                                    options.GenerateAngular2LineDimensionEntities && options.GenerateAngular3PointDimensionEntities && options.GenerateOrdinateDimensionEntities &&
+                                    options.GenerateLeaderEntities && options.GenerateMLineEntities && options.GenerateRayEntities &&
+                                    options.GenerateXLineEntities && options.GenerateImageEntities && options.GenerateMeshEntities &&
+                                    options.GeneratePolyfaceMeshEntities && options.GeneratePolygonMeshEntities && options.GenerateShapeEntities &&
+                                    options.GenerateToleranceEntities && options.GenerateTraceEntities && options.GenerateUnderlayEntities &&
+                                    options.GenerateViewportEntities;
+            if (_generateEntitiesCheckBox != null) _generateEntitiesCheckBox.IsChecked = allEntitiesEnabled;
+            
             if (_generateSaveCommentCheckBox != null) _generateSaveCommentCheckBox.IsChecked = options.GenerateSaveComment;
             if (_generateReturnStatementCheckBox != null) _generateReturnStatementCheckBox.IsChecked = options.GenerateReturnStatement;
         }
@@ -414,10 +431,36 @@ public partial class DxfGeneratorOptionsControl : UserControl
             if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = isChecked; _generateLayoutsCheckBox.IsEnabled = isChecked; }
             if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = isChecked; _generateImageDefinitionsCheckBox.IsEnabled = isChecked; }
             if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = isChecked; _generateUnderlayDefinitionsCheckBox.IsEnabled = isChecked; }
-            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = false; _generateMLineEntitiesCheckBox.IsEnabled = isChecked; }
+            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = isChecked; _generateMLineEntitiesCheckBox.IsEnabled = isChecked; }
             if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = isChecked; _generateXRecordObjectsCheckBox.IsEnabled = isChecked; }
             if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = isChecked; _generateDictionaryObjectsCheckBox.IsEnabled = isChecked; }
-            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = false; _generateRasterVariablesObjectsCheckBox.IsEnabled = isChecked; }
+            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = isChecked; _generateRasterVariablesObjectsCheckBox.IsEnabled = isChecked; }
+        }
+        finally
+        {
+            _isHandlingEvents = wasHandlingEvents;
+        }
+            
+        // Always raise options changed event after changing checkbox states
+        RaiseOptionsChanged();
+    }
+        
+    private void OnTablesCheckBoxChanged(object? sender, RoutedEventArgs e)
+    {
+        var wasHandlingEvents = _isHandlingEvents;
+        _isHandlingEvents = false;
+            
+        try
+        {
+            var isChecked = _generateTablesCheckBox?.IsChecked ?? false;
+                
+            // Update all table checkboxes based on master checkbox state
+            if (_generateLayersCheckBox != null) { _generateLayersCheckBox.IsChecked = isChecked; _generateLayersCheckBox.IsEnabled = isChecked; }
+            if (_generateLinetypesCheckBox != null) { _generateLinetypesCheckBox.IsChecked = isChecked; _generateLinetypesCheckBox.IsEnabled = isChecked; }
+            if (_generateTextStylesCheckBox != null) { _generateTextStylesCheckBox.IsChecked = isChecked; _generateTextStylesCheckBox.IsEnabled = isChecked; }
+            if (_generateBlocksCheckBox != null) { _generateBlocksCheckBox.IsChecked = isChecked; _generateBlocksCheckBox.IsEnabled = isChecked; }
+            if (_generateDimensionStylesCheckBox != null) { _generateDimensionStylesCheckBox.IsChecked = isChecked; _generateDimensionStylesCheckBox.IsEnabled = isChecked; }
+            if (_generateMLineStylesCheckBox != null) { _generateMLineStylesCheckBox.IsChecked = isChecked; _generateMLineStylesCheckBox.IsEnabled = isChecked; }
         }
         finally
         {

@@ -9,85 +9,87 @@
 
       <!-- General Code Structure -->
       <TextBlock Text="General" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Name="GenerateHeaderCheckBox" Content="Header Comment" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Using Statements" IsChecked="True"
+      <CheckBox Name="GenerateHeaderCheckBox" Content="Header Comment" Margin="0,2" />
+      <CheckBox Name="GenerateUsingStatementsCheckBox" Content="Using Statements"
                 Margin="0,2" />
-      <CheckBox Name="GenerateHeaderVariablesCheckBox" Content="Header Variables" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Detailed Comments" IsChecked="True"
+      <CheckBox Name="GenerateHeaderVariablesCheckBox" Content="Header Variables" Margin="0,2" />
+      <CheckBox Name="GenerateDetailedCommentsCheckBox" Content="Detailed Comments"
                 Margin="0,2" />
-      <CheckBox Name="GenerateSaveCommentCheckBox" Content="Save Comment" IsChecked="True"
+      <CheckBox Name="GenerateSaveCommentCheckBox" Content="Save Comment"
                 Margin="0,2" />
-      <CheckBox Name="GenerateReturnStatementCheckBox" Content="Return Statement" IsChecked="True"
+      <CheckBox Name="GenerateReturnStatementCheckBox" Content="Return Statement"
                 Margin="0,2" />
 
-      <TextBlock Text="Tables" FontWeight="Bold" Margin="0,0,0,5" />
-      <CheckBox Name="GenerateLayersCheckBox" Content="Layers" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateLinetypesCheckBox" Content="Linetypes" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateTextStylesCheckBox" Content="Text Styles" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateBlocksCheckBox" Content="Blocks" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Dimension Styles" IsChecked="True" Margin="0,2" />
-      <CheckBox Name="GenerateMLineStylesCheckBox" Content="MLine Styles" IsChecked="True" Margin="0,2" />
+      <TextBlock Text="Tables" FontWeight="Bold" Margin="0,15,0,5" />
+      <CheckBox Name="GenerateTablesCheckBox" Content="All Tables" Margin="0,2"
+                FontWeight="Bold" />
+      <CheckBox Name="GenerateLayersCheckBox" Content="Layers" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateLinetypesCheckBox" Content="Linetypes" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateTextStylesCheckBox" Content="Text Styles" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateBlocksCheckBox" Content="Blocks" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateDimensionStylesCheckBox" Content="Dimension Styles" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateMLineStylesCheckBox" Content="MLine Styles" Margin="20,2,0,2" />
 
       <TextBlock Text="Objects" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Name="GenerateObjectsCheckBox" Content="All Objects" IsChecked="True" Margin="0,2"
+      <CheckBox Name="GenerateObjectsCheckBox" Content="All Objects" Margin="0,2"
                 FontWeight="Bold" />
-      <CheckBox Name="GenerateGroupsCheckBox" Content="Groups" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateLayoutsCheckBox" Content="Layouts" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateImageDefinitionsCheckBox" Content="Image Definitions" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateUnderlayDefinitionsCheckBox" Content="Underlay Definitions" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateXRecordObjectsCheckBox" Content="XRecord Objects" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateDictionaryObjectsCheckBox" Content="Dictionary Objects" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateRasterVariablesObjectsCheckBox" Content="Raster Variables" IsChecked="True" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateGroupsCheckBox" Content="Groups" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateLayoutsCheckBox" Content="Layouts" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateImageDefinitionsCheckBox" Content="Image Definitions" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateUnderlayDefinitionsCheckBox" Content="Underlay Definitions" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateXRecordObjectsCheckBox" Content="XRecord Objects" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateDictionaryObjectsCheckBox" Content="Dictionary Objects" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateRasterVariablesObjectsCheckBox" Content="Raster Variables" Margin="20,2,0,2" />
 
       <TextBlock Text="Entities" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Name="GenerateEntitiesCheckBox" Content="All Entities" IsChecked="True" Margin="0,2"
+      <CheckBox Name="GenerateEntitiesCheckBox" Content="All Entities" Margin="0,2"
                 FontWeight="Bold" />
 
-      <CheckBox Name="GenerateLineEntitiesCheckBox" Content="Lines" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateArcEntitiesCheckBox" Content="Arcs" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateCircleEntitiesCheckBox" Content="Circles" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateEllipseEntitiesCheckBox" Content="Ellipses" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GeneratePolylineEntitiesCheckBox" Content="Polylines" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateSplineEntitiesCheckBox" Content="Splines" IsChecked="True" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateLineEntitiesCheckBox" Content="Lines" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateArcEntitiesCheckBox" Content="Arcs" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateCircleEntitiesCheckBox" Content="Circles" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateEllipseEntitiesCheckBox" Content="Ellipses" Margin="20,2,0,2" />
+      <CheckBox Name="GeneratePolylineEntitiesCheckBox" Content="Polylines" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateSplineEntitiesCheckBox" Content="Splines" Margin="20,2,0,2" />
 
-      <CheckBox Name="GenerateTextEntitiesCheckBox" Content="Text" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateMTextEntitiesCheckBox" Content="MText" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GeneratePointEntitiesCheckBox" Content="Points" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateInsertEntitiesCheckBox" Content="Inserts (Blocks)" IsChecked="True"
+      <CheckBox Name="GenerateTextEntitiesCheckBox" Content="Text" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateMTextEntitiesCheckBox" Content="MText" Margin="20,2,0,2" />
+      <CheckBox Name="GeneratePointEntitiesCheckBox" Content="Points" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateInsertEntitiesCheckBox" Content="Inserts (Blocks)"
                 Margin="20,2,0,2" />
 
-      <CheckBox Name="GenerateSolidEntitiesCheckBox" Content="Solids" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateFace3dEntitiesCheckBox" Content="3D Faces" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateWipeoutEntitiesCheckBox" Content="Wipeouts" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateHatchEntitiesCheckBox" Content="Hatches" IsChecked="True" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateSolidEntitiesCheckBox" Content="Solids" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateFace3dEntitiesCheckBox" Content="3D Faces" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateWipeoutEntitiesCheckBox" Content="Wipeouts" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateHatchEntitiesCheckBox" Content="Hatches" Margin="20,2,0,2" />
 
-      <CheckBox Name="GenerateLinearDimensionEntitiesCheckBox" Content="Linear Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateLinearDimensionEntitiesCheckBox" Content="Linear Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateAlignedDimensionEntitiesCheckBox" Content="Aligned Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateAlignedDimensionEntitiesCheckBox" Content="Aligned Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateRadialDimensionEntitiesCheckBox" Content="Radial Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateRadialDimensionEntitiesCheckBox" Content="Radial Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateDiametricDimensionEntitiesCheckBox" Content="Diametric Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateDiametricDimensionEntitiesCheckBox" Content="Diametric Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateAngular2LineDimensionEntitiesCheckBox" Content="Angular 2-Line Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateAngular2LineDimensionEntitiesCheckBox" Content="Angular 2-Line Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateAngular3PointDimensionEntitiesCheckBox" Content="Angular 3-Point Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateAngular3PointDimensionEntitiesCheckBox" Content="Angular 3-Point Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateOrdinateDimensionEntitiesCheckBox" Content="Ordinate Dimensions" IsChecked="True"
+      <CheckBox Name="GenerateOrdinateDimensionEntitiesCheckBox" Content="Ordinate Dimensions"
                 Margin="20,2,0,2" />
-      <CheckBox Name="GenerateLeaderEntitiesCheckBox" Content="Leaders" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLines" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateRayEntitiesCheckBox" Content="Rays" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateXLineEntitiesCheckBox" Content="XLines" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateImageEntitiesCheckBox" Content="Images" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateMeshEntitiesCheckBox" Content="Meshes" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GeneratePolyfaceMeshEntitiesCheckBox" Content="Polyface Meshes" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GeneratePolygonMeshEntitiesCheckBox" Content="Polygon Meshes" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateShapeEntitiesCheckBox" Content="Shapes" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateToleranceEntitiesCheckBox" Content="Tolerances" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateTraceEntitiesCheckBox" Content="Traces" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateUnderlayEntitiesCheckBox" Content="Underlays" IsChecked="True" Margin="20,2,0,2" />
-      <CheckBox Name="GenerateViewportEntitiesCheckBox" Content="Viewports" IsChecked="True" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateLeaderEntitiesCheckBox" Content="Leaders" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateMLineEntitiesCheckBox" Content="MLines" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateRayEntitiesCheckBox" Content="Rays" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateXLineEntitiesCheckBox" Content="XLines" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateImageEntitiesCheckBox" Content="Images" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateMeshEntitiesCheckBox" Content="Meshes" Margin="20,2,0,2" />
+      <CheckBox Name="GeneratePolyfaceMeshEntitiesCheckBox" Content="Polyface Meshes" Margin="20,2,0,2" />
+      <CheckBox Name="GeneratePolygonMeshEntitiesCheckBox" Content="Polygon Meshes" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateShapeEntitiesCheckBox" Content="Shapes" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateToleranceEntitiesCheckBox" Content="Tolerances" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateTraceEntitiesCheckBox" Content="Traces" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateUnderlayEntitiesCheckBox" Content="Underlays" Margin="20,2,0,2" />
+      <CheckBox Name="GenerateViewportEntitiesCheckBox" Content="Viewports" Margin="20,2,0,2" />
 
     </StackPanel>
   </ScrollViewer>

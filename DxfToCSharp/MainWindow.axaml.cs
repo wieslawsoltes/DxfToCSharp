@@ -85,6 +85,7 @@ public partial class MainWindow : Window
         // Set up event handler for options changes
         if (_optionsControl != null)
         {
+            _optionsControl.SetAllOptions(new DxfCodeGenerationOptions());
             _optionsControl.OptionsChanged += OnOptionsChanged;
         }
             

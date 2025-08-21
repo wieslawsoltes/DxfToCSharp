@@ -23,7 +23,7 @@ public class DxfCodeGenerationOptions
     /// <summary>
     /// Whether to include detailed comments for each entity
     /// </summary>
-    public bool GenerateDetailedComments { get; set; } = false;
+    public bool GenerateDetailedComments { get; set; }
 
     /// <summary>
     /// Whether to generate header comments with source file info and timestamp
@@ -81,11 +81,6 @@ public class DxfCodeGenerationOptions
     public bool GenerateVPorts { get; set; } = true;
 
     /// <summary>
-    /// Whether to generate Objects section
-    /// </summary>
-    public bool GenerateObjects { get; set; } = true;
-
-    /// <summary>
     /// Whether to generate Group objects
     /// </summary>
     public bool GenerateGroupObjects { get; set; } = true;
@@ -119,11 +114,6 @@ public class DxfCodeGenerationOptions
     /// Whether to generate RasterVariables objects
     /// </summary>
     public bool GenerateRasterVariablesObjects { get; set; } = true;
-
-    /// <summary>
-    /// Whether to generate entity objects
-    /// </summary>
-    public bool GenerateEntities { get; set; } = true;
 
     /// <summary>
     /// Whether to generate line entities
