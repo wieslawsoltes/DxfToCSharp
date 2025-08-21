@@ -25,84 +25,11 @@ public partial class MainWindow : Window
     private readonly FoldingManager? _leftFoldingManager;
     private readonly FoldingManager? _rightFoldingManager;
     private readonly TextBox? _errorsTextBox;
-    private TabControl? _leftTabControl;
     private readonly TabControl? _rightTabControl;
     private readonly WindowNotificationManager? _notificationManager;
-        
-    // Options UI controls
-    private readonly CheckBox? _generateHeaderCheckBox;
-    private readonly CheckBox? _generateHeaderVariablesCheckBox;
-    private readonly CheckBox? _generateUsingStatementsCheckBox;
-    private readonly CheckBox? _generateDetailedCommentsCheckBox;
-    private readonly CheckBox? _groupEntitiesByTypeCheckBox;
-    private readonly CheckBox? _generateLayersCheckBox;
-    private readonly CheckBox? _generateLinetypesCheckBox;
-    private readonly CheckBox? _generateTextStylesCheckBox;
-    private readonly CheckBox? _generateBlocksCheckBox;
-    private readonly CheckBox? _generateDimensionStylesCheckBox;
-    private readonly CheckBox? _generateMLineStylesCheckBox;
-    private readonly CheckBox? _generateEntitiesCheckBox;
-    private readonly CheckBox? _generateLinesCheckBox;
-    private readonly CheckBox? _generateArcsCheckBox;
-    private readonly CheckBox? _generateCirclesCheckBox;
-    private readonly CheckBox? _generateEllipsesCheckBox;
-    private readonly CheckBox? _generatePolylines2DCheckBox;
-    private readonly CheckBox? _generatePolylines3DCheckBox;
-    private readonly CheckBox? _generateLwPolylinesCheckBox;
-    private readonly CheckBox? _generateSplinesCheckBox;
-    private readonly CheckBox? _generateTextsCheckBox;
-    private readonly CheckBox? _generateMTextsCheckBox;
-    private readonly CheckBox? _generatePointsCheckBox;
-    private readonly CheckBox? _generateInsertCheckBox;
-    private readonly CheckBox? _generateHatchesCheckBox;
-    private readonly CheckBox? _generateSolidsCheckBox;
-    private readonly CheckBox? _generateFacesCheckBox;
-    private readonly CheckBox? _generateWipeoutsCheckBox;
-    private readonly CheckBox? _generateDimensionsCheckBox;
-    private readonly CheckBox? _generateLinearDimensionsCheckBox;
-    private readonly CheckBox? _generateAlignedDimensionsCheckBox;
-    private readonly CheckBox? _generateRadialDimensionsCheckBox;
-    private readonly CheckBox? _generateDiametricDimensionsCheckBox;
-    private readonly CheckBox? _generateAngular2LineDimensionsCheckBox;
-    private readonly CheckBox? _generateAngular3PointDimensionsCheckBox;
-    private readonly CheckBox? _generateOrdinateDimensionsCheckBox;
-    private readonly CheckBox? _generateLeadersCheckBox;
-    private readonly CheckBox? _generateMlinesCheckBox;
-    private readonly CheckBox? _generateRaysCheckBox;
-    private readonly CheckBox? _generateXlinesCheckBox;
-    private readonly CheckBox? _generateImagesCheckBox;
-    private readonly CheckBox? _generateMeshesCheckBox;
-    private readonly CheckBox? _generatePolyfaceMeshesCheckBox;
-    private readonly CheckBox? _generatePolygonMeshesCheckBox;
-    private readonly CheckBox? _generateShapesCheckBox;
-    private readonly CheckBox? _generateTolerancesCheckBox;
-    private readonly CheckBox? _generateTracesCheckBox;
-    private readonly CheckBox? _generateUnderlaysCheckBox;
-    private readonly CheckBox? _generateViewportsCheckBox;
-    private readonly CheckBox? _generateSaveCommentCheckBox;
-    private readonly CheckBox? _generateReturnStatementCheckBox;
-    
-    // Objects section checkboxes
-    private readonly CheckBox? _generateObjectsCheckBox;
-    private readonly CheckBox? _generateGroupsCheckBox;
-    private readonly CheckBox? _generateLayoutsCheckBox;
-    private readonly CheckBox? _generateImageDefinitionsCheckBox;
-    private readonly CheckBox? _generateUnderlayDefinitionsCheckBox;
-    private readonly CheckBox? _generateMLineEntitiesCheckBox;
-    private readonly CheckBox? _generateXRecordObjectsCheckBox;
-    private readonly CheckBox? _generateDictionaryObjectsCheckBox;
-    private readonly CheckBox? _generateRasterVariablesObjectsCheckBox;
-    
-    // New ComboBox for presets
-    private readonly ComboBox? _presetComboBox;
-    
-    // Track loaded DXF document and path for auto-regeneration
+    private readonly DxfGeneratorOptionsControl? _optionsControl;
     private DxfDocument? _loadedDocument;
     private string? _loadedFilePath;
-    
-    // Flag to prevent recursive event handling during programmatic checkbox changes
-    private bool _isHandlingEvents = false;
-    
 
     public MainWindow()
     {
@@ -113,7 +40,7 @@ public partial class MainWindow : Window
         _leftTextBox = this.FindControl<TextEditor>("LeftTextBox");
         _rightTextBox = this.FindControl<TextEditor>("RightTextBox");
         _errorsTextBox = this.FindControl<TextBox>("ErrorsTextBox");
-        _leftTabControl = this.FindControl<TabControl>("LeftTabControl");
+        this.FindControl<TabControl>("LeftTabControl");
         _rightTabControl = this.FindControl<TabControl>("RightTabControl");
             
         // Initialize notification manager
@@ -152,104 +79,34 @@ public partial class MainWindow : Window
             UpdateRightFolding();
         }
             
-        // Initialize options UI controls
-        _generateHeaderCheckBox = this.FindControl<CheckBox>("GenerateHeaderCheckBox");
-        _generateHeaderVariablesCheckBox = this.FindControl<CheckBox>("GenerateHeaderVariablesCheckBox");
-        _generateUsingStatementsCheckBox = this.FindControl<CheckBox>("GenerateUsingStatementsCheckBox");
-        _generateDetailedCommentsCheckBox = this.FindControl<CheckBox>("GenerateDetailedCommentsCheckBox");
-        _groupEntitiesByTypeCheckBox = this.FindControl<CheckBox>("GroupEntitiesByTypeCheckBox");
-        _generateLayersCheckBox = this.FindControl<CheckBox>("GenerateLayersCheckBox");
-        _generateLinetypesCheckBox = this.FindControl<CheckBox>("GenerateLinetypesCheckBox");
-        _generateTextStylesCheckBox = this.FindControl<CheckBox>("GenerateTextStylesCheckBox");
-        _generateBlocksCheckBox = this.FindControl<CheckBox>("GenerateBlocksCheckBox");
-        _generateDimensionStylesCheckBox = this.FindControl<CheckBox>("GenerateDimensionStylesCheckBox");
-        _generateMLineStylesCheckBox = this.FindControl<CheckBox>("GenerateMLineStylesCheckBox");
-        _generateEntitiesCheckBox = this.FindControl<CheckBox>("GenerateEntitiesCheckBox");
-        _generateLinesCheckBox = this.FindControl<CheckBox>("GenerateLineEntitiesCheckBox");
-        _generateArcsCheckBox = this.FindControl<CheckBox>("GenerateArcEntitiesCheckBox");
-        _generateCirclesCheckBox = this.FindControl<CheckBox>("GenerateCircleEntitiesCheckBox");
-        _generateEllipsesCheckBox = this.FindControl<CheckBox>("GenerateEllipseEntitiesCheckBox");
-        _generatePolylines2DCheckBox = this.FindControl<CheckBox>("GeneratePolylineEntitiesCheckBox");
-        _generatePolylines3DCheckBox = this.FindControl<CheckBox>("GeneratePolylineEntitiesCheckBox");
-        _generateLwPolylinesCheckBox = this.FindControl<CheckBox>("GeneratePolylineEntitiesCheckBox");
-        _generateSplinesCheckBox = this.FindControl<CheckBox>("GenerateSplineEntitiesCheckBox");
-        _generateTextsCheckBox = this.FindControl<CheckBox>("GenerateTextEntitiesCheckBox");
-        _generateMTextsCheckBox = this.FindControl<CheckBox>("GenerateMTextEntitiesCheckBox");
-        _generatePointsCheckBox = this.FindControl<CheckBox>("GeneratePointEntitiesCheckBox");
-        _generateInsertCheckBox = this.FindControl<CheckBox>("GenerateInsertEntitiesCheckBox");
-        _generateHatchesCheckBox = this.FindControl<CheckBox>("GenerateHatchEntitiesCheckBox");
-        _generateSolidsCheckBox = this.FindControl<CheckBox>("GenerateSolidEntitiesCheckBox");
-        _generateFacesCheckBox = this.FindControl<CheckBox>("GenerateFace3dEntitiesCheckBox");
-        _generateWipeoutsCheckBox = this.FindControl<CheckBox>("GenerateWipeoutEntitiesCheckBox");
-        _generateDimensionsCheckBox = this.FindControl<CheckBox>("GenerateDimensionEntitiesCheckBox");
-        _generateLinearDimensionsCheckBox = this.FindControl<CheckBox>("GenerateLinearDimensionEntitiesCheckBox");
-        _generateAlignedDimensionsCheckBox = this.FindControl<CheckBox>("GenerateAlignedDimensionEntitiesCheckBox");
-        _generateRadialDimensionsCheckBox = this.FindControl<CheckBox>("GenerateRadialDimensionEntitiesCheckBox");
-        _generateDiametricDimensionsCheckBox = this.FindControl<CheckBox>("GenerateDiametricDimensionEntitiesCheckBox");
-        _generateAngular2LineDimensionsCheckBox = this.FindControl<CheckBox>("GenerateAngular2LineDimensionEntitiesCheckBox");
-        _generateAngular3PointDimensionsCheckBox = this.FindControl<CheckBox>("GenerateAngular3PointDimensionEntitiesCheckBox");
-        _generateOrdinateDimensionsCheckBox = this.FindControl<CheckBox>("GenerateOrdinateDimensionEntitiesCheckBox");
-        _generateLeadersCheckBox = this.FindControl<CheckBox>("GenerateLeaderEntitiesCheckBox");
-        _generateMlinesCheckBox = this.FindControl<CheckBox>("GenerateMLineEntitiesCheckBox");
-        _generateRaysCheckBox = this.FindControl<CheckBox>("GenerateRayEntitiesCheckBox");
-        _generateXlinesCheckBox = this.FindControl<CheckBox>("GenerateXLineEntitiesCheckBox");
-        _generateImagesCheckBox = this.FindControl<CheckBox>("GenerateImageEntitiesCheckBox");
-        _generateMeshesCheckBox = this.FindControl<CheckBox>("GenerateMeshEntitiesCheckBox");
-        _generatePolyfaceMeshesCheckBox = this.FindControl<CheckBox>("GeneratePolyfaceMeshEntitiesCheckBox");
-        _generatePolygonMeshesCheckBox = this.FindControl<CheckBox>("GeneratePolygonMeshEntitiesCheckBox");
-        _generateShapesCheckBox = this.FindControl<CheckBox>("GenerateShapeEntitiesCheckBox");
-        _generateTolerancesCheckBox = this.FindControl<CheckBox>("GenerateToleranceEntitiesCheckBox");
-        _generateTracesCheckBox = this.FindControl<CheckBox>("GenerateTraceEntitiesCheckBox");
-        _generateUnderlaysCheckBox = this.FindControl<CheckBox>("GenerateUnderlayEntitiesCheckBox");
-        _generateViewportsCheckBox = this.FindControl<CheckBox>("GenerateViewportEntitiesCheckBox");
-        _generateSaveCommentCheckBox = this.FindControl<CheckBox>("GenerateSaveCommentCheckBox");
-        _generateReturnStatementCheckBox = this.FindControl<CheckBox>("GenerateReturnStatementCheckBox");
+        // Initialize options control
+        _optionsControl = this.FindControl<DxfGeneratorOptionsControl>("OptionsControl");
         
-        // Initialize Objects section checkboxes
-        _generateObjectsCheckBox = this.FindControl<CheckBox>("GenerateObjectsCheckBox");
-        _generateGroupsCheckBox = this.FindControl<CheckBox>("GenerateGroupsCheckBox");
-        _generateLayoutsCheckBox = this.FindControl<CheckBox>("GenerateLayoutsCheckBox");
-        _generateImageDefinitionsCheckBox = this.FindControl<CheckBox>("GenerateImageDefinitionsCheckBox");
-        _generateUnderlayDefinitionsCheckBox = this.FindControl<CheckBox>("GenerateUnderlayDefinitionsCheckBox");
-        _generateMLineEntitiesCheckBox = this.FindControl<CheckBox>("GenerateMLineEntitiesCheckBox");
-        _generateXRecordObjectsCheckBox = this.FindControl<CheckBox>("GenerateXRecordObjectsCheckBox");
-        _generateDictionaryObjectsCheckBox = this.FindControl<CheckBox>("GenerateDictionaryObjectsCheckBox");
-        _generateRasterVariablesObjectsCheckBox = this.FindControl<CheckBox>("GenerateRasterVariablesObjectsCheckBox");
-            
-        // Initialize preset ComboBox
-        _presetComboBox = this.FindControl<ComboBox>("PresetComboBox");
-            
-        // Set up event handler for master entities checkbox
-        if (_generateEntitiesCheckBox != null)
+        // Set up event handler for options changes
+        if (_optionsControl != null)
         {
-            _generateEntitiesCheckBox.Checked += OnEntitiesCheckBoxChanged;
-            _generateEntitiesCheckBox.Unchecked += OnEntitiesCheckBoxChanged;
+            _optionsControl.OptionsChanged += OnOptionsChanged;
         }
-        
-        // Set up event handler for master objects checkbox
-        if (_generateObjectsCheckBox != null)
-        {
-            _generateObjectsCheckBox.Checked += OnObjectsCheckBoxChanged;
-            _generateObjectsCheckBox.Unchecked += OnObjectsCheckBoxChanged;
-        }
-            
-        // Set up event handlers for all option checkboxes to trigger auto-regeneration
-        SetupOptionEventHandlers();
             
         // Set up text editor event handler for DXF content changes
         if (_leftTextBox != null)
         {
             _leftTextBox.TextChanged += OnDxfContentChanged;
-            _leftTextBox.TextChanged += (s, e) => UpdateLeftFolding();
+            _leftTextBox.TextChanged += (_, _) => UpdateLeftFolding();
         }
             
         // Set up text editor event handler for C# code changes
         if (_rightTextBox != null)
         {
-            _rightTextBox.TextChanged += (s, e) => UpdateRightFolding();
+            _rightTextBox.TextChanged += (_, _) => UpdateRightFolding();
         }
             
         InitializeTextMate();
+    }
+    
+    private void OnOptionsChanged(object? sender, OptionsChangedEventArgs e)
+    {
+        RegenerateCodeIfLoaded();
     }
         
     private async void InitializeTextMate()
@@ -418,14 +275,6 @@ public partial class MainWindow : Window
         }
     }
 
-
-
-    private void SetLeftText(string text)
-    {
-        if (_leftTextBox != null)
-            _leftTextBox.Text = text;
-    }
-
     private async void SetRightText(string text)
     {
         if (_rightTextBox != null)
@@ -517,9 +366,7 @@ public partial class MainWindow : Window
             _notificationManager.Show(notification);
         }
     }
-
-
-        
+   
     private void RegenerateCodeIfLoaded()
     {
         if (_loadedDocument != null && !string.IsNullOrEmpty(_loadedFilePath))
@@ -541,333 +388,9 @@ public partial class MainWindow : Window
 
     private DxfCodeGenerationOptions GetOptionsFromUI()
     {
-        return new DxfCodeGenerationOptions
-        {
-            GenerateHeader = _generateHeaderCheckBox?.IsChecked ?? true,
-            GenerateHeaderVariables = _generateHeaderVariablesCheckBox?.IsChecked ?? true,
-            GenerateUsingStatements = _generateUsingStatementsCheckBox?.IsChecked ?? true,
-            GenerateDetailedComments = _generateDetailedCommentsCheckBox?.IsChecked ?? false,
-            GroupEntitiesByType = _groupEntitiesByTypeCheckBox?.IsChecked ?? false,
-            GenerateLayers = _generateLayersCheckBox?.IsChecked ?? true,
-            GenerateLinetypes = _generateLinetypesCheckBox?.IsChecked ?? true,
-            GenerateTextStyles = _generateTextStylesCheckBox?.IsChecked ?? true,
-            GenerateBlocks = _generateBlocksCheckBox?.IsChecked ?? true,
-            GenerateDimensionStyles = _generateDimensionStylesCheckBox?.IsChecked ?? true,
-            GenerateMLineStyles = _generateMLineStylesCheckBox?.IsChecked ?? true,
-            GenerateObjects = _generateObjectsCheckBox?.IsChecked ?? true,
-            GenerateGroupObjects = _generateGroupsCheckBox?.IsChecked ?? true,
-            GenerateLayoutObjects = _generateLayoutsCheckBox?.IsChecked ?? true,
-            GenerateImageDefinitionObjects = _generateImageDefinitionsCheckBox?.IsChecked ?? true,
-            GenerateUnderlayDefinitionObjects = _generateUnderlayDefinitionsCheckBox?.IsChecked ?? true,
-            GenerateXRecordObjects = _generateXRecordObjectsCheckBox?.IsChecked ?? true,
-            GenerateDictionaryObjects = _generateDictionaryObjectsCheckBox?.IsChecked ?? true,
-            GenerateRasterVariablesObjects = _generateRasterVariablesObjectsCheckBox?.IsChecked ?? true,
-            GenerateLineEntities = _generateLinesCheckBox?.IsChecked ?? true,
-            GenerateArcEntities = _generateArcsCheckBox?.IsChecked ?? true,
-            GenerateCircleEntities = _generateCirclesCheckBox?.IsChecked ?? true,
-            GenerateEllipseEntities = _generateEllipsesCheckBox?.IsChecked ?? true,
-            GeneratePolylineEntities = _generatePolylines2DCheckBox?.IsChecked ?? true,
-            GenerateSplineEntities = _generateSplinesCheckBox?.IsChecked ?? true,
-            GenerateTextEntities = _generateTextsCheckBox?.IsChecked ?? true,
-            GenerateMTextEntities = _generateMTextsCheckBox?.IsChecked ?? true,
-            GeneratePointEntities = _generatePointsCheckBox?.IsChecked ?? true,
-            GenerateInsertEntities = _generateInsertCheckBox?.IsChecked ?? true,
-            GenerateHatchEntities = _generateHatchesCheckBox?.IsChecked ?? true,
-            GenerateSolidEntities = _generateSolidsCheckBox?.IsChecked ?? true,
-            GenerateFace3dEntities = _generateFacesCheckBox?.IsChecked ?? true,
-            GenerateWipeoutEntities = _generateWipeoutsCheckBox?.IsChecked ?? true,
-            GenerateLinearDimensionEntities = _generateLinearDimensionsCheckBox?.IsChecked ?? true,
-            GenerateAlignedDimensionEntities = _generateAlignedDimensionsCheckBox?.IsChecked ?? true,
-            GenerateRadialDimensionEntities = _generateRadialDimensionsCheckBox?.IsChecked ?? true,
-            GenerateDiametricDimensionEntities = _generateDiametricDimensionsCheckBox?.IsChecked ?? true,
-            GenerateAngular2LineDimensionEntities = _generateAngular2LineDimensionsCheckBox?.IsChecked ?? true,
-            GenerateAngular3PointDimensionEntities = _generateAngular3PointDimensionsCheckBox?.IsChecked ?? true,
-            GenerateOrdinateDimensionEntities = _generateOrdinateDimensionsCheckBox?.IsChecked ?? true,
-            GenerateLeaderEntities = _generateLeadersCheckBox?.IsChecked ?? true,
-            GenerateMLineEntities = _generateMlinesCheckBox?.IsChecked ?? true,
-            GenerateRayEntities = _generateRaysCheckBox?.IsChecked ?? true,
-            GenerateXLineEntities = _generateXlinesCheckBox?.IsChecked ?? true,
-            GenerateImageEntities = _generateImagesCheckBox?.IsChecked ?? true,
-            GenerateMeshEntities = _generateMeshesCheckBox?.IsChecked ?? true,
-            GeneratePolyfaceMeshEntities = _generatePolyfaceMeshesCheckBox?.IsChecked ?? true,
-            GeneratePolygonMeshEntities = _generatePolygonMeshesCheckBox?.IsChecked ?? true,
-            GenerateShapeEntities = _generateShapesCheckBox?.IsChecked ?? true,
-            GenerateToleranceEntities = _generateTolerancesCheckBox?.IsChecked ?? true,
-            GenerateTraceEntities = _generateTracesCheckBox?.IsChecked ?? true,
-            GenerateUnderlayEntities = _generateUnderlaysCheckBox?.IsChecked ?? true,
-            GenerateViewportEntities = _generateViewportsCheckBox?.IsChecked ?? true,
-            GenerateSaveComment = _generateSaveCommentCheckBox?.IsChecked ?? true,
-            GenerateReturnStatement = _generateReturnStatementCheckBox?.IsChecked ?? true
-        };
+        return _optionsControl?.GetOptionsFromUI() ?? DxfCodeGenerationOptions.CreateDefault();
     }
 
-    private void OnPresetAllClicked(object? sender, RoutedEventArgs e)
-    {
-        SetAllOptions(DxfCodeGenerationOptions.CreateDefault());
-    }
-
-    private void OnPresetEntitiesOnlyClicked(object? sender, RoutedEventArgs e)
-    {
-        SetAllOptions(DxfCodeGenerationOptions.CreateEntitiesOnly());
-    }
-
-    private void OnPresetBasicGeometryClicked(object? sender, RoutedEventArgs e)
-    {
-        SetAllOptions(DxfCodeGenerationOptions.CreateBasicGeometryOnly());
-    }
-
-    private void OnPresetResetClicked(object? sender, RoutedEventArgs e)
-    {
-        SetAllOptions(DxfCodeGenerationOptions.CreateDefault());
-        if (_presetComboBox != null)
-            _presetComboBox.SelectedIndex = 4; // Custom
-    }
-        
-    private void OnPresetSelectionChanged(object? sender, SelectionChangedEventArgs e)
-    {
-        if (_presetComboBox?.SelectedItem is ComboBoxItem selectedItem && selectedItem.Tag is string tag)
-        {
-            switch (tag)
-            {
-                case "all":
-                    SetAllOptions(DxfCodeGenerationOptions.CreateDefault());
-                    RegenerateCodeIfLoaded();
-                    break;
-                case "entities":
-                    SetAllOptions(DxfCodeGenerationOptions.CreateEntitiesOnly());
-                    RegenerateCodeIfLoaded();
-                    break;
-                case "basic":
-                    SetAllOptions(DxfCodeGenerationOptions.CreateBasicGeometryOnly());
-                    RegenerateCodeIfLoaded();
-                    break;
-                case "tables":
-                    SetAllOptions(CreateTablesOnlyOptions());
-                    RegenerateCodeIfLoaded();
-                    break;
-                case "custom":
-                    // Don't change anything for custom
-                    break;
-            }
-        }
-    }
-        
-    private DxfCodeGenerationOptions CreateTablesOnlyOptions()
-    {
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateHeader = true,
-            GenerateHeaderVariables = true,
-            GenerateUsingStatements = true,
-            GenerateDetailedComments = false,
-            GroupEntitiesByType = false,
-            GenerateLayers = true,
-            GenerateLinetypes = true,
-            GenerateTextStyles = true,
-            GenerateBlocks = true,
-            GenerateDimensionStyles = true,
-            GenerateMLineStyles = true,
-            GenerateEntities = false,
-            GenerateSaveComment = true,
-            GenerateReturnStatement = true
-        };
-        return options;
-    }
-
-    private void SetAllOptions(DxfCodeGenerationOptions options)
-    {
-        if (_generateHeaderCheckBox != null) _generateHeaderCheckBox.IsChecked = options.GenerateHeader;
-        if (_generateHeaderVariablesCheckBox != null) _generateHeaderVariablesCheckBox.IsChecked = options.GenerateHeaderVariables;
-        if (_generateUsingStatementsCheckBox != null) _generateUsingStatementsCheckBox.IsChecked = options.GenerateUsingStatements;
-        if (_generateDetailedCommentsCheckBox != null) _generateDetailedCommentsCheckBox.IsChecked = options.GenerateDetailedComments;
-        if (_groupEntitiesByTypeCheckBox != null) _groupEntitiesByTypeCheckBox.IsChecked = options.GroupEntitiesByType;
-        if (_generateLayersCheckBox != null) _generateLayersCheckBox.IsChecked = options.GenerateLayers;
-        if (_generateLinetypesCheckBox != null) _generateLinetypesCheckBox.IsChecked = options.GenerateLinetypes;
-        if (_generateTextStylesCheckBox != null) _generateTextStylesCheckBox.IsChecked = options.GenerateTextStyles;
-        if (_generateBlocksCheckBox != null) _generateBlocksCheckBox.IsChecked = options.GenerateBlocks;
-        if (_generateDimensionStylesCheckBox != null) _generateDimensionStylesCheckBox.IsChecked = options.GenerateDimensionStyles;
-        if (_generateMLineStylesCheckBox != null) _generateMLineStylesCheckBox.IsChecked = options.GenerateMLineStyles;
-        if (_generateObjectsCheckBox != null) _generateObjectsCheckBox.IsChecked = options.GenerateObjects;
-        if (_generateGroupsCheckBox != null) _generateGroupsCheckBox.IsChecked = options.GenerateGroupObjects;
-        if (_generateLayoutsCheckBox != null) _generateLayoutsCheckBox.IsChecked = options.GenerateLayoutObjects;
-        if (_generateImageDefinitionsCheckBox != null) _generateImageDefinitionsCheckBox.IsChecked = options.GenerateImageDefinitionObjects;
-        if (_generateUnderlayDefinitionsCheckBox != null) _generateUnderlayDefinitionsCheckBox.IsChecked = options.GenerateUnderlayDefinitionObjects;
-        if (_generateXRecordObjectsCheckBox != null) _generateXRecordObjectsCheckBox.IsChecked = options.GenerateXRecordObjects;
-        if (_generateDictionaryObjectsCheckBox != null) _generateDictionaryObjectsCheckBox.IsChecked = options.GenerateDictionaryObjects;
-        if (_generateRasterVariablesObjectsCheckBox != null) _generateRasterVariablesObjectsCheckBox.IsChecked = options.GenerateRasterVariablesObjects;
-        if (_generateEntitiesCheckBox != null)
-            _generateEntitiesCheckBox.IsChecked = options.GenerateEntities;
-        if (_generateLinesCheckBox != null) _generateLinesCheckBox.IsChecked = options.GenerateLineEntities;
-        if (_generateArcsCheckBox != null) _generateArcsCheckBox.IsChecked = options.GenerateArcEntities;
-        if (_generateCirclesCheckBox != null) _generateCirclesCheckBox.IsChecked = options.GenerateCircleEntities;
-        if (_generateEllipsesCheckBox != null) _generateEllipsesCheckBox.IsChecked = options.GenerateEllipseEntities;
-        if (_generatePolylines2DCheckBox != null) _generatePolylines2DCheckBox.IsChecked = options.GeneratePolylineEntities;
-        if (_generatePolylines3DCheckBox != null) _generatePolylines3DCheckBox.IsChecked = options.GeneratePolylineEntities;
-        if (_generateLwPolylinesCheckBox != null) _generateLwPolylinesCheckBox.IsChecked = options.GeneratePolylineEntities;
-        if (_generateSplinesCheckBox != null) _generateSplinesCheckBox.IsChecked = options.GenerateSplineEntities;
-        if (_generateTextsCheckBox != null) _generateTextsCheckBox.IsChecked = options.GenerateTextEntities;
-        if (_generateMTextsCheckBox != null) _generateMTextsCheckBox.IsChecked = options.GenerateMTextEntities;
-        if (_generatePointsCheckBox != null) _generatePointsCheckBox.IsChecked = options.GeneratePointEntities;
-        if (_generateInsertCheckBox != null) _generateInsertCheckBox.IsChecked = options.GenerateInsertEntities;
-        if (_generateHatchesCheckBox != null) _generateHatchesCheckBox.IsChecked = options.GenerateHatchEntities;
-        if (_generateSolidsCheckBox != null) _generateSolidsCheckBox.IsChecked = options.GenerateSolidEntities;
-        if (_generateFacesCheckBox != null) _generateFacesCheckBox.IsChecked = options.GenerateFace3dEntities;
-        if (_generateWipeoutsCheckBox != null) _generateWipeoutsCheckBox.IsChecked = options.GenerateWipeoutEntities;
-        if (_generateDimensionsCheckBox != null) _generateDimensionsCheckBox.IsChecked = options.GenerateDimensionEntities;
-        if (_generateLeadersCheckBox != null) _generateLeadersCheckBox.IsChecked = options.GenerateLeaderEntities;
-        if (_generateMlinesCheckBox != null) _generateMlinesCheckBox.IsChecked = options.GenerateMLineEntities;
-        if (_generateRaysCheckBox != null) _generateRaysCheckBox.IsChecked = options.GenerateRayEntities;
-        if (_generateXlinesCheckBox != null) _generateXlinesCheckBox.IsChecked = options.GenerateXLineEntities;
-        if (_generateImagesCheckBox != null) _generateImagesCheckBox.IsChecked = options.GenerateImageEntities;
-        if (_generateMeshesCheckBox != null) _generateMeshesCheckBox.IsChecked = options.GenerateMeshEntities;
-        if (_generatePolyfaceMeshesCheckBox != null) _generatePolyfaceMeshesCheckBox.IsChecked = options.GeneratePolyfaceMeshEntities;
-        if (_generatePolygonMeshesCheckBox != null) _generatePolygonMeshesCheckBox.IsChecked = options.GeneratePolygonMeshEntities;
-        if (_generateShapesCheckBox != null) _generateShapesCheckBox.IsChecked = options.GenerateShapeEntities;
-        if (_generateTolerancesCheckBox != null) _generateTolerancesCheckBox.IsChecked = options.GenerateToleranceEntities;
-        if (_generateTracesCheckBox != null) _generateTracesCheckBox.IsChecked = options.GenerateTraceEntities;
-        if (_generateUnderlaysCheckBox != null) _generateUnderlaysCheckBox.IsChecked = options.GenerateUnderlayEntities;
-        if (_generateViewportsCheckBox != null) _generateViewportsCheckBox.IsChecked = options.GenerateViewportEntities;
-        if (_generateSaveCommentCheckBox != null) _generateSaveCommentCheckBox.IsChecked = options.GenerateSaveComment;
-        if (_generateReturnStatementCheckBox != null) _generateReturnStatementCheckBox.IsChecked = options.GenerateReturnStatement;
-    }
-
-    private void OnEntitiesCheckBoxChanged(object? sender, RoutedEventArgs e)
-    {
-        // Temporarily disable event handlers to prevent recursive calls during programmatic changes
-        bool wasHandlingEvents = _isHandlingEvents;
-        _isHandlingEvents = true;
-            
-        try
-        {
-            if (_generateEntitiesCheckBox?.IsChecked == true)
-            {
-                // Check all entity checkboxes and disable them when master is checked
-                if (_generateLinesCheckBox != null) { _generateLinesCheckBox.IsChecked = true; _generateLinesCheckBox.IsEnabled = false; }
-                if (_generateArcsCheckBox != null) { _generateArcsCheckBox.IsChecked = true; _generateArcsCheckBox.IsEnabled = false; }
-                if (_generateCirclesCheckBox != null) { _generateCirclesCheckBox.IsChecked = true; _generateCirclesCheckBox.IsEnabled = false; }
-                if (_generateEllipsesCheckBox != null) { _generateEllipsesCheckBox.IsChecked = true; _generateEllipsesCheckBox.IsEnabled = false; }
-                if (_generatePolylines2DCheckBox != null) { _generatePolylines2DCheckBox.IsChecked = true; _generatePolylines2DCheckBox.IsEnabled = false; }
-                if (_generatePolylines3DCheckBox != null) { _generatePolylines3DCheckBox.IsChecked = true; _generatePolylines3DCheckBox.IsEnabled = false; }
-                if (_generateLwPolylinesCheckBox != null) { _generateLwPolylinesCheckBox.IsChecked = true; _generateLwPolylinesCheckBox.IsEnabled = false; }
-                if (_generateSplinesCheckBox != null) { _generateSplinesCheckBox.IsChecked = true; _generateSplinesCheckBox.IsEnabled = false; }
-                if (_generateTextsCheckBox != null) { _generateTextsCheckBox.IsChecked = true; _generateTextsCheckBox.IsEnabled = false; }
-                if (_generateMTextsCheckBox != null) { _generateMTextsCheckBox.IsChecked = true; _generateMTextsCheckBox.IsEnabled = false; }
-                if (_generatePointsCheckBox != null) { _generatePointsCheckBox.IsChecked = true; _generatePointsCheckBox.IsEnabled = false; }
-                if (_generateInsertCheckBox != null) { _generateInsertCheckBox.IsChecked = true; _generateInsertCheckBox.IsEnabled = false; }
-                if (_generateHatchesCheckBox != null) { _generateHatchesCheckBox.IsChecked = true; _generateHatchesCheckBox.IsEnabled = false; }
-                if (_generateSolidsCheckBox != null) { _generateSolidsCheckBox.IsChecked = true; _generateSolidsCheckBox.IsEnabled = false; }
-                if (_generateFacesCheckBox != null) { _generateFacesCheckBox.IsChecked = true; _generateFacesCheckBox.IsEnabled = false; }
-                if (_generateWipeoutsCheckBox != null) { _generateWipeoutsCheckBox.IsChecked = true; _generateWipeoutsCheckBox.IsEnabled = false; }
-                if (_generateDimensionsCheckBox != null) { _generateDimensionsCheckBox.IsChecked = true; _generateDimensionsCheckBox.IsEnabled = false; }
-                if (_generateLeadersCheckBox != null) { _generateLeadersCheckBox.IsChecked = true; _generateLeadersCheckBox.IsEnabled = false; }
-                if (_generateMlinesCheckBox != null) { _generateMlinesCheckBox.IsChecked = true; _generateMlinesCheckBox.IsEnabled = false; }
-                if (_generateRaysCheckBox != null) { _generateRaysCheckBox.IsChecked = true; _generateRaysCheckBox.IsEnabled = false; }
-                if (_generateXlinesCheckBox != null) { _generateXlinesCheckBox.IsChecked = true; _generateXlinesCheckBox.IsEnabled = false; }
-                if (_generateImagesCheckBox != null) { _generateImagesCheckBox.IsChecked = true; _generateImagesCheckBox.IsEnabled = false; }
-                if (_generateMeshesCheckBox != null) { _generateMeshesCheckBox.IsChecked = true; _generateMeshesCheckBox.IsEnabled = false; }
-                if (_generatePolyfaceMeshesCheckBox != null) { _generatePolyfaceMeshesCheckBox.IsChecked = true; _generatePolyfaceMeshesCheckBox.IsEnabled = false; }
-                if (_generatePolygonMeshesCheckBox != null) { _generatePolygonMeshesCheckBox.IsChecked = true; _generatePolygonMeshesCheckBox.IsEnabled = false; }
-                if (_generateShapesCheckBox != null) { _generateShapesCheckBox.IsChecked = true; _generateShapesCheckBox.IsEnabled = false; }
-                if (_generateTolerancesCheckBox != null) { _generateTolerancesCheckBox.IsChecked = true; _generateTolerancesCheckBox.IsEnabled = false; }
-                if (_generateTracesCheckBox != null) { _generateTracesCheckBox.IsChecked = true; _generateTracesCheckBox.IsEnabled = false; }
-                if (_generateUnderlaysCheckBox != null) { _generateUnderlaysCheckBox.IsChecked = true; _generateUnderlaysCheckBox.IsEnabled = false; }
-                if (_generateViewportsCheckBox != null) { _generateViewportsCheckBox.IsChecked = true; _generateViewportsCheckBox.IsEnabled = false; }
-            }
-            else
-            {
-                // When "All Entities" is unchecked, uncheck all individual entity checkboxes and enable them
-                if (_generateLinesCheckBox != null) { _generateLinesCheckBox.IsChecked = false; _generateLinesCheckBox.IsEnabled = true; }
-                if (_generateArcsCheckBox != null) { _generateArcsCheckBox.IsChecked = false; _generateArcsCheckBox.IsEnabled = true; }
-                if (_generateCirclesCheckBox != null) { _generateCirclesCheckBox.IsChecked = false; _generateCirclesCheckBox.IsEnabled = true; }
-                if (_generateEllipsesCheckBox != null) { _generateEllipsesCheckBox.IsChecked = false; _generateEllipsesCheckBox.IsEnabled = true; }
-                if (_generatePolylines2DCheckBox != null) { _generatePolylines2DCheckBox.IsChecked = false; _generatePolylines2DCheckBox.IsEnabled = true; }
-                if (_generatePolylines3DCheckBox != null) { _generatePolylines3DCheckBox.IsChecked = false; _generatePolylines3DCheckBox.IsEnabled = true; }
-                if (_generateLwPolylinesCheckBox != null) { _generateLwPolylinesCheckBox.IsChecked = false; _generateLwPolylinesCheckBox.IsEnabled = true; }
-                if (_generateSplinesCheckBox != null) { _generateSplinesCheckBox.IsChecked = false; _generateSplinesCheckBox.IsEnabled = true; }
-                if (_generateTextsCheckBox != null) { _generateTextsCheckBox.IsChecked = false; _generateTextsCheckBox.IsEnabled = true; }
-                if (_generateMTextsCheckBox != null) { _generateMTextsCheckBox.IsChecked = false; _generateMTextsCheckBox.IsEnabled = true; }
-                if (_generatePointsCheckBox != null) { _generatePointsCheckBox.IsChecked = false; _generatePointsCheckBox.IsEnabled = true; }
-                if (_generateInsertCheckBox != null) { _generateInsertCheckBox.IsChecked = false; _generateInsertCheckBox.IsEnabled = true; }
-                if (_generateHatchesCheckBox != null) { _generateHatchesCheckBox.IsChecked = false; _generateHatchesCheckBox.IsEnabled = true; }
-                if (_generateSolidsCheckBox != null) { _generateSolidsCheckBox.IsChecked = false; _generateSolidsCheckBox.IsEnabled = true; }
-                if (_generateFacesCheckBox != null) { _generateFacesCheckBox.IsChecked = false; _generateFacesCheckBox.IsEnabled = true; }
-                if (_generateWipeoutsCheckBox != null) { _generateWipeoutsCheckBox.IsChecked = false; _generateWipeoutsCheckBox.IsEnabled = true; }
-                if (_generateDimensionsCheckBox != null) { _generateDimensionsCheckBox.IsChecked = false; _generateDimensionsCheckBox.IsEnabled = true; }
-                if (_generateLeadersCheckBox != null) { _generateLeadersCheckBox.IsChecked = false; _generateLeadersCheckBox.IsEnabled = true; }
-                if (_generateMlinesCheckBox != null) { _generateMlinesCheckBox.IsChecked = false; _generateMlinesCheckBox.IsEnabled = true; }
-                if (_generateRaysCheckBox != null) { _generateRaysCheckBox.IsChecked = false; _generateRaysCheckBox.IsEnabled = true; }
-                if (_generateXlinesCheckBox != null) { _generateXlinesCheckBox.IsChecked = false; _generateXlinesCheckBox.IsEnabled = true; }
-                if (_generateImagesCheckBox != null) { _generateImagesCheckBox.IsChecked = false; _generateImagesCheckBox.IsEnabled = true; }
-                if (_generateMeshesCheckBox != null) { _generateMeshesCheckBox.IsChecked = false; _generateMeshesCheckBox.IsEnabled = true; }
-                if (_generatePolyfaceMeshesCheckBox != null) { _generatePolyfaceMeshesCheckBox.IsChecked = false; _generatePolyfaceMeshesCheckBox.IsEnabled = true; }
-                if (_generatePolygonMeshesCheckBox != null) { _generatePolygonMeshesCheckBox.IsChecked = false; _generatePolygonMeshesCheckBox.IsEnabled = true; }
-                if (_generateShapesCheckBox != null) { _generateShapesCheckBox.IsChecked = false; _generateShapesCheckBox.IsEnabled = true; }
-                if (_generateTolerancesCheckBox != null) { _generateTolerancesCheckBox.IsChecked = false; _generateTolerancesCheckBox.IsEnabled = true; }
-                if (_generateTracesCheckBox != null) { _generateTracesCheckBox.IsChecked = false; _generateTracesCheckBox.IsEnabled = true; }
-                if (_generateUnderlaysCheckBox != null) { _generateUnderlaysCheckBox.IsChecked = false; _generateUnderlaysCheckBox.IsEnabled = true; }
-                if (_generateViewportsCheckBox != null) { _generateViewportsCheckBox.IsChecked = false; _generateViewportsCheckBox.IsEnabled = true; }
-            }
-        }
-        finally
-        {
-            _isHandlingEvents = wasHandlingEvents;
-        }
-            
-        // Always regenerate code after changing checkbox states
-        RegenerateCodeIfLoaded();
-    }
-    
-    private void OnObjectsCheckBoxChanged(object? sender, RoutedEventArgs e)
-    {
-        // Temporarily disable event handlers to prevent recursive calls during programmatic changes
-        bool wasHandlingEvents = _isHandlingEvents;
-        _isHandlingEvents = true;
-            
-        try
-        {
-            if (_generateObjectsCheckBox?.IsChecked == true)
-            {
-                // Check all object checkboxes and disable them when master is checked
-                if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = true; _generateGroupsCheckBox.IsEnabled = false; }
-                if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = true; _generateLayoutsCheckBox.IsEnabled = false; }
-                if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = true; _generateImageDefinitionsCheckBox.IsEnabled = false; }
-                if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = true; _generateUnderlayDefinitionsCheckBox.IsEnabled = false; }
-                if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = true; _generateMLineEntitiesCheckBox.IsEnabled = false; }
-                if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = true; _generateXRecordObjectsCheckBox.IsEnabled = false; }
-                if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = true; _generateDictionaryObjectsCheckBox.IsEnabled = false; }
-                if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = true; _generateRasterVariablesObjectsCheckBox.IsEnabled = false; }
-            }
-            else
-            {
-                // When "All Objects" is unchecked, uncheck all individual object checkboxes and enable them
-                if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = false; _generateGroupsCheckBox.IsEnabled = true; }
-                if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = false; _generateLayoutsCheckBox.IsEnabled = true; }
-                if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = false; _generateImageDefinitionsCheckBox.IsEnabled = true; }
-                if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = false; _generateUnderlayDefinitionsCheckBox.IsEnabled = true; }
-                if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = false; _generateMLineEntitiesCheckBox.IsEnabled = true; }
-                if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = false; _generateXRecordObjectsCheckBox.IsEnabled = true; }
-                if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = false; _generateDictionaryObjectsCheckBox.IsEnabled = true; }
-                if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = false; _generateRasterVariablesObjectsCheckBox.IsEnabled = true; }
-            }
-        }
-        finally
-        {
-            _isHandlingEvents = wasHandlingEvents;
-        }
-            
-        // Always regenerate code after changing checkbox states
-        RegenerateCodeIfLoaded();
-    }
-        
-    private void OnOptionChanged(object? sender, RoutedEventArgs e)
-    {
-        // Skip regeneration if we're in the middle of programmatic checkbox changes
-        if (!_isHandlingEvents)
-        {
-            RegenerateCodeIfLoaded();
-        }
-    }
-        
     private void OnDxfContentChanged(object? sender, EventArgs e)
     {
         // Parse DXF content from the text editor and regenerate code
@@ -917,120 +440,7 @@ public partial class MainWindow : Window
             ClearErrors();
         }
     }
-        
-    private void SetupOptionEventHandlers()
-    {
-        // Add event handlers to all checkboxes for auto-regeneration
-        if (_generateHeaderCheckBox != null)
-            _generateHeaderCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateHeaderVariablesCheckBox != null)
-            _generateHeaderVariablesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateUsingStatementsCheckBox != null)
-            _generateUsingStatementsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateDetailedCommentsCheckBox != null)
-            _generateDetailedCommentsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_groupEntitiesByTypeCheckBox != null)
-            _groupEntitiesByTypeCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateLayersCheckBox != null)
-            _generateLayersCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateLinetypesCheckBox != null)
-            _generateLinetypesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateTextStylesCheckBox != null)
-            _generateTextStylesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateBlocksCheckBox != null)
-            _generateBlocksCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateDimensionStylesCheckBox != null)
-            _generateDimensionStylesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateMLineStylesCheckBox != null)
-            _generateMLineStylesCheckBox.IsCheckedChanged += OnOptionChanged;
-            
-        // Objects section checkboxes
-        if (_generateObjectsCheckBox != null)
-            _generateObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateGroupsCheckBox != null)
-            _generateGroupsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateLayoutsCheckBox != null)
-            _generateLayoutsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateImageDefinitionsCheckBox != null)
-            _generateImageDefinitionsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateUnderlayDefinitionsCheckBox != null)
-            _generateUnderlayDefinitionsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateMLineEntitiesCheckBox != null)
-            _generateMLineEntitiesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateXRecordObjectsCheckBox != null)
-            _generateXRecordObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateDictionaryObjectsCheckBox != null)
-            _generateDictionaryObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateRasterVariablesObjectsCheckBox != null)
-            _generateRasterVariablesObjectsCheckBox.IsCheckedChanged += OnOptionChanged;
-            
-        // Entity-specific checkboxes (excluding master entities checkbox as it has special handling)
-        if (_generateLinesCheckBox != null)
-            _generateLinesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateArcsCheckBox != null)
-            _generateArcsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateCirclesCheckBox != null)
-            _generateCirclesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateEllipsesCheckBox != null)
-            _generateEllipsesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generatePolylines2DCheckBox != null)
-            _generatePolylines2DCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generatePolylines3DCheckBox != null)
-            _generatePolylines3DCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateLwPolylinesCheckBox != null)
-            _generateLwPolylinesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateSplinesCheckBox != null)
-            _generateSplinesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateTextsCheckBox != null)
-            _generateTextsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateMTextsCheckBox != null)
-            _generateMTextsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generatePointsCheckBox != null)
-            _generatePointsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateInsertCheckBox != null)
-            _generateInsertCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateHatchesCheckBox != null)
-            _generateHatchesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateSolidsCheckBox != null)
-            _generateSolidsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateFacesCheckBox != null)
-            _generateFacesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateWipeoutsCheckBox != null)
-            _generateWipeoutsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateDimensionsCheckBox != null)
-            _generateDimensionsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateLeadersCheckBox != null)
-            _generateLeadersCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateMlinesCheckBox != null)
-            _generateMlinesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateRaysCheckBox != null)
-            _generateRaysCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateXlinesCheckBox != null)
-            _generateXlinesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateImagesCheckBox != null)
-            _generateImagesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateMeshesCheckBox != null)
-            _generateMeshesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generatePolyfaceMeshesCheckBox != null)
-            _generatePolyfaceMeshesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generatePolygonMeshesCheckBox != null)
-            _generatePolygonMeshesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateShapesCheckBox != null)
-            _generateShapesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateTolerancesCheckBox != null)
-            _generateTolerancesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateTracesCheckBox != null)
-            _generateTracesCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateUnderlaysCheckBox != null)
-            _generateUnderlaysCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateViewportsCheckBox != null)
-            _generateViewportsCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateSaveCommentCheckBox != null)
-            _generateSaveCommentCheckBox.IsCheckedChanged += OnOptionChanged;
-        if (_generateReturnStatementCheckBox != null)
-            _generateReturnStatementCheckBox.IsCheckedChanged += OnOptionChanged;
-    }
-        
+
     private void UpdateLeftFolding()
     {
         if (_leftFoldingManager != null && _leftTextBox != null)
