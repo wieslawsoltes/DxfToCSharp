@@ -669,25 +669,25 @@ public class DxfCodeGenerator
         switch (entity)
         {
             case Line line when options.GenerateLineEntities:
-                GenerateLine(sb, line, needsVariable);
+                GenerateLine(sb, line, needsVariable, baseIndent);
                 break;
             case Arc arc when options.GenerateArcEntities:
-                GenerateArc(sb, arc, needsVariable);
+                GenerateArc(sb, arc, needsVariable, baseIndent);
                 break;
             case Circle circle when options.GenerateCircleEntities:
-                GenerateCircle(sb, circle, needsVariable);
+                GenerateCircle(sb, circle, needsVariable, baseIndent);
                 break;
             case PointEntity point when options.GeneratePointEntities:
-                GeneratePoint(sb, point, needsVariable);
+                GeneratePoint(sb, point, needsVariable, baseIndent);
                 break;
             case Polyline2D poly2d when options.GeneratePolylineEntities:
-                GeneratePolyline2D(sb, poly2d);
+                GeneratePolyline2D(sb, poly2d, baseIndent);
                 break;
             case Polyline3D poly3d when options.GeneratePolylineEntities:
                 GeneratePolyline3D(sb, poly3d, needsVariable, baseIndent);
                 break;
             case Spline spline when options.GenerateSplineEntities:
-                GenerateSpline(sb, spline);
+                GenerateSpline(sb, spline, baseIndent);
                 break;
             case Text text when options.GenerateTextEntities:
                 GenerateText(sb, text, needsVariable, baseIndent);
@@ -711,34 +711,34 @@ public class DxfCodeGenerator
                 GenerateLeader(sb, leader, needsVariable, baseIndent);
                 break;
             case Face3D face3d when options.GenerateFace3dEntities:
-                GenerateFace3D(sb, face3d);
+                GenerateFace3D(sb, face3d, baseIndent);
                 break;
             case LinearDimension linearDim when options.GenerateDimensionEntities && options.GenerateLinearDimensionEntities:
-                GenerateLinearDimension(sb, linearDim);
+                GenerateLinearDimension(sb, linearDim, baseIndent);
                 break;
             case AlignedDimension alignedDim when options.GenerateDimensionEntities && options.GenerateAlignedDimensionEntities:
-                GenerateAlignedDimension(sb, alignedDim);
+                GenerateAlignedDimension(sb, alignedDim, baseIndent);
                 break;
             case RadialDimension radialDim when options.GenerateDimensionEntities && options.GenerateRadialDimensionEntities:
-                GenerateRadialDimension(sb, radialDim);
+                GenerateRadialDimension(sb, radialDim, baseIndent);
                 break;
             case DiametricDimension diametricDim when options.GenerateDimensionEntities && options.GenerateDiametricDimensionEntities:
-                GenerateDiametricDimension(sb, diametricDim);
+                GenerateDiametricDimension(sb, diametricDim, baseIndent);
                 break;
             case Angular2LineDimension angular2LineDim when options.GenerateDimensionEntities && options.GenerateAngular2LineDimensionEntities:
-                GenerateAngular2LineDimension(sb, angular2LineDim);
+                GenerateAngular2LineDimension(sb, angular2LineDim, baseIndent);
                 break;
             case Angular3PointDimension angular3PointDim when options.GenerateDimensionEntities && options.GenerateAngular3PointDimensionEntities:
-                GenerateAngular3PointDimension(sb, angular3PointDim);
+                GenerateAngular3PointDimension(sb, angular3PointDim, baseIndent);
                 break;
             case OrdinateDimension ordinateDim when options.GenerateDimensionEntities && options.GenerateOrdinateDimensionEntities:
-                GenerateOrdinateDimension(sb, ordinateDim);
+                GenerateOrdinateDimension(sb, ordinateDim, baseIndent);
                 break;
             case Ray ray when options.GenerateRayEntities:
-                GenerateRay(sb, ray);
+                GenerateRay(sb, ray, baseIndent);
                 break;
             case XLine xline when options.GenerateXLineEntities:
-                GenerateXLine(sb, xline);
+                GenerateXLine(sb, xline, baseIndent);
                 break;
             case Solid solid when options.GenerateSolidEntities:
                 GenerateSolid(sb, solid, baseIndent);
@@ -756,22 +756,22 @@ public class DxfCodeGenerator
                 GeneratePolyfaceMesh(sb, polyfaceMesh, needsVariable, baseIndent);
                 break;
             case PolygonMesh polygonMesh when options.GeneratePolygonMeshEntities:
-                GeneratePolygonMesh(sb, polygonMesh);
+                GeneratePolygonMesh(sb, polygonMesh, baseIndent);
                 break;
             case Shape shape when options.GenerateShapeEntities:
-                GenerateShape(sb, shape);
+                GenerateShape(sb, shape, baseIndent);
                 break;
             case Tolerance tolerance when options.GenerateToleranceEntities:
-                GenerateTolerance(sb, tolerance);
+                GenerateTolerance(sb, tolerance, baseIndent);
                 break;
             case Trace trace when options.GenerateTraceEntities:
-                GenerateTrace(sb, trace);
+                GenerateTrace(sb, trace, baseIndent);
                 break;
             case Underlay underlay when options.GenerateUnderlayEntities:
-                GenerateUnderlay(sb, underlay);
+                GenerateUnderlay(sb, underlay, baseIndent);
                 break;
             case Viewport viewport when options.GenerateViewportEntities:
-                GenerateViewport(sb, viewport);
+                GenerateViewport(sb, viewport, baseIndent);
                 break;
             default:
                  if (options.GenerateDetailedComments)
@@ -988,18 +988,18 @@ public class DxfCodeGenerator
         }
     }
 
-    private void GeneratePolyline2D(StringBuilder sb, Polyline2D poly2d)
+    private void GeneratePolyline2D(StringBuilder sb, Polyline2D poly2d, string baseIndent = "        ")
     {
-        sb.AppendLine("        doc.Entities.Add(");
-        GeneratePolyline2DConstructor(sb, poly2d, "        ");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, poly2d, "        ");
+        sb.AppendLine($"{baseIndent}doc.Entities.Add(");
+        GeneratePolyline2DConstructor(sb, poly2d, baseIndent);
+        sb.AppendLine($"{baseIndent}{{");
+        GenerateEntityPropertiesCore(sb, poly2d, baseIndent);
         if (Math.Abs(poly2d.Elevation) > 1e-12)
         {
-            sb.AppendLine($"            Elevation = {F(poly2d.Elevation)},");
+            sb.AppendLine($"{baseIndent}    Elevation = {F(poly2d.Elevation)},");
         }
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}}}");
+        sb.AppendLine($"{baseIndent});");
     }
 
     private void GeneratePolyline2DConstructor(StringBuilder sb, Polyline2D poly2d, string indent)
@@ -1043,65 +1043,65 @@ public class DxfCodeGenerator
         }
     }
 
-    private void GenerateSpline(StringBuilder sb, Spline spline)
+    private void GenerateSpline(StringBuilder sb, Spline spline, string baseIndent = "        ")
     {
         // Generate spline with complete definition: control points, weights, and degree
-        sb.AppendLine("        {");
-        sb.AppendLine("            var controlPoints = new List<Vector3>");
-        sb.AppendLine("            {");
+        sb.AppendLine($"{baseIndent}{{");
+        sb.AppendLine($"{baseIndent}    var controlPoints = new List<Vector3>");
+        sb.AppendLine($"{baseIndent}    {{");
         foreach (var cp in spline.ControlPoints)
         {
-            sb.AppendLine($"                new Vector3({F(cp.X)}, {F(cp.Y)}, {F(cp.Z)}),");
+            sb.AppendLine($"{baseIndent}        new Vector3({F(cp.X)}, {F(cp.Y)}, {F(cp.Z)}),");
         }
-        sb.AppendLine("            };");
+        sb.AppendLine($"{baseIndent}    }};");
         sb.AppendLine();
         
-        sb.AppendLine("            var weights = new List<double>");
-        sb.AppendLine("            {");
+        sb.AppendLine($"{baseIndent}    var weights = new List<double>");
+        sb.AppendLine($"{baseIndent}    {{");
         foreach (var weight in spline.Weights)
         {
-            sb.AppendLine($"                {F(weight)},");
+            sb.AppendLine($"{baseIndent}        {F(weight)},");
         }
-        sb.AppendLine("            };");
+        sb.AppendLine($"{baseIndent}    }};");
         sb.AppendLine();
         
-        sb.AppendLine($"            var splineEntity = new Spline(controlPoints, weights, {spline.Degree});");
+        sb.AppendLine($"{baseIndent}    var splineEntity = new Spline(controlPoints, weights, {spline.Degree});");
         
         // Apply entity properties
         if (spline.Layer != null && _usedLayers.Contains(spline.Layer.Name))
         {
-            sb.AppendLine($"            splineEntity.Layer = layer{SafeName(spline.Layer.Name)};");
+            sb.AppendLine($"{baseIndent}    splineEntity.Layer = layer{SafeName(spline.Layer.Name)};");
         }
         
         // Color handling
         if (spline.Color.Index != 256) // Not ByLayer
         {
             if (spline.Color.Index == 0)
-                sb.AppendLine("            splineEntity.Color = AciColor.ByBlock;");
+                sb.AppendLine($"{baseIndent}    splineEntity.Color = AciColor.ByBlock;");
             else if (spline.Color.Index >= 1 && spline.Color.Index <= 255)
-                sb.AppendLine($"            splineEntity.Color = new AciColor({spline.Color.Index});");
+                sb.AppendLine($"{baseIndent}    splineEntity.Color = new AciColor({spline.Color.Index});");
         }
         
         // Linetype
         if (spline.Linetype != null && spline.Linetype.Name != "ByLayer" && spline.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"            splineEntity.Linetype = linetype{SafeName(spline.Linetype.Name)};");
+            sb.AppendLine($"{baseIndent}    splineEntity.Linetype = linetype{SafeName(spline.Linetype.Name)};");
         }
         
         // Lineweight
         if (spline.Lineweight != Lineweight.ByLayer)
         {
-            sb.AppendLine($"            splineEntity.Lineweight = Lineweight.{spline.Lineweight};");
+            sb.AppendLine($"{baseIndent}    splineEntity.Lineweight = Lineweight.{spline.Lineweight};");
         }
         
         // Linetype scale
         if (Math.Abs(spline.LinetypeScale - 1.0) > 1e-10)
         {
-            sb.AppendLine($"            splineEntity.LinetypeScale = {F(spline.LinetypeScale)};");
+            sb.AppendLine($"{baseIndent}    splineEntity.LinetypeScale = {F(spline.LinetypeScale)};");
         }
         
-        sb.AppendLine("            doc.Entities.Add(splineEntity);");
-        sb.AppendLine("        }");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(splineEntity);");
+        sb.AppendLine($"{baseIndent}}}");
     }
 
     private void GenerateSplineConstructor(StringBuilder sb, Spline spline, string indent)
@@ -1336,53 +1336,53 @@ public class DxfCodeGenerator
         if (entity.Color.Index != 256) // 256 = ByLayer
         {
             if (entity.Color.Index == 0)
-                sb.AppendLine("            Color = AciColor.ByBlock,");
+                sb.AppendLine($"{baseIndent}    Color = AciColor.ByBlock,");
             else if (entity.Color.Index >= 1 && entity.Color.Index <= 255)
-                sb.AppendLine($"            Color = new AciColor({entity.Color.Index}),");
+                sb.AppendLine($"{baseIndent}    Color = new AciColor({entity.Color.Index}),");
             // Note: TrueColor emission omitted to avoid API differences across versions
         }
 
         // Linetype
         if (entity.Linetype != null && entity.Linetype.Name != "ByLayer" && entity.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"            Linetype = linetype{SafeName(entity.Linetype.Name)},");
+            sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(entity.Linetype.Name)},");
         }
 
         // Lineweight
         if (entity.Lineweight != Lineweight.ByLayer)
         {
-            sb.AppendLine($"            Lineweight = Lineweight.{entity.Lineweight},");
+            sb.AppendLine($"{baseIndent}    Lineweight = Lineweight.{entity.Lineweight},");
         }
 
         // Linetype scale
         if (Math.Abs(entity.LinetypeScale - 1.0) > 1e-10)
         {
-            sb.AppendLine($"            LinetypeScale = {F(entity.LinetypeScale)},");
+            sb.AppendLine($"{baseIndent}    LinetypeScale = {F(entity.LinetypeScale)},");
         }
 
         // Thickness (only for entities that support it in netDxf 3.0.1)
         if (entity is Line line && Math.Abs(line.Thickness) > 1e-10)
         {
-            sb.AppendLine($"            Thickness = {F(line.Thickness)},");
+            sb.AppendLine($"{baseIndent}    Thickness = {F(line.Thickness)},");
         }
         else if (entity is Arc arc && Math.Abs(arc.Thickness) > 1e-10)
         {
-            sb.AppendLine($"            Thickness = {F(arc.Thickness)},");
+            sb.AppendLine($"{baseIndent}    Thickness = {F(arc.Thickness)},");
         }
         else if (entity is Circle circle && Math.Abs(circle.Thickness) > 1e-10)
         {
-            sb.AppendLine($"            Thickness = {F(circle.Thickness)},");
+            sb.AppendLine($"{baseIndent}    Thickness = {F(circle.Thickness)},");
         }
         else if (entity is Polyline2D poly2d && Math.Abs(poly2d.Thickness) > 1e-10)
         {
-            sb.AppendLine($"            Thickness = {F(poly2d.Thickness)},");
+            sb.AppendLine($"{baseIndent}    Thickness = {F(poly2d.Thickness)},");
         }
 
         // Normal (if not default 0,0,1)
         var n = entity.Normal;
         if (Math.Abs(n.X) > 1e-12 || Math.Abs(n.Y) > 1e-12 || Math.Abs(n.Z - 1.0) > 1e-12)
         {
-            sb.AppendLine($"            Normal = new Vector3({F(n.X)}, {F(n.Y)}, {F(n.Z)}),");
+            sb.AppendLine($"{baseIndent}    Normal = new Vector3({F(n.X)}, {F(n.Y)}, {F(n.Z)}),");
         }
     }
 
@@ -1682,12 +1682,12 @@ public class DxfCodeGenerator
         sb.AppendLine();
     }
 
-    private void GenerateFace3D(StringBuilder sb, Face3D face3d)
+    private void GenerateFace3D(StringBuilder sb, Face3D face3d, string baseIndent = "        ")
     {
-        sb.AppendLine($"        doc.Entities.Add(new Face3D(");
-        sb.AppendLine($"            new Vector3({F(face3d.FirstVertex.X)}, {F(face3d.FirstVertex.Y)}, {F(face3d.FirstVertex.Z)}),");
-        sb.AppendLine($"            new Vector3({F(face3d.SecondVertex.X)}, {F(face3d.SecondVertex.Y)}, {F(face3d.SecondVertex.Z)}),");
-        sb.AppendLine($"            new Vector3({F(face3d.ThirdVertex.X)}, {F(face3d.ThirdVertex.Y)}, {F(face3d.ThirdVertex.Z)}),");
+        sb.AppendLine($"{baseIndent}doc.Entities.Add(new Face3D(");
+        sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.FirstVertex.X)}, {F(face3d.FirstVertex.Y)}, {F(face3d.FirstVertex.Z)}),");
+        sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.SecondVertex.X)}, {F(face3d.SecondVertex.Y)}, {F(face3d.SecondVertex.Z)}),");
+        sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.ThirdVertex.X)}, {F(face3d.ThirdVertex.Y)}, {F(face3d.ThirdVertex.Z)}),");
         sb.AppendLine($"            new Vector3({F(face3d.FourthVertex.X)}, {F(face3d.FourthVertex.Y)}, {F(face3d.FourthVertex.Z)}))");
         sb.AppendLine("        {");
         GenerateEntityPropertiesCore(sb, face3d, "        ");
@@ -1703,115 +1703,115 @@ public class DxfCodeGenerator
         sb.AppendLine("        );");
     }
 
-    private void GenerateLinearDimension(StringBuilder sb, LinearDimension dimension)
+    private void GenerateLinearDimension(StringBuilder sb, LinearDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"        doc.Entities.Add(new LinearDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
-        sb.AppendLine($"            {F(dimension.Offset)}, {F(dimension.Rotation)})");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new LinearDimension(");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            {F(dimension.Offset)}, {F(dimension.Rotation)})");
+        sb.AppendLine($"{baseIndent}        {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        }}");
+        sb.AppendLine($"{baseIndent}        );");
     }
 
-    private void GenerateAlignedDimension(StringBuilder sb, AlignedDimension dimension)
+    private void GenerateAlignedDimension(StringBuilder sb, AlignedDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"        doc.Entities.Add(new AlignedDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
-        sb.AppendLine($"            {F(dimension.Offset)})");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new AlignedDimension(");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            {F(dimension.Offset)})");
+        sb.AppendLine($"{baseIndent}        {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        }}");
+        sb.AppendLine($"{baseIndent}        );");
     }
 
-    private void GenerateRadialDimension(StringBuilder sb, RadialDimension dimension)
+    private void GenerateRadialDimension(StringBuilder sb, RadialDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"        doc.Entities.Add(new RadialDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
-        sb.AppendLine($"        )");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new RadialDimension(");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
+        sb.AppendLine($"{baseIndent}        )");
+        sb.AppendLine($"{baseIndent}        {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        }}");
+        sb.AppendLine($"{baseIndent}        );");
     }
 
-    private void GenerateDiametricDimension(StringBuilder sb, DiametricDimension dimension)
+    private void GenerateDiametricDimension(StringBuilder sb, DiametricDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"        doc.Entities.Add(new DiametricDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
-        sb.AppendLine($"        )");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new DiametricDimension(");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
+        sb.AppendLine($"{baseIndent}        )");
+        sb.AppendLine($"{baseIndent}        {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        }}");
+        sb.AppendLine($"{baseIndent}        );");
     }
 
-    private void GenerateAngular2LineDimension(StringBuilder sb, Angular2LineDimension dimension)
+    private void GenerateAngular2LineDimension(StringBuilder sb, Angular2LineDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"        doc.Entities.Add(new Angular2LineDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.StartFirstLine.X)}, {F(dimension.StartFirstLine.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.EndFirstLine.X)}, {F(dimension.EndFirstLine.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.StartSecondLine.X)}, {F(dimension.StartSecondLine.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.EndSecondLine.X)}, {F(dimension.EndSecondLine.Y)}),");
-        sb.AppendLine($"            {F(dimension.Offset)})");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new Angular2LineDimension(");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.StartFirstLine.X)}, {F(dimension.StartFirstLine.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.EndFirstLine.X)}, {F(dimension.EndFirstLine.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.StartSecondLine.X)}, {F(dimension.StartSecondLine.Y)}),");
+        sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.EndSecondLine.X)}, {F(dimension.EndSecondLine.Y)}),");
+        sb.AppendLine($"{baseIndent}            {F(dimension.Offset)})");
+        sb.AppendLine($"{baseIndent}        {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        }}");
+        sb.AppendLine($"{baseIndent}        );");
     }
 
-    private void GenerateAngular3PointDimension(StringBuilder sb, Angular3PointDimension dimension)
+    private void GenerateAngular3PointDimension(StringBuilder sb, Angular3PointDimension dimension, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Angular3PointDimension(");
-        sb.AppendLine($"            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.StartPoint.X)}, {F(dimension.StartPoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.EndPoint.X)}, {F(dimension.EndPoint.Y)}),");
-        sb.AppendLine($"            {F(dimension.Offset)})");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Angular3PointDimension(");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.StartPoint.X)}, {F(dimension.StartPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.EndPoint.X)}, {F(dimension.EndPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        {F(dimension.Offset)})");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
-    private void GenerateOrdinateDimension(StringBuilder sb, OrdinateDimension dimension)
+    private void GenerateOrdinateDimension(StringBuilder sb, OrdinateDimension dimension, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new OrdinateDimension(");
-        sb.AppendLine($"            Vector2.Zero,");
-        sb.AppendLine($"            new Vector2({F(dimension.FeaturePoint.X)}, {F(dimension.FeaturePoint.Y)}),");
-        sb.AppendLine($"            new Vector2({F(dimension.LeaderEndPoint.X)}, {F(dimension.LeaderEndPoint.Y)}),");
-        sb.AppendLine($"            OrdinateDimensionAxis.{dimension.Axis})");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, dimension, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new OrdinateDimension(");
+        sb.AppendLine($"{baseIndent}        Vector2.Zero,");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.FeaturePoint.X)}, {F(dimension.FeaturePoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.LeaderEndPoint.X)}, {F(dimension.LeaderEndPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        OrdinateDimensionAxis.{dimension.Axis})");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
-    private void GenerateRay(StringBuilder sb, Ray ray)
+    private void GenerateRay(StringBuilder sb, Ray ray, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Ray(");
-        sb.AppendLine($"            new Vector3({F(ray.Origin.X)}, {F(ray.Origin.Y)}, {F(ray.Origin.Z)}),");
-        sb.AppendLine($"            new Vector3({F(ray.Direction.X)}, {F(ray.Direction.Y)}, {F(ray.Direction.Z)})");
-        sb.AppendLine("        )");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, ray, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Ray(");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(ray.Origin.X)}, {F(ray.Origin.Y)}, {F(ray.Origin.Z)}),");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(ray.Direction.X)}, {F(ray.Direction.Y)}, {F(ray.Direction.Z)})");
+        sb.AppendLine($"{baseIndent}    )");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, ray, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
-    private void GenerateXLine(StringBuilder sb, XLine xline)
+    private void GenerateXLine(StringBuilder sb, XLine xline, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new XLine(");
-        sb.AppendLine($"            new Vector3({F(xline.Origin.X)}, {F(xline.Origin.Y)}, {F(xline.Origin.Z)}),");
-        sb.AppendLine($"            new Vector3({F(xline.Direction.X)}, {F(xline.Direction.Y)}, {F(xline.Direction.Z)}))");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, xline, "        ");
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new XLine(");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(xline.Origin.X)}, {F(xline.Origin.Y)}, {F(xline.Origin.Z)}),");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(xline.Direction.X)}, {F(xline.Direction.Y)}, {F(xline.Direction.Z)}))");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, xline, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
     private void GenerateSolid(StringBuilder sb, Solid solid, string baseIndent = "        ")
@@ -2128,77 +2128,77 @@ public class DxfCodeGenerator
         sb.AppendLine();
     }
 
-    private void GeneratePolygonMesh(StringBuilder sb, PolygonMesh polygonMesh)
+    private void GeneratePolygonMesh(StringBuilder sb, PolygonMesh polygonMesh, string baseIndent)
     {
-        sb.AppendLine("        // Generate PolygonMesh vertexes");
-        sb.AppendLine("        var polygonMeshVertexes = new Vector3[]");
-        sb.AppendLine("        {");
+        sb.AppendLine($"{baseIndent}    // Generate PolygonMesh vertexes");
+        sb.AppendLine($"{baseIndent}    var polygonMeshVertexes = new Vector3[]");
+        sb.AppendLine($"{baseIndent}    {{");
         for (int i = 0; i < polygonMesh.Vertexes.Length; i++)
         {
             var vertex = polygonMesh.Vertexes[i];
             string comma = i < polygonMesh.Vertexes.Length - 1 ? "," : "";
-            sb.AppendLine($"            new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
+            sb.AppendLine($"{baseIndent}        new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
         }
-        sb.AppendLine("        };");
+        sb.AppendLine($"{baseIndent}    }};");
         sb.AppendLine();
         
-        sb.AppendLine($"        var polygonMesh = new PolygonMesh({polygonMesh.U}, {polygonMesh.V}, polygonMeshVertexes)");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, polygonMesh, "        ");
+        sb.AppendLine($"{baseIndent}    var polygonMesh = new PolygonMesh({polygonMesh.U}, {polygonMesh.V}, polygonMeshVertexes)");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, polygonMesh, baseIndent + "    ");
         // Ensure DensityU and DensityV are within valid range (3-201)
         var densityU = (short)Math.Max(3, Math.Min(201, (int)polygonMesh.DensityU));
         var densityV = (short)Math.Max(3, Math.Min(201, (int)polygonMesh.DensityV));
-        sb.AppendLine($"            DensityU = {densityU},");
-        sb.AppendLine($"            DensityV = {densityV},");
-        sb.AppendLine($"            SmoothType = PolylineSmoothType.{polygonMesh.SmoothType},");
-        sb.AppendLine($"            IsClosedInU = {polygonMesh.IsClosedInU.ToString().ToLower()},");
-        sb.AppendLine($"            IsClosedInV = {polygonMesh.IsClosedInV.ToString().ToLower()}");
-        sb.AppendLine("        };");
-        sb.AppendLine("        doc.Entities.Add(polygonMesh);");
+        sb.AppendLine($"{baseIndent}        DensityU = {densityU},");
+        sb.AppendLine($"{baseIndent}        DensityV = {densityV},");
+        sb.AppendLine($"{baseIndent}        SmoothType = PolylineSmoothType.{polygonMesh.SmoothType},");
+        sb.AppendLine($"{baseIndent}        IsClosedInU = {polygonMesh.IsClosedInU.ToString().ToLower()},");
+        sb.AppendLine($"{baseIndent}        IsClosedInV = {polygonMesh.IsClosedInV.ToString().ToLower()}");
+        sb.AppendLine($"{baseIndent}    }};");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(polygonMesh);");
         sb.AppendLine();
     }
 
-    private void GenerateShape(StringBuilder sb, Shape shape)
+    private void GenerateShape(StringBuilder sb, Shape shape, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Shape(\"{shape.Name}\",");
-        sb.AppendLine($"            new ShapeStyle(\"{shape.Style.Name}\", \"{shape.Style.File}\"),");
-        sb.AppendLine($"            new Vector3({F(shape.Position.X)}, {F(shape.Position.Y)}, {F(shape.Position.Z)}),");
-        sb.AppendLine($"            {F(shape.Size)}, {F(shape.Rotation)})");
-        sb.AppendLine($"        {{");
-        GenerateEntityPropertiesCore(sb, shape, "        ");
-        sb.AppendLine($"        }});");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Shape(\"{shape.Name}\",");
+        sb.AppendLine($"{baseIndent}        new ShapeStyle(\"{shape.Style.Name}\", \"{shape.Style.File}\"),");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(shape.Position.X)}, {F(shape.Position.Y)}, {F(shape.Position.Z)}),");
+        sb.AppendLine($"{baseIndent}        {F(shape.Size)}, {F(shape.Rotation)})");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, shape, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }});");
     }
 
-    private void GenerateTolerance(StringBuilder sb, Tolerance tolerance)
+    private void GenerateTolerance(StringBuilder sb, Tolerance tolerance, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Tolerance(");
-        sb.AppendLine($"            new ToleranceEntry(),");
-        sb.AppendLine($"            new Vector3({F(tolerance.Position.X)}, {F(tolerance.Position.Y)}, {F(tolerance.Position.Z)})");
-        sb.AppendLine($"        )");
-        sb.AppendLine($"        {{");
-        sb.AppendLine($"            TextHeight = {F(tolerance.TextHeight)},");
-        sb.AppendLine($"            Rotation = {F(tolerance.Rotation)},");
-        GenerateEntityPropertiesCore(sb, tolerance, "        ");
-        sb.AppendLine($"        }});");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Tolerance(");
+        sb.AppendLine($"{baseIndent}        new ToleranceEntry(),");
+        sb.AppendLine($"{baseIndent}        new Vector3({F(tolerance.Position.X)}, {F(tolerance.Position.Y)}, {F(tolerance.Position.Z)})");
+        sb.AppendLine($"{baseIndent}    )");
+        sb.AppendLine($"{baseIndent}    {{");
+        sb.AppendLine($"{baseIndent}        TextHeight = {F(tolerance.TextHeight)},");
+        sb.AppendLine($"{baseIndent}        Rotation = {F(tolerance.Rotation)},");
+        GenerateEntityPropertiesCore(sb, tolerance, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }});");
     }
 
-    private void GenerateTrace(StringBuilder sb, Trace trace)
+    private void GenerateTrace(StringBuilder sb, Trace trace, string baseIndent)
     {
-        sb.AppendLine($"        doc.Entities.Add(new Trace(");
-        sb.AppendLine($"            new Vector2({F(trace.FirstVertex.X)}, {F(trace.FirstVertex.Y)}),");
-        sb.AppendLine($"            new Vector2({F(trace.SecondVertex.X)}, {F(trace.SecondVertex.Y)}),");
-        sb.AppendLine($"            new Vector2({F(trace.ThirdVertex.X)}, {F(trace.ThirdVertex.Y)}),");
-        sb.AppendLine($"            new Vector2({F(trace.FourthVertex.X)}, {F(trace.FourthVertex.Y)})");
-        sb.AppendLine($"        )");
-        sb.AppendLine($"        {{");
-        GenerateEntityPropertiesCore(sb, trace, "        ");
-        sb.AppendLine($"        }});");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Trace(");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(trace.FirstVertex.X)}, {F(trace.FirstVertex.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(trace.SecondVertex.X)}, {F(trace.SecondVertex.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(trace.ThirdVertex.X)}, {F(trace.ThirdVertex.Y)}),");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(trace.FourthVertex.X)}, {F(trace.FourthVertex.Y)})");
+        sb.AppendLine($"{baseIndent}    )");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, trace, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }});");
     }
 
-    private void GenerateUnderlay(StringBuilder sb, Underlay underlay)
+    private void GenerateUnderlay(StringBuilder sb, Underlay underlay, string baseIndent)
     {
-        sb.AppendLine("        // Note: Underlay requires UnderlayDefinition to be added to document first");
-        sb.AppendLine($"        // Create underlay definition for {underlay.Definition.Type} type");
+        sb.AppendLine($"{baseIndent}    // Note: Underlay requires UnderlayDefinition to be added to document first");
+        sb.AppendLine($"{baseIndent}    // Create underlay definition for {underlay.Definition.Type} type");
         // Generate the correct underlay definition class name
         string definitionClassName = underlay.Definition.Type switch
         {
@@ -2207,23 +2207,23 @@ public class DxfCodeGenerator
             UnderlayType.PDF => "UnderlayPdfDefinition",
             _ => $"Underlay{underlay.Definition.Type}Definition"
         };
-        sb.AppendLine($"        var underlayDef = new {definitionClassName}(\"{underlay.Definition.Name}\", \"{underlay.Definition.File}\");");
+        sb.AppendLine($"{baseIndent}    var underlayDef = new {definitionClassName}(\"{underlay.Definition.Name}\", \"{underlay.Definition.File}\");");
         sb.AppendLine();
         
-        sb.AppendLine("        doc.Entities.Add(new Underlay(underlayDef)");
-        sb.AppendLine("        {");
-        sb.AppendLine($"            Position = new Vector3({F(underlay.Position.X)}, {F(underlay.Position.Y)}, {F(underlay.Position.Z)}),");
-            sb.AppendLine($"            Scale = new Vector2({F(underlay.Scale.X)}, {F(underlay.Scale.Y)}),");
-            sb.AppendLine($"            Rotation = {F(underlay.Rotation)},");
-        sb.AppendLine($"            Contrast = {underlay.Contrast},");
-        sb.AppendLine($"            Fade = {underlay.Fade},");
-        sb.AppendLine($"            DisplayOptions = UnderlayDisplayFlags.{underlay.DisplayOptions},");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Underlay(underlayDef)");
+        sb.AppendLine($"{baseIndent}    {{");
+        sb.AppendLine($"{baseIndent}        Position = new Vector3({F(underlay.Position.X)}, {F(underlay.Position.Y)}, {F(underlay.Position.Z)}),");
+            sb.AppendLine($"{baseIndent}        Scale = new Vector2({F(underlay.Scale.X)}, {F(underlay.Scale.Y)}),");
+            sb.AppendLine($"{baseIndent}        Rotation = {F(underlay.Rotation)},");
+        sb.AppendLine($"{baseIndent}        Contrast = {underlay.Contrast},");
+        sb.AppendLine($"{baseIndent}        Fade = {underlay.Fade},");
+        sb.AppendLine($"{baseIndent}        DisplayOptions = UnderlayDisplayFlags.{underlay.DisplayOptions},");
         if (underlay.ClippingBoundary != null)
         {
-            sb.AppendLine($"            // ClippingBoundary = clippingBoundary, // Custom clipping boundary implementation needed");
+            sb.AppendLine($"{baseIndent}        // ClippingBoundary = clippingBoundary, // Custom clipping boundary implementation needed");
         }
-        GenerateEntityPropertiesCore(sb, underlay, "        ");
-        sb.AppendLine("        });");
+        GenerateEntityPropertiesCore(sb, underlay, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }});");
         sb.AppendLine();
     }
 
@@ -2335,43 +2335,43 @@ public class DxfCodeGenerator
         }
     }
 
-    private void GenerateViewport(StringBuilder sb, Viewport viewport)
+    private void GenerateViewport(StringBuilder sb, Viewport viewport, string baseIndent)
     {
         var statusFlags = GenerateViewportStatusFlags(viewport.Status);
         if (statusFlags.Length > 80) // If the line is too long, use a variable
         {
-            sb.AppendLine($"        var viewportStatus = {statusFlags};");
+            sb.AppendLine($"{baseIndent}    var viewportStatus = {statusFlags};");
         }
         
-        sb.AppendLine($"        doc.Entities.Add(");
-        sb.AppendLine($"        new Viewport(");
-        sb.AppendLine($"            new Vector2({F(viewport.Center.X)}, {F(viewport.Center.Y)}),");
-        sb.AppendLine($"            {F(viewport.Width)}, {F(viewport.Height)})");
-        sb.AppendLine($"        {{");
-        GenerateEntityPropertiesCore(sb, viewport, "        ");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(");
+        sb.AppendLine($"{baseIndent}    new Viewport(");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(viewport.Center.X)}, {F(viewport.Center.Y)}),");
+        sb.AppendLine($"{baseIndent}        {F(viewport.Width)}, {F(viewport.Height)})");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, viewport, baseIndent + "    ");
         // Set Center property if Z coordinate is not zero
         if (Math.Abs(viewport.Center.Z) > 1e-6)
         {
-            sb.AppendLine($"            Center = new Vector3({F(viewport.Center.X)}, {F(viewport.Center.Y)}, {F(viewport.Center.Z)}),");
+            sb.AppendLine($"{baseIndent}        Center = new Vector3({F(viewport.Center.X)}, {F(viewport.Center.Y)}, {F(viewport.Center.Z)}),");
         }
-        sb.AppendLine($"            ViewCenter = new Vector2({F(viewport.ViewCenter.X)}, {F(viewport.ViewCenter.Y)}),");
-        sb.AppendLine($"            ViewHeight = {F(viewport.ViewHeight)},");
-        sb.AppendLine($"            ViewTarget = new Vector3({F(viewport.ViewTarget.X)}, {F(viewport.ViewTarget.Y)}, {F(viewport.ViewTarget.Z)}),");
-        sb.AppendLine($"            ViewDirection = new Vector3({F(viewport.ViewDirection.X)}, {F(viewport.ViewDirection.Y)}, {F(viewport.ViewDirection.Z)}),");
-        sb.AppendLine($"            LensLength = {F(viewport.LensLength)},");
-        sb.AppendLine($"            TwistAngle = {F(viewport.TwistAngle)},");
-        sb.AppendLine($"            CircleZoomPercent = {viewport.CircleZoomPercent},");
+        sb.AppendLine($"{baseIndent}        ViewCenter = new Vector2({F(viewport.ViewCenter.X)}, {F(viewport.ViewCenter.Y)}),");
+        sb.AppendLine($"{baseIndent}        ViewHeight = {F(viewport.ViewHeight)},");
+        sb.AppendLine($"{baseIndent}        ViewTarget = new Vector3({F(viewport.ViewTarget.X)}, {F(viewport.ViewTarget.Y)}, {F(viewport.ViewTarget.Z)}),");
+        sb.AppendLine($"{baseIndent}        ViewDirection = new Vector3({F(viewport.ViewDirection.X)}, {F(viewport.ViewDirection.Y)}, {F(viewport.ViewDirection.Z)}),");
+        sb.AppendLine($"{baseIndent}        LensLength = {F(viewport.LensLength)},");
+        sb.AppendLine($"{baseIndent}        TwistAngle = {F(viewport.TwistAngle)},");
+        sb.AppendLine($"{baseIndent}        CircleZoomPercent = {viewport.CircleZoomPercent},");
         
         if (statusFlags.Length > 80)
         {
-            sb.AppendLine($"            Status = viewportStatus,");
+            sb.AppendLine($"{baseIndent}        Status = viewportStatus,");
         }
         else
         {
-            sb.AppendLine($"            Status = {statusFlags},");
+            sb.AppendLine($"{baseIndent}        Status = {statusFlags},");
         }
-        sb.AppendLine($"        }}");
-        sb.AppendLine($"        );");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
     private string GenerateViewportStatusFlags(ViewportStatusFlags flags)
