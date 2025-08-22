@@ -882,19 +882,19 @@ public class DxfCodeGenerator
         if (asVariable)
         {
             sb.AppendLine($"{baseIndent}var entity{line.Handle} = ");
-            GenerateLineConstructor(sb, line, baseIndent);
-            sb.AppendLine($"{baseIndent}{{");
-              GenerateEntityPropertiesCore(sb, line, baseIndent);
-              sb.AppendLine($"{baseIndent}}};");
+            GenerateLineConstructor(sb, line, baseIndent + "    ");
+            sb.AppendLine($"{baseIndent}    {{");
+            GenerateEntityPropertiesCore(sb, line, baseIndent + "    ");
+            sb.AppendLine($"{baseIndent}    }};");
             sb.AppendLine($"{baseIndent}doc.Entities.Add(entity{line.Handle});");
         }
         else
         {
             sb.AppendLine($"{baseIndent}doc.Entities.Add(");
-            GenerateLineConstructor(sb, line, baseIndent);
-            sb.AppendLine($"{baseIndent}{{");
-              GenerateEntityPropertiesCore(sb, line, baseIndent);
-              sb.AppendLine($"{baseIndent}}}");
+            GenerateLineConstructor(sb, line, baseIndent + "    ");
+            sb.AppendLine($"{baseIndent}    {{");
+            GenerateEntityPropertiesCore(sb, line, baseIndent + "    ");
+            sb.AppendLine($"{baseIndent}    }}");
             sb.AppendLine($"{baseIndent});");
         }
     }
