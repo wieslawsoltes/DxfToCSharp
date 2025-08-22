@@ -644,6 +644,37 @@ public class DxfCodeGenerator
                 sb.AppendLine();
             }
         }
+        
+        // Generate ApplicationRegistry definitions (if any custom ones)
+        if (options.GenerateApplicationRegistryObjects && doc.ApplicationRegistries.Count > 0)
+        {
+            var customAppRegs = doc.ApplicationRegistries.Where(ar => ar.Name != "ACAD");
+            if (customAppRegs.Any())
+            {
+                sb.AppendLine($"{baseIndent}// ApplicationRegistry definitions");
+                foreach (var appReg in customAppRegs)
+                {
+                    sb.AppendLine($"{baseIndent}var appReg{SafeName(appReg.Name)} = new ApplicationRegistry(\"{Escape(appReg.Name)}\");");
+                    sb.AppendLine($"{baseIndent}doc.ApplicationRegistries.Add(appReg{SafeName(appReg.Name)});");
+                }
+                sb.AppendLine();
+            }
+        }
+        
+        // Note: View objects are not generated as the Views collection is internal in netDxf
+        // and not accessible through the public API
+        
+        // Generate ShapeStyle definitions (if any custom ones)
+        if (options.GenerateShapeStyleObjects && doc.ShapeStyles.Count > 0)
+        {
+            sb.AppendLine($"{baseIndent}// ShapeStyle definitions");
+            foreach (var shapeStyle in doc.ShapeStyles)
+            {
+                sb.AppendLine($"{baseIndent}var shapeStyle{SafeName(shapeStyle.Name)} = new ShapeStyle(\"{Escape(shapeStyle.Name)}\", \"{Escape(shapeStyle.File)}\");");
+                sb.AppendLine($"{baseIndent}doc.ShapeStyles.Add(shapeStyle{SafeName(shapeStyle.Name)});");
+            }
+            sb.AppendLine();
+        }
     }
 
     private void GenerateEntities(StringBuilder sb, List<EntityObject> entities, DxfCodeGenerationOptions options, string baseIndent)
@@ -733,6 +764,9 @@ public class DxfCodeGenerator
                 break;
             case OrdinateDimension ordinateDim when options.GenerateDimensionEntities && options.GenerateOrdinateDimensionEntities:
                 GenerateOrdinateDimension(sb, ordinateDim, baseIndent);
+                break;
+            case ArcLengthDimension arcLengthDim when options.GenerateDimensionEntities && options.GenerateArcLengthDimensionEntities:
+                GenerateArcLengthDimension(sb, arcLengthDim, baseIndent);
                 break;
             case Ray ray when options.GenerateRayEntities:
                 GenerateRay(sb, ray, baseIndent);
@@ -873,6 +907,39 @@ public class DxfCodeGenerator
             if (options.GenerateDetailedComments)
             {
                 sb.AppendLine("        // Dictionary objects (internal to netDxf - not directly accessible)");
+            }
+        }
+        
+        // Generate LayerState objects
+        if (options.GenerateLayerStateObjects)
+        {
+            // Note: LayerState objects are typically stored in dictionaries
+            // This is a placeholder for when LayerState access is available
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// LayerState objects (stored in dictionaries - not directly accessible)");
+            }
+        }
+        
+        // Generate PlotSettings objects
+        if (options.GeneratePlotSettingsObjects)
+        {
+            // Note: PlotSettings objects are typically stored in dictionaries
+            // This is a placeholder for when PlotSettings access is available
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// PlotSettings objects (stored in dictionaries - not directly accessible)");
+            }
+        }
+        
+        // Generate MLineStyle objects
+        if (options.GenerateMLineStyleObjects)
+        {
+            // Note: MLineStyle objects are typically stored in dictionaries
+            // This is a placeholder for when MLineStyle access is available
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// MLineStyle objects (stored in dictionaries - not directly accessible)");
             }
         }
     }
@@ -1785,6 +1852,20 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.FeaturePoint.X)}, {F(dimension.FeaturePoint.Y)}),");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.LeaderEndPoint.X)}, {F(dimension.LeaderEndPoint.Y)}),");
         sb.AppendLine($"{baseIndent}        OrdinateDimensionAxis.{dimension.Axis})");
+        sb.AppendLine($"{baseIndent}    {{");
+        GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    }}");
+        sb.AppendLine($"{baseIndent}    );");
+    }
+
+    private void GenerateArcLengthDimension(StringBuilder sb, ArcLengthDimension dimension, string baseIndent)
+    {
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new ArcLengthDimension(");
+        sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
+        sb.AppendLine($"{baseIndent}        {F(dimension.Radius)},");
+        sb.AppendLine($"{baseIndent}        {F(dimension.StartAngle)},");
+        sb.AppendLine($"{baseIndent}        {F(dimension.EndAngle)},");
+        sb.AppendLine($"{baseIndent}        {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
         sb.AppendLine($"{baseIndent}    }}");

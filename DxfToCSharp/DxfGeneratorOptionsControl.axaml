@@ -73,6 +73,7 @@
       <CheckBox Content="Angular 2-Line Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateAngular2LineDimensionEntities}" />
       <CheckBox Content="Angular 3-Point Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateAngular3PointDimensionEntities}" />
       <CheckBox Content="Ordinate Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateOrdinateDimensionEntities}" />
+      <CheckBox Content="Arc Length Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateArcLengthDimensionEntities}" />
       <CheckBox Content="Leaders" Margin="20,2,0,2" IsChecked="{Binding GenerateLeaderEntities}" />
       <CheckBox Content="MLines" Margin="20,2,0,2" IsChecked="{Binding GenerateMLineEntities}" />
       <CheckBox Content="Rays" Margin="20,2,0,2" IsChecked="{Binding GenerateRayEntities}" />

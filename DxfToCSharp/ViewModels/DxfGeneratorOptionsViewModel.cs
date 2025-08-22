@@ -143,6 +143,48 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generateRasterVariablesObjects, value);
     }
 
+    private bool _generateLayerStateObjects = true;
+
+    public bool GenerateLayerStateObjects
+    {
+        get => _generateLayerStateObjects;
+        set => this.RaiseAndSetIfChanged(ref _generateLayerStateObjects, value);
+    }
+
+    private bool _generatePlotSettingsObjects = true;
+
+    public bool GeneratePlotSettingsObjects
+    {
+        get => _generatePlotSettingsObjects;
+        set => this.RaiseAndSetIfChanged(ref _generatePlotSettingsObjects, value);
+    }
+
+    private bool _generateMLineStyleObjects = true;
+
+    public bool GenerateMLineStyleObjects
+    {
+        get => _generateMLineStyleObjects;
+        set => this.RaiseAndSetIfChanged(ref _generateMLineStyleObjects, value);
+    }
+
+    private bool _generateApplicationRegistryObjects = true;
+
+    public bool GenerateApplicationRegistryObjects
+    {
+        get => _generateApplicationRegistryObjects;
+        set => this.RaiseAndSetIfChanged(ref _generateApplicationRegistryObjects, value);
+    }
+
+    // Note: View objects are not supported as the Views collection is internal in netDxf
+
+    private bool _generateShapeStyleObjects = true;
+
+    public bool GenerateShapeStyleObjects
+    {
+        get => _generateShapeStyleObjects;
+        set => this.RaiseAndSetIfChanged(ref _generateShapeStyleObjects, value);
+    }
+
     // Entity options
     private bool _generateLineEntities = true;
 
@@ -312,6 +354,14 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generateOrdinateDimensionEntities, value);
     }
 
+    private bool _generateArcLengthDimensionEntities = true;
+
+    public bool GenerateArcLengthDimensionEntities
+    {
+        get => _generateArcLengthDimensionEntities;
+        set => this.RaiseAndSetIfChanged(ref _generateArcLengthDimensionEntities, value);
+    }
+
     private bool _generateLeaderEntities = true;
 
     public bool GenerateLeaderEntities
@@ -456,8 +506,14 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 x => x.GenerateXRecordObjects,
                 x => x.GenerateDictionaryObjects,
                 x => x.GenerateRasterVariablesObjects,
-                (groups, layouts, imageDefs, underlayDefs, xrecords, dictionaries, rasterVars) =>
-                    groups && layouts && imageDefs && underlayDefs && xrecords && dictionaries && rasterVars)
+                x => x.GenerateLayerStateObjects,
+                x => x.GeneratePlotSettingsObjects,
+                x => x.GenerateMLineStyleObjects,
+                x => x.GenerateApplicationRegistryObjects,
+                // View objects not supported (internal API)
+                x => x.GenerateShapeStyleObjects,
+                (groups, layouts, imageDefs, underlayDefs, xrecords, dictionaries, rasterVars, layerStates, plotSettings, mlineStyles, appRegs, shapeStyles) =>
+                    groups && layouts && imageDefs && underlayDefs && xrecords && dictionaries && rasterVars && layerStates && plotSettings && mlineStyles && appRegs && shapeStyles)
             .ToProperty(this, x => x.AllObjectsSelected);
 
         var entitiesGroup1 = Observable.CombineLatest(
@@ -482,14 +538,19 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 line && arc && circle && ellipse && polyline && spline && text && mtext && point && insert &&
                 hatch && solid && face3d && wipeout && linearDim && alignedDim);
 
-        var entitiesGroup2 = Observable.CombineLatest(
+        var entitiesGroup2a = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateRadialDimensionEntities),
             this.WhenAnyValue(x => x.GenerateDiametricDimensionEntities),
             this.WhenAnyValue(x => x.GenerateAngular2LineDimensionEntities),
             this.WhenAnyValue(x => x.GenerateAngular3PointDimensionEntities),
             this.WhenAnyValue(x => x.GenerateOrdinateDimensionEntities),
+            this.WhenAnyValue(x => x.GenerateArcLengthDimensionEntities),
             this.WhenAnyValue(x => x.GenerateLeaderEntities),
             this.WhenAnyValue(x => x.GenerateMLineEntities),
+            (radialDim, diametricDim, angular2LineDim, angular3PointDim, ordinateDim, arcLengthDim, leader, mline) =>
+                radialDim && diametricDim && angular2LineDim && angular3PointDim && ordinateDim && arcLengthDim && leader && mline);
+
+        var entitiesGroup2b = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateRayEntities),
             this.WhenAnyValue(x => x.GenerateXLineEntities),
             this.WhenAnyValue(x => x.GenerateImageEntities),
@@ -499,10 +560,13 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateShapeEntities),
             this.WhenAnyValue(x => x.GenerateToleranceEntities),
             this.WhenAnyValue(x => x.GenerateTraceEntities),
-            (radialDim, diametricDim, angular2LineDim, angular3PointDim, ordinateDim, leader, mline, ray, xline, image,
-                    mesh, polyfaceMesh, polygonMesh, shape, tolerance, trace) =>
-                radialDim && diametricDim && angular2LineDim && angular3PointDim && ordinateDim && leader &&
-                mline && ray && xline && image && mesh && polyfaceMesh && polygonMesh && shape && tolerance && trace);
+            (ray, xline, image, mesh, polyfaceMesh, polygonMesh, shape, tolerance, trace) =>
+                ray && xline && image && mesh && polyfaceMesh && polygonMesh && shape && tolerance && trace);
+
+        var entitiesGroup2 = Observable.CombineLatest(
+            entitiesGroup2a,
+            entitiesGroup2b,
+            (group2a, group2b) => group2a && group2b);
 
         var entitiesGroup3 = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateUnderlayEntities),
@@ -548,7 +612,13 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateXRecordObjects),
             this.WhenAnyValue(x => x.GenerateDictionaryObjects),
             this.WhenAnyValue(x => x.GenerateRasterVariablesObjects),
-            (groups, layouts, imageDefs, underlayDefs, xrecords, dictionaries, rasterVars) => true);
+            this.WhenAnyValue(x => x.GenerateLayerStateObjects),
+            this.WhenAnyValue(x => x.GeneratePlotSettingsObjects),
+            this.WhenAnyValue(x => x.GenerateMLineStyleObjects),
+            this.WhenAnyValue(x => x.GenerateApplicationRegistryObjects),
+            // View objects not supported (internal API)
+            this.WhenAnyValue(x => x.GenerateShapeStyleObjects),
+            (groups, layouts, imageDefs, underlayDefs, xrecords, dictionaries, rasterVars, layerStates, plotSettings, mlineStyles, appRegs, shapeStyles) => true);
 
         OptionsChanged = Observable.CombineLatest(
                 generalOptions,
@@ -580,6 +650,12 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateXRecordObjects = value;
         GenerateDictionaryObjects = value;
         GenerateRasterVariablesObjects = value;
+        GenerateLayerStateObjects = value;
+        GeneratePlotSettingsObjects = value;
+        GenerateMLineStyleObjects = value;
+        GenerateApplicationRegistryObjects = value;
+        // View objects not supported (internal API)
+        GenerateShapeStyleObjects = value;
     }
 
     private void ToggleAllEntities(bool value)
@@ -605,6 +681,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateAngular2LineDimensionEntities = value;
         GenerateAngular3PointDimensionEntities = value;
         GenerateOrdinateDimensionEntities = value;
+        GenerateArcLengthDimensionEntities = value;
         GenerateLeaderEntities = value;
         GenerateMLineEntities = value;
         GenerateRayEntities = value;
@@ -643,6 +720,12 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateXRecordObjects = GenerateXRecordObjects,
             GenerateDictionaryObjects = GenerateDictionaryObjects,
             GenerateRasterVariablesObjects = GenerateRasterVariablesObjects,
+            GenerateLayerStateObjects = GenerateLayerStateObjects,
+            GeneratePlotSettingsObjects = GeneratePlotSettingsObjects,
+            GenerateMLineStyleObjects = GenerateMLineStyleObjects,
+            GenerateApplicationRegistryObjects = GenerateApplicationRegistryObjects,
+            // View objects not supported (internal API)
+            GenerateShapeStyleObjects = GenerateShapeStyleObjects,
             GenerateLineEntities = GenerateLineEntities,
             GenerateArcEntities = GenerateArcEntities,
             GenerateCircleEntities = GenerateCircleEntities,
@@ -664,6 +747,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateAngular2LineDimensionEntities = GenerateAngular2LineDimensionEntities,
             GenerateAngular3PointDimensionEntities = GenerateAngular3PointDimensionEntities,
             GenerateOrdinateDimensionEntities = GenerateOrdinateDimensionEntities,
+            GenerateArcLengthDimensionEntities = GenerateArcLengthDimensionEntities,
             GenerateLeaderEntities = GenerateLeaderEntities,
             GenerateMLineEntities = GenerateMLineEntities,
             GenerateRayEntities = GenerateRayEntities,
@@ -701,6 +785,12 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateXRecordObjects = options.GenerateXRecordObjects;
         GenerateDictionaryObjects = options.GenerateDictionaryObjects;
         GenerateRasterVariablesObjects = options.GenerateRasterVariablesObjects;
+        GenerateLayerStateObjects = options.GenerateLayerStateObjects;
+        GeneratePlotSettingsObjects = options.GeneratePlotSettingsObjects;
+        GenerateMLineStyleObjects = options.GenerateMLineStyleObjects;
+        GenerateApplicationRegistryObjects = options.GenerateApplicationRegistryObjects;
+        // View objects not supported (internal API)
+        GenerateShapeStyleObjects = options.GenerateShapeStyleObjects;
         GenerateLineEntities = options.GenerateLineEntities;
         GenerateArcEntities = options.GenerateArcEntities;
         GenerateCircleEntities = options.GenerateCircleEntities;
@@ -722,6 +812,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateAngular2LineDimensionEntities = options.GenerateAngular2LineDimensionEntities;
         GenerateAngular3PointDimensionEntities = options.GenerateAngular3PointDimensionEntities;
         GenerateOrdinateDimensionEntities = options.GenerateOrdinateDimensionEntities;
+        GenerateArcLengthDimensionEntities = options.GenerateArcLengthDimensionEntities;
         GenerateLeaderEntities = options.GenerateLeaderEntities;
         GenerateMLineEntities = options.GenerateMLineEntities;
         GenerateRayEntities = options.GenerateRayEntities;

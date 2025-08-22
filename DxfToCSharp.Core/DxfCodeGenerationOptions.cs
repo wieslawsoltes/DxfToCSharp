@@ -116,6 +116,33 @@ public class DxfCodeGenerationOptions
     public bool GenerateRasterVariablesObjects { get; set; } = true;
 
     /// <summary>
+    /// Whether to generate LayerState objects
+    /// </summary>
+    public bool GenerateLayerStateObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate PlotSettings objects
+    /// </summary>
+    public bool GeneratePlotSettingsObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate MLineStyle objects
+    /// </summary>
+    public bool GenerateMLineStyleObjects { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate ApplicationRegistry table objects
+    /// </summary>
+    public bool GenerateApplicationRegistryObjects { get; set; } = true;
+
+    // Note: View objects are not supported as the Views collection is internal in netDxf
+
+    /// <summary>
+    /// Whether to generate ShapeStyle table objects
+    /// </summary>
+    public bool GenerateShapeStyleObjects { get; set; } = true;
+
+    /// <summary>
     /// Whether to generate line entities
     /// </summary>
     public bool GenerateLineEntities { get; set; } = true;
@@ -199,6 +226,11 @@ public class DxfCodeGenerationOptions
     /// Whether to generate ordinate dimension entities
     /// </summary>
     public bool GenerateOrdinateDimensionEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate arc length dimension entities
+    /// </summary>
+    public bool GenerateArcLengthDimensionEntities { get; set; } = true;
 
     /// <summary>
     /// Whether to generate leader entities
