@@ -24,6 +24,46 @@ public class CircleEntityTests : RoundTripTestBase, IDisposable
     }
 
     [Fact]
+    public void Circle_WithTransparency_ShouldPreserveTransparency()
+    {
+        // Arrange
+        var originalCircle = new Circle(
+            new Vector3(25.5, 30.7, 0),
+            15.25)
+        {
+            Transparency = new Transparency(27) // 30% transparency (0-90 scale)
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalCircle, (original, recreated) =>
+        {
+            AssertVector3Equal(original.Center, recreated.Center);
+            AssertDoubleEqual(original.Radius, recreated.Radius);
+            AssertDoubleEqual(original.Transparency.Value, recreated.Transparency.Value);
+        });
+    }
+
+    [Fact]
+    public void Circle_WithIsVisibleFalse_ShouldPreserveVisibility()
+    {
+        // Arrange
+        var originalCircle = new Circle(
+            new Vector3(25.5, 30.7, 0),
+            15.25)
+        {
+            IsVisible = false
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalCircle, (original, recreated) =>
+        {
+            AssertVector3Equal(original.Center, recreated.Center);
+            AssertDoubleEqual(original.Radius, recreated.Radius);
+            Assert.Equal(original.IsVisible, recreated.IsVisible);
+        });
+    }
+
+    [Fact]
     public void Circle_With3DCenter_ShouldPreserveZValue()
     {
         // Arrange

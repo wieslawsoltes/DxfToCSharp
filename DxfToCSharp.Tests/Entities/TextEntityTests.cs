@@ -230,4 +230,48 @@ public class TextEntityTests : RoundTripTestBase, IDisposable
             AssertDoubleEqual(original.Rotation, recreated.Rotation, 1e-12);
         });
     }
+
+    [Fact]
+    public void Text_WithTransparency_ShouldPreserveTransparency()
+    {
+        // Arrange
+        var originalText = new Text(
+            "Transparent Text",
+            new Vector3(10, 20, 0),
+            5.0)
+        {
+            Transparency = new Transparency(63) // 70% transparency (0-90 scale)
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalText, (original, recreated) =>
+        {
+            Assert.Equal(original.Value, recreated.Value);
+            AssertVector3Equal(original.Position, recreated.Position);
+            AssertDoubleEqual(original.Height, recreated.Height);
+            AssertDoubleEqual(original.Transparency.Value, recreated.Transparency.Value);
+        });
+    }
+
+    [Fact]
+    public void Text_WithIsVisibleFalse_ShouldPreserveVisibility()
+    {
+        // Arrange
+        var originalText = new Text(
+            "Hidden Text",
+            new Vector3(10, 20, 0),
+            5.0)
+        {
+            IsVisible = false
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalText, (original, recreated) =>
+        {
+            Assert.Equal(original.Value, recreated.Value);
+            AssertVector3Equal(original.Position, recreated.Position);
+            AssertDoubleEqual(original.Height, recreated.Height);
+            Assert.Equal(original.IsVisible, recreated.IsVisible);
+        });
+    }
 }

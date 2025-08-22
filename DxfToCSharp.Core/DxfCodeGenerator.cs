@@ -186,6 +186,12 @@ public class DxfCodeGenerator
         }
         
         // Generate double properties
+        if (Math.Abs(headerVars.Angbase - 0.0) > 1e-9)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.Angbase = {F(headerVars.Angbase)};");
+            hasNonDefaultValues = true;
+        }
+        
         if (Math.Abs(headerVars.TextSize - 2.5) > 1e-9)
         {
             tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TextSize = {F(headerVars.TextSize)};");
@@ -210,7 +216,19 @@ public class DxfCodeGenerator
             hasNonDefaultValues = true;
         }
         
+        if (Math.Abs(headerVars.CMLScale - 20.0) > 1e-9)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CMLScale = {F(headerVars.CMLScale)};");
+            hasNonDefaultValues = true;
+        }
+        
         // Generate enum properties
+        if (headerVars.Angdir != AngleDirection.CCW)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.Angdir = AngleDirection.{headerVars.Angdir};");
+            hasNonDefaultValues = true;
+        }
+        
         if (headerVars.InsUnits != DrawingUnits.Unitless)
         {
             tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.InsUnits = DrawingUnits.{headerVars.InsUnits};");
@@ -244,6 +262,63 @@ public class DxfCodeGenerator
         if (headerVars.LUnits != LinearUnitType.Decimal)
         {
             tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.LUnits = LinearUnitType.{headerVars.LUnits};");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.CMLJust != MLineJustification.Top)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CMLJust = MLineJustification.{headerVars.CMLJust};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate AciColor properties
+        if (headerVars.CeColor.Index != AciColor.ByLayer.Index)
+        {
+            if (headerVars.CeColor.Index >= 0 && headerVars.CeColor.Index <= 255)
+            {
+                tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CeColor = new AciColor({headerVars.CeColor.Index});");
+            }
+            else
+            {
+                tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CeColor = AciColor.ByLayer;");
+            }
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate string properties
+        if (!string.IsNullOrEmpty(headerVars.LastSavedBy) && headerVars.LastSavedBy != Environment.UserName)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.LastSavedBy = \"{Escape(headerVars.LastSavedBy)}\";");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.CeLtype != "ByLayer")
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CeLtype = \"{Escape(headerVars.CeLtype)}\";");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.CLayer != "0")
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CLayer = \"{Escape(headerVars.CLayer)}\";");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.CMLStyle != "Standard")
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CMLStyle = \"{Escape(headerVars.CMLStyle)}\";");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.DimStyle != "Standard")
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.DimStyle = \"{Escape(headerVars.DimStyle)}\";");
+            hasNonDefaultValues = true;
+        }
+        
+        if (headerVars.TextStyle != "Standard")
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TextStyle = \"{Escape(headerVars.TextStyle)}\";");
             hasNonDefaultValues = true;
         }
         
@@ -300,6 +375,54 @@ public class DxfCodeGenerator
         if (headerVars.LwDisplay != false)
         {
             tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.LwDisplay = {headerVars.LwDisplay.ToString().ToLower()};");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate DateTime properties
+        // Note: DateTime properties are initialized with DateTime.Now/UtcNow in HeaderVariables constructor,
+        // so we only generate code if they have been explicitly set to specific values
+        // We'll generate code for any DateTime that's not the current date/time (allowing some tolerance)
+        var now = DateTime.Now;
+        var utcNow = DateTime.UtcNow;
+        
+        // Only generate DateTime code if the values are significantly different from current time
+        // or if they represent specific dates that should be preserved
+        if (Math.Abs((headerVars.TdCreate - now).TotalMinutes) > 1)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TdCreate = new DateTime({headerVars.TdCreate.Year}, {headerVars.TdCreate.Month}, {headerVars.TdCreate.Day}, {headerVars.TdCreate.Hour}, {headerVars.TdCreate.Minute}, {headerVars.TdCreate.Second});");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs((headerVars.TduCreate - utcNow).TotalMinutes) > 1)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TduCreate = new DateTime({headerVars.TduCreate.Year}, {headerVars.TduCreate.Month}, {headerVars.TduCreate.Day}, {headerVars.TduCreate.Hour}, {headerVars.TduCreate.Minute}, {headerVars.TduCreate.Second}, DateTimeKind.Utc);");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs((headerVars.TdUpdate - now).TotalMinutes) > 1)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TdUpdate = new DateTime({headerVars.TdUpdate.Year}, {headerVars.TdUpdate.Month}, {headerVars.TdUpdate.Day}, {headerVars.TdUpdate.Hour}, {headerVars.TdUpdate.Minute}, {headerVars.TdUpdate.Second});");
+            hasNonDefaultValues = true;
+        }
+        
+        if (Math.Abs((headerVars.TduUpdate - utcNow).TotalMinutes) > 1)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TduUpdate = new DateTime({headerVars.TduUpdate.Year}, {headerVars.TduUpdate.Month}, {headerVars.TduUpdate.Day}, {headerVars.TduUpdate.Hour}, {headerVars.TduUpdate.Minute}, {headerVars.TduUpdate.Second}, DateTimeKind.Utc);");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate TimeSpan properties
+        if (headerVars.TdinDwg != TimeSpan.Zero)
+        {
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.TdinDwg = new TimeSpan({headerVars.TdinDwg.Days}, {headerVars.TdinDwg.Hours}, {headerVars.TdinDwg.Minutes}, {headerVars.TdinDwg.Seconds});");
+            hasNonDefaultValues = true;
+        }
+        
+        // Generate UCS properties
+        if (headerVars.CurrentUCS != null && headerVars.CurrentUCS.Name != "Unnamed")
+        {
+            var ucs = headerVars.CurrentUCS;
+            tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CurrentUCS = new UCS(\"{Escape(ucs.Name)}\", new Vector3({F(ucs.Origin.X)}, {F(ucs.Origin.Y)}, {F(ucs.Origin.Z)}), new Vector3({F(ucs.XAxis.X)}, {F(ucs.XAxis.Y)}, {F(ucs.XAxis.Z)}), new Vector3({F(ucs.YAxis.X)}, {F(ucs.YAxis.Y)}, {F(ucs.YAxis.Z)}));");
             hasNonDefaultValues = true;
         }
         
@@ -1423,6 +1546,25 @@ public class DxfCodeGenerator
         else if (entity is Polyline2D poly2d && Math.Abs(poly2d.Thickness) > 1e-10)
         {
             sb.AppendLine($"{baseIndent}    Thickness = {F(poly2d.Thickness)},");
+        }
+
+        // Transparency (if not default ByLayer)
+        if (entity.Transparency.Value != -1)
+        {
+            if (entity.Transparency.Value == 100)
+            {
+                sb.AppendLine($"{baseIndent}    Transparency = Transparency.ByBlock,");
+            }
+            else if (entity.Transparency.Value >= 0 && entity.Transparency.Value <= 90)
+            {
+                sb.AppendLine($"{baseIndent}    Transparency = new Transparency({entity.Transparency.Value}),");
+            }
+        }
+
+        // IsVisible (if not default true)
+        if (!entity.IsVisible)
+        {
+            sb.AppendLine($"{baseIndent}    IsVisible = false,");
         }
 
         // Normal (if not default 0,0,1)

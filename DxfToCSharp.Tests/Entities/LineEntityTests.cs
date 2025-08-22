@@ -212,4 +212,44 @@ public class LineEntityTests : RoundTripTestBase, IDisposable
             AssertVector3Equal(original.EndPoint, recreated.EndPoint);
         });
     }
+
+    [Fact]
+    public void Line_WithTransparency_ShouldPreserveTransparency()
+    {
+        // Arrange
+        var originalLine = new Line(
+            new Vector3(0, 0, 0),
+            new Vector3(100, 100, 0))
+        {
+            Transparency = new Transparency(45) // 50% transparency (0-90 scale)
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalLine, (original, recreated) =>
+        {
+            AssertVector3Equal(original.StartPoint, recreated.StartPoint);
+            AssertVector3Equal(original.EndPoint, recreated.EndPoint);
+            AssertDoubleEqual(original.Transparency.Value, recreated.Transparency.Value);
+        });
+    }
+
+    [Fact]
+    public void Line_WithIsVisibleFalse_ShouldPreserveVisibility()
+    {
+        // Arrange
+        var originalLine = new Line(
+            new Vector3(0, 0, 0),
+            new Vector3(100, 100, 0))
+        {
+            IsVisible = false
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalLine, (original, recreated) =>
+        {
+            AssertVector3Equal(original.StartPoint, recreated.StartPoint);
+            AssertVector3Equal(original.EndPoint, recreated.EndPoint);
+            Assert.Equal(original.IsVisible, recreated.IsVisible);
+        });
+    }
 }
