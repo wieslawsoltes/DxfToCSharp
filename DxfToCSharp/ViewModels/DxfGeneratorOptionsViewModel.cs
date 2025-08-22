@@ -467,6 +467,9 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     }
 
     // Computed observables for master checkboxes
+    private readonly ObservableAsPropertyHelper<bool> _allGeneralSelected;
+    public bool AllGeneralSelected => _allGeneralSelected.Value;
+
     private readonly ObservableAsPropertyHelper<bool> _allTablesSelected;
     public bool AllTablesSelected => _allTablesSelected.Value;
 
@@ -477,6 +480,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     public bool AllEntitiesSelected => _allEntitiesSelected.Value;
 
     // Commands
+    public ICommand ToggleAllGeneralCommand { get; }
     public ICommand ToggleAllTablesCommand { get; }
     public ICommand ToggleAllObjectsCommand { get; }
     public ICommand ToggleAllEntitiesCommand { get; }
@@ -487,6 +491,17 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     public DxfGeneratorOptionsViewModel()
     {
         // Create computed observables for master checkboxes
+        _allGeneralSelected = this.WhenAnyValue(
+                x => x.GenerateHeader,
+                x => x.GenerateUsingStatements,
+                x => x.GenerateHeaderVariables,
+                x => x.GenerateDetailedComments,
+                x => x.GenerateSaveComment,
+                x => x.GenerateClass,
+                (header, usingStmts, headerVars, detailedComments, saveComment, generateClass) =>
+                    header && usingStmts && headerVars && detailedComments && saveComment && generateClass)
+            .ToProperty(this, x => x.AllGeneralSelected);
+
         _allTablesSelected = this.WhenAnyValue(
                 x => x.GenerateLayers,
                 x => x.GenerateLinetypes,
@@ -581,6 +596,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             .ToProperty(this, x => x.AllEntitiesSelected);
 
         // Create commands for master checkboxes
+        ToggleAllGeneralCommand = ReactiveCommand.Create<bool>(ToggleAllGeneral);
         ToggleAllTablesCommand = ReactiveCommand.Create<bool>(ToggleAllTables);
         ToggleAllObjectsCommand = ReactiveCommand.Create<bool>(ToggleAllObjects);
         ToggleAllEntitiesCommand = ReactiveCommand.Create<bool>(ToggleAllEntities);
@@ -629,6 +645,16 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 entitiesGroup3,
                 (general, tables, objects, entities1, entities2, entities3) => true)
             .Select(_ => ToOptions());
+    }
+
+    private void ToggleAllGeneral(bool value)
+    {
+        GenerateHeader = value;
+        GenerateUsingStatements = value;
+        GenerateHeaderVariables = value;
+        GenerateDetailedComments = value;
+        GenerateSaveComment = value;
+        GenerateClass = value;
     }
 
     private void ToggleAllTables(bool value)
