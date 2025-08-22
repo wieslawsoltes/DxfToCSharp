@@ -404,7 +404,6 @@ public partial class DxfGeneratorOptionsControl : UserControl
                 if (checkbox != null)
                 {
                     checkbox.IsChecked = isChecked;
-                    checkbox.IsEnabled = isChecked;
                 }
             }
         }
@@ -427,14 +426,14 @@ public partial class DxfGeneratorOptionsControl : UserControl
             var isChecked = _generateObjectsCheckBox?.IsChecked ?? false;
                 
             // Update all object checkboxes based on master checkbox state
-            if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = isChecked; _generateGroupsCheckBox.IsEnabled = isChecked; }
-            if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = isChecked; _generateLayoutsCheckBox.IsEnabled = isChecked; }
-            if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = isChecked; _generateImageDefinitionsCheckBox.IsEnabled = isChecked; }
-            if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = isChecked; _generateUnderlayDefinitionsCheckBox.IsEnabled = isChecked; }
-            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = isChecked; _generateMLineEntitiesCheckBox.IsEnabled = isChecked; }
-            if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = isChecked; _generateXRecordObjectsCheckBox.IsEnabled = isChecked; }
-            if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = isChecked; _generateDictionaryObjectsCheckBox.IsEnabled = isChecked; }
-            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = isChecked; _generateRasterVariablesObjectsCheckBox.IsEnabled = isChecked; }
+            if (_generateGroupsCheckBox != null) { _generateGroupsCheckBox.IsChecked = isChecked; }
+            if (_generateLayoutsCheckBox != null) { _generateLayoutsCheckBox.IsChecked = isChecked; }
+            if (_generateImageDefinitionsCheckBox != null) { _generateImageDefinitionsCheckBox.IsChecked = isChecked; }
+            if (_generateUnderlayDefinitionsCheckBox != null) { _generateUnderlayDefinitionsCheckBox.IsChecked = isChecked; }
+            if (_generateMLineEntitiesCheckBox != null) { _generateMLineEntitiesCheckBox.IsChecked = isChecked; }
+            if (_generateXRecordObjectsCheckBox != null) { _generateXRecordObjectsCheckBox.IsChecked = isChecked; }
+            if (_generateDictionaryObjectsCheckBox != null) { _generateDictionaryObjectsCheckBox.IsChecked = isChecked; }
+            if (_generateRasterVariablesObjectsCheckBox != null) { _generateRasterVariablesObjectsCheckBox.IsChecked = isChecked; }
         }
         finally
         {
@@ -455,12 +454,12 @@ public partial class DxfGeneratorOptionsControl : UserControl
             var isChecked = _generateTablesCheckBox?.IsChecked ?? false;
                 
             // Update all table checkboxes based on master checkbox state
-            if (_generateLayersCheckBox != null) { _generateLayersCheckBox.IsChecked = isChecked; _generateLayersCheckBox.IsEnabled = isChecked; }
-            if (_generateLinetypesCheckBox != null) { _generateLinetypesCheckBox.IsChecked = isChecked; _generateLinetypesCheckBox.IsEnabled = isChecked; }
-            if (_generateTextStylesCheckBox != null) { _generateTextStylesCheckBox.IsChecked = isChecked; _generateTextStylesCheckBox.IsEnabled = isChecked; }
-            if (_generateBlocksCheckBox != null) { _generateBlocksCheckBox.IsChecked = isChecked; _generateBlocksCheckBox.IsEnabled = isChecked; }
-            if (_generateDimensionStylesCheckBox != null) { _generateDimensionStylesCheckBox.IsChecked = isChecked; _generateDimensionStylesCheckBox.IsEnabled = isChecked; }
-            if (_generateMLineStylesCheckBox != null) { _generateMLineStylesCheckBox.IsChecked = isChecked; _generateMLineStylesCheckBox.IsEnabled = isChecked; }
+            if (_generateLayersCheckBox != null) { _generateLayersCheckBox.IsChecked = isChecked; }
+            if (_generateLinetypesCheckBox != null) { _generateLinetypesCheckBox.IsChecked = isChecked; }
+            if (_generateTextStylesCheckBox != null) { _generateTextStylesCheckBox.IsChecked = isChecked; }
+            if (_generateBlocksCheckBox != null) { _generateBlocksCheckBox.IsChecked = isChecked; }
+            if (_generateDimensionStylesCheckBox != null) { _generateDimensionStylesCheckBox.IsChecked = isChecked; }
+            if (_generateMLineStylesCheckBox != null) { _generateMLineStylesCheckBox.IsChecked = isChecked; }
         }
         finally
         {
