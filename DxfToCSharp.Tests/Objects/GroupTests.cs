@@ -35,6 +35,8 @@ public class GroupTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Name, loaded.Name);
             Assert.Equal(original.Entities.Count, loaded.Entities.Count);
+            Assert.Equal(original.Description, loaded.Description);
+            Assert.Equal(original.IsSelectable, loaded.IsSelectable);
             
             // Verify that the group contains the expected entity types
             Assert.Contains(loaded.Entities, e => e is Line);
@@ -57,7 +59,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
         PerformObjectRoundTripTest(originalDoc, group, (original, loaded) =>
         {
             Assert.Equal(original.Name, loaded.Name);
-            Assert.Equal(0, loaded.Entities.Count);
+            Assert.Empty(loaded.Entities);
         });
     }
 
@@ -76,6 +78,36 @@ public class GroupTests : RoundTripTestBase, IDisposable
         PerformObjectRoundTripTest(originalDoc, group, (original, loaded) =>
         {
             Assert.Equal(original.Name, loaded.Name);
+            Assert.Equal(original.Description, loaded.Description);
+            Assert.Equal(original.IsSelectable, loaded.IsSelectable);
+        });
+    }
+
+    [Fact]
+    public void Group_WithDescriptionAndSelectability_ShouldRoundTrip()
+    {
+        // Arrange
+        var originalDoc = new DxfDocument();
+        var group = new Group("GroupWithProperties")
+        {
+            Description = "Test group description",
+            IsSelectable = false
+        };
+        
+        // Add some entities to the group
+        var line = new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0));
+        originalDoc.Entities.Add(line);
+        group.Entities.Add(line);
+        
+        originalDoc.Groups.Add(group);
+
+        // Act & Assert
+        PerformObjectRoundTripTest(originalDoc, group, (original, loaded) =>
+        {
+            Assert.Equal(original.Name, loaded.Name);
+            Assert.Equal(original.Description, loaded.Description);
+            Assert.Equal(original.IsSelectable, loaded.IsSelectable);
+            Assert.Equal(original.Entities.Count, loaded.Entities.Count);
         });
     }
 

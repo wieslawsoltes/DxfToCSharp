@@ -2296,6 +2296,19 @@ public class DxfCodeGenerator
         }
         
         sb.AppendLine($"{baseIndent}var group{group.Handle} = new Group(\"{Escape(group.Name)}\");");
+        
+        // Set description if not empty
+        if (!string.IsNullOrEmpty(group.Description))
+        {
+            sb.AppendLine($"{baseIndent}group{group.Handle}.Description = \"{Escape(group.Description)}\";");
+        }
+        
+        // Set IsSelectable if not default (true)
+        if (!group.IsSelectable)
+        {
+            sb.AppendLine($"{baseIndent}group{group.Handle}.IsSelectable = false;");
+        }
+        
         sb.AppendLine($"{baseIndent}doc.Groups.Add(group{group.Handle});");
         
         // Add entities to group if any
@@ -2318,6 +2331,69 @@ public class DxfCodeGenerator
         }
         
         sb.AppendLine($"{baseIndent}var layout{layout.Handle} = new Layout(\"{Escape(layout.Name)}\");");
+        
+        // Set TabOrder if not default (0)
+        if (layout.TabOrder != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.TabOrder = {layout.TabOrder};");
+        }
+        
+        // Set MinLimit if not default
+        if (layout.MinLimit.X != 0 || layout.MinLimit.Y != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.MinLimit = new Vector2({F(layout.MinLimit.X)}, {F(layout.MinLimit.Y)});");
+        }
+        
+        // Set MaxLimit if not default
+        if (layout.MaxLimit.X != 0 || layout.MaxLimit.Y != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.MaxLimit = new Vector2({F(layout.MaxLimit.X)}, {F(layout.MaxLimit.Y)});");
+        }
+        
+        // Set MinExtents if not default
+        if (layout.MinExtents.X != 0 || layout.MinExtents.Y != 0 || layout.MinExtents.Z != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.MinExtents = new Vector3({F(layout.MinExtents.X)}, {F(layout.MinExtents.Y)}, {F(layout.MinExtents.Z)});");
+        }
+        
+        // Set MaxExtents if not default
+        if (layout.MaxExtents.X != 0 || layout.MaxExtents.Y != 0 || layout.MaxExtents.Z != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.MaxExtents = new Vector3({F(layout.MaxExtents.X)}, {F(layout.MaxExtents.Y)}, {F(layout.MaxExtents.Z)});");
+        }
+        
+        // Set BasePoint if not default
+        if (layout.BasePoint.X != 0 || layout.BasePoint.Y != 0 || layout.BasePoint.Z != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.BasePoint = new Vector3({F(layout.BasePoint.X)}, {F(layout.BasePoint.Y)}, {F(layout.BasePoint.Z)});");
+        }
+        
+        // Set Elevation if not default (0)
+        if (Math.Abs(layout.Elevation) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.Elevation = {F(layout.Elevation)};");
+        }
+        
+        // Set UcsOrigin if not default
+        if (layout.UcsOrigin.X != 0 || layout.UcsOrigin.Y != 0 || layout.UcsOrigin.Z != 0)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.UcsOrigin = new Vector3({F(layout.UcsOrigin.X)}, {F(layout.UcsOrigin.Y)}, {F(layout.UcsOrigin.Z)});");
+        }
+        
+        // Set UcsXAxis if not default (1,0,0)
+        if (Math.Abs(layout.UcsXAxis.X - 1.0) > 1e-12 || Math.Abs(layout.UcsXAxis.Y) > 1e-12 || Math.Abs(layout.UcsXAxis.Z) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.UcsXAxis = new Vector3({F(layout.UcsXAxis.X)}, {F(layout.UcsXAxis.Y)}, {F(layout.UcsXAxis.Z)});");
+        }
+        
+        // Set UcsYAxis if not default (0,1,0)
+        if (Math.Abs(layout.UcsYAxis.X) > 1e-12 || Math.Abs(layout.UcsYAxis.Y - 1.0) > 1e-12 || Math.Abs(layout.UcsYAxis.Z) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}layout{layout.Handle}.UcsYAxis = new Vector3({F(layout.UcsYAxis.X)}, {F(layout.UcsYAxis.Y)}, {F(layout.UcsYAxis.Z)});");
+        }
+        
+        // Note: IsPaperSpace is read-only and determined by the layout type, so we don't generate assignment code for it
+        
         sb.AppendLine($"{baseIndent}doc.Layouts.Add(layout{layout.Handle});");
         sb.AppendLine();
     }
