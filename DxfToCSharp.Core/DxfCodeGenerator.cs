@@ -888,48 +888,28 @@ public class DxfCodeGenerator
             sb.AppendLine();
         }
         
-        // Generate XRecord objects
-        if (options.GenerateXRecordObjects)
-        {
-            // Note: XRecord objects are typically stored in dictionaries
-            // This is a placeholder for when XRecord access is available
-            if (options.GenerateDetailedComments)
-            {
-                sb.AppendLine($"{baseIndent}// XRecord objects (stored in dictionaries - not directly accessible)");
-            }
-        }
-        
-        // Generate Dictionary objects
-        if (options.GenerateDictionaryObjects)
-        {
-            // Note: Dictionary objects are internal to netDxf
-            // This is a placeholder for when Dictionary access is available
-            if (options.GenerateDetailedComments)
-            {
-                sb.AppendLine("        // Dictionary objects (internal to netDxf - not directly accessible)");
-            }
-        }
-        
         // Generate LayerState objects
         if (options.GenerateLayerStateObjects)
         {
-            // Note: LayerState objects are typically stored in dictionaries
-            // This is a placeholder for when LayerState access is available
-            if (options.GenerateDetailedComments)
-            {
-                sb.AppendLine($"{baseIndent}// LayerState objects (stored in dictionaries - not directly accessible)");
-            }
+            GenerateLayerStatePlaceholder(sb, options, baseIndent);
         }
         
         // Generate PlotSettings objects
         if (options.GeneratePlotSettingsObjects)
         {
-            // Note: PlotSettings objects are typically stored in dictionaries
-            // This is a placeholder for when PlotSettings access is available
-            if (options.GenerateDetailedComments)
-            {
-                sb.AppendLine($"{baseIndent}// PlotSettings objects (stored in dictionaries - not directly accessible)");
-            }
+            GeneratePlotSettingsPlaceholder(sb, options, baseIndent);
+        }
+        
+        // Generate XRecord objects
+        if (options.GenerateXRecordObjects)
+        {
+            GenerateXRecordPlaceholder(sb, options, baseIndent);
+        }
+        
+        // Generate Dictionary objects
+        if (options.GenerateDictionaryObjects)
+        {
+            GenerateDictionaryObjectPlaceholder(sb, options, baseIndent);
         }
         
         // Generate MLineStyle objects
@@ -2414,6 +2394,227 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}// RasterVariables uses default values");
         }
+    }
+
+    private void GenerateLayerState(StringBuilder sb, LayerState layerState, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Layer State: {layerState.Name}");
+        }
+        
+        sb.AppendLine($"{baseIndent}var layerState = new LayerState(\"{Escape(layerState.Name)}\");");
+        
+        // Set description if not empty
+        if (!string.IsNullOrEmpty(layerState.Description))
+        {
+            sb.AppendLine($"{baseIndent}layerState.Description = \"{Escape(layerState.Description)}\";");
+        }
+        
+        // Set current layer if specified
+        if (!string.IsNullOrEmpty(layerState.CurrentLayer))
+        {
+            sb.AppendLine($"{baseIndent}layerState.CurrentLayer = \"{Escape(layerState.CurrentLayer)}\";");
+        }
+        
+        // Set paper space flag if true
+        if (layerState.PaperSpace)
+        {
+            sb.AppendLine($"{baseIndent}layerState.PaperSpace = true;");
+        }
+        
+        // Add layer state properties if any
+        if (layerState.Properties.Count > 0)
+        {
+            sb.AppendLine($"{baseIndent}// Layer state properties");
+            foreach (var kvp in layerState.Properties)
+            {
+                var layerName = kvp.Key;
+                var props = kvp.Value;
+                sb.AppendLine($"{baseIndent}layerState.Properties.Add(\"{Escape(layerName)}\", new LayerStateProperties(\"{Escape(layerName)}\")");
+                sb.AppendLine($"{baseIndent}{{");
+                sb.AppendLine($"{baseIndent}    Color = AciColor.FromCadIndex({props.Color.Index}),");
+                sb.AppendLine($"{baseIndent}    Lineweight = Lineweight.{props.Lineweight},");
+                sb.AppendLine($"{baseIndent}    LinetypeName = \"{Escape(props.LinetypeName)}\",");
+                sb.AppendLine($"{baseIndent}    Flags = LayerPropertiesFlags.{props.Flags},");
+                sb.AppendLine($"{baseIndent}    Transparency = new Transparency({props.Transparency.Value})");
+                sb.AppendLine($"{baseIndent}}});");
+            }
+        }
+        
+        sb.AppendLine($"{baseIndent}// Note: LayerState objects are typically stored in dictionaries and may not be directly accessible");
+        sb.AppendLine();
+    }
+
+    private void GeneratePlotSettings(StringBuilder sb, PlotSettings plotSettings, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Plot Settings");
+        }
+        
+        sb.AppendLine($"{baseIndent}var plotSettings = new PlotSettings();");
+        
+        // Set page setup name if not empty
+        if (!string.IsNullOrEmpty(plotSettings.PageSetupName))
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PageSetupName = \"{Escape(plotSettings.PageSetupName)}\";");
+        }
+        
+        // Set plotter name if not empty
+        if (!string.IsNullOrEmpty(plotSettings.PlotterName))
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PlotterName = \"{Escape(plotSettings.PlotterName)}\";");
+        }
+        
+        // Set paper size name if not empty
+        if (!string.IsNullOrEmpty(plotSettings.PaperSizeName))
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PaperSizeName = \"{Escape(plotSettings.PaperSizeName)}\";");
+        }
+        
+        // Set view name if not empty
+        if (!string.IsNullOrEmpty(plotSettings.ViewName))
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.ViewName = \"{Escape(plotSettings.ViewName)}\";");
+        }
+        
+        // Set current style sheet if not empty
+        if (!string.IsNullOrEmpty(plotSettings.CurrentStyleSheet))
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.CurrentStyleSheet = \"{Escape(plotSettings.CurrentStyleSheet)}\";");
+        }
+        
+        // Set paper margin if not default
+        if (plotSettings.PaperMargin.Left != 0 || plotSettings.PaperMargin.Bottom != 0 || plotSettings.PaperMargin.Right != 0 || plotSettings.PaperMargin.Top != 0)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PaperMargin = new PaperMargin({F(plotSettings.PaperMargin.Left)}, {F(plotSettings.PaperMargin.Bottom)}, {F(plotSettings.PaperMargin.Right)}, {F(plotSettings.PaperMargin.Top)});");
+        }
+        
+        // Set paper size if not default
+        if (plotSettings.PaperSize.X != 0 || plotSettings.PaperSize.Y != 0)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PaperSize = new Vector2({F(plotSettings.PaperSize.X)}, {F(plotSettings.PaperSize.Y)});");
+        }
+        
+        // Set origin if not default
+        if (plotSettings.Origin.X != 0 || plotSettings.Origin.Y != 0)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.Origin = new Vector2({F(plotSettings.Origin.X)}, {F(plotSettings.Origin.Y)});");
+        }
+        
+        // Set scale to fit if true
+        if (plotSettings.ScaleToFit)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.ScaleToFit = true;");
+        }
+        
+        // Set scale if not 1:1
+        if (plotSettings.PrintScaleNumerator != 1.0 || plotSettings.PrintScaleDenominator != 1.0)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PrintScaleNumerator = {F(plotSettings.PrintScaleNumerator)};");
+            sb.AppendLine($"{baseIndent}plotSettings.PrintScaleDenominator = {F(plotSettings.PrintScaleDenominator)};");
+        }
+        
+        // Set plot type if not default
+        if (plotSettings.PlotType != PlotType.DrawingExtents)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PlotType = PlotType.{plotSettings.PlotType};");
+        }
+        
+        // Set paper units if not default
+        if (plotSettings.PaperUnits != PlotPaperUnits.Milimeters)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PaperUnits = PlotPaperUnits.{plotSettings.PaperUnits};");
+        }
+        
+        // Set rotation if not default
+        if (plotSettings.PaperRotation != PlotRotation.NoRotation)
+        {
+            sb.AppendLine($"{baseIndent}plotSettings.PaperRotation = PlotRotation.{plotSettings.PaperRotation};");
+        }
+        
+        sb.AppendLine($"{baseIndent}// Note: PlotSettings objects are typically stored in dictionaries and may not be directly accessible");
+        sb.AppendLine();
+    }
+
+    private void GenerateDictionaryObjectPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Dictionary objects are internal to netDxf and not directly accessible");
+            sb.AppendLine($"{baseIndent}// Dictionary objects store key-value pairs for named objects");
+            sb.AppendLine($"{baseIndent}// They are used internally for organizing objects like layer states");
+            sb.AppendLine($"{baseIndent}// Example structure:");
+            sb.AppendLine($"{baseIndent}//   Handle: [object handle]");
+            sb.AppendLine($"{baseIndent}//   Entries: Dictionary<string, string> of handle/name pairs");
+            sb.AppendLine($"{baseIndent}//   IsHardOwner: [boolean indicating ownership type]");
+            sb.AppendLine($"{baseIndent}//   Cloning: [DictionaryCloningFlags]");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}// Dictionary objects are internal to netDxf and not directly accessible");
+        }
+        sb.AppendLine();
+    }
+
+    private void GenerateLayerStatePlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// LayerState objects are internal to netDxf and not directly accessible");
+            sb.AppendLine($"{baseIndent}// LayerState objects store layer property snapshots");
+            sb.AppendLine($"{baseIndent}// They are used internally for saving and restoring layer states");
+            sb.AppendLine($"{baseIndent}// Example structure:");
+            sb.AppendLine($"{baseIndent}//   Name: [layer state name]");
+            sb.AppendLine($"{baseIndent}//   Description: [optional description]");
+            sb.AppendLine($"{baseIndent}//   LayerProperties: Dictionary of layer names and their saved properties");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}// LayerState objects are internal to netDxf and not directly accessible");
+        }
+        sb.AppendLine();
+    }
+
+    private void GeneratePlotSettingsPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// PlotSettings objects are internal to netDxf and not directly accessible");
+            sb.AppendLine($"{baseIndent}// PlotSettings objects store plot configuration data");
+            sb.AppendLine($"{baseIndent}// They are used internally for defining plot parameters");
+            sb.AppendLine($"{baseIndent}// Example structure:");
+            sb.AppendLine($"{baseIndent}//   PlotConfigurationName: [plotter configuration name]");
+            sb.AppendLine($"{baseIndent}//   PaperSize: [paper size name]");
+            sb.AppendLine($"{baseIndent}//   PlotArea: [plot area type]");
+            sb.AppendLine($"{baseIndent}//   PlotOrigin: [plot origin coordinates]");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}// PlotSettings objects are internal to netDxf and not directly accessible");
+        }
+        sb.AppendLine();
+    }
+
+    private void GenerateXRecordPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// XRecord objects are internal to netDxf and not directly accessible");
+            sb.AppendLine($"{baseIndent}// XRecord objects contain arbitrary data as key-value pairs");
+            sb.AppendLine($"{baseIndent}// They are used internally for storing layer states and other data");
+            sb.AppendLine($"{baseIndent}// Example structure:");
+            sb.AppendLine($"{baseIndent}//   Handle: [object handle]");
+            sb.AppendLine($"{baseIndent}//   OwnerHandle: [owner object handle]");
+            sb.AppendLine($"{baseIndent}//   Flags: [DictionaryCloningFlags]");
+            sb.AppendLine($"{baseIndent}//   Entries: List of XRecordEntry objects with Code/Value pairs");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}// XRecord objects are internal to netDxf and not directly accessible");
+        }
+        sb.AppendLine();
     }
 
     private void GenerateViewport(StringBuilder sb, Viewport viewport, string baseIndent)
