@@ -24,11 +24,11 @@
 
 
     <!-- Main content area -->
-    <Grid Grid.Row="1" Margin="10,0,10,10">
+    <Grid Grid.Row="1" Margin="0,0,0,10">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="40*" />
         <ColumnDefinition Width="5" />
-        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="60*" />
       </Grid.ColumnDefinitions>
 
       <!-- Left side with tabs for DXF and Options -->
