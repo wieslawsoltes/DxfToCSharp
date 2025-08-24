@@ -590,6 +590,48 @@ public class DxfCodeGenerator
         if (options.GenerateBlocks && _usedBlocks.Count > 0)
         {
             sb.AppendLine($"{baseIndent}// Block definitions");
+
+            // For block entity generation, ignore per-entity enable/disable flags by overriding them to true
+            var blockEntityOptions = options with
+            {
+                GenerateLineEntities = true,
+                GenerateArcEntities = true,
+                GenerateCircleEntities = true,
+                GeneratePolylineEntities = true,
+                GenerateTextEntities = true,
+                GenerateMTextEntities = true,
+                GeneratePointEntities = true,
+                GenerateInsertEntities = true,
+                GenerateHatchEntities = true,
+                GenerateDimensionEntities = true,
+                GenerateLinearDimensionEntities = true,
+                GenerateAlignedDimensionEntities = true,
+                GenerateRadialDimensionEntities = true,
+                GenerateDiametricDimensionEntities = true,
+                GenerateAngular2LineDimensionEntities = true,
+                GenerateAngular3PointDimensionEntities = true,
+                GenerateOrdinateDimensionEntities = true,
+                GenerateArcLengthDimensionEntities = true,
+                GenerateLeaderEntities = true,
+                GenerateSplineEntities = true,
+                GenerateEllipseEntities = true,
+                GenerateSolidEntities = true,
+                GenerateFace3dEntities = true,
+                GenerateMLineEntities = true,
+                GenerateRayEntities = true,
+                GenerateXLineEntities = true,
+                GenerateWipeoutEntities = true,
+                GenerateImageEntities = true,
+                GenerateMeshEntities = true,
+                GeneratePolyfaceMeshEntities = true,
+                GeneratePolygonMeshEntities = true,
+                GenerateShapeEntities = true,
+                GenerateToleranceEntities = true,
+                GenerateTraceEntities = true,
+                GenerateUnderlayEntities = true,
+                GenerateViewportEntities = true
+            };
+
             foreach (var blockName in _usedBlocks.OrderBy(x => x))
             {
                 var block = doc.Blocks.FirstOrDefault(b => b.Name == blockName);
@@ -631,8 +673,8 @@ public class DxfCodeGenerator
                         sb.AppendLine($"{baseIndent}// Add entities to block");
                         foreach (var entity in block.Entities)
                         {
-                            // Generate simplified entity code for block entities
-                            GenerateBlockEntity(sb, entity, blockName, options, baseIndent);
+                            // Generate simplified entity code for block entities with all entity types enabled
+                            GenerateBlockEntity(sb, entity, blockName, blockEntityOptions, baseIndent);
                         }
                         sb.AppendLine();
                     }

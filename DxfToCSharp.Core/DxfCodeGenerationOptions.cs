@@ -3,7 +3,7 @@ namespace DxfToCSharp.Core;
 /// <summary>
 /// Options for controlling DXF to C# code generation
 /// </summary>
-public class DxfCodeGenerationOptions
+public record DxfCodeGenerationOptions
 {
     /// <summary>
     /// Custom class name for the generated code (null for default)
