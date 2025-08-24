@@ -9,9 +9,7 @@
   <ScrollViewer>
     <StackPanel Margin="10">
 
-      <!-- General Code Structure -->
-      <TextBlock Text="General" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Content="All General" Margin="0,2" FontWeight="Bold" 
+      <CheckBox Content="General" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllGeneralSelected}" 
                 Command="{Binding ToggleAllGeneralCommand}" 
                 CommandParameter="{Binding !AllGeneralSelected}" />
@@ -22,8 +20,7 @@
       <CheckBox Content="Save Comment" Margin="20,2,0,2" IsChecked="{Binding GenerateSaveComment}" />
       <CheckBox Content="Class &amp; Method" Margin="20,2,0,2" IsChecked="{Binding GenerateClass}" />
 
-      <TextBlock Text="Tables" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Content="All Tables" Margin="0,2" FontWeight="Bold" 
+      <CheckBox Content="Tables" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllTablesSelected}" 
                 Command="{Binding ToggleAllTablesCommand}" 
                 CommandParameter="{Binding !AllTablesSelected}" />
@@ -34,8 +31,7 @@
       <CheckBox Content="Dimension Styles" Margin="20,2,0,2" IsChecked="{Binding GenerateDimensionStyles}" />
       <CheckBox Content="MLine Styles" Margin="20,2,0,2" IsChecked="{Binding GenerateMLineStyles}" />
 
-      <TextBlock Text="Objects" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Content="All Objects" Margin="0,2" FontWeight="Bold" 
+      <CheckBox Content="Objects" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllObjectsSelected}" 
                 Command="{Binding ToggleAllObjectsCommand}" 
                 CommandParameter="{Binding !AllObjectsSelected}" />
@@ -47,29 +43,24 @@
       <CheckBox Content="Dictionary Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateDictionaryObjects}" />
       <CheckBox Content="Raster Variables" Margin="20,2,0,2" IsChecked="{Binding GenerateRasterVariablesObjects}" />
 
-      <TextBlock Text="Entities" FontWeight="Bold" Margin="0,15,0,5" />
-      <CheckBox Content="All Entities" Margin="0,2" FontWeight="Bold" 
+      <CheckBox Content="Entities" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllEntitiesSelected}" 
                 Command="{Binding ToggleAllEntitiesCommand}" 
                 CommandParameter="{Binding !AllEntitiesSelected}" />
-
       <CheckBox Content="Lines" Margin="20,2,0,2" IsChecked="{Binding GenerateLineEntities}" />
       <CheckBox Content="Arcs" Margin="20,2,0,2" IsChecked="{Binding GenerateArcEntities}" />
       <CheckBox Content="Circles" Margin="20,2,0,2" IsChecked="{Binding GenerateCircleEntities}" />
       <CheckBox Content="Ellipses" Margin="20,2,0,2" IsChecked="{Binding GenerateEllipseEntities}" />
       <CheckBox Content="Polylines" Margin="20,2,0,2" IsChecked="{Binding GeneratePolylineEntities}" />
       <CheckBox Content="Splines" Margin="20,2,0,2" IsChecked="{Binding GenerateSplineEntities}" />
-
       <CheckBox Content="Text" Margin="20,2,0,2" IsChecked="{Binding GenerateTextEntities}" />
       <CheckBox Content="MText" Margin="20,2,0,2" IsChecked="{Binding GenerateMTextEntities}" />
       <CheckBox Content="Points" Margin="20,2,0,2" IsChecked="{Binding GeneratePointEntities}" />
       <CheckBox Content="Inserts (Blocks)" Margin="20,2,0,2" IsChecked="{Binding GenerateInsertEntities}" />
-
       <CheckBox Content="Solids" Margin="20,2,0,2" IsChecked="{Binding GenerateSolidEntities}" />
       <CheckBox Content="3D Faces" Margin="20,2,0,2" IsChecked="{Binding GenerateFace3dEntities}" />
       <CheckBox Content="Wipeouts" Margin="20,2,0,2" IsChecked="{Binding GenerateWipeoutEntities}" />
       <CheckBox Content="Hatches" Margin="20,2,0,2" IsChecked="{Binding GenerateHatchEntities}" />
-
       <CheckBox Content="Linear Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateLinearDimensionEntities}" />
       <CheckBox Content="Aligned Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateAlignedDimensionEntities}" />
       <CheckBox Content="Radial Dimensions" Margin="20,2,0,2" IsChecked="{Binding GenerateRadialDimensionEntities}" />
