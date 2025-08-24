@@ -31,18 +31,6 @@
       <CheckBox Content="Dimension Styles" Margin="20,2,0,2" IsChecked="{Binding GenerateDimensionStyles}" />
       <CheckBox Content="MLine Styles" Margin="20,2,0,2" IsChecked="{Binding GenerateMLineStyles}" />
 
-      <CheckBox Content="Objects" Margin="0,2" FontWeight="Bold" 
-                IsChecked="{Binding AllObjectsSelected}" 
-                Command="{Binding ToggleAllObjectsCommand}" 
-                CommandParameter="{Binding !AllObjectsSelected}" />
-      <CheckBox Content="Groups" Margin="20,2,0,2" IsChecked="{Binding GenerateGroupObjects}" />
-      <CheckBox Content="Layouts" Margin="20,2,0,2" IsChecked="{Binding GenerateLayoutObjects}" />
-      <CheckBox Content="Image Definitions" Margin="20,2,0,2" IsChecked="{Binding GenerateImageDefinitionObjects}" />
-      <CheckBox Content="Underlay Definitions" Margin="20,2,0,2" IsChecked="{Binding GenerateUnderlayDefinitionObjects}" />
-      <CheckBox Content="XRecord Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateXRecordObjects}" />
-      <CheckBox Content="Dictionary Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateDictionaryObjects}" />
-      <CheckBox Content="Raster Variables" Margin="20,2,0,2" IsChecked="{Binding GenerateRasterVariablesObjects}" />
-
       <CheckBox Content="Entities" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllEntitiesSelected}" 
                 Command="{Binding ToggleAllEntitiesCommand}" 
@@ -82,6 +70,18 @@
       <CheckBox Content="Traces" Margin="20,2,0,2" IsChecked="{Binding GenerateTraceEntities}" />
       <CheckBox Content="Underlays" Margin="20,2,0,2" IsChecked="{Binding GenerateUnderlayEntities}" />
       <CheckBox Content="Viewports" Margin="20,2,0,2" IsChecked="{Binding GenerateViewportEntities}" />
+
+      <CheckBox Content="Objects" Margin="0,2" FontWeight="Bold" 
+                IsChecked="{Binding AllObjectsSelected}" 
+                Command="{Binding ToggleAllObjectsCommand}" 
+                CommandParameter="{Binding !AllObjectsSelected}" />
+      <CheckBox Content="Groups" Margin="20,2,0,2" IsChecked="{Binding GenerateGroupObjects}" />
+      <CheckBox Content="Layouts" Margin="20,2,0,2" IsChecked="{Binding GenerateLayoutObjects}" />
+      <CheckBox Content="Image Definitions" Margin="20,2,0,2" IsChecked="{Binding GenerateImageDefinitionObjects}" />
+      <CheckBox Content="Underlay Definitions" Margin="20,2,0,2" IsChecked="{Binding GenerateUnderlayDefinitionObjects}" />
+      <CheckBox Content="XRecord Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateXRecordObjects}" />
+      <CheckBox Content="Dictionary Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateDictionaryObjects}" />
+      <CheckBox Content="Raster Variables" Margin="20,2,0,2" IsChecked="{Binding GenerateRasterVariablesObjects}" />
 
     </StackPanel>
   </ScrollViewer>
