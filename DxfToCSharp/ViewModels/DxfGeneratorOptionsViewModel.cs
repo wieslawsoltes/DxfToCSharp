@@ -36,14 +36,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generateDetailedComments, value);
     }
 
-    private bool _generateSaveComment = true;
-
-    public bool GenerateSaveComment
-    {
-        get => _generateSaveComment;
-        set => this.RaiseAndSetIfChanged(ref _generateSaveComment, value);
-    }
-
     private bool _generateClass = true;
     public bool GenerateClass { get => _generateClass; set => this.RaiseAndSetIfChanged(ref _generateClass, value); }
 
@@ -496,10 +488,9 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 x => x.GenerateUsingStatements,
                 x => x.GenerateHeaderVariables,
                 x => x.GenerateDetailedComments,
-                x => x.GenerateSaveComment,
                 x => x.GenerateClass,
-                (header, usingStmts, headerVars, detailedComments, saveComment, generateClass) =>
-                    header && usingStmts && headerVars && detailedComments && saveComment && generateClass)
+                (header, usingStmts, headerVars, detailedComments, generateClass) =>
+                    header && usingStmts && headerVars && detailedComments && generateClass)
             .ToProperty(this, x => x.AllGeneralSelected);
 
         _allTablesSelected = this.WhenAnyValue(
@@ -607,9 +598,8 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateHeaderVariables),
             this.WhenAnyValue(x => x.GenerateUsingStatements),
             this.WhenAnyValue(x => x.GenerateDetailedComments),
-            this.WhenAnyValue(x => x.GenerateSaveComment),
             this.WhenAnyValue(x => x.GenerateClass),
-            (header, headerVars, usingStmts, detailedComments, saveComment, generateClass) => true);
+            (header, headerVars, usingStmts, detailedComments, generateClass) => true);
 
         var tableOptions = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateLayers),
@@ -653,7 +643,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateUsingStatements = value;
         GenerateHeaderVariables = value;
         GenerateDetailedComments = value;
-        GenerateSaveComment = value;
         GenerateClass = value;
     }
 
@@ -731,7 +720,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateHeaderVariables = GenerateHeaderVariables,
             GenerateUsingStatements = GenerateUsingStatements,
             GenerateDetailedComments = GenerateDetailedComments,
-            GenerateSaveComment = GenerateSaveComment,
             GenerateClass = GenerateClass,
             GenerateLayers = GenerateLayers,
             GenerateLinetypes = GenerateLinetypes,
@@ -796,7 +784,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateHeaderVariables = options.GenerateHeaderVariables;
         GenerateUsingStatements = options.GenerateUsingStatements;
         GenerateDetailedComments = options.GenerateDetailedComments;
-        GenerateSaveComment = options.GenerateSaveComment;
         GenerateClass = options.GenerateClass;
         GenerateLayers = options.GenerateLayers;
         GenerateLinetypes = options.GenerateLinetypes;

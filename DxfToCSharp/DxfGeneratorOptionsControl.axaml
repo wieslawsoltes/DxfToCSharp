@@ -17,7 +17,6 @@
       <CheckBox Content="Using Statements" Margin="20,2,0,2" IsChecked="{Binding GenerateUsingStatements}" />
       <CheckBox Content="Header Variables" Margin="20,2,0,2" IsChecked="{Binding GenerateHeaderVariables}" />
       <CheckBox Content="Detailed Comments" Margin="20,2,0,2" IsChecked="{Binding GenerateDetailedComments}" />
-      <CheckBox Content="Save Comment" Margin="20,2,0,2" IsChecked="{Binding GenerateSaveComment}" />
       <CheckBox Content="Class &amp; Method" Margin="20,2,0,2" IsChecked="{Binding GenerateClass}" />
 
       <CheckBox Content="Tables" Margin="0,2" FontWeight="Bold" 

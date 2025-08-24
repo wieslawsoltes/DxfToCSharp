@@ -118,14 +118,7 @@ public class DxfCodeGenerator
 
         // Footer
         sb.AppendLine();
-        if (options.GenerateSaveComment)
-        {
-            sb.AppendLine($"{baseIndent}// Save or return the document");
-            var saveFileName = !string.IsNullOrEmpty(sourcePath) 
-                ? System.IO.Path.GetFileName(sourcePath) 
-                : $"{finalClassName.ToLowerInvariant()}.dxf";
-            sb.AppendLine($"{baseIndent}// doc.Save(\"{saveFileName}\");");
-        }
+
         if (options.GenerateClass)
         {
             sb.AppendLine($"{baseIndent}return doc;");
@@ -429,7 +422,10 @@ public class DxfCodeGenerator
         // Only add the header variables section if there are non-default values
         if (hasNonDefaultValues)
         {
-            sb.AppendLine($"{baseIndent}// Header variables (drawing variables)");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Header variables (drawing variables)");
+            }
             sb.Append(tempSb.ToString());
             sb.AppendLine();
         }
@@ -521,7 +517,10 @@ public class DxfCodeGenerator
         // Generate layer definitions
         if (options.GenerateLayers && _usedLayers.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// Layer definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Layer definitions");
+            }
             foreach (var layerName in _usedLayers.OrderBy(x => x))
             {
                 var layer = doc.Layers.FirstOrDefault(l => l.Name == layerName);
@@ -555,7 +554,10 @@ public class DxfCodeGenerator
         // Generate linetype definitions (if any custom ones)
         if (options.GenerateLinetypes && _usedLinetypes.Any(lt => lt != "Continuous" && lt != "ByLayer" && lt != "ByBlock"))
         {
-            sb.AppendLine($"{baseIndent}// Linetype definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Linetype definitions");
+            }
             foreach (var linetypeName in _usedLinetypes.Where(lt => lt != "Continuous" && lt != "ByLayer" && lt != "ByBlock"))
             {
                 var linetype = doc.Linetypes.FirstOrDefault(lt => lt.Name == linetypeName);
@@ -571,7 +573,10 @@ public class DxfCodeGenerator
         // Generate text style definitions (if any custom ones)
         if (options.GenerateTextStyles && _usedTextStyles.Any(ts => ts != "Standard"))
         {
-            sb.AppendLine($"{baseIndent}// Text style definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Text style definitions");
+            }
             foreach (var styleName in _usedTextStyles.Where(ts => ts != "Standard"))
             {
                 var style = doc.TextStyles.FirstOrDefault(ts => ts.Name == styleName);
@@ -589,7 +594,10 @@ public class DxfCodeGenerator
         // Generate block definitions (if any used)
         if (options.GenerateBlocks && _usedBlocks.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// Block definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Block definitions");
+            }
 
             // For block entity generation, ignore per-entity enable/disable flags by overriding them to true
             var blockEntityOptions = options with
@@ -649,7 +657,6 @@ public class DxfCodeGenerator
                     // Add attribute definitions if any
                     if (block.AttributeDefinitions.Count > 0)
                     {
-                        sb.AppendLine($"{baseIndent}// Add attribute definitions to block");
                         foreach (var attDef in block.AttributeDefinitions.Values)
                         {
                             sb.AppendLine($"{baseIndent}var attDef{SafeName(blockName)}{SafeName(attDef.Tag)} = new AttributeDefinition(\"{Escape(attDef.Tag)}\")");
@@ -670,7 +677,6 @@ public class DxfCodeGenerator
                     // Add block entities
                     if (block.Entities.Count > 0)
                     {
-                        sb.AppendLine($"{baseIndent}// Add entities to block");
                         foreach (var entity in block.Entities)
                         {
                             // Generate simplified entity code for block entities with all entity types enabled
@@ -688,7 +694,10 @@ public class DxfCodeGenerator
         // Generate dimension style definitions (if any custom ones)
         if (options.GenerateDimensionStyles && _usedDimensionStyles.Any(ds => ds != "Standard"))
         {
-            sb.AppendLine($"{baseIndent}// Dimension style definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Dimension style definitions");
+            }
             foreach (var styleName in _usedDimensionStyles.Where(ds => ds != "Standard"))
             {
                 var style = doc.DimensionStyles.FirstOrDefault(ds => ds.Name == styleName);
@@ -704,7 +713,10 @@ public class DxfCodeGenerator
         // Generate multiline style definitions (if any custom ones)
         if (options.GenerateMLineStyles && _usedMLineStyles.Any(ms => ms != "Standard"))
         {
-            sb.AppendLine($"{baseIndent}// Multiline style definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Multiline style definitions");
+            }
             foreach (var styleName in _usedMLineStyles.Where(ms => ms != "Standard"))
             {
                 var style = doc.MlineStyles.FirstOrDefault(ms => ms.Name == styleName);
@@ -719,9 +731,12 @@ public class DxfCodeGenerator
         // Generate UCS definitions (if any custom ones)
         if (options.GenerateUCS && doc.UCSs.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// UCS definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// UCS definitions");
+            }
             foreach (var ucs in doc.UCSs.Where(u => u.Name != "*ACTIVE"))
-             {
+            {
                  sb.AppendLine($"{baseIndent}var ucs{SafeName(ucs.Name)} = new UCS(");
                  sb.AppendLine($"{baseIndent}    \"{Escape(ucs.Name)}\",");
                  sb.AppendLine($"{baseIndent}    new Vector3({F(ucs.Origin.X)}, {F(ucs.Origin.Y)}, {F(ucs.Origin.Z)}),");
@@ -729,7 +744,7 @@ public class DxfCodeGenerator
                  sb.AppendLine($"{baseIndent}    new Vector3({F(ucs.YAxis.X)}, {F(ucs.YAxis.Y)}, {F(ucs.YAxis.Z)}));");
                  sb.AppendLine($"{baseIndent}doc.UCSs.Add(ucs{SafeName(ucs.Name)});");
                  sb.AppendLine();
-             }
+            }
         }
         
         // Generate VPort definitions (modify the active viewport)
@@ -803,7 +818,10 @@ public class DxfCodeGenerator
             // Only generate the viewport variable and code if there are non-default values
             if (hasNonDefaultValues)
             {
-                sb.AppendLine($"{baseIndent}// VPort (Viewport) configuration");
+                if (options.GenerateDetailedComments)
+                {
+                    sb.AppendLine($"{baseIndent}// VPort (Viewport) configuration");
+                }
                 sb.AppendLine($"{baseIndent}var activeViewport = doc.Viewport;");
                 sb.Append(viewportCode.ToString());
                 sb.AppendLine();
@@ -816,7 +834,10 @@ public class DxfCodeGenerator
             var customAppRegs = doc.ApplicationRegistries.Where(ar => ar.Name != "ACAD");
             if (customAppRegs.Any())
             {
-                sb.AppendLine($"{baseIndent}// ApplicationRegistry definitions");
+                if (options.GenerateDetailedComments)
+                {
+                    sb.AppendLine($"{baseIndent}// ApplicationRegistry definitions");
+                }
                 foreach (var appReg in customAppRegs)
                 {
                     sb.AppendLine($"{baseIndent}var appReg{SafeName(appReg.Name)} = new ApplicationRegistry(\"{Escape(appReg.Name)}\");");
@@ -832,7 +853,10 @@ public class DxfCodeGenerator
         // Generate ShapeStyle definitions (if any custom ones)
         if (options.GenerateShapeStyleObjects && doc.ShapeStyles.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// ShapeStyle definitions");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// ShapeStyle definitions");
+            }
             foreach (var shapeStyle in doc.ShapeStyles)
             {
                 sb.AppendLine($"{baseIndent}var shapeStyle{SafeName(shapeStyle.Name)} = new ShapeStyle(\"{Escape(shapeStyle.Name)}\", \"{Escape(shapeStyle.File)}\");");
@@ -844,7 +868,10 @@ public class DxfCodeGenerator
 
     private void GenerateEntities(StringBuilder sb, List<EntityObject> entities, DxfCodeGenerationOptions options, string baseIndent)
     {
-        sb.AppendLine($"{baseIndent}// Entities");
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Entities");
+        }
 
         foreach (var entity in entities)
         {
@@ -983,12 +1010,18 @@ public class DxfCodeGenerator
 
     private void GenerateObjects(StringBuilder sb, DxfDocument doc, DxfCodeGenerationOptions options, string baseIndent)
     {
-        sb.AppendLine($"{baseIndent}// Objects");
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Objects");
+        }
         
         // Generate Groups
         if (options.GenerateGroupObjects && doc.Groups.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// Groups");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Groups");
+            }
             foreach (var group in doc.Groups)
             {
                 GenerateGroup(sb, group, options, baseIndent);
@@ -1003,7 +1036,10 @@ public class DxfCodeGenerator
             var customLayouts = doc.Layouts.Where(layout => !string.Equals(layout.Name, "Model", StringComparison.OrdinalIgnoreCase));
             if (customLayouts.Any())
             {
-                sb.AppendLine($"{baseIndent}// Layouts");
+                if (options.GenerateDetailedComments)
+                {
+                    sb.AppendLine($"{baseIndent}// Layouts");
+                }
                 foreach (var layout in customLayouts)
                 {
                     GenerateLayout(sb, layout, options, baseIndent);
@@ -1018,7 +1054,10 @@ public class DxfCodeGenerator
             var imageDefinitions = doc.ImageDefinitions.Items.Where(item => item != null);
             if (imageDefinitions.Any())
             {
-                sb.AppendLine($"{baseIndent}// Image Definitions");
+                if (options.GenerateDetailedComments)
+                {
+                    sb.AppendLine($"{baseIndent}// Image Definitions");
+                }
                 foreach (var imageDef in imageDefinitions)
                 {
                     GenerateImageDefinition(sb, imageDef, options, baseIndent);
@@ -1036,7 +1075,10 @@ public class DxfCodeGenerator
                 .Where(item => item != null);
             if (underlayDefinitions.Any())
             {
-                sb.AppendLine($"{baseIndent}// Underlay Definitions");
+                if (options.GenerateDetailedComments)
+                {
+                    sb.AppendLine($"{baseIndent}// Underlay Definitions");
+                }
                 foreach (var underlayDef in underlayDefinitions)
                 {
                     GenerateUnderlayDefinition(sb, underlayDef, options, baseIndent);
@@ -1048,7 +1090,10 @@ public class DxfCodeGenerator
         // Generate RasterVariables
         if (options.GenerateRasterVariablesObjects && doc.RasterVariables != null)
         {
-            sb.AppendLine($"{baseIndent}// Raster Variables");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Raster Variables");
+            }
             GenerateRasterVariables(sb, doc.RasterVariables, options, baseIndent);
             sb.AppendLine();
         }
@@ -1630,12 +1675,12 @@ public class DxfCodeGenerator
         sb.Append(modifiedCode);
     }
 
-    private void GenerateInsert(StringBuilder sb, Insert insert, bool asVariable = false, string baseIndent = "        ")
+    private void GenerateInsert(StringBuilder sb, Insert insert, bool asVariable = false,
+        string baseIndent = "        ")
     {
         var blkName = insert.Block?.Name;
         if (string.IsNullOrEmpty(blkName))
         {
-            sb.AppendLine($"{baseIndent}// Insert with null block skipped");
             return;
         }
         var safeBlk = SafeName(blkName!);
@@ -2331,7 +2376,7 @@ public class DxfCodeGenerator
 
     private void GeneratePolyfaceMesh(StringBuilder sb, PolyfaceMesh polyfaceMesh, bool asVariable = false, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}// Generate PolyfaceMesh vertexes");
+        
         sb.AppendLine($"{baseIndent}var polyfaceMeshVertexes = new Vector3[]");
         sb.AppendLine($"{baseIndent}{{");
         for (int i = 0; i < polyfaceMesh.Vertexes.Length; i++)
@@ -2343,7 +2388,6 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}}};");
         sb.AppendLine();
         
-        sb.AppendLine($"{baseIndent}// Generate PolyfaceMesh faces");
         sb.AppendLine($"{baseIndent}var polyfaceMeshFaces = new PolyfaceMeshFace[]");
         sb.AppendLine($"{baseIndent}{{");
         for (int i = 0; i < polyfaceMesh.Faces.Count; i++)
@@ -2498,7 +2542,6 @@ public class DxfCodeGenerator
         // Add entities to group if any
         if (group.Entities.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// Add entities to group {group.Name}");
             foreach (var entity in group.Entities)
             {
                 sb.AppendLine($"{baseIndent}group{group.Handle}.Entities.Add(entity{entity.Handle});");
@@ -2686,7 +2729,10 @@ public class DxfCodeGenerator
         // Add layer state properties if any
         if (layerState.Properties.Count > 0)
         {
-            sb.AppendLine($"{baseIndent}// Layer state properties");
+            if (options.GenerateDetailedComments)
+            {
+                sb.AppendLine($"{baseIndent}// Layer state properties");
+            }
             foreach (var kvp in layerState.Properties)
             {
                 var layerName = kvp.Key;
@@ -2702,7 +2748,6 @@ public class DxfCodeGenerator
             }
         }
         
-        sb.AppendLine($"{baseIndent}// Note: LayerState objects are typically stored in dictionaries and may not be directly accessible");
         sb.AppendLine();
     }
 
@@ -2794,87 +2839,27 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}plotSettings.PaperRotation = PlotRotation.{plotSettings.PaperRotation};");
         }
         
-        sb.AppendLine($"{baseIndent}// Note: PlotSettings objects are typically stored in dictionaries and may not be directly accessible");
         sb.AppendLine();
     }
 
     private void GenerateDictionaryObjectPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        if (options.GenerateDetailedComments)
-        {
-            sb.AppendLine($"{baseIndent}// Dictionary objects are internal to netDxf and not directly accessible");
-            sb.AppendLine($"{baseIndent}// Dictionary objects store key-value pairs for named objects");
-            sb.AppendLine($"{baseIndent}// They are used internally for organizing objects like layer states");
-            sb.AppendLine($"{baseIndent}// Example structure:");
-            sb.AppendLine($"{baseIndent}//   Handle: [object handle]");
-            sb.AppendLine($"{baseIndent}//   Entries: Dictionary<string, string> of handle/name pairs");
-            sb.AppendLine($"{baseIndent}//   IsHardOwner: [boolean indicating ownership type]");
-            sb.AppendLine($"{baseIndent}//   Cloning: [DictionaryCloningFlags]");
-        }
-        else
-        {
-            sb.AppendLine($"{baseIndent}// Dictionary objects are internal to netDxf and not directly accessible");
-        }
-        sb.AppendLine();
+        // TODO:
     }
 
     private void GenerateLayerStatePlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        if (options.GenerateDetailedComments)
-        {
-            sb.AppendLine($"{baseIndent}// LayerState objects are internal to netDxf and not directly accessible");
-            sb.AppendLine($"{baseIndent}// LayerState objects store layer property snapshots");
-            sb.AppendLine($"{baseIndent}// They are used internally for saving and restoring layer states");
-            sb.AppendLine($"{baseIndent}// Example structure:");
-            sb.AppendLine($"{baseIndent}//   Name: [layer state name]");
-            sb.AppendLine($"{baseIndent}//   Description: [optional description]");
-            sb.AppendLine($"{baseIndent}//   LayerProperties: Dictionary of layer names and their saved properties");
-        }
-        else
-        {
-            sb.AppendLine($"{baseIndent}// LayerState objects are internal to netDxf and not directly accessible");
-        }
-        sb.AppendLine();
+        // TODO:
     }
 
     private void GeneratePlotSettingsPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        if (options.GenerateDetailedComments)
-        {
-            sb.AppendLine($"{baseIndent}// PlotSettings objects are internal to netDxf and not directly accessible");
-            sb.AppendLine($"{baseIndent}// PlotSettings objects store plot configuration data");
-            sb.AppendLine($"{baseIndent}// They are used internally for defining plot parameters");
-            sb.AppendLine($"{baseIndent}// Example structure:");
-            sb.AppendLine($"{baseIndent}//   PlotConfigurationName: [plotter configuration name]");
-            sb.AppendLine($"{baseIndent}//   PaperSize: [paper size name]");
-            sb.AppendLine($"{baseIndent}//   PlotArea: [plot area type]");
-            sb.AppendLine($"{baseIndent}//   PlotOrigin: [plot origin coordinates]");
-        }
-        else
-        {
-            sb.AppendLine($"{baseIndent}// PlotSettings objects are internal to netDxf and not directly accessible");
-        }
-        sb.AppendLine();
+        // TODO:
     }
 
     private void GenerateXRecordPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        if (options.GenerateDetailedComments)
-        {
-            sb.AppendLine($"{baseIndent}// XRecord objects are internal to netDxf and not directly accessible");
-            sb.AppendLine($"{baseIndent}// XRecord objects contain arbitrary data as key-value pairs");
-            sb.AppendLine($"{baseIndent}// They are used internally for storing layer states and other data");
-            sb.AppendLine($"{baseIndent}// Example structure:");
-            sb.AppendLine($"{baseIndent}//   Handle: [object handle]");
-            sb.AppendLine($"{baseIndent}//   OwnerHandle: [owner object handle]");
-            sb.AppendLine($"{baseIndent}//   Flags: [DictionaryCloningFlags]");
-            sb.AppendLine($"{baseIndent}//   Entries: List of XRecordEntry objects with Code/Value pairs");
-        }
-        else
-        {
-            sb.AppendLine($"{baseIndent}// XRecord objects are internal to netDxf and not directly accessible");
-        }
-        sb.AppendLine();
+        // TODO:
     }
 
     private void GenerateViewport(StringBuilder sb, Viewport viewport, string baseIndent)

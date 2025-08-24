@@ -11,11 +11,6 @@ public record DxfCodeGenerationOptions
     public string? CustomClassName { get; set; }
 
     /// <summary>
-    /// Whether to generate the document save comment
-    /// </summary>
-    public bool GenerateSaveComment { get; set; }
-
-    /// <summary>
     /// Whether to generate the class, create method and return statement
     /// </summary>
     public bool GenerateClass { get; set; } = true;
