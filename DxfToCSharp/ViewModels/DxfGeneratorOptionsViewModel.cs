@@ -554,7 +554,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                     groups && layouts && imageDefs && underlayDefs && xrecords && dictionaries && rasterVars && layerStates && plotSettings && mlineStyles && appRegs && shapeStyles)
             .ToProperty(this, x => x.AllObjectsSelected);
 
-        var entitiesGroup1 = Observable.CombineLatest(
+        var entitiesGroup1a = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateLineEntities),
             this.WhenAnyValue(x => x.GenerateArcEntities),
             this.WhenAnyValue(x => x.GenerateAttributeDefinitionEntities),
@@ -567,6 +567,10 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateTextEntities),
             this.WhenAnyValue(x => x.GenerateMTextEntities),
             this.WhenAnyValue(x => x.GeneratePointEntities),
+            (line, arc, attributeDefinition, circle, ellipse, polyline, polyline2D, polyline3D, spline, text, mtext, point) =>
+                line && arc && attributeDefinition && circle && ellipse && polyline && polyline2D && polyline3D && spline && text && mtext && point);
+
+        var entitiesGroup1b = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateAttributeEntities),
             this.WhenAnyValue(x => x.GenerateInsertEntities),
             this.WhenAnyValue(x => x.GenerateHatchEntities),
@@ -575,10 +579,13 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateWipeoutEntities),
             this.WhenAnyValue(x => x.GenerateLinearDimensionEntities),
             this.WhenAnyValue(x => x.GenerateAlignedDimensionEntities),
-            (line, arc, attributeDefinition, circle, ellipse, polyline, polyline2D, polyline3D, spline, text, mtext, point, attribute, insert, hatch, solid, face3d, wipeout,
-                    linearDim, alignedDim) =>
-                line && arc && attributeDefinition && circle && ellipse && polyline && polyline2D && polyline3D && spline && text && mtext && point && attribute && insert &&
-                hatch && solid && face3d && wipeout && linearDim && alignedDim);
+            (attribute, insert, hatch, solid, face3d, wipeout, linearDim, alignedDim) =>
+                attribute && insert && hatch && solid && face3d && wipeout && linearDim && alignedDim);
+
+        var entitiesGroup1 = Observable.CombineLatest(
+            entitiesGroup1a,
+            entitiesGroup1b,
+            (group1a, group1b) => group1a && group1b);
 
         var entitiesGroup2a = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateRadialDimensionEntities),
@@ -713,6 +720,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     {
         GenerateLineEntities = value;
         GenerateArcEntities = value;
+        GenerateAttributeDefinitionEntities = value;
         GenerateCircleEntities = value;
         GenerateEllipseEntities = value;
         GeneratePolylineEntities = value;
@@ -781,6 +789,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateShapeStyleObjects = GenerateShapeStyleObjects,
             GenerateLineEntities = GenerateLineEntities,
             GenerateArcEntities = GenerateArcEntities,
+            GenerateAttributeDefinitionEntities = GenerateAttributeDefinitionEntities,
             GenerateCircleEntities = GenerateCircleEntities,
             GenerateEllipseEntities = GenerateEllipseEntities,
             GeneratePolylineEntities = GeneratePolylineEntities,
@@ -848,6 +857,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateShapeStyleObjects = options.GenerateShapeStyleObjects;
         GenerateLineEntities = options.GenerateLineEntities;
         GenerateArcEntities = options.GenerateArcEntities;
+        GenerateAttributeDefinitionEntities = options.GenerateAttributeDefinitionEntities;
         GenerateCircleEntities = options.GenerateCircleEntities;
         GenerateEllipseEntities = options.GenerateEllipseEntities;
         GeneratePolylineEntities = options.GeneratePolylineEntities;
