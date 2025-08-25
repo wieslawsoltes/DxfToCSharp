@@ -28,7 +28,7 @@ The netDxf object model is organized into several main categories:
 | Entities | Angular3PointDimension | Class | Entities/Angular3PointDimension.cs | ✅ Generated | `GenerateAngular3PointDimensionEntities` option |
 | Entities | Arc | Class | Entities/Arc.cs | ✅ Generated | `GenerateArcEntities` option |
 | Entities | ArcLengthDimension | Class | Entities/ArcLengthDimension.cs | ✅ Generated | `GenerateArcLengthDimensionEntities` option |
-| Entities | Attribute | Class | Entities/Attribute.cs | ✅ Generated | `GenerateAttributeEntities` option |
+| Entities | Attribute | Class | Entities/Attribute.cs | ✅ Generated | `GenerateAttributeEntities` option - Handles Value, Position, Height, WidthFactor, Rotation, Alignment, Style, Flags |
 | Entities | AttributeChangeEventArgs | Class | Entities/AttributeChangeEventArgs.cs | ❌ Not Generated | Event args class |
 | Entities | AttributeDefinition | Class | Entities/AttributeDefinition.cs | ✅ Generated | `GenerateAttributeDefinitionEntities` option |
 | Entities | AttributeFlags | Enum | Entities/AttributeFlags.cs | ❌ Not Generated | Supporting enum |
@@ -100,19 +100,19 @@ The netDxf object model is organized into several main categories:
 | Entities | SplineTypeFlags | Enum | Entities/SplineTypeFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Text | Class | Entities/Text.cs | ✅ Generated | `GenerateTextEntities` option |
 | Entities | TextAligment | Enum | Entities/TextAligment.cs | ❌ Not Generated | Supporting enum |
-| Entities | Tolerance | Class | Entities/Tolerance.cs | ✅ Generated | `GenerateToleranceEntities` option |
+| Entities | Tolerance | Class | Entities/Tolerance.cs | ✅ Generated | `GenerateToleranceEntities` option - Handles Position, TextHeight, Rotation |
 | Entities | ToleranceEntry | Class | Entities/ToleranceEntry.cs | ❌ Not Generated | Supporting class |
 | Entities | ToleranceGeometricSymbol | Enum | Entities/ToleranceGeometricSymbol.cs | ❌ Not Generated | Supporting enum |
 | Entities | ToleranceMaterialCondition | Enum | Entities/ToleranceMaterialCondition.cs | ❌ Not Generated | Supporting enum |
 | Entities | ToleranceValue | Class | Entities/ToleranceValue.cs | ❌ Not Generated | Supporting class |
-| Entities | Trace | Class | Entities/Trace.cs | ✅ Generated | `GenerateTraceEntities` option |
-| Entities | Underlay | Class | Entities/Underlay.cs | ✅ Generated | `GenerateUnderlayEntities` option |
+| Entities | Trace | Class | Entities/Trace.cs | ✅ Generated | `GenerateTraceEntities` option - Handles four vertex points |
+| Entities | Underlay | Class | Entities/Underlay.cs | ✅ Generated | `GenerateUnderlayEntities` option - Handles UnderlayDefinition creation for DGN/DWF/PDF types |
 | Entities | UnderlayDisplayFlags | Enum | Entities/UnderlayDisplayFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Vertex | Class | Entities/Vertex.cs | ❌ Not Generated | Supporting class |
 | Entities | VertexTypeFlags | Enum | Entities/VertexTypeFlags.cs | ❌ Not Generated | Supporting enum |
-| Entities | Viewport | Class | Entities/Viewport.cs | ✅ Generated | `GenerateViewportEntities` option |
+| Entities | Viewport | Class | Entities/Viewport.cs | ❌ Not Generated | Missing implementation |
 | Entities | ViewportStatusFlags | Enum | Entities/ViewportStatusFlags.cs | ❌ Not Generated | Supporting enum |
-| Entities | Wipeout | Class | Entities/Wipeout.cs | ✅ Generated | `GenerateWipeoutEntities` option |
+| Entities | Wipeout | Class | Entities/Wipeout.cs | ❌ Not Generated | Missing implementation |
 | Entities | XLine | Class | Entities/XLine.cs | ✅ Generated | `GenerateXLineEntities` option |
 | **TABLES** | | | | | |
 | Tables | ApplicationRegistry | Class | Tables/ApplicationRegistry.cs | ✅ Generated | `GenerateApplicationRegistryObjects` option |
@@ -244,18 +244,18 @@ The netDxf object model is organized into several main categories:
 
 ## Generation Status Summary
 
-### ✅ Fully Generated (53 items)
+### ✅ Fully Generated (51 items)
 
-**Entities (28 items):
+**Entities (26 items):**
 - AlignedDimension, Angular2LineDimension, Angular3PointDimension, Arc, ArcLengthDimension
-- AttributeDefinition, Circle, DiametricDimension, Dimension, Ellipse, Face3D
+- Attribute, AttributeDefinition, Circle, DiametricDimension, Dimension, Ellipse, Face3D
 - Hatch, Image, Insert, Leader, Line
 - LinearDimension, MLine, MText, Mesh, OrdinateDimension
 - Point, PolyfaceMesh, PolygonMesh, Polyline, Polyline2D
 - Polyline3D, RadialDimension, Ray, Shape, Solid, Spline
-- Text, Wipeout, XLine
+- Text, Tolerance, Trace, Underlay, XLine
 
-**Tables (6 items):**
+**Tables (8 items):**
 - ApplicationRegistry, DimensionStyle, Layer, Linetype, ShapeStyle, TextStyle, UCS, VPort
 
 **Objects (12 items):**
@@ -264,16 +264,18 @@ The netDxf object model is organized into several main categories:
 - DictionaryObject, LayerState, PlotSettings, XRecord
 
 **Header (1 item):**
-- HeaderVariables
+- HeaderVariables (InsBase, Angbase, TextSize, LtScale, CeLtScale)
 
 **Blocks (1 item):**
 - Block
 
-### ⚠️ Partially Generated/Placeholder (0 items)
+### ⚠️ Missing Entity Implementations (2 items)
 
-*All previously placeholder items have been fully implemented.*
+**Entities with generation options but no implementation:**
+- Viewport - Has `GenerateViewportEntities` option but missing `GenerateViewport` method
+- Wipeout - Has `GenerateWipeoutEntities` option but missing `GenerateWipeout` method
 
-### ❌ Not Generated (194+ items)
+### ❌ Not Generated (192+ items)
 
 **Main Categories Not Generated:**
 - Supporting/utility classes and enums (majority of items)
@@ -281,20 +283,216 @@ The netDxf object model is organized into several main categories:
 - Collection classes
 - Base classes (EntityObject, TableObject, etc.)
 - Internal classes (EndSequence, EndBlock, etc.)
-- Some entity types (Tolerance, Trace, Underlay, Viewport)
+- Version-specific or advanced properties
 
 ## Recommendations for Enhancement
 
-### High Priority Missing Entities
-*All major entity types are now generated. Consider additional supporting classes if needed.*
+### High Priority Missing Implementations
+1. **Viewport Entity** - Complete the missing `GenerateViewport` method
+2. **Wipeout Entity** - Complete the missing `GenerateWipeout` method
 
-### Missing Entity Generation
-*All major entity types now have dedicated generation support.*
+### Property Coverage Improvements
+1. **Extended Data (XData)** - Consider adding XData support for entities that commonly use it
+2. **Advanced Entity Properties** - Add support for more specialized properties of complex entities
+3. **Block Attributes** - Enhance attribute handling in Insert entities
+4. **Dimension Styles** - Add more comprehensive dimension style property handling
 
-### Missing Object Generation
-*All major object types are now generated. Supporting classes are well-covered by existing generation options.*
+### Code Generation Enhancements
+1. **Error Handling** - Add validation for required properties
+2. **Performance** - Optimize generation for large files
+3. **Formatting** - Improve code formatting and readability
+4. **Documentation** - Add inline comments to generated code
 
 
+
+## Property Handling Analysis
+
+This section analyzes which properties are handled by the generator for each entity type based on the current implementation in `DxfCodeGenerator.cs`.
+
+### Common Entity Properties (GenerateEntityPropertiesCore)
+
+All generated entities inherit these common properties through the `GenerateEntityPropertiesCore` method:
+
+| Property | Handled | Condition | Notes |
+|----------|---------|-----------|-------|
+| Layer | ✅ | If not default and layer exists in used layers | References generated layer variable |
+| Color | ✅ | If not ByLayer (Index != 256) | Handles ByBlock (Index 0) and specific AciColor |
+| Linetype | ✅ | If not default and linetype exists in used linetypes | References generated linetype variable |
+| Lineweight | ✅ | If not ByLayer and not ByBlock | Uses Lineweight enum values |
+| LinetypeScale | ✅ | If not default value (1.0) | Numeric value |
+| Thickness | ✅ | For Line, Arc, Circle, Polyline2D, Solid | If not zero |
+| Normal | ✅ | If not default (0,0,1) | Vector3 value |
+| Transparency | ✅ | If not default | Transparency value |
+| IsVisible | ✅ | If false | Boolean value |
+
+### Entity-Specific Property Handling
+
+#### Line Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| StartPoint | ✅ | Constructor parameter | Vector3 |
+| EndPoint | ✅ | Constructor parameter | Vector3 |
+| Thickness | ✅ | Via GenerateEntityPropertiesCore | If not zero |
+
+#### Arc Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Center | ✅ | Constructor parameter | Vector3 |
+| Radius | ✅ | Constructor parameter | Double |
+| StartAngle | ✅ | Constructor parameter | Double (degrees) |
+| EndAngle | ✅ | Constructor parameter | Double (degrees) |
+| Thickness | ✅ | Via GenerateEntityPropertiesCore | If not zero |
+
+#### Circle Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Center | ✅ | Constructor parameter | Vector3 |
+| Radius | ✅ | Constructor parameter | Double |
+| Thickness | ✅ | Via GenerateEntityPropertiesCore | If not zero |
+
+#### Point Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Position | ✅ | Constructor parameter | Vector3 |
+
+#### Text Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Value | ✅ | Constructor parameter | String |
+| Position | ✅ | Constructor parameter | Vector3 |
+| Height | ✅ | Constructor parameter | Double |
+| Style | ✅ | Property assignment | If not "Standard" and style exists |
+| Rotation | ✅ | Property assignment | If not zero |
+
+#### MText Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Value | ✅ | Constructor parameter | String |
+| Position | ✅ | Constructor parameter | Vector3 |
+| Height | ✅ | Constructor parameter | Double |
+| RectangleWidth | ✅ | Property assignment | If not zero |
+| Style | ✅ | Property assignment | If not "Standard" and style exists |
+
+#### Polyline2D Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Vertexes | ✅ | Constructor parameter | List of Polyline2DVertex |
+| IsClosed | ✅ | Constructor parameter | Boolean |
+| Elevation | ✅ | Property assignment | If not zero |
+| Thickness | ✅ | Via GenerateEntityPropertiesCore | If not zero |
+
+#### Polyline3D Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Vertexes | ✅ | Constructor parameter | List of Polyline3DVertex |
+| IsClosed | ✅ | Constructor parameter | Boolean |
+
+#### Spline Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| ControlPoints | ✅ | Constructor parameter | List of SplineVertex |
+| Degree | ✅ | Constructor parameter | Short |
+| Layer | ✅ | Direct property assignment | Custom implementation |
+| Color | ✅ | Direct property assignment | Custom implementation |
+| Linetype | ✅ | Direct property assignment | Custom implementation |
+| Lineweight | ✅ | Direct property assignment | Custom implementation |
+| LinetypeScale | ✅ | Direct property assignment | Custom implementation |
+
+#### Ellipse Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Center | ✅ | Constructor parameter | Vector3 |
+| MajorAxis | ✅ | Constructor parameter | Vector3 |
+| MinorAxis | ✅ | Constructor parameter | Vector3 |
+| StartAngle | ✅ | Property assignment | If not default |
+| EndAngle | ✅ | Property assignment | If not default |
+
+#### Insert Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Position | ✅ | Constructor parameter | Vector3 |
+| Block | ✅ | Constructor parameter | Block reference |
+| Scale | ✅ | Property assignment | Vector3, if not (1,1,1) |
+| Rotation | ✅ | Property assignment | If not zero |
+| Attributes | ✅ | Property assignment | By tag, if attributes exist |
+
+#### Hatch Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| BoundaryPaths | ✅ | Constructor parameter | List of HatchBoundaryPath |
+| Pattern | ✅ | Property assignment | HatchPattern |
+| Elevation | ✅ | Property assignment | If not zero |
+| Layer | ✅ | Property assignment | If layer exists |
+| Color | ✅ | Property assignment | If not ByLayer |
+
+#### Dimension Entities (All Types)
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Reference Points | ✅ | Constructor parameters | Varies by dimension type |
+| Offset | ✅ | Constructor parameter | For applicable dimension types |
+| Common Properties | ✅ | Via GenerateEntityPropertiesCore | Layer, Color, etc. |
+
+#### Image Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Definition | ✅ | Constructor parameter | ImageDefinition |
+| Position | ✅ | Constructor parameter | Vector3 |
+| Width | ✅ | Constructor parameter | Double |
+| Height | ✅ | Constructor parameter | Double |
+| Rotation | ✅ | Property assignment | If not zero |
+| Brightness | ✅ | Property assignment | If not default (50) |
+| Contrast | ✅ | Property assignment | If not default (50) |
+| Fade | ✅ | Property assignment | If not default (0) |
+| ClippingBoundary | ✅ | Property assignment | If boundary exists |
+
+#### MLine Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Vertexes | ✅ | Constructor parameter | List of Vector2 |
+| Style | ✅ | Property assignment | If not "Standard" and style exists |
+| Layer | ✅ | Property assignment | If layer exists |
+| Color | ✅ | Property assignment | If not ByLayer |
+
+#### Mesh Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| Vertexes | ✅ | Constructor parameter | List of Vector3 |
+| Faces | ✅ | Constructor parameter | List of int arrays |
+| Edges | ✅ | Constructor parameter | List of MeshEdge (if exist) |
+| SubdivisionLevel | ✅ | Property assignment | Integer value |
+
+#### Solid Entity
+| Property | Handled | Implementation | Notes |
+|----------|---------|----------------|-------|
+| FirstVertex | ✅ | Constructor parameter | Vector2 |
+| SecondVertex | ✅ | Constructor parameter | Vector2 |
+| ThirdVertex | ✅ | Constructor parameter | Vector2 |
+| FourthVertex | ✅ | Constructor parameter | Vector2 |
+| Thickness | ✅ | Property assignment | If not zero |
+
+### Properties Not Handled
+
+Based on the analysis, the following types of properties are generally **not handled** by the generator:
+
+1. **Extended Data (XData)** - Not generated for any entity
+2. **Reactors** - Not handled
+3. **Advanced/Complex Properties** - Some specialized properties of complex entities
+4. **Event Handlers** - No event handler assignments
+5. **Collection Properties** - Internal collections are not directly manipulated
+6. **Read-only Properties** - Calculated or derived properties
+7. **Version-specific Properties** - Properties that depend on DXF version
+
+### Header Variables Handling
+
+The `GenerateHeaderVariables` method handles these header variables:
+
+| Variable | Property | Handled | Notes |
+|----------|----------|---------|-------|
+| INSBASE | InsBase | ✅ | If not (0,0,0) |
+| ANGBASE | Angbase | ✅ | If not 0 |
+| TEXTSIZE | TextSize | ✅ | If not 0.2 |
+| LTSCALE | LtScale | ✅ | If not 1.0 |
+| CELTSCALE | CeLtScale | ✅ | If not 1.0 |
 
 ## Code Generator Architecture
 
@@ -305,6 +503,8 @@ The `DxfCodeGenerator.cs` uses a systematic approach:
 3. **Hierarchical generation** - Tables → Objects → Entities
 4. **Property-based output** - Generates only non-default property values
 5. **Handle-based naming** - Uses DXF handles for unique variable names
+6. **Common property handling** - Centralized handling of shared entity properties
+7. **Conditional generation** - Properties are only generated when they differ from defaults
 
 ## File References
 
@@ -316,4 +516,4 @@ This analysis provides a comprehensive overview of the netDxf object model and c
 
 ---
 
-**Last Updated:** January 2025 - Updated to reflect current implementation status. Major entities (Attribute, Tolerance, Trace, Underlay, Viewport) and objects (XRecord, DictionaryObject, LayerState, PlotSettings) have been implemented since the original analysis.
+**Last Updated:** January 2025 - Comprehensive analysis updated to include detailed property handling information for all generated entity types. Added analysis of which properties are handled by the generator vs. not handled, based on current `DxfCodeGenerator.cs` implementation. Corrected generation status for Viewport and Wipeout entities (missing implementations). Added recommendations for completing missing entity implementations and enhancing property coverage.
