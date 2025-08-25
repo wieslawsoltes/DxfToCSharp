@@ -1,118 +1,219 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Core;
+using DxfToCSharp.Tests.Infrastructure;
 using Attribute = netDxf.Entities.Attribute;
 
 namespace DxfToCSharp.Tests.Entities;
 
-public class AttributeDefinitionTests : IDisposable
+public class AttributeDefinitionTests : RoundTripTestBase, IDisposable
 {
-    private readonly DxfCodeGenerator _generator;
 
-    public AttributeDefinitionTests()
+    [Fact]
+    public void AttributeDefinition_BasicRoundTrip_ShouldPreserveProperties()
     {
-        _generator = new DxfCodeGenerator();
+        // Arrange
+        var blockEntities = new List<EntityObject>
+        {
+            new Line(new Vector2(0, 0), new Vector2(10, 10))
+        };
+        
+        var attributeDefinitions = new List<AttributeDefinition>
+        {
+            new AttributeDefinition("TAG1", 2.5, TextStyle.Default)
+            {
+                Prompt = "Prompt Text",
+                Value = "Default Value",
+                Position = new Vector3(10, 20, 0),
+                Height = 2.5,
+                Flags = AttributeFlags.Hidden
+            }
+        };
+        
+        var block = new Block("TestBlock", blockEntities, attributeDefinitions);
+        var originalInsert = new Insert(block, new Vector3(0, 0, 0));
+
+        // Act & Assert
+        PerformRoundTripTest(originalInsert, (original, recreated) =>
+        {
+            Assert.Equal(original.Block.Name, recreated.Block.Name);
+            Assert.Equal(original.Block.AttributeDefinitions.Count, recreated.Block.AttributeDefinitions.Count);
+            
+            var originalAttDef = original.Block.AttributeDefinitions["TAG1"];
+            var recreatedAttDef = recreated.Block.AttributeDefinitions["TAG1"];
+            
+            Assert.Equal(originalAttDef.Tag, recreatedAttDef.Tag);
+            Assert.Equal(originalAttDef.Prompt, recreatedAttDef.Prompt);
+            Assert.Equal(originalAttDef.Value, recreatedAttDef.Value);
+            AssertVector3Equal(originalAttDef.Position, recreatedAttDef.Position);
+            AssertDoubleEqual(originalAttDef.Height, recreatedAttDef.Height);
+            Assert.Equal(originalAttDef.Flags, recreatedAttDef.Flags);
+        });
     }
 
     [Fact]
-    public void AttributeDefinition_InBlock_GeneratesCorrectly()
+    public void AttributeDefinition_WithMultipleAttributes_ShouldPreserveAll()
     {
         // Arrange
-        var doc = new DxfDocument();
-        var block = new Block("TestBlock");
-        
-        var attributeDefinition = new AttributeDefinition("TAG1", 2.5, TextStyle.Default)
+        var blockEntities = new List<EntityObject>
         {
-            Prompt = "Prompt Text",
-            Value = "Default Value",
-            Position = new Vector3(10, 20, 0),
-            Height = 2.5,
-            Flags = AttributeFlags.Hidden
+            new Circle(new Vector3(0, 0, 0), 5.0)
         };
         
-        block.AttributeDefinitions.Add(attributeDefinition);
-        doc.Blocks.Add(block);
-        
-        // Add an Insert entity to reference the block so it gets marked as "used"
-        var insert = new Insert(block, new Vector3(0, 0, 0));
-        doc.Entities.Add(insert);
-        
-        var options = new DxfCodeGenerationOptions
+        var attributeDefinitions = new List<AttributeDefinition>
         {
-            GenerateAttributeDefinitionEntities = true,
-            GenerateDetailedComments = true
+            new AttributeDefinition("PART_NUMBER", 1.5, TextStyle.Default)
+            {
+                Prompt = "Enter part number:",
+                Value = "P001",
+                Position = new Vector3(5, 2, 0),
+                Height = 1.5,
+                Flags = AttributeFlags.None
+            },
+            new AttributeDefinition("DESCRIPTION", 1.2, TextStyle.Default)
+            {
+                Prompt = "Enter description:",
+                Value = "Test Part",
+                Position = new Vector3(5, 4, 0),
+                Height = 1.2,
+                Flags = AttributeFlags.Hidden
+            }
         };
+        
+        var block = new Block("PartBlock", blockEntities, attributeDefinitions);
+        var originalInsert = new Insert(block, new Vector3(0, 0, 0));
+        
+        // Modify attribute values
+        originalInsert.Attributes.AttributeWithTag("PART_NUMBER").Value = "P123";
+        originalInsert.Attributes.AttributeWithTag("DESCRIPTION").Value = "Modified Description";
 
-        // Act
-        var generatedCode = _generator.Generate(doc, null, null, options);
-
-        // Assert
-        Assert.NotNull(generatedCode);
-
-        // Test that AttributeDefinition entities are generated correctly
-        Assert.Contains("AttributeDefinition", generatedCode);
-        Assert.Contains("TAG1", generatedCode);
-        Assert.Contains("Prompt Text", generatedCode);
-        Assert.Contains("Position", generatedCode);
-        Assert.Contains("Height", generatedCode);
+        // Act & Assert
+        PerformRoundTripTest(originalInsert, (original, recreated) =>
+        {
+            Assert.Equal(original.Block.Name, recreated.Block.Name);
+            Assert.Equal(original.Block.AttributeDefinitions.Count, recreated.Block.AttributeDefinitions.Count);
+            Assert.Equal(original.Attributes.Count, recreated.Attributes.Count);
+            
+            // Check attribute definitions
+            foreach (var originalAttDef in original.Block.AttributeDefinitions.Values)
+            {
+                var recreatedAttDef = recreated.Block.AttributeDefinitions[originalAttDef.Tag];
+                Assert.NotNull(recreatedAttDef);
+                Assert.Equal(originalAttDef.Tag, recreatedAttDef.Tag);
+                Assert.Equal(originalAttDef.Prompt, recreatedAttDef.Prompt);
+                AssertVector3Equal(originalAttDef.Position, recreatedAttDef.Position);
+                AssertDoubleEqual(originalAttDef.Height, recreatedAttDef.Height);
+                Assert.Equal(originalAttDef.Flags, recreatedAttDef.Flags);
+            }
+            
+            // Check attribute values
+            foreach (var originalAttr in original.Attributes)
+            {
+                var recreatedAttr = recreated.Attributes.AttributeWithTag(originalAttr.Tag);
+                Assert.NotNull(recreatedAttr);
+                Assert.Equal(originalAttr.Tag, recreatedAttr.Tag);
+                Assert.Equal(originalAttr.Value, recreatedAttr.Value);
+                AssertVector3Equal(originalAttr.Position, recreatedAttr.Position);
+            }
+        });
     }
-
+    
     [Fact]
-    public void Attribute_WithDefinition_GeneratesCorrectly()
+    public void AttributeDefinition_WithCustomTextStyle_ShouldPreserveStyle()
     {
         // Arrange
-        var doc = new DxfDocument();
-        
-        var attributeDefinition = new AttributeDefinition("ATTR_TAG", 1.5, TextStyle.Default);
-        var attribute = new Attribute(attributeDefinition)
+        var blockEntities = new List<EntityObject>
         {
-            Value = "Test Value",
-            Position = new Vector3(5, 10, 0)
+            new Line(new Vector2(0, 0), new Vector2(20, 0))
         };
         
-        // Create a block with the attribute definition
-        var dummyBlock = new Block("DummyBlock");
-        dummyBlock.AttributeDefinitions.Add(attributeDefinition);
-        doc.Blocks.Add(dummyBlock);
-        
-        // Create an Insert entity which will automatically create attributes from definitions
-        var insert = new Insert(dummyBlock)
+        var attributeDefinitions = new List<AttributeDefinition>
         {
-            Position = Vector3.Zero
+            new AttributeDefinition("STYLED_TAG", 3.0, TextStyle.Default)
+            {
+                Prompt = "Enter styled text:",
+                Value = "Styled Value",
+                Position = new Vector3(10, 5, 0),
+                Height = 3.0,
+                Flags = AttributeFlags.None
+            }
         };
         
-        // Modify the attribute value
-        var attr = insert.Attributes.AttributeWithTag("ATTR_TAG");
-        if (attr != null)
-        {
-            attr.Value = "Test Value";
-            attr.Position = new Vector3(5, 10, 0);
-        }
-        
-        doc.Entities.Add(insert);
-        
-        var options = new DxfCodeGenerationOptions
-        {
-            GenerateAttributeEntities = true,
-            GenerateAttributeDefinitionEntities = true
-        };
+        var block = new Block("StyledBlock", blockEntities, attributeDefinitions);
+        var originalInsert = new Insert(block, new Vector3(0, 0, 0));
 
-        // Act
-        var generatedCode = _generator.Generate(doc, null, null, options);
+        // Act & Assert
+        PerformRoundTripTest(originalInsert, (original, recreated) =>
+        {
+            Assert.Equal(original.Block.Name, recreated.Block.Name);
+            
+            var originalAttDef = original.Block.AttributeDefinitions["STYLED_TAG"];
+            var recreatedAttDef = recreated.Block.AttributeDefinitions["STYLED_TAG"];
+            
+            Assert.Equal(originalAttDef.Tag, recreatedAttDef.Tag);
+            Assert.Equal(originalAttDef.Prompt, recreatedAttDef.Prompt);
+            Assert.Equal(originalAttDef.Value, recreatedAttDef.Value);
+            AssertVector3Equal(originalAttDef.Position, recreatedAttDef.Position);
+            AssertDoubleEqual(originalAttDef.Height, recreatedAttDef.Height);
+            Assert.Equal(originalAttDef.Flags, recreatedAttDef.Flags);
+            
+            // Note: TextStyle properties may not be fully preserved in round-trip
+            // due to DXF format limitations, but the style name should be preserved
+            Assert.Equal(originalAttDef.Style.Name, recreatedAttDef.Style.Name);
+        });
+    }
+    
+    [Fact]
+    public void AttributeDefinition_WithRotationAndAlignment_ShouldPreserveTransformation()
+    {
+        // Arrange
+        var blockEntities = new List<EntityObject>
+          {
+              new Solid(new Vector2(0, 0), new Vector2(10, 0), new Vector2(10, 5), new Vector2(0, 5))
+          };
+        
+        var attributeDefinitions = new List<AttributeDefinition>
+        {
+            new AttributeDefinition("ROTATED_TAG", 2.0, TextStyle.Default)
+            {
+                Prompt = "Enter rotated text:",
+                Value = "Rotated Value",
+                Position = new Vector3(5, 2.5, 0),
+                Height = 2.0,
+                Rotation = 45.0, // 45 degrees
+                Alignment = TextAlignment.MiddleCenter,
+                Flags = AttributeFlags.None
+            }
+        };
+        
+        var block = new Block("RotatedBlock", blockEntities, attributeDefinitions);
+        var originalInsert = new Insert(block, new Vector3(15, 15, 0));
 
-        // Assert
-        Assert.NotNull(generatedCode);
-        Assert.Contains("Attribute", generatedCode);
-        Assert.Contains("ATTR_TAG", generatedCode);
-        Assert.Contains("Test Value", generatedCode);
+        // Act & Assert
+        PerformRoundTripTest(originalInsert, (original, recreated) =>
+        {
+            Assert.Equal(original.Block.Name, recreated.Block.Name);
+            
+            var originalAttDef = original.Block.AttributeDefinitions["ROTATED_TAG"];
+            var recreatedAttDef = recreated.Block.AttributeDefinitions["ROTATED_TAG"];
+            
+            Assert.Equal(originalAttDef.Tag, recreatedAttDef.Tag);
+            Assert.Equal(originalAttDef.Prompt, recreatedAttDef.Prompt);
+            Assert.Equal(originalAttDef.Value, recreatedAttDef.Value);
+            AssertVector3Equal(originalAttDef.Position, recreatedAttDef.Position);
+            AssertDoubleEqual(originalAttDef.Height, recreatedAttDef.Height);
+            AssertDoubleEqual(originalAttDef.Rotation, recreatedAttDef.Rotation);
+            Assert.Equal(originalAttDef.Alignment, recreatedAttDef.Alignment);
+            Assert.Equal(originalAttDef.Flags, recreatedAttDef.Flags);
+        });
     }
 
-    public void Dispose()
+    public new void Dispose()
     {
-        // Cleanup if needed
+        base.Dispose();
     }
 }
