@@ -9,6 +9,7 @@ using netDxf.Header;
 using netDxf.Objects;
 using netDxf.Tables;
 using netDxf.Units;
+using Attribute = netDxf.Entities.Attribute;
 using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Core;
