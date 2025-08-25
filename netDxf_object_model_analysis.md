@@ -281,7 +281,7 @@ The netDxf object model is organized into several main categories:
 - Collection classes
 - Base classes (EntityObject, TableObject, etc.)
 - Internal classes (EndSequence, EndBlock, etc.)
-- Some entity types (Attribute, Tolerance, Trace, Underlay, Viewport)
+- Some entity types (Tolerance, Trace, Underlay, Viewport)
 
 ## Recommendations for Enhancement
 
