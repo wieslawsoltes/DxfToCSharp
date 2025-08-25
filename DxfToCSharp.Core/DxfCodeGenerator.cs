@@ -987,6 +987,9 @@ public class DxfCodeGenerator
             case Shape shape when options.GenerateShapeEntities:
                 GenerateShape(sb, shape, baseIndent);
                 break;
+            case Attribute attribute when options.GenerateAttributeEntities:
+                GenerateAttribute(sb, attribute, needsVariable, baseIndent);
+                break;
             case Tolerance tolerance when options.GenerateToleranceEntities:
                 GenerateTolerance(sb, tolerance, baseIndent);
                 break;
@@ -2458,6 +2461,101 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    }});");
     }
 
+    private void GenerateAttribute(StringBuilder sb, Attribute attribute, bool asVariable = false, string baseIndent = "        ")
+    {
+        if (asVariable)
+        {
+            sb.AppendLine($"{baseIndent}var attribute{_insertCounter++} = new Attribute(");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}doc.Entities.Add(new Attribute(");
+        }
+        
+        // Create AttributeDefinition if needed
+        if (attribute.Definition != null)
+        {
+            sb.AppendLine($"{baseIndent}    new AttributeDefinition(\"{Escape(attribute.Tag)}\", \"{Escape(attribute.Value)}\",");
+            sb.AppendLine($"{baseIndent}        new Vector3({F(attribute.Position.X)}, {F(attribute.Position.Y)}, {F(attribute.Position.Z)}),");
+            sb.AppendLine($"{baseIndent}        {F(attribute.Height)})");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}    \"{Escape(attribute.Tag)}\"");
+        }
+        
+        sb.AppendLine($"{baseIndent})");
+        sb.AppendLine($"{baseIndent}{{");
+        
+        // Set attribute-specific properties
+        if (!string.IsNullOrEmpty(attribute.Value))
+        {
+            sb.AppendLine($"{baseIndent}    Value = \"{Escape(attribute.Value)}\",");
+        }
+        
+        if (attribute.Position != Vector3.Zero)
+        {
+            sb.AppendLine($"{baseIndent}    Position = new Vector3({F(attribute.Position.X)}, {F(attribute.Position.Y)}, {F(attribute.Position.Z)}),");
+        }
+        
+        if (Math.Abs(attribute.Height - 1.0) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Height = {F(attribute.Height)},");
+        }
+        
+        if (Math.Abs(attribute.WidthFactor - 1.0) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    WidthFactor = {F(attribute.WidthFactor)},");
+        }
+        
+        if (Math.Abs(attribute.Rotation) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Rotation = {F(attribute.Rotation)},");
+        }
+        
+        if (attribute.Alignment != TextAlignment.BaselineLeft)
+        {
+            sb.AppendLine($"{baseIndent}    Alignment = TextAlignment.{attribute.Alignment},");
+        }
+        
+        if (attribute.Style != null && _usedTextStyles.Contains(attribute.Style.Name))
+        {
+            sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(attribute.Style.Name)},");
+        }
+        
+        if (attribute.IsBackward)
+        {
+            sb.AppendLine($"{baseIndent}    IsBackward = true,");
+        }
+        
+        if (attribute.IsUpsideDown)
+        {
+            sb.AppendLine($"{baseIndent}    IsUpsideDown = true,");
+        }
+        
+        if (Math.Abs(attribute.ObliqueAngle) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    ObliqueAngle = {F(attribute.ObliqueAngle)},");
+        }
+        
+        if (attribute.Flags != AttributeFlags.None)
+        {
+            sb.AppendLine($"{baseIndent}    Flags = AttributeFlags.{attribute.Flags},");
+        }
+        
+        // Generate common entity properties
+        GenerateEntityPropertiesCore(sb, attribute, baseIndent + "    ");
+        
+        if (asVariable)
+        {
+            sb.AppendLine($"{baseIndent}}});");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}}});");
+        }
+    }
+
     private void GenerateTolerance(StringBuilder sb, Tolerance tolerance, string baseIndent)
     {
         sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Tolerance(");
@@ -2844,22 +2942,102 @@ public class DxfCodeGenerator
 
     private void GenerateDictionaryObjectPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        // TODO:
+        // DictionaryObject is an internal class in netDxf and is not exposed in the public API
+        // It is used internally for managing dictionary entries in DXF files
+        // Dictionary objects are typically created and managed automatically by the netDxf library
+        // when working with named object dictionaries and are not intended for direct user generation
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Note: DictionaryObject is internal to netDxf and not available for direct generation");
+        }
     }
 
     private void GenerateLayerStatePlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        // TODO:
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Create a LayerState to save and restore layer properties");
+        }
+        
+        sb.AppendLine($"{baseIndent}var layerState = new LayerState(\"MyLayerState\")");
+        sb.AppendLine($"{baseIndent}{{");
+        sb.AppendLine($"{baseIndent}    Description = \"Sample layer state description\",");
+        sb.AppendLine($"{baseIndent}    CurrentLayer = \"0\",");
+        sb.AppendLine($"{baseIndent}    PaperSpace = false");
+        sb.AppendLine($"{baseIndent}}};\n");
+        
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Add layer properties to the layer state");
+        }
+        
+        sb.AppendLine($"{baseIndent}var layerProperties = new LayerStateProperties(\"0\")");
+        sb.AppendLine($"{baseIndent}{{");
+        sb.AppendLine($"{baseIndent}    Flags = LayerPropertiesFlags.Plot,");
+        sb.AppendLine($"{baseIndent}    LinetypeName = \"Continuous\",");
+        sb.AppendLine($"{baseIndent}    Color = AciColor.Default,");
+        sb.AppendLine($"{baseIndent}    Lineweight = Lineweight.Default,");
+        sb.AppendLine($"{baseIndent}    Transparency = new Transparency(0)");
+        sb.AppendLine($"{baseIndent}}};\n");
+        
+        sb.AppendLine($"{baseIndent}layerState.Properties.Add(layerProperties.Name, layerProperties);\n");
+        
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Add the layer state to the document's layer state manager");
+        }
+        
+        sb.AppendLine($"{baseIndent}doc.Layers.StateManager.Add(layerState);");
     }
 
     private void GeneratePlotSettingsPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        // TODO:
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Create plot settings for layout configuration");
+        }
+        
+        sb.AppendLine($"{baseIndent}var plotSettings = new PlotSettings()");
+        sb.AppendLine($"{baseIndent}{{");
+        sb.AppendLine($"{baseIndent}    PageSetupName = \"MyPageSetup\",");
+        sb.AppendLine($"{baseIndent}    PlotterName = \"DWG To PDF.pc3\",");
+        sb.AppendLine($"{baseIndent}    PaperSizeName = \"ISO_A4_(210.00_x_297.00_MM)\",");
+        sb.AppendLine($"{baseIndent}    ViewName = string.Empty,");
+        sb.AppendLine($"{baseIndent}    CurrentStyleSheet = \"monochrome.ctb\",");
+        sb.AppendLine($"{baseIndent}    PaperMargin = new PaperMargin(7.5, 20.0, 7.5, 20.0),");
+        sb.AppendLine($"{baseIndent}    PaperSize = new Vector2(210.0, 297.0),");
+        sb.AppendLine($"{baseIndent}    Origin = Vector2.Zero,");
+        sb.AppendLine($"{baseIndent}    WindowUpRight = Vector2.Zero,");
+        sb.AppendLine($"{baseIndent}    WindowBottomLeft = Vector2.Zero,");
+        sb.AppendLine($"{baseIndent}    ScaleToFit = true,");
+        sb.AppendLine($"{baseIndent}    PrintScaleNumerator = 1.0,");
+        sb.AppendLine($"{baseIndent}    PrintScaleDenominator = 1.0,");
+        sb.AppendLine($"{baseIndent}    Flags = PlotFlags.DrawViewportsFirst | PlotFlags.PrintLineweights | PlotFlags.PlotPlotStyles | PlotFlags.UseStandardScale,");
+        sb.AppendLine($"{baseIndent}    PlotType = PlotType.DrawingExtents,");
+        sb.AppendLine($"{baseIndent}    PaperUnits = PlotPaperUnits.Milimeters,");
+        sb.AppendLine($"{baseIndent}    PaperRotation = PlotRotation.Degrees90,");
+        sb.AppendLine($"{baseIndent}    ShadePlotMode = ShadePlotMode.AsDisplayed,");
+        sb.AppendLine($"{baseIndent}    ShadePlotResolutionMode = ShadePlotResolutionMode.Normal,");
+        sb.AppendLine($"{baseIndent}    ShadePlotDPI = 300,");
+        sb.AppendLine($"{baseIndent}    PaperImageOrigin = Vector2.Zero");
+        sb.AppendLine($"{baseIndent}}};\n");
+        
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Note: PlotSettings is typically used with Layout objects");
+            sb.AppendLine($"{baseIndent}// Example: layout.PlotSettings = plotSettings;");
+        }
     }
 
     private void GenerateXRecordPlaceholder(StringBuilder sb, DxfCodeGenerationOptions options, string baseIndent)
     {
-        // TODO:
+        // XRecord objects are internal to netDxf and not exposed in the public API
+        // They are used internally for storing arbitrary data and are not meant for direct user generation
+        if (options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Note: XRecord objects are internal to netDxf and cannot be directly created by users");
+            sb.AppendLine($"{baseIndent}// They are used internally for storing arbitrary data in DXF files");
+        }
     }
 
     private void GenerateViewport(StringBuilder sb, Viewport viewport, string baseIndent)
