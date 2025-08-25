@@ -113,6 +113,9 @@ public class DxfCodeGenerator
         GenerateTableDefinitions(sb, doc, options, baseIndent);
 
         GenerateEntities(sb, allEntities, options, baseIndent);
+        
+        // Generate Attribute entities (they are not EntityObjects)
+        GenerateAttributeEntities(sb, doc, options, baseIndent);
 
         // Generate objects
         GenerateObjects(sb, doc, options, baseIndent);
@@ -663,15 +666,65 @@ public class DxfCodeGenerator
                     {
                         foreach (var attDef in block.AttributeDefinitions.Values)
                         {
-                            sb.AppendLine($"{baseIndent}var attDef{SafeName(blockName)}{SafeName(attDef.Tag)} = new AttributeDefinition(\"{Escape(attDef.Tag)}\")");
+                            var textStyleName = attDef.Style?.Name ?? "Standard";
+                            sb.AppendLine($"{baseIndent}var attDef{SafeName(blockName)}{SafeName(attDef.Tag)} = new AttributeDefinition(\"{Escape(attDef.Tag)}\", {F(attDef.Height)}, textStyle{SafeName(textStyleName)})");
                             sb.AppendLine(baseIndent + "{");
-                            sb.AppendLine($"{baseIndent}    Prompt = \"{Escape(attDef.Prompt)}\",");
-                            sb.AppendLine($"{baseIndent}    Position = new Vector3({F(attDef.Position.X)}, {F(attDef.Position.Y)}, {F(attDef.Position.Z)}),");
-                            sb.AppendLine($"{baseIndent}    Height = {F(attDef.Height)},");
+                            
+                            // Basic properties
+                            if (!string.IsNullOrEmpty(attDef.Prompt))
+                                sb.AppendLine($"{baseIndent}    Prompt = \"{Escape(attDef.Prompt)}\",");
                             if (!string.IsNullOrEmpty(attDef.Value))
                                 sb.AppendLine($"{baseIndent}    Value = \"{Escape(attDef.Value)}\",");
+                            
+                            // Position and dimensions
+                            if (attDef.Position != Vector3.Zero)
+                                sb.AppendLine($"{baseIndent}    Position = new Vector3({F(attDef.Position.X)}, {F(attDef.Position.Y)}, {F(attDef.Position.Z)}),");
+                            if (Math.Abs(attDef.Height - 1.0) > 1e-10)
+                                sb.AppendLine($"{baseIndent}    Height = {F(attDef.Height)},");
+                            if (Math.Abs(attDef.Width - 1.0) > 1e-10)
+                                sb.AppendLine($"{baseIndent}    Width = {F(attDef.Width)},");
+                            if (Math.Abs(attDef.WidthFactor - 1.0) > 1e-10)
+                                sb.AppendLine($"{baseIndent}    WidthFactor = {F(attDef.WidthFactor)},");
+                            
+                            // Text formatting
                             if (Math.Abs(attDef.Rotation) > 1e-12)
                                 sb.AppendLine($"{baseIndent}    Rotation = {F(attDef.Rotation)},");
+                            if (Math.Abs(attDef.ObliqueAngle) > 1e-10)
+                                sb.AppendLine($"{baseIndent}    ObliqueAngle = {F(attDef.ObliqueAngle)},");
+                            if (attDef.Alignment != TextAlignment.BaselineLeft)
+                                sb.AppendLine($"{baseIndent}    Alignment = TextAlignment.{attDef.Alignment},");
+                            if (attDef.IsBackward)
+                                sb.AppendLine($"{baseIndent}    IsBackward = true,");
+                            if (attDef.IsUpsideDown)
+                                sb.AppendLine($"{baseIndent}    IsUpsideDown = true,");
+                            
+                            // Style and flags
+                            if (attDef.Style != null && _usedTextStyles.Contains(attDef.Style.Name))
+                                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(attDef.Style.Name)},");
+                            if (attDef.Flags != AttributeFlags.None)
+                                sb.AppendLine($"{baseIndent}    Flags = AttributeFlags.{attDef.Flags},");
+                            
+                            // Entity properties (Layer, Color, etc.)
+                            if (attDef.Layer != null && _usedLayers.Contains(attDef.Layer.Name))
+                                sb.AppendLine($"{baseIndent}    Layer = layer{SafeName(attDef.Layer.Name)},");
+                            if (attDef.Color.Index != 256) // Not ByLayer
+                            {
+                                if (attDef.Color.Index == 0)
+                                    sb.AppendLine($"{baseIndent}    Color = AciColor.ByBlock,");
+                                else if (attDef.Color.Index >= 1 && attDef.Color.Index <= 255)
+                                    sb.AppendLine($"{baseIndent}    Color = new AciColor({attDef.Color.Index}),");
+                            }
+                            if (attDef.Linetype != null && attDef.Linetype.Name != "ByLayer" && attDef.Linetype.Name != "Continuous")
+                                sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(attDef.Linetype.Name)},");
+                            if (attDef.Lineweight != Lineweight.ByLayer)
+                                sb.AppendLine($"{baseIndent}    Lineweight = Lineweight.{attDef.Lineweight},");
+                            if (Math.Abs(attDef.LinetypeScale - 1.0) > 1e-10)
+                                sb.AppendLine($"{baseIndent}    LinetypeScale = {F(attDef.LinetypeScale)},");
+                            if (!attDef.IsVisible)
+                                sb.AppendLine($"{baseIndent}    IsVisible = false,");
+                            if (attDef.Normal != Vector3.UnitZ)
+                                sb.AppendLine($"{baseIndent}    Normal = new Vector3({F(attDef.Normal.X)}, {F(attDef.Normal.Y)}, {F(attDef.Normal.Z)}),");
+                            
                             sb.AppendLine(baseIndent + "};");
                             sb.AppendLine($"{baseIndent}block{SafeName(blockName)}.AttributeDefinitions.Add(attDef{SafeName(blockName)}{SafeName(attDef.Tag)});");
                         }
@@ -882,6 +935,52 @@ public class DxfCodeGenerator
             GenerateEntity(sb, entity, options, baseIndent);
         }
     }
+    
+    private void GenerateAttributeEntities(StringBuilder sb, DxfDocument doc, DxfCodeGenerationOptions options, string baseIndent)
+    {
+        if (!options.GenerateAttributeEntities) return;
+        
+        // Find all Attribute entities in the document
+        var attributes = new List<Attribute>();
+        
+        // Check in all blocks for attributes
+        foreach (var block in doc.Blocks)
+        {
+            foreach (var entity in block.Entities)
+            {
+                if (entity is Insert insert)
+                {
+                    foreach (var attr in insert.Attributes)
+                    {
+                        attributes.Add(attr);
+                    }
+                }
+            }
+        }
+        
+        // Check in main entities for inserts with attributes
+        foreach (var entity in doc.Entities.All)
+        {
+            if (entity is Insert insert)
+            {
+                foreach (var attr in insert.Attributes)
+                {
+                    attributes.Add(attr);
+                }
+            }
+        }
+        
+        if (attributes.Count > 0 && options.GenerateDetailedComments)
+        {
+            sb.AppendLine($"{baseIndent}// Attribute Entities");
+        }
+        
+        foreach (var attribute in attributes)
+        {
+            bool needsVariable = _entitiesNeedingVariables.Contains(attribute.Handle);
+            GenerateAttribute(sb, attribute, options, needsVariable, baseIndent);
+        }
+    }
 
     private void GenerateEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options, string baseIndent)
     {
@@ -991,9 +1090,7 @@ public class DxfCodeGenerator
             case Shape shape when options.GenerateShapeEntities:
                 GenerateShape(sb, shape, baseIndent);
                 break;
-            case Attribute attribute when options.GenerateAttributeEntities:
-                GenerateAttribute(sb, attribute, needsVariable, baseIndent);
-                break;
+
             case Tolerance tolerance when options.GenerateToleranceEntities:
                 GenerateTolerance(sb, tolerance, baseIndent);
                 break;
@@ -1666,6 +1763,57 @@ public class DxfCodeGenerator
         if (Math.Abs(n.X) > 1e-12 || Math.Abs(n.Y) > 1e-12 || Math.Abs(n.Z - 1.0) > 1e-12)
         {
             sb.AppendLine($"{baseIndent}    Normal = new Vector3({F(n.X)}, {F(n.Y)}, {F(n.Z)}),");
+        }
+    }
+    
+    private void GenerateAttributeProperties(StringBuilder sb, Attribute attribute, string baseIndent)
+    {
+        // Generate Layer property
+        if (attribute.Layer != null && attribute.Layer.Name != "0")
+        {
+            sb.AppendLine($"{baseIndent}Layer = layer{SafeName(attribute.Layer.Name)},");
+        }
+        
+        // Generate Color property
+        if (attribute.Color.Index != 256) // 256 is ByLayer
+        {
+            sb.AppendLine($"{baseIndent}Color = new AciColor({attribute.Color.Index}),");
+        }
+        
+        // Generate Linetype property
+        if (attribute.Linetype != null && attribute.Linetype.Name != "ByLayer" && attribute.Linetype.Name != "Continuous")
+        {
+            sb.AppendLine($"{baseIndent}Linetype = linetype{SafeName(attribute.Linetype.Name)},");
+        }
+        
+        // Generate Lineweight property
+        if (attribute.Lineweight != Lineweight.ByLayer)
+        {
+            sb.AppendLine($"{baseIndent}Lineweight = Lineweight.{attribute.Lineweight},");
+        }
+        
+        // Generate LinetypeScale property
+        if (Math.Abs(attribute.LinetypeScale - 1.0) > 1e-6)
+        {
+            sb.AppendLine($"{baseIndent}LinetypeScale = {attribute.LinetypeScale.ToString(CultureInfo.InvariantCulture)},");
+        }
+        
+        // Generate Transparency property
+        if (attribute.Transparency.Value != 0)
+        {
+            sb.AppendLine($"{baseIndent}Transparency = new Transparency({attribute.Transparency.Value}),");
+        }
+        
+        // Generate IsVisible property
+        if (!attribute.IsVisible)
+        {
+            sb.AppendLine($"{baseIndent}IsVisible = false,");
+        }
+        
+        // Generate Normal property (only if not default Z-axis)
+        if (Math.Abs(attribute.Normal.X) > 1e-6 || Math.Abs(attribute.Normal.Y) > 1e-6 || Math.Abs(attribute.Normal.Z - 1.0) > 1e-6)
+        {
+            sb.AppendLine($"{baseIndent}Normal = new Vector3({attribute.Normal.X.ToString(CultureInfo.InvariantCulture)}, {attribute.Normal.Y.ToString(CultureInfo.InvariantCulture)}, {attribute.Normal.Z.ToString(CultureInfo.InvariantCulture)}),");
         }
     }
 
@@ -2465,7 +2613,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    }});");
     }
 
-    private void GenerateAttribute(StringBuilder sb, Attribute attribute, bool asVariable = false, string baseIndent = "        ")
+    private void GenerateAttribute(StringBuilder sb, Attribute attribute, DxfCodeGenerationOptions options, bool asVariable = false, string baseIndent = "        ")
     {
         if (asVariable)
         {
@@ -2479,9 +2627,7 @@ public class DxfCodeGenerator
         // Create AttributeDefinition if needed
         if (attribute.Definition != null && options.GenerateAttributeDefinitionEntities)
         {
-            sb.AppendLine($"{baseIndent}    new AttributeDefinition(\"{Escape(attribute.Tag)}\", \"{Escape(attribute.Value)}\",");
-            sb.AppendLine($"{baseIndent}        new Vector3({F(attribute.Position.X)}, {F(attribute.Position.Y)}, {F(attribute.Position.Z)}),");
-            sb.AppendLine($"{baseIndent}        {F(attribute.Height)})");
+            sb.AppendLine($"{baseIndent}    new AttributeDefinition(\"{Escape(attribute.Tag)}\", {F(attribute.Height)}, textStyle{SafeName(attribute.Style?.Name ?? "Standard")})");
         }
         else
         {
@@ -2547,8 +2693,8 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}    Flags = AttributeFlags.{attribute.Flags},");
         }
         
-        // Generate common entity properties
-        GenerateEntityPropertiesCore(sb, attribute, baseIndent + "    ");
+        // Generate common attribute properties
+        GenerateAttributeProperties(sb, attribute, baseIndent + "    ");
         
         if (asVariable)
         {
