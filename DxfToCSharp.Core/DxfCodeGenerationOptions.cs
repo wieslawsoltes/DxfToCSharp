@@ -148,6 +148,11 @@ public record DxfCodeGenerationOptions
     public bool GenerateArcEntities { get; set; } = true;
 
     /// <summary>
+    /// Whether to generate attribute definition entities
+    /// </summary>
+    public bool GenerateAttributeDefinitionEntities { get; set; } = true;
+
+    /// <summary>
     /// Whether to generate circle entities
     /// </summary>
     public bool GenerateCircleEntities { get; set; } = true;
@@ -156,6 +161,16 @@ public record DxfCodeGenerationOptions
     /// Whether to generate polyline entities
     /// </summary>
     public bool GeneratePolylineEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate 2D polyline entities
+    /// </summary>
+    public bool GeneratePolyline2DEntities { get; set; } = true;
+
+    /// <summary>
+    /// Whether to generate 3D polyline entities
+    /// </summary>
+    public bool GeneratePolyline3DEntities { get; set; } = true;
 
     /// <summary>
     /// Whether to generate text entities

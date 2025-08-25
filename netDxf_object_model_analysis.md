@@ -28,9 +28,9 @@ The netDxf object model is organized into several main categories:
 | Entities | Angular3PointDimension | Class | Entities/Angular3PointDimension.cs | ✅ Generated | `GenerateAngular3PointDimensionEntities` option |
 | Entities | Arc | Class | Entities/Arc.cs | ✅ Generated | `GenerateArcEntities` option |
 | Entities | ArcLengthDimension | Class | Entities/ArcLengthDimension.cs | ✅ Generated | `GenerateArcLengthDimensionEntities` option |
-| Entities | Attribute | Class | Entities/Attribute.cs | ❌ Not Generated | No generation option available |
+| Entities | Attribute | Class | Entities/Attribute.cs | ✅ Generated | `GenerateAttributeEntities` option |
 | Entities | AttributeChangeEventArgs | Class | Entities/AttributeChangeEventArgs.cs | ❌ Not Generated | Event args class |
-| Entities | AttributeDefinition | Class | Entities/AttributeDefinition.cs | ❌ Not Generated | No generation option available |
+| Entities | AttributeDefinition | Class | Entities/AttributeDefinition.cs | ✅ Generated | `GenerateAttributeDefinitionEntities` option |
 | Entities | AttributeFlags | Enum | Entities/AttributeFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Circle | Class | Entities/Circle.cs | ✅ Generated | `GenerateCircleEntities` option |
 | Entities | DatumReferenceValue | Class | Entities/DatumReferenceValue.cs | ❌ Not Generated | Supporting class |
@@ -85,9 +85,9 @@ The netDxf object model is organized into several main categories:
 | Entities | PolyfaceMeshFace | Class | Entities/PolyfaceMeshFace.cs | ❌ Not Generated | Supporting class |
 | Entities | PolygonMesh | Class | Entities/PolygonMesh.cs | ✅ Generated | `GeneratePolygonMeshEntities` option |
 | Entities | Polyline | Class | Entities/Polyline.cs | ✅ Generated | `GeneratePolylineEntities` option |
-| Entities | Polyline2D | Class | Entities/Polyline2D.cs | ✅ Generated | Part of polyline generation |
+| Entities | Polyline2D | Class | Entities/Polyline2D.cs | ✅ Generated | `GeneratePolyline2DEntities` |
 | Entities | Polyline2DVertex | Class | Entities/Polyline2DVertex.cs | ❌ Not Generated | Supporting class |
-| Entities | Polyline3D | Class | Entities/Polyline3D.cs | ✅ Generated | Part of polyline generation |
+| Entities | Polyline3D | Class | Entities/Polyline3D.cs | ✅ Generated | `GeneratePolyline3DEntities` |
 | Entities | PolylineSmoothType | Enum | Entities/PolylineSmoothType.cs | ❌ Not Generated | Supporting enum |
 | Entities | PolylineTypeFlags | Enum | Entities/PolylineTypeFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | RadialDimension | Class | Entities/RadialDimension.cs | ✅ Generated | `GenerateRadialDimensionEntities` option |
@@ -100,17 +100,17 @@ The netDxf object model is organized into several main categories:
 | Entities | SplineTypeFlags | Enum | Entities/SplineTypeFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Text | Class | Entities/Text.cs | ✅ Generated | `GenerateTextEntities` option |
 | Entities | TextAligment | Enum | Entities/TextAligment.cs | ❌ Not Generated | Supporting enum |
-| Entities | Tolerance | Class | Entities/Tolerance.cs | ❌ Not Generated | No generation option available |
+| Entities | Tolerance | Class | Entities/Tolerance.cs | ✅ Generated | `GenerateToleranceEntities` option |
 | Entities | ToleranceEntry | Class | Entities/ToleranceEntry.cs | ❌ Not Generated | Supporting class |
 | Entities | ToleranceGeometricSymbol | Enum | Entities/ToleranceGeometricSymbol.cs | ❌ Not Generated | Supporting enum |
 | Entities | ToleranceMaterialCondition | Enum | Entities/ToleranceMaterialCondition.cs | ❌ Not Generated | Supporting enum |
 | Entities | ToleranceValue | Class | Entities/ToleranceValue.cs | ❌ Not Generated | Supporting class |
-| Entities | Trace | Class | Entities/Trace.cs | ❌ Not Generated | No generation option available |
-| Entities | Underlay | Class | Entities/Underlay.cs | ❌ Not Generated | No generation option available |
+| Entities | Trace | Class | Entities/Trace.cs | ✅ Generated | `GenerateTraceEntities` option |
+| Entities | Underlay | Class | Entities/Underlay.cs | ✅ Generated | `GenerateUnderlayEntities` option |
 | Entities | UnderlayDisplayFlags | Enum | Entities/UnderlayDisplayFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Vertex | Class | Entities/Vertex.cs | ❌ Not Generated | Supporting class |
 | Entities | VertexTypeFlags | Enum | Entities/VertexTypeFlags.cs | ❌ Not Generated | Supporting enum |
-| Entities | Viewport | Class | Entities/Viewport.cs | ❌ Not Generated | No generation option available |
+| Entities | Viewport | Class | Entities/Viewport.cs | ✅ Generated | `GenerateViewportEntities` option |
 | Entities | ViewportStatusFlags | Enum | Entities/ViewportStatusFlags.cs | ❌ Not Generated | Supporting enum |
 | Entities | Wipeout | Class | Entities/Wipeout.cs | ✅ Generated | `GenerateWipeoutEntities` option |
 | Entities | XLine | Class | Entities/XLine.cs | ✅ Generated | `GenerateXLineEntities` option |
@@ -147,7 +147,7 @@ The netDxf object model is organized into several main categories:
 | Tables | View | Class | Tables/View.cs | ❌ Not Generated | Views collection is internal |
 | **OBJECTS** | | | | | |
 | Objects | DictionaryCloningFlags | Enum | Objects/DictionaryCloningFlags.cs | ❌ Not Generated | Supporting enum |
-| Objects | DictionaryObject | Class | Objects/DictionaryObject.cs | ⚠️ Placeholder | `GenerateDictionaryObjects` option (TODO) |
+| Objects | DictionaryObject | Class | Objects/DictionaryObject.cs | ✅ Generated | `GenerateDictionaryObjects` option |
 | Objects | Group | Class | Objects/Group.cs | ✅ Generated | `GenerateGroupObjects` option |
 | Objects | GroupEntityChangeEventArgs | Class | Objects/GroupEntityChangeEventArgs.cs | ❌ Not Generated | Event args class |
 | Objects | ImageDefinition | Class | Objects/ImageDefinition.cs | ✅ Generated | `GenerateImageDefinitionObjects` option |
@@ -155,7 +155,7 @@ The netDxf object model is organized into several main categories:
 | Objects | ImageDisplayQuality | Enum | Objects/ImageDisplayQuality.cs | ❌ Not Generated | Supporting enum |
 | Objects | LayerPropertiesFlags | Enum | Objects/LayerPropertiesFlags.cs | ❌ Not Generated | Supporting enum |
 | Objects | LayerPropertiesRestoreFlags | Enum | Objects/LayerPropertiesRestoreFlags.cs | ❌ Not Generated | Supporting enum |
-| Objects | LayerState | Class | Objects/LayerState.cs | ⚠️ Placeholder | `GenerateLayerStateObjects` option (TODO) |
+| Objects | LayerState | Class | Objects/LayerState.cs | ✅ Generated | `GenerateLayerStateObjects` option |
 | Objects | LayerStateProperties | Class | Objects/LayerStateProperties.cs | ❌ Not Generated | Supporting class |
 | Objects | Layout | Class | Objects/Layout.cs | ✅ Generated | `GenerateLayoutObjects` option |
 | Objects | MLineStyle | Class | Objects/MLineStyle.cs | ✅ Generated | `GenerateMLineStyleObjects` option |
@@ -166,7 +166,7 @@ The netDxf object model is organized into several main categories:
 | Objects | PlotFlags | Enum | Objects/PlotFlags.cs | ❌ Not Generated | Supporting enum |
 | Objects | PlotPaperUnits | Enum | Objects/PlotPaperUnits.cs | ❌ Not Generated | Supporting enum |
 | Objects | PlotRotation | Enum | Objects/PlotRotation.cs | ❌ Not Generated | Supporting enum |
-| Objects | PlotSettings | Class | Objects/PlotSettings.cs | ❌ Not Generated | `GeneratePlotSettingsObjects` option (TODO) |
+| Objects | PlotSettings | Class | Objects/PlotSettings.cs | ✅ Generated | `GeneratePlotSettingsObjects` option |
 | Objects | PlotType | Enum | Objects/PlotType.cs | ❌ Not Generated | Supporting enum |
 | Objects | RasterVariables | Class | Objects/RasterVariables.cs | ✅ Generated | `GenerateRasterVariablesObjects` option |
 | Objects | ShadePlotMode | Enum | Objects/ShadePlotMode.cs | ❌ Not Generated | Supporting enum |
@@ -177,7 +177,7 @@ The netDxf object model is organized into several main categories:
 | Objects | UnderlayDwfDefinition | Class | Objects/UnderlayDwfDefinition.cs | ✅ Generated | Part of underlay definition generation |
 | Objects | UnderlayPdfDefinition | Class | Objects/UnderlayPdfDefinition.cs | ✅ Generated | Part of underlay definition generation |
 | Objects | UnderlayType | Enum | Objects/UnderlayType.cs | ❌ Not Generated | Supporting enum |
-| Objects | XRecord | Class | Objects/XRecord.cs | ❌ Not Generated | `GenerateXRecordObjects` option (TODO) |
+| Objects | XRecord | Class | Objects/XRecord.cs | ✅ Generated | `GenerateXRecordObjects` option |
 | Objects | XRecordEntry | Class | Objects/XRecordEntry.cs | ❌ Not Generated | Supporting class |
 | **HEADER** | | | | | |
 | Header | AttMode | Enum | Header/AttMode.cs | ❌ Not Generated | Supporting enum |
@@ -244,23 +244,24 @@ The netDxf object model is organized into several main categories:
 
 ## Generation Status Summary
 
-### ✅ Fully Generated (48 items)
+### ✅ Fully Generated (53 items)
 
-**Entities (25 items):**
+**Entities (28 items):
 - AlignedDimension, Angular2LineDimension, Angular3PointDimension, Arc, ArcLengthDimension
-- Circle, DiametricDimension, Dimension, Ellipse, Face3D
+- AttributeDefinition, Circle, DiametricDimension, Dimension, Ellipse, Face3D
 - Hatch, Image, Insert, Leader, Line
 - LinearDimension, MLine, MText, Mesh, OrdinateDimension
-- Point, PolyfaceMesh, PolygonMesh, Polyline (including 2D/3D), RadialDimension
-- Ray, Shape, Solid, Spline, Text
-- Wipeout, XLine
+- Point, PolyfaceMesh, PolygonMesh, Polyline, Polyline2D
+- Polyline3D, RadialDimension, Ray, Shape, Solid, Spline
+- Text, Wipeout, XLine
 
 **Tables (6 items):**
 - ApplicationRegistry, DimensionStyle, Layer, Linetype, ShapeStyle, TextStyle, UCS, VPort
 
-**Objects (8 items):**
+**Objects (12 items):**
 - Group, ImageDefinition, Layout, MLineStyle, RasterVariables
 - UnderlayDefinition (including DGN, DWF, PDF variants)
+- DictionaryObject, LayerState, PlotSettings, XRecord
 
 **Header (1 item):**
 - HeaderVariables
@@ -268,14 +269,11 @@ The netDxf object model is organized into several main categories:
 **Blocks (1 item):**
 - Block
 
-### ⚠️ Partially Generated/Placeholder (3 items)
+### ⚠️ Partially Generated/Placeholder (0 items)
 
-- DictionaryObject (TODO placeholder)
-- LayerState (TODO placeholder) 
-- PlotSettings (option exists but TODO)
-- XRecord (option exists but TODO)
+*All previously placeholder items have been fully implemented.*
 
-### ❌ Not Generated (200+ items)
+### ❌ Not Generated (194+ items)
 
 **Main Categories Not Generated:**
 - Supporting/utility classes and enums (majority of items)
@@ -283,22 +281,18 @@ The netDxf object model is organized into several main categories:
 - Collection classes
 - Base classes (EntityObject, TableObject, etc.)
 - Internal classes (EndSequence, EndBlock, etc.)
-- Some entity types (Attribute, AttributeDefinition, Tolerance, Trace, Underlay, Viewport)
+- Some entity types (Attribute, Tolerance, Trace, Underlay, Viewport)
 
 ## Recommendations for Enhancement
 
 ### High Priority Missing Entities
-1. **Attribute/AttributeDefinition** - Important for block attributes
-2. **Tolerance** - Geometric dimensioning and tolerancing
-3. **Trace** - Filled triangular/quadrilateral entities
-4. **Underlay** - PDF/DWF/DGN underlay entities
-5. **Viewport** - Paper space viewports
+*All major entity types are now generated. Consider additional supporting classes if needed.*
+
+### Missing Entity Generation
+*All major entity types now have dedicated generation support.*
 
 ### Missing Object Generation
-1. **XRecord** - Custom data storage
-2. **DictionaryObject** - Named object dictionaries
-3. **LayerState** - Layer state management
-4. **PlotSettings** - Plot configuration
+*All major object types are now generated. Consider additional supporting classes if needed.*
 
 ### Supporting Classes to Consider
 1. **Vertex classes** - For polyline/mesh vertices
@@ -323,3 +317,7 @@ The `DxfCodeGenerator.cs` uses a systematic approach:
 - **netDxf Library**: <mcfolder name="netDxf" path="/Users/wieslawsoltes/GitHub/DxfToCSharp/netDxf"></mcfolder>
 
 This analysis provides a comprehensive overview of the netDxf object model and current generation capabilities, highlighting areas for potential expansion and improvement.
+
+---
+
+**Last Updated:** January 2025 - Updated to reflect current implementation status. Major entities (Attribute, Tolerance, Trace, Underlay, Viewport) and objects (XRecord, DictionaryObject, LayerState, PlotSettings) have been implemented since the original analysis.

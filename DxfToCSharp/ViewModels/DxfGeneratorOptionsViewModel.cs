@@ -194,6 +194,14 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generateArcEntities, value);
     }
 
+    private bool _generateAttributeDefinitionEntities = true;
+
+    public bool GenerateAttributeDefinitionEntities
+    {
+        get => _generateAttributeDefinitionEntities;
+        set => this.RaiseAndSetIfChanged(ref _generateAttributeDefinitionEntities, value);
+    }
+
     private bool _generateCircleEntities = true;
 
     public bool GenerateCircleEntities
@@ -216,6 +224,22 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     {
         get => _generatePolylineEntities;
         set => this.RaiseAndSetIfChanged(ref _generatePolylineEntities, value);
+    }
+
+    private bool _generatePolyline2DEntities = true;
+
+    public bool GeneratePolyline2DEntities
+    {
+        get => _generatePolyline2DEntities;
+        set => this.RaiseAndSetIfChanged(ref _generatePolyline2DEntities, value);
+    }
+
+    private bool _generatePolyline3DEntities = true;
+
+    public bool GeneratePolyline3DEntities
+    {
+        get => _generatePolyline3DEntities;
+        set => this.RaiseAndSetIfChanged(ref _generatePolyline3DEntities, value);
     }
 
     private bool _generateSplineEntities = true;
@@ -533,9 +557,12 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         var entitiesGroup1 = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateLineEntities),
             this.WhenAnyValue(x => x.GenerateArcEntities),
+            this.WhenAnyValue(x => x.GenerateAttributeDefinitionEntities),
             this.WhenAnyValue(x => x.GenerateCircleEntities),
             this.WhenAnyValue(x => x.GenerateEllipseEntities),
             this.WhenAnyValue(x => x.GeneratePolylineEntities),
+            this.WhenAnyValue(x => x.GeneratePolyline2DEntities),
+            this.WhenAnyValue(x => x.GeneratePolyline3DEntities),
             this.WhenAnyValue(x => x.GenerateSplineEntities),
             this.WhenAnyValue(x => x.GenerateTextEntities),
             this.WhenAnyValue(x => x.GenerateMTextEntities),
@@ -548,9 +575,9 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateWipeoutEntities),
             this.WhenAnyValue(x => x.GenerateLinearDimensionEntities),
             this.WhenAnyValue(x => x.GenerateAlignedDimensionEntities),
-            (line, arc, circle, ellipse, polyline, spline, text, mtext, point, attribute, insert, hatch, solid, face3d, wipeout,
+            (line, arc, attributeDefinition, circle, ellipse, polyline, polyline2D, polyline3D, spline, text, mtext, point, attribute, insert, hatch, solid, face3d, wipeout,
                     linearDim, alignedDim) =>
-                line && arc && circle && ellipse && polyline && spline && text && mtext && point && attribute && insert &&
+                line && arc && attributeDefinition && circle && ellipse && polyline && polyline2D && polyline3D && spline && text && mtext && point && attribute && insert &&
                 hatch && solid && face3d && wipeout && linearDim && alignedDim);
 
         var entitiesGroup2a = Observable.CombineLatest(
@@ -689,6 +716,8 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateCircleEntities = value;
         GenerateEllipseEntities = value;
         GeneratePolylineEntities = value;
+        GeneratePolyline2DEntities = value;
+        GeneratePolyline3DEntities = value;
         GenerateSplineEntities = value;
         GenerateTextEntities = value;
         GenerateMTextEntities = value;
@@ -755,6 +784,8 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateCircleEntities = GenerateCircleEntities,
             GenerateEllipseEntities = GenerateEllipseEntities,
             GeneratePolylineEntities = GeneratePolylineEntities,
+            GeneratePolyline2DEntities = GeneratePolyline2DEntities,
+            GeneratePolyline3DEntities = GeneratePolyline3DEntities,
             GenerateSplineEntities = GenerateSplineEntities,
             GenerateTextEntities = GenerateTextEntities,
             GenerateMTextEntities = GenerateMTextEntities,
@@ -820,6 +851,8 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateCircleEntities = options.GenerateCircleEntities;
         GenerateEllipseEntities = options.GenerateEllipseEntities;
         GeneratePolylineEntities = options.GeneratePolylineEntities;
+        GeneratePolyline2DEntities = options.GeneratePolyline2DEntities;
+        GeneratePolyline3DEntities = options.GeneratePolyline3DEntities;
         GenerateSplineEntities = options.GenerateSplineEntities;
         GenerateTextEntities = options.GenerateTextEntities;
         GenerateMTextEntities = options.GenerateMTextEntities;

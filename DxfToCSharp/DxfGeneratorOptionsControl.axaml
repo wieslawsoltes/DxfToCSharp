@@ -36,9 +36,12 @@
                 CommandParameter="{Binding !AllEntitiesSelected}" />
       <CheckBox Content="Lines" Margin="20,2,0,2" IsChecked="{Binding GenerateLineEntities}" />
       <CheckBox Content="Arcs" Margin="20,2,0,2" IsChecked="{Binding GenerateArcEntities}" />
+      <CheckBox Content="Attribute Definitions" Margin="20,2,0,2" IsChecked="{Binding GenerateAttributeDefinitionEntities}" />
       <CheckBox Content="Circles" Margin="20,2,0,2" IsChecked="{Binding GenerateCircleEntities}" />
       <CheckBox Content="Ellipses" Margin="20,2,0,2" IsChecked="{Binding GenerateEllipseEntities}" />
       <CheckBox Content="Polylines" Margin="20,2,0,2" IsChecked="{Binding GeneratePolylineEntities}" />
+      <CheckBox Content="Polyline2D" Margin="40,2,0,2" IsChecked="{Binding GeneratePolyline2DEntities}" />
+      <CheckBox Content="Polyline3D" Margin="40,2,0,2" IsChecked="{Binding GeneratePolyline3DEntities}" />
       <CheckBox Content="Splines" Margin="20,2,0,2" IsChecked="{Binding GenerateSplineEntities}" />
       <CheckBox Content="Text" Margin="20,2,0,2" IsChecked="{Binding GenerateTextEntities}" />
       <CheckBox Content="MText" Margin="20,2,0,2" IsChecked="{Binding GenerateMTextEntities}" />

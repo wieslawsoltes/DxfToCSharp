@@ -604,8 +604,11 @@ public class DxfCodeGenerator
             {
                 GenerateLineEntities = true,
                 GenerateArcEntities = true,
+                GenerateAttributeDefinitionEntities = true,
                 GenerateCircleEntities = true,
                 GeneratePolylineEntities = true,
+                GeneratePolyline2DEntities = true,
+                GeneratePolyline3DEntities = true,
                 GenerateTextEntities = true,
                 GenerateMTextEntities = true,
                 GeneratePointEntities = true,
@@ -655,7 +658,7 @@ public class DxfCodeGenerator
                     sb.AppendLine(baseIndent + "};");
                     
                     // Add attribute definitions if any
-                    if (block.AttributeDefinitions.Count > 0)
+                    if (options.GenerateAttributeDefinitionEntities && block.AttributeDefinitions.Count > 0)
                     {
                         foreach (var attDef in block.AttributeDefinitions.Values)
                         {
@@ -903,10 +906,10 @@ public class DxfCodeGenerator
             case PointEntity point when options.GeneratePointEntities:
                 GeneratePoint(sb, point, needsVariable, baseIndent);
                 break;
-            case Polyline2D poly2d when options.GeneratePolylineEntities:
+            case Polyline2D poly2d when options.GeneratePolyline2DEntities:
                 GeneratePolyline2D(sb, poly2d, baseIndent);
                 break;
-            case Polyline3D poly3d when options.GeneratePolylineEntities:
+            case Polyline3D poly3d when options.GeneratePolyline3DEntities:
                 GeneratePolyline3D(sb, poly3d, needsVariable, baseIndent);
                 break;
             case Spline spline when options.GenerateSplineEntities:
@@ -2473,7 +2476,7 @@ public class DxfCodeGenerator
         }
         
         // Create AttributeDefinition if needed
-        if (attribute.Definition != null)
+        if (attribute.Definition != null && options.GenerateAttributeDefinitionEntities)
         {
             sb.AppendLine($"{baseIndent}    new AttributeDefinition(\"{Escape(attribute.Tag)}\", \"{Escape(attribute.Value)}\",");
             sb.AppendLine($"{baseIndent}        new Vector3({F(attribute.Position.X)}, {F(attribute.Position.Y)}, {F(attribute.Position.Z)}),");
