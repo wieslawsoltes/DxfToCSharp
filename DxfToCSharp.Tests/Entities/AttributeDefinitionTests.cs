@@ -52,11 +52,7 @@ public class AttributeDefinitionTests : IDisposable
 
         // Assert
         Assert.NotNull(generatedCode);
-        
-        // Debug: Print the generated code to see what's actually generated
-        System.Console.WriteLine("Generated code:");
-        System.Console.WriteLine(generatedCode);
-        
+
         // Test that AttributeDefinition entities are generated correctly
         Assert.Contains("AttributeDefinition", generatedCode);
         Assert.Contains("TAG1", generatedCode);
