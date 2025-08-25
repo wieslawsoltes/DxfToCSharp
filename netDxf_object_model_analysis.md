@@ -292,13 +292,9 @@ The netDxf object model is organized into several main categories:
 *All major entity types now have dedicated generation support.*
 
 ### Missing Object Generation
-*All major object types are now generated. Consider additional supporting classes if needed.*
+*All major object types are now generated. Supporting classes are well-covered by existing generation options.*
 
-### Supporting Classes to Consider
-1. **Vertex classes** - For polyline/mesh vertices
-2. **Hatch pattern classes** - For custom hatch patterns
-3. **Dimension style components** - For detailed dimension styling
-4. **MLine components** - For multiline style elements
+
 
 ## Code Generator Architecture
 
