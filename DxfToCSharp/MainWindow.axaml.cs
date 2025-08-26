@@ -549,20 +549,12 @@ public partial class MainWindow : Window
             if (string.IsNullOrEmpty(directory) || string.IsNullOrEmpty(fileName))
                 return;
 
-            // macOS-specific configuration to address known issues
-            var isMacOS = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
-            
             _fileWatcher = new FileSystemWatcher(directory)
             {
-                // On macOS, watch all files in directory due to FSEvents limitations
-                Filter = isMacOS ? "*.*" : fileName,
-                // Use more comprehensive NotifyFilter for macOS
-                NotifyFilter = isMacOS ? 
-                    (NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.CreationTime | NotifyFilters.FileName) :
-                    (NotifyFilters.LastWrite | NotifyFilters.Size),
-                EnableRaisingEvents = false, // Set to false initially
+                Filter = "*.*",
+                NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.CreationTime | NotifyFilters.FileName,
+                EnableRaisingEvents = false,
                 IncludeSubdirectories = false,
-                // Increase internal buffer size for better reliability
                 InternalBufferSize = 8192 * 4
             };
 
@@ -574,15 +566,6 @@ public partial class MainWindow : Window
             
             // Enable events after all setup is complete
             _fileWatcher.EnableRaisingEvents = true;
-            
-            
-            
-            // Test the watcher by checking if it's actually working
-            Task.Run(async () =>
-            {
-                await Task.Delay(1000); // Wait a second
-
-            });
         }
         catch (Exception ex)
         {
