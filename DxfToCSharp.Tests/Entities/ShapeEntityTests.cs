@@ -13,6 +13,14 @@ public class ShapeEntityTests : RoundTripTestBase, IDisposable
     {
         // Copy shape.shx to temp directory for tests
         var sourceShapeFile = Path.Combine(Directory.GetCurrentDirectory(), "shape.shx");
+        // Fallbacks to handle different test runners working directories
+        if (!File.Exists(sourceShapeFile))
+            sourceShapeFile = Path.Combine(AppContext.BaseDirectory, "shape.shx");
+        if (!File.Exists(sourceShapeFile))
+            sourceShapeFile = Path.Combine(AppContext.BaseDirectory, "DxfToCSharp.Tests", "shape.shx");
+        if (!File.Exists(sourceShapeFile))
+            throw new FileNotFoundException($"shape.shx not found. Checked: '{Path.Combine(Directory.GetCurrentDirectory(), "shape.shx")}', '{Path.Combine(AppContext.BaseDirectory, "shape.shx")}', '{Path.Combine(AppContext.BaseDirectory, "DxfToCSharp.Tests", "shape.shx")}'.");
+
         _shapeFilePath = Path.Combine(_tempDirectory, "shape.shx");
         File.Copy(sourceShapeFile, _shapeFilePath, true);
     }
