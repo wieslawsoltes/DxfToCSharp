@@ -1439,6 +1439,9 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}    splineEntity.LinetypeScale = {F(spline.LinetypeScale)};");
         }
         
+        // Advanced spline properties
+        GenerateSplineAdvancedProperties(sb, spline, baseIndent + "    ");
+        
         sb.AppendLine($"{baseIndent}    doc.Entities.Add(splineEntity);");
         sb.AppendLine($"{baseIndent}}}");
     }
@@ -1474,14 +1477,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}    {F(text.Height)})");
             sb.AppendLine($"{baseIndent}{{");
             GenerateEntityPropertiesCore(sb, text, baseIndent);
-            if (text.Style?.Name != "Standard")
-            {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name)},");
-            }
-            if (Math.Abs(text.Rotation) > 1e-12)
-            {
-                sb.AppendLine($"{baseIndent}    Rotation = {F(text.Rotation)},");
-            }
+            GenerateTextAdvancedProperties(sb, text, baseIndent);
             sb.AppendLine($"{baseIndent}}};");
              sb.AppendLine($"{baseIndent}doc.Entities.Add(entity{text.Handle});");
         }
@@ -1493,14 +1489,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}    {F(text.Height)})");
             sb.AppendLine($"{baseIndent}{{");
             GenerateEntityPropertiesCore(sb, text, baseIndent);
-            if (text.Style?.Name != "Standard")
-            {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name)},");
-            }
-            if (Math.Abs(text.Rotation) > 1e-12)
-            {
-                sb.AppendLine($"{baseIndent}    Rotation = {F(text.Rotation)},");
-            }
+            GenerateTextAdvancedProperties(sb, text, baseIndent);
             sb.AppendLine($"{baseIndent}}}");
             sb.AppendLine($"{baseIndent});");
         }
@@ -1525,6 +1514,26 @@ public class DxfCodeGenerator
             {
                 sb.AppendLine($"{baseIndent}    RectangleWidth = {F(mtext.RectangleWidth)},");
             }
+            if (mtext.AttachmentPoint != MTextAttachmentPoint.TopLeft)
+            {
+                sb.AppendLine($"{baseIndent}    AttachmentPoint = MTextAttachmentPoint.{mtext.AttachmentPoint},");
+            }
+            if (Math.Abs(mtext.Rotation) > 1e-12)
+            {
+                sb.AppendLine($"{baseIndent}    Rotation = {F(mtext.Rotation * 180.0 / Math.PI)},");
+            }
+            if (Math.Abs(mtext.LineSpacingFactor - 1.0) > 1e-12)
+            {
+                sb.AppendLine($"{baseIndent}    LineSpacingFactor = {F(mtext.LineSpacingFactor)},");
+            }
+            if (mtext.LineSpacingStyle != MTextLineSpacingStyle.AtLeast)
+            {
+                sb.AppendLine($"{baseIndent}    LineSpacingStyle = MTextLineSpacingStyle.{mtext.LineSpacingStyle},");
+            }
+            if (mtext.DrawingDirection != MTextDrawingDirection.LeftToRight)
+            {
+                sb.AppendLine($"{baseIndent}    DrawingDirection = MTextDrawingDirection.{mtext.DrawingDirection},");
+            }
             sb.AppendLine($"{baseIndent}}};");
             sb.AppendLine($"{baseIndent}doc.Entities.Add(entity{mtext.Handle});");
         }
@@ -1543,6 +1552,26 @@ public class DxfCodeGenerator
             if (mtext.RectangleWidth > 0)
             {
                 sb.AppendLine($"{baseIndent}    RectangleWidth = {F(mtext.RectangleWidth)},");
+            }
+            if (mtext.AttachmentPoint != MTextAttachmentPoint.TopLeft)
+            {
+                sb.AppendLine($"{baseIndent}    AttachmentPoint = MTextAttachmentPoint.{mtext.AttachmentPoint},");
+            }
+            if (Math.Abs(mtext.Rotation) > 1e-12)
+            {
+                sb.AppendLine($"{baseIndent}    Rotation = {F(mtext.Rotation * 180.0 / Math.PI)},");
+            }
+            if (Math.Abs(mtext.LineSpacingFactor - 1.0) > 1e-12)
+            {
+                sb.AppendLine($"{baseIndent}    LineSpacingFactor = {F(mtext.LineSpacingFactor)},");
+            }
+            if (mtext.LineSpacingStyle != MTextLineSpacingStyle.AtLeast)
+            {
+                sb.AppendLine($"{baseIndent}    LineSpacingStyle = MTextLineSpacingStyle.{mtext.LineSpacingStyle},");
+            }
+            if (mtext.DrawingDirection != MTextDrawingDirection.LeftToRight)
+            {
+                sb.AppendLine($"{baseIndent}    DrawingDirection = MTextDrawingDirection.{mtext.DrawingDirection},");
             }
             sb.AppendLine($"{baseIndent}}}");
             sb.AppendLine($"{baseIndent});");
@@ -1945,7 +1974,45 @@ public class DxfCodeGenerator
         }
         else
         {
-            sb.AppendLine($"{baseIndent}    var hatchEntity = new Hatch(new HatchPattern(\"{Escape(patternName)}\"), boundaryPaths, false);");
+            // Check if it's a gradient pattern
+            if (hatch.Pattern is HatchGradientPattern gradientPattern)
+            {
+                sb.AppendLine($"{baseIndent}    var gradientPattern = new HatchGradientPattern(");
+                if (gradientPattern.SingleColor)
+                {
+                    sb.AppendLine($"{baseIndent}        new AciColor({gradientPattern.Color1.Index}), {F(gradientPattern.Tint)}, HatchGradientPatternType.{gradientPattern.GradientType});");
+                }
+                else
+                {
+                    sb.AppendLine($"{baseIndent}        new AciColor({gradientPattern.Color1.Index}), new AciColor({gradientPattern.Color2.Index}), HatchGradientPatternType.{gradientPattern.GradientType});");
+                }
+                
+                // Set gradient-specific properties if they differ from defaults
+                if (Math.Abs(gradientPattern.Angle) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    gradientPattern.Angle = {F(gradientPattern.Angle)};");
+                if (Math.Abs(gradientPattern.Scale - 1.0) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    gradientPattern.Scale = {F(gradientPattern.Scale)};");
+                if (Math.Abs(gradientPattern.Origin.X) > 1e-9 || Math.Abs(gradientPattern.Origin.Y) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    gradientPattern.Origin = new Vector2({F(gradientPattern.Origin.X)}, {F(gradientPattern.Origin.Y)});");
+                if (!gradientPattern.Centered)
+                    sb.AppendLine($"{baseIndent}    gradientPattern.Centered = false;");
+                
+                sb.AppendLine($"{baseIndent}    var hatchEntity = new Hatch(gradientPattern, boundaryPaths, false);");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}    var pattern = new HatchPattern(\"{Escape(patternName)}\");");
+                
+                // Set pattern properties if they differ from defaults
+                if (Math.Abs(hatch.Pattern.Angle) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    pattern.Angle = {F(hatch.Pattern.Angle)};");
+                if (Math.Abs(hatch.Pattern.Scale - 1.0) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    pattern.Scale = {F(hatch.Pattern.Scale)};");
+                if (Math.Abs(hatch.Pattern.Origin.X) > 1e-9 || Math.Abs(hatch.Pattern.Origin.Y) > 1e-9)
+                    sb.AppendLine($"{baseIndent}    pattern.Origin = new Vector2({F(hatch.Pattern.Origin.X)}, {F(hatch.Pattern.Origin.Y)});");
+                
+                sb.AppendLine($"{baseIndent}    var hatchEntity = new Hatch(pattern, boundaryPaths, false);");
+            }
         }
         
         sb.AppendLine($"{baseIndent}    hatchEntity.Elevation = {F(hatch.Elevation)};");
@@ -2049,46 +2116,43 @@ public class DxfCodeGenerator
 
     private void GenerateLeader(StringBuilder sb, Leader leader, bool asVariable = false, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}{{");
-        sb.AppendLine($"{baseIndent}    // Leader entity with vertices");
-        sb.AppendLine($"{baseIndent}    var leaderVertices = new List<Vector2>();");
-        
-        if (leader.Vertexes != null && leader.Vertexes.Count > 0)
-        {
-            foreach (var vertex in leader.Vertexes)
-            {
-                sb.AppendLine($"{baseIndent}    leaderVertices.Add(new Vector2({F(vertex.X)}, {F(vertex.Y)}));");
-            }
-        }
-        
-        var entityName = asVariable ? $"leader{_entityCounter++}" : "leaderEntity";
-        sb.AppendLine($"{baseIndent}    var {entityName} = new Leader(leaderVertices);");
-        
-        // Apply entity properties
-        if (leader.Layer != null && _usedLayers.Contains(leader.Layer.Name))
-        {
-            sb.AppendLine($"{baseIndent}    {entityName}.Layer = layer{SafeName(leader.Layer.Name)};");
-        }
-        
-        // Color handling
-        if (leader.Color.Index != 256) // Not ByLayer
-        {
-            if (leader.Color.Index == 0)
-                sb.AppendLine($"{baseIndent}    {entityName}.Color = AciColor.ByBlock;");
-            else
-                sb.AppendLine($"{baseIndent}    {entityName}.Color = new AciColor({leader.Color.Index});");
-        }
-        
         if (asVariable)
         {
-            sb.AppendLine($"{baseIndent}    entities.Add({entityName});");
+            sb.AppendLine($"{baseIndent}var entity{leader.Handle} = new Leader(new List<Vector2>");
+            sb.AppendLine($"{baseIndent}{{");
+            if (leader.Vertexes != null && leader.Vertexes.Count > 0)
+            {
+                for (int i = 0; i < leader.Vertexes.Count; i++)
+                {
+                    var vertex = leader.Vertexes[i];
+                    var comma = i < leader.Vertexes.Count - 1 ? "," : "";
+                    sb.AppendLine($"{baseIndent}    new Vector2({F(vertex.X)}, {F(vertex.Y)}){comma}");
+                }
+            }
+            sb.AppendLine($"{baseIndent}}});");
+            GenerateEntityPropertiesCore(sb, leader, baseIndent);
+            GenerateLeaderAdvancedProperties(sb, leader, $"entity{leader.Handle}", baseIndent);
+            sb.AppendLine($"{baseIndent}entities.Add(entity{leader.Handle});");
         }
         else
         {
-            sb.AppendLine($"{baseIndent}    doc.Entities.Add({entityName});");
+            sb.AppendLine($"{baseIndent}doc.Entities.Add(new Leader(new List<Vector2>");
+            sb.AppendLine($"{baseIndent}{{");
+            if (leader.Vertexes != null && leader.Vertexes.Count > 0)
+            {
+                for (int i = 0; i < leader.Vertexes.Count; i++)
+                {
+                    var vertex = leader.Vertexes[i];
+                    var comma = i < leader.Vertexes.Count - 1 ? "," : "";
+                    sb.AppendLine($"{baseIndent}    new Vector2({F(vertex.X)}, {F(vertex.Y)}){comma}");
+                }
+            }
+            sb.AppendLine($"{baseIndent}}});");
+            sb.AppendLine($"{baseIndent}{{");
+            GenerateEntityPropertiesCore(sb, leader, baseIndent);
+            GenerateLeaderAdvancedProperties(sb, leader, null, baseIndent);
+            sb.AppendLine($"{baseIndent}}});");
         }
-        sb.AppendLine($"{baseIndent}}}");
-        sb.AppendLine();
     }
 
     private void GenerateFace3D(StringBuilder sb, Face3D face3d, string baseIndent = "        ")
@@ -2120,6 +2184,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}            {F(dimension.Offset)}, {F(dimension.Rotation)})");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
         sb.AppendLine($"{baseIndent}        }}");
         sb.AppendLine($"{baseIndent}        );");
     }
@@ -2132,6 +2197,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}            {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
         sb.AppendLine($"{baseIndent}        }}");
         sb.AppendLine($"{baseIndent}        );");
     }
@@ -2144,6 +2210,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        )");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
         sb.AppendLine($"{baseIndent}        }}");
         sb.AppendLine($"{baseIndent}        );");
     }
@@ -2156,6 +2223,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        )");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
         sb.AppendLine($"{baseIndent}        }}");
         sb.AppendLine($"{baseIndent}        );");
     }
@@ -2170,6 +2238,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}            {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
         sb.AppendLine($"{baseIndent}        }}");
         sb.AppendLine($"{baseIndent}        );");
     }
@@ -2183,6 +2252,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "    ");
         sb.AppendLine($"{baseIndent}    }}");
         sb.AppendLine($"{baseIndent}    );");
     }
@@ -2196,6 +2266,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        OrdinateDimensionAxis.{dimension.Axis})");
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "    ");
         sb.AppendLine($"{baseIndent}    }}");
         sb.AppendLine($"{baseIndent}    );");
     }
@@ -2210,6 +2281,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}        {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
+        GenerateDimensionStyleProperties(sb, dimension, baseIndent + "    ");
         sb.AppendLine($"{baseIndent}    }}");
         sb.AppendLine($"{baseIndent}    );");
     }
@@ -2403,6 +2475,32 @@ public class DxfCodeGenerator
         if (image.Fade != 0) // Default fade is 0
         {
             sb.AppendLine($"{baseIndent}    {entityName}.Fade = {image.Fade};");
+        }
+        
+        // Clipping state
+        if (image.Clipping)
+        {
+            sb.AppendLine($"{baseIndent}    {entityName}.Clipping = true;");
+        }
+        
+        // DisplayOptions (default is ShowImage | ShowImageWhenNotAlignedWithScreen | UseClippingBoundary = 7)
+        var defaultDisplayOptions = ImageDisplayFlags.ShowImage | ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen | ImageDisplayFlags.UseClippingBoundary;
+        if (image.DisplayOptions != defaultDisplayOptions)
+        {
+            var flags = new List<string>();
+            if ((image.DisplayOptions & ImageDisplayFlags.ShowImage) != 0)
+                flags.Add("ImageDisplayFlags.ShowImage");
+            if ((image.DisplayOptions & ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen) != 0)
+                flags.Add("ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen");
+            if ((image.DisplayOptions & ImageDisplayFlags.UseClippingBoundary) != 0)
+                flags.Add("ImageDisplayFlags.UseClippingBoundary");
+            if ((image.DisplayOptions & ImageDisplayFlags.TransparencyOn) != 0)
+                flags.Add("ImageDisplayFlags.TransparencyOn");
+            
+            if (flags.Count > 0)
+            {
+                sb.AppendLine($"{baseIndent}    {entityName}.DisplayOptions = {string.Join(" | ", flags)};");
+            }
         }
         
         // ClippingBoundary
@@ -3257,5 +3355,218 @@ public class DxfCodeGenerator
         }
         
         return flagNames.Count > 0 ? string.Join(" | ", flagNames) : "(ViewportStatusFlags)0";
+    }
+
+    private void GenerateDimensionStyleProperties(StringBuilder sb, Dimension dimension, string baseIndent)
+    {
+        // Generate dimension style properties if they differ from defaults
+        if (dimension.Style != null && dimension.Style.Name != "Standard")
+        {
+            sb.AppendLine($"{baseIndent}Style = doc.DimensionStyles[\"{dimension.Style.Name}\"],");
+        }
+
+        // Generate text rotation if not zero
+        if (Math.Abs(dimension.TextRotation) > 1e-6)
+        {
+            sb.AppendLine($"{baseIndent}TextRotation = {F(dimension.TextRotation)},");
+        }
+
+        // Generate user text if specified
+        if (!string.IsNullOrEmpty(dimension.UserText))
+        {
+            sb.AppendLine($"{baseIndent}UserText = \"{EscapeString(dimension.UserText)}\",");
+        }
+
+        // Generate attachment point if not default
+        if (dimension.AttachmentPoint != DimensionStyleTextVerticalPlacement.Centered)
+        {
+            sb.AppendLine($"{baseIndent}AttachmentPoint = DimensionStyleTextVerticalPlacement.{dimension.AttachmentPoint},");
+        }
+
+        // Generate line spacing properties if not default
+        if (dimension.LineSpacingStyle != DimensionStyleTextVerticalPlacement.Centered)
+        {
+            sb.AppendLine($"{baseIndent}LineSpacingStyle = DimensionStyleTextVerticalPlacement.{dimension.LineSpacingStyle},");
+        }
+
+        if (Math.Abs(dimension.LineSpacingFactor - 1.0) > 1e-6)
+        {
+            sb.AppendLine($"{baseIndent}LineSpacingFactor = {F(dimension.LineSpacingFactor)},");
+        }
+
+        // Generate elevation if not zero
+        if (Math.Abs(dimension.Elevation) > 1e-6)
+        {
+            sb.AppendLine($"{baseIndent}Elevation = {F(dimension.Elevation)},");
+        }
+
+        // Generate style overrides if any exist
+        if (dimension.StyleOverrides != null && dimension.StyleOverrides.Count > 0)
+        {
+            sb.AppendLine($"{baseIndent}// Style overrides:");
+            foreach (var styleOverride in dimension.StyleOverrides)
+            {
+                var overrideValue = FormatStyleOverrideValue(styleOverride.Value);
+                sb.AppendLine($"{baseIndent}StyleOverrides[DimensionStyleOverrideType.{styleOverride.Key}] = {overrideValue},");
+            }
+        }
+    }
+
+    private string FormatStyleOverrideValue(object value)
+    {
+        if (value == null) return "null";
+        
+        switch (value)
+        {
+            case double d:
+                return F(d);
+            case float f:
+                return F(f);
+            case int i:
+                return i.ToString();
+            case bool b:
+                return b.ToString().ToLower();
+            case string s:
+                return $"\"{EscapeString(s)}\"";
+            case AciColor color:
+                return $"AciColor.{color.Name}";
+            default:
+                return value.ToString();
+        }
+    }
+
+    private void GenerateSplineAdvancedProperties(StringBuilder sb, Spline spline, string baseIndent)
+    {
+        // Generate fit tolerance if not default
+        if (Math.Abs(spline.FitTolerance - 0.0000000001) > 1e-15)
+        {
+            sb.AppendLine($"{baseIndent}splineEntity.FitTolerance = {F(spline.FitTolerance)};");
+        }
+
+        // Generate control point tolerance if not default
+        if (Math.Abs(spline.CtrlPointTolerance - 0.0000001) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}splineEntity.CtrlPointTolerance = {F(spline.CtrlPointTolerance)};");
+        }
+
+        // Generate knot parameterization if not default
+        if (spline.KnotParameterization != SplineKnotParameterization.FitChord)
+        {
+            sb.AppendLine($"{baseIndent}splineEntity.KnotParameterization = SplineKnotParameterization.{spline.KnotParameterization};");
+        }
+
+        // Generate start tangent if specified
+        if (spline.StartTangent.HasValue)
+        {
+            var tangent = spline.StartTangent.Value;
+            sb.AppendLine($"{baseIndent}splineEntity.StartTangent = new Vector3({F(tangent.X)}, {F(tangent.Y)}, {F(tangent.Z)});");
+        }
+
+        // Generate end tangent if specified
+        if (spline.EndTangent.HasValue)
+        {
+            var tangent = spline.EndTangent.Value;
+            sb.AppendLine($"{baseIndent}splineEntity.EndTangent = new Vector3({F(tangent.X)}, {F(tangent.Y)}, {F(tangent.Z)});");
+        }
+    }
+
+    private void GenerateTextAdvancedProperties(StringBuilder sb, Text text, string baseIndent)
+    {
+        // Style
+        if (text.Style?.Name != "Standard")
+        {
+            sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name)},");
+        }
+        
+        // Rotation
+        if (Math.Abs(text.Rotation) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}    Rotation = {F(text.Rotation)},");
+        }
+        
+        // WidthFactor (default is 1.0)
+        if (Math.Abs(text.WidthFactor - 1.0) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}    WidthFactor = {F(text.WidthFactor)},");
+        }
+        
+        // ObliqueAngle (default is 0.0)
+        if (Math.Abs(text.ObliqueAngle) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}    ObliqueAngle = {F(text.ObliqueAngle)},");
+        }
+        
+        // IsBackward (default is false)
+        if (text.IsBackward)
+        {
+            sb.AppendLine($"{baseIndent}    IsBackward = true,");
+        }
+        
+        // IsUpsideDown (default is false)
+        if (text.IsUpsideDown)
+        {
+            sb.AppendLine($"{baseIndent}    IsUpsideDown = true,");
+        }
+    }
+
+    private void GenerateLeaderAdvancedProperties(StringBuilder sb, Leader leader, string entityName, string baseIndent)
+    {
+        var target = entityName ?? "";
+        var prefix = string.IsNullOrEmpty(entityName) ? "    " : "";
+        
+        // Style property
+        if (leader.Style?.Name != "Standard")
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.Style = dimStyle{SafeName(leader.Style.Name)},");
+        }
+        
+        // ShowArrowhead property (default is true)
+        if (!leader.ShowArrowhead)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.ShowArrowhead = false,");
+        }
+        
+        // PathType property (default is StraightLineSegments)
+        if (leader.PathType != LeaderPathType.StraightLineSegments)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.PathType = LeaderPathType.{leader.PathType},");
+        }
+        
+        // HasHookline property (default is false)
+        if (leader.HasHookline)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.HasHookline = true,");
+        }
+        
+        // LineColor property (default is ByLayer)
+        if (leader.LineColor.Index != 256) // Not ByLayer
+        {
+            if (leader.LineColor.Index == 0)
+            {
+                sb.AppendLine($"{baseIndent}{prefix}{target}.LineColor = AciColor.ByBlock,");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{prefix}{target}.LineColor = new AciColor({leader.LineColor.Index}),");
+            }
+        }
+        
+        // Elevation property (default is 0.0)
+        if (Math.Abs(leader.Elevation) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.Elevation = {F(leader.Elevation)},");
+        }
+        
+        // Offset property (default is Vector2.Zero)
+        if (Math.Abs(leader.Offset.X) > 1e-12 || Math.Abs(leader.Offset.Y) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.Offset = new Vector2({F(leader.Offset.X)}, {F(leader.Offset.Y)}),");
+        }
+        
+        // Direction property (default is Vector2.UnitX)
+        if (Math.Abs(leader.Direction.X - 1.0) > 1e-12 || Math.Abs(leader.Direction.Y) > 1e-12)
+        {
+            sb.AppendLine($"{baseIndent}{prefix}{target}.Direction = new Vector2({F(leader.Direction.X)}, {F(leader.Direction.Y)}),");
+        }
     }
 }
