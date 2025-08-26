@@ -503,11 +503,16 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
     private readonly ObservableAsPropertyHelper<bool> _allEntitiesSelected;
     public bool AllEntitiesSelected => _allEntitiesSelected.Value;
 
+    private readonly ObservableAsPropertyHelper<bool> _allOptionsSelected;
+    public bool AllOptionsSelected => _allOptionsSelected.Value;
+
     // Commands
     public ICommand ToggleAllGeneralCommand { get; }
     public ICommand ToggleAllTablesCommand { get; }
     public ICommand ToggleAllObjectsCommand { get; }
     public ICommand ToggleAllEntitiesCommand { get; }
+    public ICommand SelectAllCommand { get; }
+    public ICommand DeselectAllCommand { get; }
 
     // Observable for options changed
     public IObservable<DxfCodeGenerationOptions> OptionsChanged { get; }
@@ -629,11 +634,21 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 (group1, group2, group3) => group1 && group2 && group3)
             .ToProperty(this, x => x.AllEntitiesSelected);
 
+        _allOptionsSelected = Observable.CombineLatest(
+                this.WhenAnyValue(x => x.AllGeneralSelected),
+                this.WhenAnyValue(x => x.AllTablesSelected),
+                this.WhenAnyValue(x => x.AllObjectsSelected),
+                this.WhenAnyValue(x => x.AllEntitiesSelected),
+                (general, tables, objects, entities) => general && tables && objects && entities)
+            .ToProperty(this, x => x.AllOptionsSelected);
+
         // Create commands for master checkboxes
         ToggleAllGeneralCommand = ReactiveCommand.Create<bool>(ToggleAllGeneral);
         ToggleAllTablesCommand = ReactiveCommand.Create<bool>(ToggleAllTables);
         ToggleAllObjectsCommand = ReactiveCommand.Create<bool>(ToggleAllObjects);
         ToggleAllEntitiesCommand = ReactiveCommand.Create<bool>(ToggleAllEntities);
+        SelectAllCommand = ReactiveCommand.Create(SelectAll);
+        DeselectAllCommand = ReactiveCommand.Create(DeselectAll);
 
         // Create observable for options changed
         var generalOptions = Observable.CombineLatest(
@@ -757,6 +772,22 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateTraceEntities = value;
         GenerateUnderlayEntities = value;
         GenerateViewportEntities = value;
+    }
+
+    private void SelectAll()
+    {
+        ToggleAllGeneral(true);
+        ToggleAllTables(true);
+        ToggleAllObjects(true);
+        ToggleAllEntities(true);
+    }
+
+    private void DeselectAll()
+    {
+        ToggleAllGeneral(false);
+        ToggleAllTables(false);
+        ToggleAllObjects(false);
+        ToggleAllEntities(false);
     }
 
     public DxfCodeGenerationOptions ToOptions()

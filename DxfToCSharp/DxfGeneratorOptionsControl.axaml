@@ -8,6 +8,12 @@
              x:DataType="vm:DxfGeneratorOptionsViewModel">
   <ScrollViewer>
     <StackPanel Margin="10">
+      
+      <!-- Global Select/Deselect All buttons -->
+      <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+        <Button Content="Select All" Command="{Binding SelectAllCommand}" Margin="0,0,10,0" />
+        <Button Content="Deselect All" Command="{Binding DeselectAllCommand}" />
+      </StackPanel>
 
       <CheckBox Content="General" Margin="0,2" FontWeight="Bold" 
                 IsChecked="{Binding AllGeneralSelected}" 
@@ -85,6 +91,11 @@
       <CheckBox Content="XRecord Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateXRecordObjects}" />
       <CheckBox Content="Dictionary Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateDictionaryObjects}" />
       <CheckBox Content="Raster Variables" Margin="20,2,0,2" IsChecked="{Binding GenerateRasterVariablesObjects}" />
+      <CheckBox Content="Layer States" Margin="20,2,0,2" IsChecked="{Binding GenerateLayerStateObjects}" />
+      <CheckBox Content="Plot Settings" Margin="20,2,0,2" IsChecked="{Binding GeneratePlotSettingsObjects}" />
+      <CheckBox Content="MLine Style Objects" Margin="20,2,0,2" IsChecked="{Binding GenerateMLineStyleObjects}" />
+      <CheckBox Content="Application Registry" Margin="20,2,0,2" IsChecked="{Binding GenerateApplicationRegistryObjects}" />
+      <CheckBox Content="Shape Styles" Margin="20,2,0,2" IsChecked="{Binding GenerateShapeStyleObjects}" />
 
     </StackPanel>
   </ScrollViewer>
