@@ -47,7 +47,7 @@ public class ShapeStyleTests : RoundTripTestBase, IDisposable
         var shapeStyle = new ShapeStyle("MyCustomShapeStyle", "custom.shx");
 
         // Act & Assert
-        PerformRoundTripTest(shapeStyle, (original, loaded) =>
+        PerformRoundTripTest(shapeStyle, (_, loaded) =>
         {
             Assert.Equal("MyCustomShapeStyle", loaded.Name);
             Assert.Equal("custom.shx", loaded.File);
@@ -83,7 +83,7 @@ public class ShapeStyleTests : RoundTripTestBase, IDisposable
         var shapeStyle = new ShapeStyle(longName, "long.shx");
 
         // Act & Assert
-        PerformRoundTripTest(shapeStyle, (original, loaded) =>
+        PerformRoundTripTest(shapeStyle, (_, loaded) =>
         {
             Assert.Equal(longName, loaded.Name);
             Assert.Equal("long.shx", loaded.File);

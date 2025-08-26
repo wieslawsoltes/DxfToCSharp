@@ -4,7 +4,6 @@ using netDxf.Objects;
 using netDxf.Tables;
 using DxfToCSharp.Tests.Infrastructure;
 using DxfToCSharp.Core;
-using System.Drawing;
 
 namespace DxfToCSharp.Tests.Entities;
 

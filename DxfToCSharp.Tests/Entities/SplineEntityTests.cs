@@ -31,7 +31,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
-            for (int i = 0; i < originalPoints.Count; i++)
+            for (var i = 0; i < originalPoints.Count; i++)
             {
                 AssertVector3Equal(originalPoints[i], recreatedPoints[i]);
             }
@@ -62,7 +62,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
-            for (int i = 0; i < originalPoints.Count; i++)
+            for (var i = 0; i < originalPoints.Count; i++)
             {
                 AssertVector3Equal(originalPoints[i], recreatedPoints[i]);
             }
@@ -93,7 +93,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
-            for (int i = 0; i < originalPoints.Count; i++)
+            for (var i = 0; i < originalPoints.Count; i++)
             {
                 AssertVector3Equal(originalPoints[i], recreatedPoints[i]);
             }
@@ -158,7 +158,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
-            for (int i = 0; i < originalPoints.Count; i++)
+            for (var i = 0; i < originalPoints.Count; i++)
             {
                 AssertVector3Equal(originalPoints[i], recreatedPoints[i]);
             }

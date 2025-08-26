@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Folding;
 
-namespace DxfToCSharp;
+namespace DxfToCSharp.Services;
 
 /// <summary>
 /// Folding strategy for C# code that creates foldable regions for methods, classes, namespaces, and other code blocks.
@@ -14,15 +14,16 @@ public class CSharpFoldingStrategy
     /// <summary>
     /// Creates folding regions for C# code.
     /// </summary>
-    public IEnumerable<NewFolding> CreateNewFoldings(TextDocument document, out int firstErrorOffset)
+    public IEnumerable<NewFolding> CreateNewFoldings(TextDocument? document, out int firstErrorOffset)
     {
         firstErrorOffset = -1;
         var foldings = new List<NewFolding>();
-            
-        if (document == null || document.TextLength == 0)
-            return foldings;
 
-        var text = document.Text;
+        if (document == null || document.TextLength == 0)
+        {
+            return foldings;
+        }
+
         var lines = document.Lines.ToArray();
             
         // Stack to track opening braces and their contexts
@@ -39,7 +40,7 @@ public class CSharpFoldingStrategy
         // Track #region blocks
         var regionStack = new Stack<(int offset, string name)>();
             
-        for (int i = 0; i < lines.Length; i++)
+        for (var i = 0; i < lines.Length; i++)
         {
             var line = document.GetText(lines[i]);
             var trimmedLine = line.Trim();
@@ -74,7 +75,7 @@ public class CSharpFoldingStrategy
             // Determine context for opening brace
             if (openBraceIndex >= 0)
             {
-                string context = "block";
+                var context = "block";
                     
                 // Check what kind of block this is
                 var namespaceMatch = namespacePattern.Match(line);
@@ -154,10 +155,10 @@ public class CSharpFoldingStrategy
     /// </summary>
     private NewFolding? CreateUsingStatementsFolding(TextDocument document, DocumentLine[] lines)
     {
-        int firstUsingLine = -1;
-        int lastUsingLine = -1;
+        var firstUsingLine = -1;
+        var lastUsingLine = -1;
             
-        for (int i = 0; i < lines.Length; i++)
+        for (var i = 0; i < lines.Length; i++)
         {
             var line = document.GetText(lines[i]).Trim();
                 

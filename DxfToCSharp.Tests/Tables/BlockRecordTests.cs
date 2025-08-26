@@ -1,6 +1,5 @@
 using netDxf;
 using netDxf.Blocks;
-using netDxf.Units;
 using DxfToCSharp.Tests.Infrastructure;
 using netDxf.Entities;
 

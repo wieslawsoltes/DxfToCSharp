@@ -27,7 +27,7 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
         var originalAppReg = ApplicationRegistry.Default;
 
         // Act & Assert
-        PerformRoundTripTest(originalAppReg, (original, loaded) =>
+        PerformRoundTripTest(originalAppReg, (_, loaded) =>
         {
             Assert.Equal(ApplicationRegistry.DefaultName, loaded.Name);
             Assert.True(loaded.IsReserved);
@@ -41,7 +41,7 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
         var originalAppReg = new ApplicationRegistry("MyCustomApp");
 
         // Act & Assert
-        PerformRoundTripTest(originalAppReg, (original, loaded) =>
+        PerformRoundTripTest(originalAppReg, (_, loaded) =>
         {
             Assert.Equal("MyCustomApp", loaded.Name);
             Assert.False(loaded.IsReserved);
@@ -77,7 +77,7 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
         var originalAppReg = new ApplicationRegistry(longName);
 
         // Act & Assert
-        PerformRoundTripTest(originalAppReg, (original, loaded) =>
+        PerformRoundTripTest(originalAppReg, (_, loaded) =>
         {
             Assert.Equal(longName, loaded.Name);
             Assert.False(loaded.IsReserved);

@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using Xunit;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Entities;
 using netDxf.Tables;
 using DxfToCSharp.Tests.Infrastructure;
-using Attribute = netDxf.Entities.Attribute;
 
 namespace DxfToCSharp.Tests.Entities;
 

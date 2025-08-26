@@ -1,12 +1,7 @@
 using netDxf;
 using netDxf.Entities;
-using netDxf.Objects;
 using DxfToCSharp.Tests.Infrastructure;
 using DxfToCSharp.Core;
-using Xunit;
-using System;
-using System.IO;
-using System.Linq;
 
 namespace DxfToCSharp.Tests.Objects;
 

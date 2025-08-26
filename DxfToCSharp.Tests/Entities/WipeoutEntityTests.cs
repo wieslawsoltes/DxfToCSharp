@@ -24,7 +24,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalWipeout, (original, recreated) =>
         {
             Assert.Equal(original.ClippingBoundary.Vertexes.Count, recreated.ClippingBoundary.Vertexes.Count);
-            for (int i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
+            for (var i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
             {
                 var originalVertex = original.ClippingBoundary.Vertexes[i];
                 var recreatedVertex = recreated.ClippingBoundary.Vertexes[i];
@@ -81,7 +81,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalWipeout, (original, recreated) =>
         {
             Assert.Equal(original.ClippingBoundary.Vertexes.Count, recreated.ClippingBoundary.Vertexes.Count);
-            for (int i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
+            for (var i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
             {
                 var originalVertex = original.ClippingBoundary.Vertexes[i];
                 var recreatedVertex = recreated.ClippingBoundary.Vertexes[i];
@@ -112,7 +112,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalWipeout, (original, recreated) =>
         {
             Assert.Equal(original.ClippingBoundary.Vertexes.Count, recreated.ClippingBoundary.Vertexes.Count);
-            for (int i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
+            for (var i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
             {
             var originalVertex = original.ClippingBoundary.Vertexes[i];
                 var recreatedVertex = recreated.ClippingBoundary.Vertexes[i];

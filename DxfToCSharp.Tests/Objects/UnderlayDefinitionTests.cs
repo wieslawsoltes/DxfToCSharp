@@ -1,7 +1,6 @@
 using netDxf;
 using netDxf.Objects;
 using DxfToCSharp.Tests.Infrastructure;
-using Xunit;
 
 namespace DxfToCSharp.Tests.Objects;
 

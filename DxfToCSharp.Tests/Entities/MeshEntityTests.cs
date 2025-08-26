@@ -35,16 +35,16 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalMesh, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
             
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
-            for (int i = 0; i < original.Faces.Count; i++)
+            for (var i = 0; i < original.Faces.Count; i++)
             {
                 Assert.Equal(original.Faces[i].Length, recreated.Faces[i].Length);
-                for (int j = 0; j < original.Faces[i].Length; j++)
+                for (var j = 0; j < original.Faces[i].Length; j++)
                 {
                     Assert.Equal(original.Faces[i][j], recreated.Faces[i][j]);
                 }
@@ -88,7 +88,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
             Assert.Equal(original.Edges.Count, recreated.Edges.Count);
             
-            for (int i = 0; i < original.Edges.Count; i++)
+            for (var i = 0; i < original.Edges.Count; i++)
             {
                 Assert.Equal(original.Edges[i].StartVertexIndex, recreated.Edges[i].StartVertexIndex);
                 Assert.Equal(original.Edges[i].EndVertexIndex, recreated.Edges[i].EndVertexIndex);

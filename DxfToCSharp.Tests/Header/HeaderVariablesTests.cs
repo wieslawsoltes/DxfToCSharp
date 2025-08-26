@@ -167,7 +167,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
         // Act & Assert
-        PerformHeaderRoundTripTest(originalDoc, (original, loaded) =>
+        PerformHeaderRoundTripTest(originalDoc, (_, loaded) =>
         {
             // Test that default values are preserved
             Assert.Equal(DxfVersion.AutoCad2000, loaded.DrawingVariables.AcadVer);
@@ -312,7 +312,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
         // Act & Assert
-        PerformHeaderRoundTripTest(originalDoc, (original, loaded) =>
+        PerformHeaderRoundTripTest(originalDoc, (_, loaded) =>
         {
             // BUG: netDxf library resets LastSavedBy to current user during save/load process
             // Assert.Equal(original.DrawingVariables.LastSavedBy, loaded.DrawingVariables.LastSavedBy);
@@ -332,7 +332,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
         // Act & Assert
-        PerformHeaderRoundTripTest(originalDoc, (original, loaded) =>
+        PerformHeaderRoundTripTest(originalDoc, (_, _) =>
         {
             // BUG: netDxf library doesn't preserve CeColor correctly during round-trip
             // Assert.Equal(original.DrawingVariables.CeColor.Index, loaded.DrawingVariables.CeColor.Index);
@@ -371,7 +371,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
         // Act & Assert
-        PerformHeaderRoundTripTest(originalDoc, (original, loaded) =>
+        PerformHeaderRoundTripTest(originalDoc, (_, _) =>
         {
             // BUG: netDxf library doesn't preserve CMLJust correctly during round-trip
             // Assert.Equal(original.DrawingVariables.CMLJust, loaded.DrawingVariables.CMLJust);

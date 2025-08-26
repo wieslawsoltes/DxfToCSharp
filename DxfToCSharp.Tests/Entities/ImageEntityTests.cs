@@ -64,7 +64,7 @@ public class ImageEntityTests : RoundTripTestBase, IDisposable
             if (original.ClippingBoundary != null && recreated.ClippingBoundary != null)
             {
                 Assert.Equal(original.ClippingBoundary.Vertexes.Count, recreated.ClippingBoundary.Vertexes.Count);
-                for (int i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
+                for (var i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
                 {
                     AssertVector2Equal(original.ClippingBoundary.Vertexes[i], recreated.ClippingBoundary.Vertexes[i]);
                 }

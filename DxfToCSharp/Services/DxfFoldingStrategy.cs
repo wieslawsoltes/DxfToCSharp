@@ -4,7 +4,7 @@ using System.Linq;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Folding;
 
-namespace DxfToCSharp;
+namespace DxfToCSharp.Services;
 
 /// <summary>
 /// Folding strategy for DXF files that creates foldable regions for sections and entities.
@@ -14,7 +14,7 @@ public class DxfFoldingStrategy
     /// <summary>
     /// Creates folding regions for DXF content.
     /// </summary>
-    public IEnumerable<NewFolding> CreateNewFoldings(TextDocument document, out int firstErrorOffset)
+    public IEnumerable<NewFolding> CreateNewFoldings(TextDocument? document, out int firstErrorOffset)
     {
         firstErrorOffset = -1;
         var foldings = new List<NewFolding>();
@@ -23,12 +23,11 @@ public class DxfFoldingStrategy
             return foldings;
 
         var lines = document.Lines.ToArray();
-        var text = document.Text;
-            
+   
         // Track section starts and ends
         var sectionStack = new Stack<(int startOffset, string sectionName)>();
             
-        for (int i = 0; i < lines.Length - 1; i++)
+        for (var i = 0; i < lines.Length - 1; i++)
         {
             var currentLine = document.GetText(lines[i]);
             var nextLine = i + 1 < lines.Length ? document.GetText(lines[i + 1]) : "";
@@ -37,7 +36,7 @@ public class DxfFoldingStrategy
             if (currentLine.Trim() == "0" && nextLine.Trim() == "SECTION")
             {
                 // Look for section name in the next few lines
-                string sectionName = "SECTION";
+                var sectionName = "SECTION";
                 if (i + 3 < lines.Length)
                 {
                     var sectionNameLine = document.GetText(lines[i + 3]);
@@ -74,7 +73,7 @@ public class DxfFoldingStrategy
                 var startOffset = lines[i].Offset;
                     
                 // Find the end of this entity (next "0" code)
-                int endLineIndex = i + 2;
+                var endLineIndex = i + 2;
                 while (endLineIndex < lines.Length)
                 {
                     var checkLine = document.GetText(lines[endLineIndex]);

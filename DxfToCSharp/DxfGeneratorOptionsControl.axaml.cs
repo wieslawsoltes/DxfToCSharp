@@ -1,5 +1,4 @@
 using System;
-using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Controls;
@@ -42,8 +41,6 @@ public partial class DxfGeneratorOptionsControl : UserControl, IViewFor<DxfGener
                     .Subscribe(options => OptionsChanged?.Invoke(this, new OptionsChangedEventArgs(options)));
             });
     }
-
-
 
     public DxfCodeGenerationOptions GetOptionsFromUI()
     {

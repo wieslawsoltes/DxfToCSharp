@@ -23,7 +23,7 @@ public class LeaderEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalLeader, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertDoubleEqual(original.Vertexes[i].X, recreated.Vertexes[i].X);
                 AssertDoubleEqual(original.Vertexes[i].Y, recreated.Vertexes[i].Y);
@@ -125,7 +125,7 @@ public class LeaderEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalLeader, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertDoubleEqual(original.Vertexes[i].X, recreated.Vertexes[i].X);
                 AssertDoubleEqual(original.Vertexes[i].Y, recreated.Vertexes[i].Y);

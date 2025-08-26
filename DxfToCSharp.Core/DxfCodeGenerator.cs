@@ -588,7 +588,7 @@ public class DxfCodeGenerator
                 if (style != null)
                 {
                     // Use the required constructor parameters for TextStyle
-                    string fontFile = !string.IsNullOrEmpty(style.FontFile) ? style.FontFile : TextStyle.DefaultFont;
+                    var fontFile = !string.IsNullOrEmpty(style.FontFile) ? style.FontFile : TextStyle.DefaultFont;
                     sb.AppendLine($"{baseIndent}var textStyle{SafeName(styleName)} = new TextStyle(\"{Escape(styleName)}\", \"{Escape(fontFile)}\");");
                     sb.AppendLine($"{baseIndent}doc.TextStyles.Add(textStyle{SafeName(styleName)});");
                 }
@@ -968,7 +968,7 @@ public class DxfCodeGenerator
         }
         
         // Check if this entity needs to be generated as a variable
-        bool needsVariable = _entitiesNeedingVariables.Contains(entity.Handle);
+        var needsVariable = _entitiesNeedingVariables.Contains(entity.Handle);
         
         switch (entity)
         {
@@ -1347,7 +1347,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{indent}{{");
         foreach (var vertex in poly2d.Vertexes)
         {
-            string bulgeStr = Math.Abs(vertex.Bulge) > 1e-12 ? $" {{ Bulge = {F(vertex.Bulge)} }}" : "";
+            var bulgeStr = Math.Abs(vertex.Bulge) > 1e-12 ? $" {{ Bulge = {F(vertex.Bulge)} }}" : "";
             sb.AppendLine($"{indent}    new Polyline2DVertex({F(vertex.Position.X)}, {F(vertex.Position.Y)}){bulgeStr},");
         }
         sb.AppendLine($"{indent}}}, {(poly2d.IsClosed ? "true" : "false")})");
@@ -1947,7 +1947,7 @@ public class DxfCodeGenerator
     {
         // Convert layer/table names to safe C# identifiers
         var result = new StringBuilder();
-        foreach (char c in name)
+        foreach (var c in name)
         {
             if (char.IsLetterOrDigit(c))
                 result.Append(c);
@@ -1973,7 +1973,7 @@ public class DxfCodeGenerator
         // Reconstruct boundary paths from existing hatch boundary paths
         if (hatch.BoundaryPaths != null && hatch.BoundaryPaths.Count > 0)
         {
-            for (int i = 0; i < hatch.BoundaryPaths.Count; i++)
+            for (var i = 0; i < hatch.BoundaryPaths.Count; i++)
             {
                 var path = hatch.BoundaryPaths[i];
                 sb.AppendLine($"{baseIndent}    // Boundary path {i + 1}");
@@ -2152,7 +2152,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}{{");
             if (leader.Vertexes != null && leader.Vertexes.Count > 0)
             {
-                for (int i = 0; i < leader.Vertexes.Count; i++)
+                for (var i = 0; i < leader.Vertexes.Count; i++)
                 {
                     var vertex = leader.Vertexes[i];
                     var comma = i < leader.Vertexes.Count - 1 ? "," : "";
@@ -2170,7 +2170,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}{{");
             if (leader.Vertexes != null && leader.Vertexes.Count > 0)
             {
-                for (int i = 0; i < leader.Vertexes.Count; i++)
+                for (var i = 0; i < leader.Vertexes.Count; i++)
                 {
                     var vertex = leader.Vertexes[i];
                     var comma = i < leader.Vertexes.Count - 1 ? "," : "";
@@ -2544,7 +2544,7 @@ public class DxfCodeGenerator
                 // Polygonal boundary with 3 or more vertices
                 sb.AppendLine($"{baseIndent}    var clippingVertices = new List<Vector2>");
                 sb.AppendLine($"{baseIndent}    {{");
-                for (int i = 0; i < image.ClippingBoundary.Vertexes.Count; i++)
+                for (var i = 0; i < image.ClippingBoundary.Vertexes.Count; i++)
                 {
                     var vertex = image.ClippingBoundary.Vertexes[i];
                     var comma = i < image.ClippingBoundary.Vertexes.Count - 1 ? "," : "";
@@ -2571,7 +2571,7 @@ public class DxfCodeGenerator
     {
         sb.AppendLine($"{baseIndent}var meshVertexes = new List<Vector3>");
         sb.AppendLine($"{baseIndent}{{");
-        for (int i = 0; i < mesh.Vertexes.Count; i++)
+        for (var i = 0; i < mesh.Vertexes.Count; i++)
         {
             var vertex = mesh.Vertexes[i];
             sb.AppendLine($"{baseIndent}    new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){(i < mesh.Vertexes.Count - 1 ? "," : "")}");
@@ -2581,11 +2581,11 @@ public class DxfCodeGenerator
         
         sb.AppendLine($"{baseIndent}var meshFaces = new List<int[]>");
         sb.AppendLine($"{baseIndent}{{");
-        for (int i = 0; i < mesh.Faces.Count; i++)
+        for (var i = 0; i < mesh.Faces.Count; i++)
         {
             var face = mesh.Faces[i];
             sb.Append($"{baseIndent}    new int[] {{ ");
-            for (int j = 0; j < face.Length; j++)
+            for (var j = 0; j < face.Length; j++)
             {
                 sb.Append(face[j]);
                 if (j < face.Length - 1) sb.Append(", ");
@@ -2601,7 +2601,7 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}var meshEdges = new List<MeshEdge>");
             sb.AppendLine($"{baseIndent}{{");
-            for (int i = 0; i < mesh.Edges.Count; i++)
+            for (var i = 0; i < mesh.Edges.Count; i++)
             {
                 var edge = mesh.Edges[i];
                 sb.AppendLine($"{baseIndent}    new MeshEdge({edge.StartVertexIndex}, {edge.EndVertexIndex}){(i < mesh.Edges.Count - 1 ? "," : "")}");
@@ -2636,10 +2636,10 @@ public class DxfCodeGenerator
         
         sb.AppendLine($"{baseIndent}var polyfaceMeshVertexes = new Vector3[]");
         sb.AppendLine($"{baseIndent}{{");
-        for (int i = 0; i < polyfaceMesh.Vertexes.Length; i++)
+        for (var i = 0; i < polyfaceMesh.Vertexes.Length; i++)
         {
             var vertex = polyfaceMesh.Vertexes[i];
-            string comma = i < polyfaceMesh.Vertexes.Length - 1 ? "," : "";
+            var comma = i < polyfaceMesh.Vertexes.Length - 1 ? "," : "";
             sb.AppendLine($"{baseIndent}    new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
         }
         sb.AppendLine($"{baseIndent}}};");
@@ -2647,11 +2647,11 @@ public class DxfCodeGenerator
         
         sb.AppendLine($"{baseIndent}var polyfaceMeshFaces = new PolyfaceMeshFace[]");
         sb.AppendLine($"{baseIndent}{{");
-        for (int i = 0; i < polyfaceMesh.Faces.Count; i++)
+        for (var i = 0; i < polyfaceMesh.Faces.Count; i++)
         {
             var face = polyfaceMesh.Faces[i];
-            string comma = i < polyfaceMesh.Faces.Count - 1 ? "," : "";
-            string vertexIndexes = string.Join(", ", face.VertexIndexes);
+            var comma = i < polyfaceMesh.Faces.Count - 1 ? "," : "";
+            var vertexIndexes = string.Join(", ", face.VertexIndexes);
             sb.AppendLine($"{baseIndent}    new PolyfaceMeshFace(new short[] {{ {vertexIndexes} }}){comma}");
         }
         sb.AppendLine($"{baseIndent}}};");
@@ -2679,10 +2679,10 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    // Generate PolygonMesh vertexes");
         sb.AppendLine($"{baseIndent}    var polygonMeshVertexes = new Vector3[]");
         sb.AppendLine($"{baseIndent}    {{");
-        for (int i = 0; i < polygonMesh.Vertexes.Length; i++)
+        for (var i = 0; i < polygonMesh.Vertexes.Length; i++)
         {
             var vertex = polygonMesh.Vertexes[i];
-            string comma = i < polygonMesh.Vertexes.Length - 1 ? "," : "";
+            var comma = i < polygonMesh.Vertexes.Length - 1 ? "," : "";
             sb.AppendLine($"{baseIndent}        new Vector3({F(vertex.X)}, {F(vertex.Y)}, {F(vertex.Z)}){comma}");
         }
         sb.AppendLine($"{baseIndent}    }};");
@@ -2847,7 +2847,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    // Note: Underlay requires UnderlayDefinition to be added to document first");
         sb.AppendLine($"{baseIndent}    // Create underlay definition for {underlay.Definition.Type} type");
         // Generate the correct underlay definition class name
-        string definitionClassName = underlay.Definition.Type switch
+        var definitionClassName = underlay.Definition.Type switch
         {
             UnderlayType.DGN => "UnderlayDgnDefinition",
             UnderlayType.DWF => "UnderlayDwfDefinition", 
@@ -3029,9 +3029,9 @@ public class DxfCodeGenerator
         }
         
         // Check if any properties differ from defaults
-        bool hasNonDefaultValues = !rasterVars.DisplayFrame || 
-                                   rasterVars.DisplayQuality != ImageDisplayQuality.High || 
-                                   rasterVars.Units != ImageUnits.Unitless;
+        var hasNonDefaultValues = !rasterVars.DisplayFrame || 
+                                  rasterVars.DisplayQuality != ImageDisplayQuality.High || 
+                                  rasterVars.Units != ImageUnits.Unitless;
         
         if (hasNonDefaultValues)
         {

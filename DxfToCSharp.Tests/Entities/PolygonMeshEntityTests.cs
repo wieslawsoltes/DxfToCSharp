@@ -45,7 +45,7 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.V, recreated.V);
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
             
-            for (int i = 0; i < original.Vertexes.Length; i++)
+            for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
@@ -83,7 +83,7 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.V, recreated.V);
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
             
-            for (int i = 0; i < original.Vertexes.Length; i++)
+            for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }

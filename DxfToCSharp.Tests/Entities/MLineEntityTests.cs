@@ -23,7 +23,7 @@ public class MLineEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalMLine, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector2Equal(original.Vertexes[i].Position, recreated.Vertexes[i].Position);
             }
@@ -47,7 +47,7 @@ public class MLineEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalMLine, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector2Equal(original.Vertexes[i].Position, recreated.Vertexes[i].Position);
             }
@@ -147,7 +147,7 @@ public class MLineEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalMLine, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            for (int i = 0; i < original.Vertexes.Count; i++)
+            for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector2Equal(original.Vertexes[i].Position, recreated.Vertexes[i].Position);
             }

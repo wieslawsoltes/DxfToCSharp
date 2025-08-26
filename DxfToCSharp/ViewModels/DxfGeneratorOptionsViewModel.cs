@@ -28,7 +28,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generateUsingStatements, value);
     }
 
-    private bool _generateDetailedComments = false;
+    private bool _generateDetailedComments;
 
     public bool GenerateDetailedComments
     {
@@ -657,7 +657,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateUsingStatements),
             this.WhenAnyValue(x => x.GenerateDetailedComments),
             this.WhenAnyValue(x => x.GenerateClass),
-            (header, headerVars, usingStmts, detailedComments, generateClass) => true);
+            (_, _, _, _, _) => true);
 
         var tableOptions = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateLayers),
@@ -666,7 +666,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateBlocks),
             this.WhenAnyValue(x => x.GenerateDimensionStyles),
             this.WhenAnyValue(x => x.GenerateMLineStyles),
-            (layers, linetypes, textStyles, blocks, dimStyles, mlineStyles) => true);
+            (_, _, _, _, _, _) => true);
 
         var objectOptions = Observable.CombineLatest(
             this.WhenAnyValue(x => x.GenerateGroupObjects),
@@ -682,7 +682,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateApplicationRegistryObjects),
             // View objects not supported (internal API)
             this.WhenAnyValue(x => x.GenerateShapeStyleObjects),
-            (groups, layouts, imageDefs, underlayDefs, xrecords, dictionaries, rasterVars, layerStates, plotSettings, mlineStyles, appRegs, shapeStyles) => true);
+            (_, _, _, _, _, _, _, _, _, _, _, _) => true);
 
         OptionsChanged = Observable.CombineLatest(
                 generalOptions,
@@ -691,7 +691,7 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 entitiesGroup1,
                 entitiesGroup2,
                 entitiesGroup3,
-                (general, tables, objects, entities1, entities2, entities3) => true)
+                (_, _, _, _, _, _) => true)
             .Select(_ => ToOptions());
     }
 

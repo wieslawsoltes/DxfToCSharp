@@ -1,7 +1,6 @@
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
-using netDxf.Tables;
 using DxfToCSharp.Core;
 using DxfToCSharp.Tests.Infrastructure;
 
@@ -87,7 +86,7 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Description, recreated.Description);
             Assert.Equal(original.Elements.Count, recreated.Elements.Count);
             
-            for (int i = 0; i < original.Elements.Count; i++)
+            for (var i = 0; i < original.Elements.Count; i++)
             {
                 Assert.Equal(original.Elements[i].Offset, recreated.Elements[i].Offset, 6);
                 Assert.Equal(original.Elements[i].Color.Index, recreated.Elements[i].Color.Index);

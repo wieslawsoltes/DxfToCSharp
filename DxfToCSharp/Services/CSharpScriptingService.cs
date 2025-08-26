@@ -23,6 +23,4 @@ public class CSharpScriptingService
     {
         return _compilationService.RunCreateMethod(assemblyPath);
     }
-
-
 }

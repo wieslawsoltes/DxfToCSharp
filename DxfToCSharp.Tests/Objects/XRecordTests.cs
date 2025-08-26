@@ -1,9 +1,5 @@
-using System;
-using System.IO;
-using Xunit;
 using DxfToCSharp.Core;
 using netDxf;
-using netDxf.Objects;
 
 namespace DxfToCSharp.Tests.Objects
 {

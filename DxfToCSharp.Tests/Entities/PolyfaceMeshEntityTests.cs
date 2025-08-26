@@ -34,16 +34,16 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyfaceMesh, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
-            for (int i = 0; i < original.Vertexes.Length; i++)
+            for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
             
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
-            for (int i = 0; i < original.Faces.Count; i++)
+            for (var i = 0; i < original.Faces.Count; i++)
             {
                 Assert.Equal(original.Faces[i].VertexIndexes.Length, recreated.Faces[i].VertexIndexes.Length);
-                for (int j = 0; j < original.Faces[i].VertexIndexes.Length; j++)
+                for (var j = 0; j < original.Faces[i].VertexIndexes.Length; j++)
                 {
                     Assert.Equal(original.Faces[i].VertexIndexes[j], recreated.Faces[i].VertexIndexes[j]);
                 }
@@ -75,16 +75,16 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyfaceMesh, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
-            for (int i = 0; i < original.Vertexes.Length; i++)
+            for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
             
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
-            for (int i = 0; i < original.Faces.Count; i++)
+            for (var i = 0; i < original.Faces.Count; i++)
             {
                 Assert.Equal(original.Faces[i].VertexIndexes.Length, recreated.Faces[i].VertexIndexes.Length);
-                for (int j = 0; j < original.Faces[i].VertexIndexes.Length; j++)
+                for (var j = 0; j < original.Faces[i].VertexIndexes.Length; j++)
                 {
                     Assert.Equal(original.Faces[i].VertexIndexes[j], recreated.Faces[i].VertexIndexes[j]);
                 }

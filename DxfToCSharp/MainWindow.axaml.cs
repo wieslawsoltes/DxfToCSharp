@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,11 +9,11 @@ using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using netDxf;
-using netDxf.Entities;
 using DxfToCSharp.Core;
 using AvaloniaEdit;
 using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
+using DxfToCSharp.Services;
 using TextMateSharp.Grammars;
 
 namespace DxfToCSharp;
@@ -102,7 +101,7 @@ public partial class MainWindow : Window
         }
         
         // Setup cleanup on window close
-        Closed += (s, e) => CleanupFileWatcher();
+        Closed += (_, _) => CleanupFileWatcher();
         
         // Set up event handler for options changes
         if (_optionsControl != null)
@@ -207,7 +206,7 @@ public partial class MainWindow : Window
             return;
 
         // Load text to left panel
-        string text = await ReadAllTextWithSharingAsync(path);
+        var text = await ReadAllTextWithSharingAsync(path);
         if (_leftTextBox != null)
         {
             _leftTextBox.Text = text;
@@ -252,7 +251,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private async void OnRunClicked(object? sender, RoutedEventArgs e)
+    private void OnRunClicked(object? sender, RoutedEventArgs e)
     {
         try
         {
@@ -295,7 +294,7 @@ public partial class MainWindow : Window
         }
     }
 
-    private async void SetRightText(string text)
+    private async void SetRightText(string? text)
     {
         if (_rightTextBox != null)
         {
@@ -479,7 +478,7 @@ public partial class MainWindow : Window
                 if (_leftTextBox.Document != null && _leftTextBox.Document.TextLength > 0)
                 {
                     var foldingStrategy = new DxfFoldingStrategy();
-                    var newFoldings = foldingStrategy.CreateNewFoldings(_leftTextBox.Document, out int firstErrorOffset);
+                    var newFoldings = foldingStrategy.CreateNewFoldings(_leftTextBox.Document, out var firstErrorOffset);
                     _leftFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
                 }
             }
@@ -501,7 +500,7 @@ public partial class MainWindow : Window
                 if (_rightTextBox.Document != null && _rightTextBox.Document.TextLength > 0)
                 {
                     var foldingStrategy = new CSharpFoldingStrategy();
-                    var newFoldings = foldingStrategy.CreateNewFoldings(_rightTextBox.Document, out int firstErrorOffset);
+                    var newFoldings = foldingStrategy.CreateNewFoldings(_rightTextBox.Document, out var firstErrorOffset);
                     _rightFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
                 }
             }
@@ -640,41 +639,21 @@ public partial class MainWindow : Window
 
         try
         {
-            // Wait a bit for the file to be fully written (longer on macOS)
-            var isMacOS = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
-            await Task.Delay(isMacOS ? 200 : 100);
+            await Task.Delay(200);
 
-            // Verify file exists and is accessible
             if (!File.Exists(_loadedFilePath))
             {
-
                 return;
             }
 
-            // Try to read file with retry logic for locked files
-            string text = null;
-            for (int retry = 0; retry < 3; retry++)
-            {
-                try
-                {
-                    text = await ReadAllTextWithSharingAsync(_loadedFilePath);
-                    break;
-                }
-                catch (IOException ex) when (retry < 2)
-                {
-
-                    await Task.Delay(100);
-                }
-            }
-
+            var text = await ReadAllTextWithSharingAsync(_loadedFilePath);
             if (text == null)
             {
-
                 return;
             }
 
             // Reload the file on the UI thread
-            await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(async () =>
+            await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
             {
                 try
                 {
@@ -695,7 +674,7 @@ public partial class MainWindow : Window
                         var generatedCode = generator.Generate(doc, _loadedFilePath, null, options);
                         SetRightText(generatedCode);
                         ClearErrors();
-                        ShowNotification("File reloaded and code regenerated", false);
+                        ShowNotification("File reloaded and code regenerated");
                     }
                     else
                     {
@@ -709,6 +688,8 @@ public partial class MainWindow : Window
                     ShowError($"Error reloading file: {ex.Message}");
                     ShowNotification($"Error reloading file: {ex.Message}", true);
                 }
+
+                return Task.CompletedTask;
             });
         }
         catch (Exception ex)
@@ -727,7 +708,6 @@ public partial class MainWindow : Window
     /// </summary>
     private void OnFileWatcherError(object sender, ErrorEventArgs e)
     {
-
         ShowNotification($"File watching error: {e.GetException().Message}", true);
         
         // Try to restart the file watcher
@@ -736,9 +716,9 @@ public partial class MainWindow : Window
             CleanupFileWatcher();
             SetupFileWatcher();
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-
+            // ignored
         }
     }
 
@@ -747,7 +727,7 @@ public partial class MainWindow : Window
     /// </summary>
     /// <param name="filePath">The path to the file to read.</param>
     /// <returns>The contents of the file as a string.</returns>
-    private static async Task<string> ReadAllTextWithSharingAsync(string filePath)
+    private static async Task<string?> ReadAllTextWithSharingAsync(string filePath)
     {
         await using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read,
             FileShare.ReadWrite, bufferSize: 4096, useAsync: true);

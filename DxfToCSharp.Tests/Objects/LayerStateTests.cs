@@ -4,11 +4,6 @@ using netDxf.Tables;
 using netDxf.Objects;
 using DxfToCSharp.Tests.Infrastructure;
 using DxfToCSharp.Core;
-using Xunit;
-using System;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -263,7 +258,7 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var layers = new List<Layer>();
-        for (int i = 0; i < 100; i++)
+        for (var i = 0; i < 100; i++)
         {
             layers.Add(new Layer($"Layer{i:D3}") { Color = AciColor.FromCadIndex((short)(i % 255 + 1)) });
         }
