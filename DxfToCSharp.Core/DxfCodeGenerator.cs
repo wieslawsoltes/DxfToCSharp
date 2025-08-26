@@ -3485,7 +3485,7 @@ public class DxfCodeGenerator
         }
     }
 
-    private string FormatStyleOverrideValue(object value)
+    private string FormatStyleOverrideValue(object? value)
     {
         if (value == null) return "null";
         
@@ -3511,7 +3511,7 @@ public class DxfCodeGenerator
                 return $"Lineweight.{lineweight}";
             case netDxf.Blocks.Block block:
                 return $"doc.Blocks[\"{block.Name}\"]";
-            case netDxf.Tables.TextStyle textStyle:
+            case TextStyle textStyle:
                 return $"doc.TextStyles[\"{textStyle.Name}\"]";
             case FractionFormatType fractionType:
                 return $"FractionFormatType.{fractionType}";
