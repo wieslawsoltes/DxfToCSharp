@@ -723,7 +723,12 @@ public class DxfCodeGenerator
                                     sb.AppendLine($"{baseIndent}    Color = new AciColor({attDef.Color.Index}),");
                             }
                             if (attDef.Linetype != null && attDef.Linetype.Name != "ByLayer" && attDef.Linetype.Name != "Continuous")
-                                sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(attDef.Linetype.Name)},");
+                            {
+                                if (attDef.Linetype.Name == "ByBlock")
+                                    sb.AppendLine($"{baseIndent}    Linetype = Linetype.ByBlock,");
+                                else
+                                    sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(attDef.Linetype.Name)},");
+                            }
                             if (attDef.Lineweight != Lineweight.ByLayer)
                                 sb.AppendLine($"{baseIndent}    Lineweight = Lineweight.{attDef.Lineweight},");
                             if (Math.Abs(attDef.LinetypeScale - 1.0) > 1e-10)
@@ -1424,7 +1429,10 @@ public class DxfCodeGenerator
         // Linetype
         if (spline.Linetype != null && spline.Linetype.Name != "ByLayer" && spline.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"{baseIndent}    splineEntity.Linetype = linetype{SafeName(spline.Linetype.Name)};");
+            if (spline.Linetype.Name == "ByBlock")
+                sb.AppendLine($"{baseIndent}    splineEntity.Linetype = Linetype.ByBlock;");
+            else
+                sb.AppendLine($"{baseIndent}    splineEntity.Linetype = linetype{SafeName(spline.Linetype.Name)};");
         }
         
         // Lineweight
@@ -1640,7 +1648,10 @@ public class DxfCodeGenerator
         // Linetype
         if (entity.Linetype != null && entity.Linetype.Name != "ByLayer" && entity.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"            Linetype = linetype{SafeName(entity.Linetype.Name)},");
+            if (entity.Linetype.Name == "ByBlock")
+                sb.AppendLine($"            Linetype = Linetype.ByBlock,");
+            else
+                sb.AppendLine($"            Linetype = linetype{SafeName(entity.Linetype.Name)},");
         }
 
         // Lineweight
@@ -1716,7 +1727,14 @@ public class DxfCodeGenerator
         // Linetype
         if (entity.Linetype != null && entity.Linetype.Name != "ByLayer" && entity.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(entity.Linetype.Name)},");
+            if (entity.Linetype.Name == "ByBlock")
+            {
+                sb.AppendLine($"{baseIndent}    Linetype = Linetype.ByBlock,");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}    Linetype = linetype{SafeName(entity.Linetype.Name)},");
+            }
         }
 
         // Lineweight
@@ -1820,7 +1838,10 @@ public class DxfCodeGenerator
         // Generate Linetype property
         if (attribute.Linetype != null && attribute.Linetype.Name != "ByLayer" && attribute.Linetype.Name != "Continuous")
         {
-            sb.AppendLine($"{baseIndent}Linetype = linetype{SafeName(attribute.Linetype.Name)},");
+            if (attribute.Linetype.Name == "ByBlock")
+                sb.AppendLine($"{baseIndent}Linetype = Linetype.ByBlock,");
+            else
+                sb.AppendLine($"{baseIndent}Linetype = linetype{SafeName(attribute.Linetype.Name)},");
         }
         
         // Generate Lineweight property
@@ -2208,54 +2229,62 @@ public class DxfCodeGenerator
 
     private void GenerateLinearDimension(StringBuilder sb, LinearDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new LinearDimension(");
+        var entityVar = $"linearDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}        var {entityVar} = new LinearDimension(");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
         sb.AppendLine($"{baseIndent}            {F(dimension.Offset)}, {F(dimension.Rotation)})");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
-        sb.AppendLine($"{baseIndent}        }}");
-        sb.AppendLine($"{baseIndent}        );");
+        sb.AppendLine($"{baseIndent}        }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add({entityVar});");
     }
 
     private void GenerateAlignedDimension(StringBuilder sb, AlignedDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new AlignedDimension(");
+        var entityVar = $"alignedDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}        var {entityVar} = new AlignedDimension(");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.FirstReferencePoint.X)}, {F(dimension.FirstReferencePoint.Y)}),");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.SecondReferencePoint.X)}, {F(dimension.SecondReferencePoint.Y)}),");
         sb.AppendLine($"{baseIndent}            {F(dimension.Offset)})");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
-        sb.AppendLine($"{baseIndent}        }}");
-        sb.AppendLine($"{baseIndent}        );");
+        sb.AppendLine($"{baseIndent}        }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add({entityVar});");
     }
 
     private void GenerateRadialDimension(StringBuilder sb, RadialDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new RadialDimension(");
+        var entityVar = $"radialDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}        var {entityVar} = new RadialDimension(");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
         sb.AppendLine($"{baseIndent}        )");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
-        sb.AppendLine($"{baseIndent}        }}");
-        sb.AppendLine($"{baseIndent}        );");
+        sb.AppendLine($"{baseIndent}        }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add({entityVar});");
     }
 
     private void GenerateDiametricDimension(StringBuilder sb, DiametricDimension dimension, string baseIndent = "")
     {
-        sb.AppendLine($"{baseIndent}        doc.Entities.Add(new DiametricDimension(");
+        var entityVar = $"diametricDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}        var {entityVar} = new DiametricDimension(");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"{baseIndent}            new Vector2({F(dimension.ReferencePoint.X)}, {F(dimension.ReferencePoint.Y)})");
         sb.AppendLine($"{baseIndent}        )");
         sb.AppendLine($"{baseIndent}        {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "        ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "        ");
-        sb.AppendLine($"{baseIndent}        }}");
-        sb.AppendLine($"{baseIndent}        );");
+        sb.AppendLine($"{baseIndent}        }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "        ");
+        sb.AppendLine($"{baseIndent}        doc.Entities.Add({entityVar});");
     }
 
     private void GenerateAngular2LineDimension(StringBuilder sb, Angular2LineDimension dimension, string baseIndent = "")
@@ -2275,7 +2304,8 @@ public class DxfCodeGenerator
 
     private void GenerateAngular3PointDimension(StringBuilder sb, Angular3PointDimension dimension, string baseIndent)
     {
-        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Angular3PointDimension(");
+        var entityVar = $"angular3PointDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}    var {entityVar} = new Angular3PointDimension(");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.CenterPoint.X)}, {F(dimension.CenterPoint.Y)}),");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.StartPoint.X)}, {F(dimension.StartPoint.Y)}),");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.EndPoint.X)}, {F(dimension.EndPoint.Y)}),");
@@ -2283,22 +2313,36 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "    ");
-        sb.AppendLine($"{baseIndent}    }}");
-        sb.AppendLine($"{baseIndent}    );");
+        sb.AppendLine($"{baseIndent}    }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add({entityVar});");
     }
 
     private void GenerateOrdinateDimension(StringBuilder sb, OrdinateDimension dimension, string baseIndent)
     {
-        sb.AppendLine($"{baseIndent}    doc.Entities.Add(new OrdinateDimension(");
+        var entityVar = $"ordinateDim{_entityCounter++}";
+        sb.AppendLine($"{baseIndent}    var {entityVar} = new OrdinateDimension(");
         sb.AppendLine($"{baseIndent}        Vector2.Zero,");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.FeaturePoint.X)}, {F(dimension.FeaturePoint.Y)}),");
         sb.AppendLine($"{baseIndent}        new Vector2({F(dimension.LeaderEndPoint.X)}, {F(dimension.LeaderEndPoint.Y)}),");
-        sb.AppendLine($"{baseIndent}        OrdinateDimensionAxis.{dimension.Axis})");
+        sb.AppendLine($"{baseIndent}        OrdinateDimensionAxis.{dimension.Axis},");
+        
+        // Add DimensionStyle parameter
+        if (dimension.Style != null && dimension.Style.Name != "Standard" && _usedDimensionStyles.Contains(dimension.Style.Name))
+        {
+            sb.AppendLine($"{baseIndent}        dimStyle{SafeName(dimension.Style.Name)})");
+        }
+        else
+        {
+            sb.AppendLine($"{baseIndent}        DimensionStyle.Default)");
+        }
+        
         sb.AppendLine($"{baseIndent}    {{");
         GenerateEntityPropertiesCore(sb, dimension, baseIndent + "    ");
         GenerateDimensionStyleProperties(sb, dimension, baseIndent + "    ");
-        sb.AppendLine($"{baseIndent}    }}");
-        sb.AppendLine($"{baseIndent}    );");
+        sb.AppendLine($"{baseIndent}    }};");
+        GenerateDimensionStyleOverrides(sb, dimension, entityVar, baseIndent + "    ");
+        sb.AppendLine($"{baseIndent}    doc.Entities.Add({entityVar});");
     }
 
     private void GenerateArcLengthDimension(StringBuilder sb, ArcLengthDimension dimension, string baseIndent)
@@ -2854,7 +2898,7 @@ public class DxfCodeGenerator
             UnderlayType.PDF => "UnderlayPdfDefinition",
             _ => $"Underlay{underlay.Definition.Type}Definition"
         };
-        sb.AppendLine($"{baseIndent}    var underlayDef = new {definitionClassName}(\"{underlay.Definition.Name}\", \"{underlay.Definition.File}\");");
+        sb.AppendLine($"{baseIndent}    var underlayDef = new {definitionClassName}(\"{Escape(underlay.Definition.Name)}\", \"{Escape(underlay.Definition.File)}\");");
         sb.AppendLine();
         
         sb.AppendLine($"{baseIndent}    doc.Entities.Add(new Underlay(underlayDef)");
@@ -3425,15 +3469,18 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}Elevation = {F(dimension.Elevation)},");
         }
+    }
 
+    private void GenerateDimensionStyleOverrides(StringBuilder sb, Dimension dimension, string entityVariableName, string baseIndent)
+    {
         // Generate style overrides if any exist
         if (dimension.StyleOverrides != null && dimension.StyleOverrides.Count > 0)
         {
             sb.AppendLine($"{baseIndent}// Style overrides:");
-            foreach (var styleOverride in dimension.StyleOverrides)
+            foreach (var kvp in dimension.StyleOverrides)
             {
-                var overrideValue = FormatStyleOverrideValue(styleOverride.Value);
-                sb.AppendLine($"{baseIndent}StyleOverrides[DimensionStyleOverrideType.{styleOverride.Key}] = {overrideValue},");
+                var overrideValue = FormatStyleOverrideValue(kvp.Value.Value);
+                sb.AppendLine($"{baseIndent}{entityVariableName}.StyleOverrides.Add(DimensionStyleOverrideType.{kvp.Key}, {overrideValue});");
             }
         }
     }
@@ -3454,9 +3501,26 @@ public class DxfCodeGenerator
                 return b.ToString().ToLower();
             case string s:
                 return $"\"{Escape(s)}\"";
-            case AciColor color:                if (color.IsByLayer) return "AciColor.ByLayer";
+            case AciColor color:
+                if (color.IsByLayer) return "AciColor.ByLayer";
                 if (color.IsByBlock) return "AciColor.ByBlock";
                 return $"new AciColor({color.Index})";
+            case Linetype linetype:
+                return $"doc.Linetypes[\"{linetype.Name}\"]";
+            case Lineweight lineweight:
+                return $"Lineweight.{lineweight}";
+            case netDxf.Blocks.Block block:
+                return $"doc.Blocks[\"{block.Name}\"]";
+            case netDxf.Tables.TextStyle textStyle:
+                return $"doc.TextStyles[\"{textStyle.Name}\"]";
+            case FractionFormatType fractionType:
+                return $"FractionFormatType.{fractionType}";
+            case LinearUnitType linearUnit:
+                return $"LinearUnitType.{linearUnit}";
+            case AngleUnitType angleUnit:
+                return $"AngleUnitType.{angleUnit}";
+            case Enum enumValue:
+                return $"{enumValue.GetType().Name}.{enumValue}";
             default:
                 return value.ToString();
         }
