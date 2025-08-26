@@ -207,7 +207,7 @@ public partial class MainWindow : Window
             return;
 
         // Load text to left panel
-        string text = await File.ReadAllTextAsync(path);
+        string text = await ReadAllTextWithSharingAsync(path);
         if (_leftTextBox != null)
         {
             _leftTextBox.Text = text;
@@ -687,7 +687,7 @@ public partial class MainWindow : Window
             {
                 try
                 {
-                    text = await File.ReadAllTextAsync(_loadedFilePath);
+                    text = await ReadAllTextWithSharingAsync(_loadedFilePath);
                     break;
                 }
                 catch (IOException ex) when (retry < 2)
@@ -770,5 +770,18 @@ public partial class MainWindow : Window
         {
 
         }
+    }
+
+    /// <summary>
+    /// File.ReadAllTextAsync alternative that can read files locked by other applications.
+    /// </summary>
+    /// <param name="filePath">The path to the file to read.</param>
+    /// <returns>The contents of the file as a string.</returns>
+    private static async Task<string> ReadAllTextWithSharingAsync(string filePath)
+    {
+        await using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read,
+            FileShare.ReadWrite, bufferSize: 4096, useAsync: true);
+        using var sr = new StreamReader(fs);
+        return await sr.ReadToEndAsync();
     }
 }
