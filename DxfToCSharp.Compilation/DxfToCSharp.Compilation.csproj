@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DxfToCSharp.Compilation</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
@@ -17,9 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" />
-    <PackageReference Include="netDxf.netstandard" Version="3.0.1" />
-    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+    <PackageReference Include="netDxf.netstandard" />
+    <PackageReference Include="System.Drawing.Primitives" />
   </ItemGroup>
 
 </Project>

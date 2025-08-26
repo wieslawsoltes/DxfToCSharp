@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DxfToCSharp.Core</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
@@ -18,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="netDxf.netstandard" Version="3.0.1" />
+    <PackageReference Include="netDxf.netstandard" />
   </ItemGroup>
 
 
