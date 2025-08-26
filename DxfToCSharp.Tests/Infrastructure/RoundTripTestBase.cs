@@ -30,6 +30,20 @@ public abstract class RoundTripTestBase
     /// </summary>
     protected void PerformRoundTripTest<T>(T originalEntity, Action<T, T> validator) where T : EntityObject
     {
+        PerformRoundTripTest(originalEntity, validator, null);
+    }
+
+    /// <summary>
+    /// Performs a complete round-trip test for a DXF entity with custom generation options:
+    /// 1. Create DXF document with entity
+    /// 2. Save to file
+    /// 3. Load from file
+    /// 4. Generate C# code
+    /// 5. Compile and execute code
+    /// 6. Validate the recreated document
+    /// </summary>
+    protected void PerformRoundTripTest<T>(T originalEntity, Action<T, T> validator, DxfCodeGenerationOptions options) where T : EntityObject
+    {
         // Step 1: Create DXF document with the entity
         var originalDoc = new DxfDocument();
         originalDoc.Entities.Add(originalEntity);
@@ -44,7 +58,9 @@ public abstract class RoundTripTestBase
         Assert.Single(loadedDoc.Entities.All);
 
         // Step 4: Generate C# code from the loaded document
-        var generatedCode = _generator.Generate(loadedDoc, originalDxfPath);
+        var generatedCode = options != null 
+            ? _generator.Generate(loadedDoc, originalDxfPath, null, options)
+            : _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
         // Step 5: Compile and execute the generated code
