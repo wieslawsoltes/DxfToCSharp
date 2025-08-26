@@ -240,13 +240,7 @@ public partial class MainWindow : Window
             
             // Setup file watching if enabled
             SetupFileWatcher();
-                
-            // Check if there are no entities to warn the user
-            var allEntities = doc.Entities.All?.ToList() ?? new List<EntityObject>();
-            if (allEntities.Count == 0)
-            {
-                ShowNotification("Warning: No entities found in DXF file to generate code for", true);
-            }
+            
         }
         catch (Exception ex)
         {
@@ -447,13 +441,6 @@ public partial class MainWindow : Window
                     var generatedCode = generator.Generate(doc, _loadedFilePath, null, options);
                     SetRightText(generatedCode);
                     ClearErrors();
-                        
-                    // Check if there are no entities to warn the user
-                    var allEntities = doc.Entities.All?.ToList() ?? new List<EntityObject>();
-                    if (allEntities.Count == 0)
-                    {
-                        ShowNotification("Warning: No entities found in DXF content to generate code for", true);
-                    }
                 }
             }
             catch (Exception)
