@@ -2147,10 +2147,10 @@ public class DxfCodeGenerator
                     sb.AppendLine($"{baseIndent}    new Vector2({F(vertex.X)}, {F(vertex.Y)}){comma}");
                 }
             }
-            sb.AppendLine($"{baseIndent}}});");
+            sb.AppendLine($"{baseIndent}}})");
             sb.AppendLine($"{baseIndent}{{");
-            GenerateEntityPropertiesCore(sb, leader, baseIndent);
-            GenerateLeaderAdvancedProperties(sb, leader, null, baseIndent);
+            GenerateEntityPropertiesCore(sb, leader, baseIndent + "    ");
+            GenerateLeaderAdvancedProperties(sb, leader, null, baseIndent + "    ");
             sb.AppendLine($"{baseIndent}}});");
         }
     }
@@ -3374,19 +3374,19 @@ public class DxfCodeGenerator
         // Generate user text if specified
         if (!string.IsNullOrEmpty(dimension.UserText))
         {
-            sb.AppendLine($"{baseIndent}UserText = \"{EscapeString(dimension.UserText)}\",");
+            sb.AppendLine($"{baseIndent}UserText = \"{Escape(dimension.UserText)}\",");
         }
 
         // Generate attachment point if not default
-        if (dimension.AttachmentPoint != DimensionStyleTextVerticalPlacement.Centered)
+        if (dimension.AttachmentPoint != MTextAttachmentPoint.TopLeft)
         {
-            sb.AppendLine($"{baseIndent}AttachmentPoint = DimensionStyleTextVerticalPlacement.{dimension.AttachmentPoint},");
+            sb.AppendLine($"{baseIndent}AttachmentPoint = MTextAttachmentPoint.{dimension.AttachmentPoint},");
         }
 
         // Generate line spacing properties if not default
-        if (dimension.LineSpacingStyle != DimensionStyleTextVerticalPlacement.Centered)
+        if (dimension.LineSpacingStyle != MTextLineSpacingStyle.AtLeast)
         {
-            sb.AppendLine($"{baseIndent}LineSpacingStyle = DimensionStyleTextVerticalPlacement.{dimension.LineSpacingStyle},");
+            sb.AppendLine($"{baseIndent}LineSpacingStyle = MTextLineSpacingStyle.{dimension.LineSpacingStyle},");
         }
 
         if (Math.Abs(dimension.LineSpacingFactor - 1.0) > 1e-6)
@@ -3427,9 +3427,10 @@ public class DxfCodeGenerator
             case bool b:
                 return b.ToString().ToLower();
             case string s:
-                return $"\"{EscapeString(s)}\"";
-            case AciColor color:
-                return $"AciColor.{color.Name}";
+                return $"\"{Escape(s)}\"";
+            case AciColor color:                if (color.IsByLayer) return "AciColor.ByLayer";
+                if (color.IsByBlock) return "AciColor.ByBlock";
+                return $"new AciColor({color.Index})";
             default:
                 return value.ToString();
         }
@@ -3511,31 +3512,56 @@ public class DxfCodeGenerator
 
     private void GenerateLeaderAdvancedProperties(StringBuilder sb, Leader leader, string entityName, string baseIndent)
     {
-        var target = entityName ?? "";
-        var prefix = string.IsNullOrEmpty(entityName) ? "    " : "";
-        
         // Style property
         if (leader.Style?.Name != "Standard")
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.Style = dimStyle{SafeName(leader.Style.Name)},");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    Style = dimStyle{SafeName(leader.Style.Name)},");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.Style = dimStyle{SafeName(leader.Style.Name)};");
+            }
         }
         
         // ShowArrowhead property (default is true)
         if (!leader.ShowArrowhead)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.ShowArrowhead = false,");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    ShowArrowhead = false,");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.ShowArrowhead = false;");
+            }
         }
         
         // PathType property (default is StraightLineSegments)
         if (leader.PathType != LeaderPathType.StraightLineSegments)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.PathType = LeaderPathType.{leader.PathType},");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    PathType = LeaderPathType.{leader.PathType},");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.PathType = LeaderPathType.{leader.PathType};");
+            }
         }
         
         // HasHookline property (default is false)
         if (leader.HasHookline)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.HasHookline = true,");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    HasHookline = true,");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.HasHookline = true;");
+            }
         }
         
         // LineColor property (default is ByLayer)
@@ -3543,30 +3569,65 @@ public class DxfCodeGenerator
         {
             if (leader.LineColor.Index == 0)
             {
-                sb.AppendLine($"{baseIndent}{prefix}{target}.LineColor = AciColor.ByBlock,");
+                if (string.IsNullOrEmpty(entityName))
+                {
+                    sb.AppendLine($"{baseIndent}    LineColor = AciColor.ByBlock,");
+                }
+                else
+                {
+                    sb.AppendLine($"{baseIndent}{entityName}.LineColor = AciColor.ByBlock;");
+                }
             }
             else
             {
-                sb.AppendLine($"{baseIndent}{prefix}{target}.LineColor = new AciColor({leader.LineColor.Index}),");
+                if (string.IsNullOrEmpty(entityName))
+                {
+                    sb.AppendLine($"{baseIndent}    LineColor = new AciColor({leader.LineColor.Index}),");
+                }
+                else
+                {
+                    sb.AppendLine($"{baseIndent}{entityName}.LineColor = new AciColor({leader.LineColor.Index});");
+                }
             }
         }
         
         // Elevation property (default is 0.0)
         if (Math.Abs(leader.Elevation) > 1e-12)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.Elevation = {F(leader.Elevation)},");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    Elevation = {F(leader.Elevation)},");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.Elevation = {F(leader.Elevation)};");
+            }
         }
         
         // Offset property (default is Vector2.Zero)
         if (Math.Abs(leader.Offset.X) > 1e-12 || Math.Abs(leader.Offset.Y) > 1e-12)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.Offset = new Vector2({F(leader.Offset.X)}, {F(leader.Offset.Y)}),");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    Offset = new Vector2({F(leader.Offset.X)}, {F(leader.Offset.Y)}),");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.Offset = new Vector2({F(leader.Offset.X)}, {F(leader.Offset.Y)});");
+            }
         }
         
         // Direction property (default is Vector2.UnitX)
         if (Math.Abs(leader.Direction.X - 1.0) > 1e-12 || Math.Abs(leader.Direction.Y) > 1e-12)
         {
-            sb.AppendLine($"{baseIndent}{prefix}{target}.Direction = new Vector2({F(leader.Direction.X)}, {F(leader.Direction.Y)}),");
+            if (string.IsNullOrEmpty(entityName))
+            {
+                sb.AppendLine($"{baseIndent}    Direction = new Vector2({F(leader.Direction.X)}, {F(leader.Direction.Y)}),");
+            }
+            else
+            {
+                sb.AppendLine($"{baseIndent}{entityName}.Direction = new Vector2({F(leader.Direction.X)}, {F(leader.Direction.Y)});");
+            }
         }
     }
 }
