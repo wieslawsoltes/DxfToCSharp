@@ -1701,13 +1701,16 @@ public class DxfCodeGenerator
         }
 
         // Color (if not ByLayer)
-        if (entity.Color.Index != 256) // 256 = ByLayer
+        if (entity.Color.UseTrueColor)
+        {
+            sb.AppendLine($"{baseIndent}    Color = AciColor.FromTrueColor(System.Drawing.Color.FromArgb({entity.Color.R}, {entity.Color.G}, {entity.Color.B}).ToArgb()),");
+        }
+        else if (entity.Color.Index != 256) // 256 = ByLayer
         {
             if (entity.Color.Index == 0)
                 sb.AppendLine($"{baseIndent}    Color = AciColor.ByBlock,");
             else if (entity.Color.Index >= 1 && entity.Color.Index <= 255)
                 sb.AppendLine($"{baseIndent}    Color = new AciColor({entity.Color.Index}),");
-            // Note: TrueColor emission omitted to avoid API differences across versions
         }
 
         // Linetype
@@ -1728,7 +1731,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}    LinetypeScale = {F(entity.LinetypeScale)},");
         }
 
-        // Thickness (only for entities that support it in netDxf 3.0.1)
+        // Thickness (for entities that support it)
         if (entity is Line line && Math.Abs(line.Thickness) > 1e-10)
         {
             sb.AppendLine($"{baseIndent}    Thickness = {F(line.Thickness)},");
@@ -1744,6 +1747,26 @@ public class DxfCodeGenerator
         else if (entity is Polyline2D poly2d && Math.Abs(poly2d.Thickness) > 1e-10)
         {
             sb.AppendLine($"{baseIndent}    Thickness = {F(poly2d.Thickness)},");
+        }
+        else if (entity is PointEntity point && Math.Abs(point.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Thickness = {F(point.Thickness)},");
+        }
+        else if (entity is Ellipse ellipse && Math.Abs(ellipse.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Thickness = {F(ellipse.Thickness)},");
+        }
+        else if (entity is Shape shape && Math.Abs(shape.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Thickness = {F(shape.Thickness)},");
+        }
+        else if (entity is Trace trace && Math.Abs(trace.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Thickness = {F(trace.Thickness)},");
+        }
+        else if (entity is Solid solid && Math.Abs(solid.Thickness) > 1e-10)
+        {
+            sb.AppendLine($"{baseIndent}    Thickness = {F(solid.Thickness)},");
         }
 
         // Transparency (if not default ByLayer)
@@ -1770,6 +1793,13 @@ public class DxfCodeGenerator
         if (Math.Abs(n.X) > 1e-12 || Math.Abs(n.Y) > 1e-12 || Math.Abs(n.Z - 1.0) > 1e-12)
         {
             sb.AppendLine($"{baseIndent}    Normal = new Vector3({F(n.X)}, {F(n.Y)}, {F(n.Z)}),");
+        }
+
+        // Reactors (if any exist)
+        if (entity.Reactors != null && entity.Reactors.Count > 0)
+        {
+            sb.AppendLine($"{baseIndent}    // Note: Reactors property is read-only and managed internally by netDxf");
+            sb.AppendLine($"{baseIndent}    // {entity.Reactors.Count} reactor(s) attached to this entity");
         }
     }
     
@@ -2319,10 +2349,6 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent})");
         sb.AppendLine($"{baseIndent}{{");
         GenerateEntityPropertiesCore(sb, solid, baseIndent + "    ");
-        if (Math.Abs(solid.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"{baseIndent}    Thickness = {F(solid.Thickness)},");
-        }
         sb.AppendLine($"{baseIndent}}}");
         sb.AppendLine($"{baseIndent});");
     }
