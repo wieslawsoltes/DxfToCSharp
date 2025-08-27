@@ -5,12 +5,15 @@ Write-Host "Building DxfToCSharp for Windows x86..."
 $PROJECT_PATH = "DxfToCSharp/DxfToCSharp.csproj"
 $OUTPUT_DIR = "./publish/windows-x86"
 $APP_NAME = "DxfToCSharp"
-$ZIP_NAME = "DxfToCSharp-Windows-x86.zip"
+$ZIP_NAME = "./publish/DxfToCSharp-Windows-x86.zip"
 
 # Clean previous builds
 Write-Host "Cleaning previous builds..."
 if (Test-Path $OUTPUT_DIR) { Remove-Item -Recurse -Force $OUTPUT_DIR }
 if (Test-Path $ZIP_NAME) { Remove-Item -Force $ZIP_NAME }
+
+# Ensure publish directory exists
+if (-not (Test-Path "./publish")) { New-Item -ItemType Directory -Path "./publish" -Force }
 
 # Restore dependencies
 Write-Host "Restoring dependencies..."
