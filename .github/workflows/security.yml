@@ -142,7 +142,9 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+        dotnet-version: |
+          7.0.x
+          ${{ env.DOTNET_VERSION }}
         
     - name: Install dotnet-project-licenses
       run: dotnet tool install --global dotnet-project-licenses
