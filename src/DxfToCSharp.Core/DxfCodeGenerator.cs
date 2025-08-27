@@ -1496,7 +1496,10 @@ public class DxfCodeGenerator
             GenerateEntityPropertiesCore(sb, mtext, baseIndent);
             if (mtext.Style?.Name != "Standard")
             {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name!)},");
+                if (mtext.Style != null)
+                {
+                    sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name)},");
+                }
             }
             if (mtext.RectangleWidth > 0)
             {
@@ -1535,7 +1538,10 @@ public class DxfCodeGenerator
             GenerateEntityPropertiesCore(sb, mtext, baseIndent);
             if (mtext.Style?.Name != "Standard")
             {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name!)},");
+                if (mtext.Style != null)
+                {
+                    sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name!)},");
+                }
             }
             if (mtext.RectangleWidth > 0)
             {
@@ -1955,14 +1961,26 @@ public class DxfCodeGenerator
             else
             {
                 sb.AppendLine($"{baseIndent}    var pattern = new HatchPattern(\"{Escape(patternName)}\");");
+                
+                if (hatch.Pattern != null)
+                {
+                    // Set pattern properties if they differ from defaults
+                    if (Math.Abs(hatch.Pattern.Angle) > 1e-9)
+                    {
+                        sb.AppendLine($"{baseIndent}    pattern.Angle = {F(hatch.Pattern.Angle)};");
+                    }
 
-                // Set pattern properties if they differ from defaults
-                if (Math.Abs(hatch.Pattern.Angle) > 1e-9)
-                    sb.AppendLine($"{baseIndent}    pattern.Angle = {F(hatch.Pattern.Angle)};");
-                if (Math.Abs(hatch.Pattern.Scale - 1.0) > 1e-9)
-                    sb.AppendLine($"{baseIndent}    pattern.Scale = {F(hatch.Pattern.Scale)};");
-                if (Math.Abs(hatch.Pattern.Origin.X) > 1e-9 || Math.Abs(hatch.Pattern.Origin.Y) > 1e-9)
-                    sb.AppendLine($"{baseIndent}    pattern.Origin = new Vector2({F(hatch.Pattern.Origin.X)}, {F(hatch.Pattern.Origin.Y)});");
+                    if (Math.Abs(hatch.Pattern.Scale - 1.0) > 1e-9)
+                    {
+                        sb.AppendLine($"{baseIndent}    pattern.Scale = {F(hatch.Pattern.Scale)};");
+                    }
+
+                    if (Math.Abs(hatch.Pattern.Origin.X) > 1e-9 || Math.Abs(hatch.Pattern.Origin.Y) > 1e-9)
+                    {
+                        sb.AppendLine(
+                            $"{baseIndent}    pattern.Origin = new Vector2({F(hatch.Pattern.Origin.X)}, {F(hatch.Pattern.Origin.Y)});");
+                    }
+                }
 
                 sb.AppendLine($"{baseIndent}    var hatchEntity = new Hatch(pattern, boundaryPaths, false);");
             }
