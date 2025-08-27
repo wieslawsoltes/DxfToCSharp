@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: DxfToCSharp.Core
+  commentId: N:DxfToCSharp.Core
+  id: DxfToCSharp.Core
+  children:
+  - DxfToCSharp.Core.DxfCodeGenerationOptions
+  - DxfToCSharp.Core.DxfCodeGenerator
+  langs:
+  - csharp
+  - vb
+  name: DxfToCSharp.Core
+  nameWithType: DxfToCSharp.Core
+  fullName: DxfToCSharp.Core
+  type: Namespace
+  assemblies:
+  - DxfToCSharp.Core
+references:
+- uid: DxfToCSharp.Core.DxfCodeGenerationOptions
+  commentId: T:DxfToCSharp.Core.DxfCodeGenerationOptions
+  parent: DxfToCSharp.Core
+  href: DxfToCSharp.Core.DxfCodeGenerationOptions.html
+  name: DxfCodeGenerationOptions
+  nameWithType: DxfCodeGenerationOptions
+  fullName: DxfToCSharp.Core.DxfCodeGenerationOptions
+- uid: DxfToCSharp.Core.DxfCodeGenerator
+  commentId: T:DxfToCSharp.Core.DxfCodeGenerator
+  href: DxfToCSharp.Core.DxfCodeGenerator.html
+  name: DxfCodeGenerator
+  nameWithType: DxfCodeGenerator
+  fullName: DxfToCSharp.Core.DxfCodeGenerator
+- uid: DxfToCSharp.Core
+  commentId: N:DxfToCSharp.Core
+  href: DxfToCSharp.html
+  name: DxfToCSharp.Core
+  nameWithType: DxfToCSharp.Core
+  fullName: DxfToCSharp.Core
+  spec.csharp:
+  - uid: DxfToCSharp
+    name: DxfToCSharp
+    href: DxfToCSharp.html
+  - name: .
+  - uid: DxfToCSharp.Core
+    name: Core
+    href: DxfToCSharp.Core.html
+  spec.vb:
+  - uid: DxfToCSharp
+    name: DxfToCSharp
+    href: DxfToCSharp.html
+  - name: .
+  - uid: DxfToCSharp.Core
+    name: Core
+    href: DxfToCSharp.Core.html

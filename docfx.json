@@ -35,8 +35,7 @@
         "files": [
           "docs/**.md",
           "docs/**/toc.yml",
-          "toc.yml",
-          "*.md"
+          "toc.yml"
         ],
         "exclude": [
           "**/bin/**",

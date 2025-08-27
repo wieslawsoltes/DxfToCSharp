@@ -8,10 +8,10 @@ Welcome to the DxfToCSharp documentation! DxfToCSharp is a powerful .NET library
 
 ## 🚀 Quick Navigation
 
-- **[Getting Started](docs/getting-started.md)** - Learn how to install and use DxfToCSharp
-- **[API Reference](api/index.md)** - Detailed API documentation
-- **[Examples](docs/examples.md)** - Code examples and usage patterns
-- **[Contributing](docs/contributing.md)** - How to contribute to the project
+- **[Getting Started](getting-started.md)** - Learn how to install and use DxfToCSharp
+- **[API Reference](../api/index.md)** - Detailed API documentation
+- **[Examples](examples.md)** - Code examples and usage patterns
+- **[Contributing](contributing.md)** - How to contribute to the project
 
 ## ✨ Key Features
 
