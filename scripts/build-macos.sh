@@ -107,11 +107,15 @@ EOF
 
 # Create ZIP archive
 echo "Creating ZIP archive..."
+# Ensure publish directory exists
+mkdir -p "./publish"
 cd "$OUTPUT_DIR"
-zip -r "../../$ZIP_NAME" "$APP_BUNDLE"
+zip -r "../../publish/$ZIP_NAME" "$APP_BUNDLE"
 cd ../..
-zip -u "$ZIP_NAME" "INSTALL_MACOS.txt"
+zip -u "./publish/$ZIP_NAME" "INSTALL_MACOS.txt"
+# Copy INSTALL_MACOS.txt to publish directory
+cp "INSTALL_MACOS.txt" "./publish/"
 
 echo "macOS build completed successfully!"
-echo "Output: $ZIP_NAME"
-echo "Installation instructions: INSTALL_MACOS.txt"
+echo "Output: ./publish/$ZIP_NAME"
+echo "Installation instructions: ./publish/INSTALL_MACOS.txt"
