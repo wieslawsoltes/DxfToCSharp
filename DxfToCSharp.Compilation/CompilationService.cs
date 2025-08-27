@@ -157,24 +157,32 @@ public class CompilationService
     /// </summary>
     private static MetadataReference[] GetMetadataReferences()
     {
-        var references = new List<MetadataReference>
+        var references = new List<MetadataReference>();
+        
+        // Helper method to safely add metadata reference
+        void TryAddReference(Assembly assembly)
         {
-            // Core system assemblies
-            MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-            MetadataReference.CreateFromFile(typeof(Console).Assembly.Location),
-            MetadataReference.CreateFromFile(typeof(System.Collections.Generic.List<>).Assembly.Location),
-            MetadataReference.CreateFromFile(typeof(System.Linq.Enumerable).Assembly.Location),
-            MetadataReference.CreateFromFile(typeof(Uri).Assembly.Location),
+            if (assembly != null && !string.IsNullOrEmpty(assembly.Location) && File.Exists(assembly.Location))
+            {
+                references.Add(MetadataReference.CreateFromFile(assembly.Location));
+            }
+        }
+        
+        // Core system assemblies
+        TryAddReference(typeof(object).Assembly);
+        TryAddReference(typeof(Console).Assembly);
+        TryAddReference(typeof(System.Collections.Generic.List<>).Assembly);
+        TryAddReference(typeof(System.Linq.Enumerable).Assembly);
+        TryAddReference(typeof(Uri).Assembly);
                 
-            // netDxf
-            MetadataReference.CreateFromFile(typeof(DxfDocument).Assembly.Location)
-        };
+        // netDxf
+        TryAddReference(typeof(DxfDocument).Assembly);
 
         // Add System.Runtime and System.Collections
         try
         {
-            references.Add(MetadataReference.CreateFromFile(Assembly.Load("System.Runtime").Location));
-            references.Add(MetadataReference.CreateFromFile(Assembly.Load("System.Collections").Location));
+            TryAddReference(Assembly.Load("System.Runtime"));
+            TryAddReference(Assembly.Load("System.Collections"));
         }
         catch
         {
@@ -184,7 +192,7 @@ public class CompilationService
         // Add System.Drawing.Primitives reference for Color type
         try
         {
-            references.Add(MetadataReference.CreateFromFile(Assembly.Load("System.Drawing.Primitives").Location));
+            TryAddReference(Assembly.Load("System.Drawing.Primitives"));
         }
         catch
         {
@@ -193,10 +201,7 @@ public class CompilationService
             {
                 var drawingAssembly = AppDomain.CurrentDomain.GetAssemblies()
                     .FirstOrDefault(a => a.GetName().Name == "System.Drawing.Primitives");
-                if (drawingAssembly != null && !string.IsNullOrEmpty(drawingAssembly.Location))
-                {
-                    references.Add(MetadataReference.CreateFromFile(drawingAssembly.Location));
-                }
+                TryAddReference(drawingAssembly);
             }
             catch
             {
@@ -207,7 +212,7 @@ public class CompilationService
         // Add reference to netstandard if available
         try
         {
-            references.Add(MetadataReference.CreateFromFile(Assembly.Load("netstandard").Location));
+            TryAddReference(Assembly.Load("netstandard"));
         }
         catch
         {
@@ -218,8 +223,7 @@ public class CompilationService
         try
         {
             var appAsm = Assembly.GetEntryAssembly();
-            if (appAsm != null && !string.IsNullOrEmpty(appAsm.Location))
-                references.Add(MetadataReference.CreateFromFile(appAsm.Location));
+            TryAddReference(appAsm);
         }
         catch
         {
@@ -240,7 +244,7 @@ public class CompilationService
                         var name = loaded.GetName().Name;
                         if (name is "System.Private.CoreLib" or "System.Runtime" or "netstandard")
                         {
-                            references.Add(MetadataReference.CreateFromFile(loaded.Location));
+                            TryAddReference(loaded);
                         }
                     }
                 }
