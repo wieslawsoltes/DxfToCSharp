@@ -1,0 +1,2203 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.MathHelper
+  commentId: T:netDxf.MathHelper
+  id: MathHelper
+  parent: netDxf
+  children:
+  - netDxf.MathHelper.ArbitraryAxis(netDxf.Vector3)
+  - netDxf.MathHelper.ArcFromBulge(netDxf.Vector2,netDxf.Vector2,System.Double)
+  - netDxf.MathHelper.ArcToBulge(netDxf.Vector2,System.Double,System.Double,System.Double)
+  - netDxf.MathHelper.DegToGrad
+  - netDxf.MathHelper.DegToRad
+  - netDxf.MathHelper.Epsilon
+  - netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  - netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  - netDxf.MathHelper.GradToDeg
+  - netDxf.MathHelper.HalfPI
+  - netDxf.MathHelper.IsEqual(System.Double,System.Double)
+  - netDxf.MathHelper.IsEqual(System.Double,System.Double,System.Double)
+  - netDxf.MathHelper.IsOne(System.Double)
+  - netDxf.MathHelper.IsOne(System.Double,System.Double)
+  - netDxf.MathHelper.IsZero(System.Double)
+  - netDxf.MathHelper.IsZero(System.Double,System.Double)
+  - netDxf.MathHelper.NormalizeAngle(System.Double)
+  - netDxf.MathHelper.PI
+  - netDxf.MathHelper.PointInSegment(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  - netDxf.MathHelper.PointInSegment(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  - netDxf.MathHelper.PointLineDistance(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  - netDxf.MathHelper.PointLineDistance(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  - netDxf.MathHelper.RadToDeg
+  - netDxf.MathHelper.RoundToNearest(System.Double,System.Double)
+  - netDxf.MathHelper.Sign(System.Double)
+  - netDxf.MathHelper.Sign(System.Double,System.Double)
+  - netDxf.MathHelper.ThreeHalfPI
+  - netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  - netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Vector3,System.Double)
+  - netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,System.Double@)
+  - netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  - netDxf.MathHelper.Transform(netDxf.Vector2,System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  - netDxf.MathHelper.Transform(netDxf.Vector2,netDxf.Vector3,System.Double)
+  - netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,System.Double@)
+  - netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  - netDxf.MathHelper.TwoPI
+  langs:
+  - csharp
+  - vb
+  name: MathHelper
+  nameWithType: MathHelper
+  fullName: netDxf.MathHelper
+  type: Class
+  source:
+    id: MathHelper
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Utility math functions and constants.
+  example: []
+  syntax:
+    content: public static class MathHelper
+    content.vb: Public Module MathHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.MathHelper.DegToRad
+  commentId: F:netDxf.MathHelper.DegToRad
+  id: DegToRad
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: DegToRad
+  nameWithType: MathHelper.DegToRad
+  fullName: netDxf.MathHelper.DegToRad
+  type: Field
+  source:
+    id: DegToRad
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Constant to transform an angle between degrees and radians.
+  example: []
+  syntax:
+    content: public const double DegToRad = 0.017453292519943295
+    return:
+      type: System.Double
+    content.vb: Public Const DegToRad As Double = 0.017453292519943295
+- uid: netDxf.MathHelper.RadToDeg
+  commentId: F:netDxf.MathHelper.RadToDeg
+  id: RadToDeg
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: RadToDeg
+  nameWithType: MathHelper.RadToDeg
+  fullName: netDxf.MathHelper.RadToDeg
+  type: Field
+  source:
+    id: RadToDeg
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Constant to transform an angle between degrees and radians.
+  example: []
+  syntax:
+    content: public const double RadToDeg = 57.29577951308232
+    return:
+      type: System.Double
+    content.vb: Public Const RadToDeg As Double = 57.29577951308232
+- uid: netDxf.MathHelper.DegToGrad
+  commentId: F:netDxf.MathHelper.DegToGrad
+  id: DegToGrad
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: DegToGrad
+  nameWithType: MathHelper.DegToGrad
+  fullName: netDxf.MathHelper.DegToGrad
+  type: Field
+  source:
+    id: DegToGrad
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Constant to transform an angle between degrees and gradians.
+  example: []
+  syntax:
+    content: public const double DegToGrad = 1.1111111111111112
+    return:
+      type: System.Double
+    content.vb: Public Const DegToGrad As Double = 1.1111111111111112
+- uid: netDxf.MathHelper.GradToDeg
+  commentId: F:netDxf.MathHelper.GradToDeg
+  id: GradToDeg
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: GradToDeg
+  nameWithType: MathHelper.GradToDeg
+  fullName: netDxf.MathHelper.GradToDeg
+  type: Field
+  source:
+    id: GradToDeg
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Constant to transform an angle between degrees and gradians.
+  example: []
+  syntax:
+    content: public const double GradToDeg = 0.9
+    return:
+      type: System.Double
+    content.vb: Public Const GradToDeg As Double = 0.9
+- uid: netDxf.MathHelper.HalfPI
+  commentId: F:netDxf.MathHelper.HalfPI
+  id: HalfPI
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: HalfPI
+  nameWithType: MathHelper.HalfPI
+  fullName: netDxf.MathHelper.HalfPI
+  type: Field
+  source:
+    id: HalfPI
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: PI/2 (90 degrees)
+  example: []
+  syntax:
+    content: public const double HalfPI = 1.5707963267948966
+    return:
+      type: System.Double
+    content.vb: Public Const HalfPI As Double = 1.5707963267948966
+- uid: netDxf.MathHelper.PI
+  commentId: F:netDxf.MathHelper.PI
+  id: PI
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PI
+  nameWithType: MathHelper.PI
+  fullName: netDxf.MathHelper.PI
+  type: Field
+  source:
+    id: PI
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: PI (180 degrees)
+  example: []
+  syntax:
+    content: public const double PI = 3.141592653589793
+    return:
+      type: System.Double
+    content.vb: Public Const PI As Double = 3.141592653589793
+- uid: netDxf.MathHelper.ThreeHalfPI
+  commentId: F:netDxf.MathHelper.ThreeHalfPI
+  id: ThreeHalfPI
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: ThreeHalfPI
+  nameWithType: MathHelper.ThreeHalfPI
+  fullName: netDxf.MathHelper.ThreeHalfPI
+  type: Field
+  source:
+    id: ThreeHalfPI
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: 3*PI/2 (270 degrees)
+  example: []
+  syntax:
+    content: public const double ThreeHalfPI = 4.71238898038469
+    return:
+      type: System.Double
+    content.vb: Public Const ThreeHalfPI As Double = 4.71238898038469
+- uid: netDxf.MathHelper.TwoPI
+  commentId: F:netDxf.MathHelper.TwoPI
+  id: TwoPI
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: TwoPI
+  nameWithType: MathHelper.TwoPI
+  fullName: netDxf.MathHelper.TwoPI
+  type: Field
+  source:
+    id: TwoPI
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: 2*PI (360 degrees)
+  example: []
+  syntax:
+    content: public const double TwoPI = 6.283185307179586
+    return:
+      type: System.Double
+    content.vb: Public Const TwoPI As Double = 6.283185307179586
+- uid: netDxf.MathHelper.Epsilon
+  commentId: P:netDxf.MathHelper.Epsilon
+  id: Epsilon
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Epsilon
+  nameWithType: MathHelper.Epsilon
+  fullName: netDxf.MathHelper.Epsilon
+  type: Property
+  source:
+    id: Epsilon
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 89
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Represents the smallest number used for comparison purposes.
+  remarks: The epsilon value must be a positive number greater than zero.
+  example: []
+  syntax:
+    content: public static double Epsilon { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Shared Property Epsilon As Double
+  overload: netDxf.MathHelper.Epsilon*
+- uid: netDxf.MathHelper.Sign(System.Double)
+  commentId: M:netDxf.MathHelper.Sign(System.Double)
+  id: Sign(System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Sign(double)
+  nameWithType: MathHelper.Sign(double)
+  fullName: netDxf.MathHelper.Sign(double)
+  type: Method
+  source:
+    id: Sign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 119
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns a value indicating the sign of a double-precision floating-point number.
+  remarks: This method will test for values of numbers very close to zero.
+  example: []
+  syntax:
+    content: public static int Sign(double number)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    return:
+      type: System.Int32
+      description: >-
+        A number that indicates the sign of value.
+
+        Return value, meaning:<br />
+
+        -1 value is less than zero.<br />
+
+        0 value is equal to zero.<br />
+
+        1 value is greater than zero.
+    content.vb: Public Shared Function Sign(number As Double) As Integer
+  overload: netDxf.MathHelper.Sign*
+  nameWithType.vb: MathHelper.Sign(Double)
+  fullName.vb: netDxf.MathHelper.Sign(Double)
+  name.vb: Sign(Double)
+- uid: netDxf.MathHelper.Sign(System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.Sign(System.Double,System.Double)
+  id: Sign(System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Sign(double, double)
+  nameWithType: MathHelper.Sign(double, double)
+  fullName: netDxf.MathHelper.Sign(double, double)
+  type: Method
+  source:
+    id: Sign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 137
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns a value indicating the sign of a double-precision floating-point number.
+  remarks: This method will test for values of numbers very close to zero.
+  example: []
+  syntax:
+    content: public static int Sign(double number, double threshold)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    - id: threshold
+      type: System.Double
+      description: Tolerance.
+    return:
+      type: System.Int32
+      description: >-
+        A number that indicates the sign of value.
+
+        Return value, meaning:<br />
+
+        -1 value is less than zero.<br />
+
+        0 value is equal to zero.<br />
+
+        1 value is greater than zero.
+    content.vb: Public Shared Function Sign(number As Double, threshold As Double) As Integer
+  overload: netDxf.MathHelper.Sign*
+  nameWithType.vb: MathHelper.Sign(Double, Double)
+  fullName.vb: netDxf.MathHelper.Sign(Double, Double)
+  name.vb: Sign(Double, Double)
+- uid: netDxf.MathHelper.IsOne(System.Double)
+  commentId: M:netDxf.MathHelper.IsOne(System.Double)
+  id: IsOne(System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsOne(double)
+  nameWithType: MathHelper.IsOne(double)
+  fullName: netDxf.MathHelper.IsOne(double)
+  type: Method
+  source:
+    id: IsOne
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 147
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is close to one.
+  example: []
+  syntax:
+    content: public static bool IsOne(double number)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsOne(number As Double) As Boolean
+  overload: netDxf.MathHelper.IsOne*
+  nameWithType.vb: MathHelper.IsOne(Double)
+  fullName.vb: netDxf.MathHelper.IsOne(Double)
+  name.vb: IsOne(Double)
+- uid: netDxf.MathHelper.IsOne(System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.IsOne(System.Double,System.Double)
+  id: IsOne(System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsOne(double, double)
+  nameWithType: MathHelper.IsOne(double, double)
+  fullName: netDxf.MathHelper.IsOne(double, double)
+  type: Method
+  source:
+    id: IsOne
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 158
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is close to one.
+  example: []
+  syntax:
+    content: public static bool IsOne(double number, double threshold)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    - id: threshold
+      type: System.Double
+      description: Tolerance.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsOne(number As Double, threshold As Double) As Boolean
+  overload: netDxf.MathHelper.IsOne*
+  nameWithType.vb: MathHelper.IsOne(Double, Double)
+  fullName.vb: netDxf.MathHelper.IsOne(Double, Double)
+  name.vb: IsOne(Double, Double)
+- uid: netDxf.MathHelper.IsZero(System.Double)
+  commentId: M:netDxf.MathHelper.IsZero(System.Double)
+  id: IsZero(System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsZero(double)
+  nameWithType: MathHelper.IsZero(double)
+  fullName: netDxf.MathHelper.IsZero(double)
+  type: Method
+  source:
+    id: IsZero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 168
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is close to zero.
+  example: []
+  syntax:
+    content: public static bool IsZero(double number)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsZero(number As Double) As Boolean
+  overload: netDxf.MathHelper.IsZero*
+  nameWithType.vb: MathHelper.IsZero(Double)
+  fullName.vb: netDxf.MathHelper.IsZero(Double)
+  name.vb: IsZero(Double)
+- uid: netDxf.MathHelper.IsZero(System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.IsZero(System.Double,System.Double)
+  id: IsZero(System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsZero(double, double)
+  nameWithType: MathHelper.IsZero(double, double)
+  fullName: netDxf.MathHelper.IsZero(double, double)
+  type: Method
+  source:
+    id: IsZero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 179
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is close to zero.
+  example: []
+  syntax:
+    content: public static bool IsZero(double number, double threshold)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Double precision number.
+    - id: threshold
+      type: System.Double
+      description: Tolerance.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsZero(number As Double, threshold As Double) As Boolean
+  overload: netDxf.MathHelper.IsZero*
+  nameWithType.vb: MathHelper.IsZero(Double, Double)
+  fullName.vb: netDxf.MathHelper.IsZero(Double, Double)
+  name.vb: IsZero(Double, Double)
+- uid: netDxf.MathHelper.IsEqual(System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.IsEqual(System.Double,System.Double)
+  id: IsEqual(System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsEqual(double, double)
+  nameWithType: MathHelper.IsEqual(double, double)
+  fullName: netDxf.MathHelper.IsEqual(double, double)
+  type: Method
+  source:
+    id: IsEqual
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 190
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is equal to another.
+  example: []
+  syntax:
+    content: public static bool IsEqual(double a, double b)
+    parameters:
+    - id: a
+      type: System.Double
+      description: Double precision number.
+    - id: b
+      type: System.Double
+      description: Double precision number.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsEqual(a As Double, b As Double) As Boolean
+  overload: netDxf.MathHelper.IsEqual*
+  nameWithType.vb: MathHelper.IsEqual(Double, Double)
+  fullName.vb: netDxf.MathHelper.IsEqual(Double, Double)
+  name.vb: IsEqual(Double, Double)
+- uid: netDxf.MathHelper.IsEqual(System.Double,System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.IsEqual(System.Double,System.Double,System.Double)
+  id: IsEqual(System.Double,System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: IsEqual(double, double, double)
+  nameWithType: MathHelper.IsEqual(double, double, double)
+  fullName: netDxf.MathHelper.IsEqual(double, double, double)
+  type: Method
+  source:
+    id: IsEqual
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 202
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a number is equal to another.
+  example: []
+  syntax:
+    content: public static bool IsEqual(double a, double b, double threshold)
+    parameters:
+    - id: a
+      type: System.Double
+      description: Double precision number.
+    - id: b
+      type: System.Double
+      description: Double precision number.
+    - id: threshold
+      type: System.Double
+      description: Tolerance.
+    return:
+      type: System.Boolean
+      description: True if its close to one or false in any other case.
+    content.vb: Public Shared Function IsEqual(a As Double, b As Double, threshold As Double) As Boolean
+  overload: netDxf.MathHelper.IsEqual*
+  nameWithType.vb: MathHelper.IsEqual(Double, Double, Double)
+  fullName.vb: netDxf.MathHelper.IsEqual(Double, Double, Double)
+  name.vb: IsEqual(Double, Double, Double)
+- uid: netDxf.MathHelper.Transform(netDxf.Vector2,System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  commentId: M:netDxf.MathHelper.Transform(netDxf.Vector2,System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  id: Transform(netDxf.Vector2,System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector2, double, CoordinateSystem, CoordinateSystem)
+  nameWithType: MathHelper.Transform(Vector2, double, CoordinateSystem, CoordinateSystem)
+  fullName: netDxf.MathHelper.Transform(netDxf.Vector2, double, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 215
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transforms a point between coordinate systems.
+  example: []
+  syntax:
+    content: public static Vector2 Transform(Vector2 point, double rotation, CoordinateSystem from, CoordinateSystem to)
+    parameters:
+    - id: point
+      type: netDxf.Vector2
+      description: Point to transform.
+    - id: rotation
+      type: System.Double
+      description: Rotation angle in radians.
+    - id: from
+      type: netDxf.CoordinateSystem
+      description: Point coordinate system.
+    - id: to
+      type: netDxf.CoordinateSystem
+      description: Coordinate system of the transformed point.
+    return:
+      type: netDxf.Vector2
+      description: Transformed point.
+    content.vb: Public Shared Function Transform(point As Vector2, rotation As Double, from As CoordinateSystem, [to] As CoordinateSystem) As Vector2
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(Vector2, Double, CoordinateSystem, CoordinateSystem)
+  fullName.vb: netDxf.MathHelper.Transform(netDxf.Vector2, Double, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  name.vb: Transform(Vector2, Double, CoordinateSystem, CoordinateSystem)
+- uid: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  commentId: M:netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  id: Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(IEnumerable<Vector2>, double, CoordinateSystem, CoordinateSystem)
+  nameWithType: MathHelper.Transform(IEnumerable<Vector2>, double, CoordinateSystem, CoordinateSystem)
+  fullName: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable<netDxf.Vector2>, double, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 244
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transforms a point list between coordinate systems.
+  example: []
+  syntax:
+    content: public static List<Vector2> Transform(IEnumerable<Vector2> points, double rotation, CoordinateSystem from, CoordinateSystem to)
+    parameters:
+    - id: points
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Point list to transform.
+    - id: rotation
+      type: System.Double
+      description: Rotation angle in radians.
+    - id: from
+      type: netDxf.CoordinateSystem
+      description: Point coordinate system.
+    - id: to
+      type: netDxf.CoordinateSystem
+      description: Coordinate system of the transformed point.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector2}
+      description: Transformed point list.
+    content.vb: Public Shared Function Transform(points As IEnumerable(Of Vector2), rotation As Double, from As CoordinateSystem, [to] As CoordinateSystem) As List(Of Vector2)
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(IEnumerable(Of Vector2), Double, CoordinateSystem, CoordinateSystem)
+  fullName.vb: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), Double, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  name.vb: Transform(IEnumerable(Of Vector2), Double, CoordinateSystem, CoordinateSystem)
+- uid: netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  commentId: M:netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  id: Transform(netDxf.Vector3,netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector3, Vector3, CoordinateSystem, CoordinateSystem)
+  nameWithType: MathHelper.Transform(Vector3, Vector3, CoordinateSystem, CoordinateSystem)
+  fullName: netDxf.MathHelper.Transform(netDxf.Vector3, netDxf.Vector3, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 294
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transforms a point between coordinate systems.
+  example: []
+  syntax:
+    content: public static Vector3 Transform(Vector3 point, Vector3 zAxis, CoordinateSystem from, CoordinateSystem to)
+    parameters:
+    - id: point
+      type: netDxf.Vector3
+      description: Point to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: from
+      type: netDxf.CoordinateSystem
+      description: Point coordinate system.
+    - id: to
+      type: netDxf.CoordinateSystem
+      description: Coordinate system of the transformed point.
+    return:
+      type: netDxf.Vector3
+      description: Transformed point.
+    content.vb: Public Shared Function Transform(point As Vector3, zAxis As Vector3, from As CoordinateSystem, [to] As CoordinateSystem) As Vector3
+  overload: netDxf.MathHelper.Transform*
+- uid: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  commentId: M:netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  id: Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,netDxf.CoordinateSystem,netDxf.CoordinateSystem)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(IEnumerable<Vector3>, Vector3, CoordinateSystem, CoordinateSystem)
+  nameWithType: MathHelper.Transform(IEnumerable<Vector3>, Vector3, CoordinateSystem, CoordinateSystem)
+  fullName: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable<netDxf.Vector3>, netDxf.Vector3, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 317
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transforms a point list between coordinate systems.
+  example: []
+  syntax:
+    content: public static List<Vector3> Transform(IEnumerable<Vector3> points, Vector3 zAxis, CoordinateSystem from, CoordinateSystem to)
+    parameters:
+    - id: points
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Points to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: from
+      type: netDxf.CoordinateSystem
+      description: Points coordinate system.
+    - id: to
+      type: netDxf.CoordinateSystem
+      description: Coordinate system of the transformed points.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector3}
+      description: Transformed point list.
+    content.vb: Public Shared Function Transform(points As IEnumerable(Of Vector3), zAxis As Vector3, from As CoordinateSystem, [to] As CoordinateSystem) As List(Of Vector3)
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(IEnumerable(Of Vector3), Vector3, CoordinateSystem, CoordinateSystem)
+  fullName.vb: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), netDxf.Vector3, netDxf.CoordinateSystem, netDxf.CoordinateSystem)
+  name.vb: Transform(IEnumerable(Of Vector3), Vector3, CoordinateSystem, CoordinateSystem)
+- uid: netDxf.MathHelper.Transform(netDxf.Vector2,netDxf.Vector3,System.Double)
+  commentId: M:netDxf.MathHelper.Transform(netDxf.Vector2,netDxf.Vector3,System.Double)
+  id: Transform(netDxf.Vector2,netDxf.Vector3,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector2, Vector3, double)
+  nameWithType: MathHelper.Transform(Vector2, Vector3, double)
+  fullName: netDxf.MathHelper.Transform(netDxf.Vector2, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 359
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transform a 2d point from object coordinates to world coordinates.
+  example: []
+  syntax:
+    content: public static Vector3 Transform(Vector2 point, Vector3 zAxis, double elevation)
+    parameters:
+    - id: point
+      type: netDxf.Vector2
+      description: Points to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: elevation
+      type: System.Double
+      description: Object elevation.
+    return:
+      type: netDxf.Vector3
+      description: Transformed point.
+    content.vb: Public Shared Function Transform(point As Vector2, zAxis As Vector3, elevation As Double) As Vector3
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(Vector2, Vector3, Double)
+  fullName.vb: netDxf.MathHelper.Transform(netDxf.Vector2, netDxf.Vector3, Double)
+  name.vb: Transform(Vector2, Vector3, Double)
+- uid: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Vector3,System.Double)
+  commentId: M:netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Vector3,System.Double)
+  id: Transform(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Vector3,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(IEnumerable<Vector2>, Vector3, double)
+  nameWithType: MathHelper.Transform(IEnumerable<Vector2>, Vector3, double)
+  fullName: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable<netDxf.Vector2>, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 372
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transform a 2d point list from object coordinates to world coordinates.
+  example: []
+  syntax:
+    content: public static List<Vector3> Transform(IEnumerable<Vector2> points, Vector3 zAxis, double elevation)
+    parameters:
+    - id: points
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Point to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: elevation
+      type: System.Double
+      description: Object elevation.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector3}
+      description: Transformed points.
+    content.vb: Public Shared Function Transform(points As IEnumerable(Of Vector2), zAxis As Vector3, elevation As Double) As List(Of Vector3)
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(IEnumerable(Of Vector2), Vector3, Double)
+  fullName.vb: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), netDxf.Vector3, Double)
+  name.vb: Transform(IEnumerable(Of Vector2), Vector3, Double)
+- uid: netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,System.Double@)
+  commentId: M:netDxf.MathHelper.Transform(netDxf.Vector3,netDxf.Vector3,System.Double@)
+  id: Transform(netDxf.Vector3,netDxf.Vector3,System.Double@)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector3, Vector3, out double)
+  nameWithType: MathHelper.Transform(Vector3, Vector3, out double)
+  fullName: netDxf.MathHelper.Transform(netDxf.Vector3, netDxf.Vector3, out double)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 395
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transform a 3d point from world coordinates to object coordinates.
+  example: []
+  syntax:
+    content: public static Vector2 Transform(Vector3 point, Vector3 zAxis, out double elevation)
+    parameters:
+    - id: point
+      type: netDxf.Vector3
+      description: Point to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: elevation
+      type: System.Double
+      description: Z axis value of the transformed point.
+    return:
+      type: netDxf.Vector2
+      description: Transformed point.
+    content.vb: Public Shared Function Transform(point As Vector3, zAxis As Vector3, elevation As Double) As Vector2
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(Vector3, Vector3, Double)
+  fullName.vb: netDxf.MathHelper.Transform(netDxf.Vector3, netDxf.Vector3, Double)
+  name.vb: Transform(Vector3, Vector3, Double)
+- uid: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,System.Double@)
+  commentId: M:netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,System.Double@)
+  id: Transform(System.Collections.Generic.IEnumerable{netDxf.Vector3},netDxf.Vector3,System.Double@)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: Transform(IEnumerable<Vector3>, Vector3, out double)
+  nameWithType: MathHelper.Transform(IEnumerable<Vector3>, Vector3, out double)
+  fullName: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable<netDxf.Vector3>, netDxf.Vector3, out double)
+  type: Method
+  source:
+    id: Transform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 410
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Transform a 3d point list from world coordinates to object coordinates.
+  example: []
+  syntax:
+    content: public static List<Vector2> Transform(IEnumerable<Vector3> points, Vector3 zAxis, out double elevation)
+    parameters:
+    - id: points
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Points to transform.
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Object normal vector.
+    - id: elevation
+      type: System.Double
+      description: Average Z axis value of the transformed points.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector2}
+      description: Transformed points.
+    content.vb: Public Shared Function Transform(points As IEnumerable(Of Vector3), zAxis As Vector3, elevation As Double) As List(Of Vector2)
+  overload: netDxf.MathHelper.Transform*
+  nameWithType.vb: MathHelper.Transform(IEnumerable(Of Vector3), Vector3, Double)
+  fullName.vb: netDxf.MathHelper.Transform(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), netDxf.Vector3, Double)
+  name.vb: Transform(IEnumerable(Of Vector3), Vector3, Double)
+- uid: netDxf.MathHelper.ArbitraryAxis(netDxf.Vector3)
+  commentId: M:netDxf.MathHelper.ArbitraryAxis(netDxf.Vector3)
+  id: ArbitraryAxis(netDxf.Vector3)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: ArbitraryAxis(Vector3)
+  nameWithType: MathHelper.ArbitraryAxis(Vector3)
+  fullName: netDxf.MathHelper.ArbitraryAxis(netDxf.Vector3)
+  type: Method
+  source:
+    id: ArbitraryAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 436
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets the rotation matrix from the normal vector (extrusion direction) of an entity.
+  example: []
+  syntax:
+    content: public static Matrix3 ArbitraryAxis(Vector3 zAxis)
+    parameters:
+    - id: zAxis
+      type: netDxf.Vector3
+      description: Normal vector.
+    return:
+      type: netDxf.Matrix3
+      description: Rotation matrix.
+    content.vb: Public Shared Function ArbitraryAxis(zAxis As Vector3) As Matrix3
+  overload: netDxf.MathHelper.ArbitraryAxis*
+- uid: netDxf.MathHelper.PointLineDistance(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.MathHelper.PointLineDistance(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  id: PointLineDistance(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PointLineDistance(Vector3, Vector3, Vector3)
+  nameWithType: MathHelper.PointLineDistance(Vector3, Vector3, Vector3)
+  fullName: netDxf.MathHelper.PointLineDistance(netDxf.Vector3, netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: PointLineDistance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 473
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the minimum distance between a point and a line.
+  example: []
+  syntax:
+    content: public static double PointLineDistance(Vector3 p, Vector3 origin, Vector3 dir)
+    parameters:
+    - id: p
+      type: netDxf.Vector3
+      description: A point.
+    - id: origin
+      type: netDxf.Vector3
+      description: Line origin point.
+    - id: dir
+      type: netDxf.Vector3
+      description: Line direction.
+    return:
+      type: System.Double
+      description: The minimum distance between the point and the line.
+    content.vb: Public Shared Function PointLineDistance(p As Vector3, origin As Vector3, dir As Vector3) As Double
+  overload: netDxf.MathHelper.PointLineDistance*
+- uid: netDxf.MathHelper.PointLineDistance(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  commentId: M:netDxf.MathHelper.PointLineDistance(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  id: PointLineDistance(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PointLineDistance(Vector2, Vector2, Vector2)
+  nameWithType: MathHelper.PointLineDistance(Vector2, Vector2, Vector2)
+  fullName: netDxf.MathHelper.PointLineDistance(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2)
+  type: Method
+  source:
+    id: PointLineDistance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 489
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the minimum distance between a point and a line.
+  example: []
+  syntax:
+    content: public static double PointLineDistance(Vector2 p, Vector2 origin, Vector2 dir)
+    parameters:
+    - id: p
+      type: netDxf.Vector2
+      description: A point.
+    - id: origin
+      type: netDxf.Vector2
+      description: Line origin point.
+    - id: dir
+      type: netDxf.Vector2
+      description: Line direction.
+    return:
+      type: System.Double
+      description: The minimum distance between the point and the line.
+    content.vb: Public Shared Function PointLineDistance(p As Vector2, origin As Vector2, dir As Vector2) As Double
+  overload: netDxf.MathHelper.PointLineDistance*
+- uid: netDxf.MathHelper.PointInSegment(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.MathHelper.PointInSegment(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  id: PointInSegment(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PointInSegment(Vector3, Vector3, Vector3)
+  nameWithType: MathHelper.PointInSegment(Vector3, Vector3, Vector3)
+  fullName: netDxf.MathHelper.PointInSegment(netDxf.Vector3, netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: PointInSegment
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 510
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a point is inside a line segment.
+  remarks: >-
+    For testing purposes a point is considered inside a segment,
+
+    if it falls inside the volume from start to end of the segment that extends infinitely perpendicularly to its direction.
+
+    Later, if needed, you can use the PointLineDistance method, if the distance is zero the point is along the line defined by the start and end points.
+  example: []
+  syntax:
+    content: public static int PointInSegment(Vector3 p, Vector3 start, Vector3 end)
+    parameters:
+    - id: p
+      type: netDxf.Vector3
+      description: A point.
+    - id: start
+      type: netDxf.Vector3
+      description: Segment start point.
+    - id: end
+      type: netDxf.Vector3
+      description: Segment end point.
+    return:
+      type: System.Int32
+      description: Zero if the point is inside the segment, 1 if the point is after the end point, and -1 if the point is before the start point.
+    content.vb: Public Shared Function PointInSegment(p As Vector3, start As Vector3, [end] As Vector3) As Integer
+  overload: netDxf.MathHelper.PointInSegment*
+- uid: netDxf.MathHelper.PointInSegment(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  commentId: M:netDxf.MathHelper.PointInSegment(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  id: PointInSegment(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: PointInSegment(Vector2, Vector2, Vector2)
+  nameWithType: MathHelper.PointInSegment(Vector2, Vector2, Vector2)
+  fullName: netDxf.MathHelper.PointInSegment(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2)
+  type: Method
+  source:
+    id: PointInSegment
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 539
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if a point is inside a line segment.
+  remarks: >-
+    For testing purposes a point is considered inside a segment,
+
+    if it falls inside the area from start to end of the segment that extends infinitely perpendicularly to its direction.
+
+    Later, if needed, you can use the PointLineDistance method, if the distance is zero the point is along the line defined by the start and end points.
+  example: []
+  syntax:
+    content: public static int PointInSegment(Vector2 p, Vector2 start, Vector2 end)
+    parameters:
+    - id: p
+      type: netDxf.Vector2
+      description: A point.
+    - id: start
+      type: netDxf.Vector2
+      description: Segment start point.
+    - id: end
+      type: netDxf.Vector2
+      description: Segment end point.
+    return:
+      type: System.Int32
+      description: Zero if the point is inside the segment, 1 if the point is after the end point, and -1 if the point is before the start point.
+    content.vb: Public Shared Function PointInSegment(p As Vector2, start As Vector2, [end] As Vector2) As Integer
+  overload: netDxf.MathHelper.PointInSegment*
+- uid: netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  commentId: M:netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  id: FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: FindIntersection(Vector2, Vector2, Vector2, Vector2)
+  nameWithType: MathHelper.FindIntersection(Vector2, Vector2, Vector2, Vector2)
+  fullName: netDxf.MathHelper.FindIntersection(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2)
+  type: Method
+  source:
+    id: FindIntersection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 565
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the intersection point of two lines.
+  remarks: If the lines are parallel the method will return a <xref href="netDxf.Vector2.NaN?text=Vector2.NaN" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Vector2 FindIntersection(Vector2 point0, Vector2 dir0, Vector2 point1, Vector2 dir1)
+    parameters:
+    - id: point0
+      type: netDxf.Vector2
+      description: First line origin point.
+    - id: dir0
+      type: netDxf.Vector2
+      description: First line direction.
+    - id: point1
+      type: netDxf.Vector2
+      description: Second line origin point.
+    - id: dir1
+      type: netDxf.Vector2
+      description: Second line direction.
+    return:
+      type: netDxf.Vector2
+      description: The intersection point between the two lines.
+    content.vb: Public Shared Function FindIntersection(point0 As Vector2, dir0 As Vector2, point1 As Vector2, dir1 As Vector2) As Vector2
+  overload: netDxf.MathHelper.FindIntersection*
+- uid: netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  commentId: M:netDxf.MathHelper.FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  id: FindIntersection(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: FindIntersection(Vector2, Vector2, Vector2, Vector2, double)
+  nameWithType: MathHelper.FindIntersection(Vector2, Vector2, Vector2, Vector2, double)
+  fullName: netDxf.MathHelper.FindIntersection(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, double)
+  type: Method
+  source:
+    id: FindIntersection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 580
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the intersection point of two lines.
+  remarks: If the lines are parallel the method will return a <xref href="netDxf.Vector2.NaN?text=Vector2.NaN" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Vector2 FindIntersection(Vector2 point0, Vector2 dir0, Vector2 point1, Vector2 dir1, double threshold)
+    parameters:
+    - id: point0
+      type: netDxf.Vector2
+      description: First line origin point.
+    - id: dir0
+      type: netDxf.Vector2
+      description: First line direction.
+    - id: point1
+      type: netDxf.Vector2
+      description: Second line origin point.
+    - id: dir1
+      type: netDxf.Vector2
+      description: Second line direction.
+    - id: threshold
+      type: System.Double
+      description: Tolerance.
+    return:
+      type: netDxf.Vector2
+      description: The intersection point between the two lines.
+    content.vb: Public Shared Function FindIntersection(point0 As Vector2, dir0 As Vector2, point1 As Vector2, dir1 As Vector2, threshold As Double) As Vector2
+  overload: netDxf.MathHelper.FindIntersection*
+  nameWithType.vb: MathHelper.FindIntersection(Vector2, Vector2, Vector2, Vector2, Double)
+  fullName.vb: netDxf.MathHelper.FindIntersection(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, Double)
+  name.vb: FindIntersection(Vector2, Vector2, Vector2, Vector2, Double)
+- uid: netDxf.MathHelper.NormalizeAngle(System.Double)
+  commentId: M:netDxf.MathHelper.NormalizeAngle(System.Double)
+  id: NormalizeAngle(System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: NormalizeAngle(double)
+  nameWithType: MathHelper.NormalizeAngle(double)
+  fullName: netDxf.MathHelper.NormalizeAngle(double)
+  type: Method
+  source:
+    id: NormalizeAngle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 601
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Normalizes the value of an angle in degrees between [0, 360[.
+  remarks: Negative angles will be converted to its positive equivalent.
+  example: []
+  syntax:
+    content: public static double NormalizeAngle(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: Angle in degrees.
+    return:
+      type: System.Double
+      description: The equivalent angle in the range [0, 360[.
+    content.vb: Public Shared Function NormalizeAngle(angle As Double) As Double
+  overload: netDxf.MathHelper.NormalizeAngle*
+  nameWithType.vb: MathHelper.NormalizeAngle(Double)
+  fullName.vb: netDxf.MathHelper.NormalizeAngle(Double)
+  name.vb: NormalizeAngle(Double)
+- uid: netDxf.MathHelper.RoundToNearest(System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.RoundToNearest(System.Double,System.Double)
+  id: RoundToNearest(System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: RoundToNearest(double, double)
+  nameWithType: MathHelper.RoundToNearest(double, double)
+  fullName: netDxf.MathHelper.RoundToNearest(double, double)
+  type: Method
+  source:
+    id: RoundToNearest
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 623
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Round off a numeric value to the nearest of another value.
+  example: []
+  syntax:
+    content: public static double RoundToNearest(double number, double roundTo)
+    parameters:
+    - id: number
+      type: System.Double
+      description: Number to round off.
+    - id: roundTo
+      type: System.Double
+      description: The number will be rounded to the nearest of this value.
+    return:
+      type: System.Double
+      description: The number rounded to the nearest value.
+    content.vb: Public Shared Function RoundToNearest(number As Double, roundTo As Double) As Double
+  overload: netDxf.MathHelper.RoundToNearest*
+  nameWithType.vb: MathHelper.RoundToNearest(Double, Double)
+  fullName.vb: netDxf.MathHelper.RoundToNearest(Double, Double)
+  name.vb: RoundToNearest(Double, Double)
+- uid: netDxf.MathHelper.ArcFromBulge(netDxf.Vector2,netDxf.Vector2,System.Double)
+  commentId: M:netDxf.MathHelper.ArcFromBulge(netDxf.Vector2,netDxf.Vector2,System.Double)
+  id: ArcFromBulge(netDxf.Vector2,netDxf.Vector2,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: ArcFromBulge(Vector2, Vector2, double)
+  nameWithType: MathHelper.ArcFromBulge(Vector2, Vector2, double)
+  fullName: netDxf.MathHelper.ArcFromBulge(netDxf.Vector2, netDxf.Vector2, double)
+  type: Method
+  source:
+    id: ArcFromBulge
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 636
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the data for an arc that has a start point, an end point, and a bulge value.
+  example: []
+  syntax:
+    content: public static Tuple<Vector2, double, double, double> ArcFromBulge(Vector2 startPoint, Vector2 endPoint, double bulge)
+    parameters:
+    - id: startPoint
+      type: netDxf.Vector2
+      description: Arc start point.
+    - id: endPoint
+      type: netDxf.Vector2
+      description: Arc end point.
+    - id: bulge
+      type: System.Double
+      description: Arc bulge value.
+    return:
+      type: System.Tuple{netDxf.Vector2,System.Double,System.Double,System.Double}
+      description: A Tuple(center, radius, startAngle in degrees, endAngle in degrees) with the arc data.
+    content.vb: Public Shared Function ArcFromBulge(startPoint As Vector2, endPoint As Vector2, bulge As Double) As Tuple(Of Vector2, Double, Double, Double)
+  overload: netDxf.MathHelper.ArcFromBulge*
+  nameWithType.vb: MathHelper.ArcFromBulge(Vector2, Vector2, Double)
+  fullName.vb: netDxf.MathHelper.ArcFromBulge(netDxf.Vector2, netDxf.Vector2, Double)
+  name.vb: ArcFromBulge(Vector2, Vector2, Double)
+- uid: netDxf.MathHelper.ArcToBulge(netDxf.Vector2,System.Double,System.Double,System.Double)
+  commentId: M:netDxf.MathHelper.ArcToBulge(netDxf.Vector2,System.Double,System.Double,System.Double)
+  id: ArcToBulge(netDxf.Vector2,System.Double,System.Double,System.Double)
+  parent: netDxf.MathHelper
+  langs:
+  - csharp
+  - vb
+  name: ArcToBulge(Vector2, double, double, double)
+  nameWithType: MathHelper.ArcToBulge(Vector2, double, double, double)
+  fullName: netDxf.MathHelper.ArcToBulge(netDxf.Vector2, double, double, double)
+  type: Method
+  source:
+    id: ArcToBulge
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/MathHelper.cs
+    startLine: 673
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the start point, end point, and bulge value from an arc.
+  example: []
+  syntax:
+    content: public static Tuple<Vector2, Vector2, double> ArcToBulge(Vector2 center, double radius, double startAngle, double endAngle)
+    parameters:
+    - id: center
+      type: netDxf.Vector2
+      description: Arc center.
+    - id: radius
+      type: System.Double
+      description: Arc radius.
+    - id: startAngle
+      type: System.Double
+      description: Arc start angle in degrees.
+    - id: endAngle
+      type: System.Double
+      description: Arc end angle in degrees.
+    return:
+      type: System.Tuple{netDxf.Vector2,netDxf.Vector2,System.Double}
+      description: A Tuple(start point, end point, bulge value) for the specified arc data.
+    content.vb: Public Shared Function ArcToBulge(center As Vector2, radius As Double, startAngle As Double, endAngle As Double) As Tuple(Of Vector2, Vector2, Double)
+  overload: netDxf.MathHelper.ArcToBulge*
+  nameWithType.vb: MathHelper.ArcToBulge(Vector2, Double, Double, Double)
+  fullName.vb: netDxf.MathHelper.ArcToBulge(netDxf.Vector2, Double, Double, Double)
+  name.vb: ArcToBulge(Vector2, Double, Double, Double)
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.MathHelper.Epsilon*
+  commentId: Overload:netDxf.MathHelper.Epsilon
+  href: netDxf.MathHelper.html#netDxf_MathHelper_Epsilon
+  name: Epsilon
+  nameWithType: MathHelper.Epsilon
+  fullName: netDxf.MathHelper.Epsilon
+- uid: netDxf.MathHelper.Sign*
+  commentId: Overload:netDxf.MathHelper.Sign
+  href: netDxf.MathHelper.html#netDxf_MathHelper_Sign_System_Double_
+  name: Sign
+  nameWithType: MathHelper.Sign
+  fullName: netDxf.MathHelper.Sign
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.MathHelper.IsOne*
+  commentId: Overload:netDxf.MathHelper.IsOne
+  href: netDxf.MathHelper.html#netDxf_MathHelper_IsOne_System_Double_
+  name: IsOne
+  nameWithType: MathHelper.IsOne
+  fullName: netDxf.MathHelper.IsOne
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.MathHelper.IsZero*
+  commentId: Overload:netDxf.MathHelper.IsZero
+  href: netDxf.MathHelper.html#netDxf_MathHelper_IsZero_System_Double_
+  name: IsZero
+  nameWithType: MathHelper.IsZero
+  fullName: netDxf.MathHelper.IsZero
+- uid: netDxf.MathHelper.IsEqual*
+  commentId: Overload:netDxf.MathHelper.IsEqual
+  href: netDxf.MathHelper.html#netDxf_MathHelper_IsEqual_System_Double_System_Double_
+  name: IsEqual
+  nameWithType: MathHelper.IsEqual
+  fullName: netDxf.MathHelper.IsEqual
+- uid: netDxf.MathHelper.Transform*
+  commentId: Overload:netDxf.MathHelper.Transform
+  href: netDxf.MathHelper.html#netDxf_MathHelper_Transform_netDxf_Vector2_System_Double_netDxf_CoordinateSystem_netDxf_CoordinateSystem_
+  name: Transform
+  nameWithType: MathHelper.Transform
+  fullName: netDxf.MathHelper.Transform
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: netDxf.CoordinateSystem
+  commentId: T:netDxf.CoordinateSystem
+  parent: netDxf
+  href: netDxf.CoordinateSystem.html
+  name: CoordinateSystem
+  nameWithType: CoordinateSystem
+  fullName: netDxf.CoordinateSystem
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector2>
+  nameWithType: IEnumerable<Vector2>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector2>
+  nameWithType.vb: IEnumerable(Of Vector2)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector2)
+  name.vb: IEnumerable(Of Vector2)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: )
+- uid: System.Collections.Generic.List{netDxf.Vector2}
+  commentId: T:System.Collections.Generic.List{netDxf.Vector2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector2>
+  nameWithType: List<Vector2>
+  fullName: System.Collections.Generic.List<netDxf.Vector2>
+  nameWithType.vb: List(Of Vector2)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Vector2)
+  name.vb: List(Of Vector2)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector3>
+  nameWithType: IEnumerable<Vector3>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector3>
+  nameWithType.vb: IEnumerable(Of Vector3)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector3)
+  name.vb: IEnumerable(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.List{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.List{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector3>
+  nameWithType: List<Vector3>
+  fullName: System.Collections.Generic.List<netDxf.Vector3>
+  nameWithType.vb: List(Of Vector3)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Vector3)
+  name.vb: List(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.MathHelper.ArbitraryAxis*
+  commentId: Overload:netDxf.MathHelper.ArbitraryAxis
+  href: netDxf.MathHelper.html#netDxf_MathHelper_ArbitraryAxis_netDxf_Vector3_
+  name: ArbitraryAxis
+  nameWithType: MathHelper.ArbitraryAxis
+  fullName: netDxf.MathHelper.ArbitraryAxis
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.MathHelper.PointLineDistance*
+  commentId: Overload:netDxf.MathHelper.PointLineDistance
+  href: netDxf.MathHelper.html#netDxf_MathHelper_PointLineDistance_netDxf_Vector3_netDxf_Vector3_netDxf_Vector3_
+  name: PointLineDistance
+  nameWithType: MathHelper.PointLineDistance
+  fullName: netDxf.MathHelper.PointLineDistance
+- uid: netDxf.MathHelper.PointInSegment*
+  commentId: Overload:netDxf.MathHelper.PointInSegment
+  href: netDxf.MathHelper.html#netDxf_MathHelper_PointInSegment_netDxf_Vector3_netDxf_Vector3_netDxf_Vector3_
+  name: PointInSegment
+  nameWithType: MathHelper.PointInSegment
+  fullName: netDxf.MathHelper.PointInSegment
+- uid: netDxf.Vector2.NaN
+  commentId: P:netDxf.Vector2.NaN
+  href: netDxf.Vector2.html#netDxf_Vector2_NaN
+  name: NaN
+  nameWithType: Vector2.NaN
+  fullName: netDxf.Vector2.NaN
+- uid: netDxf.MathHelper.FindIntersection*
+  commentId: Overload:netDxf.MathHelper.FindIntersection
+  href: netDxf.MathHelper.html#netDxf_MathHelper_FindIntersection_netDxf_Vector2_netDxf_Vector2_netDxf_Vector2_netDxf_Vector2_
+  name: FindIntersection
+  nameWithType: MathHelper.FindIntersection
+  fullName: netDxf.MathHelper.FindIntersection
+- uid: netDxf.MathHelper.NormalizeAngle*
+  commentId: Overload:netDxf.MathHelper.NormalizeAngle
+  href: netDxf.MathHelper.html#netDxf_MathHelper_NormalizeAngle_System_Double_
+  name: NormalizeAngle
+  nameWithType: MathHelper.NormalizeAngle
+  fullName: netDxf.MathHelper.NormalizeAngle
+- uid: netDxf.MathHelper.RoundToNearest*
+  commentId: Overload:netDxf.MathHelper.RoundToNearest
+  href: netDxf.MathHelper.html#netDxf_MathHelper_RoundToNearest_System_Double_System_Double_
+  name: RoundToNearest
+  nameWithType: MathHelper.RoundToNearest
+  fullName: netDxf.MathHelper.RoundToNearest
+- uid: netDxf.MathHelper.ArcFromBulge*
+  commentId: Overload:netDxf.MathHelper.ArcFromBulge
+  href: netDxf.MathHelper.html#netDxf_MathHelper_ArcFromBulge_netDxf_Vector2_netDxf_Vector2_System_Double_
+  name: ArcFromBulge
+  nameWithType: MathHelper.ArcFromBulge
+  fullName: netDxf.MathHelper.ArcFromBulge
+- uid: System.Tuple{netDxf.Vector2,System.Double,System.Double,System.Double}
+  commentId: T:System.Tuple{netDxf.Vector2,System.Double,System.Double,System.Double}
+  parent: System
+  definition: System.Tuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  name: Tuple<Vector2, double, double, double>
+  nameWithType: Tuple<Vector2, double, double, double>
+  fullName: System.Tuple<netDxf.Vector2, double, double, double>
+  nameWithType.vb: Tuple(Of Vector2, Double, Double, Double)
+  fullName.vb: System.Tuple(Of netDxf.Vector2, Double, Double, Double)
+  name.vb: Tuple(Of Vector2, Double, Double, Double)
+  spec.csharp:
+  - uid: System.Tuple`4
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Tuple`4
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Tuple`4
+  commentId: T:System.Tuple`4
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  name: Tuple<T1, T2, T3, T4>
+  nameWithType: Tuple<T1, T2, T3, T4>
+  fullName: System.Tuple<T1, T2, T3, T4>
+  nameWithType.vb: Tuple(Of T1, T2, T3, T4)
+  fullName.vb: System.Tuple(Of T1, T2, T3, T4)
+  name.vb: Tuple(Of T1, T2, T3, T4)
+  spec.csharp:
+  - uid: System.Tuple`4
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: '>'
+  spec.vb:
+  - uid: System.Tuple`4
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-4
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: netDxf.MathHelper.ArcToBulge*
+  commentId: Overload:netDxf.MathHelper.ArcToBulge
+  href: netDxf.MathHelper.html#netDxf_MathHelper_ArcToBulge_netDxf_Vector2_System_Double_System_Double_System_Double_
+  name: ArcToBulge
+  nameWithType: MathHelper.ArcToBulge
+  fullName: netDxf.MathHelper.ArcToBulge
+- uid: System.Tuple{netDxf.Vector2,netDxf.Vector2,System.Double}
+  commentId: T:System.Tuple{netDxf.Vector2,netDxf.Vector2,System.Double}
+  parent: System
+  definition: System.Tuple`3
+  href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  name: Tuple<Vector2, Vector2, double>
+  nameWithType: Tuple<Vector2, Vector2, double>
+  fullName: System.Tuple<netDxf.Vector2, netDxf.Vector2, double>
+  nameWithType.vb: Tuple(Of Vector2, Vector2, Double)
+  fullName.vb: System.Tuple(Of netDxf.Vector2, netDxf.Vector2, Double)
+  name.vb: Tuple(Of Vector2, Vector2, Double)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )

@@ -1,0 +1,591 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.ViewportStatusFlags
+  commentId: T:netDxf.Entities.ViewportStatusFlags
+  id: ViewportStatusFlags
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.ViewportStatusFlags.AdaptiveGridDisplay
+  - netDxf.Entities.ViewportStatusFlags.BackClipping
+  - netDxf.Entities.ViewportStatusFlags.CurrentlyAlwaysEnabled
+  - netDxf.Entities.ViewportStatusFlags.DisplayGridBeyondDrawingLimits
+  - netDxf.Entities.ViewportStatusFlags.FastZoom
+  - netDxf.Entities.ViewportStatusFlags.FrontClipNotAtEye
+  - netDxf.Entities.ViewportStatusFlags.FrontClipping
+  - netDxf.Entities.ViewportStatusFlags.GridMode
+  - netDxf.Entities.ViewportStatusFlags.HidePlotMode
+  - netDxf.Entities.ViewportStatusFlags.IsoPairRight
+  - netDxf.Entities.ViewportStatusFlags.IsoPairTop
+  - netDxf.Entities.ViewportStatusFlags.IsometricSnapStyle
+  - netDxf.Entities.ViewportStatusFlags.NonRectangularClipping
+  - netDxf.Entities.ViewportStatusFlags.PerspectiveMode
+  - netDxf.Entities.ViewportStatusFlags.SnapMode
+  - netDxf.Entities.ViewportStatusFlags.SubdivisionGridBelowSpacing
+  - netDxf.Entities.ViewportStatusFlags.UcsFollow
+  - netDxf.Entities.ViewportStatusFlags.UcsIconAtOrigin
+  - netDxf.Entities.ViewportStatusFlags.UcsIconVisibility
+  - netDxf.Entities.ViewportStatusFlags.ViewportOff
+  - netDxf.Entities.ViewportStatusFlags.ViewportZoomLocking
+  langs:
+  - csharp
+  - vb
+  name: ViewportStatusFlags
+  nameWithType: ViewportStatusFlags
+  fullName: netDxf.Entities.ViewportStatusFlags
+  type: Enum
+  source:
+    id: ViewportStatusFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 32
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: viewport status flags
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum ViewportStatusFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum ViewportStatusFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Entities.ViewportStatusFlags.PerspectiveMode
+  commentId: F:netDxf.Entities.ViewportStatusFlags.PerspectiveMode
+  id: PerspectiveMode
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: PerspectiveMode
+  nameWithType: ViewportStatusFlags.PerspectiveMode
+  fullName: netDxf.Entities.ViewportStatusFlags.PerspectiveMode
+  type: Field
+  source:
+    id: PerspectiveMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables perspective mode.
+  example: []
+  syntax:
+    content: PerspectiveMode = 1
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.FrontClipping
+  commentId: F:netDxf.Entities.ViewportStatusFlags.FrontClipping
+  id: FrontClipping
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: FrontClipping
+  nameWithType: ViewportStatusFlags.FrontClipping
+  fullName: netDxf.Entities.ViewportStatusFlags.FrontClipping
+  type: Field
+  source:
+    id: FrontClipping
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables front clipping.
+  example: []
+  syntax:
+    content: FrontClipping = 2
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.BackClipping
+  commentId: F:netDxf.Entities.ViewportStatusFlags.BackClipping
+  id: BackClipping
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: BackClipping
+  nameWithType: ViewportStatusFlags.BackClipping
+  fullName: netDxf.Entities.ViewportStatusFlags.BackClipping
+  type: Field
+  source:
+    id: BackClipping
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables back clipping.
+  example: []
+  syntax:
+    content: BackClipping = 4
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.UcsFollow
+  commentId: F:netDxf.Entities.ViewportStatusFlags.UcsFollow
+  id: UcsFollow
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: UcsFollow
+  nameWithType: ViewportStatusFlags.UcsFollow
+  fullName: netDxf.Entities.ViewportStatusFlags.UcsFollow
+  type: Field
+  source:
+    id: UcsFollow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables UCS follow.
+  example: []
+  syntax:
+    content: UcsFollow = 8
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.FrontClipNotAtEye
+  commentId: F:netDxf.Entities.ViewportStatusFlags.FrontClipNotAtEye
+  id: FrontClipNotAtEye
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: FrontClipNotAtEye
+  nameWithType: ViewportStatusFlags.FrontClipNotAtEye
+  fullName: netDxf.Entities.ViewportStatusFlags.FrontClipNotAtEye
+  type: Field
+  source:
+    id: FrontClipNotAtEye
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 58
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables front clip not at eye.
+  example: []
+  syntax:
+    content: FrontClipNotAtEye = 16
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.UcsIconVisibility
+  commentId: F:netDxf.Entities.ViewportStatusFlags.UcsIconVisibility
+  id: UcsIconVisibility
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: UcsIconVisibility
+  nameWithType: ViewportStatusFlags.UcsIconVisibility
+  fullName: netDxf.Entities.ViewportStatusFlags.UcsIconVisibility
+  type: Field
+  source:
+    id: UcsIconVisibility
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 63
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables UCS icon visibility.
+  example: []
+  syntax:
+    content: UcsIconVisibility = 32
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.UcsIconAtOrigin
+  commentId: F:netDxf.Entities.ViewportStatusFlags.UcsIconAtOrigin
+  id: UcsIconAtOrigin
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: UcsIconAtOrigin
+  nameWithType: ViewportStatusFlags.UcsIconAtOrigin
+  fullName: netDxf.Entities.ViewportStatusFlags.UcsIconAtOrigin
+  type: Field
+  source:
+    id: UcsIconAtOrigin
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 68
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables UCS icon at origin.
+  example: []
+  syntax:
+    content: UcsIconAtOrigin = 64
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.FastZoom
+  commentId: F:netDxf.Entities.ViewportStatusFlags.FastZoom
+  id: FastZoom
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: FastZoom
+  nameWithType: ViewportStatusFlags.FastZoom
+  fullName: netDxf.Entities.ViewportStatusFlags.FastZoom
+  type: Field
+  source:
+    id: FastZoom
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 73
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables fast zoom.
+  example: []
+  syntax:
+    content: FastZoom = 128
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.SnapMode
+  commentId: F:netDxf.Entities.ViewportStatusFlags.SnapMode
+  id: SnapMode
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: SnapMode
+  nameWithType: ViewportStatusFlags.SnapMode
+  fullName: netDxf.Entities.ViewportStatusFlags.SnapMode
+  type: Field
+  source:
+    id: SnapMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 78
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables snap mode.
+  example: []
+  syntax:
+    content: SnapMode = 256
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.GridMode
+  commentId: F:netDxf.Entities.ViewportStatusFlags.GridMode
+  id: GridMode
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: GridMode
+  nameWithType: ViewportStatusFlags.GridMode
+  fullName: netDxf.Entities.ViewportStatusFlags.GridMode
+  type: Field
+  source:
+    id: GridMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 83
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables grid mode.
+  example: []
+  syntax:
+    content: GridMode = 512
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.IsometricSnapStyle
+  commentId: F:netDxf.Entities.ViewportStatusFlags.IsometricSnapStyle
+  id: IsometricSnapStyle
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: IsometricSnapStyle
+  nameWithType: ViewportStatusFlags.IsometricSnapStyle
+  fullName: netDxf.Entities.ViewportStatusFlags.IsometricSnapStyle
+  type: Field
+  source:
+    id: IsometricSnapStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 88
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables isometric snap style.
+  example: []
+  syntax:
+    content: IsometricSnapStyle = 1024
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.HidePlotMode
+  commentId: F:netDxf.Entities.ViewportStatusFlags.HidePlotMode
+  id: HidePlotMode
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: HidePlotMode
+  nameWithType: ViewportStatusFlags.HidePlotMode
+  fullName: netDxf.Entities.ViewportStatusFlags.HidePlotMode
+  type: Field
+  source:
+    id: HidePlotMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 93
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables hide plot mode.
+  example: []
+  syntax:
+    content: HidePlotMode = 2048
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.IsoPairTop
+  commentId: F:netDxf.Entities.ViewportStatusFlags.IsoPairTop
+  id: IsoPairTop
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: IsoPairTop
+  nameWithType: ViewportStatusFlags.IsoPairTop
+  fullName: netDxf.Entities.ViewportStatusFlags.IsoPairTop
+  type: Field
+  source:
+    id: IsoPairTop
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 98
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: If set and IsoPairRight is not set, then isopair top is enabled. If both IsoPairTop and IsoPairRight are set, then isopair left is enabled
+  example: []
+  syntax:
+    content: IsoPairTop = 4096
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.IsoPairRight
+  commentId: F:netDxf.Entities.ViewportStatusFlags.IsoPairRight
+  id: IsoPairRight
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: IsoPairRight
+  nameWithType: ViewportStatusFlags.IsoPairRight
+  fullName: netDxf.Entities.ViewportStatusFlags.IsoPairRight
+  type: Field
+  source:
+    id: IsoPairRight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 103
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: If set and IsoPairTop is not set, then isopair right is enabled.
+  example: []
+  syntax:
+    content: IsoPairRight = 8192
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.ViewportZoomLocking
+  commentId: F:netDxf.Entities.ViewportStatusFlags.ViewportZoomLocking
+  id: ViewportZoomLocking
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: ViewportZoomLocking
+  nameWithType: ViewportStatusFlags.ViewportZoomLocking
+  fullName: netDxf.Entities.ViewportStatusFlags.ViewportZoomLocking
+  type: Field
+  source:
+    id: ViewportZoomLocking
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 108
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables viewport zoom locking.
+  example: []
+  syntax:
+    content: ViewportZoomLocking = 16384
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.CurrentlyAlwaysEnabled
+  commentId: F:netDxf.Entities.ViewportStatusFlags.CurrentlyAlwaysEnabled
+  id: CurrentlyAlwaysEnabled
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: CurrentlyAlwaysEnabled
+  nameWithType: ViewportStatusFlags.CurrentlyAlwaysEnabled
+  fullName: netDxf.Entities.ViewportStatusFlags.CurrentlyAlwaysEnabled
+  type: Field
+  source:
+    id: CurrentlyAlwaysEnabled
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 113
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Currently always enabled.
+  example: []
+  syntax:
+    content: CurrentlyAlwaysEnabled = 32768
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.NonRectangularClipping
+  commentId: F:netDxf.Entities.ViewportStatusFlags.NonRectangularClipping
+  id: NonRectangularClipping
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: NonRectangularClipping
+  nameWithType: ViewportStatusFlags.NonRectangularClipping
+  fullName: netDxf.Entities.ViewportStatusFlags.NonRectangularClipping
+  type: Field
+  source:
+    id: NonRectangularClipping
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 118
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables non-rectangular clipping.
+  example: []
+  syntax:
+    content: NonRectangularClipping = 65536
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.ViewportOff
+  commentId: F:netDxf.Entities.ViewportStatusFlags.ViewportOff
+  id: ViewportOff
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: ViewportOff
+  nameWithType: ViewportStatusFlags.ViewportOff
+  fullName: netDxf.Entities.ViewportStatusFlags.ViewportOff
+  type: Field
+  source:
+    id: ViewportOff
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 123
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Turns the viewport off.
+  example: []
+  syntax:
+    content: ViewportOff = 131072
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.DisplayGridBeyondDrawingLimits
+  commentId: F:netDxf.Entities.ViewportStatusFlags.DisplayGridBeyondDrawingLimits
+  id: DisplayGridBeyondDrawingLimits
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: DisplayGridBeyondDrawingLimits
+  nameWithType: ViewportStatusFlags.DisplayGridBeyondDrawingLimits
+  fullName: netDxf.Entities.ViewportStatusFlags.DisplayGridBeyondDrawingLimits
+  type: Field
+  source:
+    id: DisplayGridBeyondDrawingLimits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 128
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables the display of the grid beyond the drawing limits.
+  example: []
+  syntax:
+    content: DisplayGridBeyondDrawingLimits = 262144
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.AdaptiveGridDisplay
+  commentId: F:netDxf.Entities.ViewportStatusFlags.AdaptiveGridDisplay
+  id: AdaptiveGridDisplay
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: AdaptiveGridDisplay
+  nameWithType: ViewportStatusFlags.AdaptiveGridDisplay
+  fullName: netDxf.Entities.ViewportStatusFlags.AdaptiveGridDisplay
+  type: Field
+  source:
+    id: AdaptiveGridDisplay
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 133
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enable adaptive grid display.
+  example: []
+  syntax:
+    content: AdaptiveGridDisplay = 524288
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+- uid: netDxf.Entities.ViewportStatusFlags.SubdivisionGridBelowSpacing
+  commentId: F:netDxf.Entities.ViewportStatusFlags.SubdivisionGridBelowSpacing
+  id: SubdivisionGridBelowSpacing
+  parent: netDxf.Entities.ViewportStatusFlags
+  langs:
+  - csharp
+  - vb
+  name: SubdivisionGridBelowSpacing
+  nameWithType: ViewportStatusFlags.SubdivisionGridBelowSpacing
+  fullName: netDxf.Entities.ViewportStatusFlags.SubdivisionGridBelowSpacing
+  type: Field
+  source:
+    id: SubdivisionGridBelowSpacing
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ViewportStatusFlags.cs
+    startLine: 138
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Enables subdivision of the grid below the set grid spacing when the grid display is adaptive.
+  example: []
+  syntax:
+    content: SubdivisionGridBelowSpacing = 1048576
+    return:
+      type: netDxf.Entities.ViewportStatusFlags
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.ViewportStatusFlags
+  commentId: T:netDxf.Entities.ViewportStatusFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.ViewportStatusFlags.html
+  name: ViewportStatusFlags
+  nameWithType: ViewportStatusFlags
+  fullName: netDxf.Entities.ViewportStatusFlags

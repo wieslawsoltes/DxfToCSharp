@@ -1,0 +1,1732 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.MLine
+  commentId: T:netDxf.Entities.MLine
+  id: MLine
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.MLine.#ctor
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Boolean)
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double)
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,System.Boolean)
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double)
+  - netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double,System.Boolean)
+  - netDxf.Entities.MLine.Clone
+  - netDxf.Entities.MLine.Elevation
+  - netDxf.Entities.MLine.Explode
+  - netDxf.Entities.MLine.IsClosed
+  - netDxf.Entities.MLine.Justification
+  - netDxf.Entities.MLine.MLineStyleChanged
+  - netDxf.Entities.MLine.NoEndCaps
+  - netDxf.Entities.MLine.NoStartCaps
+  - netDxf.Entities.MLine.OnMLineStyleChangedEvent(netDxf.Objects.MLineStyle,netDxf.Objects.MLineStyle)
+  - netDxf.Entities.MLine.Scale
+  - netDxf.Entities.MLine.Style
+  - netDxf.Entities.MLine.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  - netDxf.Entities.MLine.Update
+  - netDxf.Entities.MLine.Vertexes
+  langs:
+  - csharp
+  - vb
+  name: MLine
+  nameWithType: MLine
+  fullName: netDxf.Entities.MLine
+  type: Class
+  source:
+    id: MLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a multiline <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class MLine : EntityObject, ICloneable'
+    content.vb: Public Class MLine Inherits EntityObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.MLine.MLineStyleChanged
+  commentId: E:netDxf.Entities.MLine.MLineStyleChanged
+  id: MLineStyleChanged
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLineStyleChanged
+  nameWithType: MLine.MLineStyleChanged
+  fullName: netDxf.Entities.MLine.MLineStyleChanged
+  type: Event
+  source:
+    id: MLineStyleChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public event MLine.MLineStyleChangedEventHandler MLineStyleChanged
+    return:
+      type: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+    content.vb: Public Event MLineStyleChanged As MLine.MLineStyleChangedEventHandler
+- uid: netDxf.Entities.MLine.OnMLineStyleChangedEvent(netDxf.Objects.MLineStyle,netDxf.Objects.MLineStyle)
+  commentId: M:netDxf.Entities.MLine.OnMLineStyleChangedEvent(netDxf.Objects.MLineStyle,netDxf.Objects.MLineStyle)
+  id: OnMLineStyleChangedEvent(netDxf.Objects.MLineStyle,netDxf.Objects.MLineStyle)
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: OnMLineStyleChangedEvent(MLineStyle, MLineStyle)
+  nameWithType: MLine.OnMLineStyleChangedEvent(MLineStyle, MLineStyle)
+  fullName: netDxf.Entities.MLine.OnMLineStyleChangedEvent(netDxf.Objects.MLineStyle, netDxf.Objects.MLineStyle)
+  type: Method
+  source:
+    id: OnMLineStyleChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 42
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: protected virtual MLineStyle OnMLineStyleChangedEvent(MLineStyle oldMLineStyle, MLineStyle newMLineStyle)
+    parameters:
+    - id: oldMLineStyle
+      type: netDxf.Objects.MLineStyle
+    - id: newMLineStyle
+      type: netDxf.Objects.MLineStyle
+    return:
+      type: netDxf.Objects.MLineStyle
+    content.vb: Protected Overridable Function OnMLineStyleChangedEvent(oldMLineStyle As MLineStyle, newMLineStyle As MLineStyle) As MLineStyle
+  overload: netDxf.Entities.MLine.OnMLineStyleChangedEvent*
+- uid: netDxf.Entities.MLine.#ctor
+  commentId: M:netDxf.Entities.MLine.#ctor
+  id: '#ctor'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine()
+  nameWithType: MLine.MLine()
+  fullName: netDxf.Entities.MLine.MLine()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 72
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine()
+    content.vb: Public Sub New()
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New()
+  fullName.vb: netDxf.Entities.MLine.New()
+  name.vb: New()
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 81
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Multiline <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2))
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2))
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2))
+  name.vb: New(IEnumerable(Of Vector2))
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Boolean)
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Boolean)'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>, bool)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>, bool)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 91
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes, bool isClosed)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Multiline <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    - id: isClosed
+      type: System.Boolean
+      description: 'Sets if the multiline is closed  (default: false).'
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2), isClosed As Boolean)
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2), Boolean)
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), Boolean)
+  name.vb: New(IEnumerable(Of Vector2), Boolean)
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double)
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double)'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>, double)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>, double)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 101
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes, double scale)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Multiline <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    - id: scale
+      type: System.Double
+      description: Multiline scale.
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2), scale As Double)
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2), Double)
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), Double)
+  name.vb: New(IEnumerable(Of Vector2), Double)
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,System.Boolean)
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},System.Double,System.Boolean)'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>, double, bool)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>, double, bool)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>, double, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 112
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes, double scale, bool isClosed)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: Multiline <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    - id: scale
+      type: System.Double
+      description: Multiline scale.
+    - id: isClosed
+      type: System.Boolean
+      description: 'Sets if the multiline is closed (default: false).'
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2), scale As Double, isClosed As Boolean)
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2), Double, Boolean)
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), Double, Boolean)
+  name.vb: New(IEnumerable(Of Vector2), Double, Boolean)
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double)
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double)'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>, MLineStyle, double)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>, MLineStyle, double)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>, netDxf.Objects.MLineStyle, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 123
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes, MLineStyle style, double scale)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: MLine <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    - id: style
+      type: netDxf.Objects.MLineStyle
+      description: MLine <xref href="netDxf.Objects.MLineStyle?text=style." data-throw-if-not-resolved="false"></xref>
+    - id: scale
+      type: System.Double
+      description: MLine scale.
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2), style As MLineStyle, scale As Double)
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2), MLineStyle, Double)
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), netDxf.Objects.MLineStyle, Double)
+  name.vb: New(IEnumerable(Of Vector2), MLineStyle, Double)
+- uid: netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double,System.Boolean)
+  commentId: M:netDxf.Entities.MLine.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double,System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2},netDxf.Objects.MLineStyle,System.Double,System.Boolean)'
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: MLine(IEnumerable<Vector2>, MLineStyle, double, bool)
+  nameWithType: MLine.MLine(IEnumerable<Vector2>, MLineStyle, double, bool)
+  fullName: netDxf.Entities.MLine.MLine(System.Collections.Generic.IEnumerable<netDxf.Vector2>, netDxf.Objects.MLineStyle, double, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 135
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>MLine</code> class.
+  example: []
+  syntax:
+    content: public MLine(IEnumerable<Vector2> vertexes, MLineStyle style, double scale, bool isClosed)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: MLine <xref href="netDxf.Vector2?text=vertex" data-throw-if-not-resolved="false"></xref> location list in object coordinates.
+    - id: style
+      type: netDxf.Objects.MLineStyle
+      description: MLine <xref href="netDxf.Objects.MLineStyle?text=style." data-throw-if-not-resolved="false"></xref>
+    - id: scale
+      type: System.Double
+      description: MLine scale.
+    - id: isClosed
+      type: System.Boolean
+      description: 'Sets if the multiline is closed (default: false).'
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2), style As MLineStyle, scale As Double, isClosed As Boolean)
+  overload: netDxf.Entities.MLine.#ctor*
+  nameWithType.vb: MLine.New(IEnumerable(Of Vector2), MLineStyle, Double, Boolean)
+  fullName.vb: netDxf.Entities.MLine.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2), netDxf.Objects.MLineStyle, Double, Boolean)
+  name.vb: New(IEnumerable(Of Vector2), MLineStyle, Double, Boolean)
+- uid: netDxf.Entities.MLine.Vertexes
+  commentId: P:netDxf.Entities.MLine.Vertexes
+  id: Vertexes
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Vertexes
+  nameWithType: MLine.Vertexes
+  fullName: netDxf.Entities.MLine.Vertexes
+  type: Property
+  source:
+    id: Vertexes
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 175
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the multiline <xref href="netDxf.Entities.MLineVertex?text=vertexes" data-throw-if-not-resolved="false"></xref> list.
+  example: []
+  syntax:
+    content: public List<MLineVertex> Vertexes { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{netDxf.Entities.MLineVertex}
+    content.vb: Public ReadOnly Property Vertexes As List(Of MLineVertex)
+  overload: netDxf.Entities.MLine.Vertexes*
+- uid: netDxf.Entities.MLine.Elevation
+  commentId: P:netDxf.Entities.MLine.Elevation
+  id: Elevation
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Elevation
+  nameWithType: MLine.Elevation
+  fullName: netDxf.Entities.MLine.Elevation
+  type: Property
+  source:
+    id: Elevation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 183
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the multiline elevation.
+  example: []
+  syntax:
+    content: public double Elevation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Elevation As Double
+  overload: netDxf.Entities.MLine.Elevation*
+- uid: netDxf.Entities.MLine.Scale
+  commentId: P:netDxf.Entities.MLine.Scale
+  id: Scale
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Scale
+  nameWithType: MLine.Scale
+  fullName: netDxf.Entities.MLine.Scale
+  type: Property
+  source:
+    id: Scale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 192
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the multiline scale.
+  example: []
+  syntax:
+    content: public double Scale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Scale As Double
+  overload: netDxf.Entities.MLine.Scale*
+- uid: netDxf.Entities.MLine.IsClosed
+  commentId: P:netDxf.Entities.MLine.IsClosed
+  id: IsClosed
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: IsClosed
+  nameWithType: MLine.IsClosed
+  fullName: netDxf.Entities.MLine.IsClosed
+  type: Property
+  source:
+    id: IsClosed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 201
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets if the multiline is closed.
+  example: []
+  syntax:
+    content: public bool IsClosed { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsClosed As Boolean
+  overload: netDxf.Entities.MLine.IsClosed*
+- uid: netDxf.Entities.MLine.NoStartCaps
+  commentId: P:netDxf.Entities.MLine.NoStartCaps
+  id: NoStartCaps
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: NoStartCaps
+  nameWithType: MLine.NoStartCaps
+  fullName: netDxf.Entities.MLine.NoStartCaps
+  type: Property
+  source:
+    id: NoStartCaps
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 220
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the suppression of start caps.
+  example: []
+  syntax:
+    content: public bool NoStartCaps { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property NoStartCaps As Boolean
+  overload: netDxf.Entities.MLine.NoStartCaps*
+- uid: netDxf.Entities.MLine.NoEndCaps
+  commentId: P:netDxf.Entities.MLine.NoEndCaps
+  id: NoEndCaps
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: NoEndCaps
+  nameWithType: MLine.NoEndCaps
+  fullName: netDxf.Entities.MLine.NoEndCaps
+  type: Property
+  source:
+    id: NoEndCaps
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 239
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the suppression of end caps.
+  example: []
+  syntax:
+    content: public bool NoEndCaps { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property NoEndCaps As Boolean
+  overload: netDxf.Entities.MLine.NoEndCaps*
+- uid: netDxf.Entities.MLine.Justification
+  commentId: P:netDxf.Entities.MLine.Justification
+  id: Justification
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Justification
+  nameWithType: MLine.Justification
+  fullName: netDxf.Entities.MLine.Justification
+  type: Property
+  source:
+    id: Justification
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 258
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the multiline justification.
+  example: []
+  syntax:
+    content: public MLineJustification Justification { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.MLineJustification
+    content.vb: Public Property Justification As MLineJustification
+  overload: netDxf.Entities.MLine.Justification*
+- uid: netDxf.Entities.MLine.Style
+  commentId: P:netDxf.Entities.MLine.Style
+  id: Style
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Style
+  nameWithType: MLine.Style
+  fullName: netDxf.Entities.MLine.Style
+  type: Property
+  source:
+    id: Style
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 267
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or set the multiline style.
+  example: []
+  syntax:
+    content: public MLineStyle Style { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Objects.MLineStyle
+    content.vb: Public Property Style As MLineStyle
+  overload: netDxf.Entities.MLine.Style*
+- uid: netDxf.Entities.MLine.Update
+  commentId: M:netDxf.Entities.MLine.Update
+  id: Update
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: MLine.Update()
+  fullName: netDxf.Entities.MLine.Update()
+  type: Method
+  source:
+    id: Update
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 399
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Calculates the internal information of the multiline vertexes.
+  remarks: >-
+    <p>
+
+    This function needs to be called manually when any modification is done that affects the final shape of the multiline.
+
+    </p>
+
+    <p>
+
+    If the vertex distance list needs to be edited to represent trimmed multilines this function needs to be called prior to any modification.
+
+    It will calculate the minimum information needed to build a correct multiline.
+
+    </p>
+  example: []
+  syntax:
+    content: public void Update()
+    content.vb: Public Sub Update()
+  overload: netDxf.Entities.MLine.Update*
+- uid: netDxf.Entities.MLine.Explode
+  commentId: M:netDxf.Entities.MLine.Explode
+  id: Explode
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Explode()
+  nameWithType: MLine.Explode()
+  fullName: netDxf.Entities.MLine.Explode()
+  type: Method
+  source:
+    id: Explode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 520
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Decompose the actual multiline in its internal entities, <xref href="netDxf.Entities.Line?text=lines" data-throw-if-not-resolved="false"></xref> and <xref href="netDxf.Entities.Arc?text=arcs" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public List<EntityObject> Explode()
+    return:
+      type: System.Collections.Generic.List{netDxf.Entities.EntityObject}
+      description: A list of <xref href="netDxf.Entities.Line?text=lines" data-throw-if-not-resolved="false"></xref> and <xref href="netDxf.Entities.Arc?text=arcs" data-throw-if-not-resolved="false"></xref> that made up the multiline.
+    content.vb: Public Function Explode() As List(Of EntityObject)
+  overload: netDxf.Entities.MLine.Explode*
+- uid: netDxf.Entities.MLine.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.MLine.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: MLine.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.MLine.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 724
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: >-
+    Non-uniform scaling is not supported for multilines.
+
+    Explode the entity and, in case round end caps has been applied, convert the arcs into ellipse arcs and transform them instead.<br />
+
+    Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.MLine.TransformBy*
+- uid: netDxf.Entities.MLine.Clone
+  commentId: M:netDxf.Entities.MLine.Clone
+  id: Clone
+  parent: netDxf.Entities.MLine
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: MLine.Clone()
+  fullName: netDxf.Entities.MLine.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MLine.cs
+    startLine: 787
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new MLine that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new MLine that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.MLine.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+  commentId: T:netDxf.Entities.MLine.MLineStyleChangedEventHandler
+  parent: netDxf.Entities
+  href: netDxf.Entities.MLine.html
+  name: MLine.MLineStyleChangedEventHandler
+  nameWithType: MLine.MLineStyleChangedEventHandler
+  fullName: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Entities.MLine
+    name: MLine
+    href: netDxf.Entities.MLine.html
+  - name: .
+  - uid: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+    name: MLineStyleChangedEventHandler
+    href: netDxf.Entities.MLine.MLineStyleChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Entities.MLine
+    name: MLine
+    href: netDxf.Entities.MLine.html
+  - name: .
+  - uid: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+    name: MLineStyleChangedEventHandler
+    href: netDxf.Entities.MLine.MLineStyleChangedEventHandler.html
+- uid: netDxf.Entities.MLine.OnMLineStyleChangedEvent*
+  commentId: Overload:netDxf.Entities.MLine.OnMLineStyleChangedEvent
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_OnMLineStyleChangedEvent_netDxf_Objects_MLineStyle_netDxf_Objects_MLineStyle_
+  name: OnMLineStyleChangedEvent
+  nameWithType: MLine.OnMLineStyleChangedEvent
+  fullName: netDxf.Entities.MLine.OnMLineStyleChangedEvent
+- uid: netDxf.Objects.MLineStyle
+  commentId: T:netDxf.Objects.MLineStyle
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle
+  nameWithType: MLineStyle
+  fullName: netDxf.Objects.MLineStyle
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Entities.MLine.#ctor*
+  commentId: Overload:netDxf.Entities.MLine.#ctor
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine__ctor
+  name: MLine
+  nameWithType: MLine.MLine
+  fullName: netDxf.Entities.MLine.MLine
+  nameWithType.vb: MLine.New
+  fullName.vb: netDxf.Entities.MLine.New
+  name.vb: New
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector2>
+  nameWithType: IEnumerable<Vector2>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector2>
+  nameWithType.vb: IEnumerable(Of Vector2)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector2)
+  name.vb: IEnumerable(Of Vector2)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Entities.MLineVertex
+  commentId: T:netDxf.Entities.MLineVertex
+  href: netDxf.Entities.MLineVertex.html
+  name: MLineVertex
+  nameWithType: MLineVertex
+  fullName: netDxf.Entities.MLineVertex
+- uid: netDxf.Entities.MLine.Vertexes*
+  commentId: Overload:netDxf.Entities.MLine.Vertexes
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Vertexes
+  name: Vertexes
+  nameWithType: MLine.Vertexes
+  fullName: netDxf.Entities.MLine.Vertexes
+- uid: System.Collections.Generic.List{netDxf.Entities.MLineVertex}
+  commentId: T:System.Collections.Generic.List{netDxf.Entities.MLineVertex}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<MLineVertex>
+  nameWithType: List<MLineVertex>
+  fullName: System.Collections.Generic.List<netDxf.Entities.MLineVertex>
+  nameWithType.vb: List(Of MLineVertex)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Entities.MLineVertex)
+  name.vb: List(Of MLineVertex)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Entities.MLineVertex
+    name: MLineVertex
+    href: netDxf.Entities.MLineVertex.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.MLineVertex
+    name: MLineVertex
+    href: netDxf.Entities.MLineVertex.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Entities.MLine.Elevation*
+  commentId: Overload:netDxf.Entities.MLine.Elevation
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Elevation
+  name: Elevation
+  nameWithType: MLine.Elevation
+  fullName: netDxf.Entities.MLine.Elevation
+- uid: netDxf.Entities.MLine.Scale*
+  commentId: Overload:netDxf.Entities.MLine.Scale
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Scale
+  name: Scale
+  nameWithType: MLine.Scale
+  fullName: netDxf.Entities.MLine.Scale
+- uid: netDxf.Entities.MLine.IsClosed*
+  commentId: Overload:netDxf.Entities.MLine.IsClosed
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_IsClosed
+  name: IsClosed
+  nameWithType: MLine.IsClosed
+  fullName: netDxf.Entities.MLine.IsClosed
+- uid: netDxf.Entities.MLine.NoStartCaps*
+  commentId: Overload:netDxf.Entities.MLine.NoStartCaps
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_NoStartCaps
+  name: NoStartCaps
+  nameWithType: MLine.NoStartCaps
+  fullName: netDxf.Entities.MLine.NoStartCaps
+- uid: netDxf.Entities.MLine.NoEndCaps*
+  commentId: Overload:netDxf.Entities.MLine.NoEndCaps
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_NoEndCaps
+  name: NoEndCaps
+  nameWithType: MLine.NoEndCaps
+  fullName: netDxf.Entities.MLine.NoEndCaps
+- uid: netDxf.Entities.MLine.Justification*
+  commentId: Overload:netDxf.Entities.MLine.Justification
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Justification
+  name: Justification
+  nameWithType: MLine.Justification
+  fullName: netDxf.Entities.MLine.Justification
+- uid: netDxf.Entities.MLineJustification
+  commentId: T:netDxf.Entities.MLineJustification
+  parent: netDxf.Entities
+  href: netDxf.Entities.MLineJustification.html
+  name: MLineJustification
+  nameWithType: MLineJustification
+  fullName: netDxf.Entities.MLineJustification
+- uid: netDxf.Entities.MLine.Style*
+  commentId: Overload:netDxf.Entities.MLine.Style
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Style
+  name: Style
+  nameWithType: MLine.Style
+  fullName: netDxf.Entities.MLine.Style
+- uid: netDxf.Entities.MLine.Update*
+  commentId: Overload:netDxf.Entities.MLine.Update
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Update
+  name: Update
+  nameWithType: MLine.Update
+  fullName: netDxf.Entities.MLine.Update
+- uid: netDxf.Entities.Line
+  commentId: T:netDxf.Entities.Line
+  parent: netDxf.Entities
+  href: netDxf.Entities.Line.html
+  name: Line
+  nameWithType: Line
+  fullName: netDxf.Entities.Line
+- uid: netDxf.Entities.Arc
+  commentId: T:netDxf.Entities.Arc
+  parent: netDxf.Entities
+  href: netDxf.Entities.Arc.html
+  name: Arc
+  nameWithType: Arc
+  fullName: netDxf.Entities.Arc
+- uid: netDxf.Entities.MLine.Explode*
+  commentId: Overload:netDxf.Entities.MLine.Explode
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Explode
+  name: Explode
+  nameWithType: MLine.Explode
+  fullName: netDxf.Entities.MLine.Explode
+- uid: System.Collections.Generic.List{netDxf.Entities.EntityObject}
+  commentId: T:System.Collections.Generic.List{netDxf.Entities.EntityObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<EntityObject>
+  nameWithType: List<EntityObject>
+  fullName: System.Collections.Generic.List<netDxf.Entities.EntityObject>
+  nameWithType.vb: List(Of EntityObject)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Entities.EntityObject)
+  name.vb: List(Of EntityObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.MLine.TransformBy*
+  commentId: Overload:netDxf.Entities.MLine.TransformBy
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: MLine.TransformBy
+  fullName: netDxf.Entities.MLine.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.MLine.Clone*
+  commentId: Overload:netDxf.Entities.MLine.Clone
+  href: netDxf.Entities.MLine.html#netDxf_Entities_MLine_Clone
+  name: Clone
+  nameWithType: MLine.Clone
+  fullName: netDxf.Entities.MLine.Clone

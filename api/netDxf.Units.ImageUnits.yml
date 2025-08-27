@@ -1,0 +1,282 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units.ImageUnits
+  commentId: T:netDxf.Units.ImageUnits
+  id: ImageUnits
+  parent: netDxf.Units
+  children:
+  - netDxf.Units.ImageUnits.Centimeters
+  - netDxf.Units.ImageUnits.Feet
+  - netDxf.Units.ImageUnits.Inches
+  - netDxf.Units.ImageUnits.Kilometers
+  - netDxf.Units.ImageUnits.Meters
+  - netDxf.Units.ImageUnits.Miles
+  - netDxf.Units.ImageUnits.Millimeters
+  - netDxf.Units.ImageUnits.Unitless
+  - netDxf.Units.ImageUnits.Yards
+  langs:
+  - csharp
+  - vb
+  name: ImageUnits
+  nameWithType: ImageUnits
+  fullName: netDxf.Units.ImageUnits
+  type: Enum
+  source:
+    id: ImageUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: AutoCAD units for inserting images.
+  remarks: This is what one AutoCAD unit is equal to for the purpose of inserting and scaling images with an associated resolution.
+  example: []
+  syntax:
+    content: public enum ImageUnits
+    content.vb: Public Enum ImageUnits
+- uid: netDxf.Units.ImageUnits.Unitless
+  commentId: F:netDxf.Units.ImageUnits.Unitless
+  id: Unitless
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Unitless
+  nameWithType: ImageUnits.Unitless
+  fullName: netDxf.Units.ImageUnits.Unitless
+  type: Field
+  source:
+    id: Unitless
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: No units.
+  example: []
+  syntax:
+    content: Unitless = 0
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Millimeters
+  commentId: F:netDxf.Units.ImageUnits.Millimeters
+  id: Millimeters
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Millimeters
+  nameWithType: ImageUnits.Millimeters
+  fullName: netDxf.Units.ImageUnits.Millimeters
+  type: Field
+  source:
+    id: Millimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Millimeters.
+  example: []
+  syntax:
+    content: Millimeters = 1
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Centimeters
+  commentId: F:netDxf.Units.ImageUnits.Centimeters
+  id: Centimeters
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Centimeters
+  nameWithType: ImageUnits.Centimeters
+  fullName: netDxf.Units.ImageUnits.Centimeters
+  type: Field
+  source:
+    id: Centimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Centimeters.
+  example: []
+  syntax:
+    content: Centimeters = 2
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Meters
+  commentId: F:netDxf.Units.ImageUnits.Meters
+  id: Meters
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Meters
+  nameWithType: ImageUnits.Meters
+  fullName: netDxf.Units.ImageUnits.Meters
+  type: Field
+  source:
+    id: Meters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Meters.
+  example: []
+  syntax:
+    content: Meters = 3
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Kilometers
+  commentId: F:netDxf.Units.ImageUnits.Kilometers
+  id: Kilometers
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Kilometers
+  nameWithType: ImageUnits.Kilometers
+  fullName: netDxf.Units.ImageUnits.Kilometers
+  type: Field
+  source:
+    id: Kilometers
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 58
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Kilometers.
+  example: []
+  syntax:
+    content: Kilometers = 4
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Inches
+  commentId: F:netDxf.Units.ImageUnits.Inches
+  id: Inches
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Inches
+  nameWithType: ImageUnits.Inches
+  fullName: netDxf.Units.ImageUnits.Inches
+  type: Field
+  source:
+    id: Inches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 63
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Inches.
+  example: []
+  syntax:
+    content: Inches = 5
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Feet
+  commentId: F:netDxf.Units.ImageUnits.Feet
+  id: Feet
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Feet
+  nameWithType: ImageUnits.Feet
+  fullName: netDxf.Units.ImageUnits.Feet
+  type: Field
+  source:
+    id: Feet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 68
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Feet.
+  example: []
+  syntax:
+    content: Feet = 6
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Yards
+  commentId: F:netDxf.Units.ImageUnits.Yards
+  id: Yards
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Yards
+  nameWithType: ImageUnits.Yards
+  fullName: netDxf.Units.ImageUnits.Yards
+  type: Field
+  source:
+    id: Yards
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 73
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Yards.
+  example: []
+  syntax:
+    content: Yards = 7
+    return:
+      type: netDxf.Units.ImageUnits
+- uid: netDxf.Units.ImageUnits.Miles
+  commentId: F:netDxf.Units.ImageUnits.Miles
+  id: Miles
+  parent: netDxf.Units.ImageUnits
+  langs:
+  - csharp
+  - vb
+  name: Miles
+  nameWithType: ImageUnits.Miles
+  fullName: netDxf.Units.ImageUnits.Miles
+  type: Field
+  source:
+    id: Miles
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageUnits.cs
+    startLine: 78
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Miles.
+  example: []
+  syntax:
+    content: Miles = 8
+    return:
+      type: netDxf.Units.ImageUnits
+references:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Units.ImageUnits
+  commentId: T:netDxf.Units.ImageUnits
+  parent: netDxf.Units
+  href: netDxf.Units.ImageUnits.html
+  name: ImageUnits
+  nameWithType: ImageUnits
+  fullName: netDxf.Units.ImageUnits

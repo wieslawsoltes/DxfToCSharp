@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Blocks.Block.EntityAddedEventHandler
+  commentId: T:netDxf.Blocks.Block.EntityAddedEventHandler
+  id: Block.EntityAddedEventHandler
+  parent: netDxf.Blocks
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Block.EntityAddedEventHandler
+  nameWithType: Block.EntityAddedEventHandler
+  fullName: netDxf.Blocks.Block.EntityAddedEventHandler
+  type: Delegate
+  source:
+    id: EntityAddedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Blocks/Block.cs
+    startLine: 58
+  assemblies:
+  - netDxf
+  namespace: netDxf.Blocks
+  syntax:
+    content: public delegate void Block.EntityAddedEventHandler(Block sender, BlockEntityChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Blocks.Block
+    - id: e
+      type: netDxf.Blocks.BlockEntityChangeEventArgs
+    content.vb: Public Delegate Sub Block.EntityAddedEventHandler(sender As Block, e As BlockEntityChangeEventArgs)
+references:
+- uid: netDxf.Blocks
+  commentId: N:netDxf.Blocks
+  href: netDxf.html
+  name: netDxf.Blocks
+  nameWithType: netDxf.Blocks
+  fullName: netDxf.Blocks
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+- uid: netDxf.Blocks.Block
+  commentId: T:netDxf.Blocks.Block
+  parent: netDxf.Blocks
+  href: netDxf.Blocks.Block.html
+  name: Block
+  nameWithType: Block
+  fullName: netDxf.Blocks.Block
+- uid: netDxf.Blocks.BlockEntityChangeEventArgs
+  commentId: T:netDxf.Blocks.BlockEntityChangeEventArgs
+  parent: netDxf.Blocks
+  href: netDxf.Blocks.BlockEntityChangeEventArgs.html
+  name: BlockEntityChangeEventArgs
+  nameWithType: BlockEntityChangeEventArgs
+  fullName: netDxf.Blocks.BlockEntityChangeEventArgs

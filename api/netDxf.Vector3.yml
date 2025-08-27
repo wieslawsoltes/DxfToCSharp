@@ -1,0 +1,2722 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  id: Vector3
+  parent: netDxf
+  children:
+  - netDxf.Vector3.#ctor(System.Double)
+  - netDxf.Vector3.#ctor(System.Double,System.Double,System.Double)
+  - netDxf.Vector3.#ctor(System.Double[])
+  - netDxf.Vector3.Add(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.AngleBetween(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3,System.Double)
+  - netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3,System.Double)
+  - netDxf.Vector3.CrossProduct(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Distance(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Divide(netDxf.Vector3,System.Double)
+  - netDxf.Vector3.Divide(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.DotProduct(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Equals(System.Object)
+  - netDxf.Vector3.Equals(netDxf.Vector3)
+  - netDxf.Vector3.Equals(netDxf.Vector3,System.Double)
+  - netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3,System.Double)
+  - netDxf.Vector3.GetHashCode
+  - netDxf.Vector3.IsNaN(netDxf.Vector3)
+  - netDxf.Vector3.IsNormalized
+  - netDxf.Vector3.IsZero(netDxf.Vector3)
+  - netDxf.Vector3.Item(System.Int32)
+  - netDxf.Vector3.MidPoint(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Modulus
+  - netDxf.Vector3.Multiply(System.Double,netDxf.Vector3)
+  - netDxf.Vector3.Multiply(netDxf.Vector3,System.Double)
+  - netDxf.Vector3.Multiply(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.NaN
+  - netDxf.Vector3.Negate(netDxf.Vector3)
+  - netDxf.Vector3.Normalize
+  - netDxf.Vector3.Normalize(netDxf.Vector3)
+  - netDxf.Vector3.RotateAroundAxis(netDxf.Vector3,netDxf.Vector3,System.Double)
+  - netDxf.Vector3.Round(netDxf.Vector3,System.Int32)
+  - netDxf.Vector3.SquareDistance(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.Subtract(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.ToArray
+  - netDxf.Vector3.ToString
+  - netDxf.Vector3.ToString(System.IFormatProvider)
+  - netDxf.Vector3.UnitX
+  - netDxf.Vector3.UnitY
+  - netDxf.Vector3.UnitZ
+  - netDxf.Vector3.X
+  - netDxf.Vector3.Y
+  - netDxf.Vector3.Z
+  - netDxf.Vector3.Zero
+  - netDxf.Vector3.op_Addition(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_Division(netDxf.Vector3,System.Double)
+  - netDxf.Vector3.op_Division(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_Equality(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_Inequality(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_Multiply(System.Double,netDxf.Vector3)
+  - netDxf.Vector3.op_Multiply(netDxf.Vector3,System.Double)
+  - netDxf.Vector3.op_Multiply(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_Subtraction(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Vector3.op_UnaryNegation(netDxf.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+  type: Struct
+  source:
+    id: Vector3
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Represent a three component vector of double precision.
+  example: []
+  syntax:
+    content: 'public struct Vector3 : IEquatable<Vector3>'
+    content.vb: Public Structure Vector3 Implements IEquatable(Of Vector3)
+  implements:
+  - System.IEquatable{netDxf.Vector3}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+- uid: netDxf.Vector3.#ctor(System.Double)
+  commentId: M:netDxf.Vector3.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Vector3(double)
+  nameWithType: Vector3.Vector3(double)
+  fullName: netDxf.Vector3.Vector3(double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 51
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of Vector3.
+  example: []
+  syntax:
+    content: public Vector3(double value)
+    parameters:
+    - id: value
+      type: System.Double
+      description: X, Y, Z component.
+    content.vb: Public Sub New(value As Double)
+  overload: netDxf.Vector3.#ctor*
+  nameWithType.vb: Vector3.New(Double)
+  fullName.vb: netDxf.Vector3.New(Double)
+  name.vb: New(Double)
+- uid: netDxf.Vector3.#ctor(System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Vector3.#ctor(System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double)'
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Vector3(double, double, double)
+  nameWithType: Vector3.Vector3(double, double, double)
+  fullName: netDxf.Vector3.Vector3(double, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of Vector3.
+  example: []
+  syntax:
+    content: public Vector3(double x, double y, double z)
+    parameters:
+    - id: x
+      type: System.Double
+      description: X component.
+    - id: y
+      type: System.Double
+      description: Y component.
+    - id: z
+      type: System.Double
+      description: Z component.
+    content.vb: Public Sub New(x As Double, y As Double, z As Double)
+  overload: netDxf.Vector3.#ctor*
+  nameWithType.vb: Vector3.New(Double, Double, Double)
+  fullName.vb: netDxf.Vector3.New(Double, Double, Double)
+  name.vb: New(Double, Double, Double)
+- uid: netDxf.Vector3.#ctor(System.Double[])
+  commentId: M:netDxf.Vector3.#ctor(System.Double[])
+  id: '#ctor(System.Double[])'
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Vector3(double[])
+  nameWithType: Vector3.Vector3(double[])
+  fullName: netDxf.Vector3.Vector3(double[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 77
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of Vector3.
+  example: []
+  syntax:
+    content: public Vector3(double[] array)
+    parameters:
+    - id: array
+      type: System.Double[]
+      description: Array of three elements that represents the vector.
+    content.vb: Public Sub New(array As Double())
+  overload: netDxf.Vector3.#ctor*
+  nameWithType.vb: Vector3.New(Double())
+  fullName.vb: netDxf.Vector3.New(Double())
+  name.vb: New(Double())
+- uid: netDxf.Vector3.Zero
+  commentId: P:netDxf.Vector3.Zero
+  id: Zero
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Vector3.Zero
+  fullName: netDxf.Vector3.Zero
+  type: Property
+  source:
+    id: Zero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 102
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Zero vector.
+  example: []
+  syntax:
+    content: public static Vector3 Zero { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Shared ReadOnly Property Zero As Vector3
+  overload: netDxf.Vector3.Zero*
+- uid: netDxf.Vector3.UnitX
+  commentId: P:netDxf.Vector3.UnitX
+  id: UnitX
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: UnitX
+  nameWithType: Vector3.UnitX
+  fullName: netDxf.Vector3.UnitX
+  type: Property
+  source:
+    id: UnitX
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Unit X vector.
+  example: []
+  syntax:
+    content: public static Vector3 UnitX { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Shared ReadOnly Property UnitX As Vector3
+  overload: netDxf.Vector3.UnitX*
+- uid: netDxf.Vector3.UnitY
+  commentId: P:netDxf.Vector3.UnitY
+  id: UnitY
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: UnitY
+  nameWithType: Vector3.UnitY
+  fullName: netDxf.Vector3.UnitY
+  type: Property
+  source:
+    id: UnitY
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 118
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Unit Y vector.
+  example: []
+  syntax:
+    content: public static Vector3 UnitY { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Shared ReadOnly Property UnitY As Vector3
+  overload: netDxf.Vector3.UnitY*
+- uid: netDxf.Vector3.UnitZ
+  commentId: P:netDxf.Vector3.UnitZ
+  id: UnitZ
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: UnitZ
+  nameWithType: Vector3.UnitZ
+  fullName: netDxf.Vector3.UnitZ
+  type: Property
+  source:
+    id: UnitZ
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 126
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Unit Z vector.
+  example: []
+  syntax:
+    content: public static Vector3 UnitZ { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Shared ReadOnly Property UnitZ As Vector3
+  overload: netDxf.Vector3.UnitZ*
+- uid: netDxf.Vector3.NaN
+  commentId: P:netDxf.Vector3.NaN
+  id: NaN
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: NaN
+  nameWithType: Vector3.NaN
+  fullName: netDxf.Vector3.NaN
+  type: Property
+  source:
+    id: NaN
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 134
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Represents a vector with not a number components.
+  example: []
+  syntax:
+    content: public static Vector3 NaN { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Shared ReadOnly Property NaN As Vector3
+  overload: netDxf.Vector3.NaN*
+- uid: netDxf.Vector3.X
+  commentId: P:netDxf.Vector3.X
+  id: X
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Vector3.X
+  fullName: netDxf.Vector3.X
+  type: Property
+  source:
+    id: X
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 146
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the X component.
+  example: []
+  syntax:
+    content: public double X { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property X As Double
+  overload: netDxf.Vector3.X*
+- uid: netDxf.Vector3.Y
+  commentId: P:netDxf.Vector3.Y
+  id: Y
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Vector3.Y
+  fullName: netDxf.Vector3.Y
+  type: Property
+  source:
+    id: Y
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 159
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the Y component.
+  example: []
+  syntax:
+    content: public double Y { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Y As Double
+  overload: netDxf.Vector3.Y*
+- uid: netDxf.Vector3.Z
+  commentId: P:netDxf.Vector3.Z
+  id: Z
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: Vector3.Z
+  fullName: netDxf.Vector3.Z
+  type: Property
+  source:
+    id: Z
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 172
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the Z component.
+  example: []
+  syntax:
+    content: public double Z { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Z As Double
+  overload: netDxf.Vector3.Z*
+- uid: netDxf.Vector3.Item(System.Int32)
+  commentId: P:netDxf.Vector3.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: Vector3.this[int]
+  fullName: netDxf.Vector3.this[int]
+  type: Property
+  source:
+    id: this[]
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 186
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets a vector element defined by its index.
+  example: []
+  syntax:
+    content: public double this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index of the element.
+    return:
+      type: System.Double
+    content.vb: Public Default Property this[](index As Integer) As Double
+  overload: netDxf.Vector3.Item*
+  nameWithType.vb: Vector3.this[](Integer)
+  fullName.vb: netDxf.Vector3.this[](Integer)
+  name.vb: this[](Integer)
+- uid: netDxf.Vector3.IsNormalized
+  commentId: P:netDxf.Vector3.IsNormalized
+  id: IsNormalized
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: IsNormalized
+  nameWithType: Vector3.IsNormalized
+  fullName: netDxf.Vector3.IsNormalized
+  type: Property
+  source:
+    id: IsNormalized
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 226
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets if the vector has been normalized.
+  example: []
+  syntax:
+    content: public bool IsNormalized { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsNormalized As Boolean
+  overload: netDxf.Vector3.IsNormalized*
+- uid: netDxf.Vector3.IsNaN(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.IsNaN(netDxf.Vector3)
+  id: IsNaN(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: IsNaN(Vector3)
+  nameWithType: Vector3.IsNaN(Vector3)
+  fullName: netDxf.Vector3.IsNaN(netDxf.Vector3)
+  type: Method
+  source:
+    id: IsNaN
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 240
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns a value indicating if any component of the specified vector evaluates to a value that is not a number <xref href="System.Double.NaN" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static bool IsNaN(Vector3 u)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: Returns true if any component of the specified vector evaluates to <xref href="System.Double.NaN" data-throw-if-not-resolved="false"></xref>; otherwise, false.
+    content.vb: Public Shared Function IsNaN(u As Vector3) As Boolean
+  overload: netDxf.Vector3.IsNaN*
+- uid: netDxf.Vector3.IsZero(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.IsZero(netDxf.Vector3)
+  id: IsZero(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: IsZero(Vector3)
+  nameWithType: Vector3.IsZero(Vector3)
+  fullName: netDxf.Vector3.IsZero(netDxf.Vector3)
+  type: Method
+  source:
+    id: IsZero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 250
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns a value indicating if all components of the specified vector evaluates to zero.
+  example: []
+  syntax:
+    content: public static bool IsZero(Vector3 u)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: Returns true if all components of the specified vector evaluates to zero; otherwise, false.
+    content.vb: Public Shared Function IsZero(u As Vector3) As Boolean
+  overload: netDxf.Vector3.IsZero*
+- uid: netDxf.Vector3.DotProduct(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.DotProduct(netDxf.Vector3,netDxf.Vector3)
+  id: DotProduct(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: DotProduct(Vector3, Vector3)
+  nameWithType: Vector3.DotProduct(Vector3, Vector3)
+  fullName: netDxf.Vector3.DotProduct(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: DotProduct
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 261
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the dot product of two vectors.
+  example: []
+  syntax:
+    content: public static double DotProduct(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Double
+      description: The dot product.
+    content.vb: Public Shared Function DotProduct(u As Vector3, v As Vector3) As Double
+  overload: netDxf.Vector3.DotProduct*
+- uid: netDxf.Vector3.CrossProduct(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.CrossProduct(netDxf.Vector3,netDxf.Vector3)
+  id: CrossProduct(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: CrossProduct(Vector3, Vector3)
+  nameWithType: Vector3.CrossProduct(Vector3, Vector3)
+  fullName: netDxf.Vector3.CrossProduct(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: CrossProduct
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 272
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the cross product of two vectors.
+  example: []
+  syntax:
+    content: public static Vector3 CrossProduct(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The cross product.
+    content.vb: Public Shared Function CrossProduct(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.CrossProduct*
+- uid: netDxf.Vector3.Distance(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Distance(netDxf.Vector3,netDxf.Vector3)
+  id: Distance(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Distance(Vector3, Vector3)
+  nameWithType: Vector3.Distance(Vector3, Vector3)
+  fullName: netDxf.Vector3.Distance(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Distance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 286
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the distance between two points.
+  example: []
+  syntax:
+    content: public static double Distance(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Double
+      description: Distance.
+    content.vb: Public Shared Function Distance(u As Vector3, v As Vector3) As Double
+  overload: netDxf.Vector3.Distance*
+- uid: netDxf.Vector3.SquareDistance(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.SquareDistance(netDxf.Vector3,netDxf.Vector3)
+  id: SquareDistance(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: SquareDistance(Vector3, Vector3)
+  nameWithType: Vector3.SquareDistance(Vector3, Vector3)
+  fullName: netDxf.Vector3.SquareDistance(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: SquareDistance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 297
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the square distance between two points.
+  example: []
+  syntax:
+    content: public static double SquareDistance(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Double
+      description: Square distance.
+    content.vb: Public Shared Function SquareDistance(u As Vector3, v As Vector3) As Double
+  overload: netDxf.Vector3.SquareDistance*
+- uid: netDxf.Vector3.AngleBetween(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.AngleBetween(netDxf.Vector3,netDxf.Vector3)
+  id: AngleBetween(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: AngleBetween(Vector3, Vector3)
+  nameWithType: Vector3.AngleBetween(Vector3, Vector3)
+  fullName: netDxf.Vector3.AngleBetween(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: AngleBetween
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 308
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the angle between two vectors.
+  example: []
+  syntax:
+    content: public static double AngleBetween(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Double
+      description: Angle in radians.
+    content.vb: Public Shared Function AngleBetween(u As Vector3, v As Vector3) As Double
+  overload: netDxf.Vector3.AngleBetween*
+- uid: netDxf.Vector3.RotateAroundAxis(netDxf.Vector3,netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.RotateAroundAxis(netDxf.Vector3,netDxf.Vector3,System.Double)
+  id: RotateAroundAxis(netDxf.Vector3,netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: RotateAroundAxis(Vector3, Vector3, double)
+  nameWithType: Vector3.RotateAroundAxis(Vector3, Vector3, double)
+  fullName: netDxf.Vector3.RotateAroundAxis(netDxf.Vector3, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: RotateAroundAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 332
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Rotate given vector around the specified axis.
+  remarks: 'Method provided by: Idelana. Original Author: Paul Bourke ( http://paulbourke.net/geometry/rotate/ )'
+  example: []
+  syntax:
+    content: public static Vector3 RotateAroundAxis(Vector3 v, Vector3 axis, double angle)
+    parameters:
+    - id: v
+      type: netDxf.Vector3
+      description: Vector to rotate.
+    - id: axis
+      type: netDxf.Vector3
+      description: Rotation axis.
+    - id: angle
+      type: System.Double
+      description: Rotation angle in radians.
+    return:
+      type: netDxf.Vector3
+      description: The rotated vector.
+    content.vb: Public Shared Function RotateAroundAxis(v As Vector3, axis As Vector3, angle As Double) As Vector3
+  overload: netDxf.Vector3.RotateAroundAxis*
+  nameWithType.vb: Vector3.RotateAroundAxis(Vector3, Vector3, Double)
+  fullName.vb: netDxf.Vector3.RotateAroundAxis(netDxf.Vector3, netDxf.Vector3, Double)
+  name.vb: RotateAroundAxis(Vector3, Vector3, Double)
+- uid: netDxf.Vector3.MidPoint(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.MidPoint(netDxf.Vector3,netDxf.Vector3)
+  id: MidPoint(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: MidPoint(Vector3, Vector3)
+  nameWithType: Vector3.MidPoint(Vector3, Vector3)
+  fullName: netDxf.Vector3.MidPoint(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: MidPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 360
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the midpoint.
+  example: []
+  syntax:
+    content: public static Vector3 MidPoint(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: Vector3.
+    content.vb: Public Shared Function MidPoint(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.MidPoint*
+- uid: netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3)
+  id: ArePerpendicular(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: ArePerpendicular(Vector3, Vector3)
+  nameWithType: Vector3.ArePerpendicular(Vector3, Vector3)
+  fullName: netDxf.Vector3.ArePerpendicular(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: ArePerpendicular
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 371
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if two vectors are perpendicular.
+  example: []
+  syntax:
+    content: public static bool ArePerpendicular(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if are perpendicular or false in any other case.
+    content.vb: Public Shared Function ArePerpendicular(u As Vector3, v As Vector3) As Boolean
+  overload: netDxf.Vector3.ArePerpendicular*
+- uid: netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.ArePerpendicular(netDxf.Vector3,netDxf.Vector3,System.Double)
+  id: ArePerpendicular(netDxf.Vector3,netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: ArePerpendicular(Vector3, Vector3, double)
+  nameWithType: Vector3.ArePerpendicular(Vector3, Vector3, double)
+  fullName: netDxf.Vector3.ArePerpendicular(netDxf.Vector3, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: ArePerpendicular
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 383
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if two vectors are perpendicular.
+  example: []
+  syntax:
+    content: public static bool ArePerpendicular(Vector3 u, Vector3 v, double threshold)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: threshold
+      type: System.Double
+      description: Tolerance used.
+    return:
+      type: System.Boolean
+      description: True if are perpendicular or false in any other case.
+    content.vb: Public Shared Function ArePerpendicular(u As Vector3, v As Vector3, threshold As Double) As Boolean
+  overload: netDxf.Vector3.ArePerpendicular*
+  nameWithType.vb: Vector3.ArePerpendicular(Vector3, Vector3, Double)
+  fullName.vb: netDxf.Vector3.ArePerpendicular(netDxf.Vector3, netDxf.Vector3, Double)
+  name.vb: ArePerpendicular(Vector3, Vector3, Double)
+- uid: netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3)
+  id: AreParallel(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: AreParallel(Vector3, Vector3)
+  nameWithType: Vector3.AreParallel(Vector3, Vector3)
+  fullName: netDxf.Vector3.AreParallel(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: AreParallel
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 394
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if two vectors are parallel.
+  example: []
+  syntax:
+    content: public static bool AreParallel(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if are parallel or false in any other case.
+    content.vb: Public Shared Function AreParallel(u As Vector3, v As Vector3) As Boolean
+  overload: netDxf.Vector3.AreParallel*
+- uid: netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.AreParallel(netDxf.Vector3,netDxf.Vector3,System.Double)
+  id: AreParallel(netDxf.Vector3,netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: AreParallel(Vector3, Vector3, double)
+  nameWithType: Vector3.AreParallel(Vector3, Vector3, double)
+  fullName: netDxf.Vector3.AreParallel(netDxf.Vector3, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: AreParallel
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 406
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Checks if two vectors are parallel.
+  example: []
+  syntax:
+    content: public static bool AreParallel(Vector3 u, Vector3 v, double threshold)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: threshold
+      type: System.Double
+      description: Tolerance used.
+    return:
+      type: System.Boolean
+      description: True if are parallel or false in any other case.
+    content.vb: Public Shared Function AreParallel(u As Vector3, v As Vector3, threshold As Double) As Boolean
+  overload: netDxf.Vector3.AreParallel*
+  nameWithType.vb: Vector3.AreParallel(Vector3, Vector3, Double)
+  fullName.vb: netDxf.Vector3.AreParallel(netDxf.Vector3, netDxf.Vector3, Double)
+  name.vb: AreParallel(Vector3, Vector3, Double)
+- uid: netDxf.Vector3.Round(netDxf.Vector3,System.Int32)
+  commentId: M:netDxf.Vector3.Round(netDxf.Vector3,System.Int32)
+  id: Round(netDxf.Vector3,System.Int32)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Round(Vector3, int)
+  nameWithType: Vector3.Round(Vector3, int)
+  fullName: netDxf.Vector3.Round(netDxf.Vector3, int)
+  type: Method
+  source:
+    id: Round
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 434
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Rounds the components of a vector.
+  example: []
+  syntax:
+    content: public static Vector3 Round(Vector3 u, int numDigits)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector to round.
+    - id: numDigits
+      type: System.Int32
+      description: Number of decimal places in the return value.
+    return:
+      type: netDxf.Vector3
+      description: The rounded vector.
+    content.vb: Public Shared Function Round(u As Vector3, numDigits As Integer) As Vector3
+  overload: netDxf.Vector3.Round*
+  nameWithType.vb: Vector3.Round(Vector3, Integer)
+  fullName.vb: netDxf.Vector3.Round(netDxf.Vector3, Integer)
+  name.vb: Round(Vector3, Integer)
+- uid: netDxf.Vector3.Normalize(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Normalize(netDxf.Vector3)
+  id: Normalize(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Normalize(Vector3)
+  nameWithType: Vector3.Normalize(Vector3)
+  fullName: netDxf.Vector3.Normalize(netDxf.Vector3)
+  type: Method
+  source:
+    id: Normalize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 444
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Normalizes the vector.
+  example: []
+  syntax:
+    content: public static Vector3 Normalize(Vector3 u)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector to normalize
+    return:
+      type: netDxf.Vector3
+      description: A normalized vector.
+    content.vb: Public Shared Function Normalize(u As Vector3) As Vector3
+  overload: netDxf.Vector3.Normalize*
+- uid: netDxf.Vector3.op_Equality(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Equality(netDxf.Vector3,netDxf.Vector3)
+  id: op_Equality(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Vector3, Vector3)
+  nameWithType: Vector3.operator ==(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator ==(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Equality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 471
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are equal.
+  example: []
+  syntax:
+    content: public static bool operator ==(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if the three components are equal or false in any other case.
+    content.vb: Public Shared Operator =(u As Vector3, v As Vector3) As Boolean
+  overload: netDxf.Vector3.op_Equality*
+  nameWithType.vb: Vector3.=(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3.=(netDxf.Vector3, netDxf.Vector3)
+  name.vb: =(Vector3, Vector3)
+- uid: netDxf.Vector3.op_Inequality(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Inequality(netDxf.Vector3,netDxf.Vector3)
+  id: op_Inequality(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Vector3, Vector3)
+  nameWithType: Vector3.operator !=(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator !=(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Inequality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 482
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are different.
+  example: []
+  syntax:
+    content: public static bool operator !=(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if the three components are different or false in any other case.
+    content.vb: Public Shared Operator <>(u As Vector3, v As Vector3) As Boolean
+  overload: netDxf.Vector3.op_Inequality*
+  nameWithType.vb: Vector3.<>(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3.<>(netDxf.Vector3, netDxf.Vector3)
+  name.vb: <>(Vector3, Vector3)
+- uid: netDxf.Vector3.op_Addition(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Addition(netDxf.Vector3,netDxf.Vector3)
+  id: op_Addition(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator +(Vector3, Vector3)
+  nameWithType: Vector3.operator +(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator +(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Addition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 493
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Adds two vectors.
+  example: []
+  syntax:
+    content: public static Vector3 operator +(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The addition of u plus v.
+    content.vb: Public Shared Operator +(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.op_Addition*
+  nameWithType.vb: Vector3.+(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3.+(netDxf.Vector3, netDxf.Vector3)
+  name.vb: +(Vector3, Vector3)
+- uid: netDxf.Vector3.Add(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Add(netDxf.Vector3,netDxf.Vector3)
+  id: Add(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Add(Vector3, Vector3)
+  nameWithType: Vector3.Add(Vector3, Vector3)
+  fullName: netDxf.Vector3.Add(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Add
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 504
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Adds two vectors.
+  example: []
+  syntax:
+    content: public static Vector3 Add(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The addition of u plus v.
+    content.vb: Public Shared Function Add(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.Add*
+- uid: netDxf.Vector3.op_Subtraction(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Subtraction(netDxf.Vector3,netDxf.Vector3)
+  id: op_Subtraction(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator -(Vector3, Vector3)
+  nameWithType: Vector3.operator -(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator -(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Subtraction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 515
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Subtracts two vectors.
+  example: []
+  syntax:
+    content: public static Vector3 operator -(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The subtraction of u minus v.
+    content.vb: Public Shared Operator -(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.op_Subtraction*
+  nameWithType.vb: Vector3.-(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3.-(netDxf.Vector3, netDxf.Vector3)
+  name.vb: -(Vector3, Vector3)
+- uid: netDxf.Vector3.Subtract(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Subtract(netDxf.Vector3,netDxf.Vector3)
+  id: Subtract(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Subtract(Vector3, Vector3)
+  nameWithType: Vector3.Subtract(Vector3, Vector3)
+  fullName: netDxf.Vector3.Subtract(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Subtract
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 526
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Subtracts two vectors.
+  example: []
+  syntax:
+    content: public static Vector3 Subtract(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The subtraction of u minus v.
+    content.vb: Public Shared Function Subtract(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.Subtract*
+- uid: netDxf.Vector3.op_UnaryNegation(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_UnaryNegation(netDxf.Vector3)
+  id: op_UnaryNegation(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator -(Vector3)
+  nameWithType: Vector3.operator -(Vector3)
+  fullName: netDxf.Vector3.operator -(netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_UnaryNegation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 536
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Negates a vector.
+  example: []
+  syntax:
+    content: public static Vector3 operator -(Vector3 u)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The negative vector of u.
+    content.vb: Public Shared Operator -(u As Vector3) As Vector3
+  overload: netDxf.Vector3.op_UnaryNegation*
+  nameWithType.vb: Vector3.-(Vector3)
+  fullName.vb: netDxf.Vector3.-(netDxf.Vector3)
+  name.vb: -(Vector3)
+- uid: netDxf.Vector3.Negate(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Negate(netDxf.Vector3)
+  id: Negate(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Negate(Vector3)
+  nameWithType: Vector3.Negate(Vector3)
+  fullName: netDxf.Vector3.Negate(netDxf.Vector3)
+  type: Method
+  source:
+    id: Negate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 546
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Negates a vector.
+  example: []
+  syntax:
+    content: public static Vector3 Negate(Vector3 u)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The negative vector of u.
+    content.vb: Public Shared Function Negate(u As Vector3) As Vector3
+  overload: netDxf.Vector3.Negate*
+- uid: netDxf.Vector3.op_Multiply(netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.op_Multiply(netDxf.Vector3,System.Double)
+  id: op_Multiply(netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator *(Vector3, double)
+  nameWithType: Vector3.operator *(Vector3, double)
+  fullName: netDxf.Vector3.operator *(netDxf.Vector3, double)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 557
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies a vector with an scalar (same as a*u, commutative property).
+  example: []
+  syntax:
+    content: public static Vector3 operator *(Vector3 u, double a)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times a.
+    content.vb: Public Shared Operator *(u As Vector3, a As Double) As Vector3
+  overload: netDxf.Vector3.op_Multiply*
+  nameWithType.vb: Vector3.*(Vector3, Double)
+  fullName.vb: netDxf.Vector3.*(netDxf.Vector3, Double)
+  name.vb: '*(Vector3, Double)'
+- uid: netDxf.Vector3.Multiply(netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.Multiply(netDxf.Vector3,System.Double)
+  id: Multiply(netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Vector3, double)
+  nameWithType: Vector3.Multiply(Vector3, double)
+  fullName: netDxf.Vector3.Multiply(netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 568
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies a vector with an scalar (same as a*u, commutative property).
+  example: []
+  syntax:
+    content: public static Vector3 Multiply(Vector3 u, double a)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times a.
+    content.vb: Public Shared Function Multiply(u As Vector3, a As Double) As Vector3
+  overload: netDxf.Vector3.Multiply*
+  nameWithType.vb: Vector3.Multiply(Vector3, Double)
+  fullName.vb: netDxf.Vector3.Multiply(netDxf.Vector3, Double)
+  name.vb: Multiply(Vector3, Double)
+- uid: netDxf.Vector3.op_Multiply(System.Double,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Multiply(System.Double,netDxf.Vector3)
+  id: op_Multiply(System.Double,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator *(double, Vector3)
+  nameWithType: Vector3.operator *(double, Vector3)
+  fullName: netDxf.Vector3.operator *(double, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 579
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies a scalar with a vector (same as u*a, commutative property).
+  example: []
+  syntax:
+    content: public static Vector3 operator *(double a, Vector3 u)
+    parameters:
+    - id: a
+      type: System.Double
+      description: Scalar.
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times a.
+    content.vb: Public Shared Operator *(a As Double, u As Vector3) As Vector3
+  overload: netDxf.Vector3.op_Multiply*
+  nameWithType.vb: Vector3.*(Double, Vector3)
+  fullName.vb: netDxf.Vector3.*(Double, netDxf.Vector3)
+  name.vb: '*(Double, Vector3)'
+- uid: netDxf.Vector3.Multiply(System.Double,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Multiply(System.Double,netDxf.Vector3)
+  id: Multiply(System.Double,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Multiply(double, Vector3)
+  nameWithType: Vector3.Multiply(double, Vector3)
+  fullName: netDxf.Vector3.Multiply(double, netDxf.Vector3)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 590
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies a scalar with a vector (same as u*a, commutative property).
+  example: []
+  syntax:
+    content: public static Vector3 Multiply(double a, Vector3 u)
+    parameters:
+    - id: a
+      type: System.Double
+      description: Scalar.
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times a.
+    content.vb: Public Shared Function Multiply(a As Double, u As Vector3) As Vector3
+  overload: netDxf.Vector3.Multiply*
+  nameWithType.vb: Vector3.Multiply(Double, Vector3)
+  fullName.vb: netDxf.Vector3.Multiply(Double, netDxf.Vector3)
+  name.vb: Multiply(Double, Vector3)
+- uid: netDxf.Vector3.op_Multiply(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Multiply(netDxf.Vector3,netDxf.Vector3)
+  id: op_Multiply(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator *(Vector3, Vector3)
+  nameWithType: Vector3.operator *(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator *(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 601
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies two vectors component by component.
+  example: []
+  syntax:
+    content: public static Vector3 operator *(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times v.
+    content.vb: Public Shared Operator *(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.op_Multiply*
+  nameWithType.vb: Vector3.*(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3.*(netDxf.Vector3, netDxf.Vector3)
+  name.vb: '*(Vector3, Vector3)'
+- uid: netDxf.Vector3.Multiply(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Multiply(netDxf.Vector3,netDxf.Vector3)
+  id: Multiply(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Vector3, Vector3)
+  nameWithType: Vector3.Multiply(Vector3, Vector3)
+  fullName: netDxf.Vector3.Multiply(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 612
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Multiplies two vectors component by component.
+  example: []
+  syntax:
+    content: public static Vector3 Multiply(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times v.
+    content.vb: Public Shared Function Multiply(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.Multiply*
+- uid: netDxf.Vector3.op_Division(netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.op_Division(netDxf.Vector3,System.Double)
+  id: op_Division(netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator /(Vector3, double)
+  nameWithType: Vector3.operator /(Vector3, double)
+  fullName: netDxf.Vector3.operator /(netDxf.Vector3, double)
+  type: Operator
+  source:
+    id: op_Division
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 623
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Divides an scalar with a vector.
+  example: []
+  syntax:
+    content: public static Vector3 operator /(Vector3 u, double a)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Vector3
+      description: The division of u times a.
+    content.vb: Public Shared Operator /(u As Vector3, a As Double) As Vector3
+  overload: netDxf.Vector3.op_Division*
+  nameWithType.vb: Vector3./(Vector3, Double)
+  fullName.vb: netDxf.Vector3./(netDxf.Vector3, Double)
+  name.vb: /(Vector3, Double)
+- uid: netDxf.Vector3.Divide(netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.Divide(netDxf.Vector3,System.Double)
+  id: Divide(netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Divide(Vector3, double)
+  nameWithType: Vector3.Divide(Vector3, double)
+  fullName: netDxf.Vector3.Divide(netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Divide
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 635
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Divides a vector with an scalar.
+  example: []
+  syntax:
+    content: public static Vector3 Divide(Vector3 u, double a)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Vector3
+      description: The division of u times a.
+    content.vb: Public Shared Function Divide(u As Vector3, a As Double) As Vector3
+  overload: netDxf.Vector3.Divide*
+  nameWithType.vb: Vector3.Divide(Vector3, Double)
+  fullName.vb: netDxf.Vector3.Divide(netDxf.Vector3, Double)
+  name.vb: Divide(Vector3, Double)
+- uid: netDxf.Vector3.op_Division(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.op_Division(netDxf.Vector3,netDxf.Vector3)
+  id: op_Division(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: operator /(Vector3, Vector3)
+  nameWithType: Vector3.operator /(Vector3, Vector3)
+  fullName: netDxf.Vector3.operator /(netDxf.Vector3, netDxf.Vector3)
+  type: Operator
+  source:
+    id: op_Division
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 647
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Divides two vectors component by component.
+  example: []
+  syntax:
+    content: public static Vector3 operator /(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times v.
+    content.vb: Public Shared Operator /(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.op_Division*
+  nameWithType.vb: Vector3./(Vector3, Vector3)
+  fullName.vb: netDxf.Vector3./(netDxf.Vector3, netDxf.Vector3)
+  name.vb: /(Vector3, Vector3)
+- uid: netDxf.Vector3.Divide(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Divide(netDxf.Vector3,netDxf.Vector3)
+  id: Divide(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Divide(Vector3, Vector3)
+  nameWithType: Vector3.Divide(Vector3, Vector3)
+  fullName: netDxf.Vector3.Divide(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Divide
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 658
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Divides two vectors component by component.
+  example: []
+  syntax:
+    content: public static Vector3 Divide(Vector3 u, Vector3 v)
+    parameters:
+    - id: u
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: v
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: netDxf.Vector3
+      description: The multiplication of u times v.
+    content.vb: Public Shared Function Divide(u As Vector3, v As Vector3) As Vector3
+  overload: netDxf.Vector3.Divide*
+- uid: netDxf.Vector3.Normalize
+  commentId: M:netDxf.Vector3.Normalize
+  id: Normalize
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Normalize()
+  nameWithType: Vector3.Normalize()
+  fullName: netDxf.Vector3.Normalize()
+  type: Method
+  source:
+    id: Normalize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 670
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Normalizes the current vector.
+  example: []
+  syntax:
+    content: public void Normalize()
+    content.vb: Public Sub Normalize()
+  overload: netDxf.Vector3.Normalize*
+- uid: netDxf.Vector3.Modulus
+  commentId: M:netDxf.Vector3.Modulus
+  id: Modulus
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Modulus()
+  nameWithType: Vector3.Modulus()
+  fullName: netDxf.Vector3.Modulus()
+  type: Method
+  source:
+    id: Modulus
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 696
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the modulus of the vector.
+  example: []
+  syntax:
+    content: public double Modulus()
+    return:
+      type: System.Double
+      description: Vector modulus.
+    content.vb: Public Function Modulus() As Double
+  overload: netDxf.Vector3.Modulus*
+- uid: netDxf.Vector3.ToArray
+  commentId: M:netDxf.Vector3.ToArray
+  id: ToArray
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: ToArray()
+  nameWithType: Vector3.ToArray()
+  fullName: netDxf.Vector3.ToArray()
+  type: Method
+  source:
+    id: ToArray
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 705
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns an array that represents the vector.
+  example: []
+  syntax:
+    content: public double[] ToArray()
+    return:
+      type: System.Double[]
+      description: Array.
+    content.vb: Public Function ToArray() As Double()
+  overload: netDxf.Vector3.ToArray*
+- uid: netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3)
+  id: Equals(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3, Vector3)
+  nameWithType: Vector3.Equals(Vector3, Vector3)
+  fullName: netDxf.Vector3.Equals(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 720
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are approximate equal.
+  example: []
+  syntax:
+    content: public static bool Equals(Vector3 a, Vector3 b)
+    parameters:
+    - id: a
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: b
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if the three components are almost equal or false in any other case.
+    content.vb: Public Shared Function Equals(a As Vector3, b As Vector3) As Boolean
+  overload: netDxf.Vector3.Equals*
+- uid: netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.Equals(netDxf.Vector3,netDxf.Vector3,System.Double)
+  id: Equals(netDxf.Vector3,netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3, Vector3, double)
+  nameWithType: Vector3.Equals(Vector3, Vector3, double)
+  fullName: netDxf.Vector3.Equals(netDxf.Vector3, netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 732
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are approximate equal.
+  example: []
+  syntax:
+    content: public static bool Equals(Vector3 a, Vector3 b, double threshold)
+    parameters:
+    - id: a
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: b
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: threshold
+      type: System.Double
+      description: Maximum tolerance.
+    return:
+      type: System.Boolean
+      description: True if the three components are almost equal or false in any other case.
+    content.vb: Public Shared Function Equals(a As Vector3, b As Vector3, threshold As Double) As Boolean
+  overload: netDxf.Vector3.Equals*
+  nameWithType.vb: Vector3.Equals(Vector3, Vector3, Double)
+  fullName.vb: netDxf.Vector3.Equals(netDxf.Vector3, netDxf.Vector3, Double)
+  name.vb: Equals(Vector3, Vector3, Double)
+- uid: netDxf.Vector3.Equals(netDxf.Vector3)
+  commentId: M:netDxf.Vector3.Equals(netDxf.Vector3)
+  id: Equals(netDxf.Vector3)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3)
+  nameWithType: Vector3.Equals(Vector3)
+  fullName: netDxf.Vector3.Equals(netDxf.Vector3)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 742
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are approximate equal.
+  example: []
+  syntax:
+    content: public bool Equals(Vector3 other)
+    parameters:
+    - id: other
+      type: netDxf.Vector3
+      description: Vector3.
+    return:
+      type: System.Boolean
+      description: True if the three components are almost equal or false in any other case.
+    content.vb: Public Function Equals(other As Vector3) As Boolean
+  overload: netDxf.Vector3.Equals*
+  implements:
+  - System.IEquatable{netDxf.Vector3}.Equals(netDxf.Vector3)
+- uid: netDxf.Vector3.Equals(netDxf.Vector3,System.Double)
+  commentId: M:netDxf.Vector3.Equals(netDxf.Vector3,System.Double)
+  id: Equals(netDxf.Vector3,System.Double)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3, double)
+  nameWithType: Vector3.Equals(Vector3, double)
+  fullName: netDxf.Vector3.Equals(netDxf.Vector3, double)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 753
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two vectors are approximate equal.
+  example: []
+  syntax:
+    content: public bool Equals(Vector3 other, double threshold)
+    parameters:
+    - id: other
+      type: netDxf.Vector3
+      description: Vector3.
+    - id: threshold
+      type: System.Double
+      description: Maximum tolerance.
+    return:
+      type: System.Boolean
+      description: True if the three components are almost equal or false in any other case.
+    content.vb: Public Function Equals(other As Vector3, threshold As Double) As Boolean
+  overload: netDxf.Vector3.Equals*
+  nameWithType.vb: Vector3.Equals(Vector3, Double)
+  fullName.vb: netDxf.Vector3.Equals(netDxf.Vector3, Double)
+  name.vb: Equals(Vector3, Double)
+- uid: netDxf.Vector3.Equals(System.Object)
+  commentId: M:netDxf.Vector3.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: Vector3.Equals(object)
+  fullName: netDxf.Vector3.Equals(object)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 763
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+      description: Another object to compare to.
+    return:
+      type: System.Boolean
+      description: True if obj and this instance are the same type and represent the same value; otherwise, false.
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: netDxf.Vector3.Equals*
+  nameWithType.vb: Vector3.Equals(Object)
+  fullName.vb: netDxf.Vector3.Equals(Object)
+  name.vb: Equals(Object)
+- uid: netDxf.Vector3.GetHashCode
+  commentId: M:netDxf.Vector3.GetHashCode
+  id: GetHashCode
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Vector3.GetHashCode()
+  fullName: netDxf.Vector3.GetHashCode()
+  type: Method
+  source:
+    id: GetHashCode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 777
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: netDxf.Vector3.GetHashCode*
+- uid: netDxf.Vector3.ToString
+  commentId: M:netDxf.Vector3.ToString
+  id: ToString
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Vector3.ToString()
+  fullName: netDxf.Vector3.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 790
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains a string that represents the vector.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string text.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: netDxf.Vector3.ToString*
+- uid: netDxf.Vector3.ToString(System.IFormatProvider)
+  commentId: M:netDxf.Vector3.ToString(System.IFormatProvider)
+  id: ToString(System.IFormatProvider)
+  parent: netDxf.Vector3
+  langs:
+  - csharp
+  - vb
+  name: ToString(IFormatProvider)
+  nameWithType: Vector3.ToString(IFormatProvider)
+  fullName: netDxf.Vector3.ToString(System.IFormatProvider)
+  type: Method
+  source:
+    id: ToString
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Vector3.cs
+    startLine: 800
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains a string that represents the vector.
+  example: []
+  syntax:
+    content: public string ToString(IFormatProvider provider)
+    parameters:
+    - id: provider
+      type: System.IFormatProvider
+      description: An IFormatProvider interface implementation that supplies culture-specific formatting information.
+    return:
+      type: System.String
+      description: A string text.
+    content.vb: Public Function ToString(provider As IFormatProvider) As String
+  overload: netDxf.Vector3.ToString*
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.IEquatable{netDxf.Vector3}
+  commentId: T:System.IEquatable{netDxf.Vector3}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<Vector3>
+  nameWithType: IEquatable<Vector3>
+  fullName: System.IEquatable<netDxf.Vector3>
+  nameWithType.vb: IEquatable(Of Vector3)
+  fullName.vb: System.IEquatable(Of netDxf.Vector3)
+  name.vb: IEquatable(Of Vector3)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.Vector3.#ctor*
+  commentId: Overload:netDxf.Vector3.#ctor
+  href: netDxf.Vector3.html#netDxf_Vector3__ctor_System_Double_
+  name: Vector3
+  nameWithType: Vector3.Vector3
+  fullName: netDxf.Vector3.Vector3
+  nameWithType.vb: Vector3.New
+  fullName.vb: netDxf.Vector3.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Double[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double[]
+  nameWithType: double[]
+  fullName: double[]
+  nameWithType.vb: Double()
+  fullName.vb: Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+- uid: netDxf.Vector3.Zero*
+  commentId: Overload:netDxf.Vector3.Zero
+  href: netDxf.Vector3.html#netDxf_Vector3_Zero
+  name: Zero
+  nameWithType: Vector3.Zero
+  fullName: netDxf.Vector3.Zero
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Vector3.UnitX*
+  commentId: Overload:netDxf.Vector3.UnitX
+  href: netDxf.Vector3.html#netDxf_Vector3_UnitX
+  name: UnitX
+  nameWithType: Vector3.UnitX
+  fullName: netDxf.Vector3.UnitX
+- uid: netDxf.Vector3.UnitY*
+  commentId: Overload:netDxf.Vector3.UnitY
+  href: netDxf.Vector3.html#netDxf_Vector3_UnitY
+  name: UnitY
+  nameWithType: Vector3.UnitY
+  fullName: netDxf.Vector3.UnitY
+- uid: netDxf.Vector3.UnitZ*
+  commentId: Overload:netDxf.Vector3.UnitZ
+  href: netDxf.Vector3.html#netDxf_Vector3_UnitZ
+  name: UnitZ
+  nameWithType: Vector3.UnitZ
+  fullName: netDxf.Vector3.UnitZ
+- uid: netDxf.Vector3.NaN*
+  commentId: Overload:netDxf.Vector3.NaN
+  href: netDxf.Vector3.html#netDxf_Vector3_NaN
+  name: NaN
+  nameWithType: Vector3.NaN
+  fullName: netDxf.Vector3.NaN
+- uid: netDxf.Vector3.X*
+  commentId: Overload:netDxf.Vector3.X
+  href: netDxf.Vector3.html#netDxf_Vector3_X
+  name: X
+  nameWithType: Vector3.X
+  fullName: netDxf.Vector3.X
+- uid: netDxf.Vector3.Y*
+  commentId: Overload:netDxf.Vector3.Y
+  href: netDxf.Vector3.html#netDxf_Vector3_Y
+  name: Y
+  nameWithType: Vector3.Y
+  fullName: netDxf.Vector3.Y
+- uid: netDxf.Vector3.Z*
+  commentId: Overload:netDxf.Vector3.Z
+  href: netDxf.Vector3.html#netDxf_Vector3_Z
+  name: Z
+  nameWithType: Vector3.Z
+  fullName: netDxf.Vector3.Z
+- uid: netDxf.Vector3.Item*
+  commentId: Overload:netDxf.Vector3.Item
+  href: netDxf.Vector3.html#netDxf_Vector3_Item_System_Int32_
+  name: this
+  nameWithType: Vector3.this
+  fullName: netDxf.Vector3.this
+  nameWithType.vb: Vector3.this[]
+  fullName.vb: netDxf.Vector3.this[]
+  name.vb: this[]
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.Vector3.IsNormalized*
+  commentId: Overload:netDxf.Vector3.IsNormalized
+  href: netDxf.Vector3.html#netDxf_Vector3_IsNormalized
+  name: IsNormalized
+  nameWithType: Vector3.IsNormalized
+  fullName: netDxf.Vector3.IsNormalized
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Double.NaN
+  commentId: F:System.Double.NaN
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double.nan
+  name: NaN
+  nameWithType: double.NaN
+  fullName: double.NaN
+  nameWithType.vb: Double.NaN
+  fullName.vb: Double.NaN
+- uid: netDxf.Vector3.IsNaN*
+  commentId: Overload:netDxf.Vector3.IsNaN
+  href: netDxf.Vector3.html#netDxf_Vector3_IsNaN_netDxf_Vector3_
+  name: IsNaN
+  nameWithType: Vector3.IsNaN
+  fullName: netDxf.Vector3.IsNaN
+- uid: netDxf.Vector3.IsZero*
+  commentId: Overload:netDxf.Vector3.IsZero
+  href: netDxf.Vector3.html#netDxf_Vector3_IsZero_netDxf_Vector3_
+  name: IsZero
+  nameWithType: Vector3.IsZero
+  fullName: netDxf.Vector3.IsZero
+- uid: netDxf.Vector3.DotProduct*
+  commentId: Overload:netDxf.Vector3.DotProduct
+  href: netDxf.Vector3.html#netDxf_Vector3_DotProduct_netDxf_Vector3_netDxf_Vector3_
+  name: DotProduct
+  nameWithType: Vector3.DotProduct
+  fullName: netDxf.Vector3.DotProduct
+- uid: netDxf.Vector3.CrossProduct*
+  commentId: Overload:netDxf.Vector3.CrossProduct
+  href: netDxf.Vector3.html#netDxf_Vector3_CrossProduct_netDxf_Vector3_netDxf_Vector3_
+  name: CrossProduct
+  nameWithType: Vector3.CrossProduct
+  fullName: netDxf.Vector3.CrossProduct
+- uid: netDxf.Vector3.Distance*
+  commentId: Overload:netDxf.Vector3.Distance
+  href: netDxf.Vector3.html#netDxf_Vector3_Distance_netDxf_Vector3_netDxf_Vector3_
+  name: Distance
+  nameWithType: Vector3.Distance
+  fullName: netDxf.Vector3.Distance
+- uid: netDxf.Vector3.SquareDistance*
+  commentId: Overload:netDxf.Vector3.SquareDistance
+  href: netDxf.Vector3.html#netDxf_Vector3_SquareDistance_netDxf_Vector3_netDxf_Vector3_
+  name: SquareDistance
+  nameWithType: Vector3.SquareDistance
+  fullName: netDxf.Vector3.SquareDistance
+- uid: netDxf.Vector3.AngleBetween*
+  commentId: Overload:netDxf.Vector3.AngleBetween
+  href: netDxf.Vector3.html#netDxf_Vector3_AngleBetween_netDxf_Vector3_netDxf_Vector3_
+  name: AngleBetween
+  nameWithType: Vector3.AngleBetween
+  fullName: netDxf.Vector3.AngleBetween
+- uid: netDxf.Vector3.RotateAroundAxis*
+  commentId: Overload:netDxf.Vector3.RotateAroundAxis
+  href: netDxf.Vector3.html#netDxf_Vector3_RotateAroundAxis_netDxf_Vector3_netDxf_Vector3_System_Double_
+  name: RotateAroundAxis
+  nameWithType: Vector3.RotateAroundAxis
+  fullName: netDxf.Vector3.RotateAroundAxis
+- uid: netDxf.Vector3.MidPoint*
+  commentId: Overload:netDxf.Vector3.MidPoint
+  href: netDxf.Vector3.html#netDxf_Vector3_MidPoint_netDxf_Vector3_netDxf_Vector3_
+  name: MidPoint
+  nameWithType: Vector3.MidPoint
+  fullName: netDxf.Vector3.MidPoint
+- uid: netDxf.Vector3.ArePerpendicular*
+  commentId: Overload:netDxf.Vector3.ArePerpendicular
+  href: netDxf.Vector3.html#netDxf_Vector3_ArePerpendicular_netDxf_Vector3_netDxf_Vector3_
+  name: ArePerpendicular
+  nameWithType: Vector3.ArePerpendicular
+  fullName: netDxf.Vector3.ArePerpendicular
+- uid: netDxf.Vector3.AreParallel*
+  commentId: Overload:netDxf.Vector3.AreParallel
+  href: netDxf.Vector3.html#netDxf_Vector3_AreParallel_netDxf_Vector3_netDxf_Vector3_
+  name: AreParallel
+  nameWithType: Vector3.AreParallel
+  fullName: netDxf.Vector3.AreParallel
+- uid: netDxf.Vector3.Round*
+  commentId: Overload:netDxf.Vector3.Round
+  href: netDxf.Vector3.html#netDxf_Vector3_Round_netDxf_Vector3_System_Int32_
+  name: Round
+  nameWithType: Vector3.Round
+  fullName: netDxf.Vector3.Round
+- uid: netDxf.Vector3.Normalize*
+  commentId: Overload:netDxf.Vector3.Normalize
+  href: netDxf.Vector3.html#netDxf_Vector3_Normalize_netDxf_Vector3_
+  name: Normalize
+  nameWithType: Vector3.Normalize
+  fullName: netDxf.Vector3.Normalize
+- uid: netDxf.Vector3.op_Equality*
+  commentId: Overload:netDxf.Vector3.op_Equality
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Equality_netDxf_Vector3_netDxf_Vector3_
+  name: operator ==
+  nameWithType: Vector3.operator ==
+  fullName: netDxf.Vector3.operator ==
+  nameWithType.vb: Vector3.=
+  fullName.vb: netDxf.Vector3.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Equality*
+    name: ==
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Equality_netDxf_Vector3_netDxf_Vector3_
+- uid: netDxf.Vector3.op_Inequality*
+  commentId: Overload:netDxf.Vector3.op_Inequality
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Inequality_netDxf_Vector3_netDxf_Vector3_
+  name: operator !=
+  nameWithType: Vector3.operator !=
+  fullName: netDxf.Vector3.operator !=
+  nameWithType.vb: Vector3.<>
+  fullName.vb: netDxf.Vector3.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Inequality*
+    name: '!='
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Inequality_netDxf_Vector3_netDxf_Vector3_
+- uid: netDxf.Vector3.op_Addition*
+  commentId: Overload:netDxf.Vector3.op_Addition
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Addition_netDxf_Vector3_netDxf_Vector3_
+  name: operator +
+  nameWithType: Vector3.operator +
+  fullName: netDxf.Vector3.operator +
+  nameWithType.vb: Vector3.+
+  fullName.vb: netDxf.Vector3.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Addition*
+    name: +
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Addition_netDxf_Vector3_netDxf_Vector3_
+- uid: netDxf.Vector3.Add*
+  commentId: Overload:netDxf.Vector3.Add
+  href: netDxf.Vector3.html#netDxf_Vector3_Add_netDxf_Vector3_netDxf_Vector3_
+  name: Add
+  nameWithType: Vector3.Add
+  fullName: netDxf.Vector3.Add
+- uid: netDxf.Vector3.op_Subtraction*
+  commentId: Overload:netDxf.Vector3.op_Subtraction
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Subtraction_netDxf_Vector3_netDxf_Vector3_
+  name: operator -
+  nameWithType: Vector3.operator -
+  fullName: netDxf.Vector3.operator -
+  nameWithType.vb: Vector3.-
+  fullName.vb: netDxf.Vector3.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Subtraction*
+    name: '-'
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Subtraction_netDxf_Vector3_netDxf_Vector3_
+- uid: netDxf.Vector3.Subtract*
+  commentId: Overload:netDxf.Vector3.Subtract
+  href: netDxf.Vector3.html#netDxf_Vector3_Subtract_netDxf_Vector3_netDxf_Vector3_
+  name: Subtract
+  nameWithType: Vector3.Subtract
+  fullName: netDxf.Vector3.Subtract
+- uid: netDxf.Vector3.op_UnaryNegation*
+  commentId: Overload:netDxf.Vector3.op_UnaryNegation
+  href: netDxf.Vector3.html#netDxf_Vector3_op_UnaryNegation_netDxf_Vector3_
+  name: operator -
+  nameWithType: Vector3.operator -
+  fullName: netDxf.Vector3.operator -
+  nameWithType.vb: Vector3.-
+  fullName.vb: netDxf.Vector3.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_UnaryNegation*
+    name: '-'
+    href: netDxf.Vector3.html#netDxf_Vector3_op_UnaryNegation_netDxf_Vector3_
+- uid: netDxf.Vector3.Negate*
+  commentId: Overload:netDxf.Vector3.Negate
+  href: netDxf.Vector3.html#netDxf_Vector3_Negate_netDxf_Vector3_
+  name: Negate
+  nameWithType: Vector3.Negate
+  fullName: netDxf.Vector3.Negate
+- uid: netDxf.Vector3.op_Multiply*
+  commentId: Overload:netDxf.Vector3.op_Multiply
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Multiply_netDxf_Vector3_System_Double_
+  name: operator *
+  nameWithType: Vector3.operator *
+  fullName: netDxf.Vector3.operator *
+  nameWithType.vb: Vector3.*
+  fullName.vb: netDxf.Vector3.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Multiply*
+    name: '*'
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Multiply_netDxf_Vector3_System_Double_
+- uid: netDxf.Vector3.Multiply*
+  commentId: Overload:netDxf.Vector3.Multiply
+  href: netDxf.Vector3.html#netDxf_Vector3_Multiply_netDxf_Vector3_System_Double_
+  name: Multiply
+  nameWithType: Vector3.Multiply
+  fullName: netDxf.Vector3.Multiply
+- uid: netDxf.Vector3.op_Division*
+  commentId: Overload:netDxf.Vector3.op_Division
+  href: netDxf.Vector3.html#netDxf_Vector3_op_Division_netDxf_Vector3_System_Double_
+  name: operator /
+  nameWithType: Vector3.operator /
+  fullName: netDxf.Vector3.operator /
+  nameWithType.vb: Vector3./
+  fullName.vb: netDxf.Vector3./
+  name.vb: /
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Vector3.op_Division*
+    name: /
+    href: netDxf.Vector3.html#netDxf_Vector3_op_Division_netDxf_Vector3_System_Double_
+- uid: netDxf.Vector3.Divide*
+  commentId: Overload:netDxf.Vector3.Divide
+  href: netDxf.Vector3.html#netDxf_Vector3_Divide_netDxf_Vector3_System_Double_
+  name: Divide
+  nameWithType: Vector3.Divide
+  fullName: netDxf.Vector3.Divide
+- uid: netDxf.Vector3.Modulus*
+  commentId: Overload:netDxf.Vector3.Modulus
+  href: netDxf.Vector3.html#netDxf_Vector3_Modulus
+  name: Modulus
+  nameWithType: Vector3.Modulus
+  fullName: netDxf.Vector3.Modulus
+- uid: netDxf.Vector3.ToArray*
+  commentId: Overload:netDxf.Vector3.ToArray
+  href: netDxf.Vector3.html#netDxf_Vector3_ToArray
+  name: ToArray
+  nameWithType: Vector3.ToArray
+  fullName: netDxf.Vector3.ToArray
+- uid: netDxf.Vector3.Equals*
+  commentId: Overload:netDxf.Vector3.Equals
+  href: netDxf.Vector3.html#netDxf_Vector3_Equals_netDxf_Vector3_netDxf_Vector3_
+  name: Equals
+  nameWithType: Vector3.Equals
+  fullName: netDxf.Vector3.Equals
+- uid: System.IEquatable{netDxf.Vector3}.Equals(netDxf.Vector3)
+  commentId: M:System.IEquatable{netDxf.Vector3}.Equals(netDxf.Vector3)
+  parent: System.IEquatable{netDxf.Vector3}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(Vector3)
+  nameWithType: IEquatable<Vector3>.Equals(Vector3)
+  fullName: System.IEquatable<netDxf.Vector3>.Equals(netDxf.Vector3)
+  nameWithType.vb: IEquatable(Of Vector3).Equals(Vector3)
+  fullName.vb: System.IEquatable(Of netDxf.Vector3).Equals(netDxf.Vector3)
+  spec.csharp:
+  - uid: System.IEquatable{netDxf.Vector3}.Equals(netDxf.Vector3)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{netDxf.Vector3}.Equals(netDxf.Vector3)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: netDxf.Vector3.GetHashCode*
+  commentId: Overload:netDxf.Vector3.GetHashCode
+  href: netDxf.Vector3.html#netDxf_Vector3_GetHashCode
+  name: GetHashCode
+  nameWithType: Vector3.GetHashCode
+  fullName: netDxf.Vector3.GetHashCode
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: netDxf.Vector3.ToString*
+  commentId: Overload:netDxf.Vector3.ToString
+  href: netDxf.Vector3.html#netDxf_Vector3_ToString
+  name: ToString
+  nameWithType: Vector3.ToString
+  fullName: netDxf.Vector3.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IFormatProvider
+  commentId: T:System.IFormatProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iformatprovider
+  name: IFormatProvider
+  nameWithType: IFormatProvider
+  fullName: System.IFormatProvider

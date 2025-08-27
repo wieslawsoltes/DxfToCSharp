@@ -1,0 +1,1891 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Angular2LineDimension
+  commentId: T:netDxf.Entities.Angular2LineDimension
+  id: Angular2LineDimension
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Angular2LineDimension.#ctor
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double)
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Tables.DimensionStyle)
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3)
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3,netDxf.Tables.DimensionStyle)
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  - netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double,netDxf.Tables.DimensionStyle)
+  - netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+  - netDxf.Entities.Angular2LineDimension.BuildBlock(System.String)
+  - netDxf.Entities.Angular2LineDimension.CalculateReferencePoints
+  - netDxf.Entities.Angular2LineDimension.CenterPoint
+  - netDxf.Entities.Angular2LineDimension.Clone
+  - netDxf.Entities.Angular2LineDimension.EndFirstLine
+  - netDxf.Entities.Angular2LineDimension.EndSecondLine
+  - netDxf.Entities.Angular2LineDimension.Measurement
+  - netDxf.Entities.Angular2LineDimension.Offset
+  - netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition(netDxf.Vector2)
+  - netDxf.Entities.Angular2LineDimension.StartFirstLine
+  - netDxf.Entities.Angular2LineDimension.StartSecondLine
+  - netDxf.Entities.Angular2LineDimension.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension
+  nameWithType: Angular2LineDimension
+  fullName: netDxf.Entities.Angular2LineDimension
+  type: Class
+  source:
+    id: Angular2LineDimension
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a 3 point angular dimension <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class Angular2LineDimension : Dimension, ICloneable'
+    content.vb: Public Class Angular2LineDimension Inherits Dimension Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  - netDxf.Entities.Dimension
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.Dimension.DimensionStyleChanged
+  - netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle,netDxf.Tables.DimensionStyle)
+  - netDxf.Entities.Dimension.DimensionBlockChanged
+  - netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  - netDxf.Entities.Dimension.DimensionStyleOverrideAdded
+  - netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+  - netDxf.Entities.Dimension.DimensionStyleOverrideRemoved
+  - netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+  - netDxf.Entities.Dimension.defPoint
+  - netDxf.Entities.Dimension.textRefPoint
+  - netDxf.Entities.Dimension.TextPositionManuallySet
+  - netDxf.Entities.Dimension.TextReferencePoint
+  - netDxf.Entities.Dimension.Style
+  - netDxf.Entities.Dimension.StyleOverrides
+  - netDxf.Entities.Dimension.DimensionType
+  - netDxf.Entities.Dimension.AttachmentPoint
+  - netDxf.Entities.Dimension.LineSpacingStyle
+  - netDxf.Entities.Dimension.LineSpacingFactor
+  - netDxf.Entities.Dimension.Block
+  - netDxf.Entities.Dimension.TextRotation
+  - netDxf.Entities.Dimension.UserText
+  - netDxf.Entities.Dimension.Elevation
+  - netDxf.Entities.Dimension.Update
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Angular2LineDimension.#ctor
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor
+  id: '#ctor'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension()
+  nameWithType: Angular2LineDimension.Angular2LineDimension()
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension()
+    content.vb: Public Sub New()
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New()
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New()
+  name.vb: New()
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double)
+  id: '#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Line, Line, double)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Line, Line, double)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Entities.Line, netDxf.Entities.Line, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 66
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Line firstLine, Line secondLine, double offset)
+    parameters:
+    - id: firstLine
+      type: netDxf.Entities.Line
+      description: First <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: secondLine
+      type: netDxf.Entities.Line
+      description: Second <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    content.vb: Public Sub New(firstLine As Line, secondLine As Line, offset As Double)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Line, Line, Double)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Entities.Line, netDxf.Entities.Line, Double)
+  name.vb: New(Line, Line, Double)
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3)
+  id: '#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Line, Line, double, Vector3)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Line, Line, double, Vector3)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Entities.Line, netDxf.Entities.Line, double, netDxf.Vector3)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 78
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Line firstLine, Line secondLine, double offset, Vector3 normal)
+    parameters:
+    - id: firstLine
+      type: netDxf.Entities.Line
+      description: First <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: secondLine
+      type: netDxf.Entities.Line
+      description: Second <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    - id: normal
+      type: netDxf.Vector3
+      description: Normal vector of the plane where the dimension is defined.
+    content.vb: Public Sub New(firstLine As Line, secondLine As Line, offset As Double, normal As Vector3)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Line, Line, Double, Vector3)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Entities.Line, netDxf.Entities.Line, Double, netDxf.Vector3)
+  name.vb: New(Line, Line, Double, Vector3)
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Tables.DimensionStyle)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Tables.DimensionStyle)
+  id: '#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Tables.DimensionStyle)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Line, Line, double, DimensionStyle)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Line, Line, double, DimensionStyle)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Entities.Line, netDxf.Entities.Line, double, netDxf.Tables.DimensionStyle)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Line firstLine, Line secondLine, double offset, DimensionStyle style)
+    parameters:
+    - id: firstLine
+      type: netDxf.Entities.Line
+      description: First <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: secondLine
+      type: netDxf.Entities.Line
+      description: Second <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    - id: style
+      type: netDxf.Tables.DimensionStyle
+      description: The <xref href="netDxf.Tables.DimensionStyle?text=style" data-throw-if-not-resolved="false"></xref> to use with the dimension.
+    content.vb: Public Sub New(firstLine As Line, secondLine As Line, offset As Double, style As DimensionStyle)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Line, Line, Double, DimensionStyle)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Entities.Line, netDxf.Entities.Line, Double, netDxf.Tables.DimensionStyle)
+  name.vb: New(Line, Line, Double, DimensionStyle)
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3,netDxf.Tables.DimensionStyle)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3,netDxf.Tables.DimensionStyle)
+  id: '#ctor(netDxf.Entities.Line,netDxf.Entities.Line,System.Double,netDxf.Vector3,netDxf.Tables.DimensionStyle)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Line, Line, double, Vector3, DimensionStyle)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Line, Line, double, Vector3, DimensionStyle)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Entities.Line, netDxf.Entities.Line, double, netDxf.Vector3, netDxf.Tables.DimensionStyle)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 103
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Line firstLine, Line secondLine, double offset, Vector3 normal, DimensionStyle style)
+    parameters:
+    - id: firstLine
+      type: netDxf.Entities.Line
+      description: First <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: secondLine
+      type: netDxf.Entities.Line
+      description: Second <xref href="netDxf.Entities.Line?text=line" data-throw-if-not-resolved="false"></xref> that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    - id: normal
+      type: netDxf.Vector3
+      description: Normal vector of the plane where the dimension is defined.
+    - id: style
+      type: netDxf.Tables.DimensionStyle
+      description: The <xref href="netDxf.Tables.DimensionStyle?text=style" data-throw-if-not-resolved="false"></xref> to use with the dimension.
+    content.vb: Public Sub New(firstLine As Line, secondLine As Line, offset As Double, normal As Vector3, style As DimensionStyle)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Line, Line, Double, Vector3, DimensionStyle)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Entities.Line, netDxf.Entities.Line, Double, netDxf.Vector3, netDxf.Tables.DimensionStyle)
+  name.vb: New(Line, Line, Double, Vector3, DimensionStyle)
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)
+  id: '#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Vector2, Vector2, Vector2, Vector2, double)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Vector2, Vector2, Vector2, Vector2, double)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 155
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Vector2 startFirstLine, Vector2 endFirstLine, Vector2 startSecondLine, Vector2 endSecondLine, double offset)
+    parameters:
+    - id: startFirstLine
+      type: netDxf.Vector2
+      description: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure.
+    - id: endFirstLine
+      type: netDxf.Vector2
+      description: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure.
+    - id: startSecondLine
+      type: netDxf.Vector2
+      description: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure.
+    - id: endSecondLine
+      type: netDxf.Vector2
+      description: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    content.vb: Public Sub New(startFirstLine As Vector2, endFirstLine As Vector2, startSecondLine As Vector2, endSecondLine As Vector2, offset As Double)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Vector2, Vector2, Vector2, Vector2, Double)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, Double)
+  name.vb: New(Vector2, Vector2, Vector2, Vector2, Double)
+- uid: netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double,netDxf.Tables.DimensionStyle)
+  commentId: M:netDxf.Entities.Angular2LineDimension.#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double,netDxf.Tables.DimensionStyle)
+  id: '#ctor(netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,netDxf.Vector2,System.Double,netDxf.Tables.DimensionStyle)'
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Angular2LineDimension(Vector2, Vector2, Vector2, Vector2, double, DimensionStyle)
+  nameWithType: Angular2LineDimension.Angular2LineDimension(Vector2, Vector2, Vector2, Vector2, double, DimensionStyle)
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, double, netDxf.Tables.DimensionStyle)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 169
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Angular2LineDimension</code> class.
+  example: []
+  syntax:
+    content: public Angular2LineDimension(Vector2 startFirstLine, Vector2 endFirstLine, Vector2 startSecondLine, Vector2 endSecondLine, double offset, DimensionStyle style)
+    parameters:
+    - id: startFirstLine
+      type: netDxf.Vector2
+      description: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure.
+    - id: endFirstLine
+      type: netDxf.Vector2
+      description: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure.
+    - id: startSecondLine
+      type: netDxf.Vector2
+      description: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure.
+    - id: endSecondLine
+      type: netDxf.Vector2
+      description: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure.
+    - id: offset
+      type: System.Double
+      description: Distance between the center point and the dimension line.
+    - id: style
+      type: netDxf.Tables.DimensionStyle
+      description: The <xref href="netDxf.Tables.DimensionStyle?text=style" data-throw-if-not-resolved="false"></xref> to use with the dimension.
+    content.vb: Public Sub New(startFirstLine As Vector2, endFirstLine As Vector2, startSecondLine As Vector2, endSecondLine As Vector2, offset As Double, style As DimensionStyle)
+  overload: netDxf.Entities.Angular2LineDimension.#ctor*
+  nameWithType.vb: Angular2LineDimension.New(Vector2, Vector2, Vector2, Vector2, Double, DimensionStyle)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New(netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, netDxf.Vector2, Double, netDxf.Tables.DimensionStyle)
+  name.vb: New(Vector2, Vector2, Vector2, Vector2, Double, DimensionStyle)
+- uid: netDxf.Entities.Angular2LineDimension.CenterPoint
+  commentId: P:netDxf.Entities.Angular2LineDimension.CenterPoint
+  id: CenterPoint
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: CenterPoint
+  nameWithType: Angular2LineDimension.CenterPoint
+  fullName: netDxf.Entities.Angular2LineDimension.CenterPoint
+  type: Property
+  source:
+    id: CenterPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 201
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the center <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the measured arc in local coordinates.
+  example: []
+  syntax:
+    content: public Vector2 CenterPoint { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public ReadOnly Property CenterPoint As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.CenterPoint*
+- uid: netDxf.Entities.Angular2LineDimension.StartFirstLine
+  commentId: P:netDxf.Entities.Angular2LineDimension.StartFirstLine
+  id: StartFirstLine
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: StartFirstLine
+  nameWithType: Angular2LineDimension.StartFirstLine
+  fullName: netDxf.Entities.Angular2LineDimension.StartFirstLine
+  type: Property
+  source:
+    id: StartFirstLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 214
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure in local coordinates.
+  example: []
+  syntax:
+    content: public Vector2 StartFirstLine { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property StartFirstLine As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.StartFirstLine*
+- uid: netDxf.Entities.Angular2LineDimension.EndFirstLine
+  commentId: P:netDxf.Entities.Angular2LineDimension.EndFirstLine
+  id: EndFirstLine
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: EndFirstLine
+  nameWithType: Angular2LineDimension.EndFirstLine
+  fullName: netDxf.Entities.Angular2LineDimension.EndFirstLine
+  type: Property
+  source:
+    id: EndFirstLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 223
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the first line that defines the angle to measure in local coordinates.
+  example: []
+  syntax:
+    content: public Vector2 EndFirstLine { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property EndFirstLine As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.EndFirstLine*
+- uid: netDxf.Entities.Angular2LineDimension.StartSecondLine
+  commentId: P:netDxf.Entities.Angular2LineDimension.StartSecondLine
+  id: StartSecondLine
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: StartSecondLine
+  nameWithType: Angular2LineDimension.StartSecondLine
+  fullName: netDxf.Entities.Angular2LineDimension.StartSecondLine
+  type: Property
+  source:
+    id: StartSecondLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 232
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Start <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure in OCS (object coordinate system).
+  example: []
+  syntax:
+    content: public Vector2 StartSecondLine { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property StartSecondLine As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.StartSecondLine*
+- uid: netDxf.Entities.Angular2LineDimension.EndSecondLine
+  commentId: P:netDxf.Entities.Angular2LineDimension.EndSecondLine
+  id: EndSecondLine
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: EndSecondLine
+  nameWithType: Angular2LineDimension.EndSecondLine
+  fullName: netDxf.Entities.Angular2LineDimension.EndSecondLine
+  type: Property
+  source:
+    id: EndSecondLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 241
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: End <xref href="netDxf.Vector2?text=point" data-throw-if-not-resolved="false"></xref> of the second line that defines the angle to measure in OCS (object coordinate system).
+  example: []
+  syntax:
+    content: public Vector2 EndSecondLine { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property EndSecondLine As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.EndSecondLine*
+- uid: netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+  commentId: P:netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+  id: ArcDefinitionPoint
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: ArcDefinitionPoint
+  nameWithType: Angular2LineDimension.ArcDefinitionPoint
+  fullName: netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+  type: Property
+  source:
+    id: ArcDefinitionPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 250
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the location of the dimension line arc.
+  example: []
+  syntax:
+    content: public Vector2 ArcDefinitionPoint { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property ArcDefinitionPoint As Vector2
+  overload: netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint*
+- uid: netDxf.Entities.Angular2LineDimension.Offset
+  commentId: P:netDxf.Entities.Angular2LineDimension.Offset
+  id: Offset
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Offset
+  nameWithType: Angular2LineDimension.Offset
+  fullName: netDxf.Entities.Angular2LineDimension.Offset
+  type: Property
+  source:
+    id: Offset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 262
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the distance between the center point and the dimension line.
+  remarks: Offset values cannot be negative and, even thought, zero values are allowed, they are not recommended.
+  example: []
+  syntax:
+    content: public double Offset { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Offset As Double
+  overload: netDxf.Entities.Angular2LineDimension.Offset*
+- uid: netDxf.Entities.Angular2LineDimension.Measurement
+  commentId: P:netDxf.Entities.Angular2LineDimension.Measurement
+  id: Measurement
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Measurement
+  nameWithType: Angular2LineDimension.Measurement
+  fullName: netDxf.Entities.Angular2LineDimension.Measurement
+  type: Property
+  source:
+    id: Measurement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 278
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Actual measurement.
+  example: []
+  syntax:
+    content: public override double Measurement { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Overrides ReadOnly Property Measurement As Double
+  overridden: netDxf.Entities.Dimension.Measurement
+  overload: netDxf.Entities.Angular2LineDimension.Measurement*
+- uid: netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition(netDxf.Vector2)
+  commentId: M:netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition(netDxf.Vector2)
+  id: SetDimensionLinePosition(netDxf.Vector2)
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: SetDimensionLinePosition(Vector2)
+  nameWithType: Angular2LineDimension.SetDimensionLinePosition(Vector2)
+  fullName: netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition(netDxf.Vector2)
+  type: Method
+  source:
+    id: SetDimensionLinePosition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 300
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Calculates the dimension offset from a point along the dimension line.
+  remarks: >-
+    The start and end points of the reference lines will be modified,
+
+    the angle measurement is always made from the direction of the first line to the direction of the second line.
+  example: []
+  syntax:
+    content: public void SetDimensionLinePosition(Vector2 point)
+    parameters:
+    - id: point
+      type: netDxf.Vector2
+      description: Point along the dimension line.
+    content.vb: Public Sub SetDimensionLinePosition(point As Vector2)
+  overload: netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition*
+- uid: netDxf.Entities.Angular2LineDimension.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Angular2LineDimension.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Angular2LineDimension.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Angular2LineDimension.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 410
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: >-
+    Non-uniform and zero scaling local to the dimension entity are not supported.<br />
+
+    The transformation will not be applied if the resulting reference lines are parallel.<br />
+
+    Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.Angular2LineDimension.TransformBy*
+- uid: netDxf.Entities.Angular2LineDimension.CalculateReferencePoints
+  commentId: M:netDxf.Entities.Angular2LineDimension.CalculateReferencePoints
+  id: CalculateReferencePoints
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: CalculateReferencePoints()
+  nameWithType: Angular2LineDimension.CalculateReferencePoints()
+  fullName: netDxf.Entities.Angular2LineDimension.CalculateReferencePoints()
+  type: Method
+  source:
+    id: CalculateReferencePoints
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 479
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Calculate the dimension reference points.
+  example: []
+  syntax:
+    content: protected override void CalculateReferencePoints()
+    content.vb: Protected Overrides Sub CalculateReferencePoints()
+  overridden: netDxf.Entities.Dimension.CalculateReferencePoints
+  overload: netDxf.Entities.Angular2LineDimension.CalculateReferencePoints*
+- uid: netDxf.Entities.Angular2LineDimension.BuildBlock(System.String)
+  commentId: M:netDxf.Entities.Angular2LineDimension.BuildBlock(System.String)
+  id: BuildBlock(System.String)
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: BuildBlock(string)
+  nameWithType: Angular2LineDimension.BuildBlock(string)
+  fullName: netDxf.Entities.Angular2LineDimension.BuildBlock(string)
+  type: Method
+  source:
+    id: BuildBlock
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 536
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the block that contains the entities that make up the dimension picture.
+  example: []
+  syntax:
+    content: protected override Block BuildBlock(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: Name to be assigned to the generated block.
+    return:
+      type: netDxf.Blocks.Block
+      description: The block that represents the actual dimension.
+    content.vb: Protected Overrides Function BuildBlock(name As String) As Block
+  overridden: netDxf.Entities.Dimension.BuildBlock(System.String)
+  overload: netDxf.Entities.Angular2LineDimension.BuildBlock*
+  nameWithType.vb: Angular2LineDimension.BuildBlock(String)
+  fullName.vb: netDxf.Entities.Angular2LineDimension.BuildBlock(String)
+  name.vb: BuildBlock(String)
+- uid: netDxf.Entities.Angular2LineDimension.Clone
+  commentId: M:netDxf.Entities.Angular2LineDimension.Clone
+  id: Clone
+  parent: netDxf.Entities.Angular2LineDimension
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Angular2LineDimension.Clone()
+  fullName: netDxf.Entities.Angular2LineDimension.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Angular2LineDimension.cs
+    startLine: 545
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Angular2LineDimension that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new Angular2LineDimension that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.Angular2LineDimension.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: netDxf.Entities.Dimension
+  commentId: T:netDxf.Entities.Dimension
+  parent: netDxf.Entities
+  href: netDxf.Entities.Dimension.html
+  name: Dimension
+  nameWithType: Dimension
+  fullName: netDxf.Entities.Dimension
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.Dimension.DimensionStyleChanged
+  commentId: E:netDxf.Entities.Dimension.DimensionStyleChanged
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_DimensionStyleChanged
+  name: DimensionStyleChanged
+  nameWithType: Dimension.DimensionStyleChanged
+  fullName: netDxf.Entities.Dimension.DimensionStyleChanged
+- uid: netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle,netDxf.Tables.DimensionStyle)
+  commentId: M:netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle,netDxf.Tables.DimensionStyle)
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleChangedEvent_netDxf_Tables_DimensionStyle_netDxf_Tables_DimensionStyle_
+  name: OnDimensionStyleChangedEvent(DimensionStyle, DimensionStyle)
+  nameWithType: Dimension.OnDimensionStyleChangedEvent(DimensionStyle, DimensionStyle)
+  fullName: netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle, netDxf.Tables.DimensionStyle)
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle,netDxf.Tables.DimensionStyle)
+    name: OnDimensionStyleChangedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleChangedEvent_netDxf_Tables_DimensionStyle_netDxf_Tables_DimensionStyle_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleChangedEvent(netDxf.Tables.DimensionStyle,netDxf.Tables.DimensionStyle)
+    name: OnDimensionStyleChangedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleChangedEvent_netDxf_Tables_DimensionStyle_netDxf_Tables_DimensionStyle_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: )
+- uid: netDxf.Entities.Dimension.DimensionBlockChanged
+  commentId: E:netDxf.Entities.Dimension.DimensionBlockChanged
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_DimensionBlockChanged
+  name: DimensionBlockChanged
+  nameWithType: Dimension.DimensionBlockChanged
+  fullName: netDxf.Entities.Dimension.DimensionBlockChanged
+- uid: netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  commentId: M:netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionBlockChangedEvent_netDxf_Blocks_Block_netDxf_Blocks_Block_
+  name: OnDimensionBlockChangedEvent(Block, Block)
+  nameWithType: Dimension.OnDimensionBlockChangedEvent(Block, Block)
+  fullName: netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block, netDxf.Blocks.Block)
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+    name: OnDimensionBlockChangedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionBlockChangedEvent_netDxf_Blocks_Block_netDxf_Blocks_Block_
+  - name: (
+  - uid: netDxf.Blocks.Block
+    name: Block
+    href: netDxf.Blocks.Block.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Blocks.Block
+    name: Block
+    href: netDxf.Blocks.Block.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.OnDimensionBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+    name: OnDimensionBlockChangedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionBlockChangedEvent_netDxf_Blocks_Block_netDxf_Blocks_Block_
+  - name: (
+  - uid: netDxf.Blocks.Block
+    name: Block
+    href: netDxf.Blocks.Block.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Blocks.Block
+    name: Block
+    href: netDxf.Blocks.Block.html
+  - name: )
+- uid: netDxf.Entities.Dimension.DimensionStyleOverrideAdded
+  commentId: E:netDxf.Entities.Dimension.DimensionStyleOverrideAdded
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_DimensionStyleOverrideAdded
+  name: DimensionStyleOverrideAdded
+  nameWithType: Dimension.DimensionStyleOverrideAdded
+  fullName: netDxf.Entities.Dimension.DimensionStyleOverrideAdded
+- uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+  commentId: M:netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideAddedEvent_netDxf_Tables_DimensionStyleOverride_
+  name: OnDimensionStyleOverrideAddedEvent(DimensionStyleOverride)
+  nameWithType: Dimension.OnDimensionStyleOverrideAddedEvent(DimensionStyleOverride)
+  fullName: netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+    name: OnDimensionStyleOverrideAddedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideAddedEvent_netDxf_Tables_DimensionStyleOverride_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyleOverride
+    name: DimensionStyleOverride
+    href: netDxf.Tables.DimensionStyleOverride.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideAddedEvent(netDxf.Tables.DimensionStyleOverride)
+    name: OnDimensionStyleOverrideAddedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideAddedEvent_netDxf_Tables_DimensionStyleOverride_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyleOverride
+    name: DimensionStyleOverride
+    href: netDxf.Tables.DimensionStyleOverride.html
+  - name: )
+- uid: netDxf.Entities.Dimension.DimensionStyleOverrideRemoved
+  commentId: E:netDxf.Entities.Dimension.DimensionStyleOverrideRemoved
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_DimensionStyleOverrideRemoved
+  name: DimensionStyleOverrideRemoved
+  nameWithType: Dimension.DimensionStyleOverrideRemoved
+  fullName: netDxf.Entities.Dimension.DimensionStyleOverrideRemoved
+- uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+  commentId: M:netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideRemovedEvent_netDxf_Tables_DimensionStyleOverride_
+  name: OnDimensionStyleOverrideRemovedEvent(DimensionStyleOverride)
+  nameWithType: Dimension.OnDimensionStyleOverrideRemovedEvent(DimensionStyleOverride)
+  fullName: netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+    name: OnDimensionStyleOverrideRemovedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideRemovedEvent_netDxf_Tables_DimensionStyleOverride_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyleOverride
+    name: DimensionStyleOverride
+    href: netDxf.Tables.DimensionStyleOverride.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.OnDimensionStyleOverrideRemovedEvent(netDxf.Tables.DimensionStyleOverride)
+    name: OnDimensionStyleOverrideRemovedEvent
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_OnDimensionStyleOverrideRemovedEvent_netDxf_Tables_DimensionStyleOverride_
+  - name: (
+  - uid: netDxf.Tables.DimensionStyleOverride
+    name: DimensionStyleOverride
+    href: netDxf.Tables.DimensionStyleOverride.html
+  - name: )
+- uid: netDxf.Entities.Dimension.defPoint
+  commentId: F:netDxf.Entities.Dimension.defPoint
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_defPoint
+  name: defPoint
+  nameWithType: Dimension.defPoint
+  fullName: netDxf.Entities.Dimension.defPoint
+- uid: netDxf.Entities.Dimension.textRefPoint
+  commentId: F:netDxf.Entities.Dimension.textRefPoint
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_textRefPoint
+  name: textRefPoint
+  nameWithType: Dimension.textRefPoint
+  fullName: netDxf.Entities.Dimension.textRefPoint
+- uid: netDxf.Entities.Dimension.TextPositionManuallySet
+  commentId: P:netDxf.Entities.Dimension.TextPositionManuallySet
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_TextPositionManuallySet
+  name: TextPositionManuallySet
+  nameWithType: Dimension.TextPositionManuallySet
+  fullName: netDxf.Entities.Dimension.TextPositionManuallySet
+- uid: netDxf.Entities.Dimension.TextReferencePoint
+  commentId: P:netDxf.Entities.Dimension.TextReferencePoint
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_TextReferencePoint
+  name: TextReferencePoint
+  nameWithType: Dimension.TextReferencePoint
+  fullName: netDxf.Entities.Dimension.TextReferencePoint
+- uid: netDxf.Entities.Dimension.Style
+  commentId: P:netDxf.Entities.Dimension.Style
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Style
+  name: Style
+  nameWithType: Dimension.Style
+  fullName: netDxf.Entities.Dimension.Style
+- uid: netDxf.Entities.Dimension.StyleOverrides
+  commentId: P:netDxf.Entities.Dimension.StyleOverrides
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_StyleOverrides
+  name: StyleOverrides
+  nameWithType: Dimension.StyleOverrides
+  fullName: netDxf.Entities.Dimension.StyleOverrides
+- uid: netDxf.Entities.Dimension.DimensionType
+  commentId: P:netDxf.Entities.Dimension.DimensionType
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_DimensionType
+  name: DimensionType
+  nameWithType: Dimension.DimensionType
+  fullName: netDxf.Entities.Dimension.DimensionType
+- uid: netDxf.Entities.Dimension.AttachmentPoint
+  commentId: P:netDxf.Entities.Dimension.AttachmentPoint
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_AttachmentPoint
+  name: AttachmentPoint
+  nameWithType: Dimension.AttachmentPoint
+  fullName: netDxf.Entities.Dimension.AttachmentPoint
+- uid: netDxf.Entities.Dimension.LineSpacingStyle
+  commentId: P:netDxf.Entities.Dimension.LineSpacingStyle
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_LineSpacingStyle
+  name: LineSpacingStyle
+  nameWithType: Dimension.LineSpacingStyle
+  fullName: netDxf.Entities.Dimension.LineSpacingStyle
+- uid: netDxf.Entities.Dimension.LineSpacingFactor
+  commentId: P:netDxf.Entities.Dimension.LineSpacingFactor
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_LineSpacingFactor
+  name: LineSpacingFactor
+  nameWithType: Dimension.LineSpacingFactor
+  fullName: netDxf.Entities.Dimension.LineSpacingFactor
+- uid: netDxf.Entities.Dimension.Block
+  commentId: P:netDxf.Entities.Dimension.Block
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Block
+  name: Block
+  nameWithType: Dimension.Block
+  fullName: netDxf.Entities.Dimension.Block
+- uid: netDxf.Entities.Dimension.TextRotation
+  commentId: P:netDxf.Entities.Dimension.TextRotation
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_TextRotation
+  name: TextRotation
+  nameWithType: Dimension.TextRotation
+  fullName: netDxf.Entities.Dimension.TextRotation
+- uid: netDxf.Entities.Dimension.UserText
+  commentId: P:netDxf.Entities.Dimension.UserText
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_UserText
+  name: UserText
+  nameWithType: Dimension.UserText
+  fullName: netDxf.Entities.Dimension.UserText
+- uid: netDxf.Entities.Dimension.Elevation
+  commentId: P:netDxf.Entities.Dimension.Elevation
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Elevation
+  name: Elevation
+  nameWithType: Dimension.Elevation
+  fullName: netDxf.Entities.Dimension.Elevation
+- uid: netDxf.Entities.Dimension.Update
+  commentId: M:netDxf.Entities.Dimension.Update
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Update
+  name: Update()
+  nameWithType: Dimension.Update()
+  fullName: netDxf.Entities.Dimension.Update()
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.Update
+    name: Update
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Update
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.Update
+    name: Update
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Update
+  - name: (
+  - name: )
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.Angular2LineDimension.#ctor*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.#ctor
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension__ctor
+  name: Angular2LineDimension
+  nameWithType: Angular2LineDimension.Angular2LineDimension
+  fullName: netDxf.Entities.Angular2LineDimension.Angular2LineDimension
+  nameWithType.vb: Angular2LineDimension.New
+  fullName.vb: netDxf.Entities.Angular2LineDimension.New
+  name.vb: New
+- uid: netDxf.Entities.Line
+  commentId: T:netDxf.Entities.Line
+  parent: netDxf.Entities
+  href: netDxf.Entities.Line.html
+  name: Line
+  nameWithType: Line
+  fullName: netDxf.Entities.Line
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Tables.DimensionStyle
+  commentId: T:netDxf.Tables.DimensionStyle
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle
+  nameWithType: DimensionStyle
+  fullName: netDxf.Tables.DimensionStyle
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: netDxf.Entities.Angular2LineDimension.CenterPoint*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.CenterPoint
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_CenterPoint
+  name: CenterPoint
+  nameWithType: Angular2LineDimension.CenterPoint
+  fullName: netDxf.Entities.Angular2LineDimension.CenterPoint
+- uid: netDxf.Entities.Angular2LineDimension.StartFirstLine*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.StartFirstLine
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_StartFirstLine
+  name: StartFirstLine
+  nameWithType: Angular2LineDimension.StartFirstLine
+  fullName: netDxf.Entities.Angular2LineDimension.StartFirstLine
+- uid: netDxf.Entities.Angular2LineDimension.EndFirstLine*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.EndFirstLine
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_EndFirstLine
+  name: EndFirstLine
+  nameWithType: Angular2LineDimension.EndFirstLine
+  fullName: netDxf.Entities.Angular2LineDimension.EndFirstLine
+- uid: netDxf.Entities.Angular2LineDimension.StartSecondLine*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.StartSecondLine
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_StartSecondLine
+  name: StartSecondLine
+  nameWithType: Angular2LineDimension.StartSecondLine
+  fullName: netDxf.Entities.Angular2LineDimension.StartSecondLine
+- uid: netDxf.Entities.Angular2LineDimension.EndSecondLine*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.EndSecondLine
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_EndSecondLine
+  name: EndSecondLine
+  nameWithType: Angular2LineDimension.EndSecondLine
+  fullName: netDxf.Entities.Angular2LineDimension.EndSecondLine
+- uid: netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_ArcDefinitionPoint
+  name: ArcDefinitionPoint
+  nameWithType: Angular2LineDimension.ArcDefinitionPoint
+  fullName: netDxf.Entities.Angular2LineDimension.ArcDefinitionPoint
+- uid: netDxf.Entities.Angular2LineDimension.Offset*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.Offset
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_Offset
+  name: Offset
+  nameWithType: Angular2LineDimension.Offset
+  fullName: netDxf.Entities.Angular2LineDimension.Offset
+- uid: netDxf.Entities.Dimension.Measurement
+  commentId: P:netDxf.Entities.Dimension.Measurement
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_Measurement
+  name: Measurement
+  nameWithType: Dimension.Measurement
+  fullName: netDxf.Entities.Dimension.Measurement
+- uid: netDxf.Entities.Angular2LineDimension.Measurement*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.Measurement
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_Measurement
+  name: Measurement
+  nameWithType: Angular2LineDimension.Measurement
+  fullName: netDxf.Entities.Angular2LineDimension.Measurement
+- uid: netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_SetDimensionLinePosition_netDxf_Vector2_
+  name: SetDimensionLinePosition
+  nameWithType: Angular2LineDimension.SetDimensionLinePosition
+  fullName: netDxf.Entities.Angular2LineDimension.SetDimensionLinePosition
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.Angular2LineDimension.TransformBy*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.TransformBy
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Angular2LineDimension.TransformBy
+  fullName: netDxf.Entities.Angular2LineDimension.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Entities.Dimension.CalculateReferencePoints
+  commentId: M:netDxf.Entities.Dimension.CalculateReferencePoints
+  parent: netDxf.Entities.Dimension
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_CalculateReferencePoints
+  name: CalculateReferencePoints()
+  nameWithType: Dimension.CalculateReferencePoints()
+  fullName: netDxf.Entities.Dimension.CalculateReferencePoints()
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.CalculateReferencePoints
+    name: CalculateReferencePoints
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_CalculateReferencePoints
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.CalculateReferencePoints
+    name: CalculateReferencePoints
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_CalculateReferencePoints
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Angular2LineDimension.CalculateReferencePoints*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.CalculateReferencePoints
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_CalculateReferencePoints
+  name: CalculateReferencePoints
+  nameWithType: Angular2LineDimension.CalculateReferencePoints
+  fullName: netDxf.Entities.Angular2LineDimension.CalculateReferencePoints
+- uid: netDxf.Entities.Dimension.BuildBlock(System.String)
+  commentId: M:netDxf.Entities.Dimension.BuildBlock(System.String)
+  parent: netDxf.Entities.Dimension
+  isExternal: true
+  href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_BuildBlock_System_String_
+  name: BuildBlock(string)
+  nameWithType: Dimension.BuildBlock(string)
+  fullName: netDxf.Entities.Dimension.BuildBlock(string)
+  nameWithType.vb: Dimension.BuildBlock(String)
+  fullName.vb: netDxf.Entities.Dimension.BuildBlock(String)
+  name.vb: BuildBlock(String)
+  spec.csharp:
+  - uid: netDxf.Entities.Dimension.BuildBlock(System.String)
+    name: BuildBlock
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_BuildBlock_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.Dimension.BuildBlock(System.String)
+    name: BuildBlock
+    href: netDxf.Entities.Dimension.html#netDxf_Entities_Dimension_BuildBlock_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Entities.Angular2LineDimension.BuildBlock*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.BuildBlock
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_BuildBlock_System_String_
+  name: BuildBlock
+  nameWithType: Angular2LineDimension.BuildBlock
+  fullName: netDxf.Entities.Angular2LineDimension.BuildBlock
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Blocks.Block
+  commentId: T:netDxf.Blocks.Block
+  parent: netDxf.Blocks
+  href: netDxf.Blocks.Block.html
+  name: Block
+  nameWithType: Block
+  fullName: netDxf.Blocks.Block
+- uid: netDxf.Blocks
+  commentId: N:netDxf.Blocks
+  href: netDxf.html
+  name: netDxf.Blocks
+  nameWithType: netDxf.Blocks
+  fullName: netDxf.Blocks
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Angular2LineDimension.Clone*
+  commentId: Overload:netDxf.Entities.Angular2LineDimension.Clone
+  href: netDxf.Entities.Angular2LineDimension.html#netDxf_Entities_Angular2LineDimension_Clone
+  name: Clone
+  nameWithType: Angular2LineDimension.Clone
+  fullName: netDxf.Entities.Angular2LineDimension.Clone

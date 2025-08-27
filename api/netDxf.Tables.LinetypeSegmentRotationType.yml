@@ -1,0 +1,132 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.LinetypeSegmentRotationType
+  commentId: T:netDxf.Tables.LinetypeSegmentRotationType
+  id: LinetypeSegmentRotationType
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.LinetypeSegmentRotationType.Absolute
+  - netDxf.Tables.LinetypeSegmentRotationType.Relative
+  - netDxf.Tables.LinetypeSegmentRotationType.Upright
+  langs:
+  - csharp
+  - vb
+  name: LinetypeSegmentRotationType
+  nameWithType: LinetypeSegmentRotationType
+  fullName: netDxf.Tables.LinetypeSegmentRotationType
+  type: Enum
+  source:
+    id: LinetypeSegmentRotationType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/LinetypeSegmentRotationType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Define the type of rotation specified by the rotation value of the text or shape linetype segment.
+  example: []
+  syntax:
+    content: public enum LinetypeSegmentRotationType
+    content.vb: Public Enum LinetypeSegmentRotationType
+- uid: netDxf.Tables.LinetypeSegmentRotationType.Upright
+  commentId: F:netDxf.Tables.LinetypeSegmentRotationType.Upright
+  id: Upright
+  parent: netDxf.Tables.LinetypeSegmentRotationType
+  langs:
+  - csharp
+  - vb
+  name: Upright
+  nameWithType: LinetypeSegmentRotationType.Upright
+  fullName: netDxf.Tables.LinetypeSegmentRotationType.Upright
+  type: Field
+  source:
+    id: Upright
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/LinetypeSegmentRotationType.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies upright or easy-to-read text.
+  remarks: The dxf seems to store the rotation value only as relative or absolute, therefore upright and relative will be considered equivalent.
+  example: []
+  syntax:
+    content: Upright = 0
+    return:
+      type: netDxf.Tables.LinetypeSegmentRotationType
+- uid: netDxf.Tables.LinetypeSegmentRotationType.Relative
+  commentId: F:netDxf.Tables.LinetypeSegmentRotationType.Relative
+  id: Relative
+  parent: netDxf.Tables.LinetypeSegmentRotationType
+  langs:
+  - csharp
+  - vb
+  name: Relative
+  nameWithType: LinetypeSegmentRotationType.Relative
+  fullName: netDxf.Tables.LinetypeSegmentRotationType.Relative
+  type: Field
+  source:
+    id: Relative
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/LinetypeSegmentRotationType.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies relative or tangential rotation with respect to the line.
+  example: []
+  syntax:
+    content: Relative = 1
+    return:
+      type: netDxf.Tables.LinetypeSegmentRotationType
+- uid: netDxf.Tables.LinetypeSegmentRotationType.Absolute
+  commentId: F:netDxf.Tables.LinetypeSegmentRotationType.Absolute
+  id: Absolute
+  parent: netDxf.Tables.LinetypeSegmentRotationType
+  langs:
+  - csharp
+  - vb
+  name: Absolute
+  nameWithType: LinetypeSegmentRotationType.Absolute
+  fullName: netDxf.Tables.LinetypeSegmentRotationType.Absolute
+  type: Field
+  source:
+    id: Absolute
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/LinetypeSegmentRotationType.cs
+    startLine: 46
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies absolute rotation of the text with respect to the origin; that is, all text has the same rotation regardless of its position relative to the line.
+  example: []
+  syntax:
+    content: Absolute = 2
+    return:
+      type: netDxf.Tables.LinetypeSegmentRotationType
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.LinetypeSegmentRotationType
+  commentId: T:netDxf.Tables.LinetypeSegmentRotationType
+  parent: netDxf.Tables
+  href: netDxf.Tables.LinetypeSegmentRotationType.html
+  name: LinetypeSegmentRotationType
+  nameWithType: LinetypeSegmentRotationType
+  fullName: netDxf.Tables.LinetypeSegmentRotationType

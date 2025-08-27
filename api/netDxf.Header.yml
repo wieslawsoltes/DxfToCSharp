@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  id: netDxf.Header
+  children:
+  - netDxf.Header.AttMode
+  - netDxf.Header.DxfVersion
+  - netDxf.Header.HeaderVariable
+  - netDxf.Header.HeaderVariableCode
+  - netDxf.Header.HeaderVariables
+  - netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  type: Namespace
+  assemblies:
+  - netDxf
+references:
+- uid: netDxf.Header.AttMode
+  commentId: T:netDxf.Header.AttMode
+  parent: netDxf.Header
+  href: netDxf.Header.AttMode.html
+  name: AttMode
+  nameWithType: AttMode
+  fullName: netDxf.Header.AttMode
+- uid: netDxf.Header.DxfVersion
+  commentId: T:netDxf.Header.DxfVersion
+  parent: netDxf.Header
+  href: netDxf.Header.DxfVersion.html
+  name: DxfVersion
+  nameWithType: DxfVersion
+  fullName: netDxf.Header.DxfVersion
+- uid: netDxf.Header.HeaderVariable
+  commentId: T:netDxf.Header.HeaderVariable
+  parent: netDxf.Header
+  href: netDxf.Header.HeaderVariable.html
+  name: HeaderVariable
+  nameWithType: HeaderVariable
+  fullName: netDxf.Header.HeaderVariable
+- uid: netDxf.Header.HeaderVariableCode
+  commentId: T:netDxf.Header.HeaderVariableCode
+  href: netDxf.Header.HeaderVariableCode.html
+  name: HeaderVariableCode
+  nameWithType: HeaderVariableCode
+  fullName: netDxf.Header.HeaderVariableCode
+- uid: netDxf.Header.HeaderVariables
+  commentId: T:netDxf.Header.HeaderVariables
+  parent: netDxf.Header
+  href: netDxf.Header.HeaderVariables.html
+  name: HeaderVariables
+  nameWithType: HeaderVariables
+  fullName: netDxf.Header.HeaderVariables
+- uid: netDxf.Header.PointShape
+  commentId: T:netDxf.Header.PointShape
+  parent: netDxf.Header
+  href: netDxf.Header.PointShape.html
+  name: PointShape
+  nameWithType: PointShape
+  fullName: netDxf.Header.PointShape
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  href: netDxf.html
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html

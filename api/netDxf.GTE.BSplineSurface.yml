@@ -1,0 +1,947 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.GTE.BSplineSurface
+  commentId: T:netDxf.GTE.BSplineSurface
+  id: BSplineSurface
+  parent: netDxf.GTE
+  children:
+  - netDxf.GTE.BSplineSurface.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  - netDxf.GTE.BSplineSurface.BasisFunction(System.Int32)
+  - netDxf.GTE.BSplineSurface.Controls
+  - netDxf.GTE.BSplineSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  - netDxf.GTE.BSplineSurface.GetControl(System.Int32,System.Int32)
+  - netDxf.GTE.BSplineSurface.NumControls(System.Int32)
+  - netDxf.GTE.BSplineSurface.SetControl(System.Int32,System.Int32,netDxf.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: BSplineSurface
+  nameWithType: BSplineSurface
+  fullName: netDxf.GTE.BSplineSurface
+  type: Class
+  source:
+    id: BSplineSurface
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: 'public class BSplineSurface : ParametricSurface'
+    content.vb: Public Class BSplineSurface Inherits ParametricSurface
+  inheritance:
+  - System.Object
+  - netDxf.GTE.ParametricSurface
+  inheritedMembers:
+  - netDxf.GTE.ParametricSurface.uMin
+  - netDxf.GTE.ParametricSurface.uMax
+  - netDxf.GTE.ParametricSurface.vMin
+  - netDxf.GTE.ParametricSurface.vMax
+  - netDxf.GTE.ParametricSurface.isRectangular
+  - netDxf.GTE.ParametricSurface.isConstructed
+  - netDxf.GTE.ParametricSurface.IsConstructed
+  - netDxf.GTE.ParametricSurface.UMin
+  - netDxf.GTE.ParametricSurface.UMax
+  - netDxf.GTE.ParametricSurface.VMin
+  - netDxf.GTE.ParametricSurface.VMax
+  - netDxf.GTE.ParametricSurface.IsIsRectangular
+  - netDxf.GTE.ParametricSurface.SUP_ORDER
+  - netDxf.GTE.ParametricSurface.GetPosition(System.Double,System.Double)
+  - netDxf.GTE.ParametricSurface.GetUTangent(System.Double,System.Double)
+  - netDxf.GTE.ParametricSurface.GetVTangent(System.Double,System.Double)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.GTE.BSplineSurface.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  commentId: M:netDxf.GTE.BSplineSurface.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  id: '#ctor(netDxf.GTE.BasisFunctionInput,netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])'
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: BSplineSurface(BasisFunctionInput, BasisFunctionInput, Vector3[])
+  nameWithType: BSplineSurface.BSplineSurface(BasisFunctionInput, BasisFunctionInput, Vector3[])
+  fullName: netDxf.GTE.BSplineSurface.BSplineSurface(netDxf.GTE.BasisFunctionInput, netDxf.GTE.BasisFunctionInput, netDxf.Vector3[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 49
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BSplineSurface(BasisFunctionInput input0, BasisFunctionInput input1, Vector3[] controls)
+    parameters:
+    - id: input0
+      type: netDxf.GTE.BasisFunctionInput
+    - id: input1
+      type: netDxf.GTE.BasisFunctionInput
+    - id: controls
+      type: netDxf.Vector3[]
+    content.vb: Public Sub New(input0 As BasisFunctionInput, input1 As BasisFunctionInput, controls As Vector3())
+  overload: netDxf.GTE.BSplineSurface.#ctor*
+  nameWithType.vb: BSplineSurface.New(BasisFunctionInput, BasisFunctionInput, Vector3())
+  fullName.vb: netDxf.GTE.BSplineSurface.New(netDxf.GTE.BasisFunctionInput, netDxf.GTE.BasisFunctionInput, netDxf.Vector3())
+  name.vb: New(BasisFunctionInput, BasisFunctionInput, Vector3())
+- uid: netDxf.GTE.BSplineSurface.BasisFunction(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurface.BasisFunction(System.Int32)
+  id: BasisFunction(System.Int32)
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: BasisFunction(int)
+  nameWithType: BSplineSurface.BasisFunction(int)
+  fullName: netDxf.GTE.BSplineSurface.BasisFunction(int)
+  type: Method
+  source:
+    id: BasisFunction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 73
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BasisFunction BasisFunction(int dim)
+    parameters:
+    - id: dim
+      type: System.Int32
+    return:
+      type: netDxf.GTE.BasisFunction
+    content.vb: Public Function BasisFunction([dim] As Integer) As BasisFunction
+  overload: netDxf.GTE.BSplineSurface.BasisFunction*
+  nameWithType.vb: BSplineSurface.BasisFunction(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurface.BasisFunction(Integer)
+  name.vb: BasisFunction(Integer)
+- uid: netDxf.GTE.BSplineSurface.NumControls(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurface.NumControls(System.Int32)
+  id: NumControls(System.Int32)
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: NumControls(int)
+  nameWithType: BSplineSurface.NumControls(int)
+  fullName: netDxf.GTE.BSplineSurface.NumControls(int)
+  type: Method
+  source:
+    id: NumControls
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 78
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumControls(int dim)
+    parameters:
+    - id: dim
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Function NumControls([dim] As Integer) As Integer
+  overload: netDxf.GTE.BSplineSurface.NumControls*
+  nameWithType.vb: BSplineSurface.NumControls(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurface.NumControls(Integer)
+  name.vb: NumControls(Integer)
+- uid: netDxf.GTE.BSplineSurface.Controls
+  commentId: M:netDxf.GTE.BSplineSurface.Controls
+  id: Controls
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: Controls()
+  nameWithType: BSplineSurface.Controls()
+  fullName: netDxf.GTE.BSplineSurface.Controls()
+  type: Method
+  source:
+    id: Controls
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 83
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3[] Controls()
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public Function Controls() As Vector3()
+  overload: netDxf.GTE.BSplineSurface.Controls*
+- uid: netDxf.GTE.BSplineSurface.SetControl(System.Int32,System.Int32,netDxf.Vector3)
+  commentId: M:netDxf.GTE.BSplineSurface.SetControl(System.Int32,System.Int32,netDxf.Vector3)
+  id: SetControl(System.Int32,System.Int32,netDxf.Vector3)
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: SetControl(int, int, Vector3)
+  nameWithType: BSplineSurface.SetControl(int, int, Vector3)
+  fullName: netDxf.GTE.BSplineSurface.SetControl(int, int, netDxf.Vector3)
+  type: Method
+  source:
+    id: SetControl
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 88
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void SetControl(int i0, int i1, Vector3 control)
+    parameters:
+    - id: i0
+      type: System.Int32
+    - id: i1
+      type: System.Int32
+    - id: control
+      type: netDxf.Vector3
+    content.vb: Public Sub SetControl(i0 As Integer, i1 As Integer, control As Vector3)
+  overload: netDxf.GTE.BSplineSurface.SetControl*
+  nameWithType.vb: BSplineSurface.SetControl(Integer, Integer, Vector3)
+  fullName.vb: netDxf.GTE.BSplineSurface.SetControl(Integer, Integer, netDxf.Vector3)
+  name.vb: SetControl(Integer, Integer, Vector3)
+- uid: netDxf.GTE.BSplineSurface.GetControl(System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurface.GetControl(System.Int32,System.Int32)
+  id: GetControl(System.Int32,System.Int32)
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: GetControl(int, int)
+  nameWithType: BSplineSurface.GetControl(int, int)
+  fullName: netDxf.GTE.BSplineSurface.GetControl(int, int)
+  type: Method
+  source:
+    id: GetControl
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 96
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3 GetControl(int i0, int i1)
+    parameters:
+    - id: i0
+      type: System.Int32
+    - id: i1
+      type: System.Int32
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Function GetControl(i0 As Integer, i1 As Integer) As Vector3
+  overload: netDxf.GTE.BSplineSurface.GetControl*
+  nameWithType.vb: BSplineSurface.GetControl(Integer, Integer)
+  fullName.vb: netDxf.GTE.BSplineSurface.GetControl(Integer, Integer)
+  name.vb: GetControl(Integer, Integer)
+- uid: netDxf.GTE.BSplineSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  commentId: M:netDxf.GTE.BSplineSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  id: Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  parent: netDxf.GTE.BSplineSurface
+  langs:
+  - csharp
+  - vb
+  name: Evaluate(double, double, int, out Vector3[])
+  nameWithType: BSplineSurface.Evaluate(double, double, int, out Vector3[])
+  fullName: netDxf.GTE.BSplineSurface.Evaluate(double, double, int, out netDxf.Vector3[])
+  type: Method
+  source:
+    id: Evaluate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurface.cs
+    startLine: 115
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  example: []
+  syntax:
+    content: public override void Evaluate(double u, double v, int order, out Vector3[] jet)
+    parameters:
+    - id: u
+      type: System.Double
+    - id: v
+      type: System.Double
+    - id: order
+      type: System.Int32
+    - id: jet
+      type: netDxf.Vector3[]
+    content.vb: Public Overrides Sub Evaluate(u As Double, v As Double, order As Integer, jet As Vector3())
+  overridden: netDxf.GTE.ParametricSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  overload: netDxf.GTE.BSplineSurface.Evaluate*
+  nameWithType.vb: BSplineSurface.Evaluate(Double, Double, Integer, Vector3())
+  fullName.vb: netDxf.GTE.BSplineSurface.Evaluate(Double, Double, Integer, netDxf.Vector3())
+  name.vb: Evaluate(Double, Double, Integer, Vector3())
+references:
+- uid: netDxf.GTE
+  commentId: N:netDxf.GTE
+  href: netDxf.html
+  name: netDxf.GTE
+  nameWithType: netDxf.GTE
+  fullName: netDxf.GTE
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.GTE.ParametricSurface
+  commentId: T:netDxf.GTE.ParametricSurface
+  parent: netDxf.GTE
+  href: netDxf.GTE.ParametricSurface.html
+  name: ParametricSurface
+  nameWithType: ParametricSurface
+  fullName: netDxf.GTE.ParametricSurface
+- uid: netDxf.GTE.ParametricSurface.uMin
+  commentId: F:netDxf.GTE.ParametricSurface.uMin
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_uMin
+  name: uMin
+  nameWithType: ParametricSurface.uMin
+  fullName: netDxf.GTE.ParametricSurface.uMin
+- uid: netDxf.GTE.ParametricSurface.uMax
+  commentId: F:netDxf.GTE.ParametricSurface.uMax
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_uMax
+  name: uMax
+  nameWithType: ParametricSurface.uMax
+  fullName: netDxf.GTE.ParametricSurface.uMax
+- uid: netDxf.GTE.ParametricSurface.vMin
+  commentId: F:netDxf.GTE.ParametricSurface.vMin
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_vMin
+  name: vMin
+  nameWithType: ParametricSurface.vMin
+  fullName: netDxf.GTE.ParametricSurface.vMin
+- uid: netDxf.GTE.ParametricSurface.vMax
+  commentId: F:netDxf.GTE.ParametricSurface.vMax
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_vMax
+  name: vMax
+  nameWithType: ParametricSurface.vMax
+  fullName: netDxf.GTE.ParametricSurface.vMax
+- uid: netDxf.GTE.ParametricSurface.isRectangular
+  commentId: F:netDxf.GTE.ParametricSurface.isRectangular
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_isRectangular
+  name: isRectangular
+  nameWithType: ParametricSurface.isRectangular
+  fullName: netDxf.GTE.ParametricSurface.isRectangular
+- uid: netDxf.GTE.ParametricSurface.isConstructed
+  commentId: F:netDxf.GTE.ParametricSurface.isConstructed
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_isConstructed
+  name: isConstructed
+  nameWithType: ParametricSurface.isConstructed
+  fullName: netDxf.GTE.ParametricSurface.isConstructed
+- uid: netDxf.GTE.ParametricSurface.IsConstructed
+  commentId: P:netDxf.GTE.ParametricSurface.IsConstructed
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_IsConstructed
+  name: IsConstructed
+  nameWithType: ParametricSurface.IsConstructed
+  fullName: netDxf.GTE.ParametricSurface.IsConstructed
+- uid: netDxf.GTE.ParametricSurface.UMin
+  commentId: P:netDxf.GTE.ParametricSurface.UMin
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_UMin
+  name: UMin
+  nameWithType: ParametricSurface.UMin
+  fullName: netDxf.GTE.ParametricSurface.UMin
+- uid: netDxf.GTE.ParametricSurface.UMax
+  commentId: P:netDxf.GTE.ParametricSurface.UMax
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_UMax
+  name: UMax
+  nameWithType: ParametricSurface.UMax
+  fullName: netDxf.GTE.ParametricSurface.UMax
+- uid: netDxf.GTE.ParametricSurface.VMin
+  commentId: P:netDxf.GTE.ParametricSurface.VMin
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_VMin
+  name: VMin
+  nameWithType: ParametricSurface.VMin
+  fullName: netDxf.GTE.ParametricSurface.VMin
+- uid: netDxf.GTE.ParametricSurface.VMax
+  commentId: P:netDxf.GTE.ParametricSurface.VMax
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_VMax
+  name: VMax
+  nameWithType: ParametricSurface.VMax
+  fullName: netDxf.GTE.ParametricSurface.VMax
+- uid: netDxf.GTE.ParametricSurface.IsIsRectangular
+  commentId: P:netDxf.GTE.ParametricSurface.IsIsRectangular
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_IsIsRectangular
+  name: IsIsRectangular
+  nameWithType: ParametricSurface.IsIsRectangular
+  fullName: netDxf.GTE.ParametricSurface.IsIsRectangular
+- uid: netDxf.GTE.ParametricSurface.SUP_ORDER
+  commentId: F:netDxf.GTE.ParametricSurface.SUP_ORDER
+  parent: netDxf.GTE.ParametricSurface
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_SUP_ORDER
+  name: SUP_ORDER
+  nameWithType: ParametricSurface.SUP_ORDER
+  fullName: netDxf.GTE.ParametricSurface.SUP_ORDER
+- uid: netDxf.GTE.ParametricSurface.GetPosition(System.Double,System.Double)
+  commentId: M:netDxf.GTE.ParametricSurface.GetPosition(System.Double,System.Double)
+  parent: netDxf.GTE.ParametricSurface
+  isExternal: true
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetPosition_System_Double_System_Double_
+  name: GetPosition(double, double)
+  nameWithType: ParametricSurface.GetPosition(double, double)
+  fullName: netDxf.GTE.ParametricSurface.GetPosition(double, double)
+  nameWithType.vb: ParametricSurface.GetPosition(Double, Double)
+  fullName.vb: netDxf.GTE.ParametricSurface.GetPosition(Double, Double)
+  name.vb: GetPosition(Double, Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricSurface.GetPosition(System.Double,System.Double)
+    name: GetPosition
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetPosition_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricSurface.GetPosition(System.Double,System.Double)
+    name: GetPosition
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetPosition_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricSurface.GetUTangent(System.Double,System.Double)
+  commentId: M:netDxf.GTE.ParametricSurface.GetUTangent(System.Double,System.Double)
+  parent: netDxf.GTE.ParametricSurface
+  isExternal: true
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetUTangent_System_Double_System_Double_
+  name: GetUTangent(double, double)
+  nameWithType: ParametricSurface.GetUTangent(double, double)
+  fullName: netDxf.GTE.ParametricSurface.GetUTangent(double, double)
+  nameWithType.vb: ParametricSurface.GetUTangent(Double, Double)
+  fullName.vb: netDxf.GTE.ParametricSurface.GetUTangent(Double, Double)
+  name.vb: GetUTangent(Double, Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricSurface.GetUTangent(System.Double,System.Double)
+    name: GetUTangent
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetUTangent_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricSurface.GetUTangent(System.Double,System.Double)
+    name: GetUTangent
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetUTangent_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricSurface.GetVTangent(System.Double,System.Double)
+  commentId: M:netDxf.GTE.ParametricSurface.GetVTangent(System.Double,System.Double)
+  parent: netDxf.GTE.ParametricSurface
+  isExternal: true
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetVTangent_System_Double_System_Double_
+  name: GetVTangent(double, double)
+  nameWithType: ParametricSurface.GetVTangent(double, double)
+  fullName: netDxf.GTE.ParametricSurface.GetVTangent(double, double)
+  nameWithType.vb: ParametricSurface.GetVTangent(Double, Double)
+  fullName.vb: netDxf.GTE.ParametricSurface.GetVTangent(Double, Double)
+  name.vb: GetVTangent(Double, Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricSurface.GetVTangent(System.Double,System.Double)
+    name: GetVTangent
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetVTangent_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricSurface.GetVTangent(System.Double,System.Double)
+    name: GetVTangent
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_GetVTangent_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.GTE.BSplineSurface.#ctor*
+  commentId: Overload:netDxf.GTE.BSplineSurface.#ctor
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface__ctor_netDxf_GTE_BasisFunctionInput_netDxf_GTE_BasisFunctionInput_netDxf_Vector3___
+  name: BSplineSurface
+  nameWithType: BSplineSurface.BSplineSurface
+  fullName: netDxf.GTE.BSplineSurface.BSplineSurface
+  nameWithType.vb: BSplineSurface.New
+  fullName.vb: netDxf.GTE.BSplineSurface.New
+  name.vb: New
+- uid: netDxf.GTE.BasisFunctionInput
+  commentId: T:netDxf.GTE.BasisFunctionInput
+  parent: netDxf.GTE
+  href: netDxf.GTE.BasisFunctionInput.html
+  name: BasisFunctionInput
+  nameWithType: BasisFunctionInput
+  fullName: netDxf.GTE.BasisFunctionInput
+- uid: netDxf.Vector3[]
+  isExternal: true
+  href: netDxf.Vector3.html
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: netDxf.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: netDxf.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+- uid: netDxf.GTE.BSplineSurface.BasisFunction*
+  commentId: Overload:netDxf.GTE.BSplineSurface.BasisFunction
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_BasisFunction_System_Int32_
+  name: BasisFunction
+  nameWithType: BSplineSurface.BasisFunction
+  fullName: netDxf.GTE.BSplineSurface.BasisFunction
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.GTE.BasisFunction
+  commentId: T:netDxf.GTE.BasisFunction
+  parent: netDxf.GTE
+  href: netDxf.GTE.BasisFunction.html
+  name: BasisFunction
+  nameWithType: BasisFunction
+  fullName: netDxf.GTE.BasisFunction
+- uid: netDxf.GTE.BSplineSurface.NumControls*
+  commentId: Overload:netDxf.GTE.BSplineSurface.NumControls
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_NumControls_System_Int32_
+  name: NumControls
+  nameWithType: BSplineSurface.NumControls
+  fullName: netDxf.GTE.BSplineSurface.NumControls
+- uid: netDxf.GTE.BSplineSurface.Controls*
+  commentId: Overload:netDxf.GTE.BSplineSurface.Controls
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_Controls
+  name: Controls
+  nameWithType: BSplineSurface.Controls
+  fullName: netDxf.GTE.BSplineSurface.Controls
+- uid: netDxf.GTE.BSplineSurface.SetControl*
+  commentId: Overload:netDxf.GTE.BSplineSurface.SetControl
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_SetControl_System_Int32_System_Int32_netDxf_Vector3_
+  name: SetControl
+  nameWithType: BSplineSurface.SetControl
+  fullName: netDxf.GTE.BSplineSurface.SetControl
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.GTE.BSplineSurface.GetControl*
+  commentId: Overload:netDxf.GTE.BSplineSurface.GetControl
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_GetControl_System_Int32_System_Int32_
+  name: GetControl
+  nameWithType: BSplineSurface.GetControl
+  fullName: netDxf.GTE.BSplineSurface.GetControl
+- uid: netDxf.GTE.ParametricSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  commentId: M:netDxf.GTE.ParametricSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+  parent: netDxf.GTE.ParametricSurface
+  isExternal: true
+  href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_Evaluate_System_Double_System_Double_System_Int32_netDxf_Vector3____
+  name: Evaluate(double, double, int, out Vector3[])
+  nameWithType: ParametricSurface.Evaluate(double, double, int, out Vector3[])
+  fullName: netDxf.GTE.ParametricSurface.Evaluate(double, double, int, out netDxf.Vector3[])
+  nameWithType.vb: ParametricSurface.Evaluate(Double, Double, Integer, Vector3())
+  fullName.vb: netDxf.GTE.ParametricSurface.Evaluate(Double, Double, Integer, netDxf.Vector3())
+  name.vb: Evaluate(Double, Double, Integer, Vector3())
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+    name: Evaluate
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_Evaluate_System_Double_System_Double_System_Int32_netDxf_Vector3____
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricSurface.Evaluate(System.Double,System.Double,System.Int32,netDxf.Vector3[]@)
+    name: Evaluate
+    href: netDxf.GTE.ParametricSurface.html#netDxf_GTE_ParametricSurface_Evaluate_System_Double_System_Double_System_Int32_netDxf_Vector3____
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+  - name: )
+- uid: netDxf.GTE.BSplineSurface.Evaluate*
+  commentId: Overload:netDxf.GTE.BSplineSurface.Evaluate
+  href: netDxf.GTE.BSplineSurface.html#netDxf_GTE_BSplineSurface_Evaluate_System_Double_System_Double_System_Int32_netDxf_Vector3____
+  name: Evaluate
+  nameWithType: BSplineSurface.Evaluate
+  fullName: netDxf.GTE.BSplineSurface.Evaluate
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

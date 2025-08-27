@@ -1,0 +1,191 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.AttributeFlags
+  commentId: T:netDxf.Entities.AttributeFlags
+  id: AttributeFlags
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.AttributeFlags.Constant
+  - netDxf.Entities.AttributeFlags.Hidden
+  - netDxf.Entities.AttributeFlags.None
+  - netDxf.Entities.AttributeFlags.Predefined
+  - netDxf.Entities.AttributeFlags.Verify
+  langs:
+  - csharp
+  - vb
+  name: AttributeFlags
+  nameWithType: AttributeFlags
+  fullName: netDxf.Entities.AttributeFlags
+  type: Enum
+  source:
+    id: AttributeFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Attribute flags.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum AttributeFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum AttributeFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Entities.AttributeFlags.None
+  commentId: F:netDxf.Entities.AttributeFlags.None
+  id: None
+  parent: netDxf.Entities.AttributeFlags
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: AttributeFlags.None
+  fullName: netDxf.Entities.AttributeFlags.None
+  type: Field
+  source:
+    id: None
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: No flags equivalent to Visible/Not constant/Not verify/Not Predefined.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: netDxf.Entities.AttributeFlags
+- uid: netDxf.Entities.AttributeFlags.Hidden
+  commentId: F:netDxf.Entities.AttributeFlags.Hidden
+  id: Hidden
+  parent: netDxf.Entities.AttributeFlags
+  langs:
+  - csharp
+  - vb
+  name: Hidden
+  nameWithType: AttributeFlags.Hidden
+  fullName: netDxf.Entities.AttributeFlags.Hidden
+  type: Field
+  source:
+    id: Hidden
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Attribute is invisible (does not appear).
+  example: []
+  syntax:
+    content: Hidden = 1
+    return:
+      type: netDxf.Entities.AttributeFlags
+- uid: netDxf.Entities.AttributeFlags.Constant
+  commentId: F:netDxf.Entities.AttributeFlags.Constant
+  id: Constant
+  parent: netDxf.Entities.AttributeFlags
+  langs:
+  - csharp
+  - vb
+  name: Constant
+  nameWithType: AttributeFlags.Constant
+  fullName: netDxf.Entities.AttributeFlags.Constant
+  type: Field
+  source:
+    id: Constant
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 46
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: This is a constant attribute.
+  example: []
+  syntax:
+    content: Constant = 2
+    return:
+      type: netDxf.Entities.AttributeFlags
+- uid: netDxf.Entities.AttributeFlags.Verify
+  commentId: F:netDxf.Entities.AttributeFlags.Verify
+  id: Verify
+  parent: netDxf.Entities.AttributeFlags
+  langs:
+  - csharp
+  - vb
+  name: Verify
+  nameWithType: AttributeFlags.Verify
+  fullName: netDxf.Entities.AttributeFlags.Verify
+  type: Field
+  source:
+    id: Verify
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 51
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Verification is required on input of this attribute.
+  example: []
+  syntax:
+    content: Verify = 4
+    return:
+      type: netDxf.Entities.AttributeFlags
+- uid: netDxf.Entities.AttributeFlags.Predefined
+  commentId: F:netDxf.Entities.AttributeFlags.Predefined
+  id: Predefined
+  parent: netDxf.Entities.AttributeFlags
+  langs:
+  - csharp
+  - vb
+  name: Predefined
+  nameWithType: AttributeFlags.Predefined
+  fullName: netDxf.Entities.AttributeFlags.Predefined
+  type: Field
+  source:
+    id: Predefined
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/AttributeFlags.cs
+    startLine: 56
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Attribute is preset (no prompt during insertion).
+  example: []
+  syntax:
+    content: Predefined = 8
+    return:
+      type: netDxf.Entities.AttributeFlags
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.AttributeFlags
+  commentId: T:netDxf.Entities.AttributeFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.AttributeFlags.html
+  name: AttributeFlags
+  nameWithType: AttributeFlags
+  fullName: netDxf.Entities.AttributeFlags

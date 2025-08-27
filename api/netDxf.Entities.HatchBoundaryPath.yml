@@ -1,0 +1,843 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.HatchBoundaryPath
+  commentId: T:netDxf.Entities.HatchBoundaryPath
+  id: HatchBoundaryPath
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject})
+  - netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge})
+  - netDxf.Entities.HatchBoundaryPath.Clone
+  - netDxf.Entities.HatchBoundaryPath.Edges
+  - netDxf.Entities.HatchBoundaryPath.Entities
+  - netDxf.Entities.HatchBoundaryPath.PathType
+  - netDxf.Entities.HatchBoundaryPath.Update
+  langs:
+  - csharp
+  - vb
+  name: HatchBoundaryPath
+  nameWithType: HatchBoundaryPath
+  fullName: netDxf.Entities.HatchBoundaryPath
+  type: Class
+  source:
+    id: HatchBoundaryPath
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 42
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represent a loop of a <xref href="netDxf.Entities.Hatch?text=hatch" data-throw-if-not-resolved="false"></xref> boundaries.
+  remarks: >-
+    The entities that make a loop can be any combination of lines, light weight polylines, polylines, circles, arcs, ellipses, and splines.<br />
+
+    The entities that define a loop should define a closed path, they have to be on the same plane as the hatch, and with the same normal;
+
+    if these conditions are not met the result might be unpredictable. <br />
+
+    Entities expressed in 3d coordinates like lines, polylines, and splines will be projected into its local plane.
+
+    All edges that make a HatchBoundaryPath are 2d objects, only have X and Y coordinates.
+
+    This is why to avoid unexpected results, it is important that all entities that define the paths have the same normal, same reference plane.
+  example: []
+  syntax:
+    content: 'public class HatchBoundaryPath : ICloneable'
+    content.vb: Public Class HatchBoundaryPath Implements ICloneable
+  inheritance:
+  - System.Object
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject})
+  commentId: M:netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject})'
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: HatchBoundaryPath(IEnumerable<EntityObject>)
+  nameWithType: HatchBoundaryPath.HatchBoundaryPath(IEnumerable<EntityObject>)
+  fullName: netDxf.Entities.HatchBoundaryPath.HatchBoundaryPath(System.Collections.Generic.IEnumerable<netDxf.Entities.EntityObject>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 763
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>HatchBoundaryPath</code> class.
+  example: []
+  syntax:
+    content: public HatchBoundaryPath(IEnumerable<EntityObject> edges)
+    parameters:
+    - id: edges
+      type: System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject}
+      description: List of entities that makes a loop for the hatch boundary paths.
+    content.vb: Public Sub New(edges As IEnumerable(Of EntityObject))
+  overload: netDxf.Entities.HatchBoundaryPath.#ctor*
+  nameWithType.vb: HatchBoundaryPath.New(IEnumerable(Of EntityObject))
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.New(System.Collections.Generic.IEnumerable(Of netDxf.Entities.EntityObject))
+  name.vb: New(IEnumerable(Of EntityObject))
+- uid: netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge})
+  commentId: M:netDxf.Entities.HatchBoundaryPath.#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge})'
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: HatchBoundaryPath(IEnumerable<Edge>)
+  nameWithType: HatchBoundaryPath.HatchBoundaryPath(IEnumerable<HatchBoundaryPath.Edge>)
+  fullName: netDxf.Entities.HatchBoundaryPath.HatchBoundaryPath(System.Collections.Generic.IEnumerable<netDxf.Entities.HatchBoundaryPath.Edge>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 779
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>HatchBoundaryPath</code> class.
+  example: []
+  syntax:
+    content: public HatchBoundaryPath(IEnumerable<HatchBoundaryPath.Edge> edges)
+    parameters:
+    - id: edges
+      type: System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge}
+      description: List of edges that makes a loop for the hatch boundary paths.
+    content.vb: Public Sub New(edges As IEnumerable(Of HatchBoundaryPath.Edge))
+  overload: netDxf.Entities.HatchBoundaryPath.#ctor*
+  nameWithType.vb: HatchBoundaryPath.New(IEnumerable(Of HatchBoundaryPath.Edge))
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.New(System.Collections.Generic.IEnumerable(Of netDxf.Entities.HatchBoundaryPath.Edge))
+  name.vb: New(IEnumerable(Of Edge))
+- uid: netDxf.Entities.HatchBoundaryPath.Edges
+  commentId: P:netDxf.Entities.HatchBoundaryPath.Edges
+  id: Edges
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: Edges
+  nameWithType: HatchBoundaryPath.Edges
+  fullName: netDxf.Entities.HatchBoundaryPath.Edges
+  type: Property
+  source:
+    id: Edges
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 818
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the list of edges that makes a loop for the hatch boundary path.
+  example: []
+  syntax:
+    content: public IReadOnlyList<HatchBoundaryPath.Edge> Edges { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{netDxf.Entities.HatchBoundaryPath.Edge}
+    content.vb: Public ReadOnly Property Edges As IReadOnlyList(Of HatchBoundaryPath.Edge)
+  overload: netDxf.Entities.HatchBoundaryPath.Edges*
+- uid: netDxf.Entities.HatchBoundaryPath.PathType
+  commentId: P:netDxf.Entities.HatchBoundaryPath.PathType
+  id: PathType
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: PathType
+  nameWithType: HatchBoundaryPath.PathType
+  fullName: netDxf.Entities.HatchBoundaryPath.PathType
+  type: Property
+  source:
+    id: PathType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 826
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the boundary path type flag.
+  example: []
+  syntax:
+    content: public HatchBoundaryPathTypeFlags PathType { get; }
+    parameters: []
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+    content.vb: Public Property PathType As HatchBoundaryPathTypeFlags
+  overload: netDxf.Entities.HatchBoundaryPath.PathType*
+- uid: netDxf.Entities.HatchBoundaryPath.Entities
+  commentId: P:netDxf.Entities.HatchBoundaryPath.Entities
+  id: Entities
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: Entities
+  nameWithType: HatchBoundaryPath.Entities
+  fullName: netDxf.Entities.HatchBoundaryPath.Entities
+  type: Property
+  source:
+    id: Entities
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 836
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the list of entities that makes the boundary.
+  remarks: If the boundary path belongs to a non-associative hatch this list will contain zero entities.
+  example: []
+  syntax:
+    content: public IReadOnlyList<EntityObject> Entities { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{netDxf.Entities.EntityObject}
+    content.vb: Public ReadOnly Property Entities As IReadOnlyList(Of EntityObject)
+  overload: netDxf.Entities.HatchBoundaryPath.Entities*
+- uid: netDxf.Entities.HatchBoundaryPath.Update
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Update
+  id: Update
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: HatchBoundaryPath.Update()
+  fullName: netDxf.Entities.HatchBoundaryPath.Update()
+  type: Method
+  source:
+    id: Update
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 871
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Updates the internal HatchBoundaryPath data.
+  remarks: >-
+    It is necessary to manually call this method when changes to the boundary entities are made. This is only applicable to associative hatches,
+
+    non-associative hatches has no associated boundary entities.
+  example: []
+  syntax:
+    content: public void Update()
+    content.vb: Public Sub Update()
+  overload: netDxf.Entities.HatchBoundaryPath.Update*
+- uid: netDxf.Entities.HatchBoundaryPath.Clone
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Clone
+  id: Clone
+  parent: netDxf.Entities.HatchBoundaryPath
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: HatchBoundaryPath.Clone()
+  fullName: netDxf.Entities.HatchBoundaryPath.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 960
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new HatchBoundaryPath that is a copy of the current instance.
+  remarks: When cloning a HatchBoundaryPath, if it has entities that defines its contour, they will not be cloned.
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+      description: A new HatchBoundaryPath that is a copy of this instance.
+    content.vb: Public Function Clone() As Object
+  overload: netDxf.Entities.HatchBoundaryPath.Clone*
+  implements:
+  - System.ICloneable.Clone
+references:
+- uid: netDxf.Entities.Hatch
+  commentId: T:netDxf.Entities.Hatch
+  parent: netDxf.Entities
+  href: netDxf.Entities.Hatch.html
+  name: Hatch
+  nameWithType: Hatch
+  fullName: netDxf.Entities.Hatch
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Entities.HatchBoundaryPath.#ctor*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.#ctor
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath__ctor_System_Collections_Generic_IEnumerable_netDxf_Entities_EntityObject__
+  name: HatchBoundaryPath
+  nameWithType: HatchBoundaryPath.HatchBoundaryPath
+  fullName: netDxf.Entities.HatchBoundaryPath.HatchBoundaryPath
+  nameWithType.vb: HatchBoundaryPath.New
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Entities.EntityObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<EntityObject>
+  nameWithType: IEnumerable<EntityObject>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Entities.EntityObject>
+  nameWithType.vb: IEnumerable(Of EntityObject)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Entities.EntityObject)
+  name.vb: IEnumerable(Of EntityObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Entities.HatchBoundaryPath.Edge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<HatchBoundaryPath.Edge>
+  nameWithType: IEnumerable<HatchBoundaryPath.Edge>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Entities.HatchBoundaryPath.Edge>
+  nameWithType.vb: IEnumerable(Of HatchBoundaryPath.Edge)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Entities.HatchBoundaryPath.Edge)
+  name.vb: IEnumerable(Of HatchBoundaryPath.Edge)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: )
+- uid: netDxf.Entities.HatchBoundaryPath.Edges*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Edges
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath_Edges
+  name: Edges
+  nameWithType: HatchBoundaryPath.Edges
+  fullName: netDxf.Entities.HatchBoundaryPath.Edges
+- uid: System.Collections.Generic.IReadOnlyList{netDxf.Entities.HatchBoundaryPath.Edge}
+  commentId: T:System.Collections.Generic.IReadOnlyList{netDxf.Entities.HatchBoundaryPath.Edge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<HatchBoundaryPath.Edge>
+  nameWithType: IReadOnlyList<HatchBoundaryPath.Edge>
+  fullName: System.Collections.Generic.IReadOnlyList<netDxf.Entities.HatchBoundaryPath.Edge>
+  nameWithType.vb: IReadOnlyList(Of HatchBoundaryPath.Edge)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of netDxf.Entities.HatchBoundaryPath.Edge)
+  name.vb: IReadOnlyList(Of HatchBoundaryPath.Edge)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Entities.HatchBoundaryPath.PathType*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.PathType
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath_PathType
+  name: PathType
+  nameWithType: HatchBoundaryPath.PathType
+  fullName: netDxf.Entities.HatchBoundaryPath.PathType
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags
+  commentId: T:netDxf.Entities.HatchBoundaryPathTypeFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPathTypeFlags.html
+  name: HatchBoundaryPathTypeFlags
+  nameWithType: HatchBoundaryPathTypeFlags
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPath.Entities*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Entities
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath_Entities
+  name: Entities
+  nameWithType: HatchBoundaryPath.Entities
+  fullName: netDxf.Entities.HatchBoundaryPath.Entities
+- uid: System.Collections.Generic.IReadOnlyList{netDxf.Entities.EntityObject}
+  commentId: T:System.Collections.Generic.IReadOnlyList{netDxf.Entities.EntityObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<EntityObject>
+  nameWithType: IReadOnlyList<EntityObject>
+  fullName: System.Collections.Generic.IReadOnlyList<netDxf.Entities.EntityObject>
+  nameWithType.vb: IReadOnlyList(Of EntityObject)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of netDxf.Entities.EntityObject)
+  name.vb: IReadOnlyList(Of EntityObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    href: netDxf.Entities.EntityObject.html
+  - name: )
+- uid: netDxf.Entities.HatchBoundaryPath.Update*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Update
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath_Update
+  name: Update
+  nameWithType: HatchBoundaryPath.Update
+  fullName: netDxf.Entities.HatchBoundaryPath.Update
+- uid: netDxf.Entities.HatchBoundaryPath.Clone*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Clone
+  href: netDxf.Entities.HatchBoundaryPath.html#netDxf_Entities_HatchBoundaryPath_Clone
+  name: Clone
+  nameWithType: HatchBoundaryPath.Clone
+  fullName: netDxf.Entities.HatchBoundaryPath.Clone
+- uid: System.ICloneable.Clone
+  commentId: M:System.ICloneable.Clone
+  parent: System.ICloneable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  name: Clone()
+  nameWithType: ICloneable.Clone()
+  fullName: System.ICloneable.Clone()
+  spec.csharp:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )

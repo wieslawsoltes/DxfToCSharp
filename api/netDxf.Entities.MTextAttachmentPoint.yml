@@ -1,0 +1,281 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.MTextAttachmentPoint
+  commentId: T:netDxf.Entities.MTextAttachmentPoint
+  id: MTextAttachmentPoint
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.MTextAttachmentPoint.BottomCenter
+  - netDxf.Entities.MTextAttachmentPoint.BottomLeft
+  - netDxf.Entities.MTextAttachmentPoint.BottomRight
+  - netDxf.Entities.MTextAttachmentPoint.MiddleCenter
+  - netDxf.Entities.MTextAttachmentPoint.MiddleLeft
+  - netDxf.Entities.MTextAttachmentPoint.MiddleRight
+  - netDxf.Entities.MTextAttachmentPoint.TopCenter
+  - netDxf.Entities.MTextAttachmentPoint.TopLeft
+  - netDxf.Entities.MTextAttachmentPoint.TopRight
+  langs:
+  - csharp
+  - vb
+  name: MTextAttachmentPoint
+  nameWithType: MTextAttachmentPoint
+  fullName: netDxf.Entities.MTextAttachmentPoint
+  type: Enum
+  source:
+    id: MTextAttachmentPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Defines the multiline text attachment point.
+  example: []
+  syntax:
+    content: public enum MTextAttachmentPoint
+    content.vb: Public Enum MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.TopLeft
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.TopLeft
+  id: TopLeft
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: TopLeft
+  nameWithType: MTextAttachmentPoint.TopLeft
+  fullName: netDxf.Entities.MTextAttachmentPoint.TopLeft
+  type: Field
+  source:
+    id: TopLeft
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Top left.
+  example: []
+  syntax:
+    content: TopLeft = 1
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.TopCenter
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.TopCenter
+  id: TopCenter
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: TopCenter
+  nameWithType: MTextAttachmentPoint.TopCenter
+  fullName: netDxf.Entities.MTextAttachmentPoint.TopCenter
+  type: Field
+  source:
+    id: TopCenter
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Top center.
+  example: []
+  syntax:
+    content: TopCenter = 2
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.TopRight
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.TopRight
+  id: TopRight
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: TopRight
+  nameWithType: MTextAttachmentPoint.TopRight
+  fullName: netDxf.Entities.MTextAttachmentPoint.TopRight
+  type: Field
+  source:
+    id: TopRight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Top right.
+  example: []
+  syntax:
+    content: TopRight = 3
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.MiddleLeft
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.MiddleLeft
+  id: MiddleLeft
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: MiddleLeft
+  nameWithType: MTextAttachmentPoint.MiddleLeft
+  fullName: netDxf.Entities.MTextAttachmentPoint.MiddleLeft
+  type: Field
+  source:
+    id: MiddleLeft
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Middle left.
+  example: []
+  syntax:
+    content: MiddleLeft = 4
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.MiddleCenter
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.MiddleCenter
+  id: MiddleCenter
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: MiddleCenter
+  nameWithType: MTextAttachmentPoint.MiddleCenter
+  fullName: netDxf.Entities.MTextAttachmentPoint.MiddleCenter
+  type: Field
+  source:
+    id: MiddleCenter
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Middle center.
+  example: []
+  syntax:
+    content: MiddleCenter = 5
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.MiddleRight
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.MiddleRight
+  id: MiddleRight
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: MiddleRight
+  nameWithType: MTextAttachmentPoint.MiddleRight
+  fullName: netDxf.Entities.MTextAttachmentPoint.MiddleRight
+  type: Field
+  source:
+    id: MiddleRight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Middle right.
+  example: []
+  syntax:
+    content: MiddleRight = 6
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.BottomLeft
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.BottomLeft
+  id: BottomLeft
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: BottomLeft
+  nameWithType: MTextAttachmentPoint.BottomLeft
+  fullName: netDxf.Entities.MTextAttachmentPoint.BottomLeft
+  type: Field
+  source:
+    id: BottomLeft
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Bottom left.
+  example: []
+  syntax:
+    content: BottomLeft = 7
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.BottomCenter
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.BottomCenter
+  id: BottomCenter
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: BottomCenter
+  nameWithType: MTextAttachmentPoint.BottomCenter
+  fullName: netDxf.Entities.MTextAttachmentPoint.BottomCenter
+  type: Field
+  source:
+    id: BottomCenter
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Bottom center.
+  example: []
+  syntax:
+    content: BottomCenter = 8
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+- uid: netDxf.Entities.MTextAttachmentPoint.BottomRight
+  commentId: F:netDxf.Entities.MTextAttachmentPoint.BottomRight
+  id: BottomRight
+  parent: netDxf.Entities.MTextAttachmentPoint
+  langs:
+  - csharp
+  - vb
+  name: BottomRight
+  nameWithType: MTextAttachmentPoint.BottomRight
+  fullName: netDxf.Entities.MTextAttachmentPoint.BottomRight
+  type: Field
+  source:
+    id: BottomRight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextAttachmentPoint.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Bottom right.
+  example: []
+  syntax:
+    content: BottomRight = 9
+    return:
+      type: netDxf.Entities.MTextAttachmentPoint
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.MTextAttachmentPoint
+  commentId: T:netDxf.Entities.MTextAttachmentPoint
+  parent: netDxf.Entities
+  href: netDxf.Entities.MTextAttachmentPoint.html
+  name: MTextAttachmentPoint
+  nameWithType: MTextAttachmentPoint
+  fullName: netDxf.Entities.MTextAttachmentPoint

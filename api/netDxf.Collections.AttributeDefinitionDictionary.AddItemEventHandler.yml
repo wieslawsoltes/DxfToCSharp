@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Collections.AttributeDefinitionDictionary.AddItemEventHandler
+  commentId: T:netDxf.Collections.AttributeDefinitionDictionary.AddItemEventHandler
+  id: AttributeDefinitionDictionary.AddItemEventHandler
+  parent: netDxf.Collections
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: AttributeDefinitionDictionary.AddItemEventHandler
+  nameWithType: AttributeDefinitionDictionary.AddItemEventHandler
+  fullName: netDxf.Collections.AttributeDefinitionDictionary.AddItemEventHandler
+  type: Delegate
+  source:
+    id: AddItemEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/AttributeDefinitionDictionary.cs
+    startLine: 56
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  syntax:
+    content: public delegate void AttributeDefinitionDictionary.AddItemEventHandler(AttributeDefinitionDictionary sender, AttributeDefinitionDictionaryEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Collections.AttributeDefinitionDictionary
+    - id: e
+      type: netDxf.Collections.AttributeDefinitionDictionaryEventArgs
+    content.vb: Public Delegate Sub AttributeDefinitionDictionary.AddItemEventHandler(sender As AttributeDefinitionDictionary, e As AttributeDefinitionDictionaryEventArgs)
+references:
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Collections.AttributeDefinitionDictionary
+  commentId: T:netDxf.Collections.AttributeDefinitionDictionary
+  parent: netDxf.Collections
+  href: netDxf.Collections.AttributeDefinitionDictionary.html
+  name: AttributeDefinitionDictionary
+  nameWithType: AttributeDefinitionDictionary
+  fullName: netDxf.Collections.AttributeDefinitionDictionary
+- uid: netDxf.Collections.AttributeDefinitionDictionaryEventArgs
+  commentId: T:netDxf.Collections.AttributeDefinitionDictionaryEventArgs
+  parent: netDxf.Collections
+  href: netDxf.Collections.AttributeDefinitionDictionaryEventArgs.html
+  name: AttributeDefinitionDictionaryEventArgs
+  nameWithType: AttributeDefinitionDictionaryEventArgs
+  fullName: netDxf.Collections.AttributeDefinitionDictionaryEventArgs

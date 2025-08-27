@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Header.AttMode
+  commentId: T:netDxf.Header.AttMode
+  id: AttMode
+  parent: netDxf.Header
+  children:
+  - netDxf.Header.AttMode.All
+  - netDxf.Header.AttMode.None
+  - netDxf.Header.AttMode.Normal
+  langs:
+  - csharp
+  - vb
+  name: AttMode
+  nameWithType: AttMode
+  fullName: netDxf.Header.AttMode
+  type: Enum
+  source:
+    id: AttMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/AttMode.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Defines the attribute visibility.
+  example: []
+  syntax:
+    content: public enum AttMode
+    content.vb: Public Enum AttMode
+- uid: netDxf.Header.AttMode.None
+  commentId: F:netDxf.Header.AttMode.None
+  id: None
+  parent: netDxf.Header.AttMode
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: AttMode.None
+  fullName: netDxf.Header.AttMode.None
+  type: Field
+  source:
+    id: None
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/AttMode.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: None.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: netDxf.Header.AttMode
+- uid: netDxf.Header.AttMode.Normal
+  commentId: F:netDxf.Header.AttMode.Normal
+  id: Normal
+  parent: netDxf.Header.AttMode
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: AttMode.Normal
+  fullName: netDxf.Header.AttMode.Normal
+  type: Field
+  source:
+    id: Normal
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/AttMode.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Normal.
+  example: []
+  syntax:
+    content: Normal = 1
+    return:
+      type: netDxf.Header.AttMode
+- uid: netDxf.Header.AttMode.All
+  commentId: F:netDxf.Header.AttMode.All
+  id: All
+  parent: netDxf.Header.AttMode
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: AttMode.All
+  fullName: netDxf.Header.AttMode.All
+  type: Field
+  source:
+    id: All
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/AttMode.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: All.
+  example: []
+  syntax:
+    content: All = 2
+    return:
+      type: netDxf.Header.AttMode
+references:
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  href: netDxf.html
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+- uid: netDxf.Header.AttMode
+  commentId: T:netDxf.Header.AttMode
+  parent: netDxf.Header
+  href: netDxf.Header.AttMode.html
+  name: AttMode
+  nameWithType: AttMode
+  fullName: netDxf.Header.AttMode

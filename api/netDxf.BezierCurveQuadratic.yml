@@ -1,0 +1,977 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.BezierCurveQuadratic
+  commentId: T:netDxf.BezierCurveQuadratic
+  id: BezierCurveQuadratic
+  parent: netDxf
+  children:
+  - netDxf.BezierCurveQuadratic.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  - netDxf.BezierCurveQuadratic.#ctor(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  - netDxf.BezierCurveQuadratic.CalculatePoint(System.Double)
+  - netDxf.BezierCurveQuadratic.CalculateTangent(System.Double)
+  - netDxf.BezierCurveQuadratic.ControlPoint
+  - netDxf.BezierCurveQuadratic.EndPoint
+  - netDxf.BezierCurveQuadratic.PolygonalVertexes(System.Int32)
+  - netDxf.BezierCurveQuadratic.Reverse
+  - netDxf.BezierCurveQuadratic.Split(System.Double)
+  - netDxf.BezierCurveQuadratic.StartPoint
+  langs:
+  - csharp
+  - vb
+  name: BezierCurveQuadratic
+  nameWithType: BezierCurveQuadratic
+  fullName: netDxf.BezierCurveQuadratic
+  type: Class
+  source:
+    id: BezierCurveQuadratic
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Represent a quadratic bezier curve.
+  example: []
+  syntax:
+    content: 'public class BezierCurveQuadratic : BezierCurve'
+    content.vb: Public Class BezierCurveQuadratic Inherits BezierCurve
+  inheritance:
+  - System.Object
+  - netDxf.BezierCurve
+  inheritedMembers:
+  - netDxf.BezierCurve.controlPoints
+  - netDxf.BezierCurve.degree
+  - netDxf.BezierCurve.ControlPoints
+  - netDxf.BezierCurve.Degree
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.BezierCurveQuadratic.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  commentId: M:netDxf.BezierCurveQuadratic.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})'
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: BezierCurveQuadratic(IEnumerable<Vector3>)
+  nameWithType: BezierCurveQuadratic.BezierCurveQuadratic(IEnumerable<Vector3>)
+  fullName: netDxf.BezierCurveQuadratic.BezierCurveQuadratic(System.Collections.Generic.IEnumerable<netDxf.Vector3>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of the <code>BezierCurveQuadratic</code> class.
+  remarks: >-
+    The list must contain three control points.
+
+    The first index represents the start point or anchor,
+
+    the second represents the control point,
+
+    and the last the end point.
+  example: []
+  syntax:
+    content: public BezierCurveQuadratic(IEnumerable<Vector3> controlPoints)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: A list of three control points.
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3))
+  overload: netDxf.BezierCurveQuadratic.#ctor*
+  nameWithType.vb: BezierCurveQuadratic.New(IEnumerable(Of Vector3))
+  fullName.vb: netDxf.BezierCurveQuadratic.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3))
+  name.vb: New(IEnumerable(Of Vector3))
+- uid: netDxf.BezierCurveQuadratic.#ctor(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.BezierCurveQuadratic.#ctor(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)
+  id: '#ctor(netDxf.Vector3,netDxf.Vector3,netDxf.Vector3)'
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: BezierCurveQuadratic(Vector3, Vector3, Vector3)
+  nameWithType: BezierCurveQuadratic.BezierCurveQuadratic(Vector3, Vector3, Vector3)
+  fullName: netDxf.BezierCurveQuadratic.BezierCurveQuadratic(netDxf.Vector3, netDxf.Vector3, netDxf.Vector3)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 59
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of the <code>BezierCurve</code> class.
+  example: []
+  syntax:
+    content: public BezierCurveQuadratic(Vector3 startPoint, Vector3 controlPoint, Vector3 endPoint)
+    parameters:
+    - id: startPoint
+      type: netDxf.Vector3
+      description: Start anchor point.
+    - id: controlPoint
+      type: netDxf.Vector3
+      description: Second control point.
+    - id: endPoint
+      type: netDxf.Vector3
+      description: End anchor point.
+    content.vb: Public Sub New(startPoint As Vector3, controlPoint As Vector3, endPoint As Vector3)
+  overload: netDxf.BezierCurveQuadratic.#ctor*
+  nameWithType.vb: BezierCurveQuadratic.New(Vector3, Vector3, Vector3)
+  fullName.vb: netDxf.BezierCurveQuadratic.New(netDxf.Vector3, netDxf.Vector3, netDxf.Vector3)
+  name.vb: New(Vector3, Vector3, Vector3)
+- uid: netDxf.BezierCurveQuadratic.StartPoint
+  commentId: P:netDxf.BezierCurveQuadratic.StartPoint
+  id: StartPoint
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: StartPoint
+  nameWithType: BezierCurveQuadratic.StartPoint
+  fullName: netDxf.BezierCurveQuadratic.StartPoint
+  type: Property
+  source:
+    id: StartPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 71
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the curve start point.
+  example: []
+  syntax:
+    content: public Vector3 StartPoint { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property StartPoint As Vector3
+  overload: netDxf.BezierCurveQuadratic.StartPoint*
+- uid: netDxf.BezierCurveQuadratic.ControlPoint
+  commentId: P:netDxf.BezierCurveQuadratic.ControlPoint
+  id: ControlPoint
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: ControlPoint
+  nameWithType: BezierCurveQuadratic.ControlPoint
+  fullName: netDxf.BezierCurveQuadratic.ControlPoint
+  type: Property
+  source:
+    id: ControlPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the control point.
+  example: []
+  syntax:
+    content: public Vector3 ControlPoint { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property ControlPoint As Vector3
+  overload: netDxf.BezierCurveQuadratic.ControlPoint*
+- uid: netDxf.BezierCurveQuadratic.EndPoint
+  commentId: P:netDxf.BezierCurveQuadratic.EndPoint
+  id: EndPoint
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: EndPoint
+  nameWithType: BezierCurveQuadratic.EndPoint
+  fullName: netDxf.BezierCurveQuadratic.EndPoint
+  type: Property
+  source:
+    id: EndPoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 89
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the curve end point.
+  example: []
+  syntax:
+    content: public Vector3 EndPoint { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property EndPoint As Vector3
+  overload: netDxf.BezierCurveQuadratic.EndPoint*
+- uid: netDxf.BezierCurveQuadratic.CalculatePoint(System.Double)
+  commentId: M:netDxf.BezierCurveQuadratic.CalculatePoint(System.Double)
+  id: CalculatePoint(System.Double)
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: CalculatePoint(double)
+  nameWithType: BezierCurveQuadratic.CalculatePoint(double)
+  fullName: netDxf.BezierCurveQuadratic.CalculatePoint(double)
+  type: Method
+  source:
+    id: CalculatePoint
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 104
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains a point along the curve at parameter t.
+  example: []
+  syntax:
+    content: public override Vector3 CalculatePoint(double t)
+    parameters:
+    - id: t
+      type: System.Double
+      description: Parameter t, between 0.0 and 1.0.
+    return:
+      type: netDxf.Vector3
+      description: A point along the curve.
+    content.vb: Public Overrides Function CalculatePoint(t As Double) As Vector3
+  overridden: netDxf.BezierCurve.CalculatePoint(System.Double)
+  overload: netDxf.BezierCurveQuadratic.CalculatePoint*
+  nameWithType.vb: BezierCurveQuadratic.CalculatePoint(Double)
+  fullName.vb: netDxf.BezierCurveQuadratic.CalculatePoint(Double)
+  name.vb: CalculatePoint(Double)
+- uid: netDxf.BezierCurveQuadratic.CalculateTangent(System.Double)
+  commentId: M:netDxf.BezierCurveQuadratic.CalculateTangent(System.Double)
+  id: CalculateTangent(System.Double)
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: CalculateTangent(double)
+  nameWithType: BezierCurveQuadratic.CalculateTangent(double)
+  fullName: netDxf.BezierCurveQuadratic.CalculateTangent(double)
+  type: Method
+  source:
+    id: CalculateTangent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 120
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the tangent vector at parameter t.
+  example: []
+  syntax:
+    content: public override Vector3 CalculateTangent(double t)
+    parameters:
+    - id: t
+      type: System.Double
+      description: Parameter t, between 0.0 and 1.0.
+    return:
+      type: netDxf.Vector3
+      description: A normalized tangent vector.
+    content.vb: Public Overrides Function CalculateTangent(t As Double) As Vector3
+  overridden: netDxf.BezierCurve.CalculateTangent(System.Double)
+  overload: netDxf.BezierCurveQuadratic.CalculateTangent*
+  nameWithType.vb: BezierCurveQuadratic.CalculateTangent(Double)
+  fullName.vb: netDxf.BezierCurveQuadratic.CalculateTangent(Double)
+  name.vb: CalculateTangent(Double)
+- uid: netDxf.BezierCurveQuadratic.Split(System.Double)
+  commentId: M:netDxf.BezierCurveQuadratic.Split(System.Double)
+  id: Split(System.Double)
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: Split(double)
+  nameWithType: BezierCurveQuadratic.Split(double)
+  fullName: netDxf.BezierCurveQuadratic.Split(double)
+  type: Method
+  source:
+    id: Split
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 136
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Splits the actual bezier curve in two at parameter t.
+  example: []
+  syntax:
+    content: public BezierCurveQuadratic[] Split(double t)
+    parameters:
+    - id: t
+      type: System.Double
+      description: Parameter t, between 0.0 and 1.0.
+    return:
+      type: netDxf.BezierCurveQuadratic[]
+      description: The two curves result of dividing the actual curve at parameter t.
+    content.vb: Public Function Split(t As Double) As BezierCurveQuadratic()
+  overload: netDxf.BezierCurveQuadratic.Split*
+  nameWithType.vb: BezierCurveQuadratic.Split(Double)
+  fullName.vb: netDxf.BezierCurveQuadratic.Split(Double)
+  name.vb: Split(Double)
+- uid: netDxf.BezierCurveQuadratic.Reverse
+  commentId: M:netDxf.BezierCurveQuadratic.Reverse
+  id: Reverse
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: Reverse()
+  nameWithType: BezierCurveQuadratic.Reverse()
+  fullName: netDxf.BezierCurveQuadratic.Reverse()
+  type: Method
+  source:
+    id: Reverse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 157
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Switch the bezier curve direction.
+  example: []
+  syntax:
+    content: public void Reverse()
+    content.vb: Public Sub Reverse()
+  overload: netDxf.BezierCurveQuadratic.Reverse*
+- uid: netDxf.BezierCurveQuadratic.PolygonalVertexes(System.Int32)
+  commentId: M:netDxf.BezierCurveQuadratic.PolygonalVertexes(System.Int32)
+  id: PolygonalVertexes(System.Int32)
+  parent: netDxf.BezierCurveQuadratic
+  langs:
+  - csharp
+  - vb
+  name: PolygonalVertexes(int)
+  nameWithType: BezierCurveQuadratic.PolygonalVertexes(int)
+  fullName: netDxf.BezierCurveQuadratic.PolygonalVertexes(int)
+  type: Method
+  source:
+    id: PolygonalVertexes
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/BezierCurveQuadratic.cs
+    startLine: 167
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Converts the bezier curve in a list of vertexes.
+  example: []
+  syntax:
+    content: public List<Vector3> PolygonalVertexes(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector3}
+      description: A list vertexes that represents the bezier curve.
+    content.vb: Public Function PolygonalVertexes(precision As Integer) As List(Of Vector3)
+  overload: netDxf.BezierCurveQuadratic.PolygonalVertexes*
+  nameWithType.vb: BezierCurveQuadratic.PolygonalVertexes(Integer)
+  fullName.vb: netDxf.BezierCurveQuadratic.PolygonalVertexes(Integer)
+  name.vb: PolygonalVertexes(Integer)
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.BezierCurve
+  commentId: T:netDxf.BezierCurve
+  parent: netDxf
+  href: netDxf.BezierCurve.html
+  name: BezierCurve
+  nameWithType: BezierCurve
+  fullName: netDxf.BezierCurve
+- uid: netDxf.BezierCurve.controlPoints
+  commentId: F:netDxf.BezierCurve.controlPoints
+  parent: netDxf.BezierCurve
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_controlPoints
+  name: controlPoints
+  nameWithType: BezierCurve.controlPoints
+  fullName: netDxf.BezierCurve.controlPoints
+- uid: netDxf.BezierCurve.degree
+  commentId: F:netDxf.BezierCurve.degree
+  parent: netDxf.BezierCurve
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_degree
+  name: degree
+  nameWithType: BezierCurve.degree
+  fullName: netDxf.BezierCurve.degree
+- uid: netDxf.BezierCurve.ControlPoints
+  commentId: P:netDxf.BezierCurve.ControlPoints
+  parent: netDxf.BezierCurve
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_ControlPoints
+  name: ControlPoints
+  nameWithType: BezierCurve.ControlPoints
+  fullName: netDxf.BezierCurve.ControlPoints
+- uid: netDxf.BezierCurve.Degree
+  commentId: P:netDxf.BezierCurve.Degree
+  parent: netDxf.BezierCurve
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_Degree
+  name: Degree
+  nameWithType: BezierCurve.Degree
+  fullName: netDxf.BezierCurve.Degree
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.BezierCurveQuadratic.#ctor*
+  commentId: Overload:netDxf.BezierCurveQuadratic.#ctor
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic__ctor_System_Collections_Generic_IEnumerable_netDxf_Vector3__
+  name: BezierCurveQuadratic
+  nameWithType: BezierCurveQuadratic.BezierCurveQuadratic
+  fullName: netDxf.BezierCurveQuadratic.BezierCurveQuadratic
+  nameWithType.vb: BezierCurveQuadratic.New
+  fullName.vb: netDxf.BezierCurveQuadratic.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector3>
+  nameWithType: IEnumerable<Vector3>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector3>
+  nameWithType.vb: IEnumerable(Of Vector3)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector3)
+  name.vb: IEnumerable(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.BezierCurveQuadratic.StartPoint*
+  commentId: Overload:netDxf.BezierCurveQuadratic.StartPoint
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_StartPoint
+  name: StartPoint
+  nameWithType: BezierCurveQuadratic.StartPoint
+  fullName: netDxf.BezierCurveQuadratic.StartPoint
+- uid: netDxf.BezierCurveQuadratic.ControlPoint*
+  commentId: Overload:netDxf.BezierCurveQuadratic.ControlPoint
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_ControlPoint
+  name: ControlPoint
+  nameWithType: BezierCurveQuadratic.ControlPoint
+  fullName: netDxf.BezierCurveQuadratic.ControlPoint
+- uid: netDxf.BezierCurveQuadratic.EndPoint*
+  commentId: Overload:netDxf.BezierCurveQuadratic.EndPoint
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_EndPoint
+  name: EndPoint
+  nameWithType: BezierCurveQuadratic.EndPoint
+  fullName: netDxf.BezierCurveQuadratic.EndPoint
+- uid: netDxf.BezierCurve.CalculatePoint(System.Double)
+  commentId: M:netDxf.BezierCurve.CalculatePoint(System.Double)
+  parent: netDxf.BezierCurve
+  isExternal: true
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculatePoint_System_Double_
+  name: CalculatePoint(double)
+  nameWithType: BezierCurve.CalculatePoint(double)
+  fullName: netDxf.BezierCurve.CalculatePoint(double)
+  nameWithType.vb: BezierCurve.CalculatePoint(Double)
+  fullName.vb: netDxf.BezierCurve.CalculatePoint(Double)
+  name.vb: CalculatePoint(Double)
+  spec.csharp:
+  - uid: netDxf.BezierCurve.CalculatePoint(System.Double)
+    name: CalculatePoint
+    href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculatePoint_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.BezierCurve.CalculatePoint(System.Double)
+    name: CalculatePoint
+    href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculatePoint_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.BezierCurveQuadratic.CalculatePoint*
+  commentId: Overload:netDxf.BezierCurveQuadratic.CalculatePoint
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_CalculatePoint_System_Double_
+  name: CalculatePoint
+  nameWithType: BezierCurveQuadratic.CalculatePoint
+  fullName: netDxf.BezierCurveQuadratic.CalculatePoint
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.BezierCurve.CalculateTangent(System.Double)
+  commentId: M:netDxf.BezierCurve.CalculateTangent(System.Double)
+  parent: netDxf.BezierCurve
+  isExternal: true
+  href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculateTangent_System_Double_
+  name: CalculateTangent(double)
+  nameWithType: BezierCurve.CalculateTangent(double)
+  fullName: netDxf.BezierCurve.CalculateTangent(double)
+  nameWithType.vb: BezierCurve.CalculateTangent(Double)
+  fullName.vb: netDxf.BezierCurve.CalculateTangent(Double)
+  name.vb: CalculateTangent(Double)
+  spec.csharp:
+  - uid: netDxf.BezierCurve.CalculateTangent(System.Double)
+    name: CalculateTangent
+    href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculateTangent_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.BezierCurve.CalculateTangent(System.Double)
+    name: CalculateTangent
+    href: netDxf.BezierCurve.html#netDxf_BezierCurve_CalculateTangent_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.BezierCurveQuadratic.CalculateTangent*
+  commentId: Overload:netDxf.BezierCurveQuadratic.CalculateTangent
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_CalculateTangent_System_Double_
+  name: CalculateTangent
+  nameWithType: BezierCurveQuadratic.CalculateTangent
+  fullName: netDxf.BezierCurveQuadratic.CalculateTangent
+- uid: netDxf.BezierCurveQuadratic.Split*
+  commentId: Overload:netDxf.BezierCurveQuadratic.Split
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_Split_System_Double_
+  name: Split
+  nameWithType: BezierCurveQuadratic.Split
+  fullName: netDxf.BezierCurveQuadratic.Split
+- uid: netDxf.BezierCurveQuadratic[]
+  isExternal: true
+  href: netDxf.BezierCurveQuadratic.html
+  name: BezierCurveQuadratic[]
+  nameWithType: BezierCurveQuadratic[]
+  fullName: netDxf.BezierCurveQuadratic[]
+  nameWithType.vb: BezierCurveQuadratic()
+  fullName.vb: netDxf.BezierCurveQuadratic()
+  name.vb: BezierCurveQuadratic()
+  spec.csharp:
+  - uid: netDxf.BezierCurveQuadratic
+    name: BezierCurveQuadratic
+    href: netDxf.BezierCurveQuadratic.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.BezierCurveQuadratic
+    name: BezierCurveQuadratic
+    href: netDxf.BezierCurveQuadratic.html
+  - name: (
+  - name: )
+- uid: netDxf.BezierCurveQuadratic.Reverse*
+  commentId: Overload:netDxf.BezierCurveQuadratic.Reverse
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_Reverse
+  name: Reverse
+  nameWithType: BezierCurveQuadratic.Reverse
+  fullName: netDxf.BezierCurveQuadratic.Reverse
+- uid: netDxf.BezierCurveQuadratic.PolygonalVertexes*
+  commentId: Overload:netDxf.BezierCurveQuadratic.PolygonalVertexes
+  href: netDxf.BezierCurveQuadratic.html#netDxf_BezierCurveQuadratic_PolygonalVertexes_System_Int32_
+  name: PolygonalVertexes
+  nameWithType: BezierCurveQuadratic.PolygonalVertexes
+  fullName: netDxf.BezierCurveQuadratic.PolygonalVertexes
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.List{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.List{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector3>
+  nameWithType: List<Vector3>
+  fullName: System.Collections.Generic.List<netDxf.Vector3>
+  nameWithType.vb: List(Of Vector3)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Vector3)
+  name.vb: List(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

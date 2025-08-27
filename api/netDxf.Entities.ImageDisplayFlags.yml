@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.ImageDisplayFlags
+  commentId: T:netDxf.Entities.ImageDisplayFlags
+  id: ImageDisplayFlags
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.ImageDisplayFlags.ShowImage
+  - netDxf.Entities.ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen
+  - netDxf.Entities.ImageDisplayFlags.TransparencyOn
+  - netDxf.Entities.ImageDisplayFlags.UseClippingBoundary
+  langs:
+  - csharp
+  - vb
+  name: ImageDisplayFlags
+  nameWithType: ImageDisplayFlags
+  fullName: netDxf.Entities.ImageDisplayFlags
+  type: Enum
+  source:
+    id: ImageDisplayFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ImageDisplayFlags.cs
+    startLine: 32
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Image display options.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum ImageDisplayFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum ImageDisplayFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Entities.ImageDisplayFlags.ShowImage
+  commentId: F:netDxf.Entities.ImageDisplayFlags.ShowImage
+  id: ShowImage
+  parent: netDxf.Entities.ImageDisplayFlags
+  langs:
+  - csharp
+  - vb
+  name: ShowImage
+  nameWithType: ImageDisplayFlags.ShowImage
+  fullName: netDxf.Entities.ImageDisplayFlags.ShowImage
+  type: Field
+  source:
+    id: ShowImage
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ImageDisplayFlags.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Show image.
+  example: []
+  syntax:
+    content: ShowImage = 1
+    return:
+      type: netDxf.Entities.ImageDisplayFlags
+- uid: netDxf.Entities.ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen
+  commentId: F:netDxf.Entities.ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen
+  id: ShowImageWhenNotAlignedWithScreen
+  parent: netDxf.Entities.ImageDisplayFlags
+  langs:
+  - csharp
+  - vb
+  name: ShowImageWhenNotAlignedWithScreen
+  nameWithType: ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen
+  fullName: netDxf.Entities.ImageDisplayFlags.ShowImageWhenNotAlignedWithScreen
+  type: Field
+  source:
+    id: ShowImageWhenNotAlignedWithScreen
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ImageDisplayFlags.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Show image when not aligned with screen.
+  example: []
+  syntax:
+    content: ShowImageWhenNotAlignedWithScreen = 2
+    return:
+      type: netDxf.Entities.ImageDisplayFlags
+- uid: netDxf.Entities.ImageDisplayFlags.UseClippingBoundary
+  commentId: F:netDxf.Entities.ImageDisplayFlags.UseClippingBoundary
+  id: UseClippingBoundary
+  parent: netDxf.Entities.ImageDisplayFlags
+  langs:
+  - csharp
+  - vb
+  name: UseClippingBoundary
+  nameWithType: ImageDisplayFlags.UseClippingBoundary
+  fullName: netDxf.Entities.ImageDisplayFlags.UseClippingBoundary
+  type: Field
+  source:
+    id: UseClippingBoundary
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ImageDisplayFlags.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Use clipping boundary.
+  example: []
+  syntax:
+    content: UseClippingBoundary = 4
+    return:
+      type: netDxf.Entities.ImageDisplayFlags
+- uid: netDxf.Entities.ImageDisplayFlags.TransparencyOn
+  commentId: F:netDxf.Entities.ImageDisplayFlags.TransparencyOn
+  id: TransparencyOn
+  parent: netDxf.Entities.ImageDisplayFlags
+  langs:
+  - csharp
+  - vb
+  name: TransparencyOn
+  nameWithType: ImageDisplayFlags.TransparencyOn
+  fullName: netDxf.Entities.ImageDisplayFlags.TransparencyOn
+  type: Field
+  source:
+    id: TransparencyOn
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ImageDisplayFlags.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Transparency on.
+  example: []
+  syntax:
+    content: TransparencyOn = 8
+    return:
+      type: netDxf.Entities.ImageDisplayFlags
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.ImageDisplayFlags
+  commentId: T:netDxf.Entities.ImageDisplayFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.ImageDisplayFlags.html
+  name: ImageDisplayFlags
+  nameWithType: ImageDisplayFlags
+  fullName: netDxf.Entities.ImageDisplayFlags

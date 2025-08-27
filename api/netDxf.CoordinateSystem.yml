@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.CoordinateSystem
+  commentId: T:netDxf.CoordinateSystem
+  id: CoordinateSystem
+  parent: netDxf
+  children:
+  - netDxf.CoordinateSystem.Object
+  - netDxf.CoordinateSystem.World
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem
+  nameWithType: CoordinateSystem
+  fullName: netDxf.CoordinateSystem
+  type: Enum
+  source:
+    id: CoordinateSystem
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/CoordinateSystem.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Defines the coordinate system reference.
+  example: []
+  syntax:
+    content: public enum CoordinateSystem
+    content.vb: Public Enum CoordinateSystem
+- uid: netDxf.CoordinateSystem.World
+  commentId: F:netDxf.CoordinateSystem.World
+  id: World
+  parent: netDxf.CoordinateSystem
+  langs:
+  - csharp
+  - vb
+  name: World
+  nameWithType: CoordinateSystem.World
+  fullName: netDxf.CoordinateSystem.World
+  type: Field
+  source:
+    id: World
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/CoordinateSystem.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: World coordinates.
+  example: []
+  syntax:
+    content: World = 0
+    return:
+      type: netDxf.CoordinateSystem
+- uid: netDxf.CoordinateSystem.Object
+  commentId: F:netDxf.CoordinateSystem.Object
+  id: Object
+  parent: netDxf.CoordinateSystem
+  langs:
+  - csharp
+  - vb
+  name: Object
+  nameWithType: CoordinateSystem.Object
+  fullName: netDxf.CoordinateSystem.Object
+  type: Field
+  source:
+    id: Object
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/CoordinateSystem.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Object/Local coordinates.
+  example: []
+  syntax:
+    content: Object = 1
+    return:
+      type: netDxf.CoordinateSystem
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.CoordinateSystem
+  commentId: T:netDxf.CoordinateSystem
+  parent: netDxf
+  href: netDxf.CoordinateSystem.html
+  name: CoordinateSystem
+  nameWithType: CoordinateSystem
+  fullName: netDxf.CoordinateSystem

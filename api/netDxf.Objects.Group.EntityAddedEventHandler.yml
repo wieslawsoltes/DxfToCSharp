@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.Group.EntityAddedEventHandler
+  commentId: T:netDxf.Objects.Group.EntityAddedEventHandler
+  id: Group.EntityAddedEventHandler
+  parent: netDxf.Objects
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Group.EntityAddedEventHandler
+  nameWithType: Group.EntityAddedEventHandler
+  fullName: netDxf.Objects.Group.EntityAddedEventHandler
+  type: Delegate
+  source:
+    id: EntityAddedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/Group.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  syntax:
+    content: public delegate void Group.EntityAddedEventHandler(Group sender, GroupEntityChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Objects.Group
+    - id: e
+      type: netDxf.Objects.GroupEntityChangeEventArgs
+    content.vb: Public Delegate Sub Group.EntityAddedEventHandler(sender As Group, e As GroupEntityChangeEventArgs)
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.Group
+  commentId: T:netDxf.Objects.Group
+  parent: netDxf.Objects
+  href: netDxf.Objects.Group.html
+  name: Group
+  nameWithType: Group
+  fullName: netDxf.Objects.Group
+- uid: netDxf.Objects.GroupEntityChangeEventArgs
+  commentId: T:netDxf.Objects.GroupEntityChangeEventArgs
+  parent: netDxf.Objects
+  href: netDxf.Objects.GroupEntityChangeEventArgs.html
+  name: GroupEntityChangeEventArgs
+  nameWithType: GroupEntityChangeEventArgs
+  fullName: netDxf.Objects.GroupEntityChangeEventArgs

@@ -1,0 +1,206 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.DictionaryCloningFlags
+  commentId: T:netDxf.Objects.DictionaryCloningFlags
+  id: DictionaryCloningFlags
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.DictionaryCloningFlags.KeepExisting
+  - netDxf.Objects.DictionaryCloningFlags.Name
+  - netDxf.Objects.DictionaryCloningFlags.NotApplicable
+  - netDxf.Objects.DictionaryCloningFlags.UnmangleName
+  - netDxf.Objects.DictionaryCloningFlags.UseClone
+  - netDxf.Objects.DictionaryCloningFlags.XrefName
+  langs:
+  - csharp
+  - vb
+  name: DictionaryCloningFlags
+  nameWithType: DictionaryCloningFlags
+  fullName: netDxf.Objects.DictionaryCloningFlags
+  type: Enum
+  source:
+    id: DictionaryCloningFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Duplicate record cloning flag (determines how to merge duplicate entries).
+  example: []
+  syntax:
+    content: public enum DictionaryCloningFlags
+    content.vb: Public Enum DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.NotApplicable
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.NotApplicable
+  id: NotApplicable
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: NotApplicable
+  nameWithType: DictionaryCloningFlags.NotApplicable
+  fullName: netDxf.Objects.DictionaryCloningFlags.NotApplicable
+  type: Field
+  source:
+    id: NotApplicable
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Not applicable.
+  example: []
+  syntax:
+    content: NotApplicable = 0
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.KeepExisting
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.KeepExisting
+  id: KeepExisting
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: KeepExisting
+  nameWithType: DictionaryCloningFlags.KeepExisting
+  fullName: netDxf.Objects.DictionaryCloningFlags.KeepExisting
+  type: Field
+  source:
+    id: KeepExisting
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Keep existing.
+  example: []
+  syntax:
+    content: KeepExisting = 1
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.UseClone
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.UseClone
+  id: UseClone
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: UseClone
+  nameWithType: DictionaryCloningFlags.UseClone
+  fullName: netDxf.Objects.DictionaryCloningFlags.UseClone
+  type: Field
+  source:
+    id: UseClone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Use clone.
+  example: []
+  syntax:
+    content: UseClone = 2
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.XrefName
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.XrefName
+  id: XrefName
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: XrefName
+  nameWithType: DictionaryCloningFlags.XrefName
+  fullName: netDxf.Objects.DictionaryCloningFlags.XrefName
+  type: Field
+  source:
+    id: XrefName
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: External reference name.
+  example: []
+  syntax:
+    content: XrefName = 3
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.Name
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.Name
+  id: Name
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: DictionaryCloningFlags.Name
+  fullName: netDxf.Objects.DictionaryCloningFlags.Name
+  type: Field
+  source:
+    id: Name
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Name.
+  example: []
+  syntax:
+    content: Name = 4
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.DictionaryCloningFlags.UnmangleName
+  commentId: F:netDxf.Objects.DictionaryCloningFlags.UnmangleName
+  id: UnmangleName
+  parent: netDxf.Objects.DictionaryCloningFlags
+  langs:
+  - csharp
+  - vb
+  name: UnmangleName
+  nameWithType: DictionaryCloningFlags.UnmangleName
+  fullName: netDxf.Objects.DictionaryCloningFlags.UnmangleName
+  type: Field
+  source:
+    id: UnmangleName
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/DictionaryCloningFlags.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Unmangle name.
+  example: []
+  syntax:
+    content: UnmangleName = 5
+    return:
+      type: netDxf.Objects.DictionaryCloningFlags
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.DictionaryCloningFlags
+  commentId: T:netDxf.Objects.DictionaryCloningFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.DictionaryCloningFlags.html
+  name: DictionaryCloningFlags
+  nameWithType: DictionaryCloningFlags
+  fullName: netDxf.Objects.DictionaryCloningFlags

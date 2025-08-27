@@ -1,0 +1,1013 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.DimensionArrowhead
+  commentId: T:netDxf.Entities.DimensionArrowhead
+  id: DimensionArrowhead
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.DimensionArrowhead.ArchitecturalTick
+  - netDxf.Entities.DimensionArrowhead.Box
+  - netDxf.Entities.DimensionArrowhead.BoxFilled
+  - netDxf.Entities.DimensionArrowhead.Closed
+  - netDxf.Entities.DimensionArrowhead.ClosedBlank
+  - netDxf.Entities.DimensionArrowhead.DatumTriangle
+  - netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+  - netDxf.Entities.DimensionArrowhead.Dot
+  - netDxf.Entities.DimensionArrowhead.DotBlank
+  - netDxf.Entities.DimensionArrowhead.DotSmall
+  - netDxf.Entities.DimensionArrowhead.DotSmallBlank
+  - netDxf.Entities.DimensionArrowhead.Integral
+  - netDxf.Entities.DimensionArrowhead.None
+  - netDxf.Entities.DimensionArrowhead.Oblique
+  - netDxf.Entities.DimensionArrowhead.Open
+  - netDxf.Entities.DimensionArrowhead.Open30
+  - netDxf.Entities.DimensionArrowhead.Open90
+  - netDxf.Entities.DimensionArrowhead.OriginIndicator
+  - netDxf.Entities.DimensionArrowhead.OriginIndicator2
+  langs:
+  - csharp
+  - vb
+  name: DimensionArrowhead
+  nameWithType: DimensionArrowhead
+  fullName: netDxf.Entities.DimensionArrowhead
+  type: Class
+  source:
+    id: DimensionArrowhead
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 57
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Predefined shapes for dimension style arrowheads.
+  remarks: >-
+    Arrowhead block names and its representation.<br />
+
+    "" = closed filled<br />
+
+    "_DOT" = dot<br />
+
+    "_DOTSMALL" = dot small<br />
+
+    "_DOTBLANK" = dot blank<br />
+
+    "_ORIGIN" = origin indicator<br />
+
+    "_ORIGIN2" = origin indicator 2<br />
+
+    "_OPEN" = open<br />
+
+    "_OPEN90" = open 90 (right angle)<br />
+
+    "_OPEN30" = open 30<br />
+
+    "_CLOSED" = closed<br />
+
+    "_SMALL" = dot small blank<br />
+
+    "_NONE" = none<br />
+
+    "_OBLIQUE" = oblique<br />
+
+    "_BOXFILLED" = box filled<br />
+
+    "_BOXBLANK" = box<br />
+
+    "_CLOSEDBLANK" = closed blank<br />
+
+    "_DATUMFILLED" = datum triangle filled<br />
+
+    "_DATUMBLANK" = datum triangle<br />
+
+    "_INTEGRAL" = integral<br />
+
+    "_ARCHTICK" = architectural tick<br />
+  example: []
+  syntax:
+    content: public static class DimensionArrowhead
+    content.vb: Public Module DimensionArrowhead
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.DimensionArrowhead.Dot
+  commentId: P:netDxf.Entities.DimensionArrowhead.Dot
+  id: Dot
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Dot
+  nameWithType: DimensionArrowhead.Dot
+  fullName: netDxf.Entities.DimensionArrowhead.Dot
+  type: Property
+  source:
+    id: Dot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 64
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Dot arrowhead.
+  example: []
+  syntax:
+    content: public static Block Dot { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Dot As Block
+  overload: netDxf.Entities.DimensionArrowhead.Dot*
+- uid: netDxf.Entities.DimensionArrowhead.DotSmall
+  commentId: P:netDxf.Entities.DimensionArrowhead.DotSmall
+  id: DotSmall
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: DotSmall
+  nameWithType: DimensionArrowhead.DotSmall
+  fullName: netDxf.Entities.DimensionArrowhead.DotSmall
+  type: Property
+  source:
+    id: DotSmall
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Small dot arrowhead.
+  example: []
+  syntax:
+    content: public static Block DotSmall { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property DotSmall As Block
+  overload: netDxf.Entities.DimensionArrowhead.DotSmall*
+- uid: netDxf.Entities.DimensionArrowhead.DotBlank
+  commentId: P:netDxf.Entities.DimensionArrowhead.DotBlank
+  id: DotBlank
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: DotBlank
+  nameWithType: DimensionArrowhead.DotBlank
+  fullName: netDxf.Entities.DimensionArrowhead.DotBlank
+  type: Property
+  source:
+    id: DotBlank
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 127
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Blank dot arrowhead.
+  example: []
+  syntax:
+    content: public static Block DotBlank { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property DotBlank As Block
+  overload: netDxf.Entities.DimensionArrowhead.DotBlank*
+- uid: netDxf.Entities.DimensionArrowhead.OriginIndicator
+  commentId: P:netDxf.Entities.DimensionArrowhead.OriginIndicator
+  id: OriginIndicator
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: OriginIndicator
+  nameWithType: DimensionArrowhead.OriginIndicator
+  fullName: netDxf.Entities.DimensionArrowhead.OriginIndicator
+  type: Property
+  source:
+    id: OriginIndicator
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 158
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Origin indicator arrowhead.
+  example: []
+  syntax:
+    content: public static Block OriginIndicator { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property OriginIndicator As Block
+  overload: netDxf.Entities.DimensionArrowhead.OriginIndicator*
+- uid: netDxf.Entities.DimensionArrowhead.OriginIndicator2
+  commentId: P:netDxf.Entities.DimensionArrowhead.OriginIndicator2
+  id: OriginIndicator2
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: OriginIndicator2
+  nameWithType: DimensionArrowhead.OriginIndicator2
+  fullName: netDxf.Entities.DimensionArrowhead.OriginIndicator2
+  type: Property
+  source:
+    id: OriginIndicator2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 189
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Origin indicator 2 arrowhead.
+  example: []
+  syntax:
+    content: public static Block OriginIndicator2 { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property OriginIndicator2 As Block
+  overload: netDxf.Entities.DimensionArrowhead.OriginIndicator2*
+- uid: netDxf.Entities.DimensionArrowhead.Open
+  commentId: P:netDxf.Entities.DimensionArrowhead.Open
+  id: Open
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Open
+  nameWithType: DimensionArrowhead.Open
+  fullName: netDxf.Entities.DimensionArrowhead.Open
+  type: Property
+  source:
+    id: Open
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 229
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Open arrowhead.
+  example: []
+  syntax:
+    content: public static Block Open { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Open As Block
+  overload: netDxf.Entities.DimensionArrowhead.Open*
+- uid: netDxf.Entities.DimensionArrowhead.Open90
+  commentId: P:netDxf.Entities.DimensionArrowhead.Open90
+  id: Open90
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Open90
+  nameWithType: DimensionArrowhead.Open90
+  fullName: netDxf.Entities.DimensionArrowhead.Open90
+  type: Property
+  source:
+    id: Open90
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 269
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Open 90 degree arrowhead (right angle arrowhead).
+  example: []
+  syntax:
+    content: public static Block Open90 { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Open90 As Block
+  overload: netDxf.Entities.DimensionArrowhead.Open90*
+- uid: netDxf.Entities.DimensionArrowhead.Open30
+  commentId: P:netDxf.Entities.DimensionArrowhead.Open30
+  id: Open30
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Open30
+  nameWithType: DimensionArrowhead.Open30
+  fullName: netDxf.Entities.DimensionArrowhead.Open30
+  type: Property
+  source:
+    id: Open30
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 309
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Open 30 degree angle arrowhead.
+  example: []
+  syntax:
+    content: public static Block Open30 { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Open30 As Block
+  overload: netDxf.Entities.DimensionArrowhead.Open30*
+- uid: netDxf.Entities.DimensionArrowhead.Closed
+  commentId: P:netDxf.Entities.DimensionArrowhead.Closed
+  id: Closed
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Closed
+  nameWithType: DimensionArrowhead.Closed
+  fullName: netDxf.Entities.DimensionArrowhead.Closed
+  type: Property
+  source:
+    id: Closed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 349
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Closed arrowhead.
+  example: []
+  syntax:
+    content: public static Block Closed { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Closed As Block
+  overload: netDxf.Entities.DimensionArrowhead.Closed*
+- uid: netDxf.Entities.DimensionArrowhead.DotSmallBlank
+  commentId: P:netDxf.Entities.DimensionArrowhead.DotSmallBlank
+  id: DotSmallBlank
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: DotSmallBlank
+  nameWithType: DimensionArrowhead.DotSmallBlank
+  fullName: netDxf.Entities.DimensionArrowhead.DotSmallBlank
+  type: Property
+  source:
+    id: DotSmallBlank
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 398
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Small blank dot arrowhead.
+  example: []
+  syntax:
+    content: public static Block DotSmallBlank { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property DotSmallBlank As Block
+  overload: netDxf.Entities.DimensionArrowhead.DotSmallBlank*
+- uid: netDxf.Entities.DimensionArrowhead.None
+  commentId: P:netDxf.Entities.DimensionArrowhead.None
+  id: None
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: DimensionArrowhead.None
+  fullName: netDxf.Entities.DimensionArrowhead.None
+  type: Property
+  source:
+    id: None
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 420
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Empty arrowhead.
+  example: []
+  syntax:
+    content: public static Block None { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property None As Block
+  overload: netDxf.Entities.DimensionArrowhead.None*
+- uid: netDxf.Entities.DimensionArrowhead.Oblique
+  commentId: P:netDxf.Entities.DimensionArrowhead.Oblique
+  id: Oblique
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Oblique
+  nameWithType: DimensionArrowhead.Oblique
+  fullName: netDxf.Entities.DimensionArrowhead.Oblique
+  type: Property
+  source:
+    id: Oblique
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 432
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Oblique arrowhead.
+  example: []
+  syntax:
+    content: public static Block Oblique { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Oblique As Block
+  overload: netDxf.Entities.DimensionArrowhead.Oblique*
+- uid: netDxf.Entities.DimensionArrowhead.BoxFilled
+  commentId: P:netDxf.Entities.DimensionArrowhead.BoxFilled
+  id: BoxFilled
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: BoxFilled
+  nameWithType: DimensionArrowhead.BoxFilled
+  fullName: netDxf.Entities.DimensionArrowhead.BoxFilled
+  type: Property
+  source:
+    id: BoxFilled
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 454
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Filled box arrowhead.
+  example: []
+  syntax:
+    content: public static Block BoxFilled { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property BoxFilled As Block
+  overload: netDxf.Entities.DimensionArrowhead.BoxFilled*
+- uid: netDxf.Entities.DimensionArrowhead.Box
+  commentId: P:netDxf.Entities.DimensionArrowhead.Box
+  id: Box
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Box
+  nameWithType: DimensionArrowhead.Box
+  fullName: netDxf.Entities.DimensionArrowhead.Box
+  type: Property
+  source:
+    id: Box
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 484
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Box arrowhead.
+  example: []
+  syntax:
+    content: public static Block Box { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Box As Block
+  overload: netDxf.Entities.DimensionArrowhead.Box*
+- uid: netDxf.Entities.DimensionArrowhead.ClosedBlank
+  commentId: P:netDxf.Entities.DimensionArrowhead.ClosedBlank
+  id: ClosedBlank
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: ClosedBlank
+  nameWithType: DimensionArrowhead.ClosedBlank
+  fullName: netDxf.Entities.DimensionArrowhead.ClosedBlank
+  type: Property
+  source:
+    id: ClosedBlank
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 542
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Blank closed arrowhead.
+  example: []
+  syntax:
+    content: public static Block ClosedBlank { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property ClosedBlank As Block
+  overload: netDxf.Entities.DimensionArrowhead.ClosedBlank*
+- uid: netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+  commentId: P:netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+  id: DatumTriangleFilled
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: DatumTriangleFilled
+  nameWithType: DimensionArrowhead.DatumTriangleFilled
+  fullName: netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+  type: Property
+  source:
+    id: DatumTriangleFilled
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 582
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Filled datum triangle arrowhead.
+  example: []
+  syntax:
+    content: public static Block DatumTriangleFilled { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property DatumTriangleFilled As Block
+  overload: netDxf.Entities.DimensionArrowhead.DatumTriangleFilled*
+- uid: netDxf.Entities.DimensionArrowhead.DatumTriangle
+  commentId: P:netDxf.Entities.DimensionArrowhead.DatumTriangle
+  id: DatumTriangle
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: DatumTriangle
+  nameWithType: DimensionArrowhead.DatumTriangle
+  fullName: netDxf.Entities.DimensionArrowhead.DatumTriangle
+  type: Property
+  source:
+    id: DatumTriangle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 603
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Datum triangle arrowhead.
+  example: []
+  syntax:
+    content: public static Block DatumTriangle { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property DatumTriangle As Block
+  overload: netDxf.Entities.DimensionArrowhead.DatumTriangle*
+- uid: netDxf.Entities.DimensionArrowhead.Integral
+  commentId: P:netDxf.Entities.DimensionArrowhead.Integral
+  id: Integral
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: Integral
+  nameWithType: DimensionArrowhead.Integral
+  fullName: netDxf.Entities.DimensionArrowhead.Integral
+  type: Property
+  source:
+    id: Integral
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 643
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Integral symbol arrowhead.
+  example: []
+  syntax:
+    content: public static Block Integral { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property Integral As Block
+  overload: netDxf.Entities.DimensionArrowhead.Integral*
+- uid: netDxf.Entities.DimensionArrowhead.ArchitecturalTick
+  commentId: P:netDxf.Entities.DimensionArrowhead.ArchitecturalTick
+  id: ArchitecturalTick
+  parent: netDxf.Entities.DimensionArrowhead
+  langs:
+  - csharp
+  - vb
+  name: ArchitecturalTick
+  nameWithType: DimensionArrowhead.ArchitecturalTick
+  fullName: netDxf.Entities.DimensionArrowhead.ArchitecturalTick
+  type: Property
+  source:
+    id: ArchitecturalTick
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionArrowhead.cs
+    startLine: 674
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Architectural tick arrowhead.
+  example: []
+  syntax:
+    content: public static Block ArchitecturalTick { get; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Shared ReadOnly Property ArchitecturalTick As Block
+  overload: netDxf.Entities.DimensionArrowhead.ArchitecturalTick*
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Entities.DimensionArrowhead.Dot*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Dot
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Dot
+  name: Dot
+  nameWithType: DimensionArrowhead.Dot
+  fullName: netDxf.Entities.DimensionArrowhead.Dot
+- uid: netDxf.Blocks.Block
+  commentId: T:netDxf.Blocks.Block
+  parent: netDxf.Blocks
+  href: netDxf.Blocks.Block.html
+  name: Block
+  nameWithType: Block
+  fullName: netDxf.Blocks.Block
+- uid: netDxf.Blocks
+  commentId: N:netDxf.Blocks
+  href: netDxf.html
+  name: netDxf.Blocks
+  nameWithType: netDxf.Blocks
+  fullName: netDxf.Blocks
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+- uid: netDxf.Entities.DimensionArrowhead.DotSmall*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.DotSmall
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_DotSmall
+  name: DotSmall
+  nameWithType: DimensionArrowhead.DotSmall
+  fullName: netDxf.Entities.DimensionArrowhead.DotSmall
+- uid: netDxf.Entities.DimensionArrowhead.DotBlank*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.DotBlank
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_DotBlank
+  name: DotBlank
+  nameWithType: DimensionArrowhead.DotBlank
+  fullName: netDxf.Entities.DimensionArrowhead.DotBlank
+- uid: netDxf.Entities.DimensionArrowhead.OriginIndicator*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.OriginIndicator
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_OriginIndicator
+  name: OriginIndicator
+  nameWithType: DimensionArrowhead.OriginIndicator
+  fullName: netDxf.Entities.DimensionArrowhead.OriginIndicator
+- uid: netDxf.Entities.DimensionArrowhead.OriginIndicator2*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.OriginIndicator2
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_OriginIndicator2
+  name: OriginIndicator2
+  nameWithType: DimensionArrowhead.OriginIndicator2
+  fullName: netDxf.Entities.DimensionArrowhead.OriginIndicator2
+- uid: netDxf.Entities.DimensionArrowhead.Open*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Open
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Open
+  name: Open
+  nameWithType: DimensionArrowhead.Open
+  fullName: netDxf.Entities.DimensionArrowhead.Open
+- uid: netDxf.Entities.DimensionArrowhead.Open90*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Open90
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Open90
+  name: Open90
+  nameWithType: DimensionArrowhead.Open90
+  fullName: netDxf.Entities.DimensionArrowhead.Open90
+- uid: netDxf.Entities.DimensionArrowhead.Open30*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Open30
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Open30
+  name: Open30
+  nameWithType: DimensionArrowhead.Open30
+  fullName: netDxf.Entities.DimensionArrowhead.Open30
+- uid: netDxf.Entities.DimensionArrowhead.Closed*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Closed
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Closed
+  name: Closed
+  nameWithType: DimensionArrowhead.Closed
+  fullName: netDxf.Entities.DimensionArrowhead.Closed
+- uid: netDxf.Entities.DimensionArrowhead.DotSmallBlank*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.DotSmallBlank
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_DotSmallBlank
+  name: DotSmallBlank
+  nameWithType: DimensionArrowhead.DotSmallBlank
+  fullName: netDxf.Entities.DimensionArrowhead.DotSmallBlank
+- uid: netDxf.Entities.DimensionArrowhead.None*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.None
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_None
+  name: None
+  nameWithType: DimensionArrowhead.None
+  fullName: netDxf.Entities.DimensionArrowhead.None
+- uid: netDxf.Entities.DimensionArrowhead.Oblique*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Oblique
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Oblique
+  name: Oblique
+  nameWithType: DimensionArrowhead.Oblique
+  fullName: netDxf.Entities.DimensionArrowhead.Oblique
+- uid: netDxf.Entities.DimensionArrowhead.BoxFilled*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.BoxFilled
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_BoxFilled
+  name: BoxFilled
+  nameWithType: DimensionArrowhead.BoxFilled
+  fullName: netDxf.Entities.DimensionArrowhead.BoxFilled
+- uid: netDxf.Entities.DimensionArrowhead.Box*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Box
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Box
+  name: Box
+  nameWithType: DimensionArrowhead.Box
+  fullName: netDxf.Entities.DimensionArrowhead.Box
+- uid: netDxf.Entities.DimensionArrowhead.ClosedBlank*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.ClosedBlank
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_ClosedBlank
+  name: ClosedBlank
+  nameWithType: DimensionArrowhead.ClosedBlank
+  fullName: netDxf.Entities.DimensionArrowhead.ClosedBlank
+- uid: netDxf.Entities.DimensionArrowhead.DatumTriangleFilled*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_DatumTriangleFilled
+  name: DatumTriangleFilled
+  nameWithType: DimensionArrowhead.DatumTriangleFilled
+  fullName: netDxf.Entities.DimensionArrowhead.DatumTriangleFilled
+- uid: netDxf.Entities.DimensionArrowhead.DatumTriangle*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.DatumTriangle
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_DatumTriangle
+  name: DatumTriangle
+  nameWithType: DimensionArrowhead.DatumTriangle
+  fullName: netDxf.Entities.DimensionArrowhead.DatumTriangle
+- uid: netDxf.Entities.DimensionArrowhead.Integral*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.Integral
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_Integral
+  name: Integral
+  nameWithType: DimensionArrowhead.Integral
+  fullName: netDxf.Entities.DimensionArrowhead.Integral
+- uid: netDxf.Entities.DimensionArrowhead.ArchitecturalTick*
+  commentId: Overload:netDxf.Entities.DimensionArrowhead.ArchitecturalTick
+  href: netDxf.Entities.DimensionArrowhead.html#netDxf_Entities_DimensionArrowhead_ArchitecturalTick
+  name: ArchitecturalTick
+  nameWithType: DimensionArrowhead.ArchitecturalTick
+  fullName: netDxf.Entities.DimensionArrowhead.ArchitecturalTick

@@ -1,0 +1,1059 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.GTE.BSplineCurve
+  commentId: T:netDxf.GTE.BSplineCurve
+  id: BSplineCurve
+  parent: netDxf.GTE
+  children:
+  - netDxf.GTE.BSplineCurve.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  - netDxf.GTE.BSplineCurve.BasisFunction
+  - netDxf.GTE.BSplineCurve.Controls
+  - netDxf.GTE.BSplineCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  - netDxf.GTE.BSplineCurve.NumControls
+  langs:
+  - csharp
+  - vb
+  name: BSplineCurve
+  nameWithType: BSplineCurve
+  fullName: netDxf.GTE.BSplineCurve
+  type: Class
+  source:
+    id: BSplineCurve
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: 'public class BSplineCurve : ParametricCurve'
+    content.vb: Public Class BSplineCurve Inherits ParametricCurve
+  inheritance:
+  - System.Object
+  - netDxf.GTE.ParametricCurve
+  inheritedMembers:
+  - netDxf.GTE.ParametricCurve.DEFAULT_ROMBERG_ORDER
+  - netDxf.GTE.ParametricCurve.DEFAULT_MAX_BISECTIONS
+  - netDxf.GTE.ParametricCurve.SUP_ORDER
+  - netDxf.GTE.ParametricCurve.times
+  - netDxf.GTE.ParametricCurve.segmentLength
+  - netDxf.GTE.ParametricCurve.acumulatedLength
+  - netDxf.GTE.ParametricCurve.rombergOrder
+  - netDxf.GTE.ParametricCurve.maxBisections
+  - netDxf.GTE.ParametricCurve.isConstructed
+  - netDxf.GTE.ParametricCurve.IsConstructed
+  - netDxf.GTE.ParametricCurve.TMin
+  - netDxf.GTE.ParametricCurve.TMax
+  - netDxf.GTE.ParametricCurve.NumSegments
+  - netDxf.GTE.ParametricCurve.Times
+  - netDxf.GTE.ParametricCurve.RombergOrder
+  - netDxf.GTE.ParametricCurve.MaxBisections
+  - netDxf.GTE.ParametricCurve.SetTimeInterval(System.Double,System.Double)
+  - netDxf.GTE.ParametricCurve.GetPosition(System.Double)
+  - netDxf.GTE.ParametricCurve.GetTangent(System.Double)
+  - netDxf.GTE.ParametricCurve.GetSpeed(System.Double)
+  - netDxf.GTE.ParametricCurve.GetLength(System.Double,System.Double)
+  - netDxf.GTE.ParametricCurve.GetTotalLength
+  - netDxf.GTE.ParametricCurve.GetTime(System.Double)
+  - netDxf.GTE.ParametricCurve.SubdivideByTime(System.Int32,System.Double[]@)
+  - netDxf.GTE.ParametricCurve.SubdivideByLength(System.Int32,System.Double[]@)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.GTE.BSplineCurve.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  commentId: M:netDxf.GTE.BSplineCurve.#ctor(netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])
+  id: '#ctor(netDxf.GTE.BasisFunctionInput,netDxf.Vector3[])'
+  parent: netDxf.GTE.BSplineCurve
+  langs:
+  - csharp
+  - vb
+  name: BSplineCurve(BasisFunctionInput, Vector3[])
+  nameWithType: BSplineCurve.BSplineCurve(BasisFunctionInput, Vector3[])
+  fullName: netDxf.GTE.BSplineCurve.BSplineCurve(netDxf.GTE.BasisFunctionInput, netDxf.Vector3[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BSplineCurve(BasisFunctionInput input, Vector3[] controls)
+    parameters:
+    - id: input
+      type: netDxf.GTE.BasisFunctionInput
+    - id: controls
+      type: netDxf.Vector3[]
+    content.vb: Public Sub New(input As BasisFunctionInput, controls As Vector3())
+  overload: netDxf.GTE.BSplineCurve.#ctor*
+  nameWithType.vb: BSplineCurve.New(BasisFunctionInput, Vector3())
+  fullName.vb: netDxf.GTE.BSplineCurve.New(netDxf.GTE.BasisFunctionInput, netDxf.Vector3())
+  name.vb: New(BasisFunctionInput, Vector3())
+- uid: netDxf.GTE.BSplineCurve.BasisFunction
+  commentId: P:netDxf.GTE.BSplineCurve.BasisFunction
+  id: BasisFunction
+  parent: netDxf.GTE.BSplineCurve
+  langs:
+  - csharp
+  - vb
+  name: BasisFunction
+  nameWithType: BSplineCurve.BasisFunction
+  fullName: netDxf.GTE.BSplineCurve.BasisFunction
+  type: Property
+  source:
+    id: BasisFunction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 68
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BasisFunction BasisFunction { get; }
+    parameters: []
+    return:
+      type: netDxf.GTE.BasisFunction
+    content.vb: Public ReadOnly Property BasisFunction As BasisFunction
+  overload: netDxf.GTE.BSplineCurve.BasisFunction*
+- uid: netDxf.GTE.BSplineCurve.NumControls
+  commentId: P:netDxf.GTE.BSplineCurve.NumControls
+  id: NumControls
+  parent: netDxf.GTE.BSplineCurve
+  langs:
+  - csharp
+  - vb
+  name: NumControls
+  nameWithType: BSplineCurve.NumControls
+  fullName: netDxf.GTE.BSplineCurve.NumControls
+  type: Property
+  source:
+    id: NumControls
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 73
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumControls { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NumControls As Integer
+  overload: netDxf.GTE.BSplineCurve.NumControls*
+- uid: netDxf.GTE.BSplineCurve.Controls
+  commentId: P:netDxf.GTE.BSplineCurve.Controls
+  id: Controls
+  parent: netDxf.GTE.BSplineCurve
+  langs:
+  - csharp
+  - vb
+  name: Controls
+  nameWithType: BSplineCurve.Controls
+  fullName: netDxf.GTE.BSplineCurve.Controls
+  type: Property
+  source:
+    id: Controls
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 78
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3[] Controls { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public ReadOnly Property Controls As Vector3()
+  overload: netDxf.GTE.BSplineCurve.Controls*
+- uid: netDxf.GTE.BSplineCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  commentId: M:netDxf.GTE.BSplineCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  id: Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  parent: netDxf.GTE.BSplineCurve
+  langs:
+  - csharp
+  - vb
+  name: Evaluate(double, int, out Vector3[])
+  nameWithType: BSplineCurve.Evaluate(double, int, out Vector3[])
+  fullName: netDxf.GTE.BSplineCurve.Evaluate(double, int, out netDxf.Vector3[])
+  type: Method
+  source:
+    id: Evaluate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineCurve.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  example: []
+  syntax:
+    content: public override void Evaluate(double t, int order, out Vector3[] jet)
+    parameters:
+    - id: t
+      type: System.Double
+    - id: order
+      type: System.Int32
+    - id: jet
+      type: netDxf.Vector3[]
+    content.vb: Public Overrides Sub Evaluate(t As Double, order As Integer, jet As Vector3())
+  overridden: netDxf.GTE.ParametricCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  overload: netDxf.GTE.BSplineCurve.Evaluate*
+  nameWithType.vb: BSplineCurve.Evaluate(Double, Integer, Vector3())
+  fullName.vb: netDxf.GTE.BSplineCurve.Evaluate(Double, Integer, netDxf.Vector3())
+  name.vb: Evaluate(Double, Integer, Vector3())
+references:
+- uid: netDxf.GTE
+  commentId: N:netDxf.GTE
+  href: netDxf.html
+  name: netDxf.GTE
+  nameWithType: netDxf.GTE
+  fullName: netDxf.GTE
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.GTE.ParametricCurve
+  commentId: T:netDxf.GTE.ParametricCurve
+  parent: netDxf.GTE
+  href: netDxf.GTE.ParametricCurve.html
+  name: ParametricCurve
+  nameWithType: ParametricCurve
+  fullName: netDxf.GTE.ParametricCurve
+- uid: netDxf.GTE.ParametricCurve.DEFAULT_ROMBERG_ORDER
+  commentId: F:netDxf.GTE.ParametricCurve.DEFAULT_ROMBERG_ORDER
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_DEFAULT_ROMBERG_ORDER
+  name: DEFAULT_ROMBERG_ORDER
+  nameWithType: ParametricCurve.DEFAULT_ROMBERG_ORDER
+  fullName: netDxf.GTE.ParametricCurve.DEFAULT_ROMBERG_ORDER
+- uid: netDxf.GTE.ParametricCurve.DEFAULT_MAX_BISECTIONS
+  commentId: F:netDxf.GTE.ParametricCurve.DEFAULT_MAX_BISECTIONS
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_DEFAULT_MAX_BISECTIONS
+  name: DEFAULT_MAX_BISECTIONS
+  nameWithType: ParametricCurve.DEFAULT_MAX_BISECTIONS
+  fullName: netDxf.GTE.ParametricCurve.DEFAULT_MAX_BISECTIONS
+- uid: netDxf.GTE.ParametricCurve.SUP_ORDER
+  commentId: F:netDxf.GTE.ParametricCurve.SUP_ORDER
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SUP_ORDER
+  name: SUP_ORDER
+  nameWithType: ParametricCurve.SUP_ORDER
+  fullName: netDxf.GTE.ParametricCurve.SUP_ORDER
+- uid: netDxf.GTE.ParametricCurve.times
+  commentId: F:netDxf.GTE.ParametricCurve.times
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_times
+  name: times
+  nameWithType: ParametricCurve.times
+  fullName: netDxf.GTE.ParametricCurve.times
+- uid: netDxf.GTE.ParametricCurve.segmentLength
+  commentId: F:netDxf.GTE.ParametricCurve.segmentLength
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_segmentLength
+  name: segmentLength
+  nameWithType: ParametricCurve.segmentLength
+  fullName: netDxf.GTE.ParametricCurve.segmentLength
+- uid: netDxf.GTE.ParametricCurve.acumulatedLength
+  commentId: F:netDxf.GTE.ParametricCurve.acumulatedLength
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_acumulatedLength
+  name: acumulatedLength
+  nameWithType: ParametricCurve.acumulatedLength
+  fullName: netDxf.GTE.ParametricCurve.acumulatedLength
+- uid: netDxf.GTE.ParametricCurve.rombergOrder
+  commentId: F:netDxf.GTE.ParametricCurve.rombergOrder
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_rombergOrder
+  name: rombergOrder
+  nameWithType: ParametricCurve.rombergOrder
+  fullName: netDxf.GTE.ParametricCurve.rombergOrder
+- uid: netDxf.GTE.ParametricCurve.maxBisections
+  commentId: F:netDxf.GTE.ParametricCurve.maxBisections
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_maxBisections
+  name: maxBisections
+  nameWithType: ParametricCurve.maxBisections
+  fullName: netDxf.GTE.ParametricCurve.maxBisections
+- uid: netDxf.GTE.ParametricCurve.isConstructed
+  commentId: F:netDxf.GTE.ParametricCurve.isConstructed
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_isConstructed
+  name: isConstructed
+  nameWithType: ParametricCurve.isConstructed
+  fullName: netDxf.GTE.ParametricCurve.isConstructed
+- uid: netDxf.GTE.ParametricCurve.IsConstructed
+  commentId: P:netDxf.GTE.ParametricCurve.IsConstructed
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_IsConstructed
+  name: IsConstructed
+  nameWithType: ParametricCurve.IsConstructed
+  fullName: netDxf.GTE.ParametricCurve.IsConstructed
+- uid: netDxf.GTE.ParametricCurve.TMin
+  commentId: P:netDxf.GTE.ParametricCurve.TMin
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_TMin
+  name: TMin
+  nameWithType: ParametricCurve.TMin
+  fullName: netDxf.GTE.ParametricCurve.TMin
+- uid: netDxf.GTE.ParametricCurve.TMax
+  commentId: P:netDxf.GTE.ParametricCurve.TMax
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_TMax
+  name: TMax
+  nameWithType: ParametricCurve.TMax
+  fullName: netDxf.GTE.ParametricCurve.TMax
+- uid: netDxf.GTE.ParametricCurve.NumSegments
+  commentId: P:netDxf.GTE.ParametricCurve.NumSegments
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_NumSegments
+  name: NumSegments
+  nameWithType: ParametricCurve.NumSegments
+  fullName: netDxf.GTE.ParametricCurve.NumSegments
+- uid: netDxf.GTE.ParametricCurve.Times
+  commentId: P:netDxf.GTE.ParametricCurve.Times
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_Times
+  name: Times
+  nameWithType: ParametricCurve.Times
+  fullName: netDxf.GTE.ParametricCurve.Times
+- uid: netDxf.GTE.ParametricCurve.RombergOrder
+  commentId: P:netDxf.GTE.ParametricCurve.RombergOrder
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_RombergOrder
+  name: RombergOrder
+  nameWithType: ParametricCurve.RombergOrder
+  fullName: netDxf.GTE.ParametricCurve.RombergOrder
+- uid: netDxf.GTE.ParametricCurve.MaxBisections
+  commentId: P:netDxf.GTE.ParametricCurve.MaxBisections
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_MaxBisections
+  name: MaxBisections
+  nameWithType: ParametricCurve.MaxBisections
+  fullName: netDxf.GTE.ParametricCurve.MaxBisections
+- uid: netDxf.GTE.ParametricCurve.SetTimeInterval(System.Double,System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.SetTimeInterval(System.Double,System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SetTimeInterval_System_Double_System_Double_
+  name: SetTimeInterval(double, double)
+  nameWithType: ParametricCurve.SetTimeInterval(double, double)
+  fullName: netDxf.GTE.ParametricCurve.SetTimeInterval(double, double)
+  nameWithType.vb: ParametricCurve.SetTimeInterval(Double, Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.SetTimeInterval(Double, Double)
+  name.vb: SetTimeInterval(Double, Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.SetTimeInterval(System.Double,System.Double)
+    name: SetTimeInterval
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SetTimeInterval_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.SetTimeInterval(System.Double,System.Double)
+    name: SetTimeInterval
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SetTimeInterval_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetPosition(System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.GetPosition(System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetPosition_System_Double_
+  name: GetPosition(double)
+  nameWithType: ParametricCurve.GetPosition(double)
+  fullName: netDxf.GTE.ParametricCurve.GetPosition(double)
+  nameWithType.vb: ParametricCurve.GetPosition(Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.GetPosition(Double)
+  name.vb: GetPosition(Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetPosition(System.Double)
+    name: GetPosition
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetPosition_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetPosition(System.Double)
+    name: GetPosition
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetPosition_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetTangent(System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.GetTangent(System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTangent_System_Double_
+  name: GetTangent(double)
+  nameWithType: ParametricCurve.GetTangent(double)
+  fullName: netDxf.GTE.ParametricCurve.GetTangent(double)
+  nameWithType.vb: ParametricCurve.GetTangent(Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.GetTangent(Double)
+  name.vb: GetTangent(Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetTangent(System.Double)
+    name: GetTangent
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTangent_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetTangent(System.Double)
+    name: GetTangent
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTangent_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetSpeed(System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.GetSpeed(System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetSpeed_System_Double_
+  name: GetSpeed(double)
+  nameWithType: ParametricCurve.GetSpeed(double)
+  fullName: netDxf.GTE.ParametricCurve.GetSpeed(double)
+  nameWithType.vb: ParametricCurve.GetSpeed(Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.GetSpeed(Double)
+  name.vb: GetSpeed(Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetSpeed(System.Double)
+    name: GetSpeed
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetSpeed_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetSpeed(System.Double)
+    name: GetSpeed
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetSpeed_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetLength(System.Double,System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.GetLength(System.Double,System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetLength_System_Double_System_Double_
+  name: GetLength(double, double)
+  nameWithType: ParametricCurve.GetLength(double, double)
+  fullName: netDxf.GTE.ParametricCurve.GetLength(double, double)
+  nameWithType.vb: ParametricCurve.GetLength(Double, Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.GetLength(Double, Double)
+  name.vb: GetLength(Double, Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetLength(System.Double,System.Double)
+    name: GetLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetLength_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetLength(System.Double,System.Double)
+    name: GetLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetLength_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetTotalLength
+  commentId: M:netDxf.GTE.ParametricCurve.GetTotalLength
+  parent: netDxf.GTE.ParametricCurve
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTotalLength
+  name: GetTotalLength()
+  nameWithType: ParametricCurve.GetTotalLength()
+  fullName: netDxf.GTE.ParametricCurve.GetTotalLength()
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetTotalLength
+    name: GetTotalLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTotalLength
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetTotalLength
+    name: GetTotalLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTotalLength
+  - name: (
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.GetTime(System.Double)
+  commentId: M:netDxf.GTE.ParametricCurve.GetTime(System.Double)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTime_System_Double_
+  name: GetTime(double)
+  nameWithType: ParametricCurve.GetTime(double)
+  fullName: netDxf.GTE.ParametricCurve.GetTime(double)
+  nameWithType.vb: ParametricCurve.GetTime(Double)
+  fullName.vb: netDxf.GTE.ParametricCurve.GetTime(Double)
+  name.vb: GetTime(Double)
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.GetTime(System.Double)
+    name: GetTime
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTime_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.GetTime(System.Double)
+    name: GetTime
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_GetTime_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.SubdivideByTime(System.Int32,System.Double[]@)
+  commentId: M:netDxf.GTE.ParametricCurve.SubdivideByTime(System.Int32,System.Double[]@)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByTime_System_Int32_System_Double____
+  name: SubdivideByTime(int, out double[])
+  nameWithType: ParametricCurve.SubdivideByTime(int, out double[])
+  fullName: netDxf.GTE.ParametricCurve.SubdivideByTime(int, out double[])
+  nameWithType.vb: ParametricCurve.SubdivideByTime(Integer, Double())
+  fullName.vb: netDxf.GTE.ParametricCurve.SubdivideByTime(Integer, Double())
+  name.vb: SubdivideByTime(Integer, Double())
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.SubdivideByTime(System.Int32,System.Double[]@)
+    name: SubdivideByTime
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByTime_System_Int32_System_Double____
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.SubdivideByTime(System.Int32,System.Double[]@)
+    name: SubdivideByTime
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByTime_System_Int32_System_Double____
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+  - name: )
+- uid: netDxf.GTE.ParametricCurve.SubdivideByLength(System.Int32,System.Double[]@)
+  commentId: M:netDxf.GTE.ParametricCurve.SubdivideByLength(System.Int32,System.Double[]@)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByLength_System_Int32_System_Double____
+  name: SubdivideByLength(int, out double[])
+  nameWithType: ParametricCurve.SubdivideByLength(int, out double[])
+  fullName: netDxf.GTE.ParametricCurve.SubdivideByLength(int, out double[])
+  nameWithType.vb: ParametricCurve.SubdivideByLength(Integer, Double())
+  fullName.vb: netDxf.GTE.ParametricCurve.SubdivideByLength(Integer, Double())
+  name.vb: SubdivideByLength(Integer, Double())
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.SubdivideByLength(System.Int32,System.Double[]@)
+    name: SubdivideByLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByLength_System_Int32_System_Double____
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.SubdivideByLength(System.Int32,System.Double[]@)
+    name: SubdivideByLength
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_SubdivideByLength_System_Int32_System_Double____
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.GTE.BSplineCurve.#ctor*
+  commentId: Overload:netDxf.GTE.BSplineCurve.#ctor
+  href: netDxf.GTE.BSplineCurve.html#netDxf_GTE_BSplineCurve__ctor_netDxf_GTE_BasisFunctionInput_netDxf_Vector3___
+  name: BSplineCurve
+  nameWithType: BSplineCurve.BSplineCurve
+  fullName: netDxf.GTE.BSplineCurve.BSplineCurve
+  nameWithType.vb: BSplineCurve.New
+  fullName.vb: netDxf.GTE.BSplineCurve.New
+  name.vb: New
+- uid: netDxf.GTE.BasisFunctionInput
+  commentId: T:netDxf.GTE.BasisFunctionInput
+  parent: netDxf.GTE
+  href: netDxf.GTE.BasisFunctionInput.html
+  name: BasisFunctionInput
+  nameWithType: BasisFunctionInput
+  fullName: netDxf.GTE.BasisFunctionInput
+- uid: netDxf.Vector3[]
+  isExternal: true
+  href: netDxf.Vector3.html
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: netDxf.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: netDxf.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+- uid: netDxf.GTE.BSplineCurve.BasisFunction*
+  commentId: Overload:netDxf.GTE.BSplineCurve.BasisFunction
+  href: netDxf.GTE.BSplineCurve.html#netDxf_GTE_BSplineCurve_BasisFunction
+  name: BasisFunction
+  nameWithType: BSplineCurve.BasisFunction
+  fullName: netDxf.GTE.BSplineCurve.BasisFunction
+- uid: netDxf.GTE.BasisFunction
+  commentId: T:netDxf.GTE.BasisFunction
+  parent: netDxf.GTE
+  href: netDxf.GTE.BasisFunction.html
+  name: BasisFunction
+  nameWithType: BasisFunction
+  fullName: netDxf.GTE.BasisFunction
+- uid: netDxf.GTE.BSplineCurve.NumControls*
+  commentId: Overload:netDxf.GTE.BSplineCurve.NumControls
+  href: netDxf.GTE.BSplineCurve.html#netDxf_GTE_BSplineCurve_NumControls
+  name: NumControls
+  nameWithType: BSplineCurve.NumControls
+  fullName: netDxf.GTE.BSplineCurve.NumControls
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.GTE.BSplineCurve.Controls*
+  commentId: Overload:netDxf.GTE.BSplineCurve.Controls
+  href: netDxf.GTE.BSplineCurve.html#netDxf_GTE_BSplineCurve_Controls
+  name: Controls
+  nameWithType: BSplineCurve.Controls
+  fullName: netDxf.GTE.BSplineCurve.Controls
+- uid: netDxf.GTE.ParametricCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  commentId: M:netDxf.GTE.ParametricCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+  parent: netDxf.GTE.ParametricCurve
+  isExternal: true
+  href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_Evaluate_System_Double_System_Int32_netDxf_Vector3____
+  name: Evaluate(double, int, out Vector3[])
+  nameWithType: ParametricCurve.Evaluate(double, int, out Vector3[])
+  fullName: netDxf.GTE.ParametricCurve.Evaluate(double, int, out netDxf.Vector3[])
+  nameWithType.vb: ParametricCurve.Evaluate(Double, Integer, Vector3())
+  fullName.vb: netDxf.GTE.ParametricCurve.Evaluate(Double, Integer, netDxf.Vector3())
+  name.vb: Evaluate(Double, Integer, Vector3())
+  spec.csharp:
+  - uid: netDxf.GTE.ParametricCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+    name: Evaluate
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_Evaluate_System_Double_System_Int32_netDxf_Vector3____
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: netDxf.GTE.ParametricCurve.Evaluate(System.Double,System.Int32,netDxf.Vector3[]@)
+    name: Evaluate
+    href: netDxf.GTE.ParametricCurve.html#netDxf_GTE_ParametricCurve_Evaluate_System_Double_System_Int32_netDxf_Vector3____
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+  - name: )
+- uid: netDxf.GTE.BSplineCurve.Evaluate*
+  commentId: Overload:netDxf.GTE.BSplineCurve.Evaluate
+  href: netDxf.GTE.BSplineCurve.html#netDxf_GTE_BSplineCurve_Evaluate_System_Double_System_Int32_netDxf_Vector3____
+  name: Evaluate
+  nameWithType: BSplineCurve.Evaluate
+  fullName: netDxf.GTE.BSplineCurve.Evaluate
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

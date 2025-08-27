@@ -80,11 +80,11 @@ items:
   type: Class
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: DxfCodeGenerationOptions
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 5
   assemblies:
   - DxfToCSharp.Core
@@ -119,11 +119,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: CustomClassName
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 10
   assemblies:
   - DxfToCSharp.Core
@@ -150,11 +150,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateClass
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 15
   assemblies:
   - DxfToCSharp.Core
@@ -181,11 +181,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateDetailedComments
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 20
   assemblies:
   - DxfToCSharp.Core
@@ -212,11 +212,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateHeader
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 25
   assemblies:
   - DxfToCSharp.Core
@@ -243,11 +243,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateUsingStatements
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 30
   assemblies:
   - DxfToCSharp.Core
@@ -274,11 +274,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateHeaderVariables
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 35
   assemblies:
   - DxfToCSharp.Core
@@ -305,11 +305,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLayers
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 40
   assemblies:
   - DxfToCSharp.Core
@@ -336,11 +336,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLinetypes
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 45
   assemblies:
   - DxfToCSharp.Core
@@ -367,11 +367,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateTextStyles
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 50
   assemblies:
   - DxfToCSharp.Core
@@ -398,11 +398,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateBlocks
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 55
   assemblies:
   - DxfToCSharp.Core
@@ -429,11 +429,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateDimensionStyles
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 60
   assemblies:
   - DxfToCSharp.Core
@@ -460,11 +460,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateMLineStyles
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 65
   assemblies:
   - DxfToCSharp.Core
@@ -491,11 +491,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateUCS
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 70
   assemblies:
   - DxfToCSharp.Core
@@ -522,11 +522,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateVPorts
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 75
   assemblies:
   - DxfToCSharp.Core
@@ -553,11 +553,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateGroupObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 80
   assemblies:
   - DxfToCSharp.Core
@@ -584,11 +584,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLayoutObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 85
   assemblies:
   - DxfToCSharp.Core
@@ -615,11 +615,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateImageDefinitionObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 90
   assemblies:
   - DxfToCSharp.Core
@@ -646,11 +646,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateUnderlayDefinitionObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 95
   assemblies:
   - DxfToCSharp.Core
@@ -677,11 +677,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateXRecordObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 100
   assemblies:
   - DxfToCSharp.Core
@@ -708,11 +708,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateDictionaryObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 105
   assemblies:
   - DxfToCSharp.Core
@@ -739,11 +739,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateRasterVariablesObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 110
   assemblies:
   - DxfToCSharp.Core
@@ -770,11 +770,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLayerStateObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 115
   assemblies:
   - DxfToCSharp.Core
@@ -801,11 +801,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePlotSettingsObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 120
   assemblies:
   - DxfToCSharp.Core
@@ -832,11 +832,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateMLineStyleObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 125
   assemblies:
   - DxfToCSharp.Core
@@ -863,11 +863,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateApplicationRegistryObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 130
   assemblies:
   - DxfToCSharp.Core
@@ -894,11 +894,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateShapeStyleObjects
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 137
   assemblies:
   - DxfToCSharp.Core
@@ -925,11 +925,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLineEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 142
   assemblies:
   - DxfToCSharp.Core
@@ -956,11 +956,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateArcEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 147
   assemblies:
   - DxfToCSharp.Core
@@ -987,11 +987,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateAttributeDefinitionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 152
   assemblies:
   - DxfToCSharp.Core
@@ -1018,11 +1018,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateCircleEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 157
   assemblies:
   - DxfToCSharp.Core
@@ -1049,11 +1049,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePolylineEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 162
   assemblies:
   - DxfToCSharp.Core
@@ -1080,11 +1080,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePolyline2DEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 167
   assemblies:
   - DxfToCSharp.Core
@@ -1111,11 +1111,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePolyline3DEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 172
   assemblies:
   - DxfToCSharp.Core
@@ -1142,11 +1142,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateTextEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 177
   assemblies:
   - DxfToCSharp.Core
@@ -1173,11 +1173,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateMTextEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 182
   assemblies:
   - DxfToCSharp.Core
@@ -1204,11 +1204,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePointEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 187
   assemblies:
   - DxfToCSharp.Core
@@ -1235,11 +1235,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateInsertEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 192
   assemblies:
   - DxfToCSharp.Core
@@ -1266,11 +1266,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateHatchEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 197
   assemblies:
   - DxfToCSharp.Core
@@ -1297,11 +1297,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 202
   assemblies:
   - DxfToCSharp.Core
@@ -1328,11 +1328,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLinearDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 207
   assemblies:
   - DxfToCSharp.Core
@@ -1359,11 +1359,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateAlignedDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 212
   assemblies:
   - DxfToCSharp.Core
@@ -1390,11 +1390,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateRadialDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 217
   assemblies:
   - DxfToCSharp.Core
@@ -1421,11 +1421,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateDiametricDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 222
   assemblies:
   - DxfToCSharp.Core
@@ -1452,11 +1452,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateAngular2LineDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 227
   assemblies:
   - DxfToCSharp.Core
@@ -1483,11 +1483,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateAngular3PointDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 232
   assemblies:
   - DxfToCSharp.Core
@@ -1514,11 +1514,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateOrdinateDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 237
   assemblies:
   - DxfToCSharp.Core
@@ -1545,11 +1545,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateArcLengthDimensionEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 242
   assemblies:
   - DxfToCSharp.Core
@@ -1576,11 +1576,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateLeaderEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 247
   assemblies:
   - DxfToCSharp.Core
@@ -1607,11 +1607,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateSplineEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 252
   assemblies:
   - DxfToCSharp.Core
@@ -1638,11 +1638,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateEllipseEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 257
   assemblies:
   - DxfToCSharp.Core
@@ -1669,11 +1669,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateSolidEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 262
   assemblies:
   - DxfToCSharp.Core
@@ -1700,11 +1700,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateFace3dEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 267
   assemblies:
   - DxfToCSharp.Core
@@ -1731,11 +1731,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateMLineEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 272
   assemblies:
   - DxfToCSharp.Core
@@ -1762,11 +1762,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateRayEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 277
   assemblies:
   - DxfToCSharp.Core
@@ -1793,11 +1793,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateXLineEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 282
   assemblies:
   - DxfToCSharp.Core
@@ -1824,11 +1824,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateWipeoutEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 287
   assemblies:
   - DxfToCSharp.Core
@@ -1855,11 +1855,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateImageEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 292
   assemblies:
   - DxfToCSharp.Core
@@ -1886,11 +1886,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateMeshEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 297
   assemblies:
   - DxfToCSharp.Core
@@ -1917,11 +1917,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePolyfaceMeshEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 302
   assemblies:
   - DxfToCSharp.Core
@@ -1948,11 +1948,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GeneratePolygonMeshEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 307
   assemblies:
   - DxfToCSharp.Core
@@ -1979,11 +1979,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateShapeEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 312
   assemblies:
   - DxfToCSharp.Core
@@ -2010,11 +2010,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateAttributeEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 317
   assemblies:
   - DxfToCSharp.Core
@@ -2041,11 +2041,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateToleranceEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 322
   assemblies:
   - DxfToCSharp.Core
@@ -2072,11 +2072,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateTraceEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 327
   assemblies:
   - DxfToCSharp.Core
@@ -2103,11 +2103,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateUnderlayEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 332
   assemblies:
   - DxfToCSharp.Core
@@ -2134,11 +2134,11 @@ items:
   type: Property
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: GenerateViewportEntities
-    path: DxfToCSharp.Core/DxfCodeGenerationOptions.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerationOptions.cs
     startLine: 337
   assemblies:
   - DxfToCSharp.Core

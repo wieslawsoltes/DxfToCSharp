@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.PolylineSmoothType
+  commentId: T:netDxf.Entities.PolylineSmoothType
+  id: PolylineSmoothType
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.PolylineSmoothType.Cubic
+  - netDxf.Entities.PolylineSmoothType.NoSmooth
+  - netDxf.Entities.PolylineSmoothType.Quadratic
+  langs:
+  - csharp
+  - vb
+  name: PolylineSmoothType
+  nameWithType: PolylineSmoothType
+  fullName: netDxf.Entities.PolylineSmoothType
+  type: Enum
+  source:
+    id: PolylineSmoothType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/PolylineSmoothType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Defines the smooth type of the polyline.
+  example: []
+  syntax:
+    content: public enum PolylineSmoothType
+    content.vb: Public Enum PolylineSmoothType
+- uid: netDxf.Entities.PolylineSmoothType.NoSmooth
+  commentId: F:netDxf.Entities.PolylineSmoothType.NoSmooth
+  id: NoSmooth
+  parent: netDxf.Entities.PolylineSmoothType
+  langs:
+  - csharp
+  - vb
+  name: NoSmooth
+  nameWithType: PolylineSmoothType.NoSmooth
+  fullName: netDxf.Entities.PolylineSmoothType.NoSmooth
+  type: Field
+  source:
+    id: NoSmooth
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/PolylineSmoothType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: No smooth curve.
+  example: []
+  syntax:
+    content: NoSmooth = 0
+    return:
+      type: netDxf.Entities.PolylineSmoothType
+- uid: netDxf.Entities.PolylineSmoothType.Quadratic
+  commentId: F:netDxf.Entities.PolylineSmoothType.Quadratic
+  id: Quadratic
+  parent: netDxf.Entities.PolylineSmoothType
+  langs:
+  - csharp
+  - vb
+  name: Quadratic
+  nameWithType: PolylineSmoothType.Quadratic
+  fullName: netDxf.Entities.PolylineSmoothType.Quadratic
+  type: Field
+  source:
+    id: Quadratic
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/PolylineSmoothType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Quadratic B-spline curve.
+  example: []
+  syntax:
+    content: Quadratic = 5
+    return:
+      type: netDxf.Entities.PolylineSmoothType
+- uid: netDxf.Entities.PolylineSmoothType.Cubic
+  commentId: F:netDxf.Entities.PolylineSmoothType.Cubic
+  id: Cubic
+  parent: netDxf.Entities.PolylineSmoothType
+  langs:
+  - csharp
+  - vb
+  name: Cubic
+  nameWithType: PolylineSmoothType.Cubic
+  fullName: netDxf.Entities.PolylineSmoothType.Cubic
+  type: Field
+  source:
+    id: Cubic
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/PolylineSmoothType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Cubic B-spline curve.
+  example: []
+  syntax:
+    content: Cubic = 6
+    return:
+      type: netDxf.Entities.PolylineSmoothType
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.PolylineSmoothType
+  commentId: T:netDxf.Entities.PolylineSmoothType
+  parent: netDxf.Entities
+  href: netDxf.Entities.PolylineSmoothType.html
+  name: PolylineSmoothType
+  nameWithType: PolylineSmoothType
+  fullName: netDxf.Entities.PolylineSmoothType

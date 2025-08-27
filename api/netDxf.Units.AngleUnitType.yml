@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units.AngleUnitType
+  commentId: T:netDxf.Units.AngleUnitType
+  id: AngleUnitType
+  parent: netDxf.Units
+  children:
+  - netDxf.Units.AngleUnitType.DecimalDegrees
+  - netDxf.Units.AngleUnitType.DegreesMinutesSeconds
+  - netDxf.Units.AngleUnitType.Gradians
+  - netDxf.Units.AngleUnitType.Radians
+  - netDxf.Units.AngleUnitType.SurveyorUnits
+  langs:
+  - csharp
+  - vb
+  name: AngleUnitType
+  nameWithType: AngleUnitType
+  fullName: netDxf.Units.AngleUnitType
+  type: Enum
+  source:
+    id: AngleUnitType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Angular units format for creating objects.
+  example: []
+  syntax:
+    content: public enum AngleUnitType
+    content.vb: Public Enum AngleUnitType
+- uid: netDxf.Units.AngleUnitType.DecimalDegrees
+  commentId: F:netDxf.Units.AngleUnitType.DecimalDegrees
+  id: DecimalDegrees
+  parent: netDxf.Units.AngleUnitType
+  langs:
+  - csharp
+  - vb
+  name: DecimalDegrees
+  nameWithType: AngleUnitType.DecimalDegrees
+  fullName: netDxf.Units.AngleUnitType.DecimalDegrees
+  type: Field
+  source:
+    id: DecimalDegrees
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Decimal degrees.
+  example: []
+  syntax:
+    content: DecimalDegrees = 0
+    return:
+      type: netDxf.Units.AngleUnitType
+- uid: netDxf.Units.AngleUnitType.DegreesMinutesSeconds
+  commentId: F:netDxf.Units.AngleUnitType.DegreesMinutesSeconds
+  id: DegreesMinutesSeconds
+  parent: netDxf.Units.AngleUnitType
+  langs:
+  - csharp
+  - vb
+  name: DegreesMinutesSeconds
+  nameWithType: AngleUnitType.DegreesMinutesSeconds
+  fullName: netDxf.Units.AngleUnitType.DegreesMinutesSeconds
+  type: Field
+  source:
+    id: DegreesMinutesSeconds
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Degrees/minutes/seconds.
+  example: []
+  syntax:
+    content: DegreesMinutesSeconds = 1
+    return:
+      type: netDxf.Units.AngleUnitType
+- uid: netDxf.Units.AngleUnitType.Gradians
+  commentId: F:netDxf.Units.AngleUnitType.Gradians
+  id: Gradians
+  parent: netDxf.Units.AngleUnitType
+  langs:
+  - csharp
+  - vb
+  name: Gradians
+  nameWithType: AngleUnitType.Gradians
+  fullName: netDxf.Units.AngleUnitType.Gradians
+  type: Field
+  source:
+    id: Gradians
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Gradians
+  example: []
+  syntax:
+    content: Gradians = 2
+    return:
+      type: netDxf.Units.AngleUnitType
+- uid: netDxf.Units.AngleUnitType.Radians
+  commentId: F:netDxf.Units.AngleUnitType.Radians
+  id: Radians
+  parent: netDxf.Units.AngleUnitType
+  langs:
+  - csharp
+  - vb
+  name: Radians
+  nameWithType: AngleUnitType.Radians
+  fullName: netDxf.Units.AngleUnitType.Radians
+  type: Field
+  source:
+    id: Radians
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Radians
+  example: []
+  syntax:
+    content: Radians = 3
+    return:
+      type: netDxf.Units.AngleUnitType
+- uid: netDxf.Units.AngleUnitType.SurveyorUnits
+  commentId: F:netDxf.Units.AngleUnitType.SurveyorUnits
+  id: SurveyorUnits
+  parent: netDxf.Units.AngleUnitType
+  langs:
+  - csharp
+  - vb
+  name: SurveyorUnits
+  nameWithType: AngleUnitType.SurveyorUnits
+  fullName: netDxf.Units.AngleUnitType.SurveyorUnits
+  type: Field
+  source:
+    id: SurveyorUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/AngleUnitType.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Surveyor's units.
+  example: []
+  syntax:
+    content: SurveyorUnits = 4
+    return:
+      type: netDxf.Units.AngleUnitType
+references:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Units.AngleUnitType
+  commentId: T:netDxf.Units.AngleUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.AngleUnitType.html
+  name: AngleUnitType
+  nameWithType: AngleUnitType
+  fullName: netDxf.Units.AngleUnitType

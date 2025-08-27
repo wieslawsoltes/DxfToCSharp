@@ -1,0 +1,88 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Dimension.DimensionStyleOverrideRemovedEventHandler
+  commentId: T:netDxf.Entities.Dimension.DimensionStyleOverrideRemovedEventHandler
+  id: Dimension.DimensionStyleOverrideRemovedEventHandler
+  parent: netDxf.Entities
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Dimension.DimensionStyleOverrideRemovedEventHandler
+  nameWithType: Dimension.DimensionStyleOverrideRemovedEventHandler
+  fullName: netDxf.Entities.Dimension.DimensionStyleOverrideRemovedEventHandler
+  type: Delegate
+  source:
+    id: DimensionStyleOverrideRemovedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Dimension.cs
+    startLine: 86
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public delegate void Dimension.DimensionStyleOverrideRemovedEventHandler(Dimension sender, DimensionStyleOverrideChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Entities.Dimension
+    - id: e
+      type: netDxf.Tables.DimensionStyleOverrideChangeEventArgs
+    content.vb: Public Delegate Sub Dimension.DimensionStyleOverrideRemovedEventHandler(sender As Dimension, e As DimensionStyleOverrideChangeEventArgs)
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.Dimension
+  commentId: T:netDxf.Entities.Dimension
+  parent: netDxf.Entities
+  href: netDxf.Entities.Dimension.html
+  name: Dimension
+  nameWithType: Dimension
+  fullName: netDxf.Entities.Dimension
+- uid: netDxf.Tables.DimensionStyleOverrideChangeEventArgs
+  commentId: T:netDxf.Tables.DimensionStyleOverrideChangeEventArgs
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleOverrideChangeEventArgs.html
+  name: DimensionStyleOverrideChangeEventArgs
+  nameWithType: DimensionStyleOverrideChangeEventArgs
+  fullName: netDxf.Tables.DimensionStyleOverrideChangeEventArgs
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html

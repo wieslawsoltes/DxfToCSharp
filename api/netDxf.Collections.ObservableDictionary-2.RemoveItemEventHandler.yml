@@ -1,0 +1,151 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Collections.ObservableDictionary`2.RemoveItemEventHandler
+  commentId: T:netDxf.Collections.ObservableDictionary`2.RemoveItemEventHandler
+  id: ObservableDictionary`2.RemoveItemEventHandler
+  parent: netDxf.Collections
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ObservableDictionary<TKey, TValue>.RemoveItemEventHandler
+  nameWithType: ObservableDictionary<TKey, TValue>.RemoveItemEventHandler
+  fullName: netDxf.Collections.ObservableDictionary<TKey, TValue>.RemoveItemEventHandler
+  type: Delegate
+  source:
+    id: RemoveItemEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/ObservableDictionary.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  syntax:
+    content: public delegate void ObservableDictionary<TKey, TValue>.RemoveItemEventHandler(ObservableDictionary<TKey, TValue> sender, ObservableDictionaryEventArgs<TKey, TValue> e)
+    parameters:
+    - id: sender
+      type: netDxf.Collections.ObservableDictionary`2
+    - id: e
+      type: netDxf.Collections.ObservableDictionaryEventArgs{{TKey},{TValue}}
+    content.vb: Public Delegate Sub ObservableDictionary(Of TKey, TValue).RemoveItemEventHandler(sender As ObservableDictionary(Of TKey, TValue), e As ObservableDictionaryEventArgs(Of TKey, TValue))
+  nameWithType.vb: ObservableDictionary(Of TKey, TValue).RemoveItemEventHandler
+  fullName.vb: netDxf.Collections.ObservableDictionary(Of TKey, TValue).RemoveItemEventHandler
+  name.vb: ObservableDictionary(Of TKey, TValue).RemoveItemEventHandler
+references:
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Collections.ObservableDictionary`2
+  commentId: T:netDxf.Collections.ObservableDictionary`2
+  parent: netDxf.Collections
+  href: netDxf.Collections.ObservableDictionary-2.html
+  name: ObservableDictionary<TKey, TValue>
+  nameWithType: ObservableDictionary<TKey, TValue>
+  fullName: netDxf.Collections.ObservableDictionary<TKey, TValue>
+  nameWithType.vb: ObservableDictionary(Of TKey, TValue)
+  fullName.vb: netDxf.Collections.ObservableDictionary(Of TKey, TValue)
+  name.vb: ObservableDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableDictionary`2
+    name: ObservableDictionary
+    href: netDxf.Collections.ObservableDictionary-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableDictionary`2
+    name: ObservableDictionary
+    href: netDxf.Collections.ObservableDictionary-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: netDxf.Collections.ObservableDictionaryEventArgs{{TKey},{TValue}}
+  commentId: T:netDxf.Collections.ObservableDictionaryEventArgs{`0,`1}
+  parent: netDxf.Collections
+  definition: netDxf.Collections.ObservableDictionaryEventArgs`2
+  href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  name: ObservableDictionaryEventArgs<TKey, TValue>
+  nameWithType: ObservableDictionaryEventArgs<TKey, TValue>
+  fullName: netDxf.Collections.ObservableDictionaryEventArgs<TKey, TValue>
+  nameWithType.vb: ObservableDictionaryEventArgs(Of TKey, TValue)
+  fullName.vb: netDxf.Collections.ObservableDictionaryEventArgs(Of TKey, TValue)
+  name.vb: ObservableDictionaryEventArgs(Of TKey, TValue)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+    name: ObservableDictionaryEventArgs
+    href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+    name: ObservableDictionaryEventArgs
+    href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+  commentId: T:netDxf.Collections.ObservableDictionaryEventArgs`2
+  href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  name: ObservableDictionaryEventArgs<TKey, TValue>
+  nameWithType: ObservableDictionaryEventArgs<TKey, TValue>
+  fullName: netDxf.Collections.ObservableDictionaryEventArgs<TKey, TValue>
+  nameWithType.vb: ObservableDictionaryEventArgs(Of TKey, TValue)
+  fullName.vb: netDxf.Collections.ObservableDictionaryEventArgs(Of TKey, TValue)
+  name.vb: ObservableDictionaryEventArgs(Of TKey, TValue)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+    name: ObservableDictionaryEventArgs
+    href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+    name: ObservableDictionaryEventArgs
+    href: netDxf.Collections.ObservableDictionaryEventArgs-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )

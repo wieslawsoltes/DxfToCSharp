@@ -1,0 +1,256 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.DimensionType
+  commentId: T:netDxf.Entities.DimensionType
+  id: DimensionType
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.DimensionType.Aligned
+  - netDxf.Entities.DimensionType.Angular
+  - netDxf.Entities.DimensionType.Angular3Point
+  - netDxf.Entities.DimensionType.ArcLength
+  - netDxf.Entities.DimensionType.Diameter
+  - netDxf.Entities.DimensionType.Linear
+  - netDxf.Entities.DimensionType.Ordinate
+  - netDxf.Entities.DimensionType.Radius
+  langs:
+  - csharp
+  - vb
+  name: DimensionType
+  nameWithType: DimensionType
+  fullName: netDxf.Entities.DimensionType
+  type: Enum
+  source:
+    id: DimensionType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Dimension type.
+  example: []
+  syntax:
+    content: public enum DimensionType
+    content.vb: Public Enum DimensionType
+- uid: netDxf.Entities.DimensionType.Linear
+  commentId: F:netDxf.Entities.DimensionType.Linear
+  id: Linear
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: DimensionType.Linear
+  fullName: netDxf.Entities.DimensionType.Linear
+  type: Field
+  source:
+    id: Linear
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Rotated, horizontal, or vertical.
+  example: []
+  syntax:
+    content: Linear = 0
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Aligned
+  commentId: F:netDxf.Entities.DimensionType.Aligned
+  id: Aligned
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Aligned
+  nameWithType: DimensionType.Aligned
+  fullName: netDxf.Entities.DimensionType.Aligned
+  type: Field
+  source:
+    id: Aligned
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Aligned.
+  example: []
+  syntax:
+    content: Aligned = 1
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Angular
+  commentId: F:netDxf.Entities.DimensionType.Angular
+  id: Angular
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Angular
+  nameWithType: DimensionType.Angular
+  fullName: netDxf.Entities.DimensionType.Angular
+  type: Field
+  source:
+    id: Angular
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Angular 2 lines.
+  example: []
+  syntax:
+    content: Angular = 2
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Diameter
+  commentId: F:netDxf.Entities.DimensionType.Diameter
+  id: Diameter
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Diameter
+  nameWithType: DimensionType.Diameter
+  fullName: netDxf.Entities.DimensionType.Diameter
+  type: Field
+  source:
+    id: Diameter
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Diameter.
+  example: []
+  syntax:
+    content: Diameter = 3
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Radius
+  commentId: F:netDxf.Entities.DimensionType.Radius
+  id: Radius
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Radius
+  nameWithType: DimensionType.Radius
+  fullName: netDxf.Entities.DimensionType.Radius
+  type: Field
+  source:
+    id: Radius
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Radius.
+  example: []
+  syntax:
+    content: Radius = 4
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Angular3Point
+  commentId: F:netDxf.Entities.DimensionType.Angular3Point
+  id: Angular3Point
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Angular3Point
+  nameWithType: DimensionType.Angular3Point
+  fullName: netDxf.Entities.DimensionType.Angular3Point
+  type: Field
+  source:
+    id: Angular3Point
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Angular 3 points.
+  example: []
+  syntax:
+    content: Angular3Point = 5
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.Ordinate
+  commentId: F:netDxf.Entities.DimensionType.Ordinate
+  id: Ordinate
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: Ordinate
+  nameWithType: DimensionType.Ordinate
+  fullName: netDxf.Entities.DimensionType.Ordinate
+  type: Field
+  source:
+    id: Ordinate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Ordinate.
+  example: []
+  syntax:
+    content: Ordinate = 6
+    return:
+      type: netDxf.Entities.DimensionType
+- uid: netDxf.Entities.DimensionType.ArcLength
+  commentId: F:netDxf.Entities.DimensionType.ArcLength
+  id: ArcLength
+  parent: netDxf.Entities.DimensionType
+  langs:
+  - csharp
+  - vb
+  name: ArcLength
+  nameWithType: DimensionType.ArcLength
+  fullName: netDxf.Entities.DimensionType.ArcLength
+  type: Field
+  source:
+    id: ArcLength
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/DimensionType.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Arc Length.
+  example: []
+  syntax:
+    content: ArcLength = 7
+    return:
+      type: netDxf.Entities.DimensionType
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.DimensionType
+  commentId: T:netDxf.Entities.DimensionType
+  parent: netDxf.Entities
+  href: netDxf.Entities.DimensionType.html
+  name: DimensionType
+  nameWithType: DimensionType
+  fullName: netDxf.Entities.DimensionType

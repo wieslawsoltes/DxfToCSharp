@@ -1,0 +1,137 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Shape.StyleChangedEventHandler
+  commentId: T:netDxf.Entities.Shape.StyleChangedEventHandler
+  id: Shape.StyleChangedEventHandler
+  parent: netDxf.Entities
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Shape.StyleChangedEventHandler
+  nameWithType: Shape.StyleChangedEventHandler
+  fullName: netDxf.Entities.Shape.StyleChangedEventHandler
+  type: Delegate
+  source:
+    id: StyleChangedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Shape.cs
+    startLine: 39
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public delegate void Shape.StyleChangedEventHandler(Shape sender, TableObjectChangedEventArgs<ShapeStyle> e)
+    parameters:
+    - id: sender
+      type: netDxf.Entities.Shape
+    - id: e
+      type: netDxf.Tables.TableObjectChangedEventArgs{netDxf.Tables.ShapeStyle}
+    content.vb: Public Delegate Sub Shape.StyleChangedEventHandler(sender As Shape, e As TableObjectChangedEventArgs(Of ShapeStyle))
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.Shape
+  commentId: T:netDxf.Entities.Shape
+  parent: netDxf.Entities
+  href: netDxf.Entities.Shape.html
+  name: Shape
+  nameWithType: Shape
+  fullName: netDxf.Entities.Shape
+- uid: netDxf.Tables.TableObjectChangedEventArgs{netDxf.Tables.ShapeStyle}
+  commentId: T:netDxf.Tables.TableObjectChangedEventArgs{netDxf.Tables.ShapeStyle}
+  parent: netDxf.Tables
+  definition: netDxf.Tables.TableObjectChangedEventArgs`1
+  href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  name: TableObjectChangedEventArgs<ShapeStyle>
+  nameWithType: TableObjectChangedEventArgs<ShapeStyle>
+  fullName: netDxf.Tables.TableObjectChangedEventArgs<netDxf.Tables.ShapeStyle>
+  nameWithType.vb: TableObjectChangedEventArgs(Of ShapeStyle)
+  fullName.vb: netDxf.Tables.TableObjectChangedEventArgs(Of netDxf.Tables.ShapeStyle)
+  name.vb: TableObjectChangedEventArgs(Of ShapeStyle)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: <
+  - uid: netDxf.Tables.ShapeStyle
+    name: ShapeStyle
+    href: netDxf.Tables.ShapeStyle.html
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Tables.ShapeStyle
+    name: ShapeStyle
+    href: netDxf.Tables.ShapeStyle.html
+  - name: )
+- uid: netDxf.Tables.TableObjectChangedEventArgs`1
+  commentId: T:netDxf.Tables.TableObjectChangedEventArgs`1
+  href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  name: TableObjectChangedEventArgs<T>
+  nameWithType: TableObjectChangedEventArgs<T>
+  fullName: netDxf.Tables.TableObjectChangedEventArgs<T>
+  nameWithType.vb: TableObjectChangedEventArgs(Of T)
+  fullName.vb: netDxf.Tables.TableObjectChangedEventArgs(Of T)
+  name.vb: TableObjectChangedEventArgs(Of T)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html

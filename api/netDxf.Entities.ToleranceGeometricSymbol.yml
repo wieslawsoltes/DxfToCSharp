@@ -1,0 +1,431 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.ToleranceGeometricSymbol
+  commentId: T:netDxf.Entities.ToleranceGeometricSymbol
+  id: ToleranceGeometricSymbol
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.ToleranceGeometricSymbol.Angularity
+  - netDxf.Entities.ToleranceGeometricSymbol.CircularRunout
+  - netDxf.Entities.ToleranceGeometricSymbol.Concentricity
+  - netDxf.Entities.ToleranceGeometricSymbol.Cylindricity
+  - netDxf.Entities.ToleranceGeometricSymbol.Flatness
+  - netDxf.Entities.ToleranceGeometricSymbol.None
+  - netDxf.Entities.ToleranceGeometricSymbol.Parallelism
+  - netDxf.Entities.ToleranceGeometricSymbol.Perpendicularity
+  - netDxf.Entities.ToleranceGeometricSymbol.Position
+  - netDxf.Entities.ToleranceGeometricSymbol.ProfileLine
+  - netDxf.Entities.ToleranceGeometricSymbol.ProfileSurface
+  - netDxf.Entities.ToleranceGeometricSymbol.Roundness
+  - netDxf.Entities.ToleranceGeometricSymbol.Straightness
+  - netDxf.Entities.ToleranceGeometricSymbol.Symmetry
+  - netDxf.Entities.ToleranceGeometricSymbol.TotalRunOut
+  langs:
+  - csharp
+  - vb
+  name: ToleranceGeometricSymbol
+  nameWithType: ToleranceGeometricSymbol
+  fullName: netDxf.Entities.ToleranceGeometricSymbol
+  type: Enum
+  source:
+    id: ToleranceGeometricSymbol
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Defines the geometric characteristic symbols for location, orientation, form, profile, and runout.
+  example: []
+  syntax:
+    content: public enum ToleranceGeometricSymbol
+    content.vb: Public Enum ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.None
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.None
+  id: None
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: ToleranceGeometricSymbol.None
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.None
+  type: Field
+  source:
+    id: None
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: No geometric symbol.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Position
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Position
+  id: Position
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: ToleranceGeometricSymbol.Position
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Position
+  type: Field
+  source:
+    id: Position
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Position, type location.
+  example: []
+  syntax:
+    content: Position = 1
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Concentricity
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Concentricity
+  id: Concentricity
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Concentricity
+  nameWithType: ToleranceGeometricSymbol.Concentricity
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Concentricity
+  type: Field
+  source:
+    id: Concentricity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Concentricity or coaxiality, type location.
+  example: []
+  syntax:
+    content: Concentricity = 2
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Symmetry
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Symmetry
+  id: Symmetry
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Symmetry
+  nameWithType: ToleranceGeometricSymbol.Symmetry
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Symmetry
+  type: Field
+  source:
+    id: Symmetry
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Symmetry, type location.
+  example: []
+  syntax:
+    content: Symmetry = 3
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Parallelism
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Parallelism
+  id: Parallelism
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Parallelism
+  nameWithType: ToleranceGeometricSymbol.Parallelism
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Parallelism
+  type: Field
+  source:
+    id: Parallelism
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Parallelism, type orientation.
+  example: []
+  syntax:
+    content: Parallelism = 4
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Perpendicularity
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Perpendicularity
+  id: Perpendicularity
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Perpendicularity
+  nameWithType: ToleranceGeometricSymbol.Perpendicularity
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Perpendicularity
+  type: Field
+  source:
+    id: Perpendicularity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Perpendicularity, type orientation.
+  example: []
+  syntax:
+    content: Perpendicularity = 5
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Angularity
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Angularity
+  id: Angularity
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Angularity
+  nameWithType: ToleranceGeometricSymbol.Angularity
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Angularity
+  type: Field
+  source:
+    id: Angularity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Angularity, type orientation.
+  example: []
+  syntax:
+    content: Angularity = 6
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Cylindricity
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Cylindricity
+  id: Cylindricity
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Cylindricity
+  nameWithType: ToleranceGeometricSymbol.Cylindricity
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Cylindricity
+  type: Field
+  source:
+    id: Cylindricity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Cylindricity, type form.
+  example: []
+  syntax:
+    content: Cylindricity = 7
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Flatness
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Flatness
+  id: Flatness
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Flatness
+  nameWithType: ToleranceGeometricSymbol.Flatness
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Flatness
+  type: Field
+  source:
+    id: Flatness
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Flatness, type form.
+  example: []
+  syntax:
+    content: Flatness = 8
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Roundness
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Roundness
+  id: Roundness
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Roundness
+  nameWithType: ToleranceGeometricSymbol.Roundness
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Roundness
+  type: Field
+  source:
+    id: Roundness
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Circularity or roundness, type form.
+  example: []
+  syntax:
+    content: Roundness = 9
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.Straightness
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.Straightness
+  id: Straightness
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: Straightness
+  nameWithType: ToleranceGeometricSymbol.Straightness
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.Straightness
+  type: Field
+  source:
+    id: Straightness
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 85
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Straightness, type form.
+  example: []
+  syntax:
+    content: Straightness = 10
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.ProfileSurface
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.ProfileSurface
+  id: ProfileSurface
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: ProfileSurface
+  nameWithType: ToleranceGeometricSymbol.ProfileSurface
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.ProfileSurface
+  type: Field
+  source:
+    id: ProfileSurface
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Profile of a surface, type profile.
+  example: []
+  syntax:
+    content: ProfileSurface = 11
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.ProfileLine
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.ProfileLine
+  id: ProfileLine
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: ProfileLine
+  nameWithType: ToleranceGeometricSymbol.ProfileLine
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.ProfileLine
+  type: Field
+  source:
+    id: ProfileLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 95
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Profile of a line, type profile.
+  example: []
+  syntax:
+    content: ProfileLine = 12
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.CircularRunout
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.CircularRunout
+  id: CircularRunout
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: CircularRunout
+  nameWithType: ToleranceGeometricSymbol.CircularRunout
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.CircularRunout
+  type: Field
+  source:
+    id: CircularRunout
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Circular runout, type runout.
+  example: []
+  syntax:
+    content: CircularRunout = 13
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+- uid: netDxf.Entities.ToleranceGeometricSymbol.TotalRunOut
+  commentId: F:netDxf.Entities.ToleranceGeometricSymbol.TotalRunOut
+  id: TotalRunOut
+  parent: netDxf.Entities.ToleranceGeometricSymbol
+  langs:
+  - csharp
+  - vb
+  name: TotalRunOut
+  nameWithType: ToleranceGeometricSymbol.TotalRunOut
+  fullName: netDxf.Entities.ToleranceGeometricSymbol.TotalRunOut
+  type: Field
+  source:
+    id: TotalRunOut
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/ToleranceGeometricSymbol.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Total runout, type runout.
+  example: []
+  syntax:
+    content: TotalRunOut = 14
+    return:
+      type: netDxf.Entities.ToleranceGeometricSymbol
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.ToleranceGeometricSymbol
+  commentId: T:netDxf.Entities.ToleranceGeometricSymbol
+  parent: netDxf.Entities
+  href: netDxf.Entities.ToleranceGeometricSymbol.html
+  name: ToleranceGeometricSymbol
+  nameWithType: ToleranceGeometricSymbol
+  fullName: netDxf.Entities.ToleranceGeometricSymbol

@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.ShadePlotMode
+  commentId: T:netDxf.Objects.ShadePlotMode
+  id: ShadePlotMode
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.ShadePlotMode.AsDisplayed
+  - netDxf.Objects.ShadePlotMode.Hidden
+  - netDxf.Objects.ShadePlotMode.Rendered
+  - netDxf.Objects.ShadePlotMode.Wireframe
+  langs:
+  - csharp
+  - vb
+  name: ShadePlotMode
+  nameWithType: ShadePlotMode
+  fullName: netDxf.Objects.ShadePlotMode
+  type: Enum
+  source:
+    id: ShadePlotMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/ShadePlotMode.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Defines the shade plot mode
+  example: []
+  syntax:
+    content: public enum ShadePlotMode
+    content.vb: Public Enum ShadePlotMode
+- uid: netDxf.Objects.ShadePlotMode.AsDisplayed
+  commentId: F:netDxf.Objects.ShadePlotMode.AsDisplayed
+  id: AsDisplayed
+  parent: netDxf.Objects.ShadePlotMode
+  langs:
+  - csharp
+  - vb
+  name: AsDisplayed
+  nameWithType: ShadePlotMode.AsDisplayed
+  fullName: netDxf.Objects.ShadePlotMode.AsDisplayed
+  type: Field
+  source:
+    id: AsDisplayed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/ShadePlotMode.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: As displayed.
+  example: []
+  syntax:
+    content: AsDisplayed = 0
+    return:
+      type: netDxf.Objects.ShadePlotMode
+- uid: netDxf.Objects.ShadePlotMode.Wireframe
+  commentId: F:netDxf.Objects.ShadePlotMode.Wireframe
+  id: Wireframe
+  parent: netDxf.Objects.ShadePlotMode
+  langs:
+  - csharp
+  - vb
+  name: Wireframe
+  nameWithType: ShadePlotMode.Wireframe
+  fullName: netDxf.Objects.ShadePlotMode.Wireframe
+  type: Field
+  source:
+    id: Wireframe
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/ShadePlotMode.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Wireframe.
+  example: []
+  syntax:
+    content: Wireframe = 1
+    return:
+      type: netDxf.Objects.ShadePlotMode
+- uid: netDxf.Objects.ShadePlotMode.Hidden
+  commentId: F:netDxf.Objects.ShadePlotMode.Hidden
+  id: Hidden
+  parent: netDxf.Objects.ShadePlotMode
+  langs:
+  - csharp
+  - vb
+  name: Hidden
+  nameWithType: ShadePlotMode.Hidden
+  fullName: netDxf.Objects.ShadePlotMode.Hidden
+  type: Field
+  source:
+    id: Hidden
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/ShadePlotMode.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Hidden.
+  example: []
+  syntax:
+    content: Hidden = 2
+    return:
+      type: netDxf.Objects.ShadePlotMode
+- uid: netDxf.Objects.ShadePlotMode.Rendered
+  commentId: F:netDxf.Objects.ShadePlotMode.Rendered
+  id: Rendered
+  parent: netDxf.Objects.ShadePlotMode
+  langs:
+  - csharp
+  - vb
+  name: Rendered
+  nameWithType: ShadePlotMode.Rendered
+  fullName: netDxf.Objects.ShadePlotMode.Rendered
+  type: Field
+  source:
+    id: Rendered
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/ShadePlotMode.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Rendered.
+  example: []
+  syntax:
+    content: Rendered = 3
+    return:
+      type: netDxf.Objects.ShadePlotMode
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.ShadePlotMode
+  commentId: T:netDxf.Objects.ShadePlotMode
+  parent: netDxf.Objects
+  href: netDxf.Objects.ShadePlotMode.html
+  name: ShadePlotMode
+  nameWithType: ShadePlotMode
+  fullName: netDxf.Objects.ShadePlotMode

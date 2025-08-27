@@ -1,0 +1,1824 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Collections.LayerStateManager
+  commentId: T:netDxf.Collections.LayerStateManager
+  id: LayerStateManager
+  parent: netDxf.Collections
+  children:
+  - netDxf.Collections.LayerStateManager.AddNew(System.String)
+  - netDxf.Collections.LayerStateManager.AddNew(System.String,System.String)
+  - netDxf.Collections.LayerStateManager.Export(System.String,System.String)
+  - netDxf.Collections.LayerStateManager.Import(System.String,System.Boolean)
+  - netDxf.Collections.LayerStateManager.Options
+  - netDxf.Collections.LayerStateManager.Remove(System.String)
+  - netDxf.Collections.LayerStateManager.Remove(netDxf.Objects.LayerState)
+  - netDxf.Collections.LayerStateManager.RemoveAll
+  - netDxf.Collections.LayerStateManager.Restore(System.String)
+  - netDxf.Collections.LayerStateManager.Update(System.String)
+  langs:
+  - csharp
+  - vb
+  name: LayerStateManager
+  nameWithType: LayerStateManager
+  fullName: netDxf.Collections.LayerStateManager
+  type: Class
+  source:
+    id: LayerStateManager
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Manages the list of layer states in a drawing.
+  example: []
+  syntax:
+    content: 'public class LayerStateManager : TableObjects<LayerState>, IEnumerable<LayerState>, IEnumerable'
+    content.vb: Public Class LayerStateManager Inherits TableObjects(Of LayerState) Implements IEnumerable(Of LayerState), IEnumerable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  implements:
+  - System.Collections.Generic.IEnumerable{netDxf.Objects.LayerState}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Item(System.String)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Items
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Names
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Count
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Owner
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(System.String)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(netDxf.Objects.LayerState)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(System.String)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(netDxf.Objects.LayerState)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(System.String)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(netDxf.Objects.LayerState)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.TryGetValue(System.String,netDxf.Objects.LayerState@)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Add(netDxf.Objects.LayerState)
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Clear
+  - netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetEnumerator
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - netDxf.DxfObject.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Collections.LayerStateManager.Options
+  commentId: P:netDxf.Collections.LayerStateManager.Options
+  id: Options
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Options
+  nameWithType: LayerStateManager.Options
+  fullName: netDxf.Collections.LayerStateManager.Options
+  type: Property
+  source:
+    id: Options
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 68
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Gets or sets the restoring options when updating the layer state from the layers list and vice versa.
+  example: []
+  syntax:
+    content: public LayerPropertiesRestoreFlags Options { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+    content.vb: Public Property Options As LayerPropertiesRestoreFlags
+  overload: netDxf.Collections.LayerStateManager.Options*
+- uid: netDxf.Collections.LayerStateManager.AddNew(System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.AddNew(System.String)
+  id: AddNew(System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: AddNew(string)
+  nameWithType: LayerStateManager.AddNew(string)
+  fullName: netDxf.Collections.LayerStateManager.AddNew(string)
+  type: Method
+  source:
+    id: AddNew
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 82
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Adds a new LayerState from the current state of the layers.
+  example: []
+  syntax:
+    content: public void AddNew(string layerStateName)
+    parameters:
+    - id: layerStateName
+      type: System.String
+      description: Layer state name.
+    content.vb: Public Sub AddNew(layerStateName As String)
+  overload: netDxf.Collections.LayerStateManager.AddNew*
+  nameWithType.vb: LayerStateManager.AddNew(String)
+  fullName.vb: netDxf.Collections.LayerStateManager.AddNew(String)
+  name.vb: AddNew(String)
+- uid: netDxf.Collections.LayerStateManager.AddNew(System.String,System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.AddNew(System.String,System.String)
+  id: AddNew(System.String,System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: AddNew(string, string)
+  nameWithType: LayerStateManager.AddNew(string, string)
+  fullName: netDxf.Collections.LayerStateManager.AddNew(string, string)
+  type: Method
+  source:
+    id: AddNew
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 92
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Adds a new LayerState from the current state of the layers.
+  example: []
+  syntax:
+    content: public void AddNew(string layerStateName, string layerStateDescription)
+    parameters:
+    - id: layerStateName
+      type: System.String
+      description: Layer state name.
+    - id: layerStateDescription
+      type: System.String
+      description: Layer state description.
+    content.vb: Public Sub AddNew(layerStateName As String, layerStateDescription As String)
+  overload: netDxf.Collections.LayerStateManager.AddNew*
+  nameWithType.vb: LayerStateManager.AddNew(String, String)
+  fullName.vb: netDxf.Collections.LayerStateManager.AddNew(String, String)
+  name.vb: AddNew(String, String)
+- uid: netDxf.Collections.LayerStateManager.Restore(System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.Restore(System.String)
+  id: Restore(System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Restore(string)
+  nameWithType: LayerStateManager.Restore(string)
+  fullName: netDxf.Collections.LayerStateManager.Restore(string)
+  type: Method
+  source:
+    id: Restore
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 102
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Restores the properties of the current layers list according to the specified layers state.
+  example: []
+  syntax:
+    content: public void Restore(string layerStateName)
+    parameters:
+    - id: layerStateName
+      type: System.String
+      description: Layer state name to restore.
+    content.vb: Public Sub Restore(layerStateName As String)
+  overload: netDxf.Collections.LayerStateManager.Restore*
+  nameWithType.vb: LayerStateManager.Restore(String)
+  fullName.vb: netDxf.Collections.LayerStateManager.Restore(String)
+  name.vb: Restore(String)
+- uid: netDxf.Collections.LayerStateManager.Update(System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.Update(System.String)
+  id: Update(System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Update(string)
+  nameWithType: LayerStateManager.Update(string)
+  fullName: netDxf.Collections.LayerStateManager.Update(string)
+  type: Method
+  source:
+    id: Update
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 130
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Updates the specified layer state according to the properties of the current layers list.
+  example: []
+  syntax:
+    content: public void Update(string layerStateName)
+    parameters:
+    - id: layerStateName
+      type: System.String
+      description: Layer state name to update.
+    content.vb: Public Sub Update(layerStateName As String)
+  overload: netDxf.Collections.LayerStateManager.Update*
+  nameWithType.vb: LayerStateManager.Update(String)
+  fullName.vb: netDxf.Collections.LayerStateManager.Update(String)
+  name.vb: Update(String)
+- uid: netDxf.Collections.LayerStateManager.Import(System.String,System.Boolean)
+  commentId: M:netDxf.Collections.LayerStateManager.Import(System.String,System.Boolean)
+  id: Import(System.String,System.Boolean)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Import(string, bool)
+  nameWithType: LayerStateManager.Import(string, bool)
+  fullName: netDxf.Collections.LayerStateManager.Import(string, bool)
+  type: Method
+  source:
+    id: Import
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 158
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Imports a layer state from a LAS file.
+  example: []
+  syntax:
+    content: public void Import(string file, bool overwrite)
+    parameters:
+    - id: file
+      type: System.String
+      description: LAS file to import.
+    - id: overwrite
+      type: System.Boolean
+      description: Defines if the imported layer state will overwrite any existing one with the same name.
+    content.vb: Public Sub Import(file As String, overwrite As Boolean)
+  overload: netDxf.Collections.LayerStateManager.Import*
+  nameWithType.vb: LayerStateManager.Import(String, Boolean)
+  fullName.vb: netDxf.Collections.LayerStateManager.Import(String, Boolean)
+  name.vb: Import(String, Boolean)
+- uid: netDxf.Collections.LayerStateManager.Export(System.String,System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.Export(System.String,System.String)
+  id: Export(System.String,System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Export(string, string)
+  nameWithType: LayerStateManager.Export(string, string)
+  fullName: netDxf.Collections.LayerStateManager.Export(string, string)
+  type: Method
+  source:
+    id: Export
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 187
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Exports a layer state to a LAS file.
+  example: []
+  syntax:
+    content: public void Export(string file, string layerStateName)
+    parameters:
+    - id: file
+      type: System.String
+      description: LAS file to export.
+    - id: layerStateName
+      type: System.String
+      description: Layer state name to export.
+    content.vb: Public Sub Export(file As String, layerStateName As String)
+  overload: netDxf.Collections.LayerStateManager.Export*
+  nameWithType.vb: LayerStateManager.Export(String, String)
+  fullName.vb: netDxf.Collections.LayerStateManager.Export(String, String)
+  name.vb: Export(String, String)
+- uid: netDxf.Collections.LayerStateManager.RemoveAll
+  commentId: M:netDxf.Collections.LayerStateManager.RemoveAll
+  id: RemoveAll
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveAll()
+  nameWithType: LayerStateManager.RemoveAll()
+  fullName: netDxf.Collections.LayerStateManager.RemoveAll()
+  type: Method
+  source:
+    id: RemoveAll
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 201
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Removes all layers states.
+  example: []
+  syntax:
+    content: public void RemoveAll()
+    content.vb: Public Sub RemoveAll()
+  overload: netDxf.Collections.LayerStateManager.RemoveAll*
+- uid: netDxf.Collections.LayerStateManager.Remove(System.String)
+  commentId: M:netDxf.Collections.LayerStateManager.Remove(System.String)
+  id: Remove(System.String)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Remove(string)
+  nameWithType: LayerStateManager.Remove(string)
+  fullName: netDxf.Collections.LayerStateManager.Remove(string)
+  type: Method
+  source:
+    id: Remove
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 274
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Removes a LayerState.
+  remarks: Reserved LayerState or any other referenced by objects cannot be removed.
+  example: []
+  syntax:
+    content: public override bool Remove(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: <xref href="netDxf.Objects.LayerState?text=LayerState" data-throw-if-not-resolved="false"></xref> name to remove from the document.
+    return:
+      type: System.Boolean
+      description: True if the LayerState has been successfully removed, or false otherwise.
+    content.vb: Public Overrides Function Remove(name As String) As Boolean
+  overridden: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(System.String)
+  overload: netDxf.Collections.LayerStateManager.Remove*
+  nameWithType.vb: LayerStateManager.Remove(String)
+  fullName.vb: netDxf.Collections.LayerStateManager.Remove(String)
+  name.vb: Remove(String)
+- uid: netDxf.Collections.LayerStateManager.Remove(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.LayerStateManager.Remove(netDxf.Objects.LayerState)
+  id: Remove(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.LayerStateManager
+  langs:
+  - csharp
+  - vb
+  name: Remove(LayerState)
+  nameWithType: LayerStateManager.Remove(LayerState)
+  fullName: netDxf.Collections.LayerStateManager.Remove(netDxf.Objects.LayerState)
+  type: Method
+  source:
+    id: Remove
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/LayerStateManager.cs
+    startLine: 285
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  summary: Removes a LayerState.
+  remarks: Reserved LayerState or any other referenced by objects cannot be removed.
+  example: []
+  syntax:
+    content: public override bool Remove(LayerState item)
+    parameters:
+    - id: item
+      type: netDxf.Objects.LayerState
+      description: <xref href="netDxf.Objects.LayerState?text=LayerState" data-throw-if-not-resolved="false"></xref> to remove from the document.
+    return:
+      type: System.Boolean
+      description: True if the LayerState has been successfully removed, or false otherwise.
+    content.vb: Public Overrides Function Remove(item As LayerState) As Boolean
+  overridden: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(netDxf.Objects.LayerState)
+  overload: netDxf.Collections.LayerStateManager.Remove*
+references:
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  commentId: T:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  parent: netDxf.Collections
+  definition: netDxf.Collections.TableObjects`1
+  href: netDxf.Collections.TableObjects-1.html
+  name: TableObjects<LayerState>
+  nameWithType: TableObjects<LayerState>
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>
+  nameWithType.vb: TableObjects(Of LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState)
+  name.vb: TableObjects(Of LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1
+    name: TableObjects
+    href: netDxf.Collections.TableObjects-1.html
+  - name: <
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1
+    name: TableObjects
+    href: netDxf.Collections.TableObjects-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{netDxf.Objects.LayerState}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Objects.LayerState}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<LayerState>
+  nameWithType: IEnumerable<LayerState>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Objects.LayerState>
+  nameWithType.vb: IEnumerable(Of LayerState)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Objects.LayerState)
+  name.vb: IEnumerable(Of LayerState)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Item(System.String)
+  commentId: P:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Item(System.String)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Item(System.String)
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: this[string]
+  nameWithType: TableObjects<LayerState>.this[string]
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.this[string]
+  nameWithType.vb: TableObjects(Of LayerState).this[](String)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).this[](String)
+  name.vb: this[](String)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Item(System.String)
+    name: this[]
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Item_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Items
+  commentId: P:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Items
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Items
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Items
+  name: Items
+  nameWithType: TableObjects<LayerState>.Items
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Items
+  nameWithType.vb: TableObjects(Of LayerState).Items
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Items
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Names
+  commentId: P:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Names
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Names
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Names
+  name: Names
+  nameWithType: TableObjects<LayerState>.Names
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Names
+  nameWithType.vb: TableObjects(Of LayerState).Names
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Names
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Count
+  commentId: P:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Count
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Count
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Count
+  name: Count
+  nameWithType: TableObjects<LayerState>.Count
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Count
+  nameWithType.vb: TableObjects(Of LayerState).Count
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Count
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Owner
+  commentId: P:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Owner
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Owner
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Owner
+  name: Owner
+  nameWithType: TableObjects<LayerState>.Owner
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Owner
+  nameWithType.vb: TableObjects(Of LayerState).Owner
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Owner
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(System.String)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(System.String)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.HasReferences(System.String)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  name: HasReferences(string)
+  nameWithType: TableObjects<LayerState>.HasReferences(string)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.HasReferences(string)
+  nameWithType.vb: TableObjects(Of LayerState).HasReferences(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).HasReferences(String)
+  name.vb: HasReferences(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(System.String)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(System.String)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.HasReferences(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  name: HasReferences(LayerState)
+  nameWithType: TableObjects<LayerState>.HasReferences(LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.HasReferences(netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).HasReferences(LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).HasReferences(netDxf.Objects.LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(netDxf.Objects.LayerState)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.HasReferences(netDxf.Objects.LayerState)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(System.String)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(System.String)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.GetReferences(System.String)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  name: GetReferences(string)
+  nameWithType: TableObjects<LayerState>.GetReferences(string)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.GetReferences(string)
+  nameWithType.vb: TableObjects(Of LayerState).GetReferences(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).GetReferences(String)
+  name.vb: GetReferences(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(System.String)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(System.String)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.GetReferences(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  name: GetReferences(LayerState)
+  nameWithType: TableObjects<LayerState>.GetReferences(LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.GetReferences(netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).GetReferences(LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).GetReferences(netDxf.Objects.LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(netDxf.Objects.LayerState)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetReferences(netDxf.Objects.LayerState)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(System.String)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(System.String)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Contains(System.String)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  name: Contains(string)
+  nameWithType: TableObjects<LayerState>.Contains(string)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Contains(string)
+  nameWithType.vb: TableObjects(Of LayerState).Contains(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Contains(String)
+  name.vb: Contains(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(System.String)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(System.String)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Contains(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  name: Contains(LayerState)
+  nameWithType: TableObjects<LayerState>.Contains(LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Contains(netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).Contains(LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Contains(netDxf.Objects.LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(netDxf.Objects.LayerState)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Contains(netDxf.Objects.LayerState)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.TryGetValue(System.String,netDxf.Objects.LayerState@)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.TryGetValue(System.String,netDxf.Objects.LayerState@)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.TryGetValue(System.String,`0@)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  name: TryGetValue(string, out LayerState)
+  nameWithType: TableObjects<LayerState>.TryGetValue(string, out LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.TryGetValue(string, out netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).TryGetValue(String, LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).TryGetValue(String, netDxf.Objects.LayerState)
+  name.vb: TryGetValue(String, LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.TryGetValue(System.String,netDxf.Objects.LayerState@)
+    name: TryGetValue
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.TryGetValue(System.String,netDxf.Objects.LayerState@)
+    name: TryGetValue
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Add(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Add(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Add(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  name: Add(LayerState)
+  nameWithType: TableObjects<LayerState>.Add(LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Add(netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).Add(LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Add(netDxf.Objects.LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Add(netDxf.Objects.LayerState)
+    name: Add
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Add(netDxf.Objects.LayerState)
+    name: Add
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Clear
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Clear
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Clear
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  name: Clear()
+  nameWithType: TableObjects<LayerState>.Clear()
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Clear()
+  nameWithType.vb: TableObjects(Of LayerState).Clear()
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Clear()
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Clear
+    name: Clear
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Clear
+    name: Clear
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  - name: (
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetEnumerator
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetEnumerator
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.GetEnumerator
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  name: GetEnumerator()
+  nameWithType: TableObjects<LayerState>.GetEnumerator()
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.GetEnumerator()
+  nameWithType.vb: TableObjects(Of LayerState).GetEnumerator()
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).GetEnumerator()
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetEnumerator
+    name: GetEnumerator
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.GetEnumerator
+    name: GetEnumerator
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: netDxf.DxfObject.ToString
+  commentId: M:netDxf.DxfObject.ToString
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  name: ToString()
+  nameWithType: DxfObject.ToString()
+  fullName: netDxf.DxfObject.ToString()
+  spec.csharp:
+  - uid: netDxf.DxfObject.ToString
+    name: ToString
+    href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.ToString
+    name: ToString
+    href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Collections.TableObjects`1
+  commentId: T:netDxf.Collections.TableObjects`1
+  href: netDxf.Collections.TableObjects-1.html
+  name: TableObjects<T>
+  nameWithType: TableObjects<T>
+  fullName: netDxf.Collections.TableObjects<T>
+  nameWithType.vb: TableObjects(Of T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T)
+  name.vb: TableObjects(Of T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1
+    name: TableObjects
+    href: netDxf.Collections.TableObjects-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1
+    name: TableObjects
+    href: netDxf.Collections.TableObjects-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: netDxf.Collections.TableObjects`1.Item(System.String)
+  commentId: P:netDxf.Collections.TableObjects`1.Item(System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: this[string]
+  nameWithType: TableObjects<T>.this[string]
+  fullName: netDxf.Collections.TableObjects<T>.this[string]
+  nameWithType.vb: TableObjects(Of T).this[](String)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).this[](String)
+  name.vb: this[](String)
+  spec.csharp:
+  - name: this
+  - name: '['
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Item(System.String)
+    name: this[]
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Item_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Items
+  commentId: P:netDxf.Collections.TableObjects`1.Items
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Items
+  name: Items
+  nameWithType: TableObjects<T>.Items
+  fullName: netDxf.Collections.TableObjects<T>.Items
+  nameWithType.vb: TableObjects(Of T).Items
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Items
+- uid: netDxf.Collections.TableObjects`1.Names
+  commentId: P:netDxf.Collections.TableObjects`1.Names
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Names
+  name: Names
+  nameWithType: TableObjects<T>.Names
+  fullName: netDxf.Collections.TableObjects<T>.Names
+  nameWithType.vb: TableObjects(Of T).Names
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Names
+- uid: netDxf.Collections.TableObjects`1.Count
+  commentId: P:netDxf.Collections.TableObjects`1.Count
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Count
+  name: Count
+  nameWithType: TableObjects<T>.Count
+  fullName: netDxf.Collections.TableObjects<T>.Count
+  nameWithType.vb: TableObjects(Of T).Count
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Count
+- uid: netDxf.Collections.TableObjects`1.Owner
+  commentId: P:netDxf.Collections.TableObjects`1.Owner
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Owner
+  name: Owner
+  nameWithType: TableObjects<T>.Owner
+  fullName: netDxf.Collections.TableObjects<T>.Owner
+  nameWithType.vb: TableObjects(Of T).Owner
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Owner
+- uid: netDxf.Collections.TableObjects`1.HasReferences(System.String)
+  commentId: M:netDxf.Collections.TableObjects`1.HasReferences(System.String)
+  isExternal: true
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  name: HasReferences(string)
+  nameWithType: TableObjects<T>.HasReferences(string)
+  fullName: netDxf.Collections.TableObjects<T>.HasReferences(string)
+  nameWithType.vb: TableObjects(Of T).HasReferences(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).HasReferences(String)
+  name.vb: HasReferences(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.HasReferences(System.String)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.HasReferences(System.String)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.HasReferences(`0)
+  commentId: M:netDxf.Collections.TableObjects`1.HasReferences(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  name: HasReferences(T)
+  nameWithType: TableObjects<T>.HasReferences(T)
+  fullName: netDxf.Collections.TableObjects<T>.HasReferences(T)
+  nameWithType.vb: TableObjects(Of T).HasReferences(T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).HasReferences(T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.HasReferences(`0)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.HasReferences(`0)
+    name: HasReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_HasReferences__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.GetReferences(System.String)
+  commentId: M:netDxf.Collections.TableObjects`1.GetReferences(System.String)
+  isExternal: true
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  name: GetReferences(string)
+  nameWithType: TableObjects<T>.GetReferences(string)
+  fullName: netDxf.Collections.TableObjects<T>.GetReferences(string)
+  nameWithType.vb: TableObjects(Of T).GetReferences(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).GetReferences(String)
+  name.vb: GetReferences(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.GetReferences(System.String)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.GetReferences(System.String)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.GetReferences(`0)
+  commentId: M:netDxf.Collections.TableObjects`1.GetReferences(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  name: GetReferences(T)
+  nameWithType: TableObjects<T>.GetReferences(T)
+  fullName: netDxf.Collections.TableObjects<T>.GetReferences(T)
+  nameWithType.vb: TableObjects(Of T).GetReferences(T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).GetReferences(T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.GetReferences(`0)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.GetReferences(`0)
+    name: GetReferences
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetReferences__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Contains(System.String)
+  commentId: M:netDxf.Collections.TableObjects`1.Contains(System.String)
+  isExternal: true
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  name: Contains(string)
+  nameWithType: TableObjects<T>.Contains(string)
+  fullName: netDxf.Collections.TableObjects<T>.Contains(string)
+  nameWithType.vb: TableObjects(Of T).Contains(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Contains(String)
+  name.vb: Contains(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Contains(System.String)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Contains(System.String)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Contains(`0)
+  commentId: M:netDxf.Collections.TableObjects`1.Contains(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  name: Contains(T)
+  nameWithType: TableObjects<T>.Contains(T)
+  fullName: netDxf.Collections.TableObjects<T>.Contains(T)
+  nameWithType.vb: TableObjects(Of T).Contains(T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Contains(T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Contains(`0)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Contains(`0)
+    name: Contains
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Contains__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.TryGetValue(System.String,`0@)
+  commentId: M:netDxf.Collections.TableObjects`1.TryGetValue(System.String,`0@)
+  isExternal: true
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  name: TryGetValue(string, out T)
+  nameWithType: TableObjects<T>.TryGetValue(string, out T)
+  fullName: netDxf.Collections.TableObjects<T>.TryGetValue(string, out T)
+  nameWithType.vb: TableObjects(Of T).TryGetValue(String, T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).TryGetValue(String, T)
+  name.vb: TryGetValue(String, T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.TryGetValue(System.String,`0@)
+    name: TryGetValue
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.TryGetValue(System.String,`0@)
+    name: TryGetValue
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_TryGetValue_System_String__0__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Add(`0)
+  commentId: M:netDxf.Collections.TableObjects`1.Add(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  name: Add(T)
+  nameWithType: TableObjects<T>.Add(T)
+  fullName: netDxf.Collections.TableObjects<T>.Add(T)
+  nameWithType.vb: TableObjects(Of T).Add(T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Add(T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Add(`0)
+    name: Add
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Add(`0)
+    name: Add
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Add__0_
+  - name: (
+  - name: T
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Clear
+  commentId: M:netDxf.Collections.TableObjects`1.Clear
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  name: Clear()
+  nameWithType: TableObjects<T>.Clear()
+  fullName: netDxf.Collections.TableObjects<T>.Clear()
+  nameWithType.vb: TableObjects(Of T).Clear()
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Clear()
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Clear
+    name: Clear
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Clear
+    name: Clear
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Clear
+  - name: (
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.GetEnumerator
+  commentId: M:netDxf.Collections.TableObjects`1.GetEnumerator
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  name: GetEnumerator()
+  nameWithType: TableObjects<T>.GetEnumerator()
+  fullName: netDxf.Collections.TableObjects<T>.GetEnumerator()
+  nameWithType.vb: TableObjects(Of T).GetEnumerator()
+  fullName.vb: netDxf.Collections.TableObjects(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.GetEnumerator
+    name: GetEnumerator
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.GetEnumerator
+    name: GetEnumerator
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_GetEnumerator
+  - name: (
+  - name: )
+- uid: netDxf.Collections.LayerStateManager.Options*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Options
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Options
+  name: Options
+  nameWithType: LayerStateManager.Options
+  fullName: netDxf.Collections.LayerStateManager.Options
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags
+  commentId: T:netDxf.Objects.LayerPropertiesRestoreFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerPropertiesRestoreFlags.html
+  name: LayerPropertiesRestoreFlags
+  nameWithType: LayerPropertiesRestoreFlags
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Collections.LayerStateManager.AddNew*
+  commentId: Overload:netDxf.Collections.LayerStateManager.AddNew
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_AddNew_System_String_
+  name: AddNew
+  nameWithType: LayerStateManager.AddNew
+  fullName: netDxf.Collections.LayerStateManager.AddNew
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Collections.LayerStateManager.Restore*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Restore
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Restore_System_String_
+  name: Restore
+  nameWithType: LayerStateManager.Restore
+  fullName: netDxf.Collections.LayerStateManager.Restore
+- uid: netDxf.Collections.LayerStateManager.Update*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Update
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Update_System_String_
+  name: Update
+  nameWithType: LayerStateManager.Update
+  fullName: netDxf.Collections.LayerStateManager.Update
+- uid: netDxf.Collections.LayerStateManager.Import*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Import
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Import_System_String_System_Boolean_
+  name: Import
+  nameWithType: LayerStateManager.Import
+  fullName: netDxf.Collections.LayerStateManager.Import
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Collections.LayerStateManager.Export*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Export
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Export_System_String_System_String_
+  name: Export
+  nameWithType: LayerStateManager.Export
+  fullName: netDxf.Collections.LayerStateManager.Export
+- uid: netDxf.Collections.LayerStateManager.RemoveAll*
+  commentId: Overload:netDxf.Collections.LayerStateManager.RemoveAll
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_RemoveAll
+  name: RemoveAll
+  nameWithType: LayerStateManager.RemoveAll
+  fullName: netDxf.Collections.LayerStateManager.RemoveAll
+- uid: netDxf.Objects.LayerState
+  commentId: T:netDxf.Objects.LayerState
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerState.html
+  name: LayerState
+  nameWithType: LayerState
+  fullName: netDxf.Objects.LayerState
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(System.String)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(System.String)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Remove(System.String)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  name: Remove(string)
+  nameWithType: TableObjects<LayerState>.Remove(string)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Remove(string)
+  nameWithType.vb: TableObjects(Of LayerState).Remove(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Remove(String)
+  name.vb: Remove(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(System.String)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(System.String)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.LayerStateManager.Remove*
+  commentId: Overload:netDxf.Collections.LayerStateManager.Remove
+  href: netDxf.Collections.LayerStateManager.html#netDxf_Collections_LayerStateManager_Remove_System_String_
+  name: Remove
+  nameWithType: LayerStateManager.Remove
+  fullName: netDxf.Collections.LayerStateManager.Remove
+- uid: netDxf.Collections.TableObjects`1.Remove(System.String)
+  commentId: M:netDxf.Collections.TableObjects`1.Remove(System.String)
+  isExternal: true
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  name: Remove(string)
+  nameWithType: TableObjects<T>.Remove(string)
+  fullName: netDxf.Collections.TableObjects<T>.Remove(string)
+  nameWithType.vb: TableObjects(Of T).Remove(String)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Remove(String)
+  name.vb: Remove(String)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Remove(System.String)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Remove(System.String)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(netDxf.Objects.LayerState)
+  commentId: M:netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(netDxf.Objects.LayerState)
+  parent: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}
+  definition: netDxf.Collections.TableObjects`1.Remove(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  name: Remove(LayerState)
+  nameWithType: TableObjects<LayerState>.Remove(LayerState)
+  fullName: netDxf.Collections.TableObjects<netDxf.Objects.LayerState>.Remove(netDxf.Objects.LayerState)
+  nameWithType.vb: TableObjects(Of LayerState).Remove(LayerState)
+  fullName.vb: netDxf.Collections.TableObjects(Of netDxf.Objects.LayerState).Remove(netDxf.Objects.LayerState)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(netDxf.Objects.LayerState)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects{netDxf.Objects.LayerState}.Remove(netDxf.Objects.LayerState)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  - name: (
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    href: netDxf.Objects.LayerState.html
+  - name: )
+- uid: netDxf.Collections.TableObjects`1.Remove(`0)
+  commentId: M:netDxf.Collections.TableObjects`1.Remove(`0)
+  href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  name: Remove(T)
+  nameWithType: TableObjects<T>.Remove(T)
+  fullName: netDxf.Collections.TableObjects<T>.Remove(T)
+  nameWithType.vb: TableObjects(Of T).Remove(T)
+  fullName.vb: netDxf.Collections.TableObjects(Of T).Remove(T)
+  spec.csharp:
+  - uid: netDxf.Collections.TableObjects`1.Remove(`0)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: netDxf.Collections.TableObjects`1.Remove(`0)
+    name: Remove
+    href: netDxf.Collections.TableObjects-1.html#netDxf_Collections_TableObjects_1_Remove__0_
+  - name: (
+  - name: T
+  - name: )

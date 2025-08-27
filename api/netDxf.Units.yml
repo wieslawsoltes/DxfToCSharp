@@ -1,0 +1,130 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  id: netDxf.Units
+  children:
+  - netDxf.Units.AngleDirection
+  - netDxf.Units.AngleUnitFormat
+  - netDxf.Units.AngleUnitType
+  - netDxf.Units.DrawingTime
+  - netDxf.Units.DrawingUnits
+  - netDxf.Units.FractionFormatType
+  - netDxf.Units.ImageResolutionUnits
+  - netDxf.Units.ImageUnits
+  - netDxf.Units.LinearUnitFormat
+  - netDxf.Units.LinearUnitType
+  - netDxf.Units.UnitHelper
+  - netDxf.Units.UnitStyleFormat
+  langs:
+  - csharp
+  - vb
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  type: Namespace
+  assemblies:
+  - netDxf
+references:
+- uid: netDxf.Units.AngleDirection
+  commentId: T:netDxf.Units.AngleDirection
+  parent: netDxf.Units
+  href: netDxf.Units.AngleDirection.html
+  name: AngleDirection
+  nameWithType: AngleDirection
+  fullName: netDxf.Units.AngleDirection
+- uid: netDxf.Units.AngleUnitFormat
+  commentId: T:netDxf.Units.AngleUnitFormat
+  href: netDxf.Units.AngleUnitFormat.html
+  name: AngleUnitFormat
+  nameWithType: AngleUnitFormat
+  fullName: netDxf.Units.AngleUnitFormat
+- uid: netDxf.Units.AngleUnitType
+  commentId: T:netDxf.Units.AngleUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.AngleUnitType.html
+  name: AngleUnitType
+  nameWithType: AngleUnitType
+  fullName: netDxf.Units.AngleUnitType
+- uid: netDxf.Units.DrawingTime
+  commentId: T:netDxf.Units.DrawingTime
+  href: netDxf.Units.DrawingTime.html
+  name: DrawingTime
+  nameWithType: DrawingTime
+  fullName: netDxf.Units.DrawingTime
+- uid: netDxf.Units.DrawingUnits
+  commentId: T:netDxf.Units.DrawingUnits
+  parent: netDxf.Units
+  href: netDxf.Units.DrawingUnits.html
+  name: DrawingUnits
+  nameWithType: DrawingUnits
+  fullName: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.FractionFormatType
+  commentId: T:netDxf.Units.FractionFormatType
+  parent: netDxf.Units
+  href: netDxf.Units.FractionFormatType.html
+  name: FractionFormatType
+  nameWithType: FractionFormatType
+  fullName: netDxf.Units.FractionFormatType
+- uid: netDxf.Units.ImageResolutionUnits
+  commentId: T:netDxf.Units.ImageResolutionUnits
+  parent: netDxf.Units
+  href: netDxf.Units.ImageResolutionUnits.html
+  name: ImageResolutionUnits
+  nameWithType: ImageResolutionUnits
+  fullName: netDxf.Units.ImageResolutionUnits
+- uid: netDxf.Units.ImageUnits
+  commentId: T:netDxf.Units.ImageUnits
+  parent: netDxf.Units
+  href: netDxf.Units.ImageUnits.html
+  name: ImageUnits
+  nameWithType: ImageUnits
+  fullName: netDxf.Units.ImageUnits
+- uid: netDxf.Units.LinearUnitFormat
+  commentId: T:netDxf.Units.LinearUnitFormat
+  href: netDxf.Units.LinearUnitFormat.html
+  name: LinearUnitFormat
+  nameWithType: LinearUnitFormat
+  fullName: netDxf.Units.LinearUnitFormat
+- uid: netDxf.Units.LinearUnitType
+  commentId: T:netDxf.Units.LinearUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.LinearUnitType.html
+  name: LinearUnitType
+  nameWithType: LinearUnitType
+  fullName: netDxf.Units.LinearUnitType
+- uid: netDxf.Units.UnitHelper
+  commentId: T:netDxf.Units.UnitHelper
+  href: netDxf.Units.UnitHelper.html
+  name: UnitHelper
+  nameWithType: UnitHelper
+  fullName: netDxf.Units.UnitHelper
+- uid: netDxf.Units.UnitStyleFormat
+  commentId: T:netDxf.Units.UnitStyleFormat
+  parent: netDxf.Units
+  href: netDxf.Units.UnitStyleFormat.html
+  name: UnitStyleFormat
+  nameWithType: UnitStyleFormat
+  fullName: netDxf.Units.UnitStyleFormat
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html

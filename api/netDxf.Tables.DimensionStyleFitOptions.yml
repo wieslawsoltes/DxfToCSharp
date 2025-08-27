@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyleFitOptions
+  commentId: T:netDxf.Tables.DimensionStyleFitOptions
+  id: DimensionStyleFitOptions
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyleFitOptions.Arrows
+  - netDxf.Tables.DimensionStyleFitOptions.BestFit
+  - netDxf.Tables.DimensionStyleFitOptions.Text
+  - netDxf.Tables.DimensionStyleFitOptions.TextAndArrows
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleFitOptions
+  nameWithType: DimensionStyleFitOptions
+  fullName: netDxf.Tables.DimensionStyleFitOptions
+  type: Enum
+  source:
+    id: DimensionStyleFitOptions
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleFitOptions.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls dimension text and arrow placement when space is not sufficient to place both within the extension lines.
+  example: []
+  syntax:
+    content: public enum DimensionStyleFitOptions
+    content.vb: Public Enum DimensionStyleFitOptions
+- uid: netDxf.Tables.DimensionStyleFitOptions.TextAndArrows
+  commentId: F:netDxf.Tables.DimensionStyleFitOptions.TextAndArrows
+  id: TextAndArrows
+  parent: netDxf.Tables.DimensionStyleFitOptions
+  langs:
+  - csharp
+  - vb
+  name: TextAndArrows
+  nameWithType: DimensionStyleFitOptions.TextAndArrows
+  fullName: netDxf.Tables.DimensionStyleFitOptions.TextAndArrows
+  type: Field
+  source:
+    id: TextAndArrows
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleFitOptions.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Places both text and arrows outside extension lines.
+  example: []
+  syntax:
+    content: TextAndArrows = 0
+    return:
+      type: netDxf.Tables.DimensionStyleFitOptions
+- uid: netDxf.Tables.DimensionStyleFitOptions.Arrows
+  commentId: F:netDxf.Tables.DimensionStyleFitOptions.Arrows
+  id: Arrows
+  parent: netDxf.Tables.DimensionStyleFitOptions
+  langs:
+  - csharp
+  - vb
+  name: Arrows
+  nameWithType: DimensionStyleFitOptions.Arrows
+  fullName: netDxf.Tables.DimensionStyleFitOptions.Arrows
+  type: Field
+  source:
+    id: Arrows
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleFitOptions.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Moves arrows first, then text.
+  example: []
+  syntax:
+    content: Arrows = 1
+    return:
+      type: netDxf.Tables.DimensionStyleFitOptions
+- uid: netDxf.Tables.DimensionStyleFitOptions.Text
+  commentId: F:netDxf.Tables.DimensionStyleFitOptions.Text
+  id: Text
+  parent: netDxf.Tables.DimensionStyleFitOptions
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: DimensionStyleFitOptions.Text
+  fullName: netDxf.Tables.DimensionStyleFitOptions.Text
+  type: Field
+  source:
+    id: Text
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleFitOptions.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Moves text first, then arrows.
+  example: []
+  syntax:
+    content: Text = 2
+    return:
+      type: netDxf.Tables.DimensionStyleFitOptions
+- uid: netDxf.Tables.DimensionStyleFitOptions.BestFit
+  commentId: F:netDxf.Tables.DimensionStyleFitOptions.BestFit
+  id: BestFit
+  parent: netDxf.Tables.DimensionStyleFitOptions
+  langs:
+  - csharp
+  - vb
+  name: BestFit
+  nameWithType: DimensionStyleFitOptions.BestFit
+  fullName: netDxf.Tables.DimensionStyleFitOptions.BestFit
+  type: Field
+  source:
+    id: BestFit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleFitOptions.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Moves either text or arrows, whichever fits best.
+  example: []
+  syntax:
+    content: BestFit = 3
+    return:
+      type: netDxf.Tables.DimensionStyleFitOptions
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.DimensionStyleFitOptions
+  commentId: T:netDxf.Tables.DimensionStyleFitOptions
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleFitOptions.html
+  name: DimensionStyleFitOptions
+  nameWithType: DimensionStyleFitOptions
+  fullName: netDxf.Tables.DimensionStyleFitOptions

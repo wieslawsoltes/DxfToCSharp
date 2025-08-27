@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.ClippingBoundaryType
+  commentId: T:netDxf.ClippingBoundaryType
+  id: ClippingBoundaryType
+  parent: netDxf
+  children:
+  - netDxf.ClippingBoundaryType.Polygonal
+  - netDxf.ClippingBoundaryType.Rectangular
+  langs:
+  - csharp
+  - vb
+  name: ClippingBoundaryType
+  nameWithType: ClippingBoundaryType
+  fullName: netDxf.ClippingBoundaryType
+  type: Enum
+  source:
+    id: ClippingBoundaryType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/ClippingBoundaryType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Image clipping boundary type.
+  example: []
+  syntax:
+    content: public enum ClippingBoundaryType
+    content.vb: Public Enum ClippingBoundaryType
+- uid: netDxf.ClippingBoundaryType.Rectangular
+  commentId: F:netDxf.ClippingBoundaryType.Rectangular
+  id: Rectangular
+  parent: netDxf.ClippingBoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Rectangular
+  nameWithType: ClippingBoundaryType.Rectangular
+  fullName: netDxf.ClippingBoundaryType.Rectangular
+  type: Field
+  source:
+    id: Rectangular
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/ClippingBoundaryType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Rectangular.
+  example: []
+  syntax:
+    content: Rectangular = 1
+    return:
+      type: netDxf.ClippingBoundaryType
+- uid: netDxf.ClippingBoundaryType.Polygonal
+  commentId: F:netDxf.ClippingBoundaryType.Polygonal
+  id: Polygonal
+  parent: netDxf.ClippingBoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Polygonal
+  nameWithType: ClippingBoundaryType.Polygonal
+  fullName: netDxf.ClippingBoundaryType.Polygonal
+  type: Field
+  source:
+    id: Polygonal
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/ClippingBoundaryType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Polygonal.
+  example: []
+  syntax:
+    content: Polygonal = 2
+    return:
+      type: netDxf.ClippingBoundaryType
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.ClippingBoundaryType
+  commentId: T:netDxf.ClippingBoundaryType
+  parent: netDxf
+  href: netDxf.ClippingBoundaryType.html
+  name: ClippingBoundaryType
+  nameWithType: ClippingBoundaryType
+  fullName: netDxf.ClippingBoundaryType

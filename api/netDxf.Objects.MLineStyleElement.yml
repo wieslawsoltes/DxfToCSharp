@@ -1,0 +1,1029 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.MLineStyleElement
+  commentId: T:netDxf.Objects.MLineStyleElement
+  id: MLineStyleElement
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.MLineStyleElement.#ctor(System.Double)
+  - netDxf.Objects.MLineStyleElement.#ctor(System.Double,netDxf.AciColor,netDxf.Tables.Linetype)
+  - netDxf.Objects.MLineStyleElement.Clone
+  - netDxf.Objects.MLineStyleElement.Color
+  - netDxf.Objects.MLineStyleElement.CompareTo(netDxf.Objects.MLineStyleElement)
+  - netDxf.Objects.MLineStyleElement.Equals(System.Object)
+  - netDxf.Objects.MLineStyleElement.Equals(netDxf.Objects.MLineStyleElement)
+  - netDxf.Objects.MLineStyleElement.GetHashCode
+  - netDxf.Objects.MLineStyleElement.Linetype
+  - netDxf.Objects.MLineStyleElement.LinetypeChanged
+  - netDxf.Objects.MLineStyleElement.Offset
+  - netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Objects.MLineStyleElement.ToString
+  langs:
+  - csharp
+  - vb
+  name: MLineStyleElement
+  nameWithType: MLineStyleElement
+  fullName: netDxf.Objects.MLineStyleElement
+  type: Class
+  source:
+    id: MLineStyleElement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Represent each of the elements that make up a MLineStyle.
+  example: []
+  syntax:
+    content: 'public class MLineStyleElement : IComparable<MLineStyleElement>, ICloneable'
+    content.vb: Public Class MLineStyleElement Implements IComparable(Of MLineStyleElement), ICloneable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IComparable{netDxf.Objects.MLineStyleElement}
+  - System.ICloneable
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Objects.MLineStyleElement.LinetypeChanged
+  commentId: E:netDxf.Objects.MLineStyleElement.LinetypeChanged
+  id: LinetypeChanged
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: LinetypeChanged
+  nameWithType: MLineStyleElement.LinetypeChanged
+  fullName: netDxf.Objects.MLineStyleElement.LinetypeChanged
+  type: Event
+  source:
+    id: LinetypeChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  syntax:
+    content: public event MLineStyleElement.LinetypeChangedEventHandler LinetypeChanged
+    return:
+      type: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    content.vb: Public Event LinetypeChanged As MLineStyleElement.LinetypeChangedEventHandler
+- uid: netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  id: OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: MLineStyleElement.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  type: Method
+  source:
+    id: OnLinetypeChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  syntax:
+    content: protected virtual Linetype OnLinetypeChangedEvent(Linetype oldLinetype, Linetype newLinetype)
+    parameters:
+    - id: oldLinetype
+      type: netDxf.Tables.Linetype
+    - id: newLinetype
+      type: netDxf.Tables.Linetype
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Protected Overridable Function OnLinetypeChangedEvent(oldLinetype As Linetype, newLinetype As Linetype) As Linetype
+  overload: netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent*
+- uid: netDxf.Objects.MLineStyleElement.#ctor(System.Double)
+  commentId: M:netDxf.Objects.MLineStyleElement.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: MLineStyleElement(double)
+  nameWithType: MLineStyleElement.MLineStyleElement(double)
+  fullName: netDxf.Objects.MLineStyleElement.MLineStyleElement(double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 69
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Initializes a new instance of the <code>MLineStyleElement</code> class.
+  example: []
+  syntax:
+    content: public MLineStyleElement(double offset)
+    parameters:
+    - id: offset
+      type: System.Double
+      description: Element offset.
+    content.vb: Public Sub New(offset As Double)
+  overload: netDxf.Objects.MLineStyleElement.#ctor*
+  nameWithType.vb: MLineStyleElement.New(Double)
+  fullName.vb: netDxf.Objects.MLineStyleElement.New(Double)
+  name.vb: New(Double)
+- uid: netDxf.Objects.MLineStyleElement.#ctor(System.Double,netDxf.AciColor,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Objects.MLineStyleElement.#ctor(System.Double,netDxf.AciColor,netDxf.Tables.Linetype)
+  id: '#ctor(System.Double,netDxf.AciColor,netDxf.Tables.Linetype)'
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: MLineStyleElement(double, AciColor, Linetype)
+  nameWithType: MLineStyleElement.MLineStyleElement(double, AciColor, Linetype)
+  fullName: netDxf.Objects.MLineStyleElement.MLineStyleElement(double, netDxf.AciColor, netDxf.Tables.Linetype)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Initializes a new instance of the <code>MLineStyleElement</code> class.
+  example: []
+  syntax:
+    content: public MLineStyleElement(double offset, AciColor color, Linetype linetype)
+    parameters:
+    - id: offset
+      type: System.Double
+      description: Element offset.
+    - id: color
+      type: netDxf.AciColor
+      description: Element color.
+    - id: linetype
+      type: netDxf.Tables.Linetype
+      description: Element line type.
+    content.vb: Public Sub New(offset As Double, color As AciColor, linetype As Linetype)
+  overload: netDxf.Objects.MLineStyleElement.#ctor*
+  nameWithType.vb: MLineStyleElement.New(Double, AciColor, Linetype)
+  fullName.vb: netDxf.Objects.MLineStyleElement.New(Double, netDxf.AciColor, netDxf.Tables.Linetype)
+  name.vb: New(Double, AciColor, Linetype)
+- uid: netDxf.Objects.MLineStyleElement.Offset
+  commentId: P:netDxf.Objects.MLineStyleElement.Offset
+  id: Offset
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Offset
+  nameWithType: MLineStyleElement.Offset
+  fullName: netDxf.Objects.MLineStyleElement.Offset
+  type: Property
+  source:
+    id: Offset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 94
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or sets the element offset.
+  example: []
+  syntax:
+    content: public double Offset { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Offset As Double
+  overload: netDxf.Objects.MLineStyleElement.Offset*
+- uid: netDxf.Objects.MLineStyleElement.Color
+  commentId: P:netDxf.Objects.MLineStyleElement.Color
+  id: Color
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: MLineStyleElement.Color
+  fullName: netDxf.Objects.MLineStyleElement.Color
+  type: Property
+  source:
+    id: Color
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 106
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or sets the element color.
+  remarks: AutoCad2000 DXF version does not support true colors for MLineStyleElement color.
+  example: []
+  syntax:
+    content: public AciColor Color { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property Color As AciColor
+  overload: netDxf.Objects.MLineStyleElement.Color*
+- uid: netDxf.Objects.MLineStyleElement.Linetype
+  commentId: P:netDxf.Objects.MLineStyleElement.Linetype
+  id: Linetype
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Linetype
+  nameWithType: MLineStyleElement.Linetype
+  fullName: netDxf.Objects.MLineStyleElement.Linetype
+  type: Property
+  source:
+    id: Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 118
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or sets the element line type.
+  example: []
+  syntax:
+    content: public Linetype Linetype { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Public Property Linetype As Linetype
+  overload: netDxf.Objects.MLineStyleElement.Linetype*
+- uid: netDxf.Objects.MLineStyleElement.CompareTo(netDxf.Objects.MLineStyleElement)
+  commentId: M:netDxf.Objects.MLineStyleElement.CompareTo(netDxf.Objects.MLineStyleElement)
+  id: CompareTo(netDxf.Objects.MLineStyleElement)
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: CompareTo(MLineStyleElement)
+  nameWithType: MLineStyleElement.CompareTo(MLineStyleElement)
+  fullName: netDxf.Objects.MLineStyleElement.CompareTo(netDxf.Objects.MLineStyleElement)
+  type: Method
+  source:
+    id: CompareTo
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 145
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Compares the current object with another object of the same type.
+  example: []
+  syntax:
+    content: public int CompareTo(MLineStyleElement other)
+    parameters:
+    - id: other
+      type: netDxf.Objects.MLineStyleElement
+      description: An object to compare with this object.
+    return:
+      type: System.Int32
+      description: >-
+        The MLineStyleElements are ordered from larger to smaller offset values.
+
+        A 32-bit signed integer that indicates the relative order of the objects being compared.
+
+        The return value has the following meanings: Value Meaning Less than zero This object is less than the other parameter.
+
+        Zero This object is equal to other. Greater than zero This object is greater than other.
+    content.vb: Public Function CompareTo(other As MLineStyleElement) As Integer
+  overload: netDxf.Objects.MLineStyleElement.CompareTo*
+  implements:
+  - System.IComparable{netDxf.Objects.MLineStyleElement}.CompareTo(netDxf.Objects.MLineStyleElement)
+- uid: netDxf.Objects.MLineStyleElement.Equals(System.Object)
+  commentId: M:netDxf.Objects.MLineStyleElement.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: MLineStyleElement.Equals(object)
+  fullName: netDxf.Objects.MLineStyleElement.Equals(object)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 163
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Check if two MLineStyleElement are equal.
+  remarks: Two MLineStyleElement are considered equals if their offsets are the same.
+  example: []
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+      description: Another MLineStyleElement to compare to.
+    return:
+      type: System.Boolean
+      description: True if two MLineStyleElement are equal or false in any other case.
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: netDxf.Objects.MLineStyleElement.Equals*
+  nameWithType.vb: MLineStyleElement.Equals(Object)
+  fullName.vb: netDxf.Objects.MLineStyleElement.Equals(Object)
+  name.vb: Equals(Object)
+- uid: netDxf.Objects.MLineStyleElement.Equals(netDxf.Objects.MLineStyleElement)
+  commentId: M:netDxf.Objects.MLineStyleElement.Equals(netDxf.Objects.MLineStyleElement)
+  id: Equals(netDxf.Objects.MLineStyleElement)
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Equals(MLineStyleElement)
+  nameWithType: MLineStyleElement.Equals(MLineStyleElement)
+  fullName: netDxf.Objects.MLineStyleElement.Equals(netDxf.Objects.MLineStyleElement)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 186
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Check if two MLineStyleElement are equal.
+  remarks: Two MLineStyleElement are considered equals if their offsets are the same.
+  example: []
+  syntax:
+    content: public bool Equals(MLineStyleElement other)
+    parameters:
+    - id: other
+      type: netDxf.Objects.MLineStyleElement
+      description: Another MLineStyleElement to compare to.
+    return:
+      type: System.Boolean
+      description: True if two MLineStyleElement are equal or false in any other case.
+    content.vb: Public Function Equals(other As MLineStyleElement) As Boolean
+  overload: netDxf.Objects.MLineStyleElement.Equals*
+- uid: netDxf.Objects.MLineStyleElement.GetHashCode
+  commentId: M:netDxf.Objects.MLineStyleElement.GetHashCode
+  id: GetHashCode
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: MLineStyleElement.GetHashCode()
+  fullName: netDxf.Objects.MLineStyleElement.GetHashCode()
+  type: Method
+  source:
+    id: GetHashCode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 200
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: netDxf.Objects.MLineStyleElement.GetHashCode*
+- uid: netDxf.Objects.MLineStyleElement.Clone
+  commentId: M:netDxf.Objects.MLineStyleElement.Clone
+  id: Clone
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: MLineStyleElement.Clone()
+  fullName: netDxf.Objects.MLineStyleElement.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 213
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Creates a MLineStyleElement that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+      description: A new MLineStyleElement is a copy of this instance.
+    content.vb: Public Function Clone() As Object
+  overload: netDxf.Objects.MLineStyleElement.Clone*
+  implements:
+  - System.ICloneable.Clone
+- uid: netDxf.Objects.MLineStyleElement.ToString
+  commentId: M:netDxf.Objects.MLineStyleElement.ToString
+  id: ToString
+  parent: netDxf.Objects.MLineStyleElement
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: MLineStyleElement.ToString()
+  fullName: netDxf.Objects.MLineStyleElement.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyleElement.cs
+    startLine: 230
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Converts the value of this instance to its equivalent string representation.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The string representation.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: netDxf.Objects.MLineStyleElement.ToString*
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IComparable{netDxf.Objects.MLineStyleElement}
+  commentId: T:System.IComparable{netDxf.Objects.MLineStyleElement}
+  parent: System
+  definition: System.IComparable`1
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<MLineStyleElement>
+  nameWithType: IComparable<MLineStyleElement>
+  fullName: System.IComparable<netDxf.Objects.MLineStyleElement>
+  nameWithType.vb: IComparable(Of MLineStyleElement)
+  fullName.vb: System.IComparable(Of netDxf.Objects.MLineStyleElement)
+  name.vb: IComparable(Of MLineStyleElement)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: )
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  commentId: T:netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElement.html
+  name: MLineStyleElement.LinetypeChangedEventHandler
+  nameWithType: MLineStyleElement.LinetypeChangedEventHandler
+  fullName: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler.html
+- uid: netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent
+  nameWithType: MLineStyleElement.OnLinetypeChangedEvent
+  fullName: netDxf.Objects.MLineStyleElement.OnLinetypeChangedEvent
+- uid: netDxf.Tables.Linetype
+  commentId: T:netDxf.Tables.Linetype
+  parent: netDxf.Tables
+  href: netDxf.Tables.Linetype.html
+  name: Linetype
+  nameWithType: Linetype
+  fullName: netDxf.Tables.Linetype
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Objects.MLineStyleElement.#ctor*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.#ctor
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement__ctor_System_Double_
+  name: MLineStyleElement
+  nameWithType: MLineStyleElement.MLineStyleElement
+  fullName: netDxf.Objects.MLineStyleElement.MLineStyleElement
+  nameWithType.vb: MLineStyleElement.New
+  fullName.vb: netDxf.Objects.MLineStyleElement.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.AciColor
+  commentId: T:netDxf.AciColor
+  parent: netDxf
+  href: netDxf.AciColor.html
+  name: AciColor
+  nameWithType: AciColor
+  fullName: netDxf.AciColor
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Objects.MLineStyleElement.Offset*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.Offset
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_Offset
+  name: Offset
+  nameWithType: MLineStyleElement.Offset
+  fullName: netDxf.Objects.MLineStyleElement.Offset
+- uid: netDxf.Objects.MLineStyleElement.Color*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.Color
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_Color
+  name: Color
+  nameWithType: MLineStyleElement.Color
+  fullName: netDxf.Objects.MLineStyleElement.Color
+- uid: netDxf.Objects.MLineStyleElement.Linetype*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.Linetype
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_Linetype
+  name: Linetype
+  nameWithType: MLineStyleElement.Linetype
+  fullName: netDxf.Objects.MLineStyleElement.Linetype
+- uid: netDxf.Objects.MLineStyleElement.CompareTo*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.CompareTo
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_CompareTo_netDxf_Objects_MLineStyleElement_
+  name: CompareTo
+  nameWithType: MLineStyleElement.CompareTo
+  fullName: netDxf.Objects.MLineStyleElement.CompareTo
+- uid: System.IComparable{netDxf.Objects.MLineStyleElement}.CompareTo(netDxf.Objects.MLineStyleElement)
+  commentId: M:System.IComparable{netDxf.Objects.MLineStyleElement}.CompareTo(netDxf.Objects.MLineStyleElement)
+  parent: System.IComparable{netDxf.Objects.MLineStyleElement}
+  definition: System.IComparable`1.CompareTo(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  name: CompareTo(MLineStyleElement)
+  nameWithType: IComparable<MLineStyleElement>.CompareTo(MLineStyleElement)
+  fullName: System.IComparable<netDxf.Objects.MLineStyleElement>.CompareTo(netDxf.Objects.MLineStyleElement)
+  nameWithType.vb: IComparable(Of MLineStyleElement).CompareTo(MLineStyleElement)
+  fullName.vb: System.IComparable(Of netDxf.Objects.MLineStyleElement).CompareTo(netDxf.Objects.MLineStyleElement)
+  spec.csharp:
+  - uid: System.IComparable{netDxf.Objects.MLineStyleElement}.CompareTo(netDxf.Objects.MLineStyleElement)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: )
+  spec.vb:
+  - uid: System.IComparable{netDxf.Objects.MLineStyleElement}.CompareTo(netDxf.Objects.MLineStyleElement)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: )
+- uid: netDxf.Objects.MLineStyleElement
+  commentId: T:netDxf.Objects.MLineStyleElement
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElement.html
+  name: MLineStyleElement
+  nameWithType: MLineStyleElement
+  fullName: netDxf.Objects.MLineStyleElement
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.IComparable`1.CompareTo(`0)
+  commentId: M:System.IComparable`1.CompareTo(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  name: CompareTo(T)
+  nameWithType: IComparable<T>.CompareTo(T)
+  fullName: System.IComparable<T>.CompareTo(T)
+  nameWithType.vb: IComparable(Of T).CompareTo(T)
+  fullName.vb: System.IComparable(Of T).CompareTo(T)
+  spec.csharp:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IComparable`1.CompareTo(`0)
+    name: CompareTo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1.compareto
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: netDxf.Objects.MLineStyleElement.Equals*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.Equals
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_Equals_System_Object_
+  name: Equals
+  nameWithType: MLineStyleElement.Equals
+  fullName: netDxf.Objects.MLineStyleElement.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: netDxf.Objects.MLineStyleElement.GetHashCode*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.GetHashCode
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_GetHashCode
+  name: GetHashCode
+  nameWithType: MLineStyleElement.GetHashCode
+  fullName: netDxf.Objects.MLineStyleElement.GetHashCode
+- uid: netDxf.Objects.MLineStyleElement.Clone*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.Clone
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_Clone
+  name: Clone
+  nameWithType: MLineStyleElement.Clone
+  fullName: netDxf.Objects.MLineStyleElement.Clone
+- uid: System.ICloneable.Clone
+  commentId: M:System.ICloneable.Clone
+  parent: System.ICloneable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  name: Clone()
+  nameWithType: ICloneable.Clone()
+  fullName: System.ICloneable.Clone()
+  spec.csharp:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: netDxf.Objects.MLineStyleElement.ToString*
+  commentId: Overload:netDxf.Objects.MLineStyleElement.ToString
+  href: netDxf.Objects.MLineStyleElement.html#netDxf_Objects_MLineStyleElement_ToString
+  name: ToString
+  nameWithType: MLineStyleElement.ToString
+  fullName: netDxf.Objects.MLineStyleElement.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

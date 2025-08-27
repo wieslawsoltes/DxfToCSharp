@@ -1,0 +1,1786 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Attribute
+  commentId: T:netDxf.Entities.Attribute
+  id: Attribute
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Attribute.#ctor(netDxf.Entities.AttributeDefinition)
+  - netDxf.Entities.Attribute.Alignment
+  - netDxf.Entities.Attribute.Clone
+  - netDxf.Entities.Attribute.Color
+  - netDxf.Entities.Attribute.Definition
+  - netDxf.Entities.Attribute.Flags
+  - netDxf.Entities.Attribute.Height
+  - netDxf.Entities.Attribute.IsBackward
+  - netDxf.Entities.Attribute.IsUpsideDown
+  - netDxf.Entities.Attribute.IsVisible
+  - netDxf.Entities.Attribute.Layer
+  - netDxf.Entities.Attribute.LayerChanged
+  - netDxf.Entities.Attribute.Linetype
+  - netDxf.Entities.Attribute.LinetypeChanged
+  - netDxf.Entities.Attribute.LinetypeScale
+  - netDxf.Entities.Attribute.Lineweight
+  - netDxf.Entities.Attribute.Normal
+  - netDxf.Entities.Attribute.ObliqueAngle
+  - netDxf.Entities.Attribute.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.Attribute.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.Attribute.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  - netDxf.Entities.Attribute.Owner
+  - netDxf.Entities.Attribute.Position
+  - netDxf.Entities.Attribute.Rotation
+  - netDxf.Entities.Attribute.Style
+  - netDxf.Entities.Attribute.Tag
+  - netDxf.Entities.Attribute.TextStyleChanged
+  - netDxf.Entities.Attribute.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  - netDxf.Entities.Attribute.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.Attribute.Transparency
+  - netDxf.Entities.Attribute.Value
+  - netDxf.Entities.Attribute.Width
+  - netDxf.Entities.Attribute.WidthFactor
+  langs:
+  - csharp
+  - vb
+  name: Attribute
+  nameWithType: Attribute
+  fullName: netDxf.Entities.Attribute
+  type: Class
+  source:
+    id: Attribute
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents an attribute.
+  remarks: >-
+    The attribute position, rotation, height and width factor values also includes the transformation of the <xref href="netDxf.Entities.Insert?text=Insert" data-throw-if-not-resolved="false"></xref> entity to which it belongs.<br />
+
+    During the attribute initialization a copy of all attribute definition properties will be copied,
+
+    so any changes made to the attribute definition will only be applied to new attribute instances and not to existing ones.
+
+    This behavior is to allow imported <xref href="netDxf.Entities.Insert?text=Insert" data-throw-if-not-resolved="false"></xref> entities to have attributes without definition in the block, 
+
+    although this might sound not totally correct it is allowed by AutoCad.
+  example: []
+  syntax:
+    content: 'public class Attribute : DxfObject, ICloneable'
+    content.vb: Public Class Attribute Inherits DxfObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - netDxf.DxfObject.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Attribute.LayerChanged
+  commentId: E:netDxf.Entities.Attribute.LayerChanged
+  id: LayerChanged
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: LayerChanged
+  nameWithType: Attribute.LayerChanged
+  fullName: netDxf.Entities.Attribute.LayerChanged
+  type: Event
+  source:
+    id: LayerChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 49
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public event Attribute.LayerChangedEventHandler LayerChanged
+    return:
+      type: netDxf.Entities.Attribute.LayerChangedEventHandler
+    content.vb: Public Event LayerChanged As Attribute.LayerChangedEventHandler
+- uid: netDxf.Entities.Attribute.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.Attribute.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  id: OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: Attribute.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.Attribute.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  type: Method
+  source:
+    id: OnLayerChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 51
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: protected virtual Layer OnLayerChangedEvent(Layer oldLayer, Layer newLayer)
+    parameters:
+    - id: oldLayer
+      type: netDxf.Tables.Layer
+    - id: newLayer
+      type: netDxf.Tables.Layer
+    return:
+      type: netDxf.Tables.Layer
+    content.vb: Protected Overridable Function OnLayerChangedEvent(oldLayer As Layer, newLayer As Layer) As Layer
+  overload: netDxf.Entities.Attribute.OnLayerChangedEvent*
+- uid: netDxf.Entities.Attribute.LinetypeChanged
+  commentId: E:netDxf.Entities.Attribute.LinetypeChanged
+  id: LinetypeChanged
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: LinetypeChanged
+  nameWithType: Attribute.LinetypeChanged
+  fullName: netDxf.Entities.Attribute.LinetypeChanged
+  type: Event
+  source:
+    id: LinetypeChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public event Attribute.LinetypeChangedEventHandler LinetypeChanged
+    return:
+      type: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+    content.vb: Public Event LinetypeChanged As Attribute.LinetypeChangedEventHandler
+- uid: netDxf.Entities.Attribute.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.Attribute.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  id: OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: Attribute.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.Attribute.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  type: Method
+  source:
+    id: OnLinetypeChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 67
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: protected virtual Linetype OnLinetypeChangedEvent(Linetype oldLinetype, Linetype newLinetype)
+    parameters:
+    - id: oldLinetype
+      type: netDxf.Tables.Linetype
+    - id: newLinetype
+      type: netDxf.Tables.Linetype
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Protected Overridable Function OnLinetypeChangedEvent(oldLinetype As Linetype, newLinetype As Linetype) As Linetype
+  overload: netDxf.Entities.Attribute.OnLinetypeChangedEvent*
+- uid: netDxf.Entities.Attribute.TextStyleChanged
+  commentId: E:netDxf.Entities.Attribute.TextStyleChanged
+  id: TextStyleChanged
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: TextStyleChanged
+  nameWithType: Attribute.TextStyleChanged
+  fullName: netDxf.Entities.Attribute.TextStyleChanged
+  type: Event
+  source:
+    id: TextStyleChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 81
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public event Attribute.TextStyleChangedEventHandler TextStyleChanged
+    return:
+      type: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+    content.vb: Public Event TextStyleChanged As Attribute.TextStyleChangedEventHandler
+- uid: netDxf.Entities.Attribute.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  commentId: M:netDxf.Entities.Attribute.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  id: OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: OnTextStyleChangedEvent(TextStyle, TextStyle)
+  nameWithType: Attribute.OnTextStyleChangedEvent(TextStyle, TextStyle)
+  fullName: netDxf.Entities.Attribute.OnTextStyleChangedEvent(netDxf.Tables.TextStyle, netDxf.Tables.TextStyle)
+  type: Method
+  source:
+    id: OnTextStyleChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 83
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: protected virtual TextStyle OnTextStyleChangedEvent(TextStyle oldTextStyle, TextStyle newTextStyle)
+    parameters:
+    - id: oldTextStyle
+      type: netDxf.Tables.TextStyle
+    - id: newTextStyle
+      type: netDxf.Tables.TextStyle
+    return:
+      type: netDxf.Tables.TextStyle
+    content.vb: Protected Overridable Function OnTextStyleChangedEvent(oldTextStyle As TextStyle, newTextStyle As TextStyle) As TextStyle
+  overload: netDxf.Entities.Attribute.OnTextStyleChangedEvent*
+- uid: netDxf.Entities.Attribute.#ctor(netDxf.Entities.AttributeDefinition)
+  commentId: M:netDxf.Entities.Attribute.#ctor(netDxf.Entities.AttributeDefinition)
+  id: '#ctor(netDxf.Entities.AttributeDefinition)'
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Attribute(AttributeDefinition)
+  nameWithType: Attribute.Attribute(AttributeDefinition)
+  fullName: netDxf.Entities.Attribute.Attribute(netDxf.Entities.AttributeDefinition)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 137
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Attribute</code> class.
+  example: []
+  syntax:
+    content: public Attribute(AttributeDefinition definition)
+    parameters:
+    - id: definition
+      type: netDxf.Entities.AttributeDefinition
+      description: <xref href="netDxf.Entities.AttributeDefinition?text=Attribute+definition" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(definition As AttributeDefinition)
+  overload: netDxf.Entities.Attribute.#ctor*
+  nameWithType.vb: Attribute.New(AttributeDefinition)
+  fullName.vb: netDxf.Entities.Attribute.New(netDxf.Entities.AttributeDefinition)
+  name.vb: New(AttributeDefinition)
+- uid: netDxf.Entities.Attribute.Color
+  commentId: P:netDxf.Entities.Attribute.Color
+  id: Color
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: Attribute.Color
+  fullName: netDxf.Entities.Attribute.Color
+  type: Property
+  source:
+    id: Color
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 177
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity <xref href="netDxf.AciColor?text=color" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public AciColor Color { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property Color As AciColor
+  overload: netDxf.Entities.Attribute.Color*
+- uid: netDxf.Entities.Attribute.Layer
+  commentId: P:netDxf.Entities.Attribute.Layer
+  id: Layer
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Layer
+  nameWithType: Attribute.Layer
+  fullName: netDxf.Entities.Attribute.Layer
+  type: Property
+  source:
+    id: Layer
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 189
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity <xref href="netDxf.Entities.Attribute.Layer?text=layer" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Layer Layer { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Layer
+    content.vb: Public Property Layer As Layer
+  overload: netDxf.Entities.Attribute.Layer*
+- uid: netDxf.Entities.Attribute.Linetype
+  commentId: P:netDxf.Entities.Attribute.Linetype
+  id: Linetype
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Linetype
+  nameWithType: Attribute.Linetype
+  fullName: netDxf.Entities.Attribute.Linetype
+  type: Property
+  source:
+    id: Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 205
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity <xref href="netDxf.Entities.Attribute.Linetype?text=line+type" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Linetype Linetype { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Public Property Linetype As Linetype
+  overload: netDxf.Entities.Attribute.Linetype*
+- uid: netDxf.Entities.Attribute.Lineweight
+  commentId: P:netDxf.Entities.Attribute.Lineweight
+  id: Lineweight
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Lineweight
+  nameWithType: Attribute.Lineweight
+  fullName: netDxf.Entities.Attribute.Lineweight
+  type: Property
+  source:
+    id: Lineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 221
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity line weight, one unit is always 1/100 mm (default = ByLayer).
+  example: []
+  syntax:
+    content: public Lineweight Lineweight { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Lineweight
+    content.vb: Public Property Lineweight As Lineweight
+  overload: netDxf.Entities.Attribute.Lineweight*
+- uid: netDxf.Entities.Attribute.Transparency
+  commentId: P:netDxf.Entities.Attribute.Transparency
+  id: Transparency
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Transparency
+  nameWithType: Attribute.Transparency
+  fullName: netDxf.Entities.Attribute.Transparency
+  type: Property
+  source:
+    id: Transparency
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 230
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: 'Gets or sets layer transparency (default: ByLayer).'
+  example: []
+  syntax:
+    content: public Transparency Transparency { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Transparency
+    content.vb: Public Property Transparency As Transparency
+  overload: netDxf.Entities.Attribute.Transparency*
+- uid: netDxf.Entities.Attribute.LinetypeScale
+  commentId: P:netDxf.Entities.Attribute.LinetypeScale
+  id: LinetypeScale
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: LinetypeScale
+  nameWithType: Attribute.LinetypeScale
+  fullName: netDxf.Entities.Attribute.LinetypeScale
+  type: Property
+  source:
+    id: LinetypeScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 242
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity line type scale.
+  example: []
+  syntax:
+    content: public double LinetypeScale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property LinetypeScale As Double
+  overload: netDxf.Entities.Attribute.LinetypeScale*
+- uid: netDxf.Entities.Attribute.IsVisible
+  commentId: P:netDxf.Entities.Attribute.IsVisible
+  id: IsVisible
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: IsVisible
+  nameWithType: Attribute.IsVisible
+  fullName: netDxf.Entities.Attribute.IsVisible
+  type: Property
+  source:
+    id: IsVisible
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 258
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or set the entity visibility.
+  example: []
+  syntax:
+    content: public bool IsVisible { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsVisible As Boolean
+  overload: netDxf.Entities.Attribute.IsVisible*
+- uid: netDxf.Entities.Attribute.Normal
+  commentId: P:netDxf.Entities.Attribute.Normal
+  id: Normal
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: Attribute.Normal
+  fullName: netDxf.Entities.Attribute.Normal
+  type: Property
+  source:
+    id: Normal
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 267
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the entity <xref href="netDxf.Vector3?text=normal" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector3 Normal { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property Normal As Vector3
+  overload: netDxf.Entities.Attribute.Normal*
+- uid: netDxf.Entities.Attribute.Owner
+  commentId: P:netDxf.Entities.Attribute.Owner
+  id: Owner
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Attribute.Owner
+  fullName: netDxf.Entities.Attribute.Owner
+  type: Property
+  source:
+    id: Owner
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 283
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the owner of the actual DXF object.
+  example: []
+  syntax:
+    content: public Insert Owner { get; }
+    parameters: []
+    return:
+      type: netDxf.Entities.Insert
+    content.vb: Public Property Owner As Insert
+  overload: netDxf.Entities.Attribute.Owner*
+- uid: netDxf.Entities.Attribute.Definition
+  commentId: P:netDxf.Entities.Attribute.Definition
+  id: Definition
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Definition
+  nameWithType: Attribute.Definition
+  fullName: netDxf.Entities.Attribute.Definition
+  type: Property
+  source:
+    id: Definition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 293
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the attribute definition.
+  remarks: If the insert attribute has no definition it will return null.
+  example: []
+  syntax:
+    content: public AttributeDefinition Definition { get; }
+    parameters: []
+    return:
+      type: netDxf.Entities.AttributeDefinition
+    content.vb: Public Property Definition As AttributeDefinition
+  overload: netDxf.Entities.Attribute.Definition*
+- uid: netDxf.Entities.Attribute.Tag
+  commentId: P:netDxf.Entities.Attribute.Tag
+  id: Tag
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Tag
+  nameWithType: Attribute.Tag
+  fullName: netDxf.Entities.Attribute.Tag
+  type: Property
+  source:
+    id: Tag
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 302
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the attribute tag.
+  example: []
+  syntax:
+    content: public string Tag { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Tag As String
+  overload: netDxf.Entities.Attribute.Tag*
+- uid: netDxf.Entities.Attribute.Height
+  commentId: P:netDxf.Entities.Attribute.Height
+  id: Height
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Attribute.Height
+  fullName: netDxf.Entities.Attribute.Height
+  type: Property
+  source:
+    id: Height
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 314
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the text height.
+  remarks: >-
+    Valid values must be greater than zero. Default: 1.0.<br />
+
+    When Alignment.Aligned is used this value is not applicable, it will be automatically adjusted so the text will fit in the specified width.
+  example: []
+  syntax:
+    content: public double Height { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Height As Double
+  overload: netDxf.Entities.Attribute.Height*
+- uid: netDxf.Entities.Attribute.Width
+  commentId: P:netDxf.Entities.Attribute.Width
+  id: Width
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Attribute.Width
+  fullName: netDxf.Entities.Attribute.Width
+  type: Property
+  source:
+    id: Width
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 331
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the text width, only applicable for text Alignment.Fit and Alignment.Align.
+  remarks: 'Valid values must be greater than zero. Default: 1.0.'
+  example: []
+  syntax:
+    content: public double Width { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Width As Double
+  overload: netDxf.Entities.Attribute.Width*
+- uid: netDxf.Entities.Attribute.WidthFactor
+  commentId: P:netDxf.Entities.Attribute.WidthFactor
+  id: WidthFactor
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: WidthFactor
+  nameWithType: Attribute.WidthFactor
+  fullName: netDxf.Entities.Attribute.WidthFactor
+  type: Property
+  source:
+    id: WidthFactor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 351
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the width factor.
+  remarks: >-
+    Valid values range from 0.01 to 100. Default: 1.0.<br />
+
+    When Alignment.Fit is used this value is not applicable, it will be automatically adjusted so the text will fit in the specified width.
+  example: []
+  syntax:
+    content: public double WidthFactor { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property WidthFactor As Double
+  overload: netDxf.Entities.Attribute.WidthFactor*
+- uid: netDxf.Entities.Attribute.ObliqueAngle
+  commentId: P:netDxf.Entities.Attribute.ObliqueAngle
+  id: ObliqueAngle
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: ObliqueAngle
+  nameWithType: Attribute.ObliqueAngle
+  fullName: netDxf.Entities.Attribute.ObliqueAngle
+  type: Property
+  source:
+    id: ObliqueAngle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 368
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the font oblique angle.
+  remarks: 'Valid values range from -85 to 85. Default: 0.0.'
+  example: []
+  syntax:
+    content: public double ObliqueAngle { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ObliqueAngle As Double
+  overload: netDxf.Entities.Attribute.ObliqueAngle*
+- uid: netDxf.Entities.Attribute.Value
+  commentId: P:netDxf.Entities.Attribute.Value
+  id: Value
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: Attribute.Value
+  fullName: netDxf.Entities.Attribute.Value
+  type: Property
+  source:
+    id: Value
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 384
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the attribute value.
+  example: []
+  syntax:
+    content: public string Value { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Value As String
+  overload: netDxf.Entities.Attribute.Value*
+- uid: netDxf.Entities.Attribute.Style
+  commentId: P:netDxf.Entities.Attribute.Style
+  id: Style
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Style
+  nameWithType: Attribute.Style
+  fullName: netDxf.Entities.Attribute.Style
+  type: Property
+  source:
+    id: Style
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 396
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the attribute text style.
+  remarks: The <xref href="netDxf.Tables.TextStyle?text=text+style" data-throw-if-not-resolved="false"></xref> defines the basic properties of the information text.
+  example: []
+  syntax:
+    content: public TextStyle Style { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.TextStyle
+    content.vb: Public Property Style As TextStyle
+  overload: netDxf.Entities.Attribute.Style*
+- uid: netDxf.Entities.Attribute.Position
+  commentId: P:netDxf.Entities.Attribute.Position
+  id: Position
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: Attribute.Position
+  fullName: netDxf.Entities.Attribute.Position
+  type: Property
+  source:
+    id: Position
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 412
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the attribute <xref href="netDxf.Vector3?text=position" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector3 Position { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property Position As Vector3
+  overload: netDxf.Entities.Attribute.Position*
+- uid: netDxf.Entities.Attribute.Flags
+  commentId: P:netDxf.Entities.Attribute.Flags
+  id: Flags
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Flags
+  nameWithType: Attribute.Flags
+  fullName: netDxf.Entities.Attribute.Flags
+  type: Property
+  source:
+    id: Flags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 421
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the attribute flags.
+  example: []
+  syntax:
+    content: public AttributeFlags Flags { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.AttributeFlags
+    content.vb: Public Property Flags As AttributeFlags
+  overload: netDxf.Entities.Attribute.Flags*
+- uid: netDxf.Entities.Attribute.Rotation
+  commentId: P:netDxf.Entities.Attribute.Rotation
+  id: Rotation
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: Attribute.Rotation
+  fullName: netDxf.Entities.Attribute.Rotation
+  type: Property
+  source:
+    id: Rotation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 430
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the attribute text rotation in degrees.
+  example: []
+  syntax:
+    content: public double Rotation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Rotation As Double
+  overload: netDxf.Entities.Attribute.Rotation*
+- uid: netDxf.Entities.Attribute.Alignment
+  commentId: P:netDxf.Entities.Attribute.Alignment
+  id: Alignment
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Alignment
+  nameWithType: Attribute.Alignment
+  fullName: netDxf.Entities.Attribute.Alignment
+  type: Property
+  source:
+    id: Alignment
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 439
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the text alignment.
+  example: []
+  syntax:
+    content: public TextAlignment Alignment { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.TextAlignment
+    content.vb: Public Property Alignment As TextAlignment
+  overload: netDxf.Entities.Attribute.Alignment*
+- uid: netDxf.Entities.Attribute.IsBackward
+  commentId: P:netDxf.Entities.Attribute.IsBackward
+  id: IsBackward
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: IsBackward
+  nameWithType: Attribute.IsBackward
+  fullName: netDxf.Entities.Attribute.IsBackward
+  type: Property
+  source:
+    id: IsBackward
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 448
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets if the attribute text is backward (mirrored in X).
+  example: []
+  syntax:
+    content: public bool IsBackward { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsBackward As Boolean
+  overload: netDxf.Entities.Attribute.IsBackward*
+- uid: netDxf.Entities.Attribute.IsUpsideDown
+  commentId: P:netDxf.Entities.Attribute.IsUpsideDown
+  id: IsUpsideDown
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: IsUpsideDown
+  nameWithType: Attribute.IsUpsideDown
+  fullName: netDxf.Entities.Attribute.IsUpsideDown
+  type: Property
+  source:
+    id: IsUpsideDown
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 457
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets if the attribute text is upside down (mirrored in Y).
+  example: []
+  syntax:
+    content: public bool IsUpsideDown { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsUpsideDown As Boolean
+  overload: netDxf.Entities.Attribute.IsUpsideDown*
+- uid: netDxf.Entities.Attribute.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Attribute.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Attribute.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Attribute.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 473
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current attribute given a 3x3 transformation matrix and a translation vector.
+  remarks: Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overload: netDxf.Entities.Attribute.TransformBy*
+- uid: netDxf.Entities.Attribute.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.Attribute.TransformBy(netDxf.Matrix4)
+  id: TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix4)
+  nameWithType: Attribute.TransformBy(Matrix4)
+  fullName: netDxf.Entities.Attribute.TransformBy(netDxf.Matrix4)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 653
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 4x4 transformation matrix.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public void TransformBy(Matrix4 transformation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix4
+      description: Transformation matrix.
+    content.vb: Public Sub TransformBy(transformation As Matrix4)
+  overload: netDxf.Entities.Attribute.TransformBy*
+- uid: netDxf.Entities.Attribute.Clone
+  commentId: M:netDxf.Entities.Attribute.Clone
+  id: Clone
+  parent: netDxf.Entities.Attribute
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Attribute.Clone()
+  fullName: netDxf.Entities.Attribute.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Attribute.cs
+    startLine: 671
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Attribute that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+      description: A new Attribute that is a copy of this instance.
+    content.vb: Public Function Clone() As Object
+  overload: netDxf.Entities.Attribute.Clone*
+  implements:
+  - System.ICloneable.Clone
+references:
+- uid: netDxf.Entities.Insert
+  commentId: T:netDxf.Entities.Insert
+  parent: netDxf.Entities
+  href: netDxf.Entities.Insert.html
+  name: Insert
+  nameWithType: Insert
+  fullName: netDxf.Entities.Insert
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: netDxf.DxfObject.ToString
+  commentId: M:netDxf.DxfObject.ToString
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  name: ToString()
+  nameWithType: DxfObject.ToString()
+  fullName: netDxf.DxfObject.ToString()
+  spec.csharp:
+  - uid: netDxf.DxfObject.ToString
+    name: ToString
+    href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.ToString
+    name: ToString
+    href: netDxf.DxfObject.html#netDxf_DxfObject_ToString
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.Attribute.LayerChangedEventHandler
+  commentId: T:netDxf.Entities.Attribute.LayerChangedEventHandler
+  parent: netDxf.Entities
+  href: netDxf.Entities.Attribute.html
+  name: Attribute.LayerChangedEventHandler
+  nameWithType: Attribute.LayerChangedEventHandler
+  fullName: netDxf.Entities.Attribute.LayerChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.LayerChangedEventHandler
+    name: LayerChangedEventHandler
+    href: netDxf.Entities.Attribute.LayerChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.LayerChangedEventHandler
+    name: LayerChangedEventHandler
+    href: netDxf.Entities.Attribute.LayerChangedEventHandler.html
+- uid: netDxf.Entities.Attribute.OnLayerChangedEvent*
+  commentId: Overload:netDxf.Entities.Attribute.OnLayerChangedEvent
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent
+  nameWithType: Attribute.OnLayerChangedEvent
+  fullName: netDxf.Entities.Attribute.OnLayerChangedEvent
+- uid: netDxf.Tables.Layer
+  commentId: T:netDxf.Tables.Layer
+  parent: netDxf.Tables
+  href: netDxf.Tables.Layer.html
+  name: Layer
+  nameWithType: Layer
+  fullName: netDxf.Tables.Layer
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+  commentId: T:netDxf.Entities.Attribute.LinetypeChangedEventHandler
+  parent: netDxf.Entities
+  href: netDxf.Entities.Attribute.html
+  name: Attribute.LinetypeChangedEventHandler
+  nameWithType: Attribute.LinetypeChangedEventHandler
+  fullName: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Entities.Attribute.LinetypeChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Entities.Attribute.LinetypeChangedEventHandler.html
+- uid: netDxf.Entities.Attribute.OnLinetypeChangedEvent*
+  commentId: Overload:netDxf.Entities.Attribute.OnLinetypeChangedEvent
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent
+  nameWithType: Attribute.OnLinetypeChangedEvent
+  fullName: netDxf.Entities.Attribute.OnLinetypeChangedEvent
+- uid: netDxf.Tables.Linetype
+  commentId: T:netDxf.Tables.Linetype
+  parent: netDxf.Tables
+  href: netDxf.Tables.Linetype.html
+  name: Linetype
+  nameWithType: Linetype
+  fullName: netDxf.Tables.Linetype
+- uid: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+  commentId: T:netDxf.Entities.Attribute.TextStyleChangedEventHandler
+  parent: netDxf.Entities
+  href: netDxf.Entities.Attribute.html
+  name: Attribute.TextStyleChangedEventHandler
+  nameWithType: Attribute.TextStyleChangedEventHandler
+  fullName: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+    name: TextStyleChangedEventHandler
+    href: netDxf.Entities.Attribute.TextStyleChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    href: netDxf.Entities.Attribute.html
+  - name: .
+  - uid: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+    name: TextStyleChangedEventHandler
+    href: netDxf.Entities.Attribute.TextStyleChangedEventHandler.html
+- uid: netDxf.Entities.Attribute.OnTextStyleChangedEvent*
+  commentId: Overload:netDxf.Entities.Attribute.OnTextStyleChangedEvent
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_OnTextStyleChangedEvent_netDxf_Tables_TextStyle_netDxf_Tables_TextStyle_
+  name: OnTextStyleChangedEvent
+  nameWithType: Attribute.OnTextStyleChangedEvent
+  fullName: netDxf.Entities.Attribute.OnTextStyleChangedEvent
+- uid: netDxf.Tables.TextStyle
+  commentId: T:netDxf.Tables.TextStyle
+  parent: netDxf.Tables
+  href: netDxf.Tables.TextStyle.html
+  name: TextStyle
+  nameWithType: TextStyle
+  fullName: netDxf.Tables.TextStyle
+- uid: netDxf.Entities.AttributeDefinition
+  commentId: T:netDxf.Entities.AttributeDefinition
+  parent: netDxf.Entities
+  href: netDxf.Entities.AttributeDefinition.html
+  name: AttributeDefinition
+  nameWithType: AttributeDefinition
+  fullName: netDxf.Entities.AttributeDefinition
+- uid: netDxf.Entities.Attribute.#ctor*
+  commentId: Overload:netDxf.Entities.Attribute.#ctor
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute__ctor_netDxf_Entities_AttributeDefinition_
+  name: Attribute
+  nameWithType: Attribute.Attribute
+  fullName: netDxf.Entities.Attribute.Attribute
+  nameWithType.vb: Attribute.New
+  fullName.vb: netDxf.Entities.Attribute.New
+  name.vb: New
+- uid: netDxf.AciColor
+  commentId: T:netDxf.AciColor
+  parent: netDxf
+  href: netDxf.AciColor.html
+  name: AciColor
+  nameWithType: AciColor
+  fullName: netDxf.AciColor
+- uid: netDxf.Entities.Attribute.Color*
+  commentId: Overload:netDxf.Entities.Attribute.Color
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Color
+  name: Color
+  nameWithType: Attribute.Color
+  fullName: netDxf.Entities.Attribute.Color
+- uid: netDxf.Entities.Attribute.Layer
+  commentId: P:netDxf.Entities.Attribute.Layer
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Layer
+  name: Layer
+  nameWithType: Attribute.Layer
+  fullName: netDxf.Entities.Attribute.Layer
+- uid: netDxf.Entities.Attribute.Layer*
+  commentId: Overload:netDxf.Entities.Attribute.Layer
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Layer
+  name: Layer
+  nameWithType: Attribute.Layer
+  fullName: netDxf.Entities.Attribute.Layer
+- uid: netDxf.Entities.Attribute.Linetype
+  commentId: P:netDxf.Entities.Attribute.Linetype
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Linetype
+  name: Linetype
+  nameWithType: Attribute.Linetype
+  fullName: netDxf.Entities.Attribute.Linetype
+- uid: netDxf.Entities.Attribute.Linetype*
+  commentId: Overload:netDxf.Entities.Attribute.Linetype
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Linetype
+  name: Linetype
+  nameWithType: Attribute.Linetype
+  fullName: netDxf.Entities.Attribute.Linetype
+- uid: netDxf.Entities.Attribute.Lineweight*
+  commentId: Overload:netDxf.Entities.Attribute.Lineweight
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Lineweight
+  name: Lineweight
+  nameWithType: Attribute.Lineweight
+  fullName: netDxf.Entities.Attribute.Lineweight
+- uid: netDxf.Lineweight
+  commentId: T:netDxf.Lineweight
+  parent: netDxf
+  href: netDxf.Lineweight.html
+  name: Lineweight
+  nameWithType: Lineweight
+  fullName: netDxf.Lineweight
+- uid: netDxf.Entities.Attribute.Transparency*
+  commentId: Overload:netDxf.Entities.Attribute.Transparency
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Transparency
+  name: Transparency
+  nameWithType: Attribute.Transparency
+  fullName: netDxf.Entities.Attribute.Transparency
+- uid: netDxf.Transparency
+  commentId: T:netDxf.Transparency
+  parent: netDxf
+  href: netDxf.Transparency.html
+  name: Transparency
+  nameWithType: Transparency
+  fullName: netDxf.Transparency
+- uid: netDxf.Entities.Attribute.LinetypeScale*
+  commentId: Overload:netDxf.Entities.Attribute.LinetypeScale
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_LinetypeScale
+  name: LinetypeScale
+  nameWithType: Attribute.LinetypeScale
+  fullName: netDxf.Entities.Attribute.LinetypeScale
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Entities.Attribute.IsVisible*
+  commentId: Overload:netDxf.Entities.Attribute.IsVisible
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_IsVisible
+  name: IsVisible
+  nameWithType: Attribute.IsVisible
+  fullName: netDxf.Entities.Attribute.IsVisible
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Entities.Attribute.Normal*
+  commentId: Overload:netDxf.Entities.Attribute.Normal
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Normal
+  name: Normal
+  nameWithType: Attribute.Normal
+  fullName: netDxf.Entities.Attribute.Normal
+- uid: netDxf.Entities.Attribute.Owner*
+  commentId: Overload:netDxf.Entities.Attribute.Owner
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Owner
+  name: Owner
+  nameWithType: Attribute.Owner
+  fullName: netDxf.Entities.Attribute.Owner
+- uid: netDxf.Entities.Attribute.Definition*
+  commentId: Overload:netDxf.Entities.Attribute.Definition
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Definition
+  name: Definition
+  nameWithType: Attribute.Definition
+  fullName: netDxf.Entities.Attribute.Definition
+- uid: netDxf.Entities.Attribute.Tag*
+  commentId: Overload:netDxf.Entities.Attribute.Tag
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Tag
+  name: Tag
+  nameWithType: Attribute.Tag
+  fullName: netDxf.Entities.Attribute.Tag
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Entities.Attribute.Height*
+  commentId: Overload:netDxf.Entities.Attribute.Height
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Height
+  name: Height
+  nameWithType: Attribute.Height
+  fullName: netDxf.Entities.Attribute.Height
+- uid: netDxf.Entities.Attribute.Width*
+  commentId: Overload:netDxf.Entities.Attribute.Width
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Width
+  name: Width
+  nameWithType: Attribute.Width
+  fullName: netDxf.Entities.Attribute.Width
+- uid: netDxf.Entities.Attribute.WidthFactor*
+  commentId: Overload:netDxf.Entities.Attribute.WidthFactor
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_WidthFactor
+  name: WidthFactor
+  nameWithType: Attribute.WidthFactor
+  fullName: netDxf.Entities.Attribute.WidthFactor
+- uid: netDxf.Entities.Attribute.ObliqueAngle*
+  commentId: Overload:netDxf.Entities.Attribute.ObliqueAngle
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_ObliqueAngle
+  name: ObliqueAngle
+  nameWithType: Attribute.ObliqueAngle
+  fullName: netDxf.Entities.Attribute.ObliqueAngle
+- uid: netDxf.Entities.Attribute.Value*
+  commentId: Overload:netDxf.Entities.Attribute.Value
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Value
+  name: Value
+  nameWithType: Attribute.Value
+  fullName: netDxf.Entities.Attribute.Value
+- uid: netDxf.Entities.Attribute.Style*
+  commentId: Overload:netDxf.Entities.Attribute.Style
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Style
+  name: Style
+  nameWithType: Attribute.Style
+  fullName: netDxf.Entities.Attribute.Style
+- uid: netDxf.Entities.Attribute.Position*
+  commentId: Overload:netDxf.Entities.Attribute.Position
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Position
+  name: Position
+  nameWithType: Attribute.Position
+  fullName: netDxf.Entities.Attribute.Position
+- uid: netDxf.Entities.Attribute.Flags*
+  commentId: Overload:netDxf.Entities.Attribute.Flags
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Flags
+  name: Flags
+  nameWithType: Attribute.Flags
+  fullName: netDxf.Entities.Attribute.Flags
+- uid: netDxf.Entities.AttributeFlags
+  commentId: T:netDxf.Entities.AttributeFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.AttributeFlags.html
+  name: AttributeFlags
+  nameWithType: AttributeFlags
+  fullName: netDxf.Entities.AttributeFlags
+- uid: netDxf.Entities.Attribute.Rotation*
+  commentId: Overload:netDxf.Entities.Attribute.Rotation
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Rotation
+  name: Rotation
+  nameWithType: Attribute.Rotation
+  fullName: netDxf.Entities.Attribute.Rotation
+- uid: netDxf.Entities.Attribute.Alignment*
+  commentId: Overload:netDxf.Entities.Attribute.Alignment
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Alignment
+  name: Alignment
+  nameWithType: Attribute.Alignment
+  fullName: netDxf.Entities.Attribute.Alignment
+- uid: netDxf.Entities.TextAlignment
+  commentId: T:netDxf.Entities.TextAlignment
+  parent: netDxf.Entities
+  href: netDxf.Entities.TextAlignment.html
+  name: TextAlignment
+  nameWithType: TextAlignment
+  fullName: netDxf.Entities.TextAlignment
+- uid: netDxf.Entities.Attribute.IsBackward*
+  commentId: Overload:netDxf.Entities.Attribute.IsBackward
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_IsBackward
+  name: IsBackward
+  nameWithType: Attribute.IsBackward
+  fullName: netDxf.Entities.Attribute.IsBackward
+- uid: netDxf.Entities.Attribute.IsUpsideDown*
+  commentId: Overload:netDxf.Entities.Attribute.IsUpsideDown
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_IsUpsideDown
+  name: IsUpsideDown
+  nameWithType: Attribute.IsUpsideDown
+  fullName: netDxf.Entities.Attribute.IsUpsideDown
+- uid: netDxf.Entities.Attribute.TransformBy*
+  commentId: Overload:netDxf.Entities.Attribute.TransformBy
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Attribute.TransformBy
+  fullName: netDxf.Entities.Attribute.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Matrix4
+  commentId: T:netDxf.Matrix4
+  parent: netDxf
+  href: netDxf.Matrix4.html
+  name: Matrix4
+  nameWithType: Matrix4
+  fullName: netDxf.Matrix4
+- uid: netDxf.Entities.Attribute.Clone*
+  commentId: Overload:netDxf.Entities.Attribute.Clone
+  href: netDxf.Entities.Attribute.html#netDxf_Entities_Attribute_Clone
+  name: Clone
+  nameWithType: Attribute.Clone
+  fullName: netDxf.Entities.Attribute.Clone
+- uid: System.ICloneable.Clone
+  commentId: M:System.ICloneable.Clone
+  parent: System.ICloneable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  name: Clone()
+  nameWithType: ICloneable.Clone()
+  fullName: System.ICloneable.Clone()
+  spec.csharp:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )

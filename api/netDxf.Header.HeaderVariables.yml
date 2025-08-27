@@ -1,0 +1,2524 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Header.HeaderVariables
+  commentId: T:netDxf.Header.HeaderVariables
+  id: HeaderVariables
+  parent: netDxf.Header
+  children:
+  - netDxf.Header.HeaderVariables.#ctor
+  - netDxf.Header.HeaderVariables.AUnits
+  - netDxf.Header.HeaderVariables.AUprec
+  - netDxf.Header.HeaderVariables.AcadVer
+  - netDxf.Header.HeaderVariables.AddCustomVariable(netDxf.Header.HeaderVariable)
+  - netDxf.Header.HeaderVariables.Angbase
+  - netDxf.Header.HeaderVariables.Angdir
+  - netDxf.Header.HeaderVariables.AttMode
+  - netDxf.Header.HeaderVariables.CLayer
+  - netDxf.Header.HeaderVariables.CMLJust
+  - netDxf.Header.HeaderVariables.CMLScale
+  - netDxf.Header.HeaderVariables.CMLStyle
+  - netDxf.Header.HeaderVariables.CeColor
+  - netDxf.Header.HeaderVariables.CeLtScale
+  - netDxf.Header.HeaderVariables.CeLtype
+  - netDxf.Header.HeaderVariables.CeLweight
+  - netDxf.Header.HeaderVariables.ClearCustomVariables
+  - netDxf.Header.HeaderVariables.ContainsCustomVariable(System.String)
+  - netDxf.Header.HeaderVariables.CurrentUCS
+  - netDxf.Header.HeaderVariables.CustomNames
+  - netDxf.Header.HeaderVariables.CustomValues
+  - netDxf.Header.HeaderVariables.DimStyle
+  - netDxf.Header.HeaderVariables.DwgCodePage
+  - netDxf.Header.HeaderVariables.Extnames
+  - netDxf.Header.HeaderVariables.HandleSeed
+  - netDxf.Header.HeaderVariables.InsBase
+  - netDxf.Header.HeaderVariables.InsUnits
+  - netDxf.Header.HeaderVariables.KnownNames
+  - netDxf.Header.HeaderVariables.KnownValues
+  - netDxf.Header.HeaderVariables.LUnits
+  - netDxf.Header.HeaderVariables.LUprec
+  - netDxf.Header.HeaderVariables.LastSavedBy
+  - netDxf.Header.HeaderVariables.LtScale
+  - netDxf.Header.HeaderVariables.LwDisplay
+  - netDxf.Header.HeaderVariables.MirrText
+  - netDxf.Header.HeaderVariables.PLineGen
+  - netDxf.Header.HeaderVariables.PdMode
+  - netDxf.Header.HeaderVariables.PdSize
+  - netDxf.Header.HeaderVariables.PsLtScale
+  - netDxf.Header.HeaderVariables.RemoveCustomVariable(System.String)
+  - netDxf.Header.HeaderVariables.SplineSegs
+  - netDxf.Header.HeaderVariables.SurfU
+  - netDxf.Header.HeaderVariables.SurfV
+  - netDxf.Header.HeaderVariables.TdCreate
+  - netDxf.Header.HeaderVariables.TdUpdate
+  - netDxf.Header.HeaderVariables.TdinDwg
+  - netDxf.Header.HeaderVariables.TduCreate
+  - netDxf.Header.HeaderVariables.TduUpdate
+  - netDxf.Header.HeaderVariables.TextSize
+  - netDxf.Header.HeaderVariables.TextStyle
+  - netDxf.Header.HeaderVariables.TryGetCustomVariable(System.String,netDxf.Header.HeaderVariable@)
+  langs:
+  - csharp
+  - vb
+  name: HeaderVariables
+  nameWithType: HeaderVariables
+  fullName: netDxf.Header.HeaderVariables
+  type: Class
+  source:
+    id: HeaderVariables
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 37
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Represents the header variables of a DXF document.
+  example: []
+  syntax:
+    content: public class HeaderVariables
+    content.vb: Public Class HeaderVariables
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Header.HeaderVariables.#ctor
+  commentId: M:netDxf.Header.HeaderVariables.#ctor
+  id: '#ctor'
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: HeaderVariables()
+  nameWithType: HeaderVariables.HeaderVariables()
+  fullName: netDxf.Header.HeaderVariables.HeaderVariables()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Initializes a new instance of the <code>SystemVariables</code>.
+  remarks: The default values are the same ones that are apply to a new AutoCad drawing.
+  example: []
+  syntax:
+    content: public HeaderVariables()
+    content.vb: Public Sub New()
+  overload: netDxf.Header.HeaderVariables.#ctor*
+  nameWithType.vb: HeaderVariables.New()
+  fullName.vb: netDxf.Header.HeaderVariables.New()
+  name.vb: New()
+- uid: netDxf.Header.HeaderVariables.AcadVer
+  commentId: P:netDxf.Header.HeaderVariables.AcadVer
+  id: AcadVer
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: AcadVer
+  nameWithType: HeaderVariables.AcadVer
+  fullName: netDxf.Header.HeaderVariables.AcadVer
+  type: Property
+  source:
+    id: AcadVer
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 112
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: The AutoCAD drawing database version number.
+  remarks: Only AutoCad2000 and higher DXF versions are supported.
+  example: []
+  syntax:
+    content: public DxfVersion AcadVer { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: Public Property AcadVer As DxfVersion
+  overload: netDxf.Header.HeaderVariables.AcadVer*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: Only AutoCad2000 and higher DXF versions are supported.
+- uid: netDxf.Header.HeaderVariables.HandleSeed
+  commentId: P:netDxf.Header.HeaderVariables.HandleSeed
+  id: HandleSeed
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: HandleSeed
+  nameWithType: HeaderVariables.HandleSeed
+  fullName: netDxf.Header.HeaderVariables.HandleSeed
+  type: Property
+  source:
+    id: HandleSeed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 128
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Next available handle.
+  example: []
+  syntax:
+    content: public string HandleSeed { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property HandleSeed As String
+  overload: netDxf.Header.HeaderVariables.HandleSeed*
+- uid: netDxf.Header.HeaderVariables.Angbase
+  commentId: P:netDxf.Header.HeaderVariables.Angbase
+  id: Angbase
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: Angbase
+  nameWithType: HeaderVariables.Angbase
+  fullName: netDxf.Header.HeaderVariables.Angbase
+  type: Property
+  source:
+    id: Angbase
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 138
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Angle 0 base.
+  remarks: 'Default value: 0.'
+  example: []
+  syntax:
+    content: public double Angbase { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Angbase As Double
+  overload: netDxf.Header.HeaderVariables.Angbase*
+- uid: netDxf.Header.HeaderVariables.Angdir
+  commentId: P:netDxf.Header.HeaderVariables.Angdir
+  id: Angdir
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: Angdir
+  nameWithType: HeaderVariables.Angdir
+  fullName: netDxf.Header.HeaderVariables.Angdir
+  type: Property
+  source:
+    id: Angdir
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 148
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: The angle direction.
+  remarks: 'Default value: CCW.'
+  example: []
+  syntax:
+    content: public AngleDirection Angdir { get; }
+    parameters: []
+    return:
+      type: netDxf.Units.AngleDirection
+    content.vb: Public Property Angdir As AngleDirection
+  overload: netDxf.Header.HeaderVariables.Angdir*
+- uid: netDxf.Header.HeaderVariables.AttMode
+  commentId: P:netDxf.Header.HeaderVariables.AttMode
+  id: AttMode
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: AttMode
+  nameWithType: HeaderVariables.AttMode
+  fullName: netDxf.Header.HeaderVariables.AttMode
+  type: Property
+  source:
+    id: AttMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 158
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Attribute visibility.
+  remarks: 'Default value: Normal.'
+  example: []
+  syntax:
+    content: public AttMode AttMode { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Header.AttMode
+    content.vb: Public Property AttMode As AttMode
+  overload: netDxf.Header.HeaderVariables.AttMode*
+- uid: netDxf.Header.HeaderVariables.AUnits
+  commentId: P:netDxf.Header.HeaderVariables.AUnits
+  id: AUnits
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: AUnits
+  nameWithType: HeaderVariables.AUnits
+  fullName: netDxf.Header.HeaderVariables.AUnits
+  type: Property
+  source:
+    id: AUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 168
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Units format for angles.
+  remarks: 'Default value: Decimal degrees.'
+  example: []
+  syntax:
+    content: public AngleUnitType AUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.AngleUnitType
+    content.vb: Public Property AUnits As AngleUnitType
+  overload: netDxf.Header.HeaderVariables.AUnits*
+- uid: netDxf.Header.HeaderVariables.AUprec
+  commentId: P:netDxf.Header.HeaderVariables.AUprec
+  id: AUprec
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: AUprec
+  nameWithType: HeaderVariables.AUprec
+  fullName: netDxf.Header.HeaderVariables.AUprec
+  type: Property
+  source:
+    id: AUprec
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 178
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Units precision for angles.
+  remarks: 'Valid values are integers from 0 to 8. Default value: 0.'
+  example: []
+  syntax:
+    content: public short AUprec { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property AUprec As Short
+  overload: netDxf.Header.HeaderVariables.AUprec*
+- uid: netDxf.Header.HeaderVariables.CeColor
+  commentId: P:netDxf.Header.HeaderVariables.CeColor
+  id: CeColor
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CeColor
+  nameWithType: HeaderVariables.CeColor
+  fullName: netDxf.Header.HeaderVariables.CeColor
+  type: Property
+  source:
+    id: CeColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 195
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current entity color.
+  remarks: 'Default value: 256 (ByLayer). This header variable only supports indexed colors.'
+  example: []
+  syntax:
+    content: public AciColor CeColor { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property CeColor As AciColor
+  overload: netDxf.Header.HeaderVariables.CeColor*
+- uid: netDxf.Header.HeaderVariables.CeLtScale
+  commentId: P:netDxf.Header.HeaderVariables.CeLtScale
+  id: CeLtScale
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CeLtScale
+  nameWithType: HeaderVariables.CeLtScale
+  fullName: netDxf.Header.HeaderVariables.CeLtScale
+  type: Property
+  source:
+    id: CeLtScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 212
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current entity line type scale.
+  remarks: 'Default value: 1.0.'
+  example: []
+  syntax:
+    content: public double CeLtScale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property CeLtScale As Double
+  overload: netDxf.Header.HeaderVariables.CeLtScale*
+- uid: netDxf.Header.HeaderVariables.CeLweight
+  commentId: P:netDxf.Header.HeaderVariables.CeLweight
+  id: CeLweight
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CeLweight
+  nameWithType: HeaderVariables.CeLweight
+  fullName: netDxf.Header.HeaderVariables.CeLweight
+  type: Property
+  source:
+    id: CeLweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 229
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current entity line weight.
+  remarks: 'Default value: -1 (ByLayer).'
+  example: []
+  syntax:
+    content: public Lineweight CeLweight { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Lineweight
+    content.vb: Public Property CeLweight As Lineweight
+  overload: netDxf.Header.HeaderVariables.CeLweight*
+- uid: netDxf.Header.HeaderVariables.CeLtype
+  commentId: P:netDxf.Header.HeaderVariables.CeLtype
+  id: CeLtype
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CeLtype
+  nameWithType: HeaderVariables.CeLtype
+  fullName: netDxf.Header.HeaderVariables.CeLtype
+  type: Property
+  source:
+    id: CeLtype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 239
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current entity line type name.
+  remarks: 'Default value: ByLayer.'
+  example: []
+  syntax:
+    content: public string CeLtype { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CeLtype As String
+  overload: netDxf.Header.HeaderVariables.CeLtype*
+- uid: netDxf.Header.HeaderVariables.CLayer
+  commentId: P:netDxf.Header.HeaderVariables.CLayer
+  id: CLayer
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CLayer
+  nameWithType: HeaderVariables.CLayer
+  fullName: netDxf.Header.HeaderVariables.CLayer
+  type: Property
+  source:
+    id: CLayer
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 256
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current layer name.
+  remarks: 'Default value: 0.'
+  example: []
+  syntax:
+    content: public string CLayer { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CLayer As String
+  overload: netDxf.Header.HeaderVariables.CLayer*
+- uid: netDxf.Header.HeaderVariables.CMLJust
+  commentId: P:netDxf.Header.HeaderVariables.CMLJust
+  id: CMLJust
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CMLJust
+  nameWithType: HeaderVariables.CMLJust
+  fullName: netDxf.Header.HeaderVariables.CMLJust
+  type: Property
+  source:
+    id: CMLJust
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 273
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current multiline justification.
+  remarks: 'Default value: 0 (Top).'
+  example: []
+  syntax:
+    content: public MLineJustification CMLJust { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.MLineJustification
+    content.vb: Public Property CMLJust As MLineJustification
+  overload: netDxf.Header.HeaderVariables.CMLJust*
+- uid: netDxf.Header.HeaderVariables.CMLScale
+  commentId: P:netDxf.Header.HeaderVariables.CMLScale
+  id: CMLScale
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CMLScale
+  nameWithType: HeaderVariables.CMLScale
+  fullName: netDxf.Header.HeaderVariables.CMLScale
+  type: Property
+  source:
+    id: CMLScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 283
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current multiline scale.
+  remarks: 'Default value: 20.'
+  example: []
+  syntax:
+    content: public double CMLScale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property CMLScale As Double
+  overload: netDxf.Header.HeaderVariables.CMLScale*
+- uid: netDxf.Header.HeaderVariables.CMLStyle
+  commentId: P:netDxf.Header.HeaderVariables.CMLStyle
+  id: CMLStyle
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CMLStyle
+  nameWithType: HeaderVariables.CMLStyle
+  fullName: netDxf.Header.HeaderVariables.CMLStyle
+  type: Property
+  source:
+    id: CMLStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 293
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current multiline style.
+  remarks: 'Default value: Standard.'
+  example: []
+  syntax:
+    content: public string CMLStyle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CMLStyle As String
+  overload: netDxf.Header.HeaderVariables.CMLStyle*
+- uid: netDxf.Header.HeaderVariables.DimStyle
+  commentId: P:netDxf.Header.HeaderVariables.DimStyle
+  id: DimStyle
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: DimStyle
+  nameWithType: HeaderVariables.DimStyle
+  fullName: netDxf.Header.HeaderVariables.DimStyle
+  type: Property
+  source:
+    id: DimStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 310
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current dimension style.
+  remarks: 'Default value: Standard.'
+  example: []
+  syntax:
+    content: public string DimStyle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DimStyle As String
+  overload: netDxf.Header.HeaderVariables.DimStyle*
+- uid: netDxf.Header.HeaderVariables.TextSize
+  commentId: P:netDxf.Header.HeaderVariables.TextSize
+  id: TextSize
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TextSize
+  nameWithType: HeaderVariables.TextSize
+  fullName: netDxf.Header.HeaderVariables.TextSize
+  type: Property
+  source:
+    id: TextSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 327
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Default text height.
+  remarks: 'Default value: 2.5.'
+  example: []
+  syntax:
+    content: public double TextSize { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TextSize As Double
+  overload: netDxf.Header.HeaderVariables.TextSize*
+- uid: netDxf.Header.HeaderVariables.TextStyle
+  commentId: P:netDxf.Header.HeaderVariables.TextStyle
+  id: TextStyle
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TextStyle
+  nameWithType: HeaderVariables.TextStyle
+  fullName: netDxf.Header.HeaderVariables.TextStyle
+  type: Property
+  source:
+    id: TextStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 344
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Current text style.
+  remarks: 'Default value: Standard.'
+  example: []
+  syntax:
+    content: public string TextStyle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TextStyle As String
+  overload: netDxf.Header.HeaderVariables.TextStyle*
+- uid: netDxf.Header.HeaderVariables.LUnits
+  commentId: P:netDxf.Header.HeaderVariables.LUnits
+  id: LUnits
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: LUnits
+  nameWithType: HeaderVariables.LUnits
+  fullName: netDxf.Header.HeaderVariables.LUnits
+  type: Property
+  source:
+    id: LUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 364
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Units format for coordinates and distances.
+  remarks: >-
+    Default value: Decimal.<br />
+
+    If the LUnits is set to Architectural or Engineering the InsUnits variable will be set to Inches automatically.
+  example: []
+  syntax:
+    content: public LinearUnitType LUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.LinearUnitType
+    content.vb: Public Property LUnits As LinearUnitType
+  overload: netDxf.Header.HeaderVariables.LUnits*
+- uid: netDxf.Header.HeaderVariables.LUprec
+  commentId: P:netDxf.Header.HeaderVariables.LUprec
+  id: LUprec
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: LUprec
+  nameWithType: HeaderVariables.LUprec
+  fullName: netDxf.Header.HeaderVariables.LUprec
+  type: Property
+  source:
+    id: LUprec
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 381
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Units precision for coordinates and distances.
+  remarks: 'Valid values are integers from 0 to 8. Default value: 4.'
+  example: []
+  syntax:
+    content: public short LUprec { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property LUprec As Short
+  overload: netDxf.Header.HeaderVariables.LUprec*
+- uid: netDxf.Header.HeaderVariables.DwgCodePage
+  commentId: P:netDxf.Header.HeaderVariables.DwgCodePage
+  id: DwgCodePage
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: DwgCodePage
+  nameWithType: HeaderVariables.DwgCodePage
+  fullName: netDxf.Header.HeaderVariables.DwgCodePage
+  type: Property
+  source:
+    id: DwgCodePage
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 397
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Drawing code page; set to the system code page when a new drawing is created, but not otherwise maintained by AutoCAD.
+  example: []
+  syntax:
+    content: public string DwgCodePage { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DwgCodePage As String
+  overload: netDxf.Header.HeaderVariables.DwgCodePage*
+- uid: netDxf.Header.HeaderVariables.Extnames
+  commentId: P:netDxf.Header.HeaderVariables.Extnames
+  id: Extnames
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: Extnames
+  nameWithType: HeaderVariables.Extnames
+  fullName: netDxf.Header.HeaderVariables.Extnames
+  type: Property
+  source:
+    id: Extnames
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 417
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls symbol table naming.
+  remarks: >-
+    Default value: 1.<br />
+
+    Controls symbol table naming:<br />
+
+    0 = Release 14 compatibility. Limits names to 31 characters in length.<br />
+
+    Names can include the letters A to Z, the numerals 0 to 9,
+
+    and the special characters dollar sign ($), underscore (_), and hyphen (-).<br />
+
+    1 = AutoCAD 2000.<br />
+
+    Names can be up to 255 characters in length, 
+
+    and can include the letters A to Z, the numerals 0 to 9, spaces, 
+
+    and any special characters not used for other purposes by Microsoft Windows and AutoCAD.
+  example: []
+  syntax:
+    content: public bool Extnames { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Extnames As Boolean
+  overload: netDxf.Header.HeaderVariables.Extnames*
+- uid: netDxf.Header.HeaderVariables.InsBase
+  commentId: P:netDxf.Header.HeaderVariables.InsBase
+  id: InsBase
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: InsBase
+  nameWithType: HeaderVariables.InsBase
+  fullName: netDxf.Header.HeaderVariables.InsBase
+  type: Property
+  source:
+    id: InsBase
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 429
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Insertion base point for the current drawing.
+  remarks: When you insert or externally reference the current drawing into other drawings, this base point is used as the insertion base point.
+  example: []
+  syntax:
+    content: public Vector3 InsBase { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property InsBase As Vector3
+  overload: netDxf.Header.HeaderVariables.InsBase*
+- uid: netDxf.Header.HeaderVariables.InsUnits
+  commentId: P:netDxf.Header.HeaderVariables.InsUnits
+  id: InsUnits
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: InsUnits
+  nameWithType: HeaderVariables.InsUnits
+  fullName: netDxf.Header.HeaderVariables.InsUnits
+  type: Property
+  source:
+    id: InsUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 442
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Specifies a drawing units value for automatic scaling of blocks, images, or xRefs when inserted or attached to a drawing.
+  remarks: >-
+    Default value: Unitless.<br />
+
+    It is not recommend to change this value, if the LUnits variable has been set to Architectural or Engineering, they require the InsUnits to be set at Inches.
+  example: []
+  syntax:
+    content: public DrawingUnits InsUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.DrawingUnits
+    content.vb: Public Property InsUnits As DrawingUnits
+  overload: netDxf.Header.HeaderVariables.InsUnits*
+- uid: netDxf.Header.HeaderVariables.LastSavedBy
+  commentId: P:netDxf.Header.HeaderVariables.LastSavedBy
+  id: LastSavedBy
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: LastSavedBy
+  nameWithType: HeaderVariables.LastSavedBy
+  fullName: netDxf.Header.HeaderVariables.LastSavedBy
+  type: Property
+  source:
+    id: LastSavedBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 455
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: User name that saved the file.
+  remarks: >-
+    By default it uses the user name of the person who is currently logged on to the Windows operating system.<br />
+
+    This header variable is not compatible with AutoCad2000 or lower versions.
+  example: []
+  syntax:
+    content: public string LastSavedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LastSavedBy As String
+  overload: netDxf.Header.HeaderVariables.LastSavedBy*
+- uid: netDxf.Header.HeaderVariables.LtScale
+  commentId: P:netDxf.Header.HeaderVariables.LtScale
+  id: LtScale
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: LtScale
+  nameWithType: HeaderVariables.LtScale
+  fullName: netDxf.Header.HeaderVariables.LtScale
+  type: Property
+  source:
+    id: LtScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 465
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Global line type scale.
+  remarks: 'Default value: 1.0.'
+  example: []
+  syntax:
+    content: public double LtScale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property LtScale As Double
+  overload: netDxf.Header.HeaderVariables.LtScale*
+- uid: netDxf.Header.HeaderVariables.LwDisplay
+  commentId: P:netDxf.Header.HeaderVariables.LwDisplay
+  id: LwDisplay
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: LwDisplay
+  nameWithType: HeaderVariables.LwDisplay
+  fullName: netDxf.Header.HeaderVariables.LwDisplay
+  type: Property
+  source:
+    id: LwDisplay
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 486
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls the display of line weights on the Model or Layout tab.
+  remarks: >-
+    Default value: false.<br />
+
+    false = Line weight is not displayed.<br />
+
+    true = Line weight is displayed.<br />
+  example: []
+  syntax:
+    content: public bool LwDisplay { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property LwDisplay As Boolean
+  overload: netDxf.Header.HeaderVariables.LwDisplay*
+- uid: netDxf.Header.HeaderVariables.MirrText
+  commentId: P:netDxf.Header.HeaderVariables.MirrText
+  id: MirrText
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: MirrText
+  nameWithType: HeaderVariables.MirrText
+  fullName: netDxf.Header.HeaderVariables.MirrText
+  type: Property
+  source:
+    id: MirrText
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 495
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls if the text will be mirrored during a symmetry.
+  example: []
+  syntax:
+    content: public bool MirrText { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property MirrText As Boolean
+  overload: netDxf.Header.HeaderVariables.MirrText*
+- uid: netDxf.Header.HeaderVariables.PdMode
+  commentId: P:netDxf.Header.HeaderVariables.PdMode
+  id: PdMode
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: PdMode
+  nameWithType: HeaderVariables.PdMode
+  fullName: netDxf.Header.HeaderVariables.PdMode
+  type: Property
+  source:
+    id: PdMode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 505
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls the <xref href="netDxf.Header.PointShape?text=shape" data-throw-if-not-resolved="false"></xref> to draw a point entity.
+  remarks: 'Default value: PointShape.Dot.'
+  example: []
+  syntax:
+    content: public PointShape PdMode { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Header.PointShape
+    content.vb: Public Property PdMode As PointShape
+  overload: netDxf.Header.HeaderVariables.PdMode*
+- uid: netDxf.Header.HeaderVariables.PdSize
+  commentId: P:netDxf.Header.HeaderVariables.PdSize
+  id: PdSize
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: PdSize
+  nameWithType: HeaderVariables.PdSize
+  fullName: netDxf.Header.HeaderVariables.PdSize
+  type: Property
+  source:
+    id: PdSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 520
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls the size of the point figures, except for PDMODE values 0 (Dot) and 1 (Empty).
+  remarks: >-
+    Default value: 0.<br />
+
+    A setting of 0 generates the point at 5 percent of the drawing area height.<br />
+
+    A positive PDSIZE value specifies an absolute size for the point figures.<br />
+
+    A negative value is interpreted as a percentage of the viewport size. <br />
+  example: []
+  syntax:
+    content: public double PdSize { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property PdSize As Double
+  overload: netDxf.Header.HeaderVariables.PdSize*
+- uid: netDxf.Header.HeaderVariables.PLineGen
+  commentId: P:netDxf.Header.HeaderVariables.PLineGen
+  id: PLineGen
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: PLineGen
+  nameWithType: HeaderVariables.PLineGen
+  fullName: netDxf.Header.HeaderVariables.PLineGen
+  type: Property
+  source:
+    id: PLineGen
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 534
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Governs the generation of line type patterns around the vertexes of a 2D polyline.
+  remarks: >-
+    Default value: 0.<br />
+
+    1 = Line type is generated in a continuous pattern around vertexes of the polyline.<br />
+
+    0 = Each segment of the polyline starts and ends with a dash.
+  example: []
+  syntax:
+    content: public short PLineGen { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property PLineGen As Short
+  overload: netDxf.Header.HeaderVariables.PLineGen*
+- uid: netDxf.Header.HeaderVariables.PsLtScale
+  commentId: P:netDxf.Header.HeaderVariables.PsLtScale
+  id: PsLtScale
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: PsLtScale
+  nameWithType: HeaderVariables.PsLtScale
+  fullName: netDxf.Header.HeaderVariables.PsLtScale
+  type: Property
+  source:
+    id: PsLtScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 555
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Controls paper space line type scaling.
+  remarks: >-
+    Default value: 1.<br />
+
+    1 = No special line type scaling.<br />
+
+    0 = Viewport scaling governs line type scaling.
+  example: []
+  syntax:
+    content: public short PsLtScale { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property PsLtScale As Short
+  overload: netDxf.Header.HeaderVariables.PsLtScale*
+- uid: netDxf.Header.HeaderVariables.SplineSegs
+  commentId: P:netDxf.Header.HeaderVariables.SplineSegs
+  id: SplineSegs
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: SplineSegs
+  nameWithType: HeaderVariables.SplineSegs
+  fullName: netDxf.Header.HeaderVariables.SplineSegs
+  type: Property
+  source:
+    id: SplineSegs
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 575
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Defines number of line segments generated for smoothed polylines.
+  remarks: >-
+    Accepted values must be greater than 0. Default value: 6.<br />
+
+    Even thought AutoCad accepts negative values for the SplineSegs header values only positive ones are supported.
+  example: []
+  syntax:
+    content: public short SplineSegs { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property SplineSegs As Short
+  overload: netDxf.Header.HeaderVariables.SplineSegs*
+- uid: netDxf.Header.HeaderVariables.SurfU
+  commentId: P:netDxf.Header.HeaderVariables.SurfU
+  id: SurfU
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: SurfU
+  nameWithType: HeaderVariables.SurfU
+  fullName: netDxf.Header.HeaderVariables.SurfU
+  type: Property
+  source:
+    id: SurfU
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 595
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Define the number of segments generated for smoothed polygon meshes in U direction (local X axis).
+  remarks: >-
+    Accepted value range from 0 to 200. Default value: 6.<br />
+
+    Although in AutoCAD the header variable SurfU accepts values less than 2, the minimum vertexes generated is 3 equivalent to a SurfV value of 2.
+  example: []
+  syntax:
+    content: public short SurfU { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property SurfU As Short
+  overload: netDxf.Header.HeaderVariables.SurfU*
+- uid: netDxf.Header.HeaderVariables.SurfV
+  commentId: P:netDxf.Header.HeaderVariables.SurfV
+  id: SurfV
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: SurfV
+  nameWithType: HeaderVariables.SurfV
+  fullName: netDxf.Header.HeaderVariables.SurfV
+  type: Property
+  source:
+    id: SurfV
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 615
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Define the number of segments generated for smoothed polygon meshes in V direction (local Y axis).
+  remarks: >-
+    Accepted value range from 0 to 200. Default value: 6.<br />
+
+    Although in AutoCAD the header variable SurfV accepts values less than 2, the minimum vertexes generated is 3 equivalent to a SurfV value of 2.
+  example: []
+  syntax:
+    content: public short SurfV { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property SurfV As Short
+  overload: netDxf.Header.HeaderVariables.SurfV*
+- uid: netDxf.Header.HeaderVariables.TdCreate
+  commentId: P:netDxf.Header.HeaderVariables.TdCreate
+  id: TdCreate
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TdCreate
+  nameWithType: HeaderVariables.TdCreate
+  fullName: netDxf.Header.HeaderVariables.TdCreate
+  type: Property
+  source:
+    id: TdCreate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 634
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Local date/time of drawing creation.
+  remarks: This date/time is local to the time zone where the file was created.
+  example: []
+  syntax:
+    content: public DateTime TdCreate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property TdCreate As Date
+  overload: netDxf.Header.HeaderVariables.TdCreate*
+- uid: netDxf.Header.HeaderVariables.TduCreate
+  commentId: P:netDxf.Header.HeaderVariables.TduCreate
+  id: TduCreate
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TduCreate
+  nameWithType: HeaderVariables.TduCreate
+  fullName: netDxf.Header.HeaderVariables.TduCreate
+  type: Property
+  source:
+    id: TduCreate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 643
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Universal date/time the drawing was created.
+  example: []
+  syntax:
+    content: public DateTime TduCreate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property TduCreate As Date
+  overload: netDxf.Header.HeaderVariables.TduCreate*
+- uid: netDxf.Header.HeaderVariables.TdUpdate
+  commentId: P:netDxf.Header.HeaderVariables.TdUpdate
+  id: TdUpdate
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TdUpdate
+  nameWithType: HeaderVariables.TdUpdate
+  fullName: netDxf.Header.HeaderVariables.TdUpdate
+  type: Property
+  source:
+    id: TdUpdate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 653
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Local date/time of last drawing update.
+  remarks: This date/time is local to the time zone where the file was created.
+  example: []
+  syntax:
+    content: public DateTime TdUpdate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property TdUpdate As Date
+  overload: netDxf.Header.HeaderVariables.TdUpdate*
+- uid: netDxf.Header.HeaderVariables.TduUpdate
+  commentId: P:netDxf.Header.HeaderVariables.TduUpdate
+  id: TduUpdate
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TduUpdate
+  nameWithType: HeaderVariables.TduUpdate
+  fullName: netDxf.Header.HeaderVariables.TduUpdate
+  type: Property
+  source:
+    id: TduUpdate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 662
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Universal date/time the drawing was created.
+  example: []
+  syntax:
+    content: public DateTime TduUpdate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property TduUpdate As Date
+  overload: netDxf.Header.HeaderVariables.TduUpdate*
+- uid: netDxf.Header.HeaderVariables.TdinDwg
+  commentId: P:netDxf.Header.HeaderVariables.TdinDwg
+  id: TdinDwg
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TdinDwg
+  nameWithType: HeaderVariables.TdinDwg
+  fullName: netDxf.Header.HeaderVariables.TdinDwg
+  type: Property
+  source:
+    id: TdinDwg
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 671
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Cumulative editing time for this drawing.
+  example: []
+  syntax:
+    content: public TimeSpan TdinDwg { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property TdinDwg As TimeSpan
+  overload: netDxf.Header.HeaderVariables.TdinDwg*
+- uid: netDxf.Header.HeaderVariables.CurrentUCS
+  commentId: P:netDxf.Header.HeaderVariables.CurrentUCS
+  id: CurrentUCS
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CurrentUCS
+  nameWithType: HeaderVariables.CurrentUCS
+  fullName: netDxf.Header.HeaderVariables.CurrentUCS
+  type: Property
+  source:
+    id: CurrentUCS
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 683
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets ore sets the current/active UCS of the drawing.
+  remarks: This field encapsulates the three drawing variables UcsOrg, UcsXDir, and UcsYDir.
+  example: []
+  syntax:
+    content: public UCS CurrentUCS { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.UCS
+    content.vb: Public Property CurrentUCS As UCS
+  overload: netDxf.Header.HeaderVariables.CurrentUCS*
+- uid: netDxf.Header.HeaderVariables.KnownValues
+  commentId: M:netDxf.Header.HeaderVariables.KnownValues
+  id: KnownValues
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: KnownValues()
+  nameWithType: HeaderVariables.KnownValues()
+  fullName: netDxf.Header.HeaderVariables.KnownValues()
+  type: Method
+  source:
+    id: KnownValues
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 697
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets a collection of the known header variables.
+  example: []
+  syntax:
+    content: public List<HeaderVariable> KnownValues()
+    return:
+      type: System.Collections.Generic.List{netDxf.Header.HeaderVariable}
+      description: A list with the known header variables.
+    content.vb: Public Function KnownValues() As List(Of HeaderVariable)
+  overload: netDxf.Header.HeaderVariables.KnownValues*
+- uid: netDxf.Header.HeaderVariables.KnownNames
+  commentId: M:netDxf.Header.HeaderVariables.KnownNames
+  id: KnownNames
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: KnownNames()
+  nameWithType: HeaderVariables.KnownNames()
+  fullName: netDxf.Header.HeaderVariables.KnownNames()
+  type: Method
+  source:
+    id: KnownNames
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 706
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets a collection of the known header variables names.
+  example: []
+  syntax:
+    content: public List<string> KnownNames()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: A list with the known header variables names.
+    content.vb: Public Function KnownNames() As List(Of String)
+  overload: netDxf.Header.HeaderVariables.KnownNames*
+- uid: netDxf.Header.HeaderVariables.CustomValues
+  commentId: M:netDxf.Header.HeaderVariables.CustomValues
+  id: CustomValues
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CustomValues()
+  nameWithType: HeaderVariables.CustomValues()
+  fullName: netDxf.Header.HeaderVariables.CustomValues()
+  type: Method
+  source:
+    id: CustomValues
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 715
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets a collection of the custom header variables.
+  example: []
+  syntax:
+    content: public List<HeaderVariable> CustomValues()
+    return:
+      type: System.Collections.Generic.List{netDxf.Header.HeaderVariable}
+      description: A list with the custom header variables.
+    content.vb: Public Function CustomValues() As List(Of HeaderVariable)
+  overload: netDxf.Header.HeaderVariables.CustomValues*
+- uid: netDxf.Header.HeaderVariables.CustomNames
+  commentId: M:netDxf.Header.HeaderVariables.CustomNames
+  id: CustomNames
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: CustomNames()
+  nameWithType: HeaderVariables.CustomNames()
+  fullName: netDxf.Header.HeaderVariables.CustomNames()
+  type: Method
+  source:
+    id: CustomNames
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 724
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets a collection of the custom header variables names.
+  example: []
+  syntax:
+    content: public List<string> CustomNames()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: A list with the custom header variables names.
+    content.vb: Public Function CustomNames() As List(Of String)
+  overload: netDxf.Header.HeaderVariables.CustomNames*
+- uid: netDxf.Header.HeaderVariables.AddCustomVariable(netDxf.Header.HeaderVariable)
+  commentId: M:netDxf.Header.HeaderVariables.AddCustomVariable(netDxf.Header.HeaderVariable)
+  id: AddCustomVariable(netDxf.Header.HeaderVariable)
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: AddCustomVariable(HeaderVariable)
+  nameWithType: HeaderVariables.AddCustomVariable(HeaderVariable)
+  fullName: netDxf.Header.HeaderVariables.AddCustomVariable(netDxf.Header.HeaderVariable)
+  type: Method
+  source:
+    id: AddCustomVariable
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 737
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Adds a custom <xref href="netDxf.Header.HeaderVariable?text=HeaderVariable" data-throw-if-not-resolved="false"></xref> to the list.
+  remarks: >-
+    All header variable names must start with the character '$'.<br />
+
+    Header variable names that already exists in the known list cannot be added.
+  example: []
+  syntax:
+    content: public void AddCustomVariable(HeaderVariable variable)
+    parameters:
+    - id: variable
+      type: netDxf.Header.HeaderVariable
+      description: Header variable to add to the list.
+    content.vb: Public Sub AddCustomVariable(variable As HeaderVariable)
+  overload: netDxf.Header.HeaderVariables.AddCustomVariable*
+- uid: netDxf.Header.HeaderVariables.ContainsCustomVariable(System.String)
+  commentId: M:netDxf.Header.HeaderVariables.ContainsCustomVariable(System.String)
+  id: ContainsCustomVariable(System.String)
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: ContainsCustomVariable(string)
+  nameWithType: HeaderVariables.ContainsCustomVariable(string)
+  fullName: netDxf.Header.HeaderVariables.ContainsCustomVariable(string)
+  type: Method
+  source:
+    id: ContainsCustomVariable
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 763
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Checks if a custom <xref href="netDxf.Header.HeaderVariable?text=HeaderVariable" data-throw-if-not-resolved="false"></xref> name exits in the list.
+  remarks: The header variable name is case insensitive.
+  example: []
+  syntax:
+    content: public bool ContainsCustomVariable(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: Header variable name.
+    return:
+      type: System.Boolean
+      description: True if a header variable name exits in the list; otherwise, false.
+    content.vb: Public Function ContainsCustomVariable(name As String) As Boolean
+  overload: netDxf.Header.HeaderVariables.ContainsCustomVariable*
+  nameWithType.vb: HeaderVariables.ContainsCustomVariable(String)
+  fullName.vb: netDxf.Header.HeaderVariables.ContainsCustomVariable(String)
+  name.vb: ContainsCustomVariable(String)
+- uid: netDxf.Header.HeaderVariables.TryGetCustomVariable(System.String,netDxf.Header.HeaderVariable@)
+  commentId: M:netDxf.Header.HeaderVariables.TryGetCustomVariable(System.String,netDxf.Header.HeaderVariable@)
+  id: TryGetCustomVariable(System.String,netDxf.Header.HeaderVariable@)
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: TryGetCustomVariable(string, out HeaderVariable)
+  nameWithType: HeaderVariables.TryGetCustomVariable(string, out HeaderVariable)
+  fullName: netDxf.Header.HeaderVariables.TryGetCustomVariable(string, out netDxf.Header.HeaderVariable)
+  type: Method
+  source:
+    id: TryGetCustomVariable
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 772
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Gets the header variable associated with the specified name.
+  example: []
+  syntax:
+    content: public bool TryGetCustomVariable(string name, out HeaderVariable variable)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the header variable to get.
+    - id: variable
+      type: netDxf.Header.HeaderVariable
+      description: When this method returns, contains the header variable associated with the specified name, if the name is found; otherwise, it contains null.
+    return:
+      type: System.Boolean
+      description: True if the list contains a header variable with the specified name; otherwise, false.
+    content.vb: Public Function TryGetCustomVariable(name As String, variable As HeaderVariable) As Boolean
+  overload: netDxf.Header.HeaderVariables.TryGetCustomVariable*
+  nameWithType.vb: HeaderVariables.TryGetCustomVariable(String, HeaderVariable)
+  fullName.vb: netDxf.Header.HeaderVariables.TryGetCustomVariable(String, netDxf.Header.HeaderVariable)
+  name.vb: TryGetCustomVariable(String, HeaderVariable)
+- uid: netDxf.Header.HeaderVariables.RemoveCustomVariable(System.String)
+  commentId: M:netDxf.Header.HeaderVariables.RemoveCustomVariable(System.String)
+  id: RemoveCustomVariable(System.String)
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: RemoveCustomVariable(string)
+  nameWithType: HeaderVariables.RemoveCustomVariable(string)
+  fullName: netDxf.Header.HeaderVariables.RemoveCustomVariable(string)
+  type: Method
+  source:
+    id: RemoveCustomVariable
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 783
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Removes a custom <xref href="netDxf.Header.HeaderVariable?text=HeaderVariable" data-throw-if-not-resolved="false"></xref> from the list.
+  remarks: The header variable name is case insensitive.
+  example: []
+  syntax:
+    content: public bool RemoveCustomVariable(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: Header variable to add to the list.
+    return:
+      type: System.Boolean
+      description: True if the element is successfully found and removed; otherwise, false.
+    content.vb: Public Function RemoveCustomVariable(name As String) As Boolean
+  overload: netDxf.Header.HeaderVariables.RemoveCustomVariable*
+  nameWithType.vb: HeaderVariables.RemoveCustomVariable(String)
+  fullName.vb: netDxf.Header.HeaderVariables.RemoveCustomVariable(String)
+  name.vb: RemoveCustomVariable(String)
+- uid: netDxf.Header.HeaderVariables.ClearCustomVariables
+  commentId: M:netDxf.Header.HeaderVariables.ClearCustomVariables
+  id: ClearCustomVariables
+  parent: netDxf.Header.HeaderVariables
+  langs:
+  - csharp
+  - vb
+  name: ClearCustomVariables()
+  nameWithType: HeaderVariables.ClearCustomVariables()
+  fullName: netDxf.Header.HeaderVariables.ClearCustomVariables()
+  type: Method
+  source:
+    id: ClearCustomVariables
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/HeaderVariables.cs
+    startLine: 791
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Removes all custom <xref href="netDxf.Header.HeaderVariable?text=HeaderVariable" data-throw-if-not-resolved="false"></xref> from the list.
+  example: []
+  syntax:
+    content: public void ClearCustomVariables()
+    content.vb: Public Sub ClearCustomVariables()
+  overload: netDxf.Header.HeaderVariables.ClearCustomVariables*
+references:
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  href: netDxf.html
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Header.HeaderVariables.#ctor*
+  commentId: Overload:netDxf.Header.HeaderVariables.#ctor
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables__ctor
+  name: HeaderVariables
+  nameWithType: HeaderVariables.HeaderVariables
+  fullName: netDxf.Header.HeaderVariables.HeaderVariables
+  nameWithType.vb: HeaderVariables.New
+  fullName.vb: netDxf.Header.HeaderVariables.New
+  name.vb: New
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: netDxf.Header.HeaderVariables.AcadVer*
+  commentId: Overload:netDxf.Header.HeaderVariables.AcadVer
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_AcadVer
+  name: AcadVer
+  nameWithType: HeaderVariables.AcadVer
+  fullName: netDxf.Header.HeaderVariables.AcadVer
+- uid: netDxf.Header.DxfVersion
+  commentId: T:netDxf.Header.DxfVersion
+  parent: netDxf.Header
+  href: netDxf.Header.DxfVersion.html
+  name: DxfVersion
+  nameWithType: DxfVersion
+  fullName: netDxf.Header.DxfVersion
+- uid: netDxf.Header.HeaderVariables.HandleSeed*
+  commentId: Overload:netDxf.Header.HeaderVariables.HandleSeed
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_HandleSeed
+  name: HandleSeed
+  nameWithType: HeaderVariables.HandleSeed
+  fullName: netDxf.Header.HeaderVariables.HandleSeed
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Header.HeaderVariables.Angbase*
+  commentId: Overload:netDxf.Header.HeaderVariables.Angbase
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_Angbase
+  name: Angbase
+  nameWithType: HeaderVariables.Angbase
+  fullName: netDxf.Header.HeaderVariables.Angbase
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Header.HeaderVariables.Angdir*
+  commentId: Overload:netDxf.Header.HeaderVariables.Angdir
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_Angdir
+  name: Angdir
+  nameWithType: HeaderVariables.Angdir
+  fullName: netDxf.Header.HeaderVariables.Angdir
+- uid: netDxf.Units.AngleDirection
+  commentId: T:netDxf.Units.AngleDirection
+  parent: netDxf.Units
+  href: netDxf.Units.AngleDirection.html
+  name: AngleDirection
+  nameWithType: AngleDirection
+  fullName: netDxf.Units.AngleDirection
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Header.HeaderVariables.AttMode*
+  commentId: Overload:netDxf.Header.HeaderVariables.AttMode
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_AttMode
+  name: AttMode
+  nameWithType: HeaderVariables.AttMode
+  fullName: netDxf.Header.HeaderVariables.AttMode
+- uid: netDxf.Header.AttMode
+  commentId: T:netDxf.Header.AttMode
+  parent: netDxf.Header
+  href: netDxf.Header.AttMode.html
+  name: AttMode
+  nameWithType: AttMode
+  fullName: netDxf.Header.AttMode
+- uid: netDxf.Header.HeaderVariables.AUnits*
+  commentId: Overload:netDxf.Header.HeaderVariables.AUnits
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_AUnits
+  name: AUnits
+  nameWithType: HeaderVariables.AUnits
+  fullName: netDxf.Header.HeaderVariables.AUnits
+- uid: netDxf.Units.AngleUnitType
+  commentId: T:netDxf.Units.AngleUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.AngleUnitType.html
+  name: AngleUnitType
+  nameWithType: AngleUnitType
+  fullName: netDxf.Units.AngleUnitType
+- uid: netDxf.Header.HeaderVariables.AUprec*
+  commentId: Overload:netDxf.Header.HeaderVariables.AUprec
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_AUprec
+  name: AUprec
+  nameWithType: HeaderVariables.AUprec
+  fullName: netDxf.Header.HeaderVariables.AUprec
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short
+- uid: netDxf.Header.HeaderVariables.CeColor*
+  commentId: Overload:netDxf.Header.HeaderVariables.CeColor
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CeColor
+  name: CeColor
+  nameWithType: HeaderVariables.CeColor
+  fullName: netDxf.Header.HeaderVariables.CeColor
+- uid: netDxf.AciColor
+  commentId: T:netDxf.AciColor
+  parent: netDxf
+  href: netDxf.AciColor.html
+  name: AciColor
+  nameWithType: AciColor
+  fullName: netDxf.AciColor
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Header.HeaderVariables.CeLtScale*
+  commentId: Overload:netDxf.Header.HeaderVariables.CeLtScale
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CeLtScale
+  name: CeLtScale
+  nameWithType: HeaderVariables.CeLtScale
+  fullName: netDxf.Header.HeaderVariables.CeLtScale
+- uid: netDxf.Header.HeaderVariables.CeLweight*
+  commentId: Overload:netDxf.Header.HeaderVariables.CeLweight
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CeLweight
+  name: CeLweight
+  nameWithType: HeaderVariables.CeLweight
+  fullName: netDxf.Header.HeaderVariables.CeLweight
+- uid: netDxf.Lineweight
+  commentId: T:netDxf.Lineweight
+  parent: netDxf
+  href: netDxf.Lineweight.html
+  name: Lineweight
+  nameWithType: Lineweight
+  fullName: netDxf.Lineweight
+- uid: netDxf.Header.HeaderVariables.CeLtype*
+  commentId: Overload:netDxf.Header.HeaderVariables.CeLtype
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CeLtype
+  name: CeLtype
+  nameWithType: HeaderVariables.CeLtype
+  fullName: netDxf.Header.HeaderVariables.CeLtype
+- uid: netDxf.Header.HeaderVariables.CLayer*
+  commentId: Overload:netDxf.Header.HeaderVariables.CLayer
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CLayer
+  name: CLayer
+  nameWithType: HeaderVariables.CLayer
+  fullName: netDxf.Header.HeaderVariables.CLayer
+- uid: netDxf.Header.HeaderVariables.CMLJust*
+  commentId: Overload:netDxf.Header.HeaderVariables.CMLJust
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CMLJust
+  name: CMLJust
+  nameWithType: HeaderVariables.CMLJust
+  fullName: netDxf.Header.HeaderVariables.CMLJust
+- uid: netDxf.Entities.MLineJustification
+  commentId: T:netDxf.Entities.MLineJustification
+  parent: netDxf.Entities
+  href: netDxf.Entities.MLineJustification.html
+  name: MLineJustification
+  nameWithType: MLineJustification
+  fullName: netDxf.Entities.MLineJustification
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Header.HeaderVariables.CMLScale*
+  commentId: Overload:netDxf.Header.HeaderVariables.CMLScale
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CMLScale
+  name: CMLScale
+  nameWithType: HeaderVariables.CMLScale
+  fullName: netDxf.Header.HeaderVariables.CMLScale
+- uid: netDxf.Header.HeaderVariables.CMLStyle*
+  commentId: Overload:netDxf.Header.HeaderVariables.CMLStyle
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CMLStyle
+  name: CMLStyle
+  nameWithType: HeaderVariables.CMLStyle
+  fullName: netDxf.Header.HeaderVariables.CMLStyle
+- uid: netDxf.Header.HeaderVariables.DimStyle*
+  commentId: Overload:netDxf.Header.HeaderVariables.DimStyle
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_DimStyle
+  name: DimStyle
+  nameWithType: HeaderVariables.DimStyle
+  fullName: netDxf.Header.HeaderVariables.DimStyle
+- uid: netDxf.Header.HeaderVariables.TextSize*
+  commentId: Overload:netDxf.Header.HeaderVariables.TextSize
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TextSize
+  name: TextSize
+  nameWithType: HeaderVariables.TextSize
+  fullName: netDxf.Header.HeaderVariables.TextSize
+- uid: netDxf.Header.HeaderVariables.TextStyle*
+  commentId: Overload:netDxf.Header.HeaderVariables.TextStyle
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TextStyle
+  name: TextStyle
+  nameWithType: HeaderVariables.TextStyle
+  fullName: netDxf.Header.HeaderVariables.TextStyle
+- uid: netDxf.Header.HeaderVariables.LUnits*
+  commentId: Overload:netDxf.Header.HeaderVariables.LUnits
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_LUnits
+  name: LUnits
+  nameWithType: HeaderVariables.LUnits
+  fullName: netDxf.Header.HeaderVariables.LUnits
+- uid: netDxf.Units.LinearUnitType
+  commentId: T:netDxf.Units.LinearUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.LinearUnitType.html
+  name: LinearUnitType
+  nameWithType: LinearUnitType
+  fullName: netDxf.Units.LinearUnitType
+- uid: netDxf.Header.HeaderVariables.LUprec*
+  commentId: Overload:netDxf.Header.HeaderVariables.LUprec
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_LUprec
+  name: LUprec
+  nameWithType: HeaderVariables.LUprec
+  fullName: netDxf.Header.HeaderVariables.LUprec
+- uid: netDxf.Header.HeaderVariables.DwgCodePage*
+  commentId: Overload:netDxf.Header.HeaderVariables.DwgCodePage
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_DwgCodePage
+  name: DwgCodePage
+  nameWithType: HeaderVariables.DwgCodePage
+  fullName: netDxf.Header.HeaderVariables.DwgCodePage
+- uid: netDxf.Header.HeaderVariables.Extnames*
+  commentId: Overload:netDxf.Header.HeaderVariables.Extnames
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_Extnames
+  name: Extnames
+  nameWithType: HeaderVariables.Extnames
+  fullName: netDxf.Header.HeaderVariables.Extnames
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Header.HeaderVariables.InsBase*
+  commentId: Overload:netDxf.Header.HeaderVariables.InsBase
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_InsBase
+  name: InsBase
+  nameWithType: HeaderVariables.InsBase
+  fullName: netDxf.Header.HeaderVariables.InsBase
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Header.HeaderVariables.InsUnits*
+  commentId: Overload:netDxf.Header.HeaderVariables.InsUnits
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_InsUnits
+  name: InsUnits
+  nameWithType: HeaderVariables.InsUnits
+  fullName: netDxf.Header.HeaderVariables.InsUnits
+- uid: netDxf.Units.DrawingUnits
+  commentId: T:netDxf.Units.DrawingUnits
+  parent: netDxf.Units
+  href: netDxf.Units.DrawingUnits.html
+  name: DrawingUnits
+  nameWithType: DrawingUnits
+  fullName: netDxf.Units.DrawingUnits
+- uid: netDxf.Header.HeaderVariables.LastSavedBy*
+  commentId: Overload:netDxf.Header.HeaderVariables.LastSavedBy
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_LastSavedBy
+  name: LastSavedBy
+  nameWithType: HeaderVariables.LastSavedBy
+  fullName: netDxf.Header.HeaderVariables.LastSavedBy
+- uid: netDxf.Header.HeaderVariables.LtScale*
+  commentId: Overload:netDxf.Header.HeaderVariables.LtScale
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_LtScale
+  name: LtScale
+  nameWithType: HeaderVariables.LtScale
+  fullName: netDxf.Header.HeaderVariables.LtScale
+- uid: netDxf.Header.HeaderVariables.LwDisplay*
+  commentId: Overload:netDxf.Header.HeaderVariables.LwDisplay
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_LwDisplay
+  name: LwDisplay
+  nameWithType: HeaderVariables.LwDisplay
+  fullName: netDxf.Header.HeaderVariables.LwDisplay
+- uid: netDxf.Header.HeaderVariables.MirrText*
+  commentId: Overload:netDxf.Header.HeaderVariables.MirrText
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_MirrText
+  name: MirrText
+  nameWithType: HeaderVariables.MirrText
+  fullName: netDxf.Header.HeaderVariables.MirrText
+- uid: netDxf.Header.PointShape
+  commentId: T:netDxf.Header.PointShape
+  parent: netDxf.Header
+  href: netDxf.Header.PointShape.html
+  name: PointShape
+  nameWithType: PointShape
+  fullName: netDxf.Header.PointShape
+- uid: netDxf.Header.HeaderVariables.PdMode*
+  commentId: Overload:netDxf.Header.HeaderVariables.PdMode
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_PdMode
+  name: PdMode
+  nameWithType: HeaderVariables.PdMode
+  fullName: netDxf.Header.HeaderVariables.PdMode
+- uid: netDxf.Header.HeaderVariables.PdSize*
+  commentId: Overload:netDxf.Header.HeaderVariables.PdSize
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_PdSize
+  name: PdSize
+  nameWithType: HeaderVariables.PdSize
+  fullName: netDxf.Header.HeaderVariables.PdSize
+- uid: netDxf.Header.HeaderVariables.PLineGen*
+  commentId: Overload:netDxf.Header.HeaderVariables.PLineGen
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_PLineGen
+  name: PLineGen
+  nameWithType: HeaderVariables.PLineGen
+  fullName: netDxf.Header.HeaderVariables.PLineGen
+- uid: netDxf.Header.HeaderVariables.PsLtScale*
+  commentId: Overload:netDxf.Header.HeaderVariables.PsLtScale
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_PsLtScale
+  name: PsLtScale
+  nameWithType: HeaderVariables.PsLtScale
+  fullName: netDxf.Header.HeaderVariables.PsLtScale
+- uid: netDxf.Header.HeaderVariables.SplineSegs*
+  commentId: Overload:netDxf.Header.HeaderVariables.SplineSegs
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_SplineSegs
+  name: SplineSegs
+  nameWithType: HeaderVariables.SplineSegs
+  fullName: netDxf.Header.HeaderVariables.SplineSegs
+- uid: netDxf.Header.HeaderVariables.SurfU*
+  commentId: Overload:netDxf.Header.HeaderVariables.SurfU
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_SurfU
+  name: SurfU
+  nameWithType: HeaderVariables.SurfU
+  fullName: netDxf.Header.HeaderVariables.SurfU
+- uid: netDxf.Header.HeaderVariables.SurfV*
+  commentId: Overload:netDxf.Header.HeaderVariables.SurfV
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_SurfV
+  name: SurfV
+  nameWithType: HeaderVariables.SurfV
+  fullName: netDxf.Header.HeaderVariables.SurfV
+- uid: netDxf.Header.HeaderVariables.TdCreate*
+  commentId: Overload:netDxf.Header.HeaderVariables.TdCreate
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TdCreate
+  name: TdCreate
+  nameWithType: HeaderVariables.TdCreate
+  fullName: netDxf.Header.HeaderVariables.TdCreate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: netDxf.Header.HeaderVariables.TduCreate*
+  commentId: Overload:netDxf.Header.HeaderVariables.TduCreate
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TduCreate
+  name: TduCreate
+  nameWithType: HeaderVariables.TduCreate
+  fullName: netDxf.Header.HeaderVariables.TduCreate
+- uid: netDxf.Header.HeaderVariables.TdUpdate*
+  commentId: Overload:netDxf.Header.HeaderVariables.TdUpdate
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TdUpdate
+  name: TdUpdate
+  nameWithType: HeaderVariables.TdUpdate
+  fullName: netDxf.Header.HeaderVariables.TdUpdate
+- uid: netDxf.Header.HeaderVariables.TduUpdate*
+  commentId: Overload:netDxf.Header.HeaderVariables.TduUpdate
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TduUpdate
+  name: TduUpdate
+  nameWithType: HeaderVariables.TduUpdate
+  fullName: netDxf.Header.HeaderVariables.TduUpdate
+- uid: netDxf.Header.HeaderVariables.TdinDwg*
+  commentId: Overload:netDxf.Header.HeaderVariables.TdinDwg
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TdinDwg
+  name: TdinDwg
+  nameWithType: HeaderVariables.TdinDwg
+  fullName: netDxf.Header.HeaderVariables.TdinDwg
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: netDxf.Header.HeaderVariables.CurrentUCS*
+  commentId: Overload:netDxf.Header.HeaderVariables.CurrentUCS
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CurrentUCS
+  name: CurrentUCS
+  nameWithType: HeaderVariables.CurrentUCS
+  fullName: netDxf.Header.HeaderVariables.CurrentUCS
+- uid: netDxf.Tables.UCS
+  commentId: T:netDxf.Tables.UCS
+  parent: netDxf.Tables
+  href: netDxf.Tables.UCS.html
+  name: UCS
+  nameWithType: UCS
+  fullName: netDxf.Tables.UCS
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Header.HeaderVariables.KnownValues*
+  commentId: Overload:netDxf.Header.HeaderVariables.KnownValues
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_KnownValues
+  name: KnownValues
+  nameWithType: HeaderVariables.KnownValues
+  fullName: netDxf.Header.HeaderVariables.KnownValues
+- uid: System.Collections.Generic.List{netDxf.Header.HeaderVariable}
+  commentId: T:System.Collections.Generic.List{netDxf.Header.HeaderVariable}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<HeaderVariable>
+  nameWithType: List<HeaderVariable>
+  fullName: System.Collections.Generic.List<netDxf.Header.HeaderVariable>
+  nameWithType.vb: List(Of HeaderVariable)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Header.HeaderVariable)
+  name.vb: List(Of HeaderVariable)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Header.HeaderVariable
+    name: HeaderVariable
+    href: netDxf.Header.HeaderVariable.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Header.HeaderVariable
+    name: HeaderVariable
+    href: netDxf.Header.HeaderVariable.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Header.HeaderVariables.KnownNames*
+  commentId: Overload:netDxf.Header.HeaderVariables.KnownNames
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_KnownNames
+  name: KnownNames
+  nameWithType: HeaderVariables.KnownNames
+  fullName: netDxf.Header.HeaderVariables.KnownNames
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Header.HeaderVariables.CustomValues*
+  commentId: Overload:netDxf.Header.HeaderVariables.CustomValues
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CustomValues
+  name: CustomValues
+  nameWithType: HeaderVariables.CustomValues
+  fullName: netDxf.Header.HeaderVariables.CustomValues
+- uid: netDxf.Header.HeaderVariables.CustomNames*
+  commentId: Overload:netDxf.Header.HeaderVariables.CustomNames
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_CustomNames
+  name: CustomNames
+  nameWithType: HeaderVariables.CustomNames
+  fullName: netDxf.Header.HeaderVariables.CustomNames
+- uid: netDxf.Header.HeaderVariable
+  commentId: T:netDxf.Header.HeaderVariable
+  parent: netDxf.Header
+  href: netDxf.Header.HeaderVariable.html
+  name: HeaderVariable
+  nameWithType: HeaderVariable
+  fullName: netDxf.Header.HeaderVariable
+- uid: netDxf.Header.HeaderVariables.AddCustomVariable*
+  commentId: Overload:netDxf.Header.HeaderVariables.AddCustomVariable
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_AddCustomVariable_netDxf_Header_HeaderVariable_
+  name: AddCustomVariable
+  nameWithType: HeaderVariables.AddCustomVariable
+  fullName: netDxf.Header.HeaderVariables.AddCustomVariable
+- uid: netDxf.Header.HeaderVariables.ContainsCustomVariable*
+  commentId: Overload:netDxf.Header.HeaderVariables.ContainsCustomVariable
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_ContainsCustomVariable_System_String_
+  name: ContainsCustomVariable
+  nameWithType: HeaderVariables.ContainsCustomVariable
+  fullName: netDxf.Header.HeaderVariables.ContainsCustomVariable
+- uid: netDxf.Header.HeaderVariables.TryGetCustomVariable*
+  commentId: Overload:netDxf.Header.HeaderVariables.TryGetCustomVariable
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_TryGetCustomVariable_System_String_netDxf_Header_HeaderVariable__
+  name: TryGetCustomVariable
+  nameWithType: HeaderVariables.TryGetCustomVariable
+  fullName: netDxf.Header.HeaderVariables.TryGetCustomVariable
+- uid: netDxf.Header.HeaderVariables.RemoveCustomVariable*
+  commentId: Overload:netDxf.Header.HeaderVariables.RemoveCustomVariable
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_RemoveCustomVariable_System_String_
+  name: RemoveCustomVariable
+  nameWithType: HeaderVariables.RemoveCustomVariable
+  fullName: netDxf.Header.HeaderVariables.RemoveCustomVariable
+- uid: netDxf.Header.HeaderVariables.ClearCustomVariables*
+  commentId: Overload:netDxf.Header.HeaderVariables.ClearCustomVariables
+  href: netDxf.Header.HeaderVariables.html#netDxf_Header_HeaderVariables_ClearCustomVariables
+  name: ClearCustomVariables
+  nameWithType: HeaderVariables.ClearCustomVariables
+  fullName: netDxf.Header.HeaderVariables.ClearCustomVariables

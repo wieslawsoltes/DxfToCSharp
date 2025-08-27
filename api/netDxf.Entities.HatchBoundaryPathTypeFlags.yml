@@ -1,0 +1,217 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags
+  commentId: T:netDxf.Entities.HatchBoundaryPathTypeFlags
+  id: HatchBoundaryPathTypeFlags
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.Default
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.Derived
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.External
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.Outermost
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.Polyline
+  - netDxf.Entities.HatchBoundaryPathTypeFlags.Textbox
+  langs:
+  - csharp
+  - vb
+  name: HatchBoundaryPathTypeFlags
+  nameWithType: HatchBoundaryPathTypeFlags
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags
+  type: Enum
+  source:
+    id: HatchBoundaryPathTypeFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Defines the boundary path type of the hatch.
+  remarks: Bit flag.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum HatchBoundaryPathTypeFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum HatchBoundaryPathTypeFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.Default
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.Default
+  id: Default
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: HatchBoundaryPathTypeFlags.Default
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.Default
+  type: Field
+  source:
+    id: Default
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 39
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Default.
+  example: []
+  syntax:
+    content: Default = 0
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.External
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.External
+  id: External
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: External
+  nameWithType: HatchBoundaryPathTypeFlags.External
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.External
+  type: Field
+  source:
+    id: External
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 44
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: External.
+  example: []
+  syntax:
+    content: External = 1
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.Polyline
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.Polyline
+  id: Polyline
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: Polyline
+  nameWithType: HatchBoundaryPathTypeFlags.Polyline
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.Polyline
+  type: Field
+  source:
+    id: Polyline
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 49
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Polyline.
+  example: []
+  syntax:
+    content: Polyline = 2
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.Derived
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.Derived
+  id: Derived
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: Derived
+  nameWithType: HatchBoundaryPathTypeFlags.Derived
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.Derived
+  type: Field
+  source:
+    id: Derived
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 54
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Derived.
+  example: []
+  syntax:
+    content: Derived = 4
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.Textbox
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.Textbox
+  id: Textbox
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: Textbox
+  nameWithType: HatchBoundaryPathTypeFlags.Textbox
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.Textbox
+  type: Field
+  source:
+    id: Textbox
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 59
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Text box.
+  example: []
+  syntax:
+    content: Textbox = 8
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags.Outermost
+  commentId: F:netDxf.Entities.HatchBoundaryPathTypeFlags.Outermost
+  id: Outermost
+  parent: netDxf.Entities.HatchBoundaryPathTypeFlags
+  langs:
+  - csharp
+  - vb
+  name: Outermost
+  nameWithType: HatchBoundaryPathTypeFlags.Outermost
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags.Outermost
+  type: Field
+  source:
+    id: Outermost
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPathTypeFlags.cs
+    startLine: 64
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Outermost.
+  example: []
+  syntax:
+    content: Outermost = 16
+    return:
+      type: netDxf.Entities.HatchBoundaryPathTypeFlags
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.HatchBoundaryPathTypeFlags
+  commentId: T:netDxf.Entities.HatchBoundaryPathTypeFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPathTypeFlags.html
+  name: HatchBoundaryPathTypeFlags
+  nameWithType: HatchBoundaryPathTypeFlags
+  fullName: netDxf.Entities.HatchBoundaryPathTypeFlags

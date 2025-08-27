@@ -1,0 +1,2408 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.GTE.GMatrix
+  commentId: T:netDxf.GTE.GMatrix
+  id: GMatrix
+  parent: netDxf.GTE
+  children:
+  - netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Double[])
+  - netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.Determinant(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.Elements
+  - netDxf.GTE.GMatrix.Equals(System.Object)
+  - netDxf.GTE.GMatrix.Equals(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.GetCol(System.Int32)
+  - netDxf.GTE.GMatrix.GetHashCode
+  - netDxf.GTE.GMatrix.GetRow(System.Int32)
+  - netDxf.GTE.GMatrix.GetSize(System.Int32@,System.Int32@)
+  - netDxf.GTE.GMatrix.Identity(System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.Inverse(netDxf.GTE.GMatrix,System.Boolean@)
+  - netDxf.GTE.GMatrix.Item(System.Int32)
+  - netDxf.GTE.GMatrix.Item(System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.L1Norm(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.L2Norm(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.LInfinityNorm(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MakeDiagonal(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MakeIdentity
+  - netDxf.GTE.GMatrix.MakeUnit(System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.MakeZero
+  - netDxf.GTE.GMatrix.MultiplyAB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MultiplyABT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MultiplyATB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MultiplyATBT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MultiplyDM(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.MultiplyMD(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  - netDxf.GTE.GMatrix.NumCols
+  - netDxf.GTE.GMatrix.NumElements
+  - netDxf.GTE.GMatrix.NumRows
+  - netDxf.GTE.GMatrix.OuterProduct(netDxf.GTE.GVector,netDxf.GTE.GVector)
+  - netDxf.GTE.GMatrix.SetCol(System.Int32,netDxf.GTE.GVector)
+  - netDxf.GTE.GMatrix.SetRow(System.Int32,netDxf.GTE.GVector)
+  - netDxf.GTE.GMatrix.Transpose(netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.Unit(System.Int32,System.Int32,System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.Zero(System.Int32,System.Int32)
+  - netDxf.GTE.GMatrix.op_Addition(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Division(netDxf.GTE.GMatrix,System.Double)
+  - netDxf.GTE.GMatrix.op_Equality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_GreaterThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_GreaterThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Inequality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_LessThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_LessThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Multiply(System.Double,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,System.Double)
+  - netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  - netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  - netDxf.GTE.GMatrix.op_Subtraction(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  langs:
+  - csharp
+  - vb
+  name: GMatrix
+  nameWithType: GMatrix
+  fullName: netDxf.GTE.GMatrix
+  type: Class
+  source:
+    id: GMatrix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 39
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: 'public class GMatrix : IEquatable<GMatrix>'
+    content.vb: Public Class GMatrix Implements IEquatable(Of GMatrix)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{netDxf.GTE.GMatrix}
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GMatrix(int, int)
+  nameWithType: GMatrix.GMatrix(int, int)
+  fullName: netDxf.GTE.GMatrix.GMatrix(int, int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GMatrix(int numRows, int numCols)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    content.vb: Public Sub New(numRows As Integer, numCols As Integer)
+  overload: netDxf.GTE.GMatrix.#ctor*
+  nameWithType.vb: GMatrix.New(Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.New(Integer, Integer)
+  name.vb: New(Integer, Integer)
+- uid: netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GMatrix(int, int, int, int)
+  nameWithType: GMatrix.GMatrix(int, int, int, int)
+  fullName: netDxf.GTE.GMatrix.GMatrix(int, int, int, int)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GMatrix(int numRows, int numCols, int r, int c)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    - id: r
+      type: System.Int32
+    - id: c
+      type: System.Int32
+    content.vb: Public Sub New(numRows As Integer, numCols As Integer, r As Integer, c As Integer)
+  overload: netDxf.GTE.GMatrix.#ctor*
+  nameWithType.vb: GMatrix.New(Integer, Integer, Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.New(Integer, Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer, Integer)
+- uid: netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Double[])
+  commentId: M:netDxf.GTE.GMatrix.#ctor(System.Int32,System.Int32,System.Double[])
+  id: '#ctor(System.Int32,System.Int32,System.Double[])'
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GMatrix(int, int, double[])
+  nameWithType: GMatrix.GMatrix(int, int, double[])
+  fullName: netDxf.GTE.GMatrix.GMatrix(int, int, double[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 74
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GMatrix(int numRows, int numCols, double[] elements)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    - id: elements
+      type: System.Double[]
+    content.vb: Public Sub New(numRows As Integer, numCols As Integer, elements As Double())
+  overload: netDxf.GTE.GMatrix.#ctor*
+  nameWithType.vb: GMatrix.New(Integer, Integer, Double())
+  fullName.vb: netDxf.GTE.GMatrix.New(Integer, Integer, Double())
+  name.vb: New(Integer, Integer, Double())
+- uid: netDxf.GTE.GMatrix.GetSize(System.Int32@,System.Int32@)
+  commentId: M:netDxf.GTE.GMatrix.GetSize(System.Int32@,System.Int32@)
+  id: GetSize(System.Int32@,System.Int32@)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GetSize(out int, out int)
+  nameWithType: GMatrix.GetSize(out int, out int)
+  fullName: netDxf.GTE.GMatrix.GetSize(out int, out int)
+  type: Method
+  source:
+    id: GetSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 104
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void GetSize(out int rows, out int cols)
+    parameters:
+    - id: rows
+      type: System.Int32
+    - id: cols
+      type: System.Int32
+    content.vb: Public Sub GetSize(rows As Integer, cols As Integer)
+  overload: netDxf.GTE.GMatrix.GetSize*
+  nameWithType.vb: GMatrix.GetSize(Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.GetSize(Integer, Integer)
+  name.vb: GetSize(Integer, Integer)
+- uid: netDxf.GTE.GMatrix.NumRows
+  commentId: P:netDxf.GTE.GMatrix.NumRows
+  id: NumRows
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: NumRows
+  nameWithType: GMatrix.NumRows
+  fullName: netDxf.GTE.GMatrix.NumRows
+  type: Property
+  source:
+    id: NumRows
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumRows { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NumRows As Integer
+  overload: netDxf.GTE.GMatrix.NumRows*
+- uid: netDxf.GTE.GMatrix.NumCols
+  commentId: P:netDxf.GTE.GMatrix.NumCols
+  id: NumCols
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: NumCols
+  nameWithType: GMatrix.NumCols
+  fullName: netDxf.GTE.GMatrix.NumCols
+  type: Property
+  source:
+    id: NumCols
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 115
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumCols { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NumCols As Integer
+  overload: netDxf.GTE.GMatrix.NumCols*
+- uid: netDxf.GTE.GMatrix.NumElements
+  commentId: P:netDxf.GTE.GMatrix.NumElements
+  id: NumElements
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: NumElements
+  nameWithType: GMatrix.NumElements
+  fullName: netDxf.GTE.GMatrix.NumElements
+  type: Property
+  source:
+    id: NumElements
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 120
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumElements { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NumElements As Integer
+  overload: netDxf.GTE.GMatrix.NumElements*
+- uid: netDxf.GTE.GMatrix.Elements
+  commentId: P:netDxf.GTE.GMatrix.Elements
+  id: Elements
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Elements
+  nameWithType: GMatrix.Elements
+  fullName: netDxf.GTE.GMatrix.Elements
+  type: Property
+  source:
+    id: Elements
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 125
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GVector Elements { get; }
+    parameters: []
+    return:
+      type: netDxf.GTE.GVector
+    content.vb: Public ReadOnly Property Elements As GVector
+  overload: netDxf.GTE.GMatrix.Elements*
+- uid: netDxf.GTE.GMatrix.Item(System.Int32,System.Int32)
+  commentId: P:netDxf.GTE.GMatrix.Item(System.Int32,System.Int32)
+  id: Item(System.Int32,System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: this[int, int]
+  nameWithType: GMatrix.this[int, int]
+  fullName: netDxf.GTE.GMatrix.this[int, int]
+  type: Property
+  source:
+    id: this[]
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 130
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public double this[int r, int c] { get; set; }
+    parameters:
+    - id: r
+      type: System.Int32
+    - id: c
+      type: System.Int32
+    return:
+      type: System.Double
+    content.vb: Public Default Property this[](r As Integer, c As Integer) As Double
+  overload: netDxf.GTE.GMatrix.Item*
+  nameWithType.vb: GMatrix.this[](Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.this[](Integer, Integer)
+  name.vb: this[](Integer, Integer)
+- uid: netDxf.GTE.GMatrix.SetRow(System.Int32,netDxf.GTE.GVector)
+  commentId: M:netDxf.GTE.GMatrix.SetRow(System.Int32,netDxf.GTE.GVector)
+  id: SetRow(System.Int32,netDxf.GTE.GVector)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: SetRow(int, GVector)
+  nameWithType: GMatrix.SetRow(int, GVector)
+  fullName: netDxf.GTE.GMatrix.SetRow(int, netDxf.GTE.GVector)
+  type: Method
+  source:
+    id: SetRow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 164
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void SetRow(int r, GVector vec)
+    parameters:
+    - id: r
+      type: System.Int32
+    - id: vec
+      type: netDxf.GTE.GVector
+    content.vb: Public Sub SetRow(r As Integer, vec As GVector)
+  overload: netDxf.GTE.GMatrix.SetRow*
+  nameWithType.vb: GMatrix.SetRow(Integer, GVector)
+  fullName.vb: netDxf.GTE.GMatrix.SetRow(Integer, netDxf.GTE.GVector)
+  name.vb: SetRow(Integer, GVector)
+- uid: netDxf.GTE.GMatrix.SetCol(System.Int32,netDxf.GTE.GVector)
+  commentId: M:netDxf.GTE.GMatrix.SetCol(System.Int32,netDxf.GTE.GVector)
+  id: SetCol(System.Int32,netDxf.GTE.GVector)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: SetCol(int, GVector)
+  nameWithType: GMatrix.SetCol(int, GVector)
+  fullName: netDxf.GTE.GMatrix.SetCol(int, netDxf.GTE.GVector)
+  type: Method
+  source:
+    id: SetCol
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 184
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void SetCol(int c, GVector vec)
+    parameters:
+    - id: c
+      type: System.Int32
+    - id: vec
+      type: netDxf.GTE.GVector
+    content.vb: Public Sub SetCol(c As Integer, vec As GVector)
+  overload: netDxf.GTE.GMatrix.SetCol*
+  nameWithType.vb: GMatrix.SetCol(Integer, GVector)
+  fullName.vb: netDxf.GTE.GMatrix.SetCol(Integer, netDxf.GTE.GVector)
+  name.vb: SetCol(Integer, GVector)
+- uid: netDxf.GTE.GMatrix.GetRow(System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.GetRow(System.Int32)
+  id: GetRow(System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GetRow(int)
+  nameWithType: GMatrix.GetRow(int)
+  fullName: netDxf.GTE.GMatrix.GetRow(int)
+  type: Method
+  source:
+    id: GetRow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 204
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GVector GetRow(int r)
+    parameters:
+    - id: r
+      type: System.Int32
+    return:
+      type: netDxf.GTE.GVector
+    content.vb: Public Function GetRow(r As Integer) As GVector
+  overload: netDxf.GTE.GMatrix.GetRow*
+  nameWithType.vb: GMatrix.GetRow(Integer)
+  fullName.vb: netDxf.GTE.GMatrix.GetRow(Integer)
+  name.vb: GetRow(Integer)
+- uid: netDxf.GTE.GMatrix.GetCol(System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.GetCol(System.Int32)
+  id: GetCol(System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GetCol(int)
+  nameWithType: GMatrix.GetCol(int)
+  fullName: netDxf.GTE.GMatrix.GetCol(int)
+  type: Method
+  source:
+    id: GetCol
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 221
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public GVector GetCol(int c)
+    parameters:
+    - id: c
+      type: System.Int32
+    return:
+      type: netDxf.GTE.GVector
+    content.vb: Public Function GetCol(c As Integer) As GVector
+  overload: netDxf.GTE.GMatrix.GetCol*
+  nameWithType.vb: GMatrix.GetCol(Integer)
+  fullName.vb: netDxf.GTE.GMatrix.GetCol(Integer)
+  name.vb: GetCol(Integer)
+- uid: netDxf.GTE.GMatrix.Item(System.Int32)
+  commentId: P:netDxf.GTE.GMatrix.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: GMatrix.this[int]
+  fullName: netDxf.GTE.GMatrix.this[int]
+  type: Property
+  source:
+    id: this[]
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 243
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public double this[int i] { get; set; }
+    parameters:
+    - id: i
+      type: System.Int32
+    return:
+      type: System.Double
+    content.vb: Public Default Property this[](i As Integer) As Double
+  overload: netDxf.GTE.GMatrix.Item*
+  nameWithType.vb: GMatrix.this[](Integer)
+  fullName.vb: netDxf.GTE.GMatrix.this[](Integer)
+  name.vb: this[](Integer)
+- uid: netDxf.GTE.GMatrix.op_Equality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Equality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_Equality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator ==(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator ==(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator ==(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Equality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 250
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator ==(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_Equality*
+  nameWithType.vb: GMatrix.=(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: =(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_Inequality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Inequality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_Inequality(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator !=(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator !=(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator !=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Inequality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 259
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator !=(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_Inequality*
+  nameWithType.vb: GMatrix.<>(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.<>(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: <>(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_LessThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_LessThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_LessThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator <(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator <(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator <(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_LessThan
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 268
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator <(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_LessThan*
+  nameWithType.vb: GMatrix.<(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.<(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: <(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_LessThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_LessThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_LessThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator <=(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator <=(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator <=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_LessThanOrEqual
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 273
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator <=(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <=(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_LessThanOrEqual*
+  nameWithType.vb: GMatrix.<=(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.<=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: <=(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_GreaterThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_GreaterThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_GreaterThan(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator >(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator >(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator >(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_GreaterThan
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 278
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator >(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator >(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_GreaterThan*
+  nameWithType.vb: GMatrix.>(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.>(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: '>(GMatrix, GMatrix)'
+- uid: netDxf.GTE.GMatrix.op_GreaterThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_GreaterThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_GreaterThanOrEqual(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator >=(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator >=(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator >=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_GreaterThanOrEqual
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 283
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static bool operator >=(GMatrix mat1, GMatrix mat2)
+    parameters:
+    - id: mat1
+      type: netDxf.GTE.GMatrix
+    - id: mat2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator >=(mat1 As GMatrix, mat2 As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.op_GreaterThanOrEqual*
+  nameWithType.vb: GMatrix.>=(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.>=(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: '>=(GMatrix, GMatrix)'
+- uid: netDxf.GTE.GMatrix.MakeZero
+  commentId: M:netDxf.GTE.GMatrix.MakeZero
+  id: MakeZero
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MakeZero()
+  nameWithType: GMatrix.MakeZero()
+  fullName: netDxf.GTE.GMatrix.MakeZero()
+  type: Method
+  source:
+    id: MakeZero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 291
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void MakeZero()
+    content.vb: Public Sub MakeZero()
+  overload: netDxf.GTE.GMatrix.MakeZero*
+- uid: netDxf.GTE.GMatrix.MakeUnit(System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.MakeUnit(System.Int32,System.Int32)
+  id: MakeUnit(System.Int32,System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MakeUnit(int, int)
+  nameWithType: GMatrix.MakeUnit(int, int)
+  fullName: netDxf.GTE.GMatrix.MakeUnit(int, int)
+  type: Method
+  source:
+    id: MakeUnit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 297
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void MakeUnit(int r, int c)
+    parameters:
+    - id: r
+      type: System.Int32
+    - id: c
+      type: System.Int32
+    content.vb: Public Sub MakeUnit(r As Integer, c As Integer)
+  overload: netDxf.GTE.GMatrix.MakeUnit*
+  nameWithType.vb: GMatrix.MakeUnit(Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.MakeUnit(Integer, Integer)
+  name.vb: MakeUnit(Integer, Integer)
+- uid: netDxf.GTE.GMatrix.MakeIdentity
+  commentId: M:netDxf.GTE.GMatrix.MakeIdentity
+  id: MakeIdentity
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MakeIdentity()
+  nameWithType: GMatrix.MakeIdentity()
+  fullName: netDxf.GTE.GMatrix.MakeIdentity()
+  type: Method
+  source:
+    id: MakeIdentity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 310
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public void MakeIdentity()
+    content.vb: Public Sub MakeIdentity()
+  overload: netDxf.GTE.GMatrix.MakeIdentity*
+- uid: netDxf.GTE.GMatrix.Zero(System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.Zero(System.Int32,System.Int32)
+  id: Zero(System.Int32,System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Zero(int, int)
+  nameWithType: GMatrix.Zero(int, int)
+  fullName: netDxf.GTE.GMatrix.Zero(int, int)
+  type: Method
+  source:
+    id: Zero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 320
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix Zero(int numRows, int numCols)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function Zero(numRows As Integer, numCols As Integer) As GMatrix
+  overload: netDxf.GTE.GMatrix.Zero*
+  nameWithType.vb: GMatrix.Zero(Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.Zero(Integer, Integer)
+  name.vb: Zero(Integer, Integer)
+- uid: netDxf.GTE.GMatrix.Unit(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.Unit(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: Unit(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Unit(int, int, int, int)
+  nameWithType: GMatrix.Unit(int, int, int, int)
+  fullName: netDxf.GTE.GMatrix.Unit(int, int, int, int)
+  type: Method
+  source:
+    id: Unit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 327
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix Unit(int numRows, int numCols, int r, int c)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    - id: r
+      type: System.Int32
+    - id: c
+      type: System.Int32
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function Unit(numRows As Integer, numCols As Integer, r As Integer, c As Integer) As GMatrix
+  overload: netDxf.GTE.GMatrix.Unit*
+  nameWithType.vb: GMatrix.Unit(Integer, Integer, Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.Unit(Integer, Integer, Integer, Integer)
+  name.vb: Unit(Integer, Integer, Integer, Integer)
+- uid: netDxf.GTE.GMatrix.Identity(System.Int32,System.Int32)
+  commentId: M:netDxf.GTE.GMatrix.Identity(System.Int32,System.Int32)
+  id: Identity(System.Int32,System.Int32)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Identity(int, int)
+  nameWithType: GMatrix.Identity(int, int)
+  fullName: netDxf.GTE.GMatrix.Identity(int, int)
+  type: Method
+  source:
+    id: Identity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 334
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix Identity(int numRows, int numCols)
+    parameters:
+    - id: numRows
+      type: System.Int32
+    - id: numCols
+      type: System.Int32
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function Identity(numRows As Integer, numCols As Integer) As GMatrix
+  overload: netDxf.GTE.GMatrix.Identity*
+  nameWithType.vb: GMatrix.Identity(Integer, Integer)
+  fullName.vb: netDxf.GTE.GMatrix.Identity(Integer, Integer)
+  name.vb: Identity(Integer, Integer)
+- uid: netDxf.GTE.GMatrix.op_Addition(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Addition(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_Addition(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator +(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator +(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator +(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Addition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 344
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator +(GMatrix m1, GMatrix m2)
+    parameters:
+    - id: m1
+      type: netDxf.GTE.GMatrix
+    - id: m2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator +(m1 As GMatrix, m2 As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Addition*
+  nameWithType.vb: GMatrix.+(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.+(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: +(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_Subtraction(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Subtraction(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_Subtraction(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator -(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator -(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator -(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Subtraction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 361
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator -(GMatrix m1, GMatrix m2)
+    parameters:
+    - id: m1
+      type: netDxf.GTE.GMatrix
+    - id: m2
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator -(m1 As GMatrix, m2 As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Subtraction*
+  nameWithType.vb: GMatrix.-(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.-(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: -(GMatrix, GMatrix)
+- uid: netDxf.GTE.GMatrix.op_Multiply(System.Double,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Multiply(System.Double,netDxf.GTE.GMatrix)
+  id: op_Multiply(System.Double,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator *(double, GMatrix)
+  nameWithType: GMatrix.operator *(double, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator *(double, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 378
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator *(double scalar, GMatrix m)
+    parameters:
+    - id: scalar
+      type: System.Double
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator *(scalar As Double, m As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Multiply*
+  nameWithType.vb: GMatrix.*(Double, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.*(Double, netDxf.GTE.GMatrix)
+  name.vb: '*(Double, GMatrix)'
+- uid: netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,System.Double)
+  commentId: M:netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,System.Double)
+  id: op_Multiply(netDxf.GTE.GMatrix,System.Double)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator *(GMatrix, double)
+  nameWithType: GMatrix.operator *(GMatrix, double)
+  fullName: netDxf.GTE.GMatrix.operator *(netDxf.GTE.GMatrix, double)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 389
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator *(GMatrix m, double scalar)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    - id: scalar
+      type: System.Double
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator *(m As GMatrix, scalar As Double) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Multiply*
+  nameWithType.vb: GMatrix.*(GMatrix, Double)
+  fullName.vb: netDxf.GTE.GMatrix.*(netDxf.GTE.GMatrix, Double)
+  name.vb: '*(GMatrix, Double)'
+- uid: netDxf.GTE.GMatrix.op_Division(netDxf.GTE.GMatrix,System.Double)
+  commentId: M:netDxf.GTE.GMatrix.op_Division(netDxf.GTE.GMatrix,System.Double)
+  id: op_Division(netDxf.GTE.GMatrix,System.Double)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator /(GMatrix, double)
+  nameWithType: GMatrix.operator /(GMatrix, double)
+  fullName: netDxf.GTE.GMatrix.operator /(netDxf.GTE.GMatrix, double)
+  type: Operator
+  source:
+    id: op_Division
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 394
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator /(GMatrix m, double scalar)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    - id: scalar
+      type: System.Double
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator /(m As GMatrix, scalar As Double) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Division*
+  nameWithType.vb: GMatrix./(GMatrix, Double)
+  fullName.vb: netDxf.GTE.GMatrix./(netDxf.GTE.GMatrix, Double)
+  name.vb: /(GMatrix, Double)
+- uid: netDxf.GTE.GMatrix.L1Norm(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.L1Norm(netDxf.GTE.GMatrix)
+  id: L1Norm(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: L1Norm(GMatrix)
+  nameWithType: GMatrix.L1Norm(GMatrix)
+  fullName: netDxf.GTE.GMatrix.L1Norm(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: L1Norm
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 400
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static double L1Norm(GMatrix m)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Double
+    content.vb: Public Shared Function L1Norm(m As GMatrix) As Double
+  overload: netDxf.GTE.GMatrix.L1Norm*
+- uid: netDxf.GTE.GMatrix.L2Norm(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.L2Norm(netDxf.GTE.GMatrix)
+  id: L2Norm(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: L2Norm(GMatrix)
+  nameWithType: GMatrix.L2Norm(GMatrix)
+  fullName: netDxf.GTE.GMatrix.L2Norm(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: L2Norm
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 411
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static double L2Norm(GMatrix m)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Double
+    content.vb: Public Shared Function L2Norm(m As GMatrix) As Double
+  overload: netDxf.GTE.GMatrix.L2Norm*
+- uid: netDxf.GTE.GMatrix.LInfinityNorm(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.LInfinityNorm(netDxf.GTE.GMatrix)
+  id: LInfinityNorm(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: LInfinityNorm(GMatrix)
+  nameWithType: GMatrix.LInfinityNorm(GMatrix)
+  fullName: netDxf.GTE.GMatrix.LInfinityNorm(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: LInfinityNorm
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 422
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static double LInfinityNorm(GMatrix m)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Double
+    content.vb: Public Shared Function LInfinityNorm(m As GMatrix) As Double
+  overload: netDxf.GTE.GMatrix.LInfinityNorm*
+- uid: netDxf.GTE.GMatrix.Inverse(netDxf.GTE.GMatrix,System.Boolean@)
+  commentId: M:netDxf.GTE.GMatrix.Inverse(netDxf.GTE.GMatrix,System.Boolean@)
+  id: Inverse(netDxf.GTE.GMatrix,System.Boolean@)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Inverse(GMatrix, out bool)
+  nameWithType: GMatrix.Inverse(GMatrix, out bool)
+  fullName: netDxf.GTE.GMatrix.Inverse(netDxf.GTE.GMatrix, out bool)
+  type: Method
+  source:
+    id: Inverse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 437
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix Inverse(GMatrix m, out bool invertible)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    - id: invertible
+      type: System.Boolean
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function Inverse(m As GMatrix, invertible As Boolean) As GMatrix
+  overload: netDxf.GTE.GMatrix.Inverse*
+  nameWithType.vb: GMatrix.Inverse(GMatrix, Boolean)
+  fullName.vb: netDxf.GTE.GMatrix.Inverse(netDxf.GTE.GMatrix, Boolean)
+  name.vb: Inverse(GMatrix, Boolean)
+- uid: netDxf.GTE.GMatrix.Determinant(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.Determinant(netDxf.GTE.GMatrix)
+  id: Determinant(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Determinant(GMatrix)
+  nameWithType: GMatrix.Determinant(GMatrix)
+  fullName: netDxf.GTE.GMatrix.Determinant(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: Determinant
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 451
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static double Determinant(GMatrix m)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: System.Double
+    content.vb: Public Shared Function Determinant(m As GMatrix) As Double
+  overload: netDxf.GTE.GMatrix.Determinant*
+- uid: netDxf.GTE.GMatrix.Transpose(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.Transpose(netDxf.GTE.GMatrix)
+  id: Transpose(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Transpose(GMatrix)
+  nameWithType: GMatrix.Transpose(GMatrix)
+  fullName: netDxf.GTE.GMatrix.Transpose(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: Transpose
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 464
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix Transpose(GMatrix m)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function Transpose(m As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.Transpose*
+- uid: netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  commentId: M:netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  id: op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator *(GMatrix, GVector)
+  nameWithType: GMatrix.operator *(GMatrix, GVector)
+  fullName: netDxf.GTE.GMatrix.operator *(netDxf.GTE.GMatrix, netDxf.GTE.GVector)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 479
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GVector operator *(GMatrix m, GVector v)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    - id: v
+      type: netDxf.GTE.GVector
+    return:
+      type: netDxf.GTE.GVector
+    content.vb: Public Shared Operator *(m As GMatrix, v As GVector) As GVector
+  overload: netDxf.GTE.GMatrix.op_Multiply*
+  nameWithType.vb: GMatrix.*(GMatrix, GVector)
+  fullName.vb: netDxf.GTE.GMatrix.*(netDxf.GTE.GMatrix, netDxf.GTE.GVector)
+  name.vb: '*(GMatrix, GVector)'
+- uid: netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  id: op_Multiply(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator *(GVector, GMatrix)
+  nameWithType: GMatrix.operator *(GVector, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator *(netDxf.GTE.GVector, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 501
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GVector operator *(GVector v, GMatrix m)
+    parameters:
+    - id: v
+      type: netDxf.GTE.GVector
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GVector
+    content.vb: Public Shared Operator *(v As GVector, m As GMatrix) As GVector
+  overload: netDxf.GTE.GMatrix.op_Multiply*
+  nameWithType.vb: GMatrix.*(GVector, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.*(netDxf.GTE.GVector, netDxf.GTE.GMatrix)
+  name.vb: '*(GVector, GMatrix)'
+- uid: netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: op_Multiply(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: operator *(GMatrix, GMatrix)
+  nameWithType: GMatrix.operator *(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.operator *(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 523
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix operator *(GMatrix a, GMatrix b)
+    parameters:
+    - id: a
+      type: netDxf.GTE.GMatrix
+    - id: b
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Operator *(a As GMatrix, b As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.op_Multiply*
+  nameWithType.vb: GMatrix.*(GMatrix, GMatrix)
+  fullName.vb: netDxf.GTE.GMatrix.*(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  name.vb: '*(GMatrix, GMatrix)'
+- uid: netDxf.GTE.GMatrix.MultiplyAB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyAB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: MultiplyAB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyAB(GMatrix, GMatrix)
+  nameWithType: GMatrix.MultiplyAB(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MultiplyAB(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MultiplyAB
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 528
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyAB(GMatrix a, GMatrix b)
+    parameters:
+    - id: a
+      type: netDxf.GTE.GMatrix
+    - id: b
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyAB(a As GMatrix, b As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyAB*
+- uid: netDxf.GTE.GMatrix.MultiplyABT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyABT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: MultiplyABT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyABT(GMatrix, GMatrix)
+  nameWithType: GMatrix.MultiplyABT(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MultiplyABT(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MultiplyABT
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 554
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyABT(GMatrix a, GMatrix b)
+    parameters:
+    - id: a
+      type: netDxf.GTE.GMatrix
+    - id: b
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyABT(a As GMatrix, b As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyABT*
+- uid: netDxf.GTE.GMatrix.MultiplyATB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyATB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: MultiplyATB(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyATB(GMatrix, GMatrix)
+  nameWithType: GMatrix.MultiplyATB(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MultiplyATB(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MultiplyATB
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 580
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyATB(GMatrix a, GMatrix b)
+    parameters:
+    - id: a
+      type: netDxf.GTE.GMatrix
+    - id: b
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyATB(a As GMatrix, b As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyATB*
+- uid: netDxf.GTE.GMatrix.MultiplyATBT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyATBT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  id: MultiplyATBT(netDxf.GTE.GMatrix,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyATBT(GMatrix, GMatrix)
+  nameWithType: GMatrix.MultiplyATBT(GMatrix, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MultiplyATBT(netDxf.GTE.GMatrix, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MultiplyATBT
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 606
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyATBT(GMatrix a, GMatrix b)
+    parameters:
+    - id: a
+      type: netDxf.GTE.GMatrix
+    - id: b
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyATBT(a As GMatrix, b As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyATBT*
+- uid: netDxf.GTE.GMatrix.MultiplyMD(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyMD(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  id: MultiplyMD(netDxf.GTE.GMatrix,netDxf.GTE.GVector)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyMD(GMatrix, GVector)
+  nameWithType: GMatrix.MultiplyMD(GMatrix, GVector)
+  fullName: netDxf.GTE.GMatrix.MultiplyMD(netDxf.GTE.GMatrix, netDxf.GTE.GVector)
+  type: Method
+  source:
+    id: MultiplyMD
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 632
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyMD(GMatrix m, GVector d)
+    parameters:
+    - id: m
+      type: netDxf.GTE.GMatrix
+    - id: d
+      type: netDxf.GTE.GVector
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyMD(m As GMatrix, d As GVector) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyMD*
+- uid: netDxf.GTE.GMatrix.MultiplyDM(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MultiplyDM(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  id: MultiplyDM(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MultiplyDM(GVector, GMatrix)
+  nameWithType: GMatrix.MultiplyDM(GVector, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MultiplyDM(netDxf.GTE.GVector, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MultiplyDM
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 653
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix MultiplyDM(GVector d, GMatrix m)
+    parameters:
+    - id: d
+      type: netDxf.GTE.GVector
+    - id: m
+      type: netDxf.GTE.GMatrix
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function MultiplyDM(d As GVector, m As GMatrix) As GMatrix
+  overload: netDxf.GTE.GMatrix.MultiplyDM*
+- uid: netDxf.GTE.GMatrix.OuterProduct(netDxf.GTE.GVector,netDxf.GTE.GVector)
+  commentId: M:netDxf.GTE.GMatrix.OuterProduct(netDxf.GTE.GVector,netDxf.GTE.GVector)
+  id: OuterProduct(netDxf.GTE.GVector,netDxf.GTE.GVector)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: OuterProduct(GVector, GVector)
+  nameWithType: GMatrix.OuterProduct(GVector, GVector)
+  fullName: netDxf.GTE.GMatrix.OuterProduct(netDxf.GTE.GVector, netDxf.GTE.GVector)
+  type: Method
+  source:
+    id: OuterProduct
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 674
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static GMatrix OuterProduct(GVector u, GVector v)
+    parameters:
+    - id: u
+      type: netDxf.GTE.GVector
+    - id: v
+      type: netDxf.GTE.GVector
+    return:
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Function OuterProduct(u As GVector, v As GVector) As GMatrix
+  overload: netDxf.GTE.GMatrix.OuterProduct*
+- uid: netDxf.GTE.GMatrix.MakeDiagonal(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.MakeDiagonal(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  id: MakeDiagonal(netDxf.GTE.GVector,netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: MakeDiagonal(GVector, GMatrix)
+  nameWithType: GMatrix.MakeDiagonal(GVector, GMatrix)
+  fullName: netDxf.GTE.GMatrix.MakeDiagonal(netDxf.GTE.GVector, netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: MakeDiagonal
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 690
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public static void MakeDiagonal(GVector d, GMatrix m)
+    parameters:
+    - id: d
+      type: netDxf.GTE.GVector
+    - id: m
+      type: netDxf.GTE.GMatrix
+    content.vb: Public Shared Sub MakeDiagonal(d As GVector, m As GMatrix)
+  overload: netDxf.GTE.GMatrix.MakeDiagonal*
+- uid: netDxf.GTE.GMatrix.Equals(netDxf.GTE.GMatrix)
+  commentId: M:netDxf.GTE.GMatrix.Equals(netDxf.GTE.GMatrix)
+  id: Equals(netDxf.GTE.GMatrix)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Equals(GMatrix)
+  nameWithType: GMatrix.Equals(GMatrix)
+  fullName: netDxf.GTE.GMatrix.Equals(netDxf.GTE.GMatrix)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 702
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  summary: Indicates whether the current object is equal to another object of the same type.
+  example: []
+  syntax:
+    content: public bool Equals(GMatrix other)
+    parameters:
+    - id: other
+      type: netDxf.GTE.GMatrix
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Function Equals(other As GMatrix) As Boolean
+  overload: netDxf.GTE.GMatrix.Equals*
+  implements:
+  - System.IEquatable{netDxf.GTE.GMatrix}.Equals(netDxf.GTE.GMatrix)
+- uid: netDxf.GTE.GMatrix.Equals(System.Object)
+  commentId: M:netDxf.GTE.GMatrix.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: GMatrix.Equals(object)
+  fullName: netDxf.GTE.GMatrix.Equals(object)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 712
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  summary: Determines whether the specified object is equal to the current object.
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current object.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the specified object  is equal to the current object; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: netDxf.GTE.GMatrix.Equals*
+  nameWithType.vb: GMatrix.Equals(Object)
+  fullName.vb: netDxf.GTE.GMatrix.Equals(Object)
+  name.vb: Equals(Object)
+- uid: netDxf.GTE.GMatrix.GetHashCode
+  commentId: M:netDxf.GTE.GMatrix.GetHashCode
+  id: GetHashCode
+  parent: netDxf.GTE.GMatrix
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: GMatrix.GetHashCode()
+  fullName: netDxf.GTE.GMatrix.GetHashCode()
+  type: Method
+  source:
+    id: GetHashCode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/GMatrix.cs
+    startLine: 722
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  summary: Serves as the default hash function.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A hash code for the current object.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: netDxf.GTE.GMatrix.GetHashCode*
+references:
+- uid: netDxf.GTE
+  commentId: N:netDxf.GTE
+  href: netDxf.html
+  name: netDxf.GTE
+  nameWithType: netDxf.GTE
+  fullName: netDxf.GTE
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{netDxf.GTE.GMatrix}
+  commentId: T:System.IEquatable{netDxf.GTE.GMatrix}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<GMatrix>
+  nameWithType: IEquatable<GMatrix>
+  fullName: System.IEquatable<netDxf.GTE.GMatrix>
+  nameWithType.vb: IEquatable(Of GMatrix)
+  fullName.vb: System.IEquatable(Of netDxf.GTE.GMatrix)
+  name.vb: IEquatable(Of GMatrix)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: netDxf.GTE.GMatrix
+    name: GMatrix
+    href: netDxf.GTE.GMatrix.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.GTE.GMatrix
+    name: GMatrix
+    href: netDxf.GTE.GMatrix.html
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.GTE.GMatrix.#ctor*
+  commentId: Overload:netDxf.GTE.GMatrix.#ctor
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix__ctor_System_Int32_System_Int32_
+  name: GMatrix
+  nameWithType: GMatrix.GMatrix
+  fullName: netDxf.GTE.GMatrix.GMatrix
+  nameWithType.vb: GMatrix.New
+  fullName.vb: netDxf.GTE.GMatrix.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double[]
+  nameWithType: double[]
+  fullName: double[]
+  nameWithType.vb: Double()
+  fullName.vb: Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+- uid: netDxf.GTE.GMatrix.GetSize*
+  commentId: Overload:netDxf.GTE.GMatrix.GetSize
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_GetSize_System_Int32__System_Int32__
+  name: GetSize
+  nameWithType: GMatrix.GetSize
+  fullName: netDxf.GTE.GMatrix.GetSize
+- uid: netDxf.GTE.GMatrix.NumRows*
+  commentId: Overload:netDxf.GTE.GMatrix.NumRows
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_NumRows
+  name: NumRows
+  nameWithType: GMatrix.NumRows
+  fullName: netDxf.GTE.GMatrix.NumRows
+- uid: netDxf.GTE.GMatrix.NumCols*
+  commentId: Overload:netDxf.GTE.GMatrix.NumCols
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_NumCols
+  name: NumCols
+  nameWithType: GMatrix.NumCols
+  fullName: netDxf.GTE.GMatrix.NumCols
+- uid: netDxf.GTE.GMatrix.NumElements*
+  commentId: Overload:netDxf.GTE.GMatrix.NumElements
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_NumElements
+  name: NumElements
+  nameWithType: GMatrix.NumElements
+  fullName: netDxf.GTE.GMatrix.NumElements
+- uid: netDxf.GTE.GMatrix.Elements*
+  commentId: Overload:netDxf.GTE.GMatrix.Elements
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Elements
+  name: Elements
+  nameWithType: GMatrix.Elements
+  fullName: netDxf.GTE.GMatrix.Elements
+- uid: netDxf.GTE.GVector
+  commentId: T:netDxf.GTE.GVector
+  parent: netDxf.GTE
+  href: netDxf.GTE.GVector.html
+  name: GVector
+  nameWithType: GVector
+  fullName: netDxf.GTE.GVector
+- uid: netDxf.GTE.GMatrix.Item*
+  commentId: Overload:netDxf.GTE.GMatrix.Item
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Item_System_Int32_System_Int32_
+  name: this
+  nameWithType: GMatrix.this
+  fullName: netDxf.GTE.GMatrix.this
+  nameWithType.vb: GMatrix.this[]
+  fullName.vb: netDxf.GTE.GMatrix.this[]
+  name.vb: this[]
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.GTE.GMatrix.SetRow*
+  commentId: Overload:netDxf.GTE.GMatrix.SetRow
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_SetRow_System_Int32_netDxf_GTE_GVector_
+  name: SetRow
+  nameWithType: GMatrix.SetRow
+  fullName: netDxf.GTE.GMatrix.SetRow
+- uid: netDxf.GTE.GMatrix.SetCol*
+  commentId: Overload:netDxf.GTE.GMatrix.SetCol
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_SetCol_System_Int32_netDxf_GTE_GVector_
+  name: SetCol
+  nameWithType: GMatrix.SetCol
+  fullName: netDxf.GTE.GMatrix.SetCol
+- uid: netDxf.GTE.GMatrix.GetRow*
+  commentId: Overload:netDxf.GTE.GMatrix.GetRow
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_GetRow_System_Int32_
+  name: GetRow
+  nameWithType: GMatrix.GetRow
+  fullName: netDxf.GTE.GMatrix.GetRow
+- uid: netDxf.GTE.GMatrix.GetCol*
+  commentId: Overload:netDxf.GTE.GMatrix.GetCol
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_GetCol_System_Int32_
+  name: GetCol
+  nameWithType: GMatrix.GetCol
+  fullName: netDxf.GTE.GMatrix.GetCol
+- uid: netDxf.GTE.GMatrix.op_Equality*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Equality
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Equality_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator ==
+  nameWithType: GMatrix.operator ==
+  fullName: netDxf.GTE.GMatrix.operator ==
+  nameWithType.vb: GMatrix.=
+  fullName.vb: netDxf.GTE.GMatrix.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Equality*
+    name: ==
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Equality_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix
+  commentId: T:netDxf.GTE.GMatrix
+  parent: netDxf.GTE
+  href: netDxf.GTE.GMatrix.html
+  name: GMatrix
+  nameWithType: GMatrix
+  fullName: netDxf.GTE.GMatrix
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.GTE.GMatrix.op_Inequality*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Inequality
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Inequality_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator !=
+  nameWithType: GMatrix.operator !=
+  fullName: netDxf.GTE.GMatrix.operator !=
+  nameWithType.vb: GMatrix.<>
+  fullName.vb: netDxf.GTE.GMatrix.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Inequality*
+    name: '!='
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Inequality_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_LessThan*
+  commentId: Overload:netDxf.GTE.GMatrix.op_LessThan
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_LessThan_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator <
+  nameWithType: GMatrix.operator <
+  fullName: netDxf.GTE.GMatrix.operator <
+  nameWithType.vb: GMatrix.<
+  fullName.vb: netDxf.GTE.GMatrix.<
+  name.vb: <
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_LessThan*
+    name: <
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_LessThan_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_LessThanOrEqual*
+  commentId: Overload:netDxf.GTE.GMatrix.op_LessThanOrEqual
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_LessThanOrEqual_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator <=
+  nameWithType: GMatrix.operator <=
+  fullName: netDxf.GTE.GMatrix.operator <=
+  nameWithType.vb: GMatrix.<=
+  fullName.vb: netDxf.GTE.GMatrix.<=
+  name.vb: <=
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_LessThanOrEqual*
+    name: <=
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_LessThanOrEqual_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_GreaterThan*
+  commentId: Overload:netDxf.GTE.GMatrix.op_GreaterThan
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_GreaterThan_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator >
+  nameWithType: GMatrix.operator >
+  fullName: netDxf.GTE.GMatrix.operator >
+  nameWithType.vb: GMatrix.>
+  fullName.vb: netDxf.GTE.GMatrix.>
+  name.vb: '>'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_GreaterThan*
+    name: '>'
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_GreaterThan_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_GreaterThanOrEqual*
+  commentId: Overload:netDxf.GTE.GMatrix.op_GreaterThanOrEqual
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_GreaterThanOrEqual_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator >=
+  nameWithType: GMatrix.operator >=
+  fullName: netDxf.GTE.GMatrix.operator >=
+  nameWithType.vb: GMatrix.>=
+  fullName.vb: netDxf.GTE.GMatrix.>=
+  name.vb: '>='
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_GreaterThanOrEqual*
+    name: '>='
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_GreaterThanOrEqual_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.MakeZero*
+  commentId: Overload:netDxf.GTE.GMatrix.MakeZero
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MakeZero
+  name: MakeZero
+  nameWithType: GMatrix.MakeZero
+  fullName: netDxf.GTE.GMatrix.MakeZero
+- uid: netDxf.GTE.GMatrix.MakeUnit*
+  commentId: Overload:netDxf.GTE.GMatrix.MakeUnit
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MakeUnit_System_Int32_System_Int32_
+  name: MakeUnit
+  nameWithType: GMatrix.MakeUnit
+  fullName: netDxf.GTE.GMatrix.MakeUnit
+- uid: netDxf.GTE.GMatrix.MakeIdentity*
+  commentId: Overload:netDxf.GTE.GMatrix.MakeIdentity
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MakeIdentity
+  name: MakeIdentity
+  nameWithType: GMatrix.MakeIdentity
+  fullName: netDxf.GTE.GMatrix.MakeIdentity
+- uid: netDxf.GTE.GMatrix.Zero*
+  commentId: Overload:netDxf.GTE.GMatrix.Zero
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Zero_System_Int32_System_Int32_
+  name: Zero
+  nameWithType: GMatrix.Zero
+  fullName: netDxf.GTE.GMatrix.Zero
+- uid: netDxf.GTE.GMatrix.Unit*
+  commentId: Overload:netDxf.GTE.GMatrix.Unit
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Unit_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: Unit
+  nameWithType: GMatrix.Unit
+  fullName: netDxf.GTE.GMatrix.Unit
+- uid: netDxf.GTE.GMatrix.Identity*
+  commentId: Overload:netDxf.GTE.GMatrix.Identity
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Identity_System_Int32_System_Int32_
+  name: Identity
+  nameWithType: GMatrix.Identity
+  fullName: netDxf.GTE.GMatrix.Identity
+- uid: netDxf.GTE.GMatrix.op_Addition*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Addition
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Addition_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator +
+  nameWithType: GMatrix.operator +
+  fullName: netDxf.GTE.GMatrix.operator +
+  nameWithType.vb: GMatrix.+
+  fullName.vb: netDxf.GTE.GMatrix.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Addition*
+    name: +
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Addition_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_Subtraction*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Subtraction
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Subtraction_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: operator -
+  nameWithType: GMatrix.operator -
+  fullName: netDxf.GTE.GMatrix.operator -
+  nameWithType.vb: GMatrix.-
+  fullName.vb: netDxf.GTE.GMatrix.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Subtraction*
+    name: '-'
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Subtraction_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_Multiply*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Multiply
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Multiply_System_Double_netDxf_GTE_GMatrix_
+  name: operator *
+  nameWithType: GMatrix.operator *
+  fullName: netDxf.GTE.GMatrix.operator *
+  nameWithType.vb: GMatrix.*
+  fullName.vb: netDxf.GTE.GMatrix.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Multiply*
+    name: '*'
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Multiply_System_Double_netDxf_GTE_GMatrix_
+- uid: netDxf.GTE.GMatrix.op_Division*
+  commentId: Overload:netDxf.GTE.GMatrix.op_Division
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Division_netDxf_GTE_GMatrix_System_Double_
+  name: operator /
+  nameWithType: GMatrix.operator /
+  fullName: netDxf.GTE.GMatrix.operator /
+  nameWithType.vb: GMatrix./
+  fullName.vb: netDxf.GTE.GMatrix./
+  name.vb: /
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.GTE.GMatrix.op_Division*
+    name: /
+    href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_op_Division_netDxf_GTE_GMatrix_System_Double_
+- uid: netDxf.GTE.GMatrix.L1Norm*
+  commentId: Overload:netDxf.GTE.GMatrix.L1Norm
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_L1Norm_netDxf_GTE_GMatrix_
+  name: L1Norm
+  nameWithType: GMatrix.L1Norm
+  fullName: netDxf.GTE.GMatrix.L1Norm
+- uid: netDxf.GTE.GMatrix.L2Norm*
+  commentId: Overload:netDxf.GTE.GMatrix.L2Norm
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_L2Norm_netDxf_GTE_GMatrix_
+  name: L2Norm
+  nameWithType: GMatrix.L2Norm
+  fullName: netDxf.GTE.GMatrix.L2Norm
+- uid: netDxf.GTE.GMatrix.LInfinityNorm*
+  commentId: Overload:netDxf.GTE.GMatrix.LInfinityNorm
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_LInfinityNorm_netDxf_GTE_GMatrix_
+  name: LInfinityNorm
+  nameWithType: GMatrix.LInfinityNorm
+  fullName: netDxf.GTE.GMatrix.LInfinityNorm
+- uid: netDxf.GTE.GMatrix.Inverse*
+  commentId: Overload:netDxf.GTE.GMatrix.Inverse
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Inverse_netDxf_GTE_GMatrix_System_Boolean__
+  name: Inverse
+  nameWithType: GMatrix.Inverse
+  fullName: netDxf.GTE.GMatrix.Inverse
+- uid: netDxf.GTE.GMatrix.Determinant*
+  commentId: Overload:netDxf.GTE.GMatrix.Determinant
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Determinant_netDxf_GTE_GMatrix_
+  name: Determinant
+  nameWithType: GMatrix.Determinant
+  fullName: netDxf.GTE.GMatrix.Determinant
+- uid: netDxf.GTE.GMatrix.Transpose*
+  commentId: Overload:netDxf.GTE.GMatrix.Transpose
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Transpose_netDxf_GTE_GMatrix_
+  name: Transpose
+  nameWithType: GMatrix.Transpose
+  fullName: netDxf.GTE.GMatrix.Transpose
+- uid: netDxf.GTE.GMatrix.MultiplyAB*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyAB
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyAB_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: MultiplyAB
+  nameWithType: GMatrix.MultiplyAB
+  fullName: netDxf.GTE.GMatrix.MultiplyAB
+- uid: netDxf.GTE.GMatrix.MultiplyABT*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyABT
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyABT_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: MultiplyABT
+  nameWithType: GMatrix.MultiplyABT
+  fullName: netDxf.GTE.GMatrix.MultiplyABT
+- uid: netDxf.GTE.GMatrix.MultiplyATB*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyATB
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyATB_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: MultiplyATB
+  nameWithType: GMatrix.MultiplyATB
+  fullName: netDxf.GTE.GMatrix.MultiplyATB
+- uid: netDxf.GTE.GMatrix.MultiplyATBT*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyATBT
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyATBT_netDxf_GTE_GMatrix_netDxf_GTE_GMatrix_
+  name: MultiplyATBT
+  nameWithType: GMatrix.MultiplyATBT
+  fullName: netDxf.GTE.GMatrix.MultiplyATBT
+- uid: netDxf.GTE.GMatrix.MultiplyMD*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyMD
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyMD_netDxf_GTE_GMatrix_netDxf_GTE_GVector_
+  name: MultiplyMD
+  nameWithType: GMatrix.MultiplyMD
+  fullName: netDxf.GTE.GMatrix.MultiplyMD
+- uid: netDxf.GTE.GMatrix.MultiplyDM*
+  commentId: Overload:netDxf.GTE.GMatrix.MultiplyDM
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MultiplyDM_netDxf_GTE_GVector_netDxf_GTE_GMatrix_
+  name: MultiplyDM
+  nameWithType: GMatrix.MultiplyDM
+  fullName: netDxf.GTE.GMatrix.MultiplyDM
+- uid: netDxf.GTE.GMatrix.OuterProduct*
+  commentId: Overload:netDxf.GTE.GMatrix.OuterProduct
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_OuterProduct_netDxf_GTE_GVector_netDxf_GTE_GVector_
+  name: OuterProduct
+  nameWithType: GMatrix.OuterProduct
+  fullName: netDxf.GTE.GMatrix.OuterProduct
+- uid: netDxf.GTE.GMatrix.MakeDiagonal*
+  commentId: Overload:netDxf.GTE.GMatrix.MakeDiagonal
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_MakeDiagonal_netDxf_GTE_GVector_netDxf_GTE_GMatrix_
+  name: MakeDiagonal
+  nameWithType: GMatrix.MakeDiagonal
+  fullName: netDxf.GTE.GMatrix.MakeDiagonal
+- uid: netDxf.GTE.GMatrix.Equals*
+  commentId: Overload:netDxf.GTE.GMatrix.Equals
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_Equals_netDxf_GTE_GMatrix_
+  name: Equals
+  nameWithType: GMatrix.Equals
+  fullName: netDxf.GTE.GMatrix.Equals
+- uid: System.IEquatable{netDxf.GTE.GMatrix}.Equals(netDxf.GTE.GMatrix)
+  commentId: M:System.IEquatable{netDxf.GTE.GMatrix}.Equals(netDxf.GTE.GMatrix)
+  parent: System.IEquatable{netDxf.GTE.GMatrix}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(GMatrix)
+  nameWithType: IEquatable<GMatrix>.Equals(GMatrix)
+  fullName: System.IEquatable<netDxf.GTE.GMatrix>.Equals(netDxf.GTE.GMatrix)
+  nameWithType.vb: IEquatable(Of GMatrix).Equals(GMatrix)
+  fullName.vb: System.IEquatable(Of netDxf.GTE.GMatrix).Equals(netDxf.GTE.GMatrix)
+  spec.csharp:
+  - uid: System.IEquatable{netDxf.GTE.GMatrix}.Equals(netDxf.GTE.GMatrix)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.GTE.GMatrix
+    name: GMatrix
+    href: netDxf.GTE.GMatrix.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{netDxf.GTE.GMatrix}.Equals(netDxf.GTE.GMatrix)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.GTE.GMatrix
+    name: GMatrix
+    href: netDxf.GTE.GMatrix.html
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: netDxf.GTE.GMatrix.GetHashCode*
+  commentId: Overload:netDxf.GTE.GMatrix.GetHashCode
+  href: netDxf.GTE.GMatrix.html#netDxf_GTE_GMatrix_GetHashCode
+  name: GetHashCode
+  nameWithType: GMatrix.GetHashCode
+  fullName: netDxf.GTE.GMatrix.GetHashCode

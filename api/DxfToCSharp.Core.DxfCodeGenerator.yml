@@ -15,11 +15,11 @@ items:
   type: Class
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerator.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerator.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: DxfCodeGenerator
-    path: DxfToCSharp.Core/DxfCodeGenerator.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerator.cs
     startLine: 16
   assemblies:
   - DxfToCSharp.Core
@@ -50,11 +50,11 @@ items:
   type: Method
   source:
     remote:
-      path: DxfToCSharp.Core/DxfCodeGenerator.cs
+      path: src/DxfToCSharp.Core/DxfCodeGenerator.cs
       branch: main
       repo: https://github.com/wieslawsoltes/DxfToCSharp.git
     id: Generate
-    path: DxfToCSharp.Core/DxfCodeGenerator.cs
+    path: src/DxfToCSharp.Core/DxfCodeGenerator.cs
     startLine: 55
   assemblies:
   - DxfToCSharp.Core
@@ -346,7 +346,7 @@ references:
 - uid: netDxf.DxfDocument
   commentId: T:netDxf.DxfDocument
   parent: netDxf
-  isExternal: true
+  href: netDxf.DxfDocument.html
   name: DxfDocument
   nameWithType: DxfDocument
   fullName: netDxf.DxfDocument
@@ -370,7 +370,7 @@ references:
   fullName: DxfToCSharp.Core.DxfCodeGenerationOptions
 - uid: netDxf
   commentId: N:netDxf
-  isExternal: true
+  href: netDxf.html
   name: netDxf
   nameWithType: netDxf
   fullName: netDxf

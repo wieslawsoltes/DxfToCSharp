@@ -1,0 +1,556 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Header.PointShape
+  commentId: T:netDxf.Header.PointShape
+  id: PointShape
+  parent: netDxf.Header
+  children:
+  - netDxf.Header.PointShape.CircleCross
+  - netDxf.Header.PointShape.CircleDot
+  - netDxf.Header.PointShape.CircleEmpty
+  - netDxf.Header.PointShape.CircleLine
+  - netDxf.Header.PointShape.CirclePlus
+  - netDxf.Header.PointShape.CircleSquareCross
+  - netDxf.Header.PointShape.CircleSquareDot
+  - netDxf.Header.PointShape.CircleSquareEmpty
+  - netDxf.Header.PointShape.CircleSquareLine
+  - netDxf.Header.PointShape.CircleSquarePlus
+  - netDxf.Header.PointShape.Cross
+  - netDxf.Header.PointShape.Dot
+  - netDxf.Header.PointShape.Empty
+  - netDxf.Header.PointShape.Line
+  - netDxf.Header.PointShape.Plus
+  - netDxf.Header.PointShape.SquareCross
+  - netDxf.Header.PointShape.SquareDot
+  - netDxf.Header.PointShape.SquareEmpty
+  - netDxf.Header.PointShape.SquareLine
+  - netDxf.Header.PointShape.SquarePlus
+  langs:
+  - csharp
+  - vb
+  name: PointShape
+  nameWithType: PointShape
+  fullName: netDxf.Header.PointShape
+  type: Enum
+  source:
+    id: PointShape
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Defines the shape of the point entities.
+  example: []
+  syntax:
+    content: public enum PointShape
+    content.vb: Public Enum PointShape
+- uid: netDxf.Header.PointShape.Dot
+  commentId: F:netDxf.Header.PointShape.Dot
+  id: Dot
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: Dot
+  nameWithType: PointShape.Dot
+  fullName: netDxf.Header.PointShape.Dot
+  type: Field
+  source:
+    id: Dot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A dot.
+  example: []
+  syntax:
+    content: Dot = 0
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.Empty
+  commentId: F:netDxf.Header.PointShape.Empty
+  id: Empty
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: Empty
+  nameWithType: PointShape.Empty
+  fullName: netDxf.Header.PointShape.Empty
+  type: Field
+  source:
+    id: Empty
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: No shape.
+  example: []
+  syntax:
+    content: Empty = 1
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.Plus
+  commentId: F:netDxf.Header.PointShape.Plus
+  id: Plus
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: Plus
+  nameWithType: PointShape.Plus
+  fullName: netDxf.Header.PointShape.Plus
+  type: Field
+  source:
+    id: Plus
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Plus sign.
+  example: []
+  syntax:
+    content: Plus = 2
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.Cross
+  commentId: F:netDxf.Header.PointShape.Cross
+  id: Cross
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: Cross
+  nameWithType: PointShape.Cross
+  fullName: netDxf.Header.PointShape.Cross
+  type: Field
+  source:
+    id: Cross
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Cross sign.
+  example: []
+  syntax:
+    content: Cross = 3
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.Line
+  commentId: F:netDxf.Header.PointShape.Line
+  id: Line
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: Line
+  nameWithType: PointShape.Line
+  fullName: netDxf.Header.PointShape.Line
+  type: Field
+  source:
+    id: Line
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A line going upwards.
+  example: []
+  syntax:
+    content: Line = 4
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleDot
+  commentId: F:netDxf.Header.PointShape.CircleDot
+  id: CircleDot
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleDot
+  nameWithType: PointShape.CircleDot
+  fullName: netDxf.Header.PointShape.CircleDot
+  type: Field
+  source:
+    id: CircleDot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle and a dot.
+  example: []
+  syntax:
+    content: CircleDot = 32
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleEmpty
+  commentId: F:netDxf.Header.PointShape.CircleEmpty
+  id: CircleEmpty
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleEmpty
+  nameWithType: PointShape.CircleEmpty
+  fullName: netDxf.Header.PointShape.CircleEmpty
+  type: Field
+  source:
+    id: CircleEmpty
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Only a circle shape.
+  example: []
+  syntax:
+    content: CircleEmpty = 33
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CirclePlus
+  commentId: F:netDxf.Header.PointShape.CirclePlus
+  id: CirclePlus
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CirclePlus
+  nameWithType: PointShape.CirclePlus
+  fullName: netDxf.Header.PointShape.CirclePlus
+  type: Field
+  source:
+    id: CirclePlus
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle and a plus sign.
+  example: []
+  syntax:
+    content: CirclePlus = 34
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleCross
+  commentId: F:netDxf.Header.PointShape.CircleCross
+  id: CircleCross
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleCross
+  nameWithType: PointShape.CircleCross
+  fullName: netDxf.Header.PointShape.CircleCross
+  type: Field
+  source:
+    id: CircleCross
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle and a cross sign.
+  example: []
+  syntax:
+    content: CircleCross = 35
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleLine
+  commentId: F:netDxf.Header.PointShape.CircleLine
+  id: CircleLine
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleLine
+  nameWithType: PointShape.CircleLine
+  fullName: netDxf.Header.PointShape.CircleLine
+  type: Field
+  source:
+    id: CircleLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle and a line.
+  example: []
+  syntax:
+    content: CircleLine = 36
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.SquareDot
+  commentId: F:netDxf.Header.PointShape.SquareDot
+  id: SquareDot
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: SquareDot
+  nameWithType: PointShape.SquareDot
+  fullName: netDxf.Header.PointShape.SquareDot
+  type: Field
+  source:
+    id: SquareDot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 85
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A square and a dot.
+  example: []
+  syntax:
+    content: SquareDot = 64
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.SquareEmpty
+  commentId: F:netDxf.Header.PointShape.SquareEmpty
+  id: SquareEmpty
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: SquareEmpty
+  nameWithType: PointShape.SquareEmpty
+  fullName: netDxf.Header.PointShape.SquareEmpty
+  type: Field
+  source:
+    id: SquareEmpty
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Only a square shape.
+  example: []
+  syntax:
+    content: SquareEmpty = 65
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.SquarePlus
+  commentId: F:netDxf.Header.PointShape.SquarePlus
+  id: SquarePlus
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: SquarePlus
+  nameWithType: PointShape.SquarePlus
+  fullName: netDxf.Header.PointShape.SquarePlus
+  type: Field
+  source:
+    id: SquarePlus
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 95
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A square and a plus sign.
+  example: []
+  syntax:
+    content: SquarePlus = 66
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.SquareCross
+  commentId: F:netDxf.Header.PointShape.SquareCross
+  id: SquareCross
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: SquareCross
+  nameWithType: PointShape.SquareCross
+  fullName: netDxf.Header.PointShape.SquareCross
+  type: Field
+  source:
+    id: SquareCross
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A square and a cross sign.
+  example: []
+  syntax:
+    content: SquareCross = 67
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.SquareLine
+  commentId: F:netDxf.Header.PointShape.SquareLine
+  id: SquareLine
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: SquareLine
+  nameWithType: PointShape.SquareLine
+  fullName: netDxf.Header.PointShape.SquareLine
+  type: Field
+  source:
+    id: SquareLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A square and a line.
+  example: []
+  syntax:
+    content: SquareLine = 68
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleSquareDot
+  commentId: F:netDxf.Header.PointShape.CircleSquareDot
+  id: CircleSquareDot
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleSquareDot
+  nameWithType: PointShape.CircleSquareDot
+  fullName: netDxf.Header.PointShape.CircleSquareDot
+  type: Field
+  source:
+    id: CircleSquareDot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle, a square, and a dot.
+  example: []
+  syntax:
+    content: CircleSquareDot = 96
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleSquareEmpty
+  commentId: F:netDxf.Header.PointShape.CircleSquareEmpty
+  id: CircleSquareEmpty
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleSquareEmpty
+  nameWithType: PointShape.CircleSquareEmpty
+  fullName: netDxf.Header.PointShape.CircleSquareEmpty
+  type: Field
+  source:
+    id: CircleSquareEmpty
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 115
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle and a square.
+  example: []
+  syntax:
+    content: CircleSquareEmpty = 97
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleSquarePlus
+  commentId: F:netDxf.Header.PointShape.CircleSquarePlus
+  id: CircleSquarePlus
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleSquarePlus
+  nameWithType: PointShape.CircleSquarePlus
+  fullName: netDxf.Header.PointShape.CircleSquarePlus
+  type: Field
+  source:
+    id: CircleSquarePlus
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 120
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle, a square, and a plus sign.
+  example: []
+  syntax:
+    content: CircleSquarePlus = 98
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleSquareCross
+  commentId: F:netDxf.Header.PointShape.CircleSquareCross
+  id: CircleSquareCross
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleSquareCross
+  nameWithType: PointShape.CircleSquareCross
+  fullName: netDxf.Header.PointShape.CircleSquareCross
+  type: Field
+  source:
+    id: CircleSquareCross
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 125
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle, a square, and a cross sign.
+  example: []
+  syntax:
+    content: CircleSquareCross = 99
+    return:
+      type: netDxf.Header.PointShape
+- uid: netDxf.Header.PointShape.CircleSquareLine
+  commentId: F:netDxf.Header.PointShape.CircleSquareLine
+  id: CircleSquareLine
+  parent: netDxf.Header.PointShape
+  langs:
+  - csharp
+  - vb
+  name: CircleSquareLine
+  nameWithType: PointShape.CircleSquareLine
+  fullName: netDxf.Header.PointShape.CircleSquareLine
+  type: Field
+  source:
+    id: CircleSquareLine
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/PointShape.cs
+    startLine: 130
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: A circle, a square, and a line.
+  example: []
+  syntax:
+    content: CircleSquareLine = 100
+    return:
+      type: netDxf.Header.PointShape
+references:
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  href: netDxf.html
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+- uid: netDxf.Header.PointShape
+  commentId: T:netDxf.Header.PointShape
+  parent: netDxf.Header
+  href: netDxf.Header.PointShape.html
+  name: PointShape
+  nameWithType: PointShape
+  fullName: netDxf.Header.PointShape

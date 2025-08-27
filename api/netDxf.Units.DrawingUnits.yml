@@ -1,0 +1,681 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units.DrawingUnits
+  commentId: T:netDxf.Units.DrawingUnits
+  id: DrawingUnits
+  parent: netDxf.Units
+  children:
+  - netDxf.Units.DrawingUnits.Angstroms
+  - netDxf.Units.DrawingUnits.AstronomicalUnits
+  - netDxf.Units.DrawingUnits.Centimeters
+  - netDxf.Units.DrawingUnits.Decameters
+  - netDxf.Units.DrawingUnits.Decimeters
+  - netDxf.Units.DrawingUnits.Feet
+  - netDxf.Units.DrawingUnits.Gigameters
+  - netDxf.Units.DrawingUnits.Hectometers
+  - netDxf.Units.DrawingUnits.Inches
+  - netDxf.Units.DrawingUnits.Kilometers
+  - netDxf.Units.DrawingUnits.LightYears
+  - netDxf.Units.DrawingUnits.Meters
+  - netDxf.Units.DrawingUnits.Microinches
+  - netDxf.Units.DrawingUnits.Microns
+  - netDxf.Units.DrawingUnits.Miles
+  - netDxf.Units.DrawingUnits.Millimeters
+  - netDxf.Units.DrawingUnits.Mils
+  - netDxf.Units.DrawingUnits.Nanometers
+  - netDxf.Units.DrawingUnits.Parsecs
+  - netDxf.Units.DrawingUnits.USSurveyFeet
+  - netDxf.Units.DrawingUnits.USSurveyInches
+  - netDxf.Units.DrawingUnits.USSurveyMiles
+  - netDxf.Units.DrawingUnits.USSurveyYards
+  - netDxf.Units.DrawingUnits.Unitless
+  - netDxf.Units.DrawingUnits.Yards
+  langs:
+  - csharp
+  - vb
+  name: DrawingUnits
+  nameWithType: DrawingUnits
+  fullName: netDxf.Units.DrawingUnits
+  type: Enum
+  source:
+    id: DrawingUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Default drawing units for AutoCAD DesignCenter blocks.
+  example: []
+  syntax:
+    content: public enum DrawingUnits
+    content.vb: Public Enum DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Unitless
+  commentId: F:netDxf.Units.DrawingUnits.Unitless
+  id: Unitless
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Unitless
+  nameWithType: DrawingUnits.Unitless
+  fullName: netDxf.Units.DrawingUnits.Unitless
+  type: Field
+  source:
+    id: Unitless
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Unitless.
+  example: []
+  syntax:
+    content: Unitless = 0
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Inches
+  commentId: F:netDxf.Units.DrawingUnits.Inches
+  id: Inches
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Inches
+  nameWithType: DrawingUnits.Inches
+  fullName: netDxf.Units.DrawingUnits.Inches
+  type: Field
+  source:
+    id: Inches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Inches.
+  example: []
+  syntax:
+    content: Inches = 1
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Feet
+  commentId: F:netDxf.Units.DrawingUnits.Feet
+  id: Feet
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Feet
+  nameWithType: DrawingUnits.Feet
+  fullName: netDxf.Units.DrawingUnits.Feet
+  type: Field
+  source:
+    id: Feet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Feet.
+  example: []
+  syntax:
+    content: Feet = 2
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Miles
+  commentId: F:netDxf.Units.DrawingUnits.Miles
+  id: Miles
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Miles
+  nameWithType: DrawingUnits.Miles
+  fullName: netDxf.Units.DrawingUnits.Miles
+  type: Field
+  source:
+    id: Miles
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Miles.
+  example: []
+  syntax:
+    content: Miles = 3
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Millimeters
+  commentId: F:netDxf.Units.DrawingUnits.Millimeters
+  id: Millimeters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Millimeters
+  nameWithType: DrawingUnits.Millimeters
+  fullName: netDxf.Units.DrawingUnits.Millimeters
+  type: Field
+  source:
+    id: Millimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Millimeters.
+  example: []
+  syntax:
+    content: Millimeters = 4
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Centimeters
+  commentId: F:netDxf.Units.DrawingUnits.Centimeters
+  id: Centimeters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Centimeters
+  nameWithType: DrawingUnits.Centimeters
+  fullName: netDxf.Units.DrawingUnits.Centimeters
+  type: Field
+  source:
+    id: Centimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Centimeters.
+  example: []
+  syntax:
+    content: Centimeters = 5
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Meters
+  commentId: F:netDxf.Units.DrawingUnits.Meters
+  id: Meters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Meters
+  nameWithType: DrawingUnits.Meters
+  fullName: netDxf.Units.DrawingUnits.Meters
+  type: Field
+  source:
+    id: Meters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Meters.
+  example: []
+  syntax:
+    content: Meters = 6
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Kilometers
+  commentId: F:netDxf.Units.DrawingUnits.Kilometers
+  id: Kilometers
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Kilometers
+  nameWithType: DrawingUnits.Kilometers
+  fullName: netDxf.Units.DrawingUnits.Kilometers
+  type: Field
+  source:
+    id: Kilometers
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Kilometers.
+  example: []
+  syntax:
+    content: Kilometers = 7
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Microinches
+  commentId: F:netDxf.Units.DrawingUnits.Microinches
+  id: Microinches
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Microinches
+  nameWithType: DrawingUnits.Microinches
+  fullName: netDxf.Units.DrawingUnits.Microinches
+  type: Field
+  source:
+    id: Microinches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Microinches.
+  example: []
+  syntax:
+    content: Microinches = 8
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Mils
+  commentId: F:netDxf.Units.DrawingUnits.Mils
+  id: Mils
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Mils
+  nameWithType: DrawingUnits.Mils
+  fullName: netDxf.Units.DrawingUnits.Mils
+  type: Field
+  source:
+    id: Mils
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Mils (a thousandth of an inch).
+  example: []
+  syntax:
+    content: Mils = 9
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Yards
+  commentId: F:netDxf.Units.DrawingUnits.Yards
+  id: Yards
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Yards
+  nameWithType: DrawingUnits.Yards
+  fullName: netDxf.Units.DrawingUnits.Yards
+  type: Field
+  source:
+    id: Yards
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 85
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Yards.
+  example: []
+  syntax:
+    content: Yards = 10
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Angstroms
+  commentId: F:netDxf.Units.DrawingUnits.Angstroms
+  id: Angstroms
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Angstroms
+  nameWithType: DrawingUnits.Angstroms
+  fullName: netDxf.Units.DrawingUnits.Angstroms
+  type: Field
+  source:
+    id: Angstroms
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Angstroms.
+  example: []
+  syntax:
+    content: Angstroms = 11
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Nanometers
+  commentId: F:netDxf.Units.DrawingUnits.Nanometers
+  id: Nanometers
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Nanometers
+  nameWithType: DrawingUnits.Nanometers
+  fullName: netDxf.Units.DrawingUnits.Nanometers
+  type: Field
+  source:
+    id: Nanometers
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 95
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Nanometers.
+  example: []
+  syntax:
+    content: Nanometers = 12
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Microns
+  commentId: F:netDxf.Units.DrawingUnits.Microns
+  id: Microns
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Microns
+  nameWithType: DrawingUnits.Microns
+  fullName: netDxf.Units.DrawingUnits.Microns
+  type: Field
+  source:
+    id: Microns
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Microns.
+  example: []
+  syntax:
+    content: Microns = 13
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Decimeters
+  commentId: F:netDxf.Units.DrawingUnits.Decimeters
+  id: Decimeters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Decimeters
+  nameWithType: DrawingUnits.Decimeters
+  fullName: netDxf.Units.DrawingUnits.Decimeters
+  type: Field
+  source:
+    id: Decimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Decimeters.
+  example: []
+  syntax:
+    content: Decimeters = 14
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Decameters
+  commentId: F:netDxf.Units.DrawingUnits.Decameters
+  id: Decameters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Decameters
+  nameWithType: DrawingUnits.Decameters
+  fullName: netDxf.Units.DrawingUnits.Decameters
+  type: Field
+  source:
+    id: Decameters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Decameters
+  example: []
+  syntax:
+    content: Decameters = 15
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Hectometers
+  commentId: F:netDxf.Units.DrawingUnits.Hectometers
+  id: Hectometers
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Hectometers
+  nameWithType: DrawingUnits.Hectometers
+  fullName: netDxf.Units.DrawingUnits.Hectometers
+  type: Field
+  source:
+    id: Hectometers
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 115
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Hectometers.
+  example: []
+  syntax:
+    content: Hectometers = 16
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Gigameters
+  commentId: F:netDxf.Units.DrawingUnits.Gigameters
+  id: Gigameters
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Gigameters
+  nameWithType: DrawingUnits.Gigameters
+  fullName: netDxf.Units.DrawingUnits.Gigameters
+  type: Field
+  source:
+    id: Gigameters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 120
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Gigameters.
+  example: []
+  syntax:
+    content: Gigameters = 17
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.AstronomicalUnits
+  commentId: F:netDxf.Units.DrawingUnits.AstronomicalUnits
+  id: AstronomicalUnits
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: AstronomicalUnits
+  nameWithType: DrawingUnits.AstronomicalUnits
+  fullName: netDxf.Units.DrawingUnits.AstronomicalUnits
+  type: Field
+  source:
+    id: AstronomicalUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 125
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: AstronomicalUnits.
+  example: []
+  syntax:
+    content: AstronomicalUnits = 18
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.LightYears
+  commentId: F:netDxf.Units.DrawingUnits.LightYears
+  id: LightYears
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: LightYears
+  nameWithType: DrawingUnits.LightYears
+  fullName: netDxf.Units.DrawingUnits.LightYears
+  type: Field
+  source:
+    id: LightYears
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 130
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: LightYears.
+  example: []
+  syntax:
+    content: LightYears = 19
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.Parsecs
+  commentId: F:netDxf.Units.DrawingUnits.Parsecs
+  id: Parsecs
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: Parsecs
+  nameWithType: DrawingUnits.Parsecs
+  fullName: netDxf.Units.DrawingUnits.Parsecs
+  type: Field
+  source:
+    id: Parsecs
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 135
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Parsecs.
+  example: []
+  syntax:
+    content: Parsecs = 20
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.USSurveyFeet
+  commentId: F:netDxf.Units.DrawingUnits.USSurveyFeet
+  id: USSurveyFeet
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: USSurveyFeet
+  nameWithType: DrawingUnits.USSurveyFeet
+  fullName: netDxf.Units.DrawingUnits.USSurveyFeet
+  type: Field
+  source:
+    id: USSurveyFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 140
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: US Survey Feet
+  example: []
+  syntax:
+    content: USSurveyFeet = 21
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.USSurveyInches
+  commentId: F:netDxf.Units.DrawingUnits.USSurveyInches
+  id: USSurveyInches
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: USSurveyInches
+  nameWithType: DrawingUnits.USSurveyInches
+  fullName: netDxf.Units.DrawingUnits.USSurveyInches
+  type: Field
+  source:
+    id: USSurveyInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 145
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: US Survey Inches
+  example: []
+  syntax:
+    content: USSurveyInches = 22
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.USSurveyYards
+  commentId: F:netDxf.Units.DrawingUnits.USSurveyYards
+  id: USSurveyYards
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: USSurveyYards
+  nameWithType: DrawingUnits.USSurveyYards
+  fullName: netDxf.Units.DrawingUnits.USSurveyYards
+  type: Field
+  source:
+    id: USSurveyYards
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 150
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: US Survey Yards
+  example: []
+  syntax:
+    content: USSurveyYards = 23
+    return:
+      type: netDxf.Units.DrawingUnits
+- uid: netDxf.Units.DrawingUnits.USSurveyMiles
+  commentId: F:netDxf.Units.DrawingUnits.USSurveyMiles
+  id: USSurveyMiles
+  parent: netDxf.Units.DrawingUnits
+  langs:
+  - csharp
+  - vb
+  name: USSurveyMiles
+  nameWithType: DrawingUnits.USSurveyMiles
+  fullName: netDxf.Units.DrawingUnits.USSurveyMiles
+  type: Field
+  source:
+    id: USSurveyMiles
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingUnits.cs
+    startLine: 155
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: US Survey Miles
+  example: []
+  syntax:
+    content: USSurveyMiles = 24
+    return:
+      type: netDxf.Units.DrawingUnits
+references:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Units.DrawingUnits
+  commentId: T:netDxf.Units.DrawingUnits
+  parent: netDxf.Units
+  href: netDxf.Units.DrawingUnits.html
+  name: DrawingUnits
+  nameWithType: DrawingUnits
+  fullName: netDxf.Units.DrawingUnits

@@ -1,0 +1,2316 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Spline
+  commentId: T:netDxf.Entities.Spline
+  id: Spline
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic})
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic})
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double})
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16)
+  - netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  - netDxf.Entities.Spline.Clone
+  - netDxf.Entities.Spline.ControlPoints
+  - netDxf.Entities.Spline.CreationMethod
+  - netDxf.Entities.Spline.CtrlPointTolerance
+  - netDxf.Entities.Spline.Degree
+  - netDxf.Entities.Spline.EndTangent
+  - netDxf.Entities.Spline.FitPoints
+  - netDxf.Entities.Spline.FitTolerance
+  - netDxf.Entities.Spline.IsClosed
+  - netDxf.Entities.Spline.IsClosedPeriodic
+  - netDxf.Entities.Spline.KnotParameterization
+  - netDxf.Entities.Spline.KnotTolerance
+  - netDxf.Entities.Spline.Knots
+  - netDxf.Entities.Spline.MaxDegree
+  - netDxf.Entities.Spline.NurbsEvaluator(netDxf.Vector3[],System.Double[],System.Double[],System.Int32,System.Boolean,System.Boolean,System.Int32)
+  - netDxf.Entities.Spline.PolygonalVertexes(System.Int32)
+  - netDxf.Entities.Spline.Reverse
+  - netDxf.Entities.Spline.SetUniformWeights(System.Double)
+  - netDxf.Entities.Spline.StartTangent
+  - netDxf.Entities.Spline.ToPolyline2D(System.Int32)
+  - netDxf.Entities.Spline.ToPolyline3D(System.Int32)
+  - netDxf.Entities.Spline.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  - netDxf.Entities.Spline.Weights
+  langs:
+  - csharp
+  - vb
+  name: Spline
+  nameWithType: Spline
+  fullName: netDxf.Entities.Spline
+  type: Class
+  source:
+    id: Spline
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a spline curve <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref> (NURBS Non-Uniform Rational B-Splines).
+  example: []
+  syntax:
+    content: 'public class Spline : EntityObject, ICloneable'
+    content.vb: Public Class Spline Inherits EntityObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Spline.MaxDegree
+  commentId: F:netDxf.Entities.Spline.MaxDegree
+  id: MaxDegree
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: MaxDegree
+  nameWithType: Spline.MaxDegree
+  fullName: netDxf.Entities.Spline.MaxDegree
+  type: Field
+  source:
+    id: MaxDegree
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public const short MaxDegree = 10
+    return:
+      type: System.Int16
+    content.vb: Public Const MaxDegree As Short = 10
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3})'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 68
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  remarks: The resulting spline curve will be created from a list of cubic bezier curves that passes through the specified fit points.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> fitPoints)
+    parameters:
+    - id: fitPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline fit points.
+    content.vb: Public Sub New(fitPoints As IEnumerable(Of Vector3))
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3))
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3))
+  name.vb: New(IEnumerable(Of Vector3))
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic})
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic})'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<BezierCurveQuadratic>)
+  nameWithType: Spline.Spline(IEnumerable<BezierCurveQuadratic>)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.BezierCurveQuadratic>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 79
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<BezierCurveQuadratic> curves)
+    parameters:
+    - id: curves
+      type: System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic}
+      description: List of cubic bezier curves.
+    content.vb: Public Sub New(curves As IEnumerable(Of BezierCurveQuadratic))
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of BezierCurveQuadratic))
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.BezierCurveQuadratic))
+  name.vb: New(IEnumerable(Of BezierCurveQuadratic))
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic})
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic})'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<BezierCurveCubic>)
+  nameWithType: Spline.Spline(IEnumerable<BezierCurveCubic>)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.BezierCurveCubic>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 88
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<BezierCurveCubic> curves)
+    parameters:
+    - id: curves
+      type: System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic}
+      description: List of cubic bezier curves.
+    content.vb: Public Sub New(curves As IEnumerable(Of BezierCurveCubic))
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of BezierCurveCubic))
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.BezierCurveCubic))
+  name.vb: New(IEnumerable(Of BezierCurveCubic))
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double})
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double})'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>, IEnumerable<double>)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>, IEnumerable<double>)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>, System.Collections.Generic.IEnumerable<double>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 124
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  remarks: By default the degree of the spline is equal three.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> controlPoints, IEnumerable<double> weights)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline control points.
+    - id: weights
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline control weights. Pass null to set the default weights as 1.0.
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3), weights As IEnumerable(Of Double))
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3), IEnumerable(Of Double))
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), System.Collections.Generic.IEnumerable(Of Double))
+  name.vb: New(IEnumerable(Of Vector3), IEnumerable(Of Double))
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16)
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16)'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>, IEnumerable<double>, short)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>, IEnumerable<double>, short)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>, System.Collections.Generic.IEnumerable<double>, short)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 135
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> controlPoints, IEnumerable<double> weights, short degree)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline control points.
+    - id: weights
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline control weights. Pass null to set the default weights as 1.0.
+    - id: degree
+      type: System.Int16
+      description: Degree of the spline curve.  Valid values are 1 (linear), degree 2 (quadratic), degree 3 (cubic), and so on up to degree 10.
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3), weights As IEnumerable(Of Double), degree As Short)
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3), IEnumerable(Of Double), Short)
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), System.Collections.Generic.IEnumerable(Of Double), Short)
+  name.vb: New(IEnumerable(Of Vector3), IEnumerable(Of Double), Short)
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Boolean)'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>, IEnumerable<double>, bool)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>, IEnumerable<double>, bool)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>, System.Collections.Generic.IEnumerable<double>, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 147
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  remarks: By default the degree of the spline is equal three.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> controlPoints, IEnumerable<double> weights, bool closedPeriodic)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline control points.
+    - id: weights
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline control weights.  If null the weights vector will be automatically initialized with 1.0.
+    - id: closedPeriodic
+      type: System.Boolean
+      description: Sets if the spline as periodic closed (default false).
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3), weights As IEnumerable(Of Double), closedPeriodic As Boolean)
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3), IEnumerable(Of Double), Boolean)
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), System.Collections.Generic.IEnumerable(Of Double), Boolean)
+  name.vb: New(IEnumerable(Of Vector3), IEnumerable(Of Double), Boolean)
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>, IEnumerable<double>, short, bool)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>, IEnumerable<double>, short, bool)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>, System.Collections.Generic.IEnumerable<double>, short, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 160
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> controlPoints, IEnumerable<double> weights, short degree, bool closedPeriodic)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline control points.
+    - id: weights
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline control weights.  If null the weights vector will be automatically initialized with 1.0.
+    - id: degree
+      type: System.Int16
+      description: Degree of the spline curve.  Valid values are 1 (linear), degree 2 (quadratic), degree 3 (cubic), and so on up to degree 10.
+    - id: closedPeriodic
+      type: System.Boolean
+      description: Sets if the spline as periodic closed (default false).
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3), weights As IEnumerable(Of Double), degree As Short, closedPeriodic As Boolean)
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3), IEnumerable(Of Double), Short, Boolean)
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), System.Collections.Generic.IEnumerable(Of Double), Short, Boolean)
+  name.vb: New(IEnumerable(Of Vector3), IEnumerable(Of Double), Short, Boolean)
+- uid: netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  commentId: M:netDxf.Entities.Spline.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector3},System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double},System.Int16,System.Boolean)'
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Spline(IEnumerable<Vector3>, IEnumerable<double>, IEnumerable<double>, short, bool)
+  nameWithType: Spline.Spline(IEnumerable<Vector3>, IEnumerable<double>, IEnumerable<double>, short, bool)
+  fullName: netDxf.Entities.Spline.Spline(System.Collections.Generic.IEnumerable<netDxf.Vector3>, System.Collections.Generic.IEnumerable<double>, System.Collections.Generic.IEnumerable<double>, short, bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 220
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Spline</code> class.
+  example: []
+  syntax:
+    content: public Spline(IEnumerable<Vector3> controlPoints, IEnumerable<double> weigths, IEnumerable<double> knots, short degree, bool closedPeriodic)
+    parameters:
+    - id: controlPoints
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+      description: Spline control points.
+    - id: weigths
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline control weights.  If null the weights vector will be automatically initialized with 1.0.
+    - id: knots
+      type: System.Collections.Generic.IEnumerable{System.Double}
+      description: Spline knot vector.
+    - id: degree
+      type: System.Int16
+      description: Degree of the spline curve. Valid values are 1 (linear), degree 2 (quadratic), degree 3 (cubic), and so on up to degree 10.
+    - id: closedPeriodic
+      type: System.Boolean
+      description: Sets if the spline as periodic closed (default false).
+    content.vb: Public Sub New(controlPoints As IEnumerable(Of Vector3), weigths As IEnumerable(Of Double), knots As IEnumerable(Of Double), degree As Short, closedPeriodic As Boolean)
+  overload: netDxf.Entities.Spline.#ctor*
+  nameWithType.vb: Spline.New(IEnumerable(Of Vector3), IEnumerable(Of Double), IEnumerable(Of Double), Short, Boolean)
+  fullName.vb: netDxf.Entities.Spline.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector3), System.Collections.Generic.IEnumerable(Of Double), System.Collections.Generic.IEnumerable(Of Double), Short, Boolean)
+  name.vb: New(IEnumerable(Of Vector3), IEnumerable(Of Double), IEnumerable(Of Double), Short, Boolean)
+- uid: netDxf.Entities.Spline.FitPoints
+  commentId: P:netDxf.Entities.Spline.FitPoints
+  id: FitPoints
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: FitPoints
+  nameWithType: Spline.FitPoints
+  fullName: netDxf.Entities.Spline.FitPoints
+  type: Property
+  source:
+    id: FitPoints
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 336
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the spline <xref href="netDxf.Vector3?text=fit+points" data-throw-if-not-resolved="false"></xref> list.
+  example: []
+  syntax:
+    content: public IReadOnlyList<Vector3> FitPoints { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{netDxf.Vector3}
+    content.vb: Public ReadOnly Property FitPoints As IReadOnlyList(Of Vector3)
+  overload: netDxf.Entities.Spline.FitPoints*
+- uid: netDxf.Entities.Spline.StartTangent
+  commentId: P:netDxf.Entities.Spline.StartTangent
+  id: StartTangent
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: StartTangent
+  nameWithType: Spline.StartTangent
+  fullName: netDxf.Entities.Spline.StartTangent
+  type: Property
+  source:
+    id: StartTangent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 345
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the spline curve start tangent.
+  remarks: Only applicable to splines created with fit points.
+  example: []
+  syntax:
+    content: public Vector3? StartTangent { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{netDxf.Vector3}
+    content.vb: Public Property StartTangent As Vector3?
+  overload: netDxf.Entities.Spline.StartTangent*
+- uid: netDxf.Entities.Spline.EndTangent
+  commentId: P:netDxf.Entities.Spline.EndTangent
+  id: EndTangent
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: EndTangent
+  nameWithType: Spline.EndTangent
+  fullName: netDxf.Entities.Spline.EndTangent
+  type: Property
+  source:
+    id: EndTangent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 355
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the spline curve end tangent.
+  remarks: Only applicable to splines created with fit points.
+  example: []
+  syntax:
+    content: public Vector3? EndTangent { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{netDxf.Vector3}
+    content.vb: Public Property EndTangent As Vector3?
+  overload: netDxf.Entities.Spline.EndTangent*
+- uid: netDxf.Entities.Spline.KnotParameterization
+  commentId: P:netDxf.Entities.Spline.KnotParameterization
+  id: KnotParameterization
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: KnotParameterization
+  nameWithType: Spline.KnotParameterization
+  fullName: netDxf.Entities.Spline.KnotParameterization
+  type: Property
+  source:
+    id: KnotParameterization
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 368
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or set the knot parameterization computational method.
+  remarks: >-
+    Not usable. When initializing a Spline through a set of fit points, the resulting spline is approximated creating a list of cubic bezier curves.
+
+    It is only informative for splines that has been loaded from a DXF file.
+  example: []
+  syntax:
+    content: public SplineKnotParameterization KnotParameterization { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.SplineKnotParameterization
+    content.vb: Public Property KnotParameterization As SplineKnotParameterization
+  overload: netDxf.Entities.Spline.KnotParameterization*
+- uid: netDxf.Entities.Spline.CreationMethod
+  commentId: P:netDxf.Entities.Spline.CreationMethod
+  id: CreationMethod
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: CreationMethod
+  nameWithType: Spline.CreationMethod
+  fullName: netDxf.Entities.Spline.CreationMethod
+  type: Property
+  source:
+    id: CreationMethod
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 377
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the spline creation method.
+  example: []
+  syntax:
+    content: public SplineCreationMethod CreationMethod { get; }
+    parameters: []
+    return:
+      type: netDxf.Entities.SplineCreationMethod
+    content.vb: Public ReadOnly Property CreationMethod As SplineCreationMethod
+  overload: netDxf.Entities.Spline.CreationMethod*
+- uid: netDxf.Entities.Spline.KnotTolerance
+  commentId: P:netDxf.Entities.Spline.KnotTolerance
+  id: KnotTolerance
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: KnotTolerance
+  nameWithType: Spline.KnotTolerance
+  fullName: netDxf.Entities.Spline.KnotTolerance
+  type: Property
+  source:
+    id: KnotTolerance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 385
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the knot tolerance.
+  example: []
+  syntax:
+    content: public double KnotTolerance { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property KnotTolerance As Double
+  overload: netDxf.Entities.Spline.KnotTolerance*
+- uid: netDxf.Entities.Spline.CtrlPointTolerance
+  commentId: P:netDxf.Entities.Spline.CtrlPointTolerance
+  id: CtrlPointTolerance
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: CtrlPointTolerance
+  nameWithType: Spline.CtrlPointTolerance
+  fullName: netDxf.Entities.Spline.CtrlPointTolerance
+  type: Property
+  source:
+    id: CtrlPointTolerance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 402
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the control point tolerance.
+  example: []
+  syntax:
+    content: public double CtrlPointTolerance { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property CtrlPointTolerance As Double
+  overload: netDxf.Entities.Spline.CtrlPointTolerance*
+- uid: netDxf.Entities.Spline.FitTolerance
+  commentId: P:netDxf.Entities.Spline.FitTolerance
+  id: FitTolerance
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: FitTolerance
+  nameWithType: Spline.FitTolerance
+  fullName: netDxf.Entities.Spline.FitTolerance
+  type: Property
+  source:
+    id: FitTolerance
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 419
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the fit point tolerance.
+  example: []
+  syntax:
+    content: public double FitTolerance { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property FitTolerance As Double
+  overload: netDxf.Entities.Spline.FitTolerance*
+- uid: netDxf.Entities.Spline.Degree
+  commentId: P:netDxf.Entities.Spline.Degree
+  id: Degree
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Degree
+  nameWithType: Spline.Degree
+  fullName: netDxf.Entities.Spline.Degree
+  type: Property
+  source:
+    id: Degree
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 439
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the polynomial degree of the resulting spline.
+  remarks: Valid values are 1 (linear), degree 2 (quadratic), degree 3 (cubic), and so on up to degree 10.
+  example: []
+  syntax:
+    content: public short Degree { get; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public ReadOnly Property Degree As Short
+  overload: netDxf.Entities.Spline.Degree*
+- uid: netDxf.Entities.Spline.IsClosed
+  commentId: P:netDxf.Entities.Spline.IsClosed
+  id: IsClosed
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: IsClosed
+  nameWithType: Spline.IsClosed
+  fullName: netDxf.Entities.Spline.IsClosed
+  type: Property
+  source:
+    id: IsClosed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 450
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets if the spline is closed.
+  remarks: An Spline is closed when the start and end control points are the same.
+  example: []
+  syntax:
+    content: public bool IsClosed { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsClosed As Boolean
+  overload: netDxf.Entities.Spline.IsClosed*
+- uid: netDxf.Entities.Spline.IsClosedPeriodic
+  commentId: P:netDxf.Entities.Spline.IsClosedPeriodic
+  id: IsClosedPeriodic
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: IsClosedPeriodic
+  nameWithType: Spline.IsClosedPeriodic
+  fullName: netDxf.Entities.Spline.IsClosedPeriodic
+  type: Property
+  source:
+    id: IsClosedPeriodic
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 465
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets if the spline is closed and periodic.
+  remarks: >-
+    A periodic spline is always closed creating a smooth continuity at the end points. <br />
+
+    Changing the property will rebuild the knot vector.
+  example: []
+  syntax:
+    content: public bool IsClosedPeriodic { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsClosedPeriodic As Boolean
+  overload: netDxf.Entities.Spline.IsClosedPeriodic*
+- uid: netDxf.Entities.Spline.ControlPoints
+  commentId: P:netDxf.Entities.Spline.ControlPoints
+  id: ControlPoints
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: ControlPoints
+  nameWithType: Spline.ControlPoints
+  fullName: netDxf.Entities.Spline.ControlPoints
+  type: Property
+  source:
+    id: ControlPoints
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 478
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the spline <xref href="netDxf.Vector3?text=control+points" data-throw-if-not-resolved="false"></xref> list.
+  example: []
+  syntax:
+    content: public Vector3[] ControlPoints { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public ReadOnly Property ControlPoints As Vector3()
+  overload: netDxf.Entities.Spline.ControlPoints*
+- uid: netDxf.Entities.Spline.Weights
+  commentId: P:netDxf.Entities.Spline.Weights
+  id: Weights
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Weights
+  nameWithType: Spline.Weights
+  fullName: netDxf.Entities.Spline.Weights
+  type: Property
+  source:
+    id: Weights
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 486
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the spline control points weights list.
+  example: []
+  syntax:
+    content: public double[] Weights { get; }
+    parameters: []
+    return:
+      type: System.Double[]
+    content.vb: Public ReadOnly Property Weights As Double()
+  overload: netDxf.Entities.Spline.Weights*
+- uid: netDxf.Entities.Spline.Knots
+  commentId: P:netDxf.Entities.Spline.Knots
+  id: Knots
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Knots
+  nameWithType: Spline.Knots
+  fullName: netDxf.Entities.Spline.Knots
+  type: Property
+  source:
+    id: Knots
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 495
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the spline knot vector.
+  remarks: By default a uniform knot vector is created.
+  example: []
+  syntax:
+    content: public double[] Knots { get; }
+    parameters: []
+    return:
+      type: System.Double[]
+    content.vb: Public ReadOnly Property Knots As Double()
+  overload: netDxf.Entities.Spline.Knots*
+- uid: netDxf.Entities.Spline.Reverse
+  commentId: M:netDxf.Entities.Spline.Reverse
+  id: Reverse
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Reverse()
+  nameWithType: Spline.Reverse()
+  fullName: netDxf.Entities.Spline.Reverse()
+  type: Method
+  source:
+    id: Reverse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 507
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Switch the spline direction.
+  example: []
+  syntax:
+    content: public void Reverse()
+    content.vb: Public Sub Reverse()
+  overload: netDxf.Entities.Spline.Reverse*
+- uid: netDxf.Entities.Spline.SetUniformWeights(System.Double)
+  commentId: M:netDxf.Entities.Spline.SetUniformWeights(System.Double)
+  id: SetUniformWeights(System.Double)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: SetUniformWeights(double)
+  nameWithType: Spline.SetUniformWeights(double)
+  fullName: netDxf.Entities.Spline.SetUniformWeights(double)
+  type: Method
+  source:
+    id: SetUniformWeights
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 521
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Sets all control point weights to the specified number.
+  example: []
+  syntax:
+    content: public void SetUniformWeights(double weight)
+    parameters:
+    - id: weight
+      type: System.Double
+      description: Control point weight.
+    content.vb: Public Sub SetUniformWeights(weight As Double)
+  overload: netDxf.Entities.Spline.SetUniformWeights*
+  nameWithType.vb: Spline.SetUniformWeights(Double)
+  fullName.vb: netDxf.Entities.Spline.SetUniformWeights(Double)
+  name.vb: SetUniformWeights(Double)
+- uid: netDxf.Entities.Spline.PolygonalVertexes(System.Int32)
+  commentId: M:netDxf.Entities.Spline.PolygonalVertexes(System.Int32)
+  id: PolygonalVertexes(System.Int32)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: PolygonalVertexes(int)
+  nameWithType: Spline.PolygonalVertexes(int)
+  fullName: netDxf.Entities.Spline.PolygonalVertexes(int)
+  type: Method
+  source:
+    id: PolygonalVertexes
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 534
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the spline in a list of vertexes.
+  example: []
+  syntax:
+    content: public List<Vector3> PolygonalVertexes(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector3}
+      description: A list vertexes that represents the spline.
+    content.vb: Public Function PolygonalVertexes(precision As Integer) As List(Of Vector3)
+  overload: netDxf.Entities.Spline.PolygonalVertexes*
+  nameWithType.vb: Spline.PolygonalVertexes(Integer)
+  fullName.vb: netDxf.Entities.Spline.PolygonalVertexes(Integer)
+  name.vb: PolygonalVertexes(Integer)
+- uid: netDxf.Entities.Spline.ToPolyline3D(System.Int32)
+  commentId: M:netDxf.Entities.Spline.ToPolyline3D(System.Int32)
+  id: ToPolyline3D(System.Int32)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: ToPolyline3D(int)
+  nameWithType: Spline.ToPolyline3D(int)
+  fullName: netDxf.Entities.Spline.ToPolyline3D(int)
+  type: Method
+  source:
+    id: ToPolyline3D
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 544
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the spline in a Polyline3D.
+  example: []
+  syntax:
+    content: public Polyline3D ToPolyline3D(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: netDxf.Entities.Polyline3D
+      description: A new instance of <xref href="netDxf.Entities.Polyline3D?text=Polyline3D" data-throw-if-not-resolved="false"></xref> that represents the spline.
+    content.vb: Public Function ToPolyline3D(precision As Integer) As Polyline3D
+  overload: netDxf.Entities.Spline.ToPolyline3D*
+  nameWithType.vb: Spline.ToPolyline3D(Integer)
+  fullName.vb: netDxf.Entities.Spline.ToPolyline3D(Integer)
+  name.vb: ToPolyline3D(Integer)
+- uid: netDxf.Entities.Spline.ToPolyline2D(System.Int32)
+  commentId: M:netDxf.Entities.Spline.ToPolyline2D(System.Int32)
+  id: ToPolyline2D(System.Int32)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: ToPolyline2D(int)
+  nameWithType: Spline.ToPolyline2D(int)
+  fullName: netDxf.Entities.Spline.ToPolyline2D(int)
+  type: Method
+  source:
+    id: ToPolyline2D
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 571
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the spline in a Polyline2D.
+  remarks: The resulting polyline will be a projection of the actual spline into the plane defined by its normal vector.
+  example: []
+  syntax:
+    content: public Polyline2D ToPolyline2D(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: netDxf.Entities.Polyline2D
+      description: A new instance of <xref href="netDxf.Entities.Polyline2D?text=Polyline2D" data-throw-if-not-resolved="false"></xref> that represents the spline.
+    content.vb: Public Function ToPolyline2D(precision As Integer) As Polyline2D
+  overload: netDxf.Entities.Spline.ToPolyline2D*
+  nameWithType.vb: Spline.ToPolyline2D(Integer)
+  fullName.vb: netDxf.Entities.Spline.ToPolyline2D(Integer)
+  name.vb: ToPolyline2D(Integer)
+- uid: netDxf.Entities.Spline.NurbsEvaluator(netDxf.Vector3[],System.Double[],System.Double[],System.Int32,System.Boolean,System.Boolean,System.Int32)
+  commentId: M:netDxf.Entities.Spline.NurbsEvaluator(netDxf.Vector3[],System.Double[],System.Double[],System.Int32,System.Boolean,System.Boolean,System.Int32)
+  id: NurbsEvaluator(netDxf.Vector3[],System.Double[],System.Double[],System.Int32,System.Boolean,System.Boolean,System.Int32)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: NurbsEvaluator(Vector3[], double[], double[], int, bool, bool, int)
+  nameWithType: Spline.NurbsEvaluator(Vector3[], double[], double[], int, bool, bool, int)
+  fullName: netDxf.Entities.Spline.NurbsEvaluator(netDxf.Vector3[], double[], double[], int, bool, bool, int)
+  type: Method
+  source:
+    id: NurbsEvaluator
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 606
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Calculate points along a NURBS curve.
+  remarks: >-
+    NURBS evaluator provided by mikau16 based on Michael V. implementation, roughly follows the notation of http://cs.mtu.edu/~shene/PUBLICATIONS/2004/NURBS.pdf
+
+    Added a few modifications to make it work for open, closed, and periodic closed splines.
+  example: []
+  syntax:
+    content: public static List<Vector3> NurbsEvaluator(Vector3[] controls, double[] weights, double[] knots, int degree, bool isClosed, bool isClosedPeriodic, int precision)
+    parameters:
+    - id: controls
+      type: netDxf.Vector3[]
+      description: List of spline control points.
+    - id: weights
+      type: System.Double[]
+      description: Spline control weights. If null the weights vector will be automatically initialized with 1.0.
+    - id: knots
+      type: System.Double[]
+      description: List of spline knot points. If null the knot vector will be automatically generated.
+    - id: degree
+      type: System.Int32
+      description: Spline degree.
+    - id: isClosed
+      type: System.Boolean
+      description: Specifies if the spline is closed.
+    - id: isClosedPeriodic
+      type: System.Boolean
+      description: Specifies if the spline is closed and periodic.
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector3}
+      description: A list vertexes that represents the spline.
+    content.vb: Public Shared Function NurbsEvaluator(controls As Vector3(), weights As Double(), knots As Double(), degree As Integer, isClosed As Boolean, isClosedPeriodic As Boolean, precision As Integer) As List(Of Vector3)
+  overload: netDxf.Entities.Spline.NurbsEvaluator*
+  nameWithType.vb: Spline.NurbsEvaluator(Vector3(), Double(), Double(), Integer, Boolean, Boolean, Integer)
+  fullName.vb: netDxf.Entities.Spline.NurbsEvaluator(netDxf.Vector3(), Double(), Double(), Integer, Boolean, Boolean, Integer)
+  name.vb: NurbsEvaluator(Vector3(), Double(), Double(), Integer, Boolean, Boolean, Integer)
+- uid: netDxf.Entities.Spline.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Spline.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Spline.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Spline.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 866
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.Spline.TransformBy*
+- uid: netDxf.Entities.Spline.Clone
+  commentId: M:netDxf.Entities.Spline.Clone
+  id: Clone
+  parent: netDxf.Entities.Spline
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Spline.Clone()
+  fullName: netDxf.Entities.Spline.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Spline.cs
+    startLine: 890
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Spline that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new Spline that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.Spline.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short
+- uid: netDxf.Entities.Spline.#ctor*
+  commentId: Overload:netDxf.Entities.Spline.#ctor
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline__ctor_System_Collections_Generic_IEnumerable_netDxf_Vector3__
+  name: Spline
+  nameWithType: Spline.Spline
+  fullName: netDxf.Entities.Spline.Spline
+  nameWithType.vb: Spline.New
+  fullName.vb: netDxf.Entities.Spline.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector3>
+  nameWithType: IEnumerable<Vector3>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector3>
+  nameWithType.vb: IEnumerable(Of Vector3)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector3)
+  name.vb: IEnumerable(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.BezierCurveQuadratic}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<BezierCurveQuadratic>
+  nameWithType: IEnumerable<BezierCurveQuadratic>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.BezierCurveQuadratic>
+  nameWithType.vb: IEnumerable(Of BezierCurveQuadratic)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.BezierCurveQuadratic)
+  name.vb: IEnumerable(Of BezierCurveQuadratic)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.BezierCurveQuadratic
+    name: BezierCurveQuadratic
+    href: netDxf.BezierCurveQuadratic.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.BezierCurveQuadratic
+    name: BezierCurveQuadratic
+    href: netDxf.BezierCurveQuadratic.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.BezierCurveCubic}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<BezierCurveCubic>
+  nameWithType: IEnumerable<BezierCurveCubic>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.BezierCurveCubic>
+  nameWithType.vb: IEnumerable(Of BezierCurveCubic)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.BezierCurveCubic)
+  name.vb: IEnumerable(Of BezierCurveCubic)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.BezierCurveCubic
+    name: BezierCurveCubic
+    href: netDxf.BezierCurveCubic.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.BezierCurveCubic
+    name: BezierCurveCubic
+    href: netDxf.BezierCurveCubic.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.Double}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Double}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<double>
+  nameWithType: IEnumerable<double>
+  fullName: System.Collections.Generic.IEnumerable<double>
+  nameWithType.vb: IEnumerable(Of Double)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Double)
+  name.vb: IEnumerable(Of Double)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Entities.Spline.FitPoints*
+  commentId: Overload:netDxf.Entities.Spline.FitPoints
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_FitPoints
+  name: FitPoints
+  nameWithType: Spline.FitPoints
+  fullName: netDxf.Entities.Spline.FitPoints
+- uid: System.Collections.Generic.IReadOnlyList{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.IReadOnlyList{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<Vector3>
+  nameWithType: IReadOnlyList<Vector3>
+  fullName: System.Collections.Generic.IReadOnlyList<netDxf.Vector3>
+  nameWithType.vb: IReadOnlyList(Of Vector3)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of netDxf.Vector3)
+  name.vb: IReadOnlyList(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Entities.Spline.StartTangent*
+  commentId: Overload:netDxf.Entities.Spline.StartTangent
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_StartTangent
+  name: StartTangent
+  nameWithType: Spline.StartTangent
+  fullName: netDxf.Entities.Spline.StartTangent
+- uid: System.Nullable{netDxf.Vector3}
+  commentId: T:System.Nullable{netDxf.Vector3}
+  parent: System
+  definition: System.Nullable`1
+  href: netDxf.Vector3.html
+  name: Vector3?
+  nameWithType: Vector3?
+  fullName: netDxf.Vector3?
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '?'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Entities.Spline.EndTangent*
+  commentId: Overload:netDxf.Entities.Spline.EndTangent
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_EndTangent
+  name: EndTangent
+  nameWithType: Spline.EndTangent
+  fullName: netDxf.Entities.Spline.EndTangent
+- uid: netDxf.Entities.Spline.KnotParameterization*
+  commentId: Overload:netDxf.Entities.Spline.KnotParameterization
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_KnotParameterization
+  name: KnotParameterization
+  nameWithType: Spline.KnotParameterization
+  fullName: netDxf.Entities.Spline.KnotParameterization
+- uid: netDxf.Entities.SplineKnotParameterization
+  commentId: T:netDxf.Entities.SplineKnotParameterization
+  parent: netDxf.Entities
+  href: netDxf.Entities.SplineKnotParameterization.html
+  name: SplineKnotParameterization
+  nameWithType: SplineKnotParameterization
+  fullName: netDxf.Entities.SplineKnotParameterization
+- uid: netDxf.Entities.Spline.CreationMethod*
+  commentId: Overload:netDxf.Entities.Spline.CreationMethod
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_CreationMethod
+  name: CreationMethod
+  nameWithType: Spline.CreationMethod
+  fullName: netDxf.Entities.Spline.CreationMethod
+- uid: netDxf.Entities.SplineCreationMethod
+  commentId: T:netDxf.Entities.SplineCreationMethod
+  parent: netDxf.Entities
+  href: netDxf.Entities.SplineCreationMethod.html
+  name: SplineCreationMethod
+  nameWithType: SplineCreationMethod
+  fullName: netDxf.Entities.SplineCreationMethod
+- uid: netDxf.Entities.Spline.KnotTolerance*
+  commentId: Overload:netDxf.Entities.Spline.KnotTolerance
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_KnotTolerance
+  name: KnotTolerance
+  nameWithType: Spline.KnotTolerance
+  fullName: netDxf.Entities.Spline.KnotTolerance
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Entities.Spline.CtrlPointTolerance*
+  commentId: Overload:netDxf.Entities.Spline.CtrlPointTolerance
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_CtrlPointTolerance
+  name: CtrlPointTolerance
+  nameWithType: Spline.CtrlPointTolerance
+  fullName: netDxf.Entities.Spline.CtrlPointTolerance
+- uid: netDxf.Entities.Spline.FitTolerance*
+  commentId: Overload:netDxf.Entities.Spline.FitTolerance
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_FitTolerance
+  name: FitTolerance
+  nameWithType: Spline.FitTolerance
+  fullName: netDxf.Entities.Spline.FitTolerance
+- uid: netDxf.Entities.Spline.Degree*
+  commentId: Overload:netDxf.Entities.Spline.Degree
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_Degree
+  name: Degree
+  nameWithType: Spline.Degree
+  fullName: netDxf.Entities.Spline.Degree
+- uid: netDxf.Entities.Spline.IsClosed*
+  commentId: Overload:netDxf.Entities.Spline.IsClosed
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_IsClosed
+  name: IsClosed
+  nameWithType: Spline.IsClosed
+  fullName: netDxf.Entities.Spline.IsClosed
+- uid: netDxf.Entities.Spline.IsClosedPeriodic*
+  commentId: Overload:netDxf.Entities.Spline.IsClosedPeriodic
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_IsClosedPeriodic
+  name: IsClosedPeriodic
+  nameWithType: Spline.IsClosedPeriodic
+  fullName: netDxf.Entities.Spline.IsClosedPeriodic
+- uid: netDxf.Entities.Spline.ControlPoints*
+  commentId: Overload:netDxf.Entities.Spline.ControlPoints
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_ControlPoints
+  name: ControlPoints
+  nameWithType: Spline.ControlPoints
+  fullName: netDxf.Entities.Spline.ControlPoints
+- uid: netDxf.Vector3[]
+  isExternal: true
+  href: netDxf.Vector3.html
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: netDxf.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: netDxf.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Spline.Weights*
+  commentId: Overload:netDxf.Entities.Spline.Weights
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_Weights
+  name: Weights
+  nameWithType: Spline.Weights
+  fullName: netDxf.Entities.Spline.Weights
+- uid: System.Double[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double[]
+  nameWithType: double[]
+  fullName: double[]
+  nameWithType.vb: Double()
+  fullName.vb: Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Spline.Knots*
+  commentId: Overload:netDxf.Entities.Spline.Knots
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_Knots
+  name: Knots
+  nameWithType: Spline.Knots
+  fullName: netDxf.Entities.Spline.Knots
+- uid: netDxf.Entities.Spline.Reverse*
+  commentId: Overload:netDxf.Entities.Spline.Reverse
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_Reverse
+  name: Reverse
+  nameWithType: Spline.Reverse
+  fullName: netDxf.Entities.Spline.Reverse
+- uid: netDxf.Entities.Spline.SetUniformWeights*
+  commentId: Overload:netDxf.Entities.Spline.SetUniformWeights
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_SetUniformWeights_System_Double_
+  name: SetUniformWeights
+  nameWithType: Spline.SetUniformWeights
+  fullName: netDxf.Entities.Spline.SetUniformWeights
+- uid: netDxf.Entities.Spline.PolygonalVertexes*
+  commentId: Overload:netDxf.Entities.Spline.PolygonalVertexes
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_PolygonalVertexes_System_Int32_
+  name: PolygonalVertexes
+  nameWithType: Spline.PolygonalVertexes
+  fullName: netDxf.Entities.Spline.PolygonalVertexes
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.List{netDxf.Vector3}
+  commentId: T:System.Collections.Generic.List{netDxf.Vector3}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector3>
+  nameWithType: List<Vector3>
+  fullName: System.Collections.Generic.List<netDxf.Vector3>
+  nameWithType.vb: List(Of Vector3)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Vector3)
+  name.vb: List(Of Vector3)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Entities.Polyline3D
+  commentId: T:netDxf.Entities.Polyline3D
+  parent: netDxf.Entities
+  href: netDxf.Entities.Polyline3D.html
+  name: Polyline3D
+  nameWithType: Polyline3D
+  fullName: netDxf.Entities.Polyline3D
+- uid: netDxf.Entities.Spline.ToPolyline3D*
+  commentId: Overload:netDxf.Entities.Spline.ToPolyline3D
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_ToPolyline3D_System_Int32_
+  name: ToPolyline3D
+  nameWithType: Spline.ToPolyline3D
+  fullName: netDxf.Entities.Spline.ToPolyline3D
+- uid: netDxf.Entities.Polyline2D
+  commentId: T:netDxf.Entities.Polyline2D
+  parent: netDxf.Entities
+  href: netDxf.Entities.Polyline2D.html
+  name: Polyline2D
+  nameWithType: Polyline2D
+  fullName: netDxf.Entities.Polyline2D
+- uid: netDxf.Entities.Spline.ToPolyline2D*
+  commentId: Overload:netDxf.Entities.Spline.ToPolyline2D
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_ToPolyline2D_System_Int32_
+  name: ToPolyline2D
+  nameWithType: Spline.ToPolyline2D
+  fullName: netDxf.Entities.Spline.ToPolyline2D
+- uid: netDxf.Entities.Spline.NurbsEvaluator*
+  commentId: Overload:netDxf.Entities.Spline.NurbsEvaluator
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_NurbsEvaluator_netDxf_Vector3___System_Double___System_Double___System_Int32_System_Boolean_System_Boolean_System_Int32_
+  name: NurbsEvaluator
+  nameWithType: Spline.NurbsEvaluator
+  fullName: netDxf.Entities.Spline.NurbsEvaluator
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.Spline.TransformBy*
+  commentId: Overload:netDxf.Entities.Spline.TransformBy
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Spline.TransformBy
+  fullName: netDxf.Entities.Spline.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Spline.Clone*
+  commentId: Overload:netDxf.Entities.Spline.Clone
+  href: netDxf.Entities.Spline.html#netDxf_Entities_Spline_Clone
+  name: Clone
+  nameWithType: Spline.Clone
+  fullName: netDxf.Entities.Spline.Clone

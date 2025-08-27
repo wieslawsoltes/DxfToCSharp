@@ -1,0 +1,778 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Header.DxfVersion
+  commentId: T:netDxf.Header.DxfVersion
+  id: DxfVersion
+  parent: netDxf.Header
+  children:
+  - netDxf.Header.DxfVersion.AutoCad10
+  - netDxf.Header.DxfVersion.AutoCad12
+  - netDxf.Header.DxfVersion.AutoCad13
+  - netDxf.Header.DxfVersion.AutoCad14
+  - netDxf.Header.DxfVersion.AutoCad1_1
+  - netDxf.Header.DxfVersion.AutoCad1_2
+  - netDxf.Header.DxfVersion.AutoCad1_4
+  - netDxf.Header.DxfVersion.AutoCad2000
+  - netDxf.Header.DxfVersion.AutoCad2004
+  - netDxf.Header.DxfVersion.AutoCad2007
+  - netDxf.Header.DxfVersion.AutoCad2010
+  - netDxf.Header.DxfVersion.AutoCad2013
+  - netDxf.Header.DxfVersion.AutoCad2018
+  - netDxf.Header.DxfVersion.AutoCad2_0
+  - netDxf.Header.DxfVersion.AutoCad2_10
+  - netDxf.Header.DxfVersion.AutoCad2_5
+  - netDxf.Header.DxfVersion.AutoCad2_6
+  - netDxf.Header.DxfVersion.AutoCad9
+  - netDxf.Header.DxfVersion.Unknown
+  langs:
+  - csharp
+  - vb
+  name: DxfVersion
+  nameWithType: DxfVersion
+  fullName: netDxf.Header.DxfVersion
+  type: Enum
+  source:
+    id: DxfVersion
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: The AutoCAD drawing database version number.
+  example: []
+  syntax:
+    content: public enum DxfVersion
+    content.vb: Public Enum DxfVersion
+- uid: netDxf.Header.DxfVersion.Unknown
+  commentId: F:netDxf.Header.DxfVersion.Unknown
+  id: Unknown
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: DxfVersion.Unknown
+  fullName: netDxf.Header.DxfVersion.Unknown
+  type: Field
+  source:
+    id: Unknown
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: Unknown AutoCAD DXF file version.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("Unknown")]
+
+      Unknown = 0
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("Unknown")>
+
+      Unknown = 0
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Unknown
+- uid: netDxf.Header.DxfVersion.AutoCad1_1
+  commentId: F:netDxf.Header.DxfVersion.AutoCad1_1
+  id: AutoCad1_1
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad1_1
+  nameWithType: DxfVersion.AutoCad1_1
+  fullName: netDxf.Header.DxfVersion.AutoCad1_1
+  type: Field
+  source:
+    id: AutoCad1_1
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R1.1 DXF file. AutoCAD release 1.1.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("MC0.0")]
+
+      AutoCad1_1 = 1
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("MC0.0")>
+
+      AutoCad1_1 = 1
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: MC0.0
+- uid: netDxf.Header.DxfVersion.AutoCad1_2
+  commentId: F:netDxf.Header.DxfVersion.AutoCad1_2
+  id: AutoCad1_2
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad1_2
+  nameWithType: DxfVersion.AutoCad1_2
+  fullName: netDxf.Header.DxfVersion.AutoCad1_2
+  type: Field
+  source:
+    id: AutoCad1_2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 47
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R1.2 DXF file. AutoCAD release 1.2.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1.2")]
+
+      AutoCad1_2 = 2
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1.2")>
+
+      AutoCad1_2 = 2
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1.2
+- uid: netDxf.Header.DxfVersion.AutoCad1_4
+  commentId: F:netDxf.Header.DxfVersion.AutoCad1_4
+  id: AutoCad1_4
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad1_4
+  nameWithType: DxfVersion.AutoCad1_4
+  fullName: netDxf.Header.DxfVersion.AutoCad1_4
+  type: Field
+  source:
+    id: AutoCad1_4
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R1.4 DXF file. AutoCAD release 1.4.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1.4")]
+
+      AutoCad1_4 = 3
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1.4")>
+
+      AutoCad1_4 = 3
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1.4
+- uid: netDxf.Header.DxfVersion.AutoCad2_0
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2_0
+  id: AutoCad2_0
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2_0
+  nameWithType: DxfVersion.AutoCad2_0
+  fullName: netDxf.Header.DxfVersion.AutoCad2_0
+  type: Field
+  source:
+    id: AutoCad2_0
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 59
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R2.0 DXF file. AutoCAD release 2.0.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1.50")]
+
+      AutoCad2_0 = 4
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1.50")>
+
+      AutoCad2_0 = 4
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1.50
+- uid: netDxf.Header.DxfVersion.AutoCad2_10
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2_10
+  id: AutoCad2_10
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2_10
+  nameWithType: DxfVersion.AutoCad2_10
+  fullName: netDxf.Header.DxfVersion.AutoCad2_10
+  type: Field
+  source:
+    id: AutoCad2_10
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R2.10 DXF file. AutoCAD release 2.10.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC2.10")]
+
+      AutoCad2_10 = 5
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC2.10")>
+
+      AutoCad2_10 = 5
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC2.10
+- uid: netDxf.Header.DxfVersion.AutoCad2_5
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2_5
+  id: AutoCad2_5
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2_5
+  nameWithType: DxfVersion.AutoCad2_5
+  fullName: netDxf.Header.DxfVersion.AutoCad2_5
+  type: Field
+  source:
+    id: AutoCad2_5
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 71
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R2.5 DXF file. AutoCAD release 2.5.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1002")]
+
+      AutoCad2_5 = 6
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1002")>
+
+      AutoCad2_5 = 6
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1002
+- uid: netDxf.Header.DxfVersion.AutoCad2_6
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2_6
+  id: AutoCad2_6
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2_6
+  nameWithType: DxfVersion.AutoCad2_6
+  fullName: netDxf.Header.DxfVersion.AutoCad2_6
+  type: Field
+  source:
+    id: AutoCad2_6
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 77
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R2.6 DXF file. AutoCAD release 2.6.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1003")]
+
+      AutoCad2_6 = 7
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1003")>
+
+      AutoCad2_6 = 7
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1003
+- uid: netDxf.Header.DxfVersion.AutoCad9
+  commentId: F:netDxf.Header.DxfVersion.AutoCad9
+  id: AutoCad9
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad9
+  nameWithType: DxfVersion.AutoCad9
+  fullName: netDxf.Header.DxfVersion.AutoCad9
+  type: Field
+  source:
+    id: AutoCad9
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 83
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R9 DXF file. AutoCAD release 9.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1004")]
+
+      AutoCad9 = 8
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1004")>
+
+      AutoCad9 = 8
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1004
+- uid: netDxf.Header.DxfVersion.AutoCad10
+  commentId: F:netDxf.Header.DxfVersion.AutoCad10
+  id: AutoCad10
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad10
+  nameWithType: DxfVersion.AutoCad10
+  fullName: netDxf.Header.DxfVersion.AutoCad10
+  type: Field
+  source:
+    id: AutoCad10
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 89
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R10 DXF file. AutoCAD release 10.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1006")]
+
+      AutoCad10 = 9
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1006")>
+
+      AutoCad10 = 9
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1006
+- uid: netDxf.Header.DxfVersion.AutoCad12
+  commentId: F:netDxf.Header.DxfVersion.AutoCad12
+  id: AutoCad12
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad12
+  nameWithType: DxfVersion.AutoCad12
+  fullName: netDxf.Header.DxfVersion.AutoCad12
+  type: Field
+  source:
+    id: AutoCad12
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 95
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R11 and R12 DXF file. AutoCAD release 11/12 (LT R1/R2).
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1009")]
+
+      AutoCad12 = 10
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1009")>
+
+      AutoCad12 = 10
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1009
+- uid: netDxf.Header.DxfVersion.AutoCad13
+  commentId: F:netDxf.Header.DxfVersion.AutoCad13
+  id: AutoCad13
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad13
+  nameWithType: DxfVersion.AutoCad13
+  fullName: netDxf.Header.DxfVersion.AutoCad13
+  type: Field
+  source:
+    id: AutoCad13
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 101
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R13 DXF file. AutoCAD release 13 (LT95).
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1012")]
+
+      AutoCad13 = 11
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1012")>
+
+      AutoCad13 = 11
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1012
+- uid: netDxf.Header.DxfVersion.AutoCad14
+  commentId: F:netDxf.Header.DxfVersion.AutoCad14
+  id: AutoCad14
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad14
+  nameWithType: DxfVersion.AutoCad14
+  fullName: netDxf.Header.DxfVersion.AutoCad14
+  type: Field
+  source:
+    id: AutoCad14
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 107
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD R14 DXF file. AutoCAD release 14, 14.01 (LT97/LT98).
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1014")]
+
+      AutoCad14 = 12
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1014")>
+
+      AutoCad14 = 12
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1014
+- uid: netDxf.Header.DxfVersion.AutoCad2000
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2000
+  id: AutoCad2000
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2000
+  nameWithType: DxfVersion.AutoCad2000
+  fullName: netDxf.Header.DxfVersion.AutoCad2000
+  type: Field
+  source:
+    id: AutoCad2000
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 113
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2000 DXF file. AutoCAD 2000/2000i/2002.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1015")]
+
+      AutoCad2000 = 13
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1015")>
+
+      AutoCad2000 = 13
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1015
+- uid: netDxf.Header.DxfVersion.AutoCad2004
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2004
+  id: AutoCad2004
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2004
+  nameWithType: DxfVersion.AutoCad2004
+  fullName: netDxf.Header.DxfVersion.AutoCad2004
+  type: Field
+  source:
+    id: AutoCad2004
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 119
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2004 DXF file. AutoCAD 2004/2005/2006.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1018")]
+
+      AutoCad2004 = 14
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1018")>
+
+      AutoCad2004 = 14
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1018
+- uid: netDxf.Header.DxfVersion.AutoCad2007
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2007
+  id: AutoCad2007
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2007
+  nameWithType: DxfVersion.AutoCad2007
+  fullName: netDxf.Header.DxfVersion.AutoCad2007
+  type: Field
+  source:
+    id: AutoCad2007
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 125
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2007 DXF file. AutoCAD 2007/2008/2009.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1021")]
+
+      AutoCad2007 = 15
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1021")>
+
+      AutoCad2007 = 15
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1021
+- uid: netDxf.Header.DxfVersion.AutoCad2010
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2010
+  id: AutoCad2010
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2010
+  nameWithType: DxfVersion.AutoCad2010
+  fullName: netDxf.Header.DxfVersion.AutoCad2010
+  type: Field
+  source:
+    id: AutoCad2010
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 131
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2010 DXF file. AutoCAD 2010/2011/2012.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1024")]
+
+      AutoCad2010 = 16
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1024")>
+
+      AutoCad2010 = 16
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1024
+- uid: netDxf.Header.DxfVersion.AutoCad2013
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2013
+  id: AutoCad2013
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2013
+  nameWithType: DxfVersion.AutoCad2013
+  fullName: netDxf.Header.DxfVersion.AutoCad2013
+  type: Field
+  source:
+    id: AutoCad2013
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 137
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2013 DXF file. AutoCAD 2013/2014/2015/2016/2017.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1027")]
+
+      AutoCad2013 = 17
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1027")>
+
+      AutoCad2013 = 17
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1027
+- uid: netDxf.Header.DxfVersion.AutoCad2018
+  commentId: F:netDxf.Header.DxfVersion.AutoCad2018
+  id: AutoCad2018
+  parent: netDxf.Header.DxfVersion
+  langs:
+  - csharp
+  - vb
+  name: AutoCad2018
+  nameWithType: DxfVersion.AutoCad2018
+  fullName: netDxf.Header.DxfVersion.AutoCad2018
+  type: Field
+  source:
+    id: AutoCad2018
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Header/DxfVersion.cs
+    startLine: 143
+  assemblies:
+  - netDxf
+  namespace: netDxf.Header
+  summary: AutoCAD 2018 DXF file. AutoCAD 2018/2019/2020/2021/2022/2023.
+  example: []
+  syntax:
+    content: >-
+      [StringValue("AC1032")]
+
+      AutoCad2018 = 18
+    return:
+      type: netDxf.Header.DxfVersion
+    content.vb: >-
+      <StringValue("AC1032")>
+
+      AutoCad2018 = 18
+  attributes:
+  - type: netDxf.StringValueAttribute
+    ctor: netDxf.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: AC1032
+references:
+- uid: netDxf.Header
+  commentId: N:netDxf.Header
+  href: netDxf.html
+  name: netDxf.Header
+  nameWithType: netDxf.Header
+  fullName: netDxf.Header
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Header
+    name: Header
+    href: netDxf.Header.html
+- uid: netDxf.Header.DxfVersion
+  commentId: T:netDxf.Header.DxfVersion
+  parent: netDxf.Header
+  href: netDxf.Header.DxfVersion.html
+  name: DxfVersion
+  nameWithType: DxfVersion
+  fullName: netDxf.Header.DxfVersion

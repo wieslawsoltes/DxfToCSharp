@@ -1,0 +1,417 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.PlotFlags
+  commentId: T:netDxf.Objects.PlotFlags
+  id: PlotFlags
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.PlotFlags.DrawViewportsFirst
+  - netDxf.Objects.PlotFlags.Initializing
+  - netDxf.Objects.PlotFlags.ModelType
+  - netDxf.Objects.PlotFlags.PlotCentered
+  - netDxf.Objects.PlotFlags.PlotHidden
+  - netDxf.Objects.PlotFlags.PlotPlotStyles
+  - netDxf.Objects.PlotFlags.PlotViewportBorders
+  - netDxf.Objects.PlotFlags.PrevPlotInit
+  - netDxf.Objects.PlotFlags.PrintLineweights
+  - netDxf.Objects.PlotFlags.ScaleLineweights
+  - netDxf.Objects.PlotFlags.ShowPlotStyles
+  - netDxf.Objects.PlotFlags.UpdatePaper
+  - netDxf.Objects.PlotFlags.UseStandardScale
+  - netDxf.Objects.PlotFlags.ZoomToPaperOnUpdate
+  langs:
+  - csharp
+  - vb
+  name: PlotFlags
+  nameWithType: PlotFlags
+  fullName: netDxf.Objects.PlotFlags
+  type: Enum
+  source:
+    id: PlotFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 33
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Defines the plot settings flag.
+  remarks: Bit flag.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum PlotFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum PlotFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Objects.PlotFlags.PlotViewportBorders
+  commentId: F:netDxf.Objects.PlotFlags.PlotViewportBorders
+  id: PlotViewportBorders
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PlotViewportBorders
+  nameWithType: PlotFlags.PlotViewportBorders
+  fullName: netDxf.Objects.PlotFlags.PlotViewportBorders
+  type: Field
+  source:
+    id: PlotViewportBorders
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 39
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Plot viewport borders.
+  example: []
+  syntax:
+    content: PlotViewportBorders = 1
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.ShowPlotStyles
+  commentId: F:netDxf.Objects.PlotFlags.ShowPlotStyles
+  id: ShowPlotStyles
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: ShowPlotStyles
+  nameWithType: PlotFlags.ShowPlotStyles
+  fullName: netDxf.Objects.PlotFlags.ShowPlotStyles
+  type: Field
+  source:
+    id: ShowPlotStyles
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 44
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Show plot styles.
+  example: []
+  syntax:
+    content: ShowPlotStyles = 2
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.PlotCentered
+  commentId: F:netDxf.Objects.PlotFlags.PlotCentered
+  id: PlotCentered
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PlotCentered
+  nameWithType: PlotFlags.PlotCentered
+  fullName: netDxf.Objects.PlotFlags.PlotCentered
+  type: Field
+  source:
+    id: PlotCentered
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 49
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Plot centered.
+  example: []
+  syntax:
+    content: PlotCentered = 4
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.PlotHidden
+  commentId: F:netDxf.Objects.PlotFlags.PlotHidden
+  id: PlotHidden
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PlotHidden
+  nameWithType: PlotFlags.PlotHidden
+  fullName: netDxf.Objects.PlotFlags.PlotHidden
+  type: Field
+  source:
+    id: PlotHidden
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 54
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Plot hidden.
+  example: []
+  syntax:
+    content: PlotHidden = 8
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.UseStandardScale
+  commentId: F:netDxf.Objects.PlotFlags.UseStandardScale
+  id: UseStandardScale
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: UseStandardScale
+  nameWithType: PlotFlags.UseStandardScale
+  fullName: netDxf.Objects.PlotFlags.UseStandardScale
+  type: Field
+  source:
+    id: UseStandardScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 59
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Use standard scale.
+  example: []
+  syntax:
+    content: UseStandardScale = 16
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.PlotPlotStyles
+  commentId: F:netDxf.Objects.PlotFlags.PlotPlotStyles
+  id: PlotPlotStyles
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PlotPlotStyles
+  nameWithType: PlotFlags.PlotPlotStyles
+  fullName: netDxf.Objects.PlotFlags.PlotPlotStyles
+  type: Field
+  source:
+    id: PlotPlotStyles
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 64
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Plot styles.
+  example: []
+  syntax:
+    content: PlotPlotStyles = 32
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.ScaleLineweights
+  commentId: F:netDxf.Objects.PlotFlags.ScaleLineweights
+  id: ScaleLineweights
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: ScaleLineweights
+  nameWithType: PlotFlags.ScaleLineweights
+  fullName: netDxf.Objects.PlotFlags.ScaleLineweights
+  type: Field
+  source:
+    id: ScaleLineweights
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 69
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Scale line weights.
+  example: []
+  syntax:
+    content: ScaleLineweights = 64
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.PrintLineweights
+  commentId: F:netDxf.Objects.PlotFlags.PrintLineweights
+  id: PrintLineweights
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PrintLineweights
+  nameWithType: PlotFlags.PrintLineweights
+  fullName: netDxf.Objects.PlotFlags.PrintLineweights
+  type: Field
+  source:
+    id: PrintLineweights
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 74
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Print line weights.
+  example: []
+  syntax:
+    content: PrintLineweights = 128
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.DrawViewportsFirst
+  commentId: F:netDxf.Objects.PlotFlags.DrawViewportsFirst
+  id: DrawViewportsFirst
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: DrawViewportsFirst
+  nameWithType: PlotFlags.DrawViewportsFirst
+  fullName: netDxf.Objects.PlotFlags.DrawViewportsFirst
+  type: Field
+  source:
+    id: DrawViewportsFirst
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 79
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Draw viewports first.
+  example: []
+  syntax:
+    content: DrawViewportsFirst = 512
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.ModelType
+  commentId: F:netDxf.Objects.PlotFlags.ModelType
+  id: ModelType
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: ModelType
+  nameWithType: PlotFlags.ModelType
+  fullName: netDxf.Objects.PlotFlags.ModelType
+  type: Field
+  source:
+    id: ModelType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 84
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Model type.
+  example: []
+  syntax:
+    content: ModelType = 1024
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.UpdatePaper
+  commentId: F:netDxf.Objects.PlotFlags.UpdatePaper
+  id: UpdatePaper
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: UpdatePaper
+  nameWithType: PlotFlags.UpdatePaper
+  fullName: netDxf.Objects.PlotFlags.UpdatePaper
+  type: Field
+  source:
+    id: UpdatePaper
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 89
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Update paper.
+  example: []
+  syntax:
+    content: UpdatePaper = 2048
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.ZoomToPaperOnUpdate
+  commentId: F:netDxf.Objects.PlotFlags.ZoomToPaperOnUpdate
+  id: ZoomToPaperOnUpdate
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: ZoomToPaperOnUpdate
+  nameWithType: PlotFlags.ZoomToPaperOnUpdate
+  fullName: netDxf.Objects.PlotFlags.ZoomToPaperOnUpdate
+  type: Field
+  source:
+    id: ZoomToPaperOnUpdate
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 94
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Soon to paper on update.
+  example: []
+  syntax:
+    content: ZoomToPaperOnUpdate = 4096
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.Initializing
+  commentId: F:netDxf.Objects.PlotFlags.Initializing
+  id: Initializing
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: Initializing
+  nameWithType: PlotFlags.Initializing
+  fullName: netDxf.Objects.PlotFlags.Initializing
+  type: Field
+  source:
+    id: Initializing
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 99
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Initializing.
+  example: []
+  syntax:
+    content: Initializing = 8192
+    return:
+      type: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotFlags.PrevPlotInit
+  commentId: F:netDxf.Objects.PlotFlags.PrevPlotInit
+  id: PrevPlotInit
+  parent: netDxf.Objects.PlotFlags
+  langs:
+  - csharp
+  - vb
+  name: PrevPlotInit
+  nameWithType: PlotFlags.PrevPlotInit
+  fullName: netDxf.Objects.PlotFlags.PrevPlotInit
+  type: Field
+  source:
+    id: PrevPlotInit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotFlags.cs
+    startLine: 104
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Preview plot initialization.
+  example: []
+  syntax:
+    content: PrevPlotInit = 16384
+    return:
+      type: netDxf.Objects.PlotFlags
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.PlotFlags
+  commentId: T:netDxf.Objects.PlotFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotFlags.html
+  name: PlotFlags
+  nameWithType: PlotFlags
+  fullName: netDxf.Objects.PlotFlags

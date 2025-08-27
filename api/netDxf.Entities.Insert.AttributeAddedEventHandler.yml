@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Insert.AttributeAddedEventHandler
+  commentId: T:netDxf.Entities.Insert.AttributeAddedEventHandler
+  id: Insert.AttributeAddedEventHandler
+  parent: netDxf.Entities
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Insert.AttributeAddedEventHandler
+  nameWithType: Insert.AttributeAddedEventHandler
+  fullName: netDxf.Entities.Insert.AttributeAddedEventHandler
+  type: Delegate
+  source:
+    id: AttributeAddedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Insert.cs
+    startLine: 56
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public delegate void Insert.AttributeAddedEventHandler(Insert sender, AttributeChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Entities.Insert
+    - id: e
+      type: netDxf.Entities.AttributeChangeEventArgs
+    content.vb: Public Delegate Sub Insert.AttributeAddedEventHandler(sender As Insert, e As AttributeChangeEventArgs)
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.Insert
+  commentId: T:netDxf.Entities.Insert
+  parent: netDxf.Entities
+  href: netDxf.Entities.Insert.html
+  name: Insert
+  nameWithType: Insert
+  fullName: netDxf.Entities.Insert
+- uid: netDxf.Entities.AttributeChangeEventArgs
+  commentId: T:netDxf.Entities.AttributeChangeEventArgs
+  parent: netDxf.Entities
+  href: netDxf.Entities.AttributeChangeEventArgs.html
+  name: AttributeChangeEventArgs
+  nameWithType: AttributeChangeEventArgs
+  fullName: netDxf.Entities.AttributeChangeEventArgs

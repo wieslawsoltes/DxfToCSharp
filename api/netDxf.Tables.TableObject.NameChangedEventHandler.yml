@@ -1,0 +1,117 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.TableObject.NameChangedEventHandler
+  commentId: T:netDxf.Tables.TableObject.NameChangedEventHandler
+  id: TableObject.NameChangedEventHandler
+  parent: netDxf.Tables
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: TableObject.NameChangedEventHandler
+  nameWithType: TableObject.NameChangedEventHandler
+  fullName: netDxf.Tables.TableObject.NameChangedEventHandler
+  type: Delegate
+  source:
+    id: NameChangedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/TableObject.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: public delegate void TableObject.NameChangedEventHandler(TableObject sender, TableObjectChangedEventArgs<string> e)
+    parameters:
+    - id: sender
+      type: netDxf.Tables.TableObject
+    - id: e
+      type: netDxf.Tables.TableObjectChangedEventArgs{System.String}
+    content.vb: Public Delegate Sub TableObject.NameChangedEventHandler(sender As TableObject, e As TableObjectChangedEventArgs(Of String))
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.TableObject
+  commentId: T:netDxf.Tables.TableObject
+  parent: netDxf.Tables
+  href: netDxf.Tables.TableObject.html
+  name: TableObject
+  nameWithType: TableObject
+  fullName: netDxf.Tables.TableObject
+- uid: netDxf.Tables.TableObjectChangedEventArgs{System.String}
+  commentId: T:netDxf.Tables.TableObjectChangedEventArgs{System.String}
+  parent: netDxf.Tables
+  definition: netDxf.Tables.TableObjectChangedEventArgs`1
+  href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  name: TableObjectChangedEventArgs<string>
+  nameWithType: TableObjectChangedEventArgs<string>
+  fullName: netDxf.Tables.TableObjectChangedEventArgs<string>
+  nameWithType.vb: TableObjectChangedEventArgs(Of String)
+  fullName.vb: netDxf.Tables.TableObjectChangedEventArgs(Of String)
+  name.vb: TableObjectChangedEventArgs(Of String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.TableObjectChangedEventArgs`1
+  commentId: T:netDxf.Tables.TableObjectChangedEventArgs`1
+  href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  name: TableObjectChangedEventArgs<T>
+  nameWithType: TableObjectChangedEventArgs<T>
+  fullName: netDxf.Tables.TableObjectChangedEventArgs<T>
+  nameWithType.vb: TableObjectChangedEventArgs(Of T)
+  fullName.vb: netDxf.Tables.TableObjectChangedEventArgs(Of T)
+  name.vb: TableObjectChangedEventArgs(Of T)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs
+    href: netDxf.Tables.TableObjectChangedEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

@@ -1,0 +1,106 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.OrdinateDimensionAxis
+  commentId: T:netDxf.Entities.OrdinateDimensionAxis
+  id: OrdinateDimensionAxis
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.OrdinateDimensionAxis.X
+  - netDxf.Entities.OrdinateDimensionAxis.Y
+  langs:
+  - csharp
+  - vb
+  name: OrdinateDimensionAxis
+  nameWithType: OrdinateDimensionAxis
+  fullName: netDxf.Entities.OrdinateDimensionAxis
+  type: Enum
+  source:
+    id: OrdinateDimensionAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/OrdinateDimensionAxis.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Defines the axis that measures the ordinate dimension.
+  example: []
+  syntax:
+    content: public enum OrdinateDimensionAxis
+    content.vb: Public Enum OrdinateDimensionAxis
+- uid: netDxf.Entities.OrdinateDimensionAxis.X
+  commentId: F:netDxf.Entities.OrdinateDimensionAxis.X
+  id: X
+  parent: netDxf.Entities.OrdinateDimensionAxis
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: OrdinateDimensionAxis.X
+  fullName: netDxf.Entities.OrdinateDimensionAxis.X
+  type: Field
+  source:
+    id: X
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/OrdinateDimensionAxis.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: The ordinate dimension measure the X distance and the dimension line is aligned to the Y axis.
+  example: []
+  syntax:
+    content: X = 0
+    return:
+      type: netDxf.Entities.OrdinateDimensionAxis
+- uid: netDxf.Entities.OrdinateDimensionAxis.Y
+  commentId: F:netDxf.Entities.OrdinateDimensionAxis.Y
+  id: Y
+  parent: netDxf.Entities.OrdinateDimensionAxis
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: OrdinateDimensionAxis.Y
+  fullName: netDxf.Entities.OrdinateDimensionAxis.Y
+  type: Field
+  source:
+    id: Y
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/OrdinateDimensionAxis.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: The ordinate dimension measure the Y distance and the dimension line is aligned to the X axis.
+  example: []
+  syntax:
+    content: Y = 1
+    return:
+      type: netDxf.Entities.OrdinateDimensionAxis
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.OrdinateDimensionAxis
+  commentId: T:netDxf.Entities.OrdinateDimensionAxis
+  parent: netDxf.Entities
+  href: netDxf.Entities.OrdinateDimensionAxis.html
+  name: OrdinateDimensionAxis
+  nameWithType: OrdinateDimensionAxis
+  fullName: netDxf.Entities.OrdinateDimensionAxis

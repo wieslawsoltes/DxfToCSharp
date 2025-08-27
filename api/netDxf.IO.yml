@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.IO
+  commentId: N:netDxf.IO
+  id: netDxf.IO
+  children:
+  - netDxf.IO.DxfVersionNotSupportedException
+  langs:
+  - csharp
+  - vb
+  name: netDxf.IO
+  nameWithType: netDxf.IO
+  fullName: netDxf.IO
+  type: Namespace
+  assemblies:
+  - netDxf
+references:
+- uid: netDxf.IO.DxfVersionNotSupportedException
+  commentId: T:netDxf.IO.DxfVersionNotSupportedException
+  href: netDxf.IO.DxfVersionNotSupportedException.html
+  name: DxfVersionNotSupportedException
+  nameWithType: DxfVersionNotSupportedException
+  fullName: netDxf.IO.DxfVersionNotSupportedException

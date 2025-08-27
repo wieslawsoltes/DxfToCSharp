@@ -1,0 +1,413 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  id: netDxf.Objects
+  children:
+  - netDxf.Objects.DictionaryCloningFlags
+  - netDxf.Objects.Group
+  - netDxf.Objects.Group.EntityAddedEventHandler
+  - netDxf.Objects.Group.EntityRemovedEventHandler
+  - netDxf.Objects.GroupEntityChangeEventArgs
+  - netDxf.Objects.ImageDefinition
+  - netDxf.Objects.ImageDisplayQuality
+  - netDxf.Objects.LayerPropertiesFlags
+  - netDxf.Objects.LayerPropertiesRestoreFlags
+  - netDxf.Objects.LayerState
+  - netDxf.Objects.LayerStateProperties
+  - netDxf.Objects.Layout
+  - netDxf.Objects.MLineStyle
+  - netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+  - netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  - netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  - netDxf.Objects.MLineStyleElement
+  - netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  - netDxf.Objects.MLineStyleElementChangeEventArgs
+  - netDxf.Objects.MLineStyleFlags
+  - netDxf.Objects.PaperMargin
+  - netDxf.Objects.PlotFlags
+  - netDxf.Objects.PlotPaperUnits
+  - netDxf.Objects.PlotRotation
+  - netDxf.Objects.PlotSettings
+  - netDxf.Objects.PlotType
+  - netDxf.Objects.RasterVariables
+  - netDxf.Objects.ShadePlotMode
+  - netDxf.Objects.ShadePlotResolutionMode
+  - netDxf.Objects.SupportedImageFormats
+  - netDxf.Objects.UnderlayDefinition
+  - netDxf.Objects.UnderlayDgnDefinition
+  - netDxf.Objects.UnderlayDwfDefinition
+  - netDxf.Objects.UnderlayPdfDefinition
+  - netDxf.Objects.UnderlayType
+  langs:
+  - csharp
+  - vb
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  type: Namespace
+  assemblies:
+  - netDxf
+references:
+- uid: netDxf.Objects.DictionaryCloningFlags
+  commentId: T:netDxf.Objects.DictionaryCloningFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.DictionaryCloningFlags.html
+  name: DictionaryCloningFlags
+  nameWithType: DictionaryCloningFlags
+  fullName: netDxf.Objects.DictionaryCloningFlags
+- uid: netDxf.Objects.Group
+  commentId: T:netDxf.Objects.Group
+  parent: netDxf.Objects
+  href: netDxf.Objects.Group.html
+  name: Group
+  nameWithType: Group
+  fullName: netDxf.Objects.Group
+- uid: netDxf.Objects.Group.EntityAddedEventHandler
+  commentId: T:netDxf.Objects.Group.EntityAddedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.Group.html
+  name: Group.EntityAddedEventHandler
+  nameWithType: Group.EntityAddedEventHandler
+  fullName: netDxf.Objects.Group.EntityAddedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.Group
+    name: Group
+    href: netDxf.Objects.Group.html
+  - name: .
+  - uid: netDxf.Objects.Group.EntityAddedEventHandler
+    name: EntityAddedEventHandler
+    href: netDxf.Objects.Group.EntityAddedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.Group
+    name: Group
+    href: netDxf.Objects.Group.html
+  - name: .
+  - uid: netDxf.Objects.Group.EntityAddedEventHandler
+    name: EntityAddedEventHandler
+    href: netDxf.Objects.Group.EntityAddedEventHandler.html
+- uid: netDxf.Objects.Group.EntityRemovedEventHandler
+  commentId: T:netDxf.Objects.Group.EntityRemovedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.Group.html
+  name: Group.EntityRemovedEventHandler
+  nameWithType: Group.EntityRemovedEventHandler
+  fullName: netDxf.Objects.Group.EntityRemovedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.Group
+    name: Group
+    href: netDxf.Objects.Group.html
+  - name: .
+  - uid: netDxf.Objects.Group.EntityRemovedEventHandler
+    name: EntityRemovedEventHandler
+    href: netDxf.Objects.Group.EntityRemovedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.Group
+    name: Group
+    href: netDxf.Objects.Group.html
+  - name: .
+  - uid: netDxf.Objects.Group.EntityRemovedEventHandler
+    name: EntityRemovedEventHandler
+    href: netDxf.Objects.Group.EntityRemovedEventHandler.html
+- uid: netDxf.Objects.GroupEntityChangeEventArgs
+  commentId: T:netDxf.Objects.GroupEntityChangeEventArgs
+  parent: netDxf.Objects
+  href: netDxf.Objects.GroupEntityChangeEventArgs.html
+  name: GroupEntityChangeEventArgs
+  nameWithType: GroupEntityChangeEventArgs
+  fullName: netDxf.Objects.GroupEntityChangeEventArgs
+- uid: netDxf.Objects.ImageDefinition
+  commentId: T:netDxf.Objects.ImageDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.ImageDefinition.html
+  name: ImageDefinition
+  nameWithType: ImageDefinition
+  fullName: netDxf.Objects.ImageDefinition
+- uid: netDxf.Objects.ImageDisplayQuality
+  commentId: T:netDxf.Objects.ImageDisplayQuality
+  parent: netDxf.Objects
+  href: netDxf.Objects.ImageDisplayQuality.html
+  name: ImageDisplayQuality
+  nameWithType: ImageDisplayQuality
+  fullName: netDxf.Objects.ImageDisplayQuality
+- uid: netDxf.Objects.LayerPropertiesFlags
+  commentId: T:netDxf.Objects.LayerPropertiesFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerPropertiesFlags.html
+  name: LayerPropertiesFlags
+  nameWithType: LayerPropertiesFlags
+  fullName: netDxf.Objects.LayerPropertiesFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags
+  commentId: T:netDxf.Objects.LayerPropertiesRestoreFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerPropertiesRestoreFlags.html
+  name: LayerPropertiesRestoreFlags
+  nameWithType: LayerPropertiesRestoreFlags
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerState
+  commentId: T:netDxf.Objects.LayerState
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerState.html
+  name: LayerState
+  nameWithType: LayerState
+  fullName: netDxf.Objects.LayerState
+- uid: netDxf.Objects.LayerStateProperties
+  commentId: T:netDxf.Objects.LayerStateProperties
+  href: netDxf.Objects.LayerStateProperties.html
+  name: LayerStateProperties
+  nameWithType: LayerStateProperties
+  fullName: netDxf.Objects.LayerStateProperties
+- uid: netDxf.Objects.Layout
+  commentId: T:netDxf.Objects.Layout
+  parent: netDxf.Objects
+  href: netDxf.Objects.Layout.html
+  name: Layout
+  nameWithType: Layout
+  fullName: netDxf.Objects.Layout
+- uid: netDxf.Objects.MLineStyle
+  commentId: T:netDxf.Objects.MLineStyle
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle
+  nameWithType: MLineStyle
+  fullName: netDxf.Objects.MLineStyle
+- uid: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+  commentId: T:netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle.MLineStyleElementAddedEventHandler
+  nameWithType: MLineStyle.MLineStyleElementAddedEventHandler
+  fullName: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+    name: MLineStyleElementAddedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+    name: MLineStyleElementAddedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler.html
+- uid: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  commentId: T:netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle.MLineStyleElementRemovedEventHandler
+  nameWithType: MLineStyle.MLineStyleElementRemovedEventHandler
+  fullName: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+    name: MLineStyleElementRemovedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+    name: MLineStyleElementRemovedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler.html
+- uid: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  commentId: T:netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  nameWithType: MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  fullName: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+    name: MLineStyleElementLinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    href: netDxf.Objects.MLineStyle.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+    name: MLineStyleElementLinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler.html
+- uid: netDxf.Objects.MLineStyleElement
+  commentId: T:netDxf.Objects.MLineStyleElement
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElement.html
+  name: MLineStyleElement
+  nameWithType: MLineStyleElement
+  fullName: netDxf.Objects.MLineStyleElement
+- uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  commentId: T:netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElement.html
+  name: MLineStyleElement.LinetypeChangedEventHandler
+  nameWithType: MLineStyleElement.LinetypeChangedEventHandler
+  fullName: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    href: netDxf.Objects.MLineStyleElement.html
+  - name: .
+  - uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler.html
+- uid: netDxf.Objects.MLineStyleElementChangeEventArgs
+  commentId: T:netDxf.Objects.MLineStyleElementChangeEventArgs
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElementChangeEventArgs.html
+  name: MLineStyleElementChangeEventArgs
+  nameWithType: MLineStyleElementChangeEventArgs
+  fullName: netDxf.Objects.MLineStyleElementChangeEventArgs
+- uid: netDxf.Objects.MLineStyleFlags
+  commentId: T:netDxf.Objects.MLineStyleFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleFlags.html
+  name: MLineStyleFlags
+  nameWithType: MLineStyleFlags
+  fullName: netDxf.Objects.MLineStyleFlags
+- uid: netDxf.Objects.PaperMargin
+  commentId: T:netDxf.Objects.PaperMargin
+  parent: netDxf.Objects
+  href: netDxf.Objects.PaperMargin.html
+  name: PaperMargin
+  nameWithType: PaperMargin
+  fullName: netDxf.Objects.PaperMargin
+- uid: netDxf.Objects.PlotFlags
+  commentId: T:netDxf.Objects.PlotFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotFlags.html
+  name: PlotFlags
+  nameWithType: PlotFlags
+  fullName: netDxf.Objects.PlotFlags
+- uid: netDxf.Objects.PlotPaperUnits
+  commentId: T:netDxf.Objects.PlotPaperUnits
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotPaperUnits.html
+  name: PlotPaperUnits
+  nameWithType: PlotPaperUnits
+  fullName: netDxf.Objects.PlotPaperUnits
+- uid: netDxf.Objects.PlotRotation
+  commentId: T:netDxf.Objects.PlotRotation
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotRotation.html
+  name: PlotRotation
+  nameWithType: PlotRotation
+  fullName: netDxf.Objects.PlotRotation
+- uid: netDxf.Objects.PlotSettings
+  commentId: T:netDxf.Objects.PlotSettings
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotSettings.html
+  name: PlotSettings
+  nameWithType: PlotSettings
+  fullName: netDxf.Objects.PlotSettings
+- uid: netDxf.Objects.PlotType
+  commentId: T:netDxf.Objects.PlotType
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotType.html
+  name: PlotType
+  nameWithType: PlotType
+  fullName: netDxf.Objects.PlotType
+- uid: netDxf.Objects.RasterVariables
+  commentId: T:netDxf.Objects.RasterVariables
+  parent: netDxf.Objects
+  href: netDxf.Objects.RasterVariables.html
+  name: RasterVariables
+  nameWithType: RasterVariables
+  fullName: netDxf.Objects.RasterVariables
+- uid: netDxf.Objects.ShadePlotMode
+  commentId: T:netDxf.Objects.ShadePlotMode
+  parent: netDxf.Objects
+  href: netDxf.Objects.ShadePlotMode.html
+  name: ShadePlotMode
+  nameWithType: ShadePlotMode
+  fullName: netDxf.Objects.ShadePlotMode
+- uid: netDxf.Objects.ShadePlotResolutionMode
+  commentId: T:netDxf.Objects.ShadePlotResolutionMode
+  parent: netDxf.Objects
+  href: netDxf.Objects.ShadePlotResolutionMode.html
+  name: ShadePlotResolutionMode
+  nameWithType: ShadePlotResolutionMode
+  fullName: netDxf.Objects.ShadePlotResolutionMode
+- uid: netDxf.Objects.SupportedImageFormats
+  commentId: T:netDxf.Objects.SupportedImageFormats
+  parent: netDxf.Objects
+  href: netDxf.Objects.SupportedImageFormats.html
+  name: SupportedImageFormats
+  nameWithType: SupportedImageFormats
+  fullName: netDxf.Objects.SupportedImageFormats
+- uid: netDxf.Objects.UnderlayDefinition
+  commentId: T:netDxf.Objects.UnderlayDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayDefinition.html
+  name: UnderlayDefinition
+  nameWithType: UnderlayDefinition
+  fullName: netDxf.Objects.UnderlayDefinition
+- uid: netDxf.Objects.UnderlayDgnDefinition
+  commentId: T:netDxf.Objects.UnderlayDgnDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayDgnDefinition.html
+  name: UnderlayDgnDefinition
+  nameWithType: UnderlayDgnDefinition
+  fullName: netDxf.Objects.UnderlayDgnDefinition
+- uid: netDxf.Objects.UnderlayDwfDefinition
+  commentId: T:netDxf.Objects.UnderlayDwfDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayDwfDefinition.html
+  name: UnderlayDwfDefinition
+  nameWithType: UnderlayDwfDefinition
+  fullName: netDxf.Objects.UnderlayDwfDefinition
+- uid: netDxf.Objects.UnderlayPdfDefinition
+  commentId: T:netDxf.Objects.UnderlayPdfDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayPdfDefinition.html
+  name: UnderlayPdfDefinition
+  nameWithType: UnderlayPdfDefinition
+  fullName: netDxf.Objects.UnderlayPdfDefinition
+- uid: netDxf.Objects.UnderlayType
+  commentId: T:netDxf.Objects.UnderlayType
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayType.html
+  name: UnderlayType
+  nameWithType: UnderlayType
+  fullName: netDxf.Objects.UnderlayType
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html

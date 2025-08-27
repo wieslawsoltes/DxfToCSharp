@@ -1,0 +1,206 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.MTextParagraphAlignment
+  commentId: T:netDxf.Entities.MTextParagraphAlignment
+  id: MTextParagraphAlignment
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.MTextParagraphAlignment.Center
+  - netDxf.Entities.MTextParagraphAlignment.Default
+  - netDxf.Entities.MTextParagraphAlignment.Distribute
+  - netDxf.Entities.MTextParagraphAlignment.Justified
+  - netDxf.Entities.MTextParagraphAlignment.Left
+  - netDxf.Entities.MTextParagraphAlignment.Right
+  langs:
+  - csharp
+  - vb
+  name: MTextParagraphAlignment
+  nameWithType: MTextParagraphAlignment
+  fullName: netDxf.Entities.MTextParagraphAlignment
+  type: Enum
+  source:
+    id: MTextParagraphAlignment
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Paragraph text horizontal alignment.
+  example: []
+  syntax:
+    content: public enum MTextParagraphAlignment
+    content.vb: Public Enum MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Default
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Default
+  id: Default
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: MTextParagraphAlignment.Default
+  fullName: netDxf.Entities.MTextParagraphAlignment.Default
+  type: Field
+  source:
+    id: Default
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Default
+  example: []
+  syntax:
+    content: Default = 0
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Left
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Left
+  id: Left
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: MTextParagraphAlignment.Left
+  fullName: netDxf.Entities.MTextParagraphAlignment.Left
+  type: Field
+  source:
+    id: Left
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Left.
+  example: []
+  syntax:
+    content: Left = 1
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Center
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Center
+  id: Center
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: MTextParagraphAlignment.Center
+  fullName: netDxf.Entities.MTextParagraphAlignment.Center
+  type: Field
+  source:
+    id: Center
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Center.
+  example: []
+  syntax:
+    content: Center = 2
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Right
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Right
+  id: Right
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: MTextParagraphAlignment.Right
+  fullName: netDxf.Entities.MTextParagraphAlignment.Right
+  type: Field
+  source:
+    id: Right
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Right.
+  example: []
+  syntax:
+    content: Right = 3
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Justified
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Justified
+  id: Justified
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Justified
+  nameWithType: MTextParagraphAlignment.Justified
+  fullName: netDxf.Entities.MTextParagraphAlignment.Justified
+  type: Field
+  source:
+    id: Justified
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Justified.
+  example: []
+  syntax:
+    content: Justified = 4
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+- uid: netDxf.Entities.MTextParagraphAlignment.Distribute
+  commentId: F:netDxf.Entities.MTextParagraphAlignment.Distribute
+  id: Distribute
+  parent: netDxf.Entities.MTextParagraphAlignment
+  langs:
+  - csharp
+  - vb
+  name: Distribute
+  nameWithType: MTextParagraphAlignment.Distribute
+  fullName: netDxf.Entities.MTextParagraphAlignment.Distribute
+  type: Field
+  source:
+    id: Distribute
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextParagraphAlignment.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Distribute.
+  example: []
+  syntax:
+    content: Distribute = 5
+    return:
+      type: netDxf.Entities.MTextParagraphAlignment
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.MTextParagraphAlignment
+  commentId: T:netDxf.Entities.MTextParagraphAlignment
+  parent: netDxf.Entities
+  href: netDxf.Entities.MTextParagraphAlignment.html
+  name: MTextParagraphAlignment
+  nameWithType: MTextParagraphAlignment
+  fullName: netDxf.Entities.MTextParagraphAlignment

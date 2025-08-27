@@ -1,0 +1,165 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.SplineKnotParameterization
+  commentId: T:netDxf.Entities.SplineKnotParameterization
+  id: SplineKnotParameterization
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.SplineKnotParameterization.FitChord
+  - netDxf.Entities.SplineKnotParameterization.FitCustom
+  - netDxf.Entities.SplineKnotParameterization.FitSqrtChord
+  - netDxf.Entities.SplineKnotParameterization.FitUniform
+  langs:
+  - csharp
+  - vb
+  name: SplineKnotParameterization
+  nameWithType: SplineKnotParameterization
+  fullName: netDxf.Entities.SplineKnotParameterization
+  type: Enum
+  source:
+    id: SplineKnotParameterization
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/SplineKnotParameterization.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Specifies the knot parameterization, computational methods that determines how the component curves between successive fit points within a spline are blended.
+  example: []
+  syntax:
+    content: public enum SplineKnotParameterization
+    content.vb: Public Enum SplineKnotParameterization
+- uid: netDxf.Entities.SplineKnotParameterization.FitChord
+  commentId: F:netDxf.Entities.SplineKnotParameterization.FitChord
+  id: FitChord
+  parent: netDxf.Entities.SplineKnotParameterization
+  langs:
+  - csharp
+  - vb
+  name: FitChord
+  nameWithType: SplineKnotParameterization.FitChord
+  fullName: netDxf.Entities.SplineKnotParameterization.FitChord
+  type: Field
+  source:
+    id: FitChord
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/SplineKnotParameterization.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Chord-Length method.
+  remarks: Spaces the knots connecting each component curve to be proportional to the distances between each associated pair of fit points.
+  example: []
+  syntax:
+    content: FitChord = 32
+    return:
+      type: netDxf.Entities.SplineKnotParameterization
+- uid: netDxf.Entities.SplineKnotParameterization.FitSqrtChord
+  commentId: F:netDxf.Entities.SplineKnotParameterization.FitSqrtChord
+  id: FitSqrtChord
+  parent: netDxf.Entities.SplineKnotParameterization
+  langs:
+  - csharp
+  - vb
+  name: FitSqrtChord
+  nameWithType: SplineKnotParameterization.FitSqrtChord
+  fullName: netDxf.Entities.SplineKnotParameterization.FitSqrtChord
+  type: Field
+  source:
+    id: FitSqrtChord
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/SplineKnotParameterization.cs
+    startLine: 47
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Centripetal method.
+  remarks: >-
+    Spaces the knots connecting each component curve to be proportional to the square root of the distance between each associated pair of fit points.
+
+    This method usually produces "gentler" curves.
+  example: []
+  syntax:
+    content: FitSqrtChord = 64
+    return:
+      type: netDxf.Entities.SplineKnotParameterization
+- uid: netDxf.Entities.SplineKnotParameterization.FitUniform
+  commentId: F:netDxf.Entities.SplineKnotParameterization.FitUniform
+  id: FitUniform
+  parent: netDxf.Entities.SplineKnotParameterization
+  langs:
+  - csharp
+  - vb
+  name: FitUniform
+  nameWithType: SplineKnotParameterization.FitUniform
+  fullName: netDxf.Entities.SplineKnotParameterization.FitUniform
+  type: Field
+  source:
+    id: FitUniform
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/SplineKnotParameterization.cs
+    startLine: 56
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Equidistant method.
+  remarks: >-
+    Spaces the knots of each component curve to be equal, regardless of the spacing of the fit points.
+
+    This method often produces curves that overshoot the fit points.
+  example: []
+  syntax:
+    content: FitUniform = 128
+    return:
+      type: netDxf.Entities.SplineKnotParameterization
+- uid: netDxf.Entities.SplineKnotParameterization.FitCustom
+  commentId: F:netDxf.Entities.SplineKnotParameterization.FitCustom
+  id: FitCustom
+  parent: netDxf.Entities.SplineKnotParameterization
+  langs:
+  - csharp
+  - vb
+  name: FitCustom
+  nameWithType: SplineKnotParameterization.FitCustom
+  fullName: netDxf.Entities.SplineKnotParameterization.FitCustom
+  type: Field
+  source:
+    id: FitCustom
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/SplineKnotParameterization.cs
+    startLine: 61
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Only applicable when a spline has been converted from the control points  to the fit point creation method.
+  example: []
+  syntax:
+    content: FitCustom = 256
+    return:
+      type: netDxf.Entities.SplineKnotParameterization
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.SplineKnotParameterization
+  commentId: T:netDxf.Entities.SplineKnotParameterization
+  parent: netDxf.Entities
+  href: netDxf.Entities.SplineKnotParameterization.html
+  name: SplineKnotParameterization
+  nameWithType: SplineKnotParameterization
+  fullName: netDxf.Entities.SplineKnotParameterization

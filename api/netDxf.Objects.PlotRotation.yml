@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.PlotRotation
+  commentId: T:netDxf.Objects.PlotRotation
+  id: PlotRotation
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.PlotRotation.Degrees180
+  - netDxf.Objects.PlotRotation.Degrees270
+  - netDxf.Objects.PlotRotation.Degrees90
+  - netDxf.Objects.PlotRotation.NoRotation
+  langs:
+  - csharp
+  - vb
+  name: PlotRotation
+  nameWithType: PlotRotation
+  fullName: netDxf.Objects.PlotRotation
+  type: Enum
+  source:
+    id: PlotRotation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotRotation.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Plot rotation
+  example: []
+  syntax:
+    content: public enum PlotRotation
+    content.vb: Public Enum PlotRotation
+- uid: netDxf.Objects.PlotRotation.NoRotation
+  commentId: F:netDxf.Objects.PlotRotation.NoRotation
+  id: NoRotation
+  parent: netDxf.Objects.PlotRotation
+  langs:
+  - csharp
+  - vb
+  name: NoRotation
+  nameWithType: PlotRotation.NoRotation
+  fullName: netDxf.Objects.PlotRotation.NoRotation
+  type: Field
+  source:
+    id: NoRotation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotRotation.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: No rotation.
+  example: []
+  syntax:
+    content: NoRotation = 0
+    return:
+      type: netDxf.Objects.PlotRotation
+- uid: netDxf.Objects.PlotRotation.Degrees90
+  commentId: F:netDxf.Objects.PlotRotation.Degrees90
+  id: Degrees90
+  parent: netDxf.Objects.PlotRotation
+  langs:
+  - csharp
+  - vb
+  name: Degrees90
+  nameWithType: PlotRotation.Degrees90
+  fullName: netDxf.Objects.PlotRotation.Degrees90
+  type: Field
+  source:
+    id: Degrees90
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotRotation.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: 90 degrees counterclockwise.
+  example: []
+  syntax:
+    content: Degrees90 = 1
+    return:
+      type: netDxf.Objects.PlotRotation
+- uid: netDxf.Objects.PlotRotation.Degrees180
+  commentId: F:netDxf.Objects.PlotRotation.Degrees180
+  id: Degrees180
+  parent: netDxf.Objects.PlotRotation
+  langs:
+  - csharp
+  - vb
+  name: Degrees180
+  nameWithType: PlotRotation.Degrees180
+  fullName: netDxf.Objects.PlotRotation.Degrees180
+  type: Field
+  source:
+    id: Degrees180
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotRotation.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Upside-down.
+  example: []
+  syntax:
+    content: Degrees180 = 2
+    return:
+      type: netDxf.Objects.PlotRotation
+- uid: netDxf.Objects.PlotRotation.Degrees270
+  commentId: F:netDxf.Objects.PlotRotation.Degrees270
+  id: Degrees270
+  parent: netDxf.Objects.PlotRotation
+  langs:
+  - csharp
+  - vb
+  name: Degrees270
+  nameWithType: PlotRotation.Degrees270
+  fullName: netDxf.Objects.PlotRotation.Degrees270
+  type: Field
+  source:
+    id: Degrees270
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotRotation.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: 90 degrees clockwise.
+  example: []
+  syntax:
+    content: Degrees270 = 3
+    return:
+      type: netDxf.Objects.PlotRotation
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.PlotRotation
+  commentId: T:netDxf.Objects.PlotRotation
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotRotation.html
+  name: PlotRotation
+  nameWithType: PlotRotation
+  fullName: netDxf.Objects.PlotRotation

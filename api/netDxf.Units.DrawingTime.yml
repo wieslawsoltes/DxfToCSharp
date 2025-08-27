@@ -1,0 +1,449 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units.DrawingTime
+  commentId: T:netDxf.Units.DrawingTime
+  id: DrawingTime
+  parent: netDxf.Units
+  children:
+  - netDxf.Units.DrawingTime.EditingTime(System.Double)
+  - netDxf.Units.DrawingTime.FromJulianCalendar(System.Double)
+  - netDxf.Units.DrawingTime.ToJulianCalendar(System.DateTime)
+  langs:
+  - csharp
+  - vb
+  name: DrawingTime
+  nameWithType: DrawingTime
+  fullName: netDxf.Units.DrawingTime
+  type: Class
+  source:
+    id: DrawingTime
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingTime.cs
+    startLine: 32
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Utility functions to handle DateTime conversions.
+  example: []
+  syntax:
+    content: public static class DrawingTime
+    content.vb: Public Module DrawingTime
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Units.DrawingTime.ToJulianCalendar(System.DateTime)
+  commentId: M:netDxf.Units.DrawingTime.ToJulianCalendar(System.DateTime)
+  id: ToJulianCalendar(System.DateTime)
+  parent: netDxf.Units.DrawingTime
+  langs:
+  - csharp
+  - vb
+  name: ToJulianCalendar(DateTime)
+  nameWithType: DrawingTime.ToJulianCalendar(DateTime)
+  fullName: netDxf.Units.DrawingTime.ToJulianCalendar(System.DateTime)
+  type: Method
+  source:
+    id: ToJulianCalendar
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingTime.cs
+    startLine: 39
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Calculates a date represented as &lt;Julian date&gt;.&lt;Fraction of day&gt; from a <xref href="System.DateTime?text=DateTime" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public static double ToJulianCalendar(DateTime date)
+    parameters:
+    - id: date
+      type: System.DateTime
+      description: <xref href="System.DateTime?text=DateTime" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Double
+      description: The date represented as &lt;Julian date&gt;.&lt;Fraction of day&gt; equivalent to the <xref href="System.DateTime?text=DateTime" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function ToJulianCalendar([date] As Date) As Double
+  overload: netDxf.Units.DrawingTime.ToJulianCalendar*
+  nameWithType.vb: DrawingTime.ToJulianCalendar(Date)
+  fullName.vb: netDxf.Units.DrawingTime.ToJulianCalendar(Date)
+  name.vb: ToJulianCalendar(Date)
+- uid: netDxf.Units.DrawingTime.FromJulianCalendar(System.Double)
+  commentId: M:netDxf.Units.DrawingTime.FromJulianCalendar(System.Double)
+  id: FromJulianCalendar(System.Double)
+  parent: netDxf.Units.DrawingTime
+  langs:
+  - csharp
+  - vb
+  name: FromJulianCalendar(double)
+  nameWithType: DrawingTime.FromJulianCalendar(double)
+  fullName: netDxf.Units.DrawingTime.FromJulianCalendar(double)
+  type: Method
+  source:
+    id: FromJulianCalendar
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingTime.cs
+    startLine: 77
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Calculates the <xref href="System.DateTime?text=DateTime" data-throw-if-not-resolved="false"></xref> from a date represented as &lt;Julian date&gt;&lt;.Fraction of day&gt;.
+  example: []
+  syntax:
+    content: public static DateTime FromJulianCalendar(double date)
+    parameters:
+    - id: date
+      type: System.Double
+      description: A date represented as &lt;Julian date&gt;.&lt;Fraction of day&gt;.
+    return:
+      type: System.DateTime
+      description: The <xref href="System.DateTime?text=DateTime" data-throw-if-not-resolved="false"></xref> equivalent to the Julian date.
+    content.vb: Public Shared Function FromJulianCalendar([date] As Double) As Date
+  overload: netDxf.Units.DrawingTime.FromJulianCalendar*
+  nameWithType.vb: DrawingTime.FromJulianCalendar(Double)
+  fullName.vb: netDxf.Units.DrawingTime.FromJulianCalendar(Double)
+  name.vb: FromJulianCalendar(Double)
+- uid: netDxf.Units.DrawingTime.EditingTime(System.Double)
+  commentId: M:netDxf.Units.DrawingTime.EditingTime(System.Double)
+  id: EditingTime(System.Double)
+  parent: netDxf.Units.DrawingTime
+  langs:
+  - csharp
+  - vb
+  name: EditingTime(double)
+  nameWithType: DrawingTime.EditingTime(double)
+  fullName: netDxf.Units.DrawingTime.EditingTime(double)
+  type: Method
+  source:
+    id: EditingTime
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/DrawingTime.cs
+    startLine: 116
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Calculates the <xref href="System.TimeSpan?text=TimeSpan" data-throw-if-not-resolved="false"></xref> from a elapsed time represented as &lt;Number of days&gt;.&lt;Fraction of day&gt;.
+  example: []
+  syntax:
+    content: public static TimeSpan EditingTime(double elapsed)
+    parameters:
+    - id: elapsed
+      type: System.Double
+      description: An elapsed time represented as &lt;Number of days&gt;.&lt;Fraction of day&gt;.
+    return:
+      type: System.TimeSpan
+      description: The <xref href="System.TimeSpan?text=TimeSpan" data-throw-if-not-resolved="false"></xref> equivalent to the elapsed time.
+    content.vb: Public Shared Function EditingTime(elapsed As Double) As TimeSpan
+  overload: netDxf.Units.DrawingTime.EditingTime*
+  nameWithType.vb: DrawingTime.EditingTime(Double)
+  fullName.vb: netDxf.Units.DrawingTime.EditingTime(Double)
+  name.vb: EditingTime(Double)
+references:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: netDxf.Units.DrawingTime.ToJulianCalendar*
+  commentId: Overload:netDxf.Units.DrawingTime.ToJulianCalendar
+  href: netDxf.Units.DrawingTime.html#netDxf_Units_DrawingTime_ToJulianCalendar_System_DateTime_
+  name: ToJulianCalendar
+  nameWithType: DrawingTime.ToJulianCalendar
+  fullName: netDxf.Units.DrawingTime.ToJulianCalendar
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Units.DrawingTime.FromJulianCalendar*
+  commentId: Overload:netDxf.Units.DrawingTime.FromJulianCalendar
+  href: netDxf.Units.DrawingTime.html#netDxf_Units_DrawingTime_FromJulianCalendar_System_Double_
+  name: FromJulianCalendar
+  nameWithType: DrawingTime.FromJulianCalendar
+  fullName: netDxf.Units.DrawingTime.FromJulianCalendar
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: netDxf.Units.DrawingTime.EditingTime*
+  commentId: Overload:netDxf.Units.DrawingTime.EditingTime
+  href: netDxf.Units.DrawingTime.html#netDxf_Units_DrawingTime_EditingTime_System_Double_
+  name: EditingTime
+  nameWithType: DrawingTime.EditingTime
+  fullName: netDxf.Units.DrawingTime.EditingTime

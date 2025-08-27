@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.Linetype.LinetypeSegmentAddedEventHandler
+  commentId: T:netDxf.Tables.Linetype.LinetypeSegmentAddedEventHandler
+  id: Linetype.LinetypeSegmentAddedEventHandler
+  parent: netDxf.Tables
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Linetype.LinetypeSegmentAddedEventHandler
+  nameWithType: Linetype.LinetypeSegmentAddedEventHandler
+  fullName: netDxf.Tables.Linetype.LinetypeSegmentAddedEventHandler
+  type: Delegate
+  source:
+    id: LinetypeSegmentAddedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/Linetype.cs
+    startLine: 44
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: public delegate void Linetype.LinetypeSegmentAddedEventHandler(Linetype sender, LinetypeSegmentChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Tables.Linetype
+    - id: e
+      type: netDxf.Tables.LinetypeSegmentChangeEventArgs
+    content.vb: Public Delegate Sub Linetype.LinetypeSegmentAddedEventHandler(sender As Linetype, e As LinetypeSegmentChangeEventArgs)
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.Linetype
+  commentId: T:netDxf.Tables.Linetype
+  parent: netDxf.Tables
+  href: netDxf.Tables.Linetype.html
+  name: Linetype
+  nameWithType: Linetype
+  fullName: netDxf.Tables.Linetype
+- uid: netDxf.Tables.LinetypeSegmentChangeEventArgs
+  commentId: T:netDxf.Tables.LinetypeSegmentChangeEventArgs
+  parent: netDxf.Tables
+  href: netDxf.Tables.LinetypeSegmentChangeEventArgs.html
+  name: LinetypeSegmentChangeEventArgs
+  nameWithType: LinetypeSegmentChangeEventArgs
+  fullName: netDxf.Tables.LinetypeSegmentChangeEventArgs

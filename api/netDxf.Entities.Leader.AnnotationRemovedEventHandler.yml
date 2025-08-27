@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Leader.AnnotationRemovedEventHandler
+  commentId: T:netDxf.Entities.Leader.AnnotationRemovedEventHandler
+  id: Leader.AnnotationRemovedEventHandler
+  parent: netDxf.Entities
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Leader.AnnotationRemovedEventHandler
+  nameWithType: Leader.AnnotationRemovedEventHandler
+  fullName: netDxf.Entities.Leader.AnnotationRemovedEventHandler
+  type: Delegate
+  source:
+    id: AnnotationRemovedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Leader.cs
+    startLine: 64
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public delegate void Leader.AnnotationRemovedEventHandler(Leader sender, EntityChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Entities.Leader
+    - id: e
+      type: netDxf.Entities.EntityChangeEventArgs
+    content.vb: Public Delegate Sub Leader.AnnotationRemovedEventHandler(sender As Leader, e As EntityChangeEventArgs)
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.Leader
+  commentId: T:netDxf.Entities.Leader
+  parent: netDxf.Entities
+  href: netDxf.Entities.Leader.html
+  name: Leader
+  nameWithType: Leader
+  fullName: netDxf.Entities.Leader
+- uid: netDxf.Entities.EntityChangeEventArgs
+  commentId: T:netDxf.Entities.EntityChangeEventArgs
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityChangeEventArgs.html
+  name: EntityChangeEventArgs
+  nameWithType: EntityChangeEventArgs
+  fullName: netDxf.Entities.EntityChangeEventArgs

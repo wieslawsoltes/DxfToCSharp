@@ -1,0 +1,658 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.GTE.BSplineSurfaceFit
+  commentId: T:netDxf.GTE.BSplineSurfaceFit
+  id: BSplineSurfaceFit
+  parent: netDxf.GTE
+  children:
+  - netDxf.GTE.BSplineSurfaceFit.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,netDxf.Vector3[])
+  - netDxf.GTE.BSplineSurfaceFit.BasisFunction(System.Int32)
+  - netDxf.GTE.BSplineSurfaceFit.ControlData
+  - netDxf.GTE.BSplineSurfaceFit.Degree(System.Int32)
+  - netDxf.GTE.BSplineSurfaceFit.GetPosition(System.Double,System.Double)
+  - netDxf.GTE.BSplineSurfaceFit.NumControls(System.Int32)
+  - netDxf.GTE.BSplineSurfaceFit.NumSamples(System.Int32)
+  - netDxf.GTE.BSplineSurfaceFit.SampleData
+  langs:
+  - csharp
+  - vb
+  name: BSplineSurfaceFit
+  nameWithType: BSplineSurfaceFit
+  fullName: netDxf.GTE.BSplineSurfaceFit
+  type: Class
+  source:
+    id: BSplineSurfaceFit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public class BSplineSurfaceFit
+    content.vb: Public Class BSplineSurfaceFit
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.GTE.BSplineSurfaceFit.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,netDxf.Vector3[])
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,netDxf.Vector3[])
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,netDxf.Vector3[])'
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: BSplineSurfaceFit(int, int, int, int, int, int, Vector3[])
+  nameWithType: BSplineSurfaceFit.BSplineSurfaceFit(int, int, int, int, int, int, Vector3[])
+  fullName: netDxf.GTE.BSplineSurfaceFit.BSplineSurfaceFit(int, int, int, int, int, int, netDxf.Vector3[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 58
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BSplineSurfaceFit(int degree0, int numControls0, int numSamples0, int degree1, int numControls1, int numSamples1, Vector3[] sampleData)
+    parameters:
+    - id: degree0
+      type: System.Int32
+    - id: numControls0
+      type: System.Int32
+    - id: numSamples0
+      type: System.Int32
+    - id: degree1
+      type: System.Int32
+    - id: numControls1
+      type: System.Int32
+    - id: numSamples1
+      type: System.Int32
+    - id: sampleData
+      type: netDxf.Vector3[]
+    content.vb: Public Sub New(degree0 As Integer, numControls0 As Integer, numSamples0 As Integer, degree1 As Integer, numControls1 As Integer, numSamples1 As Integer, sampleData As Vector3())
+  overload: netDxf.GTE.BSplineSurfaceFit.#ctor*
+  nameWithType.vb: BSplineSurfaceFit.New(Integer, Integer, Integer, Integer, Integer, Integer, Vector3())
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.New(Integer, Integer, Integer, Integer, Integer, Integer, netDxf.Vector3())
+  name.vb: New(Integer, Integer, Integer, Integer, Integer, Integer, Vector3())
+- uid: netDxf.GTE.BSplineSurfaceFit.NumSamples(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.NumSamples(System.Int32)
+  id: NumSamples(System.Int32)
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: NumSamples(int)
+  nameWithType: BSplineSurfaceFit.NumSamples(int)
+  fullName: netDxf.GTE.BSplineSurfaceFit.NumSamples(int)
+  type: Method
+  source:
+    id: NumSamples
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 204
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumSamples(int dimension)
+    parameters:
+    - id: dimension
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Function NumSamples(dimension As Integer) As Integer
+  overload: netDxf.GTE.BSplineSurfaceFit.NumSamples*
+  nameWithType.vb: BSplineSurfaceFit.NumSamples(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.NumSamples(Integer)
+  name.vb: NumSamples(Integer)
+- uid: netDxf.GTE.BSplineSurfaceFit.SampleData
+  commentId: P:netDxf.GTE.BSplineSurfaceFit.SampleData
+  id: SampleData
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: SampleData
+  nameWithType: BSplineSurfaceFit.SampleData
+  fullName: netDxf.GTE.BSplineSurfaceFit.SampleData
+  type: Property
+  source:
+    id: SampleData
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 209
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3[] SampleData { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public ReadOnly Property SampleData As Vector3()
+  overload: netDxf.GTE.BSplineSurfaceFit.SampleData*
+- uid: netDxf.GTE.BSplineSurfaceFit.Degree(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.Degree(System.Int32)
+  id: Degree(System.Int32)
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: Degree(int)
+  nameWithType: BSplineSurfaceFit.Degree(int)
+  fullName: netDxf.GTE.BSplineSurfaceFit.Degree(int)
+  type: Method
+  source:
+    id: Degree
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 215
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int Degree(int dimension)
+    parameters:
+    - id: dimension
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Function Degree(dimension As Integer) As Integer
+  overload: netDxf.GTE.BSplineSurfaceFit.Degree*
+  nameWithType.vb: BSplineSurfaceFit.Degree(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.Degree(Integer)
+  name.vb: Degree(Integer)
+- uid: netDxf.GTE.BSplineSurfaceFit.NumControls(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.NumControls(System.Int32)
+  id: NumControls(System.Int32)
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: NumControls(int)
+  nameWithType: BSplineSurfaceFit.NumControls(int)
+  fullName: netDxf.GTE.BSplineSurfaceFit.NumControls(int)
+  type: Method
+  source:
+    id: NumControls
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 220
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public int NumControls(int dimension)
+    parameters:
+    - id: dimension
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Function NumControls(dimension As Integer) As Integer
+  overload: netDxf.GTE.BSplineSurfaceFit.NumControls*
+  nameWithType.vb: BSplineSurfaceFit.NumControls(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.NumControls(Integer)
+  name.vb: NumControls(Integer)
+- uid: netDxf.GTE.BSplineSurfaceFit.ControlData
+  commentId: P:netDxf.GTE.BSplineSurfaceFit.ControlData
+  id: ControlData
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: ControlData
+  nameWithType: BSplineSurfaceFit.ControlData
+  fullName: netDxf.GTE.BSplineSurfaceFit.ControlData
+  type: Property
+  source:
+    id: ControlData
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 225
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3[] ControlData { get; }
+    parameters: []
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public ReadOnly Property ControlData As Vector3()
+  overload: netDxf.GTE.BSplineSurfaceFit.ControlData*
+- uid: netDxf.GTE.BSplineSurfaceFit.BasisFunction(System.Int32)
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.BasisFunction(System.Int32)
+  id: BasisFunction(System.Int32)
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: BasisFunction(int)
+  nameWithType: BSplineSurfaceFit.BasisFunction(int)
+  fullName: netDxf.GTE.BSplineSurfaceFit.BasisFunction(int)
+  type: Method
+  source:
+    id: BasisFunction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 230
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public BasisFunction BasisFunction(int dimension)
+    parameters:
+    - id: dimension
+      type: System.Int32
+    return:
+      type: netDxf.GTE.BasisFunction
+    content.vb: Public Function BasisFunction(dimension As Integer) As BasisFunction
+  overload: netDxf.GTE.BSplineSurfaceFit.BasisFunction*
+  nameWithType.vb: BSplineSurfaceFit.BasisFunction(Integer)
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.BasisFunction(Integer)
+  name.vb: BasisFunction(Integer)
+- uid: netDxf.GTE.BSplineSurfaceFit.GetPosition(System.Double,System.Double)
+  commentId: M:netDxf.GTE.BSplineSurfaceFit.GetPosition(System.Double,System.Double)
+  id: GetPosition(System.Double,System.Double)
+  parent: netDxf.GTE.BSplineSurfaceFit
+  langs:
+  - csharp
+  - vb
+  name: GetPosition(double, double)
+  nameWithType: BSplineSurfaceFit.GetPosition(double, double)
+  fullName: netDxf.GTE.BSplineSurfaceFit.GetPosition(double, double)
+  type: Method
+  source:
+    id: GetPosition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/GTE/BSplineSurfaceFit.cs
+    startLine: 238
+  assemblies:
+  - netDxf
+  namespace: netDxf.GTE
+  syntax:
+    content: public Vector3 GetPosition(double u, double v)
+    parameters:
+    - id: u
+      type: System.Double
+    - id: v
+      type: System.Double
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Function GetPosition(u As Double, v As Double) As Vector3
+  overload: netDxf.GTE.BSplineSurfaceFit.GetPosition*
+  nameWithType.vb: BSplineSurfaceFit.GetPosition(Double, Double)
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.GetPosition(Double, Double)
+  name.vb: GetPosition(Double, Double)
+references:
+- uid: netDxf.GTE
+  commentId: N:netDxf.GTE
+  href: netDxf.html
+  name: netDxf.GTE
+  nameWithType: netDxf.GTE
+  fullName: netDxf.GTE
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.GTE
+    name: GTE
+    href: netDxf.GTE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.GTE.BSplineSurfaceFit.#ctor*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.#ctor
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_netDxf_Vector3___
+  name: BSplineSurfaceFit
+  nameWithType: BSplineSurfaceFit.BSplineSurfaceFit
+  fullName: netDxf.GTE.BSplineSurfaceFit.BSplineSurfaceFit
+  nameWithType.vb: BSplineSurfaceFit.New
+  fullName.vb: netDxf.GTE.BSplineSurfaceFit.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.Vector3[]
+  isExternal: true
+  href: netDxf.Vector3.html
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: netDxf.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: netDxf.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+- uid: netDxf.GTE.BSplineSurfaceFit.NumSamples*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.NumSamples
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_NumSamples_System_Int32_
+  name: NumSamples
+  nameWithType: BSplineSurfaceFit.NumSamples
+  fullName: netDxf.GTE.BSplineSurfaceFit.NumSamples
+- uid: netDxf.GTE.BSplineSurfaceFit.SampleData*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.SampleData
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_SampleData
+  name: SampleData
+  nameWithType: BSplineSurfaceFit.SampleData
+  fullName: netDxf.GTE.BSplineSurfaceFit.SampleData
+- uid: netDxf.GTE.BSplineSurfaceFit.Degree*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.Degree
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_Degree_System_Int32_
+  name: Degree
+  nameWithType: BSplineSurfaceFit.Degree
+  fullName: netDxf.GTE.BSplineSurfaceFit.Degree
+- uid: netDxf.GTE.BSplineSurfaceFit.NumControls*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.NumControls
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_NumControls_System_Int32_
+  name: NumControls
+  nameWithType: BSplineSurfaceFit.NumControls
+  fullName: netDxf.GTE.BSplineSurfaceFit.NumControls
+- uid: netDxf.GTE.BSplineSurfaceFit.ControlData*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.ControlData
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_ControlData
+  name: ControlData
+  nameWithType: BSplineSurfaceFit.ControlData
+  fullName: netDxf.GTE.BSplineSurfaceFit.ControlData
+- uid: netDxf.GTE.BSplineSurfaceFit.BasisFunction*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.BasisFunction
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_BasisFunction_System_Int32_
+  name: BasisFunction
+  nameWithType: BSplineSurfaceFit.BasisFunction
+  fullName: netDxf.GTE.BSplineSurfaceFit.BasisFunction
+- uid: netDxf.GTE.BasisFunction
+  commentId: T:netDxf.GTE.BasisFunction
+  parent: netDxf.GTE
+  href: netDxf.GTE.BasisFunction.html
+  name: BasisFunction
+  nameWithType: BasisFunction
+  fullName: netDxf.GTE.BasisFunction
+- uid: netDxf.GTE.BSplineSurfaceFit.GetPosition*
+  commentId: Overload:netDxf.GTE.BSplineSurfaceFit.GetPosition
+  href: netDxf.GTE.BSplineSurfaceFit.html#netDxf_GTE_BSplineSurfaceFit_GetPosition_System_Double_System_Double_
+  name: GetPosition
+  nameWithType: BSplineSurfaceFit.GetPosition
+  fullName: netDxf.GTE.BSplineSurfaceFit.GetPosition
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf

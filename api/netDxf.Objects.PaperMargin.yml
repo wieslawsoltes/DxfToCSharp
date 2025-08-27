@@ -1,0 +1,470 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.PaperMargin
+  commentId: T:netDxf.Objects.PaperMargin
+  id: PaperMargin
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.PaperMargin.#ctor(System.Double,System.Double,System.Double,System.Double)
+  - netDxf.Objects.PaperMargin.Bottom
+  - netDxf.Objects.PaperMargin.Left
+  - netDxf.Objects.PaperMargin.Right
+  - netDxf.Objects.PaperMargin.Top
+  langs:
+  - csharp
+  - vb
+  name: PaperMargin
+  nameWithType: PaperMargin
+  fullName: netDxf.Objects.PaperMargin
+  type: Struct
+  source:
+    id: PaperMargin
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Represents the unprintable margins of a paper.
+  example: []
+  syntax:
+    content: public struct PaperMargin
+    content.vb: Public Structure PaperMargin
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+- uid: netDxf.Objects.PaperMargin.#ctor(System.Double,System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Objects.PaperMargin.#ctor(System.Double,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double)'
+  parent: netDxf.Objects.PaperMargin
+  langs:
+  - csharp
+  - vb
+  name: PaperMargin(double, double, double, double)
+  nameWithType: PaperMargin.PaperMargin(double, double, double, double)
+  fullName: netDxf.Objects.PaperMargin.PaperMargin(double, double, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Initializes a new instance of <code>PaperMargin</code>.
+  example: []
+  syntax:
+    content: public PaperMargin(double left, double bottom, double right, double top)
+    parameters:
+    - id: left
+      type: System.Double
+      description: Margin on left side of paper.
+    - id: bottom
+      type: System.Double
+      description: Margin on bottom side of paper.
+    - id: right
+      type: System.Double
+      description: Margin on right side of paper.
+    - id: top
+      type: System.Double
+      description: Margin on top side of paper.
+    content.vb: Public Sub New(left As Double, bottom As Double, right As Double, top As Double)
+  overload: netDxf.Objects.PaperMargin.#ctor*
+  nameWithType.vb: PaperMargin.New(Double, Double, Double, Double)
+  fullName.vb: netDxf.Objects.PaperMargin.New(Double, Double, Double, Double)
+  name.vb: New(Double, Double, Double, Double)
+- uid: netDxf.Objects.PaperMargin.Left
+  commentId: P:netDxf.Objects.PaperMargin.Left
+  id: Left
+  parent: netDxf.Objects.PaperMargin
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: PaperMargin.Left
+  fullName: netDxf.Objects.PaperMargin.Left
+  type: Property
+  source:
+    id: Left
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or set the size, in millimeters, of unprintable margin on left side of paper.
+  example: []
+  syntax:
+    content: public double Left { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Left As Double
+  overload: netDxf.Objects.PaperMargin.Left*
+- uid: netDxf.Objects.PaperMargin.Bottom
+  commentId: P:netDxf.Objects.PaperMargin.Bottom
+  id: Bottom
+  parent: netDxf.Objects.PaperMargin
+  langs:
+  - csharp
+  - vb
+  name: Bottom
+  nameWithType: PaperMargin.Bottom
+  fullName: netDxf.Objects.PaperMargin.Bottom
+  type: Property
+  source:
+    id: Bottom
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 74
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or set the size, in millimeters, of unprintable margin on bottom side of paper.
+  example: []
+  syntax:
+    content: public double Bottom { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Bottom As Double
+  overload: netDxf.Objects.PaperMargin.Bottom*
+- uid: netDxf.Objects.PaperMargin.Right
+  commentId: P:netDxf.Objects.PaperMargin.Right
+  id: Right
+  parent: netDxf.Objects.PaperMargin
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: PaperMargin.Right
+  fullName: netDxf.Objects.PaperMargin.Right
+  type: Property
+  source:
+    id: Right
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 83
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or set the size, in millimeters, of unprintable margin on right side of paper.
+  example: []
+  syntax:
+    content: public double Right { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Right As Double
+  overload: netDxf.Objects.PaperMargin.Right*
+- uid: netDxf.Objects.PaperMargin.Top
+  commentId: P:netDxf.Objects.PaperMargin.Top
+  id: Top
+  parent: netDxf.Objects.PaperMargin
+  langs:
+  - csharp
+  - vb
+  name: Top
+  nameWithType: PaperMargin.Top
+  fullName: netDxf.Objects.PaperMargin.Top
+  type: Property
+  source:
+    id: Top
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PaperMargin.cs
+    startLine: 92
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Gets or set the size, in millimeters, of unprintable margin on top side of paper.
+  example: []
+  syntax:
+    content: public double Top { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Top As Double
+  overload: netDxf.Objects.PaperMargin.Top*
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Objects.PaperMargin.#ctor*
+  commentId: Overload:netDxf.Objects.PaperMargin.#ctor
+  href: netDxf.Objects.PaperMargin.html#netDxf_Objects_PaperMargin__ctor_System_Double_System_Double_System_Double_System_Double_
+  name: PaperMargin
+  nameWithType: PaperMargin.PaperMargin
+  fullName: netDxf.Objects.PaperMargin.PaperMargin
+  nameWithType.vb: PaperMargin.New
+  fullName.vb: netDxf.Objects.PaperMargin.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Objects.PaperMargin.Left*
+  commentId: Overload:netDxf.Objects.PaperMargin.Left
+  href: netDxf.Objects.PaperMargin.html#netDxf_Objects_PaperMargin_Left
+  name: Left
+  nameWithType: PaperMargin.Left
+  fullName: netDxf.Objects.PaperMargin.Left
+- uid: netDxf.Objects.PaperMargin.Bottom*
+  commentId: Overload:netDxf.Objects.PaperMargin.Bottom
+  href: netDxf.Objects.PaperMargin.html#netDxf_Objects_PaperMargin_Bottom
+  name: Bottom
+  nameWithType: PaperMargin.Bottom
+  fullName: netDxf.Objects.PaperMargin.Bottom
+- uid: netDxf.Objects.PaperMargin.Right*
+  commentId: Overload:netDxf.Objects.PaperMargin.Right
+  href: netDxf.Objects.PaperMargin.html#netDxf_Objects_PaperMargin_Right
+  name: Right
+  nameWithType: PaperMargin.Right
+  fullName: netDxf.Objects.PaperMargin.Right
+- uid: netDxf.Objects.PaperMargin.Top*
+  commentId: Overload:netDxf.Objects.PaperMargin.Top
+  href: netDxf.Objects.PaperMargin.html#netDxf_Objects_PaperMargin_Top
+  name: Top
+  nameWithType: PaperMargin.Top
+  fullName: netDxf.Objects.PaperMargin.Top

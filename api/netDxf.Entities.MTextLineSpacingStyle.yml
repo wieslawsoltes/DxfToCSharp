@@ -1,0 +1,160 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.MTextLineSpacingStyle
+  commentId: T:netDxf.Entities.MTextLineSpacingStyle
+  id: MTextLineSpacingStyle
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.MTextLineSpacingStyle.AtLeast
+  - netDxf.Entities.MTextLineSpacingStyle.Default
+  - netDxf.Entities.MTextLineSpacingStyle.Exact
+  - netDxf.Entities.MTextLineSpacingStyle.Multiple
+  langs:
+  - csharp
+  - vb
+  name: MTextLineSpacingStyle
+  nameWithType: MTextLineSpacingStyle
+  fullName: netDxf.Entities.MTextLineSpacingStyle
+  type: Enum
+  source:
+    id: MTextLineSpacingStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextLineSpacingStyle.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: MText line spacing style.
+  example: []
+  syntax:
+    content: public enum MTextLineSpacingStyle
+    content.vb: Public Enum MTextLineSpacingStyle
+- uid: netDxf.Entities.MTextLineSpacingStyle.Default
+  commentId: F:netDxf.Entities.MTextLineSpacingStyle.Default
+  id: Default
+  parent: netDxf.Entities.MTextLineSpacingStyle
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: MTextLineSpacingStyle.Default
+  fullName: netDxf.Entities.MTextLineSpacingStyle.Default
+  type: Field
+  source:
+    id: Default
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextLineSpacingStyle.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Default (only applicable in MTextParagraphOptions).
+  remarks: The default value defined by the MText property will be applied.
+  example: []
+  syntax:
+    content: Default = 0
+    return:
+      type: netDxf.Entities.MTextLineSpacingStyle
+- uid: netDxf.Entities.MTextLineSpacingStyle.AtLeast
+  commentId: F:netDxf.Entities.MTextLineSpacingStyle.AtLeast
+  id: AtLeast
+  parent: netDxf.Entities.MTextLineSpacingStyle
+  langs:
+  - csharp
+  - vb
+  name: AtLeast
+  nameWithType: MTextLineSpacingStyle.AtLeast
+  fullName: netDxf.Entities.MTextLineSpacingStyle.AtLeast
+  type: Field
+  source:
+    id: AtLeast
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextLineSpacingStyle.cs
+    startLine: 46
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: At least (taller characters will override)
+  remarks: Takes both the user specified arbitrary value and the text height to determine spacing.
+  example: []
+  syntax:
+    content: AtLeast = 1
+    return:
+      type: netDxf.Entities.MTextLineSpacingStyle
+- uid: netDxf.Entities.MTextLineSpacingStyle.Exact
+  commentId: F:netDxf.Entities.MTextLineSpacingStyle.Exact
+  id: Exact
+  parent: netDxf.Entities.MTextLineSpacingStyle
+  langs:
+  - csharp
+  - vb
+  name: Exact
+  nameWithType: MTextLineSpacingStyle.Exact
+  fullName: netDxf.Entities.MTextLineSpacingStyle.Exact
+  type: Field
+  source:
+    id: Exact
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextLineSpacingStyle.cs
+    startLine: 54
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Exact (taller characters will not override)
+  remarks: Defines the space with an arbitrary unit value the user specifies. Changing text height will not affect line spacing.
+  example: []
+  syntax:
+    content: Exact = 2
+    return:
+      type: netDxf.Entities.MTextLineSpacingStyle
+- uid: netDxf.Entities.MTextLineSpacingStyle.Multiple
+  commentId: F:netDxf.Entities.MTextLineSpacingStyle.Multiple
+  id: Multiple
+  parent: netDxf.Entities.MTextLineSpacingStyle
+  langs:
+  - csharp
+  - vb
+  name: Multiple
+  nameWithType: MTextLineSpacingStyle.Multiple
+  fullName: netDxf.Entities.MTextLineSpacingStyle.Multiple
+  type: Field
+  source:
+    id: Multiple
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/MTextLineSpacingStyle.cs
+    startLine: 62
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Multiple (only applicable in MTextParagraphOptions).
+  remarks: Instead of assigning a value to line spacing, you specify spacing according to text height.
+  example: []
+  syntax:
+    content: Multiple = 3
+    return:
+      type: netDxf.Entities.MTextLineSpacingStyle
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: netDxf.Entities.MTextLineSpacingStyle
+  commentId: T:netDxf.Entities.MTextLineSpacingStyle
+  parent: netDxf.Entities
+  href: netDxf.Entities.MTextLineSpacingStyle.html
+  name: MTextLineSpacingStyle
+  nameWithType: MTextLineSpacingStyle
+  fullName: netDxf.Entities.MTextLineSpacingStyle

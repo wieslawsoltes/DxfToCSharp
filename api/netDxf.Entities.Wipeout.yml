@@ -1,0 +1,1105 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Wipeout
+  commentId: T:netDxf.Entities.Wipeout
+  id: Wipeout
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Wipeout.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  - netDxf.Entities.Wipeout.#ctor(System.Double,System.Double,System.Double,System.Double)
+  - netDxf.Entities.Wipeout.#ctor(netDxf.ClippingBoundary)
+  - netDxf.Entities.Wipeout.#ctor(netDxf.Vector2,netDxf.Vector2)
+  - netDxf.Entities.Wipeout.ClippingBoundary
+  - netDxf.Entities.Wipeout.Clone
+  - netDxf.Entities.Wipeout.Elevation
+  - netDxf.Entities.Wipeout.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: Wipeout
+  nameWithType: Wipeout
+  fullName: netDxf.Entities.Wipeout
+  type: Class
+  source:
+    id: Wipeout
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a wipeout <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref>.
+  remarks: >-
+    The Wipeout DXF definition includes three variables for brightness, contrast, and fade but those variables have no effect; in AutoCad you cannot even change them.<br />
+
+    The Wipeout entity is related with the system variable WIPEOUTFRAME but this variable is not saved in a DXF.
+  example: []
+  syntax:
+    content: 'public class Wipeout : EntityObject, ICloneable'
+    content.vb: Public Class Wipeout Inherits EntityObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Wipeout.#ctor(System.Double,System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Entities.Wipeout.#ctor(System.Double,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double)'
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Wipeout(double, double, double, double)
+  nameWithType: Wipeout.Wipeout(double, double, double, double)
+  fullName: netDxf.Entities.Wipeout.Wipeout(double, double, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 57
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Wipeout</code> class as a rectangular wipeout.
+  example: []
+  syntax:
+    content: public Wipeout(double x, double y, double width, double height)
+    parameters:
+    - id: x
+      type: System.Double
+      description: Rectangle x-coordinate of the bottom-left corner in local coordinates.
+    - id: y
+      type: System.Double
+      description: Rectangle y-coordinate of the bottom-left corner in local coordinates.
+    - id: width
+      type: System.Double
+      description: Rectangle width in local coordinates.
+    - id: height
+      type: System.Double
+      description: Rectangle height in local coordinates.
+    content.vb: Public Sub New(x As Double, y As Double, width As Double, height As Double)
+  overload: netDxf.Entities.Wipeout.#ctor*
+  nameWithType.vb: Wipeout.New(Double, Double, Double, Double)
+  fullName.vb: netDxf.Entities.Wipeout.New(Double, Double, Double, Double)
+  name.vb: New(Double, Double, Double, Double)
+- uid: netDxf.Entities.Wipeout.#ctor(netDxf.Vector2,netDxf.Vector2)
+  commentId: M:netDxf.Entities.Wipeout.#ctor(netDxf.Vector2,netDxf.Vector2)
+  id: '#ctor(netDxf.Vector2,netDxf.Vector2)'
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Wipeout(Vector2, Vector2)
+  nameWithType: Wipeout.Wipeout(Vector2, Vector2)
+  fullName: netDxf.Entities.Wipeout.Wipeout(netDxf.Vector2, netDxf.Vector2)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 67
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Wipeout</code> class as a rectangular wipeout from two opposite corners.
+  example: []
+  syntax:
+    content: public Wipeout(Vector2 firstCorner, Vector2 secondCorner)
+    parameters:
+    - id: firstCorner
+      type: netDxf.Vector2
+      description: Rectangle firstCorner in local coordinates.
+    - id: secondCorner
+      type: netDxf.Vector2
+      description: Rectangle secondCorner in local coordinates.
+    content.vb: Public Sub New(firstCorner As Vector2, secondCorner As Vector2)
+  overload: netDxf.Entities.Wipeout.#ctor*
+  nameWithType.vb: Wipeout.New(Vector2, Vector2)
+  fullName.vb: netDxf.Entities.Wipeout.New(netDxf.Vector2, netDxf.Vector2)
+  name.vb: New(Vector2, Vector2)
+- uid: netDxf.Entities.Wipeout.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  commentId: M:netDxf.Entities.Wipeout.#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})
+  id: '#ctor(System.Collections.Generic.IEnumerable{netDxf.Vector2})'
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Wipeout(IEnumerable<Vector2>)
+  nameWithType: Wipeout.Wipeout(IEnumerable<Vector2>)
+  fullName: netDxf.Entities.Wipeout.Wipeout(System.Collections.Generic.IEnumerable<netDxf.Vector2>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 76
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Wipeout</code> class as a polygonal wipeout.
+  example: []
+  syntax:
+    content: public Wipeout(IEnumerable<Vector2> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+      description: The list of vertexes of the wipeout.
+    content.vb: Public Sub New(vertexes As IEnumerable(Of Vector2))
+  overload: netDxf.Entities.Wipeout.#ctor*
+  nameWithType.vb: Wipeout.New(IEnumerable(Of Vector2))
+  fullName.vb: netDxf.Entities.Wipeout.New(System.Collections.Generic.IEnumerable(Of netDxf.Vector2))
+  name.vb: New(IEnumerable(Of Vector2))
+- uid: netDxf.Entities.Wipeout.#ctor(netDxf.ClippingBoundary)
+  commentId: M:netDxf.Entities.Wipeout.#ctor(netDxf.ClippingBoundary)
+  id: '#ctor(netDxf.ClippingBoundary)'
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Wipeout(ClippingBoundary)
+  nameWithType: Wipeout.Wipeout(ClippingBoundary)
+  fullName: netDxf.Entities.Wipeout.Wipeout(netDxf.ClippingBoundary)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 85
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Wipeout</code> class.
+  example: []
+  syntax:
+    content: public Wipeout(ClippingBoundary clippingBoundary)
+    parameters:
+    - id: clippingBoundary
+      type: netDxf.ClippingBoundary
+      description: The wipeout clipping boundary.
+    content.vb: Public Sub New(clippingBoundary As ClippingBoundary)
+  overload: netDxf.Entities.Wipeout.#ctor*
+  nameWithType.vb: Wipeout.New(ClippingBoundary)
+  fullName.vb: netDxf.Entities.Wipeout.New(netDxf.ClippingBoundary)
+  name.vb: New(ClippingBoundary)
+- uid: netDxf.Entities.Wipeout.ClippingBoundary
+  commentId: P:netDxf.Entities.Wipeout.ClippingBoundary
+  id: ClippingBoundary
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: ClippingBoundary
+  nameWithType: Wipeout.ClippingBoundary
+  fullName: netDxf.Entities.Wipeout.ClippingBoundary
+  type: Property
+  source:
+    id: ClippingBoundary
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 99
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the wipeout clipping boundary.
+  example: []
+  syntax:
+    content: public ClippingBoundary ClippingBoundary { get; set; }
+    parameters: []
+    return:
+      type: netDxf.ClippingBoundary
+    content.vb: Public Property ClippingBoundary As ClippingBoundary
+  overload: netDxf.Entities.Wipeout.ClippingBoundary*
+- uid: netDxf.Entities.Wipeout.Elevation
+  commentId: P:netDxf.Entities.Wipeout.Elevation
+  id: Elevation
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Elevation
+  nameWithType: Wipeout.Elevation
+  fullName: netDxf.Entities.Wipeout.Elevation
+  type: Property
+  source:
+    id: Elevation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 112
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the wipeout elevation.
+  remarks: This is the distance from the origin to the plane of the wipeout boundary.
+  example: []
+  syntax:
+    content: public double Elevation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Elevation As Double
+  overload: netDxf.Entities.Wipeout.Elevation*
+- uid: netDxf.Entities.Wipeout.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Wipeout.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Wipeout.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Wipeout.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 128
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.Wipeout.TransformBy*
+- uid: netDxf.Entities.Wipeout.Clone
+  commentId: M:netDxf.Entities.Wipeout.Clone
+  id: Clone
+  parent: netDxf.Entities.Wipeout
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Wipeout.Clone()
+  fullName: netDxf.Entities.Wipeout.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Wipeout.cs
+    startLine: 165
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Wipeout that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new Wipeout that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.Wipeout.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.Wipeout.#ctor*
+  commentId: Overload:netDxf.Entities.Wipeout.#ctor
+  href: netDxf.Entities.Wipeout.html#netDxf_Entities_Wipeout__ctor_System_Double_System_Double_System_Double_System_Double_
+  name: Wipeout
+  nameWithType: Wipeout.Wipeout
+  fullName: netDxf.Entities.Wipeout.Wipeout
+  nameWithType.vb: Wipeout.New
+  fullName.vb: netDxf.Entities.Wipeout.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  commentId: T:System.Collections.Generic.IEnumerable{netDxf.Vector2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Vector2>
+  nameWithType: IEnumerable<Vector2>
+  fullName: System.Collections.Generic.IEnumerable<netDxf.Vector2>
+  nameWithType.vb: IEnumerable(Of Vector2)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of netDxf.Vector2)
+  name.vb: IEnumerable(Of Vector2)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.ClippingBoundary
+  commentId: T:netDxf.ClippingBoundary
+  parent: netDxf
+  href: netDxf.ClippingBoundary.html
+  name: ClippingBoundary
+  nameWithType: ClippingBoundary
+  fullName: netDxf.ClippingBoundary
+- uid: netDxf.Entities.Wipeout.ClippingBoundary*
+  commentId: Overload:netDxf.Entities.Wipeout.ClippingBoundary
+  href: netDxf.Entities.Wipeout.html#netDxf_Entities_Wipeout_ClippingBoundary
+  name: ClippingBoundary
+  nameWithType: Wipeout.ClippingBoundary
+  fullName: netDxf.Entities.Wipeout.ClippingBoundary
+- uid: netDxf.Entities.Wipeout.Elevation*
+  commentId: Overload:netDxf.Entities.Wipeout.Elevation
+  href: netDxf.Entities.Wipeout.html#netDxf_Entities_Wipeout_Elevation
+  name: Elevation
+  nameWithType: Wipeout.Elevation
+  fullName: netDxf.Entities.Wipeout.Elevation
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.Wipeout.TransformBy*
+  commentId: Overload:netDxf.Entities.Wipeout.TransformBy
+  href: netDxf.Entities.Wipeout.html#netDxf_Entities_Wipeout_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Wipeout.TransformBy
+  fullName: netDxf.Entities.Wipeout.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Wipeout.Clone*
+  commentId: Overload:netDxf.Entities.Wipeout.Clone
+  href: netDxf.Entities.Wipeout.html#netDxf_Entities_Wipeout_Clone
+  name: Clone
+  nameWithType: Wipeout.Clone
+  fullName: netDxf.Entities.Wipeout.Clone

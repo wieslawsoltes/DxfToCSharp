@@ -1,0 +1,2520 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Matrix4
+  commentId: T:netDxf.Matrix4
+  id: Matrix4
+  parent: netDxf
+  children:
+  - netDxf.Matrix4.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  - netDxf.Matrix4.Add(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.Determinant
+  - netDxf.Matrix4.Equals(System.Object)
+  - netDxf.Matrix4.Equals(netDxf.Matrix4)
+  - netDxf.Matrix4.Equals(netDxf.Matrix4,System.Double)
+  - netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4,System.Double)
+  - netDxf.Matrix4.GetHashCode
+  - netDxf.Matrix4.Identity
+  - netDxf.Matrix4.Inverse
+  - netDxf.Matrix4.IsIdentity
+  - netDxf.Matrix4.Item(System.Int32,System.Int32)
+  - netDxf.Matrix4.M11
+  - netDxf.Matrix4.M12
+  - netDxf.Matrix4.M13
+  - netDxf.Matrix4.M14
+  - netDxf.Matrix4.M21
+  - netDxf.Matrix4.M22
+  - netDxf.Matrix4.M23
+  - netDxf.Matrix4.M24
+  - netDxf.Matrix4.M31
+  - netDxf.Matrix4.M32
+  - netDxf.Matrix4.M33
+  - netDxf.Matrix4.M34
+  - netDxf.Matrix4.M41
+  - netDxf.Matrix4.M42
+  - netDxf.Matrix4.M43
+  - netDxf.Matrix4.M44
+  - netDxf.Matrix4.Multiply(netDxf.Matrix4,System.Double)
+  - netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Vector4)
+  - netDxf.Matrix4.Reflection(netDxf.Vector3,netDxf.Vector3)
+  - netDxf.Matrix4.RotationX(System.Double)
+  - netDxf.Matrix4.RotationY(System.Double)
+  - netDxf.Matrix4.RotationZ(System.Double)
+  - netDxf.Matrix4.Scale(System.Double)
+  - netDxf.Matrix4.Scale(System.Double,System.Double,System.Double)
+  - netDxf.Matrix4.Scale(netDxf.Vector3)
+  - netDxf.Matrix4.Subtract(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.ToString
+  - netDxf.Matrix4.ToString(System.IFormatProvider)
+  - netDxf.Matrix4.Translation(System.Double,System.Double,System.Double)
+  - netDxf.Matrix4.Translation(netDxf.Vector3)
+  - netDxf.Matrix4.Transpose
+  - netDxf.Matrix4.Zero
+  - netDxf.Matrix4.op_Addition(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.op_Equality(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.op_Inequality(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.op_Multiply(netDxf.Matrix4,System.Double)
+  - netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  - netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Vector4)
+  - netDxf.Matrix4.op_Subtraction(netDxf.Matrix4,netDxf.Matrix4)
+  langs:
+  - csharp
+  - vb
+  name: Matrix4
+  nameWithType: Matrix4
+  fullName: netDxf.Matrix4
+  type: Struct
+  source:
+    id: Matrix4
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 34
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Represents a 4x4 double precision matrix.
+  example: []
+  syntax:
+    content: 'public struct Matrix4 : IEquatable<Matrix4>'
+    content.vb: Public Structure Matrix4 Implements IEquatable(Of Matrix4)
+  implements:
+  - System.IEquatable{netDxf.Matrix4}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+- uid: netDxf.Matrix4.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Matrix4.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)'
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Matrix4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double)
+  nameWithType: Matrix4.Matrix4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double)
+  fullName: netDxf.Matrix4.Matrix4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 82
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Initializes a new instance of Matrix4.
+  example: []
+  syntax:
+    content: public Matrix4(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double m41, double m42, double m43, double m44)
+    parameters:
+    - id: m11
+      type: System.Double
+      description: Element [0,0].
+    - id: m12
+      type: System.Double
+      description: Element [0,1].
+    - id: m13
+      type: System.Double
+      description: Element [0,2].
+    - id: m14
+      type: System.Double
+      description: Element [0,3].
+    - id: m21
+      type: System.Double
+      description: Element [1,0].
+    - id: m22
+      type: System.Double
+      description: Element [1,1].
+    - id: m23
+      type: System.Double
+      description: Element [1,2].
+    - id: m24
+      type: System.Double
+      description: Element [1,3].
+    - id: m31
+      type: System.Double
+      description: Element [2,0].
+    - id: m32
+      type: System.Double
+      description: Element [2,1].
+    - id: m33
+      type: System.Double
+      description: Element [2,2].
+    - id: m34
+      type: System.Double
+      description: Element [2,3].
+    - id: m41
+      type: System.Double
+      description: Element [3,0].
+    - id: m42
+      type: System.Double
+      description: Element [3,1].
+    - id: m43
+      type: System.Double
+      description: Element [3,2].
+    - id: m44
+      type: System.Double
+      description: Element [3,3].
+    content.vb: Public Sub New(m11 As Double, m12 As Double, m13 As Double, m14 As Double, m21 As Double, m22 As Double, m23 As Double, m24 As Double, m31 As Double, m32 As Double, m33 As Double, m34 As Double, m41 As Double, m42 As Double, m43 As Double, m44 As Double)
+  overload: netDxf.Matrix4.#ctor*
+  nameWithType.vb: Matrix4.New(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double)
+  fullName.vb: netDxf.Matrix4.New(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double)
+  name.vb: New(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double)
+- uid: netDxf.Matrix4.Zero
+  commentId: P:netDxf.Matrix4.Zero
+  id: Zero
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Matrix4.Zero
+  fullName: netDxf.Matrix4.Zero
+  type: Property
+  source:
+    id: Zero
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 118
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets the zero matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Zero { get; }
+    parameters: []
+    return:
+      type: netDxf.Matrix4
+    content.vb: Public Shared ReadOnly Property Zero As Matrix4
+  overload: netDxf.Matrix4.Zero*
+- uid: netDxf.Matrix4.Identity
+  commentId: P:netDxf.Matrix4.Identity
+  id: Identity
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: Matrix4.Identity
+  fullName: netDxf.Matrix4.Identity
+  type: Property
+  source:
+    id: Identity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 132
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets the identity matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Identity { get; }
+    parameters: []
+    return:
+      type: netDxf.Matrix4
+    content.vb: Public Shared ReadOnly Property Identity As Matrix4
+  overload: netDxf.Matrix4.Identity*
+- uid: netDxf.Matrix4.M11
+  commentId: P:netDxf.Matrix4.M11
+  id: M11
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M11
+  nameWithType: Matrix4.M11
+  fullName: netDxf.Matrix4.M11
+  type: Property
+  source:
+    id: M11
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 150
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [0,0].
+  example: []
+  syntax:
+    content: public double M11 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M11 As Double
+  overload: netDxf.Matrix4.M11*
+- uid: netDxf.Matrix4.M12
+  commentId: P:netDxf.Matrix4.M12
+  id: M12
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M12
+  nameWithType: Matrix4.M12
+  fullName: netDxf.Matrix4.M12
+  type: Property
+  source:
+    id: M12
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 163
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [0,1].
+  example: []
+  syntax:
+    content: public double M12 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M12 As Double
+  overload: netDxf.Matrix4.M12*
+- uid: netDxf.Matrix4.M13
+  commentId: P:netDxf.Matrix4.M13
+  id: M13
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M13
+  nameWithType: Matrix4.M13
+  fullName: netDxf.Matrix4.M13
+  type: Property
+  source:
+    id: M13
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 176
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [0,2].
+  example: []
+  syntax:
+    content: public double M13 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M13 As Double
+  overload: netDxf.Matrix4.M13*
+- uid: netDxf.Matrix4.M14
+  commentId: P:netDxf.Matrix4.M14
+  id: M14
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M14
+  nameWithType: Matrix4.M14
+  fullName: netDxf.Matrix4.M14
+  type: Property
+  source:
+    id: M14
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 189
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [0,3].
+  example: []
+  syntax:
+    content: public double M14 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M14 As Double
+  overload: netDxf.Matrix4.M14*
+- uid: netDxf.Matrix4.M21
+  commentId: P:netDxf.Matrix4.M21
+  id: M21
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M21
+  nameWithType: Matrix4.M21
+  fullName: netDxf.Matrix4.M21
+  type: Property
+  source:
+    id: M21
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 202
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [1,0].
+  example: []
+  syntax:
+    content: public double M21 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M21 As Double
+  overload: netDxf.Matrix4.M21*
+- uid: netDxf.Matrix4.M22
+  commentId: P:netDxf.Matrix4.M22
+  id: M22
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M22
+  nameWithType: Matrix4.M22
+  fullName: netDxf.Matrix4.M22
+  type: Property
+  source:
+    id: M22
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 215
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [1,1].
+  example: []
+  syntax:
+    content: public double M22 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M22 As Double
+  overload: netDxf.Matrix4.M22*
+- uid: netDxf.Matrix4.M23
+  commentId: P:netDxf.Matrix4.M23
+  id: M23
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M23
+  nameWithType: Matrix4.M23
+  fullName: netDxf.Matrix4.M23
+  type: Property
+  source:
+    id: M23
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 228
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [1,2].
+  example: []
+  syntax:
+    content: public double M23 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M23 As Double
+  overload: netDxf.Matrix4.M23*
+- uid: netDxf.Matrix4.M24
+  commentId: P:netDxf.Matrix4.M24
+  id: M24
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M24
+  nameWithType: Matrix4.M24
+  fullName: netDxf.Matrix4.M24
+  type: Property
+  source:
+    id: M24
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 241
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [1,3].
+  example: []
+  syntax:
+    content: public double M24 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M24 As Double
+  overload: netDxf.Matrix4.M24*
+- uid: netDxf.Matrix4.M31
+  commentId: P:netDxf.Matrix4.M31
+  id: M31
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M31
+  nameWithType: Matrix4.M31
+  fullName: netDxf.Matrix4.M31
+  type: Property
+  source:
+    id: M31
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 254
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [2,0].
+  example: []
+  syntax:
+    content: public double M31 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M31 As Double
+  overload: netDxf.Matrix4.M31*
+- uid: netDxf.Matrix4.M32
+  commentId: P:netDxf.Matrix4.M32
+  id: M32
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M32
+  nameWithType: Matrix4.M32
+  fullName: netDxf.Matrix4.M32
+  type: Property
+  source:
+    id: M32
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 267
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [2,1].
+  example: []
+  syntax:
+    content: public double M32 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M32 As Double
+  overload: netDxf.Matrix4.M32*
+- uid: netDxf.Matrix4.M33
+  commentId: P:netDxf.Matrix4.M33
+  id: M33
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M33
+  nameWithType: Matrix4.M33
+  fullName: netDxf.Matrix4.M33
+  type: Property
+  source:
+    id: M33
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 280
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [2,2].
+  example: []
+  syntax:
+    content: public double M33 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M33 As Double
+  overload: netDxf.Matrix4.M33*
+- uid: netDxf.Matrix4.M34
+  commentId: P:netDxf.Matrix4.M34
+  id: M34
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M34
+  nameWithType: Matrix4.M34
+  fullName: netDxf.Matrix4.M34
+  type: Property
+  source:
+    id: M34
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 293
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [2,3].
+  example: []
+  syntax:
+    content: public double M34 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M34 As Double
+  overload: netDxf.Matrix4.M34*
+- uid: netDxf.Matrix4.M41
+  commentId: P:netDxf.Matrix4.M41
+  id: M41
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M41
+  nameWithType: Matrix4.M41
+  fullName: netDxf.Matrix4.M41
+  type: Property
+  source:
+    id: M41
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 306
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [3,0].
+  example: []
+  syntax:
+    content: public double M41 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M41 As Double
+  overload: netDxf.Matrix4.M41*
+- uid: netDxf.Matrix4.M42
+  commentId: P:netDxf.Matrix4.M42
+  id: M42
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M42
+  nameWithType: Matrix4.M42
+  fullName: netDxf.Matrix4.M42
+  type: Property
+  source:
+    id: M42
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 319
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [3,1].
+  example: []
+  syntax:
+    content: public double M42 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M42 As Double
+  overload: netDxf.Matrix4.M42*
+- uid: netDxf.Matrix4.M43
+  commentId: P:netDxf.Matrix4.M43
+  id: M43
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M43
+  nameWithType: Matrix4.M43
+  fullName: netDxf.Matrix4.M43
+  type: Property
+  source:
+    id: M43
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 332
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [3,2].
+  example: []
+  syntax:
+    content: public double M43 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M43 As Double
+  overload: netDxf.Matrix4.M43*
+- uid: netDxf.Matrix4.M44
+  commentId: P:netDxf.Matrix4.M44
+  id: M44
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: M44
+  nameWithType: Matrix4.M44
+  fullName: netDxf.Matrix4.M44
+  type: Property
+  source:
+    id: M44
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 345
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the matrix element [3,3].
+  example: []
+  syntax:
+    content: public double M44 { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property M44 As Double
+  overload: netDxf.Matrix4.M44*
+- uid: netDxf.Matrix4.Item(System.Int32,System.Int32)
+  commentId: P:netDxf.Matrix4.Item(System.Int32,System.Int32)
+  id: Item(System.Int32,System.Int32)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: this[int, int]
+  nameWithType: Matrix4.this[int, int]
+  fullName: netDxf.Matrix4.this[int, int]
+  type: Property
+  source:
+    id: this[]
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 359
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets or sets the component at the given row and column index in the matrix.
+  example: []
+  syntax:
+    content: public double this[int row, int column] { get; set; }
+    parameters:
+    - id: row
+      type: System.Int32
+      description: The row index of the matrix.
+    - id: column
+      type: System.Int32
+      description: The column index of the matrix.
+    return:
+      type: System.Double
+      description: The component at the given row and column index in the matrix.
+    content.vb: Public Default Property this[](row As Integer, column As Integer) As Double
+  overload: netDxf.Matrix4.Item*
+  nameWithType.vb: Matrix4.this[](Integer, Integer)
+  fullName.vb: netDxf.Matrix4.this[](Integer, Integer)
+  name.vb: this[](Integer, Integer)
+- uid: netDxf.Matrix4.IsIdentity
+  commentId: P:netDxf.Matrix4.IsIdentity
+  id: IsIdentity
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: IsIdentity
+  nameWithType: Matrix4.IsIdentity
+  fullName: netDxf.Matrix4.IsIdentity
+  type: Property
+  source:
+    id: IsIdentity
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 525
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Gets if the actual matrix is the identity.
+  remarks: The checks to see if the matrix is the identity uses the MathHelper.Epsilon as a the threshold for testing values close to one and zero.
+  example: []
+  syntax:
+    content: public bool IsIdentity { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsIdentity As Boolean
+  overload: netDxf.Matrix4.IsIdentity*
+- uid: netDxf.Matrix4.op_Addition(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.op_Addition(netDxf.Matrix4,netDxf.Matrix4)
+  id: op_Addition(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator +(Matrix4, Matrix4)
+  nameWithType: Matrix4.operator +(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.operator +(netDxf.Matrix4, netDxf.Matrix4)
+  type: Operator
+  source:
+    id: op_Addition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 639
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Matrix addition.
+  example: []
+  syntax:
+    content: public static Matrix4 operator +(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Operator +(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.op_Addition*
+  nameWithType.vb: Matrix4.+(Matrix4, Matrix4)
+  fullName.vb: netDxf.Matrix4.+(netDxf.Matrix4, netDxf.Matrix4)
+  name.vb: +(Matrix4, Matrix4)
+- uid: netDxf.Matrix4.Add(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.Add(netDxf.Matrix4,netDxf.Matrix4)
+  id: Add(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Add(Matrix4, Matrix4)
+  nameWithType: Matrix4.Add(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.Add(netDxf.Matrix4, netDxf.Matrix4)
+  type: Method
+  source:
+    id: Add
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 653
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Matrix addition.
+  example: []
+  syntax:
+    content: public static Matrix4 Add(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Function Add(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.Add*
+- uid: netDxf.Matrix4.op_Subtraction(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.op_Subtraction(netDxf.Matrix4,netDxf.Matrix4)
+  id: op_Subtraction(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator -(Matrix4, Matrix4)
+  nameWithType: Matrix4.operator -(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.operator -(netDxf.Matrix4, netDxf.Matrix4)
+  type: Operator
+  source:
+    id: op_Subtraction
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 667
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Matrix subtraction.
+  example: []
+  syntax:
+    content: public static Matrix4 operator -(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Operator -(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.op_Subtraction*
+  nameWithType.vb: Matrix4.-(Matrix4, Matrix4)
+  fullName.vb: netDxf.Matrix4.-(netDxf.Matrix4, netDxf.Matrix4)
+  name.vb: -(Matrix4, Matrix4)
+- uid: netDxf.Matrix4.Subtract(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.Subtract(netDxf.Matrix4,netDxf.Matrix4)
+  id: Subtract(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Subtract(Matrix4, Matrix4)
+  nameWithType: Matrix4.Subtract(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.Subtract(netDxf.Matrix4, netDxf.Matrix4)
+  type: Method
+  source:
+    id: Subtract
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 681
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Matrix subtraction.
+  example: []
+  syntax:
+    content: public static Matrix4 Subtract(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Function Subtract(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.Subtract*
+- uid: netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  id: op_Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator *(Matrix4, Matrix4)
+  nameWithType: Matrix4.operator *(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.operator *(netDxf.Matrix4, netDxf.Matrix4)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 695
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of two matrices.
+  example: []
+  syntax:
+    content: public static Matrix4 operator *(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Operator *(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.op_Multiply*
+  nameWithType.vb: Matrix4.*(Matrix4, Matrix4)
+  fullName.vb: netDxf.Matrix4.*(netDxf.Matrix4, netDxf.Matrix4)
+  name.vb: '*(Matrix4, Matrix4)'
+- uid: netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  id: Multiply(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Matrix4, Matrix4)
+  nameWithType: Matrix4.Multiply(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.Multiply(netDxf.Matrix4, netDxf.Matrix4)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 719
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of two matrices.
+  example: []
+  syntax:
+    content: public static Matrix4 Multiply(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Function Multiply(a As Matrix4, b As Matrix4) As Matrix4
+  overload: netDxf.Matrix4.Multiply*
+- uid: netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Vector4)
+  commentId: M:netDxf.Matrix4.op_Multiply(netDxf.Matrix4,netDxf.Vector4)
+  id: op_Multiply(netDxf.Matrix4,netDxf.Vector4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator *(Matrix4, Vector4)
+  nameWithType: Matrix4.operator *(Matrix4, Vector4)
+  fullName: netDxf.Matrix4.operator *(netDxf.Matrix4, netDxf.Vector4)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 744
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of a matrix with a vector.
+  remarks: Matrix4 adopts the convention of using column vectors.
+  example: []
+  syntax:
+    content: public static Vector4 operator *(Matrix4 a, Vector4 u)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: u
+      type: netDxf.Vector4
+      description: Vector4.
+    return:
+      type: netDxf.Vector4
+      description: Matrix4.
+    content.vb: Public Shared Operator *(a As Matrix4, u As Vector4) As Vector4
+  overload: netDxf.Matrix4.op_Multiply*
+  nameWithType.vb: Matrix4.*(Matrix4, Vector4)
+  fullName.vb: netDxf.Matrix4.*(netDxf.Matrix4, netDxf.Vector4)
+  name.vb: '*(Matrix4, Vector4)'
+- uid: netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Vector4)
+  commentId: M:netDxf.Matrix4.Multiply(netDxf.Matrix4,netDxf.Vector4)
+  id: Multiply(netDxf.Matrix4,netDxf.Vector4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Matrix4, Vector4)
+  nameWithType: Matrix4.Multiply(Matrix4, Vector4)
+  fullName: netDxf.Matrix4.Multiply(netDxf.Matrix4, netDxf.Vector4)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 759
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of a matrix with a vector.
+  remarks: Matrix4 adopts the convention of using column vectors to represent three dimensional points.
+  example: []
+  syntax:
+    content: public static Vector4 Multiply(Matrix4 a, Vector4 u)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: u
+      type: netDxf.Vector4
+      description: Vector4.
+    return:
+      type: netDxf.Vector4
+      description: Matrix4.
+    content.vb: Public Shared Function Multiply(a As Matrix4, u As Vector4) As Vector4
+  overload: netDxf.Matrix4.Multiply*
+- uid: netDxf.Matrix4.op_Multiply(netDxf.Matrix4,System.Double)
+  commentId: M:netDxf.Matrix4.op_Multiply(netDxf.Matrix4,System.Double)
+  id: op_Multiply(netDxf.Matrix4,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator *(Matrix4, double)
+  nameWithType: Matrix4.operator *(Matrix4, double)
+  fullName: netDxf.Matrix4.operator *(netDxf.Matrix4, double)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 773
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of a matrix with a scalar.
+  example: []
+  syntax:
+    content: public static Matrix4 operator *(Matrix4 m, double a)
+    parameters:
+    - id: m
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Operator *(m As Matrix4, a As Double) As Matrix4
+  overload: netDxf.Matrix4.op_Multiply*
+  nameWithType.vb: Matrix4.*(Matrix4, Double)
+  fullName.vb: netDxf.Matrix4.*(netDxf.Matrix4, Double)
+  name.vb: '*(Matrix4, Double)'
+- uid: netDxf.Matrix4.Multiply(netDxf.Matrix4,System.Double)
+  commentId: M:netDxf.Matrix4.Multiply(netDxf.Matrix4,System.Double)
+  id: Multiply(netDxf.Matrix4,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Matrix4, double)
+  nameWithType: Matrix4.Multiply(Matrix4, double)
+  fullName: netDxf.Matrix4.Multiply(netDxf.Matrix4, double)
+  type: Method
+  source:
+    id: Multiply
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 787
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Product of a matrix with a scalar.
+  example: []
+  syntax:
+    content: public static Matrix4 Multiply(Matrix4 m, double a)
+    parameters:
+    - id: m
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: a
+      type: System.Double
+      description: Scalar.
+    return:
+      type: netDxf.Matrix4
+      description: Matrix4.
+    content.vb: Public Shared Function Multiply(m As Matrix4, a As Double) As Matrix4
+  overload: netDxf.Matrix4.Multiply*
+  nameWithType.vb: Matrix4.Multiply(Matrix4, Double)
+  fullName.vb: netDxf.Matrix4.Multiply(netDxf.Matrix4, Double)
+  name.vb: Multiply(Matrix4, Double)
+- uid: netDxf.Matrix4.op_Equality(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.op_Equality(netDxf.Matrix4,netDxf.Matrix4)
+  id: op_Equality(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Matrix4, Matrix4)
+  nameWithType: Matrix4.operator ==(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.operator ==(netDxf.Matrix4, netDxf.Matrix4)
+  type: Operator
+  source:
+    id: op_Equality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 801
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are equal.
+  example: []
+  syntax:
+    content: public static bool operator ==(Matrix4 u, Matrix4 v)
+    parameters:
+    - id: u
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: v
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are equal or false in any other case.
+    content.vb: Public Shared Operator =(u As Matrix4, v As Matrix4) As Boolean
+  overload: netDxf.Matrix4.op_Equality*
+  nameWithType.vb: Matrix4.=(Matrix4, Matrix4)
+  fullName.vb: netDxf.Matrix4.=(netDxf.Matrix4, netDxf.Matrix4)
+  name.vb: =(Matrix4, Matrix4)
+- uid: netDxf.Matrix4.op_Inequality(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.op_Inequality(netDxf.Matrix4,netDxf.Matrix4)
+  id: op_Inequality(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Matrix4, Matrix4)
+  nameWithType: Matrix4.operator !=(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.operator !=(netDxf.Matrix4, netDxf.Matrix4)
+  type: Operator
+  source:
+    id: op_Inequality
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 812
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are different.
+  example: []
+  syntax:
+    content: public static bool operator !=(Matrix4 u, Matrix4 v)
+    parameters:
+    - id: u
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: v
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are different or false in any other case.
+    content.vb: Public Shared Operator <>(u As Matrix4, v As Matrix4) As Boolean
+  overload: netDxf.Matrix4.op_Inequality*
+  nameWithType.vb: Matrix4.<>(Matrix4, Matrix4)
+  fullName.vb: netDxf.Matrix4.<>(netDxf.Matrix4, netDxf.Matrix4)
+  name.vb: <>(Matrix4, Matrix4)
+- uid: netDxf.Matrix4.Determinant
+  commentId: M:netDxf.Matrix4.Determinant
+  id: Determinant
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Determinant()
+  nameWithType: Matrix4.Determinant()
+  fullName: netDxf.Matrix4.Determinant()
+  type: Method
+  source:
+    id: Determinant
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 825
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculate the determinant of the actual matrix.
+  example: []
+  syntax:
+    content: public double Determinant()
+    return:
+      type: System.Double
+      description: Determinant.
+    content.vb: Public Function Determinant() As Double
+  overload: netDxf.Matrix4.Determinant*
+- uid: netDxf.Matrix4.Inverse
+  commentId: M:netDxf.Matrix4.Inverse
+  id: Inverse
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Inverse()
+  nameWithType: Matrix4.Inverse()
+  fullName: netDxf.Matrix4.Inverse()
+  type: Method
+  source:
+    id: Inverse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 839
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Calculates the inverse matrix.
+  example: []
+  syntax:
+    content: public Matrix4 Inverse()
+    return:
+      type: netDxf.Matrix4
+      description: Inverse Matrix4.
+    content.vb: Public Function Inverse() As Matrix4
+  overload: netDxf.Matrix4.Inverse*
+- uid: netDxf.Matrix4.Transpose
+  commentId: M:netDxf.Matrix4.Transpose
+  id: Transpose
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Transpose()
+  nameWithType: Matrix4.Transpose()
+  fullName: netDxf.Matrix4.Transpose()
+  type: Method
+  source:
+    id: Transpose
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 877
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains the transpose matrix.
+  example: []
+  syntax:
+    content: public Matrix4 Transpose()
+    return:
+      type: netDxf.Matrix4
+      description: Transpose matrix.
+    content.vb: Public Function Transpose() As Matrix4
+  overload: netDxf.Matrix4.Transpose*
+- uid: netDxf.Matrix4.RotationX(System.Double)
+  commentId: M:netDxf.Matrix4.RotationX(System.Double)
+  id: RotationX(System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: RotationX(double)
+  nameWithType: Matrix4.RotationX(double)
+  fullName: netDxf.Matrix4.RotationX(double)
+  type: Method
+  source:
+    id: RotationX
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 895
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Builds a rotation matrix for a rotation around the x-axis.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 RotationX(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: The counter-clockwise angle in radians.
+    return:
+      type: netDxf.Matrix4
+      description: The resulting Matrix4 instance.
+    content.vb: Public Shared Function RotationX(angle As Double) As Matrix4
+  overload: netDxf.Matrix4.RotationX*
+  nameWithType.vb: Matrix4.RotationX(Double)
+  fullName.vb: netDxf.Matrix4.RotationX(Double)
+  name.vb: RotationX(Double)
+- uid: netDxf.Matrix4.RotationY(System.Double)
+  commentId: M:netDxf.Matrix4.RotationY(System.Double)
+  id: RotationY(System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: RotationY(double)
+  nameWithType: Matrix4.RotationY(double)
+  fullName: netDxf.Matrix4.RotationY(double)
+  type: Method
+  source:
+    id: RotationY
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 911
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Builds a rotation matrix for a rotation around the y-axis.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 RotationY(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: The counter-clockwise angle in radians.
+    return:
+      type: netDxf.Matrix4
+      description: The resulting Matrix4 instance.
+    content.vb: Public Shared Function RotationY(angle As Double) As Matrix4
+  overload: netDxf.Matrix4.RotationY*
+  nameWithType.vb: Matrix4.RotationY(Double)
+  fullName.vb: netDxf.Matrix4.RotationY(Double)
+  name.vb: RotationY(Double)
+- uid: netDxf.Matrix4.RotationZ(System.Double)
+  commentId: M:netDxf.Matrix4.RotationZ(System.Double)
+  id: RotationZ(System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: RotationZ(double)
+  nameWithType: Matrix4.RotationZ(double)
+  fullName: netDxf.Matrix4.RotationZ(double)
+  type: Method
+  source:
+    id: RotationZ
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 927
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Builds a rotation matrix for a rotation around the z-axis.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 RotationZ(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: The counter-clockwise angle in radians.
+    return:
+      type: netDxf.Matrix4
+      description: The resulting Matrix4 instance.
+    content.vb: Public Shared Function RotationZ(angle As Double) As Matrix4
+  overload: netDxf.Matrix4.RotationZ*
+  nameWithType.vb: Matrix4.RotationZ(Double)
+  fullName.vb: netDxf.Matrix4.RotationZ(Double)
+  name.vb: RotationZ(Double)
+- uid: netDxf.Matrix4.Scale(System.Double)
+  commentId: M:netDxf.Matrix4.Scale(System.Double)
+  id: Scale(System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Scale(double)
+  nameWithType: Matrix4.Scale(double)
+  fullName: netDxf.Matrix4.Scale(double)
+  type: Method
+  source:
+    id: Scale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 942
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build a scaling matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Scale(double value)
+    parameters:
+    - id: value
+      type: System.Double
+      description: Single scale factor for x, y, and z axis.
+    return:
+      type: netDxf.Matrix4
+      description: A scaling matrix.
+    content.vb: Public Shared Function Scale(value As Double) As Matrix4
+  overload: netDxf.Matrix4.Scale*
+  nameWithType.vb: Matrix4.Scale(Double)
+  fullName.vb: netDxf.Matrix4.Scale(Double)
+  name.vb: Scale(Double)
+- uid: netDxf.Matrix4.Scale(netDxf.Vector3)
+  commentId: M:netDxf.Matrix4.Scale(netDxf.Vector3)
+  id: Scale(netDxf.Vector3)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Scale(Vector3)
+  nameWithType: Matrix4.Scale(Vector3)
+  fullName: netDxf.Matrix4.Scale(netDxf.Vector3)
+  type: Method
+  source:
+    id: Scale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 952
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build a scaling matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Scale(Vector3 value)
+    parameters:
+    - id: value
+      type: netDxf.Vector3
+      description: Scale factors for x, y, and z axis.
+    return:
+      type: netDxf.Matrix4
+      description: A scaling matrix.
+    content.vb: Public Shared Function Scale(value As Vector3) As Matrix4
+  overload: netDxf.Matrix4.Scale*
+- uid: netDxf.Matrix4.Scale(System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Matrix4.Scale(System.Double,System.Double,System.Double)
+  id: Scale(System.Double,System.Double,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Scale(double, double, double)
+  nameWithType: Matrix4.Scale(double, double, double)
+  fullName: netDxf.Matrix4.Scale(double, double, double)
+  type: Method
+  source:
+    id: Scale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 964
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build a scaling matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Scale(double x, double y, double z)
+    parameters:
+    - id: x
+      type: System.Double
+      description: Scale factor for x-axis.
+    - id: y
+      type: System.Double
+      description: Scale factor for y-axis.
+    - id: z
+      type: System.Double
+      description: Scale factor for z-axis.
+    return:
+      type: netDxf.Matrix4
+      description: A scaling matrix.
+    content.vb: Public Shared Function Scale(x As Double, y As Double, z As Double) As Matrix4
+  overload: netDxf.Matrix4.Scale*
+  nameWithType.vb: Matrix4.Scale(Double, Double, Double)
+  fullName.vb: netDxf.Matrix4.Scale(Double, Double, Double)
+  name.vb: Scale(Double, Double, Double)
+- uid: netDxf.Matrix4.Translation(netDxf.Vector3)
+  commentId: M:netDxf.Matrix4.Translation(netDxf.Vector3)
+  id: Translation(netDxf.Vector3)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Translation(Vector3)
+  nameWithType: Matrix4.Translation(Vector3)
+  fullName: netDxf.Matrix4.Translation(netDxf.Vector3)
+  type: Method
+  source:
+    id: Translation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 978
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build a translation matrix.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Translation(Vector3 vector)
+    parameters:
+    - id: vector
+      type: netDxf.Vector3
+      description: Translation vector along the X, Y, and Z axis.
+    return:
+      type: netDxf.Matrix4
+      description: A translation matrix.
+    content.vb: Public Shared Function Translation(vector As Vector3) As Matrix4
+  overload: netDxf.Matrix4.Translation*
+- uid: netDxf.Matrix4.Translation(System.Double,System.Double,System.Double)
+  commentId: M:netDxf.Matrix4.Translation(System.Double,System.Double,System.Double)
+  id: Translation(System.Double,System.Double,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Translation(double, double, double)
+  nameWithType: Matrix4.Translation(double, double, double)
+  fullName: netDxf.Matrix4.Translation(double, double, double)
+  type: Method
+  source:
+    id: Translation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 994
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build a translation matrix.
+  remarks: Matrix4 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public static Matrix4 Translation(double x, double y, double z)
+    parameters:
+    - id: x
+      type: System.Double
+      description: Translation along the X axis.
+    - id: y
+      type: System.Double
+      description: Translation along the Y axis.
+    - id: z
+      type: System.Double
+      description: Translation along the Z axis.
+    return:
+      type: netDxf.Matrix4
+      description: A translation matrix.
+    content.vb: Public Shared Function Translation(x As Double, y As Double, z As Double) As Matrix4
+  overload: netDxf.Matrix4.Translation*
+  nameWithType.vb: Matrix4.Translation(Double, Double, Double)
+  fullName.vb: netDxf.Matrix4.Translation(Double, Double, Double)
+  name.vb: Translation(Double, Double, Double)
+- uid: netDxf.Matrix4.Reflection(netDxf.Vector3,netDxf.Vector3)
+  commentId: M:netDxf.Matrix4.Reflection(netDxf.Vector3,netDxf.Vector3)
+  id: Reflection(netDxf.Vector3,netDxf.Vector3)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Reflection(Vector3, Vector3)
+  nameWithType: Matrix4.Reflection(Vector3, Vector3)
+  fullName: netDxf.Matrix4.Reflection(netDxf.Vector3, netDxf.Vector3)
+  type: Method
+  source:
+    id: Reflection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1008
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Build the reflection matrix of a mirror plane that passes through a point.
+  example: []
+  syntax:
+    content: public static Matrix4 Reflection(Vector3 normal, Vector3 point)
+    parameters:
+    - id: normal
+      type: netDxf.Vector3
+      description: Mirror plane normal vector.
+    - id: point
+      type: netDxf.Vector3
+      description: A point on the mirror plane.
+    return:
+      type: netDxf.Matrix4
+      description: A mirror plane reflection matrix that passes through a point.
+    content.vb: Public Shared Function Reflection(normal As Vector3, point As Vector3) As Matrix4
+  overload: netDxf.Matrix4.Reflection*
+- uid: netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4)
+  id: Equals(netDxf.Matrix4,netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Equals(Matrix4, Matrix4)
+  nameWithType: Matrix4.Equals(Matrix4, Matrix4)
+  fullName: netDxf.Matrix4.Equals(netDxf.Matrix4, netDxf.Matrix4)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1032
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are approximate equal.
+  example: []
+  syntax:
+    content: public static bool Equals(Matrix4 a, Matrix4 b)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are almost equal or false in any other case.
+    content.vb: Public Shared Function Equals(a As Matrix4, b As Matrix4) As Boolean
+  overload: netDxf.Matrix4.Equals*
+- uid: netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4,System.Double)
+  commentId: M:netDxf.Matrix4.Equals(netDxf.Matrix4,netDxf.Matrix4,System.Double)
+  id: Equals(netDxf.Matrix4,netDxf.Matrix4,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Equals(Matrix4, Matrix4, double)
+  nameWithType: Matrix4.Equals(Matrix4, Matrix4, double)
+  fullName: netDxf.Matrix4.Equals(netDxf.Matrix4, netDxf.Matrix4, double)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1044
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are approximate equal.
+  example: []
+  syntax:
+    content: public static bool Equals(Matrix4 a, Matrix4 b, double threshold)
+    parameters:
+    - id: a
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: b
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: threshold
+      type: System.Double
+      description: Maximum tolerance.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are almost equal or false in any other case.
+    content.vb: Public Shared Function Equals(a As Matrix4, b As Matrix4, threshold As Double) As Boolean
+  overload: netDxf.Matrix4.Equals*
+  nameWithType.vb: Matrix4.Equals(Matrix4, Matrix4, Double)
+  fullName.vb: netDxf.Matrix4.Equals(netDxf.Matrix4, netDxf.Matrix4, Double)
+  name.vb: Equals(Matrix4, Matrix4, Double)
+- uid: netDxf.Matrix4.Equals(netDxf.Matrix4)
+  commentId: M:netDxf.Matrix4.Equals(netDxf.Matrix4)
+  id: Equals(netDxf.Matrix4)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Equals(Matrix4)
+  nameWithType: Matrix4.Equals(Matrix4)
+  fullName: netDxf.Matrix4.Equals(netDxf.Matrix4)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1054
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are approximate equal.
+  example: []
+  syntax:
+    content: public bool Equals(Matrix4 other)
+    parameters:
+    - id: other
+      type: netDxf.Matrix4
+      description: Matrix4.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are almost equal or false in any other case.
+    content.vb: Public Function Equals(other As Matrix4) As Boolean
+  overload: netDxf.Matrix4.Equals*
+  implements:
+  - System.IEquatable{netDxf.Matrix4}.Equals(netDxf.Matrix4)
+- uid: netDxf.Matrix4.Equals(netDxf.Matrix4,System.Double)
+  commentId: M:netDxf.Matrix4.Equals(netDxf.Matrix4,System.Double)
+  id: Equals(netDxf.Matrix4,System.Double)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Equals(Matrix4, double)
+  nameWithType: Matrix4.Equals(Matrix4, double)
+  fullName: netDxf.Matrix4.Equals(netDxf.Matrix4, double)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1065
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Check if the components of two matrices are approximate equal.
+  example: []
+  syntax:
+    content: public bool Equals(Matrix4 obj, double threshold)
+    parameters:
+    - id: obj
+      type: netDxf.Matrix4
+      description: Matrix4.
+    - id: threshold
+      type: System.Double
+      description: Maximum tolerance.
+    return:
+      type: System.Boolean
+      description: True if the matrix components are almost equal or false in any other case.
+    content.vb: Public Function Equals(obj As Matrix4, threshold As Double) As Boolean
+  overload: netDxf.Matrix4.Equals*
+  nameWithType.vb: Matrix4.Equals(Matrix4, Double)
+  fullName.vb: netDxf.Matrix4.Equals(netDxf.Matrix4, Double)
+  name.vb: Equals(Matrix4, Double)
+- uid: netDxf.Matrix4.Equals(System.Object)
+  commentId: M:netDxf.Matrix4.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: Matrix4.Equals(object)
+  fullName: netDxf.Matrix4.Equals(object)
+  type: Method
+  source:
+    id: Equals
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1094
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: Another object to compare to.
+    return:
+      type: System.Boolean
+      description: True if obj and this instance are the same type and represent the same value; otherwise, false.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: netDxf.Matrix4.Equals*
+  nameWithType.vb: Matrix4.Equals(Object)
+  fullName.vb: netDxf.Matrix4.Equals(Object)
+  name.vb: Equals(Object)
+- uid: netDxf.Matrix4.GetHashCode
+  commentId: M:netDxf.Matrix4.GetHashCode
+  id: GetHashCode
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Matrix4.GetHashCode()
+  fullName: netDxf.Matrix4.GetHashCode()
+  type: Method
+  source:
+    id: GetHashCode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1107
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: netDxf.Matrix4.GetHashCode*
+- uid: netDxf.Matrix4.ToString
+  commentId: M:netDxf.Matrix4.ToString
+  id: ToString
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Matrix4.ToString()
+  fullName: netDxf.Matrix4.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1124
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains a string that represents the matrix.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string text.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: netDxf.Matrix4.ToString*
+- uid: netDxf.Matrix4.ToString(System.IFormatProvider)
+  commentId: M:netDxf.Matrix4.ToString(System.IFormatProvider)
+  id: ToString(System.IFormatProvider)
+  parent: netDxf.Matrix4
+  langs:
+  - csharp
+  - vb
+  name: ToString(IFormatProvider)
+  nameWithType: Matrix4.ToString(IFormatProvider)
+  fullName: netDxf.Matrix4.ToString(System.IFormatProvider)
+  type: Method
+  source:
+    id: ToString
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Matrix4.cs
+    startLine: 1140
+  assemblies:
+  - netDxf
+  namespace: netDxf
+  summary: Obtains a string that represents the matrix.
+  example: []
+  syntax:
+    content: public string ToString(IFormatProvider provider)
+    parameters:
+    - id: provider
+      type: System.IFormatProvider
+      description: An IFormatProvider interface implementation that supplies culture-specific formatting information.
+    return:
+      type: System.String
+      description: A string text.
+    content.vb: Public Function ToString(provider As IFormatProvider) As String
+  overload: netDxf.Matrix4.ToString*
+references:
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.IEquatable{netDxf.Matrix4}
+  commentId: T:System.IEquatable{netDxf.Matrix4}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<Matrix4>
+  nameWithType: IEquatable<Matrix4>
+  fullName: System.IEquatable<netDxf.Matrix4>
+  nameWithType.vb: IEquatable(Of Matrix4)
+  fullName.vb: System.IEquatable(Of netDxf.Matrix4)
+  name.vb: IEquatable(Of Matrix4)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.Matrix4.#ctor*
+  commentId: Overload:netDxf.Matrix4.#ctor
+  href: netDxf.Matrix4.html#netDxf_Matrix4__ctor_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_
+  name: Matrix4
+  nameWithType: Matrix4.Matrix4
+  fullName: netDxf.Matrix4.Matrix4
+  nameWithType.vb: Matrix4.New
+  fullName.vb: netDxf.Matrix4.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Matrix4.Zero*
+  commentId: Overload:netDxf.Matrix4.Zero
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Zero
+  name: Zero
+  nameWithType: Matrix4.Zero
+  fullName: netDxf.Matrix4.Zero
+- uid: netDxf.Matrix4
+  commentId: T:netDxf.Matrix4
+  parent: netDxf
+  href: netDxf.Matrix4.html
+  name: Matrix4
+  nameWithType: Matrix4
+  fullName: netDxf.Matrix4
+- uid: netDxf.Matrix4.Identity*
+  commentId: Overload:netDxf.Matrix4.Identity
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Identity
+  name: Identity
+  nameWithType: Matrix4.Identity
+  fullName: netDxf.Matrix4.Identity
+- uid: netDxf.Matrix4.M11*
+  commentId: Overload:netDxf.Matrix4.M11
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M11
+  name: M11
+  nameWithType: Matrix4.M11
+  fullName: netDxf.Matrix4.M11
+- uid: netDxf.Matrix4.M12*
+  commentId: Overload:netDxf.Matrix4.M12
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M12
+  name: M12
+  nameWithType: Matrix4.M12
+  fullName: netDxf.Matrix4.M12
+- uid: netDxf.Matrix4.M13*
+  commentId: Overload:netDxf.Matrix4.M13
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M13
+  name: M13
+  nameWithType: Matrix4.M13
+  fullName: netDxf.Matrix4.M13
+- uid: netDxf.Matrix4.M14*
+  commentId: Overload:netDxf.Matrix4.M14
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M14
+  name: M14
+  nameWithType: Matrix4.M14
+  fullName: netDxf.Matrix4.M14
+- uid: netDxf.Matrix4.M21*
+  commentId: Overload:netDxf.Matrix4.M21
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M21
+  name: M21
+  nameWithType: Matrix4.M21
+  fullName: netDxf.Matrix4.M21
+- uid: netDxf.Matrix4.M22*
+  commentId: Overload:netDxf.Matrix4.M22
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M22
+  name: M22
+  nameWithType: Matrix4.M22
+  fullName: netDxf.Matrix4.M22
+- uid: netDxf.Matrix4.M23*
+  commentId: Overload:netDxf.Matrix4.M23
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M23
+  name: M23
+  nameWithType: Matrix4.M23
+  fullName: netDxf.Matrix4.M23
+- uid: netDxf.Matrix4.M24*
+  commentId: Overload:netDxf.Matrix4.M24
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M24
+  name: M24
+  nameWithType: Matrix4.M24
+  fullName: netDxf.Matrix4.M24
+- uid: netDxf.Matrix4.M31*
+  commentId: Overload:netDxf.Matrix4.M31
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M31
+  name: M31
+  nameWithType: Matrix4.M31
+  fullName: netDxf.Matrix4.M31
+- uid: netDxf.Matrix4.M32*
+  commentId: Overload:netDxf.Matrix4.M32
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M32
+  name: M32
+  nameWithType: Matrix4.M32
+  fullName: netDxf.Matrix4.M32
+- uid: netDxf.Matrix4.M33*
+  commentId: Overload:netDxf.Matrix4.M33
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M33
+  name: M33
+  nameWithType: Matrix4.M33
+  fullName: netDxf.Matrix4.M33
+- uid: netDxf.Matrix4.M34*
+  commentId: Overload:netDxf.Matrix4.M34
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M34
+  name: M34
+  nameWithType: Matrix4.M34
+  fullName: netDxf.Matrix4.M34
+- uid: netDxf.Matrix4.M41*
+  commentId: Overload:netDxf.Matrix4.M41
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M41
+  name: M41
+  nameWithType: Matrix4.M41
+  fullName: netDxf.Matrix4.M41
+- uid: netDxf.Matrix4.M42*
+  commentId: Overload:netDxf.Matrix4.M42
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M42
+  name: M42
+  nameWithType: Matrix4.M42
+  fullName: netDxf.Matrix4.M42
+- uid: netDxf.Matrix4.M43*
+  commentId: Overload:netDxf.Matrix4.M43
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M43
+  name: M43
+  nameWithType: Matrix4.M43
+  fullName: netDxf.Matrix4.M43
+- uid: netDxf.Matrix4.M44*
+  commentId: Overload:netDxf.Matrix4.M44
+  href: netDxf.Matrix4.html#netDxf_Matrix4_M44
+  name: M44
+  nameWithType: Matrix4.M44
+  fullName: netDxf.Matrix4.M44
+- uid: netDxf.Matrix4.Item*
+  commentId: Overload:netDxf.Matrix4.Item
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Item_System_Int32_System_Int32_
+  name: this
+  nameWithType: Matrix4.this
+  fullName: netDxf.Matrix4.this
+  nameWithType.vb: Matrix4.this[]
+  fullName.vb: netDxf.Matrix4.this[]
+  name.vb: this[]
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: netDxf.Matrix4.IsIdentity*
+  commentId: Overload:netDxf.Matrix4.IsIdentity
+  href: netDxf.Matrix4.html#netDxf_Matrix4_IsIdentity
+  name: IsIdentity
+  nameWithType: Matrix4.IsIdentity
+  fullName: netDxf.Matrix4.IsIdentity
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Matrix4.op_Addition*
+  commentId: Overload:netDxf.Matrix4.op_Addition
+  href: netDxf.Matrix4.html#netDxf_Matrix4_op_Addition_netDxf_Matrix4_netDxf_Matrix4_
+  name: operator +
+  nameWithType: Matrix4.operator +
+  fullName: netDxf.Matrix4.operator +
+  nameWithType.vb: Matrix4.+
+  fullName.vb: netDxf.Matrix4.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Matrix4.op_Addition*
+    name: +
+    href: netDxf.Matrix4.html#netDxf_Matrix4_op_Addition_netDxf_Matrix4_netDxf_Matrix4_
+- uid: netDxf.Matrix4.Add*
+  commentId: Overload:netDxf.Matrix4.Add
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Add_netDxf_Matrix4_netDxf_Matrix4_
+  name: Add
+  nameWithType: Matrix4.Add
+  fullName: netDxf.Matrix4.Add
+- uid: netDxf.Matrix4.op_Subtraction*
+  commentId: Overload:netDxf.Matrix4.op_Subtraction
+  href: netDxf.Matrix4.html#netDxf_Matrix4_op_Subtraction_netDxf_Matrix4_netDxf_Matrix4_
+  name: operator -
+  nameWithType: Matrix4.operator -
+  fullName: netDxf.Matrix4.operator -
+  nameWithType.vb: Matrix4.-
+  fullName.vb: netDxf.Matrix4.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Matrix4.op_Subtraction*
+    name: '-'
+    href: netDxf.Matrix4.html#netDxf_Matrix4_op_Subtraction_netDxf_Matrix4_netDxf_Matrix4_
+- uid: netDxf.Matrix4.Subtract*
+  commentId: Overload:netDxf.Matrix4.Subtract
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Subtract_netDxf_Matrix4_netDxf_Matrix4_
+  name: Subtract
+  nameWithType: Matrix4.Subtract
+  fullName: netDxf.Matrix4.Subtract
+- uid: netDxf.Matrix4.op_Multiply*
+  commentId: Overload:netDxf.Matrix4.op_Multiply
+  href: netDxf.Matrix4.html#netDxf_Matrix4_op_Multiply_netDxf_Matrix4_netDxf_Matrix4_
+  name: operator *
+  nameWithType: Matrix4.operator *
+  fullName: netDxf.Matrix4.operator *
+  nameWithType.vb: Matrix4.*
+  fullName.vb: netDxf.Matrix4.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Matrix4.op_Multiply*
+    name: '*'
+    href: netDxf.Matrix4.html#netDxf_Matrix4_op_Multiply_netDxf_Matrix4_netDxf_Matrix4_
+- uid: netDxf.Matrix4.Multiply*
+  commentId: Overload:netDxf.Matrix4.Multiply
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Multiply_netDxf_Matrix4_netDxf_Matrix4_
+  name: Multiply
+  nameWithType: Matrix4.Multiply
+  fullName: netDxf.Matrix4.Multiply
+- uid: netDxf.Vector4
+  commentId: T:netDxf.Vector4
+  parent: netDxf
+  href: netDxf.Vector4.html
+  name: Vector4
+  nameWithType: Vector4
+  fullName: netDxf.Vector4
+- uid: netDxf.Matrix4.op_Equality*
+  commentId: Overload:netDxf.Matrix4.op_Equality
+  href: netDxf.Matrix4.html#netDxf_Matrix4_op_Equality_netDxf_Matrix4_netDxf_Matrix4_
+  name: operator ==
+  nameWithType: Matrix4.operator ==
+  fullName: netDxf.Matrix4.operator ==
+  nameWithType.vb: Matrix4.=
+  fullName.vb: netDxf.Matrix4.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Matrix4.op_Equality*
+    name: ==
+    href: netDxf.Matrix4.html#netDxf_Matrix4_op_Equality_netDxf_Matrix4_netDxf_Matrix4_
+- uid: netDxf.Matrix4.op_Inequality*
+  commentId: Overload:netDxf.Matrix4.op_Inequality
+  href: netDxf.Matrix4.html#netDxf_Matrix4_op_Inequality_netDxf_Matrix4_netDxf_Matrix4_
+  name: operator !=
+  nameWithType: Matrix4.operator !=
+  fullName: netDxf.Matrix4.operator !=
+  nameWithType.vb: Matrix4.<>
+  fullName.vb: netDxf.Matrix4.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: netDxf.Matrix4.op_Inequality*
+    name: '!='
+    href: netDxf.Matrix4.html#netDxf_Matrix4_op_Inequality_netDxf_Matrix4_netDxf_Matrix4_
+- uid: netDxf.Matrix4.Determinant*
+  commentId: Overload:netDxf.Matrix4.Determinant
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Determinant
+  name: Determinant
+  nameWithType: Matrix4.Determinant
+  fullName: netDxf.Matrix4.Determinant
+- uid: netDxf.Matrix4.Inverse*
+  commentId: Overload:netDxf.Matrix4.Inverse
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Inverse
+  name: Inverse
+  nameWithType: Matrix4.Inverse
+  fullName: netDxf.Matrix4.Inverse
+- uid: netDxf.Matrix4.Transpose*
+  commentId: Overload:netDxf.Matrix4.Transpose
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Transpose
+  name: Transpose
+  nameWithType: Matrix4.Transpose
+  fullName: netDxf.Matrix4.Transpose
+- uid: netDxf.Matrix4.RotationX*
+  commentId: Overload:netDxf.Matrix4.RotationX
+  href: netDxf.Matrix4.html#netDxf_Matrix4_RotationX_System_Double_
+  name: RotationX
+  nameWithType: Matrix4.RotationX
+  fullName: netDxf.Matrix4.RotationX
+- uid: netDxf.Matrix4.RotationY*
+  commentId: Overload:netDxf.Matrix4.RotationY
+  href: netDxf.Matrix4.html#netDxf_Matrix4_RotationY_System_Double_
+  name: RotationY
+  nameWithType: Matrix4.RotationY
+  fullName: netDxf.Matrix4.RotationY
+- uid: netDxf.Matrix4.RotationZ*
+  commentId: Overload:netDxf.Matrix4.RotationZ
+  href: netDxf.Matrix4.html#netDxf_Matrix4_RotationZ_System_Double_
+  name: RotationZ
+  nameWithType: Matrix4.RotationZ
+  fullName: netDxf.Matrix4.RotationZ
+- uid: netDxf.Matrix4.Scale*
+  commentId: Overload:netDxf.Matrix4.Scale
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Scale_System_Double_
+  name: Scale
+  nameWithType: Matrix4.Scale
+  fullName: netDxf.Matrix4.Scale
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Matrix4.Translation*
+  commentId: Overload:netDxf.Matrix4.Translation
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Translation_netDxf_Vector3_
+  name: Translation
+  nameWithType: Matrix4.Translation
+  fullName: netDxf.Matrix4.Translation
+- uid: netDxf.Matrix4.Reflection*
+  commentId: Overload:netDxf.Matrix4.Reflection
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Reflection_netDxf_Vector3_netDxf_Vector3_
+  name: Reflection
+  nameWithType: Matrix4.Reflection
+  fullName: netDxf.Matrix4.Reflection
+- uid: netDxf.Matrix4.Equals*
+  commentId: Overload:netDxf.Matrix4.Equals
+  href: netDxf.Matrix4.html#netDxf_Matrix4_Equals_netDxf_Matrix4_netDxf_Matrix4_
+  name: Equals
+  nameWithType: Matrix4.Equals
+  fullName: netDxf.Matrix4.Equals
+- uid: System.IEquatable{netDxf.Matrix4}.Equals(netDxf.Matrix4)
+  commentId: M:System.IEquatable{netDxf.Matrix4}.Equals(netDxf.Matrix4)
+  parent: System.IEquatable{netDxf.Matrix4}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(Matrix4)
+  nameWithType: IEquatable<Matrix4>.Equals(Matrix4)
+  fullName: System.IEquatable<netDxf.Matrix4>.Equals(netDxf.Matrix4)
+  nameWithType.vb: IEquatable(Of Matrix4).Equals(Matrix4)
+  fullName.vb: System.IEquatable(Of netDxf.Matrix4).Equals(netDxf.Matrix4)
+  spec.csharp:
+  - uid: System.IEquatable{netDxf.Matrix4}.Equals(netDxf.Matrix4)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{netDxf.Matrix4}.Equals(netDxf.Matrix4)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: netDxf.Matrix4.GetHashCode*
+  commentId: Overload:netDxf.Matrix4.GetHashCode
+  href: netDxf.Matrix4.html#netDxf_Matrix4_GetHashCode
+  name: GetHashCode
+  nameWithType: Matrix4.GetHashCode
+  fullName: netDxf.Matrix4.GetHashCode
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: netDxf.Matrix4.ToString*
+  commentId: Overload:netDxf.Matrix4.ToString
+  href: netDxf.Matrix4.html#netDxf_Matrix4_ToString
+  name: ToString
+  nameWithType: Matrix4.ToString
+  fullName: netDxf.Matrix4.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IFormatProvider
+  commentId: T:System.IFormatProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iformatprovider
+  name: IFormatProvider
+  nameWithType: IFormatProvider
+  fullName: System.IFormatProvider

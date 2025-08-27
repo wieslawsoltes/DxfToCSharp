@@ -1,0 +1,219 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.ViewModeFlags
+  commentId: T:netDxf.Tables.ViewModeFlags
+  id: ViewModeFlags
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.ViewModeFlags.BackClippingPlane
+  - netDxf.Tables.ViewModeFlags.FrontClipNotAtEye
+  - netDxf.Tables.ViewModeFlags.FrontClippingPlane
+  - netDxf.Tables.ViewModeFlags.Off
+  - netDxf.Tables.ViewModeFlags.Perspective
+  - netDxf.Tables.ViewModeFlags.UCSFollow
+  langs:
+  - csharp
+  - vb
+  name: ViewModeFlags
+  nameWithType: ViewModeFlags
+  fullName: netDxf.Tables.ViewModeFlags
+  type: Enum
+  source:
+    id: ViewModeFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 29
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum ViewModeFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum ViewModeFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Tables.ViewModeFlags.Off
+  commentId: F:netDxf.Tables.ViewModeFlags.Off
+  id: Off
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: Off
+  nameWithType: ViewModeFlags.Off
+  fullName: netDxf.Tables.ViewModeFlags.Off
+  type: Field
+  source:
+    id: Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Turned off.
+  example: []
+  syntax:
+    content: Off = 0
+    return:
+      type: netDxf.Tables.ViewModeFlags
+- uid: netDxf.Tables.ViewModeFlags.Perspective
+  commentId: F:netDxf.Tables.ViewModeFlags.Perspective
+  id: Perspective
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: Perspective
+  nameWithType: ViewModeFlags.Perspective
+  fullName: netDxf.Tables.ViewModeFlags.Perspective
+  type: Field
+  source:
+    id: Perspective
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Perspective view active.
+  example: []
+  syntax:
+    content: Perspective = 1
+    return:
+      type: netDxf.Tables.ViewModeFlags
+- uid: netDxf.Tables.ViewModeFlags.FrontClippingPlane
+  commentId: F:netDxf.Tables.ViewModeFlags.FrontClippingPlane
+  id: FrontClippingPlane
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: FrontClippingPlane
+  nameWithType: ViewModeFlags.FrontClippingPlane
+  fullName: netDxf.Tables.ViewModeFlags.FrontClippingPlane
+  type: Field
+  source:
+    id: FrontClippingPlane
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Front clipping on.
+  example: []
+  syntax:
+    content: FrontClippingPlane = 2
+    return:
+      type: netDxf.Tables.ViewModeFlags
+- uid: netDxf.Tables.ViewModeFlags.BackClippingPlane
+  commentId: F:netDxf.Tables.ViewModeFlags.BackClippingPlane
+  id: BackClippingPlane
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: BackClippingPlane
+  nameWithType: ViewModeFlags.BackClippingPlane
+  fullName: netDxf.Tables.ViewModeFlags.BackClippingPlane
+  type: Field
+  source:
+    id: BackClippingPlane
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Back clipping on.
+  example: []
+  syntax:
+    content: BackClippingPlane = 4
+    return:
+      type: netDxf.Tables.ViewModeFlags
+- uid: netDxf.Tables.ViewModeFlags.UCSFollow
+  commentId: F:netDxf.Tables.ViewModeFlags.UCSFollow
+  id: UCSFollow
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: UCSFollow
+  nameWithType: ViewModeFlags.UCSFollow
+  fullName: netDxf.Tables.ViewModeFlags.UCSFollow
+  type: Field
+  source:
+    id: UCSFollow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: UCS Follow mode on.
+  example: []
+  syntax:
+    content: UCSFollow = 8
+    return:
+      type: netDxf.Tables.ViewModeFlags
+- uid: netDxf.Tables.ViewModeFlags.FrontClipNotAtEye
+  commentId: F:netDxf.Tables.ViewModeFlags.FrontClipNotAtEye
+  id: FrontClipNotAtEye
+  parent: netDxf.Tables.ViewModeFlags
+  langs:
+  - csharp
+  - vb
+  name: FrontClipNotAtEye
+  nameWithType: ViewModeFlags.FrontClipNotAtEye
+  fullName: netDxf.Tables.ViewModeFlags.FrontClipNotAtEye
+  type: Field
+  source:
+    id: FrontClipNotAtEye
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ViewMode.cs
+    startLine: 62
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: >-
+    Front clip not at eye. If on, the front clip distance (FRONTZ) determines the front clipping plane.
+
+    If off, FRONTZ is ignored, and the front clipping plane is set to pass through the camera point (vectors behind the camera are not displayed).
+
+    This flag is ignored if the front-clipping bit (2) is off.
+  example: []
+  syntax:
+    content: FrontClipNotAtEye = 16
+    return:
+      type: netDxf.Tables.ViewModeFlags
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.ViewModeFlags
+  commentId: T:netDxf.Tables.ViewModeFlags
+  parent: netDxf.Tables
+  href: netDxf.Tables.ViewModeFlags.html
+  name: ViewModeFlags
+  nameWithType: ViewModeFlags
+  fullName: netDxf.Tables.ViewModeFlags

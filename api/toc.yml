@@ -10,4 +10,1058 @@ items:
   - uid: DxfToCSharp.Core.DxfCodeGenerator
     name: DxfCodeGenerator
     type: Class
+- uid: netDxf
+  name: netDxf
+  type: Namespace
+  items:
+  - uid: netDxf.AciColor
+    name: AciColor
+    type: Class
+  - uid: netDxf.BezierCurve
+    name: BezierCurve
+    type: Class
+  - uid: netDxf.BezierCurveCubic
+    name: BezierCurveCubic
+    type: Class
+  - uid: netDxf.BezierCurveQuadratic
+    name: BezierCurveQuadratic
+    type: Class
+  - uid: netDxf.BoundingRectangle
+    name: BoundingRectangle
+    type: Class
+  - uid: netDxf.ClippingBoundary
+    name: ClippingBoundary
+    type: Class
+  - uid: netDxf.ClippingBoundaryType
+    name: ClippingBoundaryType
+    type: Enum
+  - uid: netDxf.CoordinateSystem
+    name: CoordinateSystem
+    type: Enum
+  - uid: netDxf.DxfDocument
+    name: DxfDocument
+    type: Class
+  - uid: netDxf.DxfObject
+    name: DxfObject
+    type: Class
+  - uid: netDxf.DxfObject.XDataAddAppRegEventHandler
+    name: DxfObject.XDataAddAppRegEventHandler
+    type: Delegate
+  - uid: netDxf.DxfObject.XDataRemoveAppRegEventHandler
+    name: DxfObject.XDataRemoveAppRegEventHandler
+    type: Delegate
+  - uid: netDxf.DxfObjectCode
+    name: DxfObjectCode
+    type: Class
+  - uid: netDxf.DxfObjectReference
+    name: DxfObjectReference
+    type: Class
+  - uid: netDxf.Lineweight
+    name: Lineweight
+    type: Enum
+  - uid: netDxf.MathHelper
+    name: MathHelper
+    type: Class
+  - uid: netDxf.Matrix2
+    name: Matrix2
+    type: Struct
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    type: Struct
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    type: Struct
+  - uid: netDxf.StringEnum`1
+    name: StringEnum<T>
+    type: Class
+  - uid: netDxf.StringValueAttribute
+    name: StringValueAttribute
+    type: Class
+  - uid: netDxf.Symbols
+    name: Symbols
+    type: Class
+  - uid: netDxf.Transparency
+    name: Transparency
+    type: Class
+  - uid: netDxf.Vector2
+    name: Vector2
+    type: Struct
+  - uid: netDxf.Vector3
+    name: Vector3
+    type: Struct
+  - uid: netDxf.Vector4
+    name: Vector4
+    type: Struct
+  - uid: netDxf.XData
+    name: XData
+    type: Class
+  - uid: netDxf.XDataCode
+    name: XDataCode
+    type: Enum
+  - uid: netDxf.XDataRecord
+    name: XDataRecord
+    type: Class
+- uid: netDxf.Blocks
+  name: netDxf.Blocks
+  type: Namespace
+  items:
+  - uid: netDxf.Blocks.Block
+    name: Block
+    type: Class
+  - uid: netDxf.Blocks.Block.AttributeDefinitionAddedEventHandler
+    name: Block.AttributeDefinitionAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Blocks.Block.AttributeDefinitionRemovedEventHandler
+    name: Block.AttributeDefinitionRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Blocks.Block.EntityAddedEventHandler
+    name: Block.EntityAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Blocks.Block.EntityRemovedEventHandler
+    name: Block.EntityRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Blocks.Block.LayerChangedEventHandler
+    name: Block.LayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Blocks.BlockAttributeDefinitionChangeEventArgs
+    name: BlockAttributeDefinitionChangeEventArgs
+    type: Class
+  - uid: netDxf.Blocks.BlockEntityChangeEventArgs
+    name: BlockEntityChangeEventArgs
+    type: Class
+  - uid: netDxf.Blocks.BlockRecord
+    name: BlockRecord
+    type: Class
+  - uid: netDxf.Blocks.BlockTypeFlags
+    name: BlockTypeFlags
+    type: Enum
+- uid: netDxf.Collections
+  name: netDxf.Collections
+  type: Namespace
+  items:
+  - uid: netDxf.Collections.ApplicationRegistries
+    name: ApplicationRegistries
+    type: Class
+  - uid: netDxf.Collections.AttributeCollection
+    name: AttributeCollection
+    type: Class
+  - uid: netDxf.Collections.AttributeDefinitionDictionary
+    name: AttributeDefinitionDictionary
+    type: Class
+  - uid: netDxf.Collections.AttributeDefinitionDictionary.AddItemEventHandler
+    name: AttributeDefinitionDictionary.AddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.AttributeDefinitionDictionary.BeforeAddItemEventHandler
+    name: AttributeDefinitionDictionary.BeforeAddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.AttributeDefinitionDictionary.BeforeRemoveItemEventHandler
+    name: AttributeDefinitionDictionary.BeforeRemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.AttributeDefinitionDictionary.RemoveItemEventHandler
+    name: AttributeDefinitionDictionary.RemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.AttributeDefinitionDictionaryEventArgs
+    name: AttributeDefinitionDictionaryEventArgs
+    type: Class
+  - uid: netDxf.Collections.BlockRecords
+    name: BlockRecords
+    type: Class
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionary
+    name: DimensionStyleOverrideDictionary
+    type: Class
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionary.AddItemEventHandler
+    name: DimensionStyleOverrideDictionary.AddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionary.BeforeAddItemEventHandler
+    name: DimensionStyleOverrideDictionary.BeforeAddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+    name: DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionary.RemoveItemEventHandler
+    name: DimensionStyleOverrideDictionary.RemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs
+    name: DimensionStyleOverrideDictionaryEventArgs
+    type: Class
+  - uid: netDxf.Collections.DimensionStyles
+    name: DimensionStyles
+    type: Class
+  - uid: netDxf.Collections.DrawingEntities
+    name: DrawingEntities
+    type: Class
+  - uid: netDxf.Collections.EntityCollection
+    name: EntityCollection
+    type: Class
+  - uid: netDxf.Collections.EntityCollection.AddItemEventHandler
+    name: EntityCollection.AddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.EntityCollection.BeforeAddItemEventHandler
+    name: EntityCollection.BeforeAddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.EntityCollection.BeforeRemoveItemEventHandler
+    name: EntityCollection.BeforeRemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.EntityCollection.RemoveItemEventHandler
+    name: EntityCollection.RemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.EntityCollectionEventArgs
+    name: EntityCollectionEventArgs
+    type: Class
+  - uid: netDxf.Collections.Groups
+    name: Groups
+    type: Class
+  - uid: netDxf.Collections.ImageDefinitions
+    name: ImageDefinitions
+    type: Class
+  - uid: netDxf.Collections.LayerStateManager
+    name: LayerStateManager
+    type: Class
+  - uid: netDxf.Collections.Layers
+    name: Layers
+    type: Class
+  - uid: netDxf.Collections.Layouts
+    name: Layouts
+    type: Class
+  - uid: netDxf.Collections.Linetypes
+    name: Linetypes
+    type: Class
+  - uid: netDxf.Collections.MLineStyles
+    name: MLineStyles
+    type: Class
+  - uid: netDxf.Collections.ObservableCollectionEventArgs`1
+    name: ObservableCollectionEventArgs<T>
+    type: Class
+  - uid: netDxf.Collections.ObservableCollection`1
+    name: ObservableCollection<T>
+    type: Class
+  - uid: netDxf.Collections.ObservableCollection`1.AddItemEventHandler
+    name: ObservableCollection<T>.AddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableCollection`1.BeforeAddItemEventHandler
+    name: ObservableCollection<T>.BeforeAddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableCollection`1.BeforeRemoveItemEventHandler
+    name: ObservableCollection<T>.BeforeRemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableCollection`1.RemoveItemEventHandler
+    name: ObservableCollection<T>.RemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableDictionaryEventArgs`2
+    name: ObservableDictionaryEventArgs<TKey, TValue>
+    type: Class
+  - uid: netDxf.Collections.ObservableDictionary`2
+    name: ObservableDictionary<TKey, TValue>
+    type: Class
+  - uid: netDxf.Collections.ObservableDictionary`2.AddItemEventHandler
+    name: ObservableDictionary<TKey, TValue>.AddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableDictionary`2.BeforeAddItemEventHandler
+    name: ObservableDictionary<TKey, TValue>.BeforeAddItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableDictionary`2.BeforeRemoveItemEventHandler
+    name: ObservableDictionary<TKey, TValue>.BeforeRemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ObservableDictionary`2.RemoveItemEventHandler
+    name: ObservableDictionary<TKey, TValue>.RemoveItemEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.ShapeStyles
+    name: ShapeStyles
+    type: Class
+  - uid: netDxf.Collections.SupportFolders
+    name: SupportFolders
+    type: Class
+  - uid: netDxf.Collections.TableObjects`1
+    name: TableObjects<T>
+    type: Class
+  - uid: netDxf.Collections.TextStyles
+    name: TextStyles
+    type: Class
+  - uid: netDxf.Collections.UCSs
+    name: UCSs
+    type: Class
+  - uid: netDxf.Collections.UnderlayDgnDefinitions
+    name: UnderlayDgnDefinitions
+    type: Class
+  - uid: netDxf.Collections.UnderlayDwfDefinitions
+    name: UnderlayDwfDefinitions
+    type: Class
+  - uid: netDxf.Collections.UnderlayPdfDefinitions
+    name: UnderlayPdfDefinitions
+    type: Class
+  - uid: netDxf.Collections.VPorts
+    name: VPorts
+    type: Class
+  - uid: netDxf.Collections.Views
+    name: Views
+    type: Class
+  - uid: netDxf.Collections.XDataDictionary
+    name: XDataDictionary
+    type: Class
+  - uid: netDxf.Collections.XDataDictionary.AddAppRegEventHandler
+    name: XDataDictionary.AddAppRegEventHandler
+    type: Delegate
+  - uid: netDxf.Collections.XDataDictionary.RemoveAppRegEventHandler
+    name: XDataDictionary.RemoveAppRegEventHandler
+    type: Delegate
+- uid: netDxf.Entities
+  name: netDxf.Entities
+  type: Namespace
+  items:
+  - uid: netDxf.Entities.AlignedDimension
+    name: AlignedDimension
+    type: Class
+  - uid: netDxf.Entities.Angular2LineDimension
+    name: Angular2LineDimension
+    type: Class
+  - uid: netDxf.Entities.Angular3PointDimension
+    name: Angular3PointDimension
+    type: Class
+  - uid: netDxf.Entities.Arc
+    name: Arc
+    type: Class
+  - uid: netDxf.Entities.ArcLengthDimension
+    name: ArcLengthDimension
+    type: Class
+  - uid: netDxf.Entities.Attribute
+    name: Attribute
+    type: Class
+  - uid: netDxf.Entities.Attribute.LayerChangedEventHandler
+    name: Attribute.LayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Attribute.LinetypeChangedEventHandler
+    name: Attribute.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Attribute.TextStyleChangedEventHandler
+    name: Attribute.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.AttributeChangeEventArgs
+    name: AttributeChangeEventArgs
+    type: Class
+  - uid: netDxf.Entities.AttributeDefinition
+    name: AttributeDefinition
+    type: Class
+  - uid: netDxf.Entities.AttributeDefinition.LayerChangedEventHandler
+    name: AttributeDefinition.LayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.AttributeDefinition.LinetypeChangedEventHandler
+    name: AttributeDefinition.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.AttributeDefinition.TextStyleChangedEventHandler
+    name: AttributeDefinition.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.AttributeFlags
+    name: AttributeFlags
+    type: Enum
+  - uid: netDxf.Entities.Circle
+    name: Circle
+    type: Class
+  - uid: netDxf.Entities.DatumReferenceValue
+    name: DatumReferenceValue
+    type: Class
+  - uid: netDxf.Entities.DiametricDimension
+    name: DiametricDimension
+    type: Class
+  - uid: netDxf.Entities.Dimension
+    name: Dimension
+    type: Class
+  - uid: netDxf.Entities.Dimension.DimensionBlockChangedEventHandler
+    name: Dimension.DimensionBlockChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Dimension.DimensionStyleChangedEventHandler
+    name: Dimension.DimensionStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Dimension.DimensionStyleOverrideAddedEventHandler
+    name: Dimension.DimensionStyleOverrideAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Dimension.DimensionStyleOverrideRemovedEventHandler
+    name: Dimension.DimensionStyleOverrideRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.DimensionArrowhead
+    name: DimensionArrowhead
+    type: Class
+  - uid: netDxf.Entities.DimensionBlock
+    name: DimensionBlock
+    type: Class
+  - uid: netDxf.Entities.DimensionType
+    name: DimensionType
+    type: Enum
+  - uid: netDxf.Entities.Ellipse
+    name: Ellipse
+    type: Class
+  - uid: netDxf.Entities.EntityChangeEventArgs
+    name: EntityChangeEventArgs
+    type: Class
+  - uid: netDxf.Entities.EntityObject
+    name: EntityObject
+    type: Class
+  - uid: netDxf.Entities.EntityObject.LayerChangedEventHandler
+    name: EntityObject.LayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.EntityObject.LinetypeChangedEventHandler
+    name: EntityObject.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.EntityType
+    name: EntityType
+    type: Enum
+  - uid: netDxf.Entities.Face3D
+    name: Face3D
+    type: Class
+  - uid: netDxf.Entities.Face3DEdgeFlags
+    name: Face3DEdgeFlags
+    type: Enum
+  - uid: netDxf.Entities.Hatch
+    name: Hatch
+    type: Class
+  - uid: netDxf.Entities.Hatch.HatchBoundaryPathAddedEventHandler
+    name: Hatch.HatchBoundaryPathAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Hatch.HatchBoundaryPathRemovedEventHandler
+    name: Hatch.HatchBoundaryPathRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.Arc
+    name: HatchBoundaryPath.Arc
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: HatchBoundaryPath.Edge
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.EdgeType
+    name: HatchBoundaryPath.EdgeType
+    type: Enum
+  - uid: netDxf.Entities.HatchBoundaryPath.Ellipse
+    name: HatchBoundaryPath.Ellipse
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.Line
+    name: HatchBoundaryPath.Line
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.Polyline
+    name: HatchBoundaryPath.Polyline
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPath.Spline
+    name: HatchBoundaryPath.Spline
+    type: Class
+  - uid: netDxf.Entities.HatchBoundaryPathTypeFlags
+    name: HatchBoundaryPathTypeFlags
+    type: Enum
+  - uid: netDxf.Entities.HatchFillType
+    name: HatchFillType
+    type: Enum
+  - uid: netDxf.Entities.HatchGradientPattern
+    name: HatchGradientPattern
+    type: Class
+  - uid: netDxf.Entities.HatchGradientPatternType
+    name: HatchGradientPatternType
+    type: Enum
+  - uid: netDxf.Entities.HatchPattern
+    name: HatchPattern
+    type: Class
+  - uid: netDxf.Entities.HatchPatternLineDefinition
+    name: HatchPatternLineDefinition
+    type: Class
+  - uid: netDxf.Entities.HatchStyle
+    name: HatchStyle
+    type: Enum
+  - uid: netDxf.Entities.HatchType
+    name: HatchType
+    type: Enum
+  - uid: netDxf.Entities.Image
+    name: Image
+    type: Class
+  - uid: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+    name: Image.ImageDefinitionChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.ImageDisplayFlags
+    name: ImageDisplayFlags
+    type: Enum
+  - uid: netDxf.Entities.Insert
+    name: Insert
+    type: Class
+  - uid: netDxf.Entities.Insert.AttributeAddedEventHandler
+    name: Insert.AttributeAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Insert.AttributeRemovedEventHandler
+    name: Insert.AttributeRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Leader
+    name: Leader
+    type: Class
+  - uid: netDxf.Entities.Leader.AnnotationAddedEventHandler
+    name: Leader.AnnotationAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Leader.AnnotationRemovedEventHandler
+    name: Leader.AnnotationRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Leader.DimensionStyleOverrideAddedEventHandler
+    name: Leader.DimensionStyleOverrideAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Leader.DimensionStyleOverrideRemovedEventHandler
+    name: Leader.DimensionStyleOverrideRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Leader.LeaderStyleChangedEventHandler
+    name: Leader.LeaderStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.LeaderPathType
+    name: LeaderPathType
+    type: Enum
+  - uid: netDxf.Entities.Line
+    name: Line
+    type: Class
+  - uid: netDxf.Entities.LinearDimension
+    name: LinearDimension
+    type: Class
+  - uid: netDxf.Entities.MLine
+    name: MLine
+    type: Class
+  - uid: netDxf.Entities.MLine.MLineStyleChangedEventHandler
+    name: MLine.MLineStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.MLineJustification
+    name: MLineJustification
+    type: Enum
+  - uid: netDxf.Entities.MLineVertex
+    name: MLineVertex
+    type: Class
+  - uid: netDxf.Entities.MText
+    name: MText
+    type: Class
+  - uid: netDxf.Entities.MText.TextStyleChangedEventHandler
+    name: MText.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.MTextAttachmentPoint
+    name: MTextAttachmentPoint
+    type: Enum
+  - uid: netDxf.Entities.MTextDrawingDirection
+    name: MTextDrawingDirection
+    type: Enum
+  - uid: netDxf.Entities.MTextFormattingOptions
+    name: MTextFormattingOptions
+    type: Class
+  - uid: netDxf.Entities.MTextLineSpacingStyle
+    name: MTextLineSpacingStyle
+    type: Enum
+  - uid: netDxf.Entities.MTextParagraphAlignment
+    name: MTextParagraphAlignment
+    type: Enum
+  - uid: netDxf.Entities.MTextParagraphOptions
+    name: MTextParagraphOptions
+    type: Class
+  - uid: netDxf.Entities.MTextParagraphVerticalAlignment
+    name: MTextParagraphVerticalAlignment
+    type: Enum
+  - uid: netDxf.Entities.Mesh
+    name: Mesh
+    type: Class
+  - uid: netDxf.Entities.MeshEdge
+    name: MeshEdge
+    type: Class
+  - uid: netDxf.Entities.OrdinateDimension
+    name: OrdinateDimension
+    type: Class
+  - uid: netDxf.Entities.OrdinateDimensionAxis
+    name: OrdinateDimensionAxis
+    type: Enum
+  - uid: netDxf.Entities.Point
+    name: Point
+    type: Class
+  - uid: netDxf.Entities.PolyfaceMesh
+    name: PolyfaceMesh
+    type: Class
+  - uid: netDxf.Entities.PolyfaceMesh.PolyfaceMeshFaceLayerChangedEventHandler
+    name: PolyfaceMesh.PolyfaceMeshFaceLayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.PolyfaceMeshFace
+    name: PolyfaceMeshFace
+    type: Class
+  - uid: netDxf.Entities.PolyfaceMeshFace.LayerChangedEventHandler
+    name: PolyfaceMeshFace.LayerChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.PolygonMesh
+    name: PolygonMesh
+    type: Class
+  - uid: netDxf.Entities.Polyline2D
+    name: Polyline2D
+    type: Class
+  - uid: netDxf.Entities.Polyline2DVertex
+    name: Polyline2DVertex
+    type: Class
+  - uid: netDxf.Entities.Polyline3D
+    name: Polyline3D
+    type: Class
+  - uid: netDxf.Entities.PolylineSmoothType
+    name: PolylineSmoothType
+    type: Enum
+  - uid: netDxf.Entities.RadialDimension
+    name: RadialDimension
+    type: Class
+  - uid: netDxf.Entities.Ray
+    name: Ray
+    type: Class
+  - uid: netDxf.Entities.Shape
+    name: Shape
+    type: Class
+  - uid: netDxf.Entities.Shape.StyleChangedEventHandler
+    name: Shape.StyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Solid
+    name: Solid
+    type: Class
+  - uid: netDxf.Entities.Spline
+    name: Spline
+    type: Class
+  - uid: netDxf.Entities.SplineCreationMethod
+    name: SplineCreationMethod
+    type: Enum
+  - uid: netDxf.Entities.SplineKnotParameterization
+    name: SplineKnotParameterization
+    type: Enum
+  - uid: netDxf.Entities.Text
+    name: Text
+    type: Class
+  - uid: netDxf.Entities.Text.TextStyleChangedEventHandler
+    name: Text.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.TextAlignment
+    name: TextAlignment
+    type: Enum
+  - uid: netDxf.Entities.Tolerance
+    name: Tolerance
+    type: Class
+  - uid: netDxf.Entities.Tolerance.ToleranceStyleChangedEventHandler
+    name: Tolerance.ToleranceStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.ToleranceEntry
+    name: ToleranceEntry
+    type: Class
+  - uid: netDxf.Entities.ToleranceGeometricSymbol
+    name: ToleranceGeometricSymbol
+    type: Enum
+  - uid: netDxf.Entities.ToleranceMaterialCondition
+    name: ToleranceMaterialCondition
+    type: Enum
+  - uid: netDxf.Entities.ToleranceValue
+    name: ToleranceValue
+    type: Class
+  - uid: netDxf.Entities.Trace
+    name: Trace
+    type: Class
+  - uid: netDxf.Entities.Underlay
+    name: Underlay
+    type: Class
+  - uid: netDxf.Entities.Underlay.UnderlayDefinitionChangedEventHandler
+    name: Underlay.UnderlayDefinitionChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.UnderlayDisplayFlags
+    name: UnderlayDisplayFlags
+    type: Enum
+  - uid: netDxf.Entities.Viewport
+    name: Viewport
+    type: Class
+  - uid: netDxf.Entities.Viewport.ClippingBoundaryAddedEventHandler
+    name: Viewport.ClippingBoundaryAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.Viewport.ClippingBoundaryRemovedEventHandler
+    name: Viewport.ClippingBoundaryRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Entities.ViewportStatusFlags
+    name: ViewportStatusFlags
+    type: Enum
+  - uid: netDxf.Entities.Wipeout
+    name: Wipeout
+    type: Class
+  - uid: netDxf.Entities.XLine
+    name: XLine
+    type: Class
+- uid: netDxf.GTE
+  name: netDxf.GTE
+  type: Namespace
+  items:
+  - uid: netDxf.GTE.BSplineCurve
+    name: BSplineCurve
+    type: Class
+  - uid: netDxf.GTE.BSplineCurveFit
+    name: BSplineCurveFit
+    type: Class
+  - uid: netDxf.GTE.BSplineReduction
+    name: BSplineReduction
+    type: Class
+  - uid: netDxf.GTE.BSplineSurface
+    name: BSplineSurface
+    type: Class
+  - uid: netDxf.GTE.BSplineSurfaceFit
+    name: BSplineSurfaceFit
+    type: Class
+  - uid: netDxf.GTE.BandedMatrix
+    name: BandedMatrix
+    type: Class
+  - uid: netDxf.GTE.BasisFunction
+    name: BasisFunction
+    type: Class
+  - uid: netDxf.GTE.BasisFunctionInput
+    name: BasisFunctionInput
+    type: Struct
+  - uid: netDxf.GTE.BezierCurve
+    name: BezierCurve
+    type: Class
+  - uid: netDxf.GTE.FIQueryIntervals
+    name: FIQueryIntervals
+    type: Class
+  - uid: netDxf.GTE.FIQueryIntervalsType
+    name: FIQueryIntervalsType
+    type: Enum
+  - uid: netDxf.GTE.GMatrix
+    name: GMatrix
+    type: Class
+  - uid: netDxf.GTE.GTE
+    name: GTE
+    type: Struct
+  - uid: netDxf.GTE.GVector
+    name: GVector
+    type: Class
+  - uid: netDxf.GTE.GaussianElimination
+    name: GaussianElimination
+    type: Class
+  - uid: netDxf.GTE.Integration
+    name: Integration
+    type: Class
+  - uid: netDxf.GTE.LexicoArray2
+    name: LexicoArray2
+    type: Class
+  - uid: netDxf.GTE.NURBSCurve
+    name: NURBSCurve
+    type: Class
+  - uid: netDxf.GTE.NURBSSurface
+    name: NURBSSurface
+    type: Class
+  - uid: netDxf.GTE.ParametricCurve
+    name: ParametricCurve
+    type: Class
+  - uid: netDxf.GTE.ParametricSurface
+    name: ParametricSurface
+    type: Class
+  - uid: netDxf.GTE.RootsBisection
+    name: RootsBisection
+    type: Class
+  - uid: netDxf.GTE.RootsPolynomial
+    name: RootsPolynomial
+    type: Class
+  - uid: netDxf.GTE.TIQueryIntervals
+    name: TIQueryIntervals
+    type: Class
+  - uid: netDxf.GTE.UniqueKnot
+    name: UniqueKnot
+    type: Struct
+- uid: netDxf.Header
+  name: netDxf.Header
+  type: Namespace
+  items:
+  - uid: netDxf.Header.AttMode
+    name: AttMode
+    type: Enum
+  - uid: netDxf.Header.DxfVersion
+    name: DxfVersion
+    type: Enum
+  - uid: netDxf.Header.HeaderVariable
+    name: HeaderVariable
+    type: Class
+  - uid: netDxf.Header.HeaderVariableCode
+    name: HeaderVariableCode
+    type: Class
+  - uid: netDxf.Header.HeaderVariables
+    name: HeaderVariables
+    type: Class
+  - uid: netDxf.Header.PointShape
+    name: PointShape
+    type: Enum
+- uid: netDxf.IO
+  name: netDxf.IO
+  type: Namespace
+  items:
+  - uid: netDxf.IO.DxfVersionNotSupportedException
+    name: DxfVersionNotSupportedException
+    type: Class
+- uid: netDxf.Objects
+  name: netDxf.Objects
+  type: Namespace
+  items:
+  - uid: netDxf.Objects.DictionaryCloningFlags
+    name: DictionaryCloningFlags
+    type: Enum
+  - uid: netDxf.Objects.Group
+    name: Group
+    type: Class
+  - uid: netDxf.Objects.Group.EntityAddedEventHandler
+    name: Group.EntityAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.Group.EntityRemovedEventHandler
+    name: Group.EntityRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.GroupEntityChangeEventArgs
+    name: GroupEntityChangeEventArgs
+    type: Class
+  - uid: netDxf.Objects.ImageDefinition
+    name: ImageDefinition
+    type: Class
+  - uid: netDxf.Objects.ImageDisplayQuality
+    name: ImageDisplayQuality
+    type: Enum
+  - uid: netDxf.Objects.LayerPropertiesFlags
+    name: LayerPropertiesFlags
+    type: Enum
+  - uid: netDxf.Objects.LayerPropertiesRestoreFlags
+    name: LayerPropertiesRestoreFlags
+    type: Enum
+  - uid: netDxf.Objects.LayerState
+    name: LayerState
+    type: Class
+  - uid: netDxf.Objects.LayerStateProperties
+    name: LayerStateProperties
+    type: Class
+  - uid: netDxf.Objects.Layout
+    name: Layout
+    type: Class
+  - uid: netDxf.Objects.MLineStyle
+    name: MLineStyle
+    type: Class
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementAddedEventHandler
+    name: MLineStyle.MLineStyleElementAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+    name: MLineStyle.MLineStyleElementLinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+    name: MLineStyle.MLineStyleElementRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.MLineStyleElement
+    name: MLineStyleElement
+    type: Class
+  - uid: netDxf.Objects.MLineStyleElement.LinetypeChangedEventHandler
+    name: MLineStyleElement.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Objects.MLineStyleElementChangeEventArgs
+    name: MLineStyleElementChangeEventArgs
+    type: Class
+  - uid: netDxf.Objects.MLineStyleFlags
+    name: MLineStyleFlags
+    type: Enum
+  - uid: netDxf.Objects.PaperMargin
+    name: PaperMargin
+    type: Struct
+  - uid: netDxf.Objects.PlotFlags
+    name: PlotFlags
+    type: Enum
+  - uid: netDxf.Objects.PlotPaperUnits
+    name: PlotPaperUnits
+    type: Enum
+  - uid: netDxf.Objects.PlotRotation
+    name: PlotRotation
+    type: Enum
+  - uid: netDxf.Objects.PlotSettings
+    name: PlotSettings
+    type: Class
+  - uid: netDxf.Objects.PlotType
+    name: PlotType
+    type: Enum
+  - uid: netDxf.Objects.RasterVariables
+    name: RasterVariables
+    type: Class
+  - uid: netDxf.Objects.ShadePlotMode
+    name: ShadePlotMode
+    type: Enum
+  - uid: netDxf.Objects.ShadePlotResolutionMode
+    name: ShadePlotResolutionMode
+    type: Enum
+  - uid: netDxf.Objects.SupportedImageFormats
+    name: SupportedImageFormats
+    type: Enum
+  - uid: netDxf.Objects.UnderlayDefinition
+    name: UnderlayDefinition
+    type: Class
+  - uid: netDxf.Objects.UnderlayDgnDefinition
+    name: UnderlayDgnDefinition
+    type: Class
+  - uid: netDxf.Objects.UnderlayDwfDefinition
+    name: UnderlayDwfDefinition
+    type: Class
+  - uid: netDxf.Objects.UnderlayPdfDefinition
+    name: UnderlayPdfDefinition
+    type: Class
+  - uid: netDxf.Objects.UnderlayType
+    name: UnderlayType
+    type: Enum
+- uid: netDxf.Tables
+  name: netDxf.Tables
+  type: Namespace
+  items:
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    type: Class
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    type: Class
+  - uid: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+    name: DimensionStyle.BlockChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+    name: DimensionStyle.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+    name: DimensionStyle.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.DimensionStyleAlternateUnits
+    name: DimensionStyleAlternateUnits
+    type: Class
+  - uid: netDxf.Tables.DimensionStyleFitOptions
+    name: DimensionStyleFitOptions
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleFitTextMove
+    name: DimensionStyleFitTextMove
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleOverride
+    name: DimensionStyleOverride
+    type: Class
+  - uid: netDxf.Tables.DimensionStyleOverrideChangeEventArgs
+    name: DimensionStyleOverrideChangeEventArgs
+    type: Class
+  - uid: netDxf.Tables.DimensionStyleOverrideType
+    name: DimensionStyleOverrideType
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleTextDirection
+    name: DimensionStyleTextDirection
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+    name: DimensionStyleTextHorizontalPlacement
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleTextVerticalPlacement
+    name: DimensionStyleTextVerticalPlacement
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleTolerances
+    name: DimensionStyleTolerances
+    type: Class
+  - uid: netDxf.Tables.DimensionStyleTolerancesDisplayMethod
+    name: DimensionStyleTolerancesDisplayMethod
+    type: Enum
+  - uid: netDxf.Tables.DimensionStyleTolerancesVerticalPlacement
+    name: DimensionStyleTolerancesVerticalPlacement
+    type: Enum
+  - uid: netDxf.Tables.FontStyle
+    name: FontStyle
+    type: Enum
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    type: Class
+  - uid: netDxf.Tables.Layer.LinetypeChangedEventHandler
+    name: Layer.LinetypeChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    type: Class
+  - uid: netDxf.Tables.Linetype.LinetypeSegmentAddedEventHandler
+    name: Linetype.LinetypeSegmentAddedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.Linetype.LinetypeSegmentRemovedEventHandler
+    name: Linetype.LinetypeSegmentRemovedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.Linetype.LinetypeShapeSegmentStyleChangedEventHandler
+    name: Linetype.LinetypeShapeSegmentStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.Linetype.LinetypeTextSegmentStyleChangedEventHandler
+    name: Linetype.LinetypeTextSegmentStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.LinetypeSegment
+    name: LinetypeSegment
+    type: Class
+  - uid: netDxf.Tables.LinetypeSegmentChangeEventArgs
+    name: LinetypeSegmentChangeEventArgs
+    type: Class
+  - uid: netDxf.Tables.LinetypeSegmentRotationType
+    name: LinetypeSegmentRotationType
+    type: Enum
+  - uid: netDxf.Tables.LinetypeSegmentType
+    name: LinetypeSegmentType
+    type: Enum
+  - uid: netDxf.Tables.LinetypeShapeSegment
+    name: LinetypeShapeSegment
+    type: Class
+  - uid: netDxf.Tables.LinetypeShapeSegment.ShapeStyleChangedEventHandler
+    name: LinetypeShapeSegment.ShapeStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.LinetypeSimpleSegment
+    name: LinetypeSimpleSegment
+    type: Class
+  - uid: netDxf.Tables.LinetypeTextSegment
+    name: LinetypeTextSegment
+    type: Class
+  - uid: netDxf.Tables.LinetypeTextSegment.TextStyleChangedEventHandler
+    name: LinetypeTextSegment.TextStyleChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.ShapeStyle
+    name: ShapeStyle
+    type: Class
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    type: Class
+  - uid: netDxf.Tables.TableObject.NameChangedEventHandler
+    name: TableObject.NameChangedEventHandler
+    type: Delegate
+  - uid: netDxf.Tables.TableObjectChangedEventArgs`1
+    name: TableObjectChangedEventArgs<T>
+    type: Class
+  - uid: netDxf.Tables.TextStyle
+    name: TextStyle
+    type: Class
+  - uid: netDxf.Tables.UCS
+    name: UCS
+    type: Class
+  - uid: netDxf.Tables.VPort
+    name: VPort
+    type: Class
+  - uid: netDxf.Tables.View
+    name: View
+    type: Class
+  - uid: netDxf.Tables.ViewModeFlags
+    name: ViewModeFlags
+    type: Enum
+- uid: netDxf.Units
+  name: netDxf.Units
+  type: Namespace
+  items:
+  - uid: netDxf.Units.AngleDirection
+    name: AngleDirection
+    type: Enum
+  - uid: netDxf.Units.AngleUnitFormat
+    name: AngleUnitFormat
+    type: Class
+  - uid: netDxf.Units.AngleUnitType
+    name: AngleUnitType
+    type: Enum
+  - uid: netDxf.Units.DrawingTime
+    name: DrawingTime
+    type: Class
+  - uid: netDxf.Units.DrawingUnits
+    name: DrawingUnits
+    type: Enum
+  - uid: netDxf.Units.FractionFormatType
+    name: FractionFormatType
+    type: Enum
+  - uid: netDxf.Units.ImageResolutionUnits
+    name: ImageResolutionUnits
+    type: Enum
+  - uid: netDxf.Units.ImageUnits
+    name: ImageUnits
+    type: Enum
+  - uid: netDxf.Units.LinearUnitFormat
+    name: LinearUnitFormat
+    type: Class
+  - uid: netDxf.Units.LinearUnitType
+    name: LinearUnitType
+    type: Enum
+  - uid: netDxf.Units.UnitHelper
+    name: UnitHelper
+    type: Class
+  - uid: netDxf.Units.UnitStyleFormat
+    name: UnitStyleFormat
+    type: Class
 memberLayout: SamePage

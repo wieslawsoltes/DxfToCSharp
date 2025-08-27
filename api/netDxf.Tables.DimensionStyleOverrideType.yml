@@ -1,0 +1,2073 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyleOverrideType
+  commentId: T:netDxf.Tables.DimensionStyleOverrideType
+  id: DimensionStyleOverrideType
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsEnabled
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthPrecision
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthUnits
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsMultiplier
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsPrefix
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsRoundoff
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsStackedUnits
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuffix
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroFeet
+  - netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroInches
+  - netDxf.Tables.DimensionStyleOverrideType.AngularPrecision
+  - netDxf.Tables.DimensionStyleOverrideType.ArrowSize
+  - netDxf.Tables.DimensionStyleOverrideType.CenterMarkSize
+  - netDxf.Tables.DimensionStyleOverrideType.DecimalSeparator
+  - netDxf.Tables.DimensionStyleOverrideType.DimAngularUnits
+  - netDxf.Tables.DimensionStyleOverrideType.DimArrow1
+  - netDxf.Tables.DimensionStyleOverrideType.DimArrow2
+  - netDxf.Tables.DimensionStyleOverrideType.DimLengthUnits
+  - netDxf.Tables.DimensionStyleOverrideType.DimLine1Off
+  - netDxf.Tables.DimensionStyleOverrideType.DimLine2Off
+  - netDxf.Tables.DimensionStyleOverrideType.DimLineColor
+  - netDxf.Tables.DimensionStyleOverrideType.DimLineExtend
+  - netDxf.Tables.DimensionStyleOverrideType.DimLineLinetype
+  - netDxf.Tables.DimensionStyleOverrideType.DimLineLineweight
+  - netDxf.Tables.DimensionStyleOverrideType.DimPrefix
+  - netDxf.Tables.DimensionStyleOverrideType.DimRoundoff
+  - netDxf.Tables.DimensionStyleOverrideType.DimScaleLinear
+  - netDxf.Tables.DimensionStyleOverrideType.DimScaleOverall
+  - netDxf.Tables.DimensionStyleOverrideType.DimSuffix
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLine1Linetype
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLine1Off
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLine2Linetype
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLine2Off
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineColor
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineExtend
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineFixed
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineFixedLength
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineLineweight
+  - netDxf.Tables.DimensionStyleOverrideType.ExtLineOffset
+  - netDxf.Tables.DimensionStyleOverrideType.FitDimLineForce
+  - netDxf.Tables.DimensionStyleOverrideType.FitDimLineInside
+  - netDxf.Tables.DimensionStyleOverrideType.FitOptions
+  - netDxf.Tables.DimensionStyleOverrideType.FitTextInside
+  - netDxf.Tables.DimensionStyleOverrideType.FitTextMove
+  - netDxf.Tables.DimensionStyleOverrideType.FractionalType
+  - netDxf.Tables.DimensionStyleOverrideType.LeaderArrow
+  - netDxf.Tables.DimensionStyleOverrideType.LengthPrecision
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressAngularLeadingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressAngularTrailingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressZeroFeet
+  - netDxf.Tables.DimensionStyleOverrideType.SuppressZeroInches
+  - netDxf.Tables.DimensionStyleOverrideType.TextColor
+  - netDxf.Tables.DimensionStyleOverrideType.TextDirection
+  - netDxf.Tables.DimensionStyleOverrideType.TextFillColor
+  - netDxf.Tables.DimensionStyleOverrideType.TextFractionHeightScale
+  - netDxf.Tables.DimensionStyleOverrideType.TextHeight
+  - netDxf.Tables.DimensionStyleOverrideType.TextHorizontalPlacement
+  - netDxf.Tables.DimensionStyleOverrideType.TextInsideAlign
+  - netDxf.Tables.DimensionStyleOverrideType.TextOffset
+  - netDxf.Tables.DimensionStyleOverrideType.TextOutsideAlign
+  - netDxf.Tables.DimensionStyleOverrideType.TextStyle
+  - netDxf.Tables.DimensionStyleOverrideType.TextVerticalPlacement
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroFeet
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroInches
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesAlternatePrecision
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesDisplayMethod
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesLowerLimit
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesPrecision
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroFeet
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroInches
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesUpperLimit
+  - netDxf.Tables.DimensionStyleOverrideType.TolerancesVerticalPlacement
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleOverrideType
+  nameWithType: DimensionStyleOverrideType
+  fullName: netDxf.Tables.DimensionStyleOverrideType
+  type: Enum
+  source:
+    id: DimensionStyleOverrideType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Dimension style override types.
+  remarks: >-
+    There is one dimension style override type for each property of the <xref href="netDxf.Tables.DimensionStyle?text=DimensionStyle" data-throw-if-not-resolved="false"></xref> class.
+
+    The dimension style properties DIMBLK and DIMSAH are not available.
+
+    The overrides always make use of the DIMBLK1 and DIMBLK2 setting the DIMSAH to true even when both arrow ends are the same.
+  example: []
+  syntax:
+    content: public enum DimensionStyleOverrideType
+    content.vb: Public Enum DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLineColor
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLineColor
+  id: DimLineColor
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLineColor
+  nameWithType: DimensionStyleOverrideType.DimLineColor
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLineColor
+  type: Field
+  source:
+    id: DimLineColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Assigns colors to dimension lines, arrowheads, and dimension leader lines.
+  example: []
+  syntax:
+    content: DimLineColor = 0
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLineLinetype
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLineLinetype
+  id: DimLineLinetype
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLineLinetype
+  nameWithType: DimensionStyleOverrideType.DimLineLinetype
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLineLinetype
+  type: Field
+  source:
+    id: DimLineLinetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Linetype of the dimension line.
+  example: []
+  syntax:
+    content: DimLineLinetype = 1
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLineLineweight
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLineLineweight
+  id: DimLineLineweight
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLineLineweight
+  nameWithType: DimensionStyleOverrideType.DimLineLineweight
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLineLineweight
+  type: Field
+  source:
+    id: DimLineLineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Lineweight to dimension lines.
+  example: []
+  syntax:
+    content: DimLineLineweight = 2
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLine1Off
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLine1Off
+  id: DimLine1Off
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLine1Off
+  nameWithType: DimensionStyleOverrideType.DimLine1Off
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLine1Off
+  type: Field
+  source:
+    id: DimLine1Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the first dimension line.
+  example: []
+  syntax:
+    content: DimLine1Off = 3
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLine2Off
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLine2Off
+  id: DimLine2Off
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLine2Off
+  nameWithType: DimensionStyleOverrideType.DimLine2Off
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLine2Off
+  type: Field
+  source:
+    id: DimLine2Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the second dimension line.
+  example: []
+  syntax:
+    content: DimLine2Off = 4
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLineExtend
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLineExtend
+  id: DimLineExtend
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLineExtend
+  nameWithType: DimensionStyleOverrideType.DimLineExtend
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLineExtend
+  type: Field
+  source:
+    id: DimLineExtend
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 65
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Distance the dimension line extends beyond the extension line when oblique, architectural tick, integral, or no marks are drawn for arrowheads.
+  example: []
+  syntax:
+    content: DimLineExtend = 5
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineColor
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineColor
+  id: ExtLineColor
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineColor
+  nameWithType: DimensionStyleOverrideType.ExtLineColor
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineColor
+  type: Field
+  source:
+    id: ExtLineColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Colors to extension lines, center marks, and centerlines.
+  example: []
+  syntax:
+    content: ExtLineColor = 6
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLine1Linetype
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLine1Linetype
+  id: ExtLine1Linetype
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLine1Linetype
+  nameWithType: DimensionStyleOverrideType.ExtLine1Linetype
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLine1Linetype
+  type: Field
+  source:
+    id: ExtLine1Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 75
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Linetype of the first extension line.
+  example: []
+  syntax:
+    content: ExtLine1Linetype = 7
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLine2Linetype
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLine2Linetype
+  id: ExtLine2Linetype
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLine2Linetype
+  nameWithType: DimensionStyleOverrideType.ExtLine2Linetype
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLine2Linetype
+  type: Field
+  source:
+    id: ExtLine2Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 80
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Linetype of the second extension line.
+  example: []
+  syntax:
+    content: ExtLine2Linetype = 8
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineLineweight
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineLineweight
+  id: ExtLineLineweight
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineLineweight
+  nameWithType: DimensionStyleOverrideType.ExtLineLineweight
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineLineweight
+  type: Field
+  source:
+    id: ExtLineLineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 85
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Lineweight to extension lines.
+  example: []
+  syntax:
+    content: ExtLineLineweight = 9
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLine1Off
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLine1Off
+  id: ExtLine1Off
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLine1Off
+  nameWithType: DimensionStyleOverrideType.ExtLine1Off
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLine1Off
+  type: Field
+  source:
+    id: ExtLine1Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 90
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the first extension line.
+  example: []
+  syntax:
+    content: ExtLine1Off = 10
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLine2Off
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLine2Off
+  id: ExtLine2Off
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLine2Off
+  nameWithType: DimensionStyleOverrideType.ExtLine2Off
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLine2Off
+  type: Field
+  source:
+    id: ExtLine2Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 95
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the second extension line.
+  example: []
+  syntax:
+    content: ExtLine2Off = 11
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineOffset
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineOffset
+  id: ExtLineOffset
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineOffset
+  nameWithType: DimensionStyleOverrideType.ExtLineOffset
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineOffset
+  type: Field
+  source:
+    id: ExtLineOffset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies how far extension lines are offset from origin points.
+  example: []
+  syntax:
+    content: ExtLineOffset = 12
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineExtend
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineExtend
+  id: ExtLineExtend
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineExtend
+  nameWithType: DimensionStyleOverrideType.ExtLineExtend
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineExtend
+  type: Field
+  source:
+    id: ExtLineExtend
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies how far to extend the extension line beyond the dimension line.
+  example: []
+  syntax:
+    content: ExtLineExtend = 13
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineFixed
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineFixed
+  id: ExtLineFixed
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineFixed
+  nameWithType: DimensionStyleOverrideType.ExtLineFixed
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineFixed
+  type: Field
+  source:
+    id: ExtLineFixed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Enables fixed length extension lines.
+  example: []
+  syntax:
+    content: ExtLineFixed = 14
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ExtLineFixedLength
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ExtLineFixedLength
+  id: ExtLineFixedLength
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ExtLineFixedLength
+  nameWithType: DimensionStyleOverrideType.ExtLineFixedLength
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ExtLineFixedLength
+  type: Field
+  source:
+    id: ExtLineFixedLength
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 115
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Total length of the extension lines starting from the dimension line toward the dimension origin.
+  example: []
+  syntax:
+    content: ExtLineFixedLength = 15
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimArrow1
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimArrow1
+  id: DimArrow1
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimArrow1
+  nameWithType: DimensionStyleOverrideType.DimArrow1
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimArrow1
+  type: Field
+  source:
+    id: DimArrow1
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 120
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Arrowhead block for the first end of the dimension line.
+  example: []
+  syntax:
+    content: DimArrow1 = 16
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimArrow2
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimArrow2
+  id: DimArrow2
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimArrow2
+  nameWithType: DimensionStyleOverrideType.DimArrow2
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimArrow2
+  type: Field
+  source:
+    id: DimArrow2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 125
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Arrowhead block for the second end of the dimension line.
+  example: []
+  syntax:
+    content: DimArrow2 = 17
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.LeaderArrow
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.LeaderArrow
+  id: LeaderArrow
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: LeaderArrow
+  nameWithType: DimensionStyleOverrideType.LeaderArrow
+  fullName: netDxf.Tables.DimensionStyleOverrideType.LeaderArrow
+  type: Field
+  source:
+    id: LeaderArrow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 130
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Arrowhead block for leaders.
+  example: []
+  syntax:
+    content: LeaderArrow = 18
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.ArrowSize
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.ArrowSize
+  id: ArrowSize
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: ArrowSize
+  nameWithType: DimensionStyleOverrideType.ArrowSize
+  fullName: netDxf.Tables.DimensionStyleOverrideType.ArrowSize
+  type: Field
+  source:
+    id: ArrowSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 135
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Size of dimension line and leader line arrowheads. Also controls the size of hook lines.
+  example: []
+  syntax:
+    content: ArrowSize = 19
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.CenterMarkSize
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.CenterMarkSize
+  id: CenterMarkSize
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: CenterMarkSize
+  nameWithType: DimensionStyleOverrideType.CenterMarkSize
+  fullName: netDxf.Tables.DimensionStyleOverrideType.CenterMarkSize
+  type: Field
+  source:
+    id: CenterMarkSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 140
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Drawing of circle or arc center marks and centerlines.
+  example: []
+  syntax:
+    content: CenterMarkSize = 20
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextStyle
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextStyle
+  id: TextStyle
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextStyle
+  nameWithType: DimensionStyleOverrideType.TextStyle
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextStyle
+  type: Field
+  source:
+    id: TextStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 145
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Text style of the dimension.
+  example: []
+  syntax:
+    content: TextStyle = 21
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextColor
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextColor
+  id: TextColor
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextColor
+  nameWithType: DimensionStyleOverrideType.TextColor
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextColor
+  type: Field
+  source:
+    id: TextColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 150
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Color of dimension text.
+  example: []
+  syntax:
+    content: TextColor = 22
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextFillColor
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextFillColor
+  id: TextFillColor
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextFillColor
+  nameWithType: DimensionStyleOverrideType.TextFillColor
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextFillColor
+  type: Field
+  source:
+    id: TextFillColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 155
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Color of background dimension text.
+  example: []
+  syntax:
+    content: TextFillColor = 23
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextHeight
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextHeight
+  id: TextHeight
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextHeight
+  nameWithType: DimensionStyleOverrideType.TextHeight
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextHeight
+  type: Field
+  source:
+    id: TextHeight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 160
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Height of dimension text, unless the current text style has a fixed height.
+  example: []
+  syntax:
+    content: TextHeight = 24
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextVerticalPlacement
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextVerticalPlacement
+  id: TextVerticalPlacement
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextVerticalPlacement
+  nameWithType: DimensionStyleOverrideType.TextVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextVerticalPlacement
+  type: Field
+  source:
+    id: TextVerticalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 165
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Vertical position of text in relation to the dimension line.
+  example: []
+  syntax:
+    content: TextVerticalPlacement = 25
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextHorizontalPlacement
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextHorizontalPlacement
+  id: TextHorizontalPlacement
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextHorizontalPlacement
+  nameWithType: DimensionStyleOverrideType.TextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextHorizontalPlacement
+  type: Field
+  source:
+    id: TextHorizontalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 170
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Horizontal positioning of dimension text.
+  example: []
+  syntax:
+    content: TextHorizontalPlacement = 26
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextInsideAlign
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextInsideAlign
+  id: TextInsideAlign
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextInsideAlign
+  nameWithType: DimensionStyleOverrideType.TextInsideAlign
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextInsideAlign
+  type: Field
+  source:
+    id: TextInsideAlign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 175
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Positioning of the dimension text inside extension lines.
+  example: []
+  syntax:
+    content: TextInsideAlign = 27
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextOutsideAlign
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextOutsideAlign
+  id: TextOutsideAlign
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextOutsideAlign
+  nameWithType: DimensionStyleOverrideType.TextOutsideAlign
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextOutsideAlign
+  type: Field
+  source:
+    id: TextOutsideAlign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 180
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Positioning of the dimension text outside extension lines.
+  example: []
+  syntax:
+    content: TextOutsideAlign = 28
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextOffset
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextOffset
+  id: TextOffset
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextOffset
+  nameWithType: DimensionStyleOverrideType.TextOffset
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextOffset
+  type: Field
+  source:
+    id: TextOffset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 185
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Distance around the dimension text when the dimension line breaks to accommodate dimension text.
+  example: []
+  syntax:
+    content: TextOffset = 29
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextDirection
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextDirection
+  id: TextDirection
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextDirection
+  nameWithType: DimensionStyleOverrideType.TextDirection
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextDirection
+  type: Field
+  source:
+    id: TextDirection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 190
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the direction of the dimension text.
+  example: []
+  syntax:
+    content: TextDirection = 30
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TextFractionHeightScale
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TextFractionHeightScale
+  id: TextFractionHeightScale
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TextFractionHeightScale
+  nameWithType: DimensionStyleOverrideType.TextFractionHeightScale
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TextFractionHeightScale
+  type: Field
+  source:
+    id: TextFractionHeightScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 199
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the scale of fractions relative to dimension text height.
+  remarks: >-
+    This value is only applicable to Architectural and Fractional units, and also
+
+    controls the height factor applied to the tolerance text in relation with the dimension text height.
+  example: []
+  syntax:
+    content: TextFractionHeightScale = 31
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FitDimLineForce
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FitDimLineForce
+  id: FitDimLineForce
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FitDimLineForce
+  nameWithType: DimensionStyleOverrideType.FitDimLineForce
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FitDimLineForce
+  type: Field
+  source:
+    id: FitDimLineForce
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 204
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the drawing of the dimension lines even when the text are placed outside the extension lines.
+  example: []
+  syntax:
+    content: FitDimLineForce = 32
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FitDimLineInside
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FitDimLineInside
+  id: FitDimLineInside
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FitDimLineInside
+  nameWithType: DimensionStyleOverrideType.FitDimLineInside
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FitDimLineInside
+  type: Field
+  source:
+    id: FitDimLineInside
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 209
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the drawing of dimension lines outside extension lines.
+  example: []
+  syntax:
+    content: FitDimLineInside = 33
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimScaleOverall
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimScaleOverall
+  id: DimScaleOverall
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimScaleOverall
+  nameWithType: DimensionStyleOverrideType.DimScaleOverall
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimScaleOverall
+  type: Field
+  source:
+    id: DimScaleOverall
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 214
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Overall scale factor applied to dimensioning variables that specify sizes, distances, or offsets.
+  example: []
+  syntax:
+    content: DimScaleOverall = 34
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FitOptions
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FitOptions
+  id: FitOptions
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FitOptions
+  nameWithType: DimensionStyleOverrideType.FitOptions
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FitOptions
+  type: Field
+  source:
+    id: FitOptions
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 219
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the placement of text and arrowheads based on the space available between the extension lines.
+  example: []
+  syntax:
+    content: FitOptions = 35
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FitTextInside
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FitTextInside
+  id: FitTextInside
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FitTextInside
+  nameWithType: DimensionStyleOverrideType.FitTextInside
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FitTextInside
+  type: Field
+  source:
+    id: FitTextInside
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 224
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the drawing of text between the extension lines.
+  example: []
+  syntax:
+    content: FitTextInside = 36
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FitTextMove
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FitTextMove
+  id: FitTextMove
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FitTextMove
+  nameWithType: DimensionStyleOverrideType.FitTextMove
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FitTextMove
+  type: Field
+  source:
+    id: FitTextMove
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 229
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the position of the text when it's moved either manually or automatically.
+  example: []
+  syntax:
+    content: FitTextMove = 37
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AngularPrecision
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AngularPrecision
+  id: AngularPrecision
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AngularPrecision
+  nameWithType: DimensionStyleOverrideType.AngularPrecision
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AngularPrecision
+  type: Field
+  source:
+    id: AngularPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 234
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Number of precision places displayed in angular dimensions.
+  example: []
+  syntax:
+    content: AngularPrecision = 38
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.LengthPrecision
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.LengthPrecision
+  id: LengthPrecision
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: LengthPrecision
+  nameWithType: DimensionStyleOverrideType.LengthPrecision
+  fullName: netDxf.Tables.DimensionStyleOverrideType.LengthPrecision
+  type: Field
+  source:
+    id: LengthPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 239
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Number of decimal places displayed for the primary units of a dimension.
+  example: []
+  syntax:
+    content: LengthPrecision = 39
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimPrefix
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimPrefix
+  id: DimPrefix
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimPrefix
+  nameWithType: DimensionStyleOverrideType.DimPrefix
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimPrefix
+  type: Field
+  source:
+    id: DimPrefix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 244
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the text prefix for the dimension.
+  example: []
+  syntax:
+    content: DimPrefix = 40
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimSuffix
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimSuffix
+  id: DimSuffix
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimSuffix
+  nameWithType: DimensionStyleOverrideType.DimSuffix
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimSuffix
+  type: Field
+  source:
+    id: DimSuffix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 249
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the text suffix for the dimension.
+  example: []
+  syntax:
+    content: DimSuffix = 41
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DecimalSeparator
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DecimalSeparator
+  id: DecimalSeparator
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DecimalSeparator
+  nameWithType: DimensionStyleOverrideType.DecimalSeparator
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DecimalSeparator
+  type: Field
+  source:
+    id: DecimalSeparator
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 254
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Single-character decimal separator to use when creating dimensions whose unit format is decimal.
+  example: []
+  syntax:
+    content: DecimalSeparator = 42
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimScaleLinear
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimScaleLinear
+  id: DimScaleLinear
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimScaleLinear
+  nameWithType: DimensionStyleOverrideType.DimScaleLinear
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimScaleLinear
+  type: Field
+  source:
+    id: DimScaleLinear
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 259
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Scale factor for linear dimension measurements
+  example: []
+  syntax:
+    content: DimScaleLinear = 43
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimLengthUnits
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimLengthUnits
+  id: DimLengthUnits
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimLengthUnits
+  nameWithType: DimensionStyleOverrideType.DimLengthUnits
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimLengthUnits
+  type: Field
+  source:
+    id: DimLengthUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 264
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Units for all dimension types except angular.
+  example: []
+  syntax:
+    content: DimLengthUnits = 44
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimAngularUnits
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimAngularUnits
+  id: DimAngularUnits
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimAngularUnits
+  nameWithType: DimensionStyleOverrideType.DimAngularUnits
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimAngularUnits
+  type: Field
+  source:
+    id: DimAngularUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 269
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Units format for angular dimensions.
+  example: []
+  syntax:
+    content: DimAngularUnits = 45
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.FractionalType
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.FractionalType
+  id: FractionalType
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: FractionalType
+  nameWithType: DimensionStyleOverrideType.FractionalType
+  fullName: netDxf.Tables.DimensionStyleOverrideType.FractionalType
+  type: Field
+  source:
+    id: FractionalType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 274
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Fraction format when DIMLUNIT is set to Architectural or Fractional.
+  example: []
+  syntax:
+    content: FractionalType = 46
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressLinearLeadingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressLinearLeadingZeros
+  id: SuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearLeadingZeros
+  nameWithType: DimensionStyleOverrideType.SuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressLinearLeadingZeros
+  type: Field
+  source:
+    id: SuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 279
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal dimensions (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: SuppressLinearLeadingZeros = 47
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressLinearTrailingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressLinearTrailingZeros
+  id: SuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearTrailingZeros
+  nameWithType: DimensionStyleOverrideType.SuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressLinearTrailingZeros
+  type: Field
+  source:
+    id: SuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 284
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal dimensions (for example, 12.5000 becomes 12.5).
+  example: []
+  syntax:
+    content: SuppressLinearTrailingZeros = 48
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressAngularLeadingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressAngularLeadingZeros
+  id: SuppressAngularLeadingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressAngularLeadingZeros
+  nameWithType: DimensionStyleOverrideType.SuppressAngularLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressAngularLeadingZeros
+  type: Field
+  source:
+    id: SuppressAngularLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 289
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in angular decimal dimensions (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: SuppressAngularLeadingZeros = 49
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressAngularTrailingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressAngularTrailingZeros
+  id: SuppressAngularTrailingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressAngularTrailingZeros
+  nameWithType: DimensionStyleOverrideType.SuppressAngularTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressAngularTrailingZeros
+  type: Field
+  source:
+    id: SuppressAngularTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 294
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in angular decimal dimensions (for example, 12.5000 becomes 12.5).
+  example: []
+  syntax:
+    content: SuppressAngularTrailingZeros = 50
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressZeroFeet
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressZeroFeet
+  id: SuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroFeet
+  nameWithType: DimensionStyleOverrideType.SuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressZeroFeet
+  type: Field
+  source:
+    id: SuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 299
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural dimensions.
+  example: []
+  syntax:
+    content: SuppressZeroFeet = 51
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.SuppressZeroInches
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.SuppressZeroInches
+  id: SuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroInches
+  nameWithType: DimensionStyleOverrideType.SuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleOverrideType.SuppressZeroInches
+  type: Field
+  source:
+    id: SuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 304
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural dimensions.
+  example: []
+  syntax:
+    content: SuppressZeroInches = 52
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.DimRoundoff
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.DimRoundoff
+  id: DimRoundoff
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: DimRoundoff
+  nameWithType: DimensionStyleOverrideType.DimRoundoff
+  fullName: netDxf.Tables.DimensionStyleOverrideType.DimRoundoff
+  type: Field
+  source:
+    id: DimRoundoff
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 309
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Value to round all dimensioning distances.
+  example: []
+  syntax:
+    content: DimRoundoff = 53
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsEnabled
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsEnabled
+  id: AltUnitsEnabled
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsEnabled
+  nameWithType: DimensionStyleOverrideType.AltUnitsEnabled
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsEnabled
+  type: Field
+  source:
+    id: AltUnitsEnabled
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 314
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the display of the alternate units.
+  example: []
+  syntax:
+    content: AltUnitsEnabled = 54
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthUnits
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthUnits
+  id: AltUnitsLengthUnits
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsLengthUnits
+  nameWithType: DimensionStyleOverrideType.AltUnitsLengthUnits
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthUnits
+  type: Field
+  source:
+    id: AltUnitsLengthUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 319
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Alternate units for all dimension types except angular.
+  example: []
+  syntax:
+    content: AltUnitsLengthUnits = 55
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsStackedUnits
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsStackedUnits
+  id: AltUnitsStackedUnits
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsStackedUnits
+  nameWithType: DimensionStyleOverrideType.AltUnitsStackedUnits
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsStackedUnits
+  type: Field
+  source:
+    id: AltUnitsStackedUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 324
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls if the Architectural or Fractional linear units will be shown stacked or not.
+  example: []
+  syntax:
+    content: AltUnitsStackedUnits = 56
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthPrecision
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthPrecision
+  id: AltUnitsLengthPrecision
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsLengthPrecision
+  nameWithType: DimensionStyleOverrideType.AltUnitsLengthPrecision
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsLengthPrecision
+  type: Field
+  source:
+    id: AltUnitsLengthPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 329
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Number of decimal places displayed for the alternate units of a dimension.
+  example: []
+  syntax:
+    content: AltUnitsLengthPrecision = 57
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsMultiplier
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsMultiplier
+  id: AltUnitsMultiplier
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsMultiplier
+  nameWithType: DimensionStyleOverrideType.AltUnitsMultiplier
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsMultiplier
+  type: Field
+  source:
+    id: AltUnitsMultiplier
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 334
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Multiplier used as the conversion factor between primary and alternate units.
+  example: []
+  syntax:
+    content: AltUnitsMultiplier = 58
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsRoundoff
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsRoundoff
+  id: AltUnitsRoundoff
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsRoundoff
+  nameWithType: DimensionStyleOverrideType.AltUnitsRoundoff
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsRoundoff
+  type: Field
+  source:
+    id: AltUnitsRoundoff
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 339
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Value to round all alternate units of a dimension  except angular.
+  example: []
+  syntax:
+    content: AltUnitsRoundoff = 59
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsPrefix
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsPrefix
+  id: AltUnitsPrefix
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsPrefix
+  nameWithType: DimensionStyleOverrideType.AltUnitsPrefix
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsPrefix
+  type: Field
+  source:
+    id: AltUnitsPrefix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 344
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the alternate units text prefix for the dimension.
+  example: []
+  syntax:
+    content: AltUnitsPrefix = 60
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuffix
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuffix
+  id: AltUnitsSuffix
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsSuffix
+  nameWithType: DimensionStyleOverrideType.AltUnitsSuffix
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuffix
+  type: Field
+  source:
+    id: AltUnitsSuffix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 349
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the alternate units text suffix for the dimension.
+  example: []
+  syntax:
+    content: AltUnitsSuffix = 61
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearLeadingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearLeadingZeros
+  id: AltUnitsSuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsSuppressLinearLeadingZeros
+  nameWithType: DimensionStyleOverrideType.AltUnitsSuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearLeadingZeros
+  type: Field
+  source:
+    id: AltUnitsSuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 354
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses alternate units leading zeros in linear decimal dimensions (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: AltUnitsSuppressLinearLeadingZeros = 62
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearTrailingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearTrailingZeros
+  id: AltUnitsSuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsSuppressLinearTrailingZeros
+  nameWithType: DimensionStyleOverrideType.AltUnitsSuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressLinearTrailingZeros
+  type: Field
+  source:
+    id: AltUnitsSuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 359
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses alternate units trailing zeros in linear decimal dimensions (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: AltUnitsSuppressLinearTrailingZeros = 63
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroFeet
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroFeet
+  id: AltUnitsSuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsSuppressZeroFeet
+  nameWithType: DimensionStyleOverrideType.AltUnitsSuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroFeet
+  type: Field
+  source:
+    id: AltUnitsSuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 364
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses alternate units zero feet in architectural dimensions.
+  example: []
+  syntax:
+    content: AltUnitsSuppressZeroFeet = 64
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroInches
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroInches
+  id: AltUnitsSuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: AltUnitsSuppressZeroInches
+  nameWithType: DimensionStyleOverrideType.AltUnitsSuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleOverrideType.AltUnitsSuppressZeroInches
+  type: Field
+  source:
+    id: AltUnitsSuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 369
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses alternate units zero inches in architectural dimensions.
+  example: []
+  syntax:
+    content: AltUnitsSuppressZeroInches = 65
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesDisplayMethod
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesDisplayMethod
+  id: TolerancesDisplayMethod
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesDisplayMethod
+  nameWithType: DimensionStyleOverrideType.TolerancesDisplayMethod
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesDisplayMethod
+  type: Field
+  source:
+    id: TolerancesDisplayMethod
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 374
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Method for calculating the tolerance.
+  example: []
+  syntax:
+    content: TolerancesDisplayMethod = 66
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesUpperLimit
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesUpperLimit
+  id: TolerancesUpperLimit
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesUpperLimit
+  nameWithType: DimensionStyleOverrideType.TolerancesUpperLimit
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesUpperLimit
+  type: Field
+  source:
+    id: TolerancesUpperLimit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 379
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Maximum or upper tolerance value. When you select Symmetrical in DisplayMethod, this value is used for the tolerance.
+  example: []
+  syntax:
+    content: TolerancesUpperLimit = 67
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesLowerLimit
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesLowerLimit
+  id: TolerancesLowerLimit
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesLowerLimit
+  nameWithType: DimensionStyleOverrideType.TolerancesLowerLimit
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesLowerLimit
+  type: Field
+  source:
+    id: TolerancesLowerLimit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 384
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Minimum or lower tolerance value.
+  example: []
+  syntax:
+    content: TolerancesLowerLimit = 68
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesVerticalPlacement
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesVerticalPlacement
+  id: TolerancesVerticalPlacement
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesVerticalPlacement
+  nameWithType: DimensionStyleOverrideType.TolerancesVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesVerticalPlacement
+  type: Field
+  source:
+    id: TolerancesVerticalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 389
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Text vertical placement for symmetrical and deviation tolerances.
+  example: []
+  syntax:
+    content: TolerancesVerticalPlacement = 69
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesPrecision
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesPrecision
+  id: TolerancesPrecision
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesPrecision
+  nameWithType: DimensionStyleOverrideType.TolerancesPrecision
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesPrecision
+  type: Field
+  source:
+    id: TolerancesPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 394
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the number of decimal places.
+  example: []
+  syntax:
+    content: TolerancesPrecision = 70
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearLeadingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearLeadingZeros
+  id: TolerancesSuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesSuppressLinearLeadingZeros
+  nameWithType: DimensionStyleOverrideType.TolerancesSuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearLeadingZeros
+  type: Field
+  source:
+    id: TolerancesSuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 399
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal tolerance units (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: TolerancesSuppressLinearLeadingZeros = 71
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearTrailingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearTrailingZeros
+  id: TolerancesSuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesSuppressLinearTrailingZeros
+  nameWithType: DimensionStyleOverrideType.TolerancesSuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressLinearTrailingZeros
+  type: Field
+  source:
+    id: TolerancesSuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 404
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal tolerance units (for example, 12.5000 becomes 12.5).
+  example: []
+  syntax:
+    content: TolerancesSuppressLinearTrailingZeros = 72
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroFeet
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroFeet
+  id: TolerancesSuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesSuppressZeroFeet
+  nameWithType: DimensionStyleOverrideType.TolerancesSuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroFeet
+  type: Field
+  source:
+    id: TolerancesSuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 409
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural tolerance units.
+  example: []
+  syntax:
+    content: TolerancesSuppressZeroFeet = 73
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroInches
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroInches
+  id: TolerancesSuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesSuppressZeroInches
+  nameWithType: DimensionStyleOverrideType.TolerancesSuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesSuppressZeroInches
+  type: Field
+  source:
+    id: TolerancesSuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 414
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural tolerance units.
+  example: []
+  syntax:
+    content: TolerancesSuppressZeroInches = 74
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesAlternatePrecision
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesAlternatePrecision
+  id: TolerancesAlternatePrecision
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesAlternatePrecision
+  nameWithType: DimensionStyleOverrideType.TolerancesAlternatePrecision
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesAlternatePrecision
+  type: Field
+  source:
+    id: TolerancesAlternatePrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 419
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Number of decimal places of the tolerance alternate units.
+  example: []
+  syntax:
+    content: TolerancesAlternatePrecision = 75
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearLeadingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearLeadingZeros
+  id: TolerancesAltSuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesAltSuppressLinearLeadingZeros
+  nameWithType: DimensionStyleOverrideType.TolerancesAltSuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearLeadingZeros
+  type: Field
+  source:
+    id: TolerancesAltSuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 424
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal alternate tolerance units (for example, 0.5000 becomes .5000).
+  example: []
+  syntax:
+    content: TolerancesAltSuppressLinearLeadingZeros = 76
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearTrailingZeros
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearTrailingZeros
+  id: TolerancesAltSuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesAltSuppressLinearTrailingZeros
+  nameWithType: DimensionStyleOverrideType.TolerancesAltSuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressLinearTrailingZeros
+  type: Field
+  source:
+    id: TolerancesAltSuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 429
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal alternate tolerance units (for example, 12.5000 becomes 12.5).
+  example: []
+  syntax:
+    content: TolerancesAltSuppressLinearTrailingZeros = 77
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroFeet
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroFeet
+  id: TolerancesAltSuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesAltSuppressZeroFeet
+  nameWithType: DimensionStyleOverrideType.TolerancesAltSuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroFeet
+  type: Field
+  source:
+    id: TolerancesAltSuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 434
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural alternate tolerance units.
+  example: []
+  syntax:
+    content: TolerancesAltSuppressZeroFeet = 78
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+- uid: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroInches
+  commentId: F:netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroInches
+  id: TolerancesAltSuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleOverrideType
+  langs:
+  - csharp
+  - vb
+  name: TolerancesAltSuppressZeroInches
+  nameWithType: DimensionStyleOverrideType.TolerancesAltSuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleOverrideType.TolerancesAltSuppressZeroInches
+  type: Field
+  source:
+    id: TolerancesAltSuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleOverrideType.cs
+    startLine: 439
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural alternate tolerance units.
+  example: []
+  syntax:
+    content: TolerancesAltSuppressZeroInches = 79
+    return:
+      type: netDxf.Tables.DimensionStyleOverrideType
+references:
+- uid: netDxf.Tables.DimensionStyle
+  commentId: T:netDxf.Tables.DimensionStyle
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle
+  nameWithType: DimensionStyle
+  fullName: netDxf.Tables.DimensionStyle
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.DimensionStyleOverrideType
+  commentId: T:netDxf.Tables.DimensionStyleOverrideType
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleOverrideType.html
+  name: DimensionStyleOverrideType
+  nameWithType: DimensionStyleOverrideType
+  fullName: netDxf.Tables.DimensionStyleOverrideType

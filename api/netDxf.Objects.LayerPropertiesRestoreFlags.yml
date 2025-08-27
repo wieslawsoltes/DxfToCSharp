@@ -1,0 +1,395 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags
+  commentId: T:netDxf.Objects.LayerPropertiesRestoreFlags
+  id: LayerPropertiesRestoreFlags
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.LayerPropertiesRestoreFlags.All
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Color
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Frozen
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Hidden
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Linetype
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Lineweight
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Locked
+  - netDxf.Objects.LayerPropertiesRestoreFlags.NewVpFrozen
+  - netDxf.Objects.LayerPropertiesRestoreFlags.None
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Plot
+  - netDxf.Objects.LayerPropertiesRestoreFlags.PlotStyle
+  - netDxf.Objects.LayerPropertiesRestoreFlags.Transparency
+  - netDxf.Objects.LayerPropertiesRestoreFlags.VpFrozen
+  langs:
+  - csharp
+  - vb
+  name: LayerPropertiesRestoreFlags
+  nameWithType: LayerPropertiesRestoreFlags
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags
+  type: Enum
+  source:
+    id: LayerPropertiesRestoreFlags
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 32
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer properties to update when restoring the LayerState to the Layers list and vice versa.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum LayerPropertiesRestoreFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum LayerPropertiesRestoreFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.None
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.None
+  id: None
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: LayerPropertiesRestoreFlags.None
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.None
+  type: Field
+  source:
+    id: None
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: No flags, do not restore anything.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Hidden
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Hidden
+  id: Hidden
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Hidden
+  nameWithType: LayerPropertiesRestoreFlags.Hidden
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Hidden
+  type: Field
+  source:
+    id: Hidden
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer visibility flag On/Off.
+  example: []
+  syntax:
+    content: Hidden = 1
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Frozen
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Frozen
+  id: Frozen
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Frozen
+  nameWithType: LayerPropertiesRestoreFlags.Frozen
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Frozen
+  type: Field
+  source:
+    id: Frozen
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 48
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer freeze flag Frozen/Thawed.
+  example: []
+  syntax:
+    content: Frozen = 2
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Locked
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Locked
+  id: Locked
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Locked
+  nameWithType: LayerPropertiesRestoreFlags.Locked
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Locked
+  type: Field
+  source:
+    id: Locked
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 53
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer lock flag Locked/Unlocked.
+  example: []
+  syntax:
+    content: Locked = 4
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Plot
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Plot
+  id: Plot
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Plot
+  nameWithType: LayerPropertiesRestoreFlags.Plot
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Plot
+  type: Field
+  source:
+    id: Plot
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 58
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer plot flag Plot/NoPlot.
+  example: []
+  syntax:
+    content: Plot = 8
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.NewVpFrozen
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.NewVpFrozen
+  id: NewVpFrozen
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: NewVpFrozen
+  nameWithType: LayerPropertiesRestoreFlags.NewVpFrozen
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.NewVpFrozen
+  type: Field
+  source:
+    id: NewVpFrozen
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 66
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Freeze layer in newly created viewports.
+  remarks: Not implemented. To freeze a layer in a viewport add it to its FrozenLayers list.
+  example: []
+  syntax:
+    content: NewVpFrozen = 16
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.VpFrozen
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.VpFrozen
+  id: VpFrozen
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: VpFrozen
+  nameWithType: LayerPropertiesRestoreFlags.VpFrozen
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.VpFrozen
+  type: Field
+  source:
+    id: VpFrozen
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 74
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Freeze layer in current viewport.
+  remarks: Not implemented. To freeze a layer in a viewport add it to its FrozenLayers list.
+  example: []
+  syntax:
+    content: VpFrozen = 32
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Color
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Color
+  id: Color
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: LayerPropertiesRestoreFlags.Color
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Color
+  type: Field
+  source:
+    id: Color
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 79
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer color.
+  example: []
+  syntax:
+    content: Color = 64
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Linetype
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Linetype
+  id: Linetype
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Linetype
+  nameWithType: LayerPropertiesRestoreFlags.Linetype
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Linetype
+  type: Field
+  source:
+    id: Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 84
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer linetype.
+  example: []
+  syntax:
+    content: Linetype = 128
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Lineweight
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Lineweight
+  id: Lineweight
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Lineweight
+  nameWithType: LayerPropertiesRestoreFlags.Lineweight
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Lineweight
+  type: Field
+  source:
+    id: Lineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 89
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer lineweight.
+  example: []
+  syntax:
+    content: Lineweight = 256
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.Transparency
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.Transparency
+  id: Transparency
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: Transparency
+  nameWithType: LayerPropertiesRestoreFlags.Transparency
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.Transparency
+  type: Field
+  source:
+    id: Transparency
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 94
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer transparency.
+  example: []
+  syntax:
+    content: Transparency = 512
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.PlotStyle
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.PlotStyle
+  id: PlotStyle
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: PlotStyle
+  nameWithType: LayerPropertiesRestoreFlags.PlotStyle
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.PlotStyle
+  type: Field
+  source:
+    id: PlotStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layer plot style.
+  remarks: Not implemented.
+  example: []
+  syntax:
+    content: PlotStyle = 1024
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags.All
+  commentId: F:netDxf.Objects.LayerPropertiesRestoreFlags.All
+  id: All
+  parent: netDxf.Objects.LayerPropertiesRestoreFlags
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: LayerPropertiesRestoreFlags.All
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags.All
+  type: Field
+  source:
+    id: All
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/LayerPropertiesRestoreFlags.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: All flags, restore all layer properties.
+  example: []
+  syntax:
+    content: All = Hidden | Frozen | Locked | Plot | NewVpFrozen | VpFrozen | Color | Linetype | Lineweight | Transparency | PlotStyle
+    return:
+      type: netDxf.Objects.LayerPropertiesRestoreFlags
+    content.vb: All = Hidden Or Frozen Or Locked Or Plot Or NewVpFrozen Or VpFrozen Or Color Or Linetype Or Lineweight Or Transparency Or PlotStyle
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.LayerPropertiesRestoreFlags
+  commentId: T:netDxf.Objects.LayerPropertiesRestoreFlags
+  parent: netDxf.Objects
+  href: netDxf.Objects.LayerPropertiesRestoreFlags.html
+  name: LayerPropertiesRestoreFlags
+  nameWithType: LayerPropertiesRestoreFlags
+  fullName: netDxf.Objects.LayerPropertiesRestoreFlags

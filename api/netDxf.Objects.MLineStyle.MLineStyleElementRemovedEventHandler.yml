@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  commentId: T:netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  id: MLineStyle.MLineStyleElementRemovedEventHandler
+  parent: netDxf.Objects
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: MLineStyle.MLineStyleElementRemovedEventHandler
+  nameWithType: MLineStyle.MLineStyleElementRemovedEventHandler
+  fullName: netDxf.Objects.MLineStyle.MLineStyleElementRemovedEventHandler
+  type: Delegate
+  source:
+    id: MLineStyleElementRemovedEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/MLineStyle.cs
+    startLine: 51
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  syntax:
+    content: public delegate void MLineStyle.MLineStyleElementRemovedEventHandler(MLineStyle sender, MLineStyleElementChangeEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Objects.MLineStyle
+    - id: e
+      type: netDxf.Objects.MLineStyleElementChangeEventArgs
+    content.vb: Public Delegate Sub MLineStyle.MLineStyleElementRemovedEventHandler(sender As MLineStyle, e As MLineStyleElementChangeEventArgs)
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.MLineStyle
+  commentId: T:netDxf.Objects.MLineStyle
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyle.html
+  name: MLineStyle
+  nameWithType: MLineStyle
+  fullName: netDxf.Objects.MLineStyle
+- uid: netDxf.Objects.MLineStyleElementChangeEventArgs
+  commentId: T:netDxf.Objects.MLineStyleElementChangeEventArgs
+  parent: netDxf.Objects
+  href: netDxf.Objects.MLineStyleElementChangeEventArgs.html
+  name: MLineStyleElementChangeEventArgs
+  nameWithType: MLineStyleElementChangeEventArgs
+  fullName: netDxf.Objects.MLineStyleElementChangeEventArgs

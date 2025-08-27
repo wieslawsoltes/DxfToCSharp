@@ -1,0 +1,133 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Collections.ObservableCollection`1.AddItemEventHandler
+  commentId: T:netDxf.Collections.ObservableCollection`1.AddItemEventHandler
+  id: ObservableCollection`1.AddItemEventHandler
+  parent: netDxf.Collections
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ObservableCollection<T>.AddItemEventHandler
+  nameWithType: ObservableCollection<T>.AddItemEventHandler
+  fullName: netDxf.Collections.ObservableCollection<T>.AddItemEventHandler
+  type: Delegate
+  source:
+    id: AddItemEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/ObservableCollection.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  syntax:
+    content: public delegate void ObservableCollection<T>.AddItemEventHandler(ObservableCollection<T> sender, ObservableCollectionEventArgs<T> e)
+    parameters:
+    - id: sender
+      type: netDxf.Collections.ObservableCollection`1
+    - id: e
+      type: netDxf.Collections.ObservableCollectionEventArgs{{T}}
+    content.vb: Public Delegate Sub ObservableCollection(Of T).AddItemEventHandler(sender As ObservableCollection(Of T), e As ObservableCollectionEventArgs(Of T))
+  nameWithType.vb: ObservableCollection(Of T).AddItemEventHandler
+  fullName.vb: netDxf.Collections.ObservableCollection(Of T).AddItemEventHandler
+  name.vb: ObservableCollection(Of T).AddItemEventHandler
+references:
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Collections.ObservableCollection`1
+  commentId: T:netDxf.Collections.ObservableCollection`1
+  parent: netDxf.Collections
+  href: netDxf.Collections.ObservableCollection-1.html
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: netDxf.Collections.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: netDxf.Collections.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableCollection`1
+    name: ObservableCollection
+    href: netDxf.Collections.ObservableCollection-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableCollection`1
+    name: ObservableCollection
+    href: netDxf.Collections.ObservableCollection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Collections.ObservableCollectionEventArgs{{T}}
+  commentId: T:netDxf.Collections.ObservableCollectionEventArgs{`0}
+  parent: netDxf.Collections
+  definition: netDxf.Collections.ObservableCollectionEventArgs`1
+  href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  name: ObservableCollectionEventArgs<T>
+  nameWithType: ObservableCollectionEventArgs<T>
+  fullName: netDxf.Collections.ObservableCollectionEventArgs<T>
+  nameWithType.vb: ObservableCollectionEventArgs(Of T)
+  fullName.vb: netDxf.Collections.ObservableCollectionEventArgs(Of T)
+  name.vb: ObservableCollectionEventArgs(Of T)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableCollectionEventArgs`1
+    name: ObservableCollectionEventArgs
+    href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableCollectionEventArgs`1
+    name: ObservableCollectionEventArgs
+    href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Collections.ObservableCollectionEventArgs`1
+  commentId: T:netDxf.Collections.ObservableCollectionEventArgs`1
+  href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  name: ObservableCollectionEventArgs<T>
+  nameWithType: ObservableCollectionEventArgs<T>
+  fullName: netDxf.Collections.ObservableCollectionEventArgs<T>
+  nameWithType.vb: ObservableCollectionEventArgs(Of T)
+  fullName.vb: netDxf.Collections.ObservableCollectionEventArgs(Of T)
+  name.vb: ObservableCollectionEventArgs(Of T)
+  spec.csharp:
+  - uid: netDxf.Collections.ObservableCollectionEventArgs`1
+    name: ObservableCollectionEventArgs
+    href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.Collections.ObservableCollectionEventArgs`1
+    name: ObservableCollectionEventArgs
+    href: netDxf.Collections.ObservableCollectionEventArgs-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

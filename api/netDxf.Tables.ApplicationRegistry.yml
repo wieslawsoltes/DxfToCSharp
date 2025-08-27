@@ -1,0 +1,1272 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.ApplicationRegistry
+  commentId: T:netDxf.Tables.ApplicationRegistry
+  id: ApplicationRegistry
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.ApplicationRegistry.#ctor(System.String)
+  - netDxf.Tables.ApplicationRegistry.Clone
+  - netDxf.Tables.ApplicationRegistry.Clone(System.String)
+  - netDxf.Tables.ApplicationRegistry.Default
+  - netDxf.Tables.ApplicationRegistry.DefaultName
+  - netDxf.Tables.ApplicationRegistry.GetReferences
+  - netDxf.Tables.ApplicationRegistry.HasReferences
+  - netDxf.Tables.ApplicationRegistry.Owner
+  langs:
+  - csharp
+  - vb
+  name: ApplicationRegistry
+  nameWithType: ApplicationRegistry
+  fullName: netDxf.Tables.ApplicationRegistry
+  type: Class
+  source:
+    id: ApplicationRegistry
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 38
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Represents a registered application name to which the <xref href="netDxf.XData?text=extended+data" data-throw-if-not-resolved="false"></xref> is associated.
+  remarks: >-
+    Do not use the default "ACAD" application registry name for your own extended data, it is sometimes used by AutoCad to store internal data.
+
+    Instead, create your own application registry name and store your extended data there.
+  example: []
+  syntax:
+    content: 'public class ApplicationRegistry : TableObject, ICloneable, IComparable, IComparable<TableObject>, IEquatable<TableObject>'
+    content.vb: Public Class ApplicationRegistry Inherits TableObject Implements ICloneable, IComparable, IComparable(Of TableObject), IEquatable(Of TableObject)
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Tables.TableObject
+  implements:
+  - System.ICloneable
+  - System.IComparable
+  - System.IComparable{netDxf.Tables.TableObject}
+  - System.IEquatable{netDxf.Tables.TableObject}
+  inheritedMembers:
+  - netDxf.Tables.TableObject.NameChanged
+  - netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  - netDxf.Tables.TableObject.Name
+  - netDxf.Tables.TableObject.IsReserved
+  - netDxf.Tables.TableObject.InvalidCharacters
+  - netDxf.Tables.TableObject.IsValidName(System.String)
+  - netDxf.Tables.TableObject.ToString
+  - netDxf.Tables.TableObject.CompareTo(System.Object)
+  - netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  - netDxf.Tables.TableObject.GetHashCode
+  - netDxf.Tables.TableObject.Equals(System.Object)
+  - netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Tables.ApplicationRegistry.DefaultName
+  commentId: F:netDxf.Tables.ApplicationRegistry.DefaultName
+  id: DefaultName
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: DefaultName
+  nameWithType: ApplicationRegistry.DefaultName
+  fullName: netDxf.Tables.ApplicationRegistry.DefaultName
+  type: Field
+  source:
+    id: DefaultName
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 46
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Default application registry name.
+  example: []
+  syntax:
+    content: public const string DefaultName = "ACAD"
+    return:
+      type: System.String
+    content.vb: Public Const DefaultName As String = "ACAD"
+- uid: netDxf.Tables.ApplicationRegistry.Default
+  commentId: P:netDxf.Tables.ApplicationRegistry.Default
+  id: Default
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: ApplicationRegistry.Default
+  fullName: netDxf.Tables.ApplicationRegistry.Default
+  type: Property
+  source:
+    id: Default
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 51
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the default application registry.
+  example: []
+  syntax:
+    content: public static ApplicationRegistry Default { get; }
+    parameters: []
+    return:
+      type: netDxf.Tables.ApplicationRegistry
+    content.vb: Public Shared ReadOnly Property [Default] As ApplicationRegistry
+  overload: netDxf.Tables.ApplicationRegistry.Default*
+- uid: netDxf.Tables.ApplicationRegistry.#ctor(System.String)
+  commentId: M:netDxf.Tables.ApplicationRegistry.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: ApplicationRegistry(string)
+  nameWithType: ApplicationRegistry.ApplicationRegistry(string)
+  fullName: netDxf.Tables.ApplicationRegistry.ApplicationRegistry(string)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 64
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Initializes a new instance of the <code>ApplicationRegistry</code> class.
+  example: []
+  syntax:
+    content: public ApplicationRegistry(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: Application registry name.
+    content.vb: Public Sub New(name As String)
+  overload: netDxf.Tables.ApplicationRegistry.#ctor*
+  nameWithType.vb: ApplicationRegistry.New(String)
+  fullName.vb: netDxf.Tables.ApplicationRegistry.New(String)
+  name.vb: New(String)
+- uid: netDxf.Tables.ApplicationRegistry.Owner
+  commentId: P:netDxf.Tables.ApplicationRegistry.Owner
+  id: Owner
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: ApplicationRegistry.Owner
+  fullName: netDxf.Tables.ApplicationRegistry.Owner
+  type: Property
+  source:
+    id: Owner
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 94
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the owner of the actual DXF object.
+  example: []
+  syntax:
+    content: public ApplicationRegistries Owner { get; }
+    parameters: []
+    return:
+      type: netDxf.Collections.ApplicationRegistries
+    content.vb: Public Property Owner As ApplicationRegistries
+  overload: netDxf.Tables.ApplicationRegistry.Owner*
+- uid: netDxf.Tables.ApplicationRegistry.HasReferences
+  commentId: M:netDxf.Tables.ApplicationRegistry.HasReferences
+  id: HasReferences
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: HasReferences()
+  nameWithType: ApplicationRegistry.HasReferences()
+  fullName: netDxf.Tables.ApplicationRegistry.HasReferences()
+  type: Method
+  source:
+    id: HasReferences
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 114
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Checks if this instance has been referenced by other DxfObjects.
+  remarks: This method returns the same value as the HasReferences method that can be found in the TableObjects class.
+  example: []
+  syntax:
+    content: public override bool HasReferences()
+    return:
+      type: System.Boolean
+      description: >-
+        Returns true if this instance has been referenced by other DxfObjects, false otherwise.
+
+        It will always return false if this instance does not belong to a document.
+    content.vb: Public Overrides Function HasReferences() As Boolean
+  overridden: netDxf.Tables.TableObject.HasReferences
+  overload: netDxf.Tables.ApplicationRegistry.HasReferences*
+- uid: netDxf.Tables.ApplicationRegistry.GetReferences
+  commentId: M:netDxf.Tables.ApplicationRegistry.GetReferences
+  id: GetReferences
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: GetReferences()
+  nameWithType: ApplicationRegistry.GetReferences()
+  fullName: netDxf.Tables.ApplicationRegistry.GetReferences()
+  type: Method
+  source:
+    id: GetReferences
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 129
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the list of DxfObjects referenced by this instance.
+  remarks: This method returns the same list as the GetReferences method that can be found in the TableObjects class.
+  example: []
+  syntax:
+    content: public override List<DxfObjectReference> GetReferences()
+    return:
+      type: System.Collections.Generic.List{netDxf.DxfObjectReference}
+      description: >-
+        A list of DxfObjectReference that contains the DxfObject referenced by this instance and the number of times it does.
+
+        It will return null if this instance does not belong to a document.
+    content.vb: Public Overrides Function GetReferences() As List(Of DxfObjectReference)
+  overridden: netDxf.Tables.TableObject.GetReferences
+  overload: netDxf.Tables.ApplicationRegistry.GetReferences*
+- uid: netDxf.Tables.ApplicationRegistry.Clone(System.String)
+  commentId: M:netDxf.Tables.ApplicationRegistry.Clone(System.String)
+  id: Clone(System.String)
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: Clone(string)
+  nameWithType: ApplicationRegistry.Clone(string)
+  fullName: netDxf.Tables.ApplicationRegistry.Clone(string)
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 139
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Creates a new ApplicationRegistry that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override TableObject Clone(string newName)
+    parameters:
+    - id: newName
+      type: System.String
+      description: ApplicationRegistry name of the copy.
+    return:
+      type: netDxf.Tables.TableObject
+      description: A new ApplicationRegistry that is a copy of this instance.
+    content.vb: Public Overrides Function Clone(newName As String) As TableObject
+  overridden: netDxf.Tables.TableObject.Clone(System.String)
+  overload: netDxf.Tables.ApplicationRegistry.Clone*
+  nameWithType.vb: ApplicationRegistry.Clone(String)
+  fullName.vb: netDxf.Tables.ApplicationRegistry.Clone(String)
+  name.vb: Clone(String)
+- uid: netDxf.Tables.ApplicationRegistry.Clone
+  commentId: M:netDxf.Tables.ApplicationRegistry.Clone
+  id: Clone
+  parent: netDxf.Tables.ApplicationRegistry
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: ApplicationRegistry.Clone()
+  fullName: netDxf.Tables.ApplicationRegistry.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/ApplicationRegistry.cs
+    startLine: 173
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Creates a new ApplicationRegistry that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new ApplicationRegistry that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Tables.TableObject.Clone
+  overload: netDxf.Tables.ApplicationRegistry.Clone*
+references:
+- uid: netDxf.XData
+  commentId: T:netDxf.XData
+  parent: netDxf
+  href: netDxf.XData.html
+  name: XData
+  nameWithType: XData
+  fullName: netDxf.XData
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: netDxf.Tables.TableObject
+  commentId: T:netDxf.Tables.TableObject
+  parent: netDxf.Tables
+  href: netDxf.Tables.TableObject.html
+  name: TableObject
+  nameWithType: TableObject
+  fullName: netDxf.Tables.TableObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.IComparable
+  commentId: T:System.IComparable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  name: IComparable
+  nameWithType: IComparable
+  fullName: System.IComparable
+- uid: System.IComparable{netDxf.Tables.TableObject}
+  commentId: T:System.IComparable{netDxf.Tables.TableObject}
+  parent: System
+  definition: System.IComparable`1
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<TableObject>
+  nameWithType: IComparable<TableObject>
+  fullName: System.IComparable<netDxf.Tables.TableObject>
+  nameWithType.vb: IComparable(Of TableObject)
+  fullName.vb: System.IComparable(Of netDxf.Tables.TableObject)
+  name.vb: IComparable(Of TableObject)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: System.IEquatable{netDxf.Tables.TableObject}
+  commentId: T:System.IEquatable{netDxf.Tables.TableObject}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<TableObject>
+  nameWithType: IEquatable<TableObject>
+  fullName: System.IEquatable<netDxf.Tables.TableObject>
+  nameWithType.vb: IEquatable(Of TableObject)
+  fullName.vb: System.IEquatable(Of netDxf.Tables.TableObject)
+  name.vb: IEquatable(Of TableObject)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.Tables.TableObject.NameChanged
+  commentId: E:netDxf.Tables.TableObject.NameChanged
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_NameChanged
+  name: NameChanged
+  nameWithType: TableObject.NameChanged
+  fullName: netDxf.Tables.TableObject.NameChanged
+- uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  commentId: M:netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  name: OnNameChangedEvent(string, string)
+  nameWithType: TableObject.OnNameChangedEvent(string, string)
+  fullName: netDxf.Tables.TableObject.OnNameChangedEvent(string, string)
+  nameWithType.vb: TableObject.OnNameChangedEvent(String, String)
+  fullName.vb: netDxf.Tables.TableObject.OnNameChangedEvent(String, String)
+  name.vb: OnNameChangedEvent(String, String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+    name: OnNameChangedEvent
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+    name: OnNameChangedEvent
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.TableObject.Name
+  commentId: P:netDxf.Tables.TableObject.Name
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Name
+  name: Name
+  nameWithType: TableObject.Name
+  fullName: netDxf.Tables.TableObject.Name
+- uid: netDxf.Tables.TableObject.IsReserved
+  commentId: P:netDxf.Tables.TableObject.IsReserved
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsReserved
+  name: IsReserved
+  nameWithType: TableObject.IsReserved
+  fullName: netDxf.Tables.TableObject.IsReserved
+- uid: netDxf.Tables.TableObject.InvalidCharacters
+  commentId: P:netDxf.Tables.TableObject.InvalidCharacters
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_InvalidCharacters
+  name: InvalidCharacters
+  nameWithType: TableObject.InvalidCharacters
+  fullName: netDxf.Tables.TableObject.InvalidCharacters
+- uid: netDxf.Tables.TableObject.IsValidName(System.String)
+  commentId: M:netDxf.Tables.TableObject.IsValidName(System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  name: IsValidName(string)
+  nameWithType: TableObject.IsValidName(string)
+  fullName: netDxf.Tables.TableObject.IsValidName(string)
+  nameWithType.vb: TableObject.IsValidName(String)
+  fullName.vb: netDxf.Tables.TableObject.IsValidName(String)
+  name.vb: IsValidName(String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.IsValidName(System.String)
+    name: IsValidName
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.IsValidName(System.String)
+    name: IsValidName
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.TableObject.ToString
+  commentId: M:netDxf.Tables.TableObject.ToString
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  name: ToString()
+  nameWithType: TableObject.ToString()
+  fullName: netDxf.Tables.TableObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.ToString
+    name: ToString
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.ToString
+    name: ToString
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+  commentId: M:netDxf.Tables.TableObject.CompareTo(System.Object)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  name: CompareTo(object)
+  nameWithType: TableObject.CompareTo(object)
+  fullName: netDxf.Tables.TableObject.CompareTo(object)
+  nameWithType.vb: TableObject.CompareTo(Object)
+  fullName.vb: netDxf.Tables.TableObject.CompareTo(Object)
+  name.vb: CompareTo(Object)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  commentId: M:netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  name: CompareTo(TableObject)
+  nameWithType: TableObject.CompareTo(TableObject)
+  fullName: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.Tables.TableObject.GetHashCode
+  commentId: M:netDxf.Tables.TableObject.GetHashCode
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  name: GetHashCode()
+  nameWithType: TableObject.GetHashCode()
+  fullName: netDxf.Tables.TableObject.GetHashCode()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.GetHashCode
+    name: GetHashCode
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.GetHashCode
+    name: GetHashCode
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  - name: (
+  - name: )
+- uid: netDxf.Tables.TableObject.Equals(System.Object)
+  commentId: M:netDxf.Tables.TableObject.Equals(System.Object)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  name: Equals(object)
+  nameWithType: TableObject.Equals(object)
+  fullName: netDxf.Tables.TableObject.Equals(object)
+  nameWithType.vb: TableObject.Equals(Object)
+  fullName.vb: netDxf.Tables.TableObject.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Equals(System.Object)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Equals(System.Object)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  commentId: M:netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  name: Equals(TableObject)
+  nameWithType: TableObject.Equals(TableObject)
+  fullName: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Tables.ApplicationRegistry.Default*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.Default
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry_Default
+  name: Default
+  nameWithType: ApplicationRegistry.Default
+  fullName: netDxf.Tables.ApplicationRegistry.Default
+- uid: netDxf.Tables.ApplicationRegistry
+  commentId: T:netDxf.Tables.ApplicationRegistry
+  parent: netDxf.Tables
+  href: netDxf.Tables.ApplicationRegistry.html
+  name: ApplicationRegistry
+  nameWithType: ApplicationRegistry
+  fullName: netDxf.Tables.ApplicationRegistry
+- uid: netDxf.Tables.ApplicationRegistry.#ctor*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.#ctor
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry__ctor_System_String_
+  name: ApplicationRegistry
+  nameWithType: ApplicationRegistry.ApplicationRegistry
+  fullName: netDxf.Tables.ApplicationRegistry.ApplicationRegistry
+  nameWithType.vb: ApplicationRegistry.New
+  fullName.vb: netDxf.Tables.ApplicationRegistry.New
+  name.vb: New
+- uid: netDxf.Tables.ApplicationRegistry.Owner*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.Owner
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry_Owner
+  name: Owner
+  nameWithType: ApplicationRegistry.Owner
+  fullName: netDxf.Tables.ApplicationRegistry.Owner
+- uid: netDxf.Collections.ApplicationRegistries
+  commentId: T:netDxf.Collections.ApplicationRegistries
+  parent: netDxf.Collections
+  href: netDxf.Collections.ApplicationRegistries.html
+  name: ApplicationRegistries
+  nameWithType: ApplicationRegistries
+  fullName: netDxf.Collections.ApplicationRegistries
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Tables.TableObject.HasReferences
+  commentId: M:netDxf.Tables.TableObject.HasReferences
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  name: HasReferences()
+  nameWithType: TableObject.HasReferences()
+  fullName: netDxf.Tables.TableObject.HasReferences()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.HasReferences
+    name: HasReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.HasReferences
+    name: HasReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  - name: (
+  - name: )
+- uid: netDxf.Tables.ApplicationRegistry.HasReferences*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.HasReferences
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry_HasReferences
+  name: HasReferences
+  nameWithType: ApplicationRegistry.HasReferences
+  fullName: netDxf.Tables.ApplicationRegistry.HasReferences
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Tables.TableObject.GetReferences
+  commentId: M:netDxf.Tables.TableObject.GetReferences
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  name: GetReferences()
+  nameWithType: TableObject.GetReferences()
+  fullName: netDxf.Tables.TableObject.GetReferences()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.GetReferences
+    name: GetReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.GetReferences
+    name: GetReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  - name: (
+  - name: )
+- uid: netDxf.Tables.ApplicationRegistry.GetReferences*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.GetReferences
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry_GetReferences
+  name: GetReferences
+  nameWithType: ApplicationRegistry.GetReferences
+  fullName: netDxf.Tables.ApplicationRegistry.GetReferences
+- uid: System.Collections.Generic.List{netDxf.DxfObjectReference}
+  commentId: T:System.Collections.Generic.List{netDxf.DxfObjectReference}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DxfObjectReference>
+  nameWithType: List<DxfObjectReference>
+  fullName: System.Collections.Generic.List<netDxf.DxfObjectReference>
+  nameWithType.vb: List(Of DxfObjectReference)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.DxfObjectReference)
+  name.vb: List(Of DxfObjectReference)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.DxfObjectReference
+    name: DxfObjectReference
+    href: netDxf.DxfObjectReference.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.DxfObjectReference
+    name: DxfObjectReference
+    href: netDxf.DxfObjectReference.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Tables.TableObject.Clone(System.String)
+  commentId: M:netDxf.Tables.TableObject.Clone(System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  name: Clone(string)
+  nameWithType: TableObject.Clone(string)
+  fullName: netDxf.Tables.TableObject.Clone(string)
+  nameWithType.vb: TableObject.Clone(String)
+  fullName.vb: netDxf.Tables.TableObject.Clone(String)
+  name.vb: Clone(String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Clone(System.String)
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Clone(System.String)
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.ApplicationRegistry.Clone*
+  commentId: Overload:netDxf.Tables.ApplicationRegistry.Clone
+  href: netDxf.Tables.ApplicationRegistry.html#netDxf_Tables_ApplicationRegistry_Clone_System_String_
+  name: Clone
+  nameWithType: ApplicationRegistry.Clone
+  fullName: netDxf.Tables.ApplicationRegistry.Clone
+- uid: netDxf.Tables.TableObject.Clone
+  commentId: M:netDxf.Tables.TableObject.Clone
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  name: Clone()
+  nameWithType: TableObject.Clone()
+  fullName: netDxf.Tables.TableObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Clone
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Clone
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  - name: (
+  - name: )

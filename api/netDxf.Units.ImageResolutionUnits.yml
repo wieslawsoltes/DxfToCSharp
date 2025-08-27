@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Units.ImageResolutionUnits
+  commentId: T:netDxf.Units.ImageResolutionUnits
+  id: ImageResolutionUnits
+  parent: netDxf.Units
+  children:
+  - netDxf.Units.ImageResolutionUnits.Centimeters
+  - netDxf.Units.ImageResolutionUnits.Inches
+  - netDxf.Units.ImageResolutionUnits.Unitless
+  langs:
+  - csharp
+  - vb
+  name: ImageResolutionUnits
+  nameWithType: ImageResolutionUnits
+  fullName: netDxf.Units.ImageResolutionUnits
+  type: Enum
+  source:
+    id: ImageResolutionUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageResolutionUnits.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Defines the image resolution units.
+  example: []
+  syntax:
+    content: public enum ImageResolutionUnits
+    content.vb: Public Enum ImageResolutionUnits
+- uid: netDxf.Units.ImageResolutionUnits.Unitless
+  commentId: F:netDxf.Units.ImageResolutionUnits.Unitless
+  id: Unitless
+  parent: netDxf.Units.ImageResolutionUnits
+  langs:
+  - csharp
+  - vb
+  name: Unitless
+  nameWithType: ImageResolutionUnits.Unitless
+  fullName: netDxf.Units.ImageResolutionUnits.Unitless
+  type: Field
+  source:
+    id: Unitless
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageResolutionUnits.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: No units.
+  example: []
+  syntax:
+    content: Unitless = 0
+    return:
+      type: netDxf.Units.ImageResolutionUnits
+- uid: netDxf.Units.ImageResolutionUnits.Centimeters
+  commentId: F:netDxf.Units.ImageResolutionUnits.Centimeters
+  id: Centimeters
+  parent: netDxf.Units.ImageResolutionUnits
+  langs:
+  - csharp
+  - vb
+  name: Centimeters
+  nameWithType: ImageResolutionUnits.Centimeters
+  fullName: netDxf.Units.ImageResolutionUnits.Centimeters
+  type: Field
+  source:
+    id: Centimeters
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageResolutionUnits.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Centimeters.
+  example: []
+  syntax:
+    content: Centimeters = 2
+    return:
+      type: netDxf.Units.ImageResolutionUnits
+- uid: netDxf.Units.ImageResolutionUnits.Inches
+  commentId: F:netDxf.Units.ImageResolutionUnits.Inches
+  id: Inches
+  parent: netDxf.Units.ImageResolutionUnits
+  langs:
+  - csharp
+  - vb
+  name: Inches
+  nameWithType: ImageResolutionUnits.Inches
+  fullName: netDxf.Units.ImageResolutionUnits.Inches
+  type: Field
+  source:
+    id: Inches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Units/ImageResolutionUnits.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Units
+  summary: Inches.
+  example: []
+  syntax:
+    content: Inches = 5
+    return:
+      type: netDxf.Units.ImageResolutionUnits
+references:
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Units.ImageResolutionUnits
+  commentId: T:netDxf.Units.ImageResolutionUnits
+  parent: netDxf.Units
+  href: netDxf.Units.ImageResolutionUnits.html
+  name: ImageResolutionUnits
+  nameWithType: ImageResolutionUnits
+  fullName: netDxf.Units.ImageResolutionUnits

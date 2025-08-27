@@ -1,0 +1,66 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Collections.DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  commentId: T:netDxf.Collections.DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  id: DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  parent: netDxf.Collections
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  nameWithType: DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  fullName: netDxf.Collections.DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler
+  type: Delegate
+  source:
+    id: BeforeRemoveItemEventHandler
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Collections/DimensionStyleOverrideDictionary.cs
+    startLine: 67
+  assemblies:
+  - netDxf
+  namespace: netDxf.Collections
+  syntax:
+    content: public delegate void DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler(DimensionStyleOverrideDictionary sender, DimensionStyleOverrideDictionaryEventArgs e)
+    parameters:
+    - id: sender
+      type: netDxf.Collections.DimensionStyleOverrideDictionary
+    - id: e
+      type: netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs
+    content.vb: Public Delegate Sub DimensionStyleOverrideDictionary.BeforeRemoveItemEventHandler(sender As DimensionStyleOverrideDictionary, e As DimensionStyleOverrideDictionaryEventArgs)
+references:
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Collections.DimensionStyleOverrideDictionary
+  commentId: T:netDxf.Collections.DimensionStyleOverrideDictionary
+  parent: netDxf.Collections
+  href: netDxf.Collections.DimensionStyleOverrideDictionary.html
+  name: DimensionStyleOverrideDictionary
+  nameWithType: DimensionStyleOverrideDictionary
+  fullName: netDxf.Collections.DimensionStyleOverrideDictionary
+- uid: netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs
+  commentId: T:netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs
+  parent: netDxf.Collections
+  href: netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs.html
+  name: DimensionStyleOverrideDictionaryEventArgs
+  nameWithType: DimensionStyleOverrideDictionaryEventArgs
+  fullName: netDxf.Collections.DimensionStyleOverrideDictionaryEventArgs

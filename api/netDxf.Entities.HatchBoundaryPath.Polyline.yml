@@ -1,0 +1,853 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline
+  commentId: T:netDxf.Entities.HatchBoundaryPath.Polyline
+  id: HatchBoundaryPath.Polyline
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.HatchBoundaryPath.Polyline.#ctor
+  - netDxf.Entities.HatchBoundaryPath.Polyline.#ctor(netDxf.Entities.EntityObject)
+  - netDxf.Entities.HatchBoundaryPath.Polyline.Clone
+  - netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom(netDxf.Entities.EntityObject)
+  - netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo
+  - netDxf.Entities.HatchBoundaryPath.Polyline.Explode
+  - netDxf.Entities.HatchBoundaryPath.Polyline.IsClosed
+  - netDxf.Entities.HatchBoundaryPath.Polyline.Vertexes
+  langs:
+  - csharp
+  - vb
+  name: HatchBoundaryPath.Polyline
+  nameWithType: HatchBoundaryPath.Polyline
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline
+  type: Class
+  source:
+    id: Polyline
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 91
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a polyline edge of a HatchBoundaryPath.
+  example: []
+  syntax:
+    content: 'public class HatchBoundaryPath.Polyline : HatchBoundaryPath.Edge, ICloneable'
+    content.vb: Public Class HatchBoundaryPath.Polyline Inherits HatchBoundaryPath.Edge Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.Entities.HatchBoundaryPath.Edge
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.HatchBoundaryPath.Edge.Type
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.Vertexes
+  commentId: F:netDxf.Entities.HatchBoundaryPath.Polyline.Vertexes
+  id: Vertexes
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: Vertexes
+  nameWithType: HatchBoundaryPath.Polyline.Vertexes
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Vertexes
+  type: Field
+  source:
+    id: Vertexes
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 100
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the list of polyline vertexes.
+  remarks: The position of the vertex is defined by the X and Y coordinates, the Z value represents the bulge at that vertex.
+  example: []
+  syntax:
+    content: public Vector3[] Vertexes
+    return:
+      type: netDxf.Vector3[]
+    content.vb: Public Vertexes As Vector3()
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.IsClosed
+  commentId: F:netDxf.Entities.HatchBoundaryPath.Polyline.IsClosed
+  id: IsClosed
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: IsClosed
+  nameWithType: HatchBoundaryPath.Polyline.IsClosed
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.IsClosed
+  type: Field
+  source:
+    id: IsClosed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 105
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets if the polyline is closed.
+  example: []
+  syntax:
+    content: public bool IsClosed
+    return:
+      type: System.Boolean
+    content.vb: Public IsClosed As Boolean
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.#ctor
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.#ctor
+  id: '#ctor'
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: Polyline()
+  nameWithType: HatchBoundaryPath.Polyline.Polyline()
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Polyline()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 110
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>HatchBoundaryPath.Polyline</code> class.
+  example: []
+  syntax:
+    content: public Polyline()
+    content.vb: Public Sub New()
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.#ctor*
+  nameWithType.vb: HatchBoundaryPath.Polyline.New()
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.Polyline.New()
+  name.vb: New()
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.#ctor(netDxf.Entities.EntityObject)
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.#ctor(netDxf.Entities.EntityObject)
+  id: '#ctor(netDxf.Entities.EntityObject)'
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: Polyline(EntityObject)
+  nameWithType: HatchBoundaryPath.Polyline.Polyline(EntityObject)
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Polyline(netDxf.Entities.EntityObject)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 119
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>HatchBoundaryPath.Polyline</code> class.
+  example: []
+  syntax:
+    content: public Polyline(EntityObject entity)
+    parameters:
+    - id: entity
+      type: netDxf.Entities.EntityObject
+      description: <xref href="netDxf.Entities.EntityObject?text=Entity" data-throw-if-not-resolved="false"></xref> that represents the edge.
+    content.vb: Public Sub New(entity As EntityObject)
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.#ctor*
+  nameWithType.vb: HatchBoundaryPath.Polyline.New(EntityObject)
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.Polyline.New(netDxf.Entities.EntityObject)
+  name.vb: New(EntityObject)
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.Explode
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.Explode
+  id: Explode
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: Explode()
+  nameWithType: HatchBoundaryPath.Polyline.Explode()
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Explode()
+  type: Method
+  source:
+    id: Explode
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 158
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Decompose the actual polyline in its internal entities, <xref href="netDxf.Entities.HatchBoundaryPath.Line?text=lines" data-throw-if-not-resolved="false"></xref> and <xref href="netDxf.Entities.HatchBoundaryPath.Arc?text=arcs" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public List<HatchBoundaryPath.Edge> Explode()
+    return:
+      type: System.Collections.Generic.List{netDxf.Entities.HatchBoundaryPath.Edge}
+      description: A list of <xref href="netDxf.Entities.HatchBoundaryPath.Line?text=lines" data-throw-if-not-resolved="false"></xref> and <xref href="netDxf.Entities.HatchBoundaryPath.Arc?text=arcs" data-throw-if-not-resolved="false"></xref> that made up the polyline.
+    content.vb: Public Function Explode() As List(Of HatchBoundaryPath.Edge)
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.Explode*
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom(netDxf.Entities.EntityObject)
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom(netDxf.Entities.EntityObject)
+  id: ConvertFrom(netDxf.Entities.EntityObject)
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: ConvertFrom(EntityObject)
+  nameWithType: HatchBoundaryPath.Polyline.ConvertFrom(EntityObject)
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom(netDxf.Entities.EntityObject)
+  type: Method
+  source:
+    id: ConvertFrom
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 237
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>HatchBoundaryPath.Polyline</code> class.
+  example: []
+  syntax:
+    content: public static HatchBoundaryPath.Polyline ConvertFrom(EntityObject entity)
+    parameters:
+    - id: entity
+      type: netDxf.Entities.EntityObject
+      description: <xref href="netDxf.Entities.EntityObject?text=Entity" data-throw-if-not-resolved="false"></xref> that represents the edge.
+    return:
+      type: netDxf.Entities.HatchBoundaryPath.Polyline
+    content.vb: Public Shared Function ConvertFrom(entity As EntityObject) As HatchBoundaryPath.Polyline
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom*
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo
+  id: ConvertTo
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: ConvertTo()
+  nameWithType: HatchBoundaryPath.Polyline.ConvertTo()
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo()
+  type: Method
+  source:
+    id: ConvertTo
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 246
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the actual edge to its entity equivalent.
+  example: []
+  syntax:
+    content: public override EntityObject ConvertTo()
+    return:
+      type: netDxf.Entities.EntityObject
+      description: An <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref> equivalent to the actual edge.
+    content.vb: Public Overrides Function ConvertTo() As EntityObject
+  overridden: netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo*
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.Clone
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Polyline.Clone
+  id: Clone
+  parent: netDxf.Entities.HatchBoundaryPath.Polyline
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: HatchBoundaryPath.Polyline.Clone()
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/HatchBoundaryPath.cs
+    startLine: 260
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Clones the actual edge.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A copy of the actual edge.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.HatchBoundaryPath.Edge.Clone
+  overload: netDxf.Entities.HatchBoundaryPath.Polyline.Clone*
+references:
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.Entities.HatchBoundaryPath.Edge
+  commentId: T:netDxf.Entities.HatchBoundaryPath.Edge
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPath.html
+  name: HatchBoundaryPath.Edge
+  nameWithType: HatchBoundaryPath.Edge
+  fullName: netDxf.Entities.HatchBoundaryPath.Edge
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.HatchBoundaryPath.Edge.Type
+  commentId: F:netDxf.Entities.HatchBoundaryPath.Edge.Type
+  parent: netDxf.Entities.HatchBoundaryPath.Edge
+  href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_Type
+  name: Type
+  nameWithType: HatchBoundaryPath.Edge.Type
+  fullName: netDxf.Entities.HatchBoundaryPath.Edge.Type
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Vector3[]
+  isExternal: true
+  href: netDxf.Vector3.html
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: netDxf.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: netDxf.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.#ctor*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Polyline.#ctor
+  href: netDxf.Entities.HatchBoundaryPath.Polyline.html#netDxf_Entities_HatchBoundaryPath_Polyline__ctor
+  name: Polyline
+  nameWithType: HatchBoundaryPath.Polyline.Polyline
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Polyline
+  nameWithType.vb: HatchBoundaryPath.Polyline.New
+  fullName.vb: netDxf.Entities.HatchBoundaryPath.Polyline.New
+  name.vb: New
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities.HatchBoundaryPath.Line
+  commentId: T:netDxf.Entities.HatchBoundaryPath.Line
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPath.html
+  name: HatchBoundaryPath.Line
+  nameWithType: HatchBoundaryPath.Line
+  fullName: netDxf.Entities.HatchBoundaryPath.Line
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Line
+    name: Line
+    href: netDxf.Entities.HatchBoundaryPath.Line.html
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Line
+    name: Line
+    href: netDxf.Entities.HatchBoundaryPath.Line.html
+- uid: netDxf.Entities.HatchBoundaryPath.Arc
+  commentId: T:netDxf.Entities.HatchBoundaryPath.Arc
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPath.html
+  name: HatchBoundaryPath.Arc
+  nameWithType: HatchBoundaryPath.Arc
+  fullName: netDxf.Entities.HatchBoundaryPath.Arc
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Arc
+    name: Arc
+    href: netDxf.Entities.HatchBoundaryPath.Arc.html
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Arc
+    name: Arc
+    href: netDxf.Entities.HatchBoundaryPath.Arc.html
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.Explode*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Polyline.Explode
+  href: netDxf.Entities.HatchBoundaryPath.Polyline.html#netDxf_Entities_HatchBoundaryPath_Polyline_Explode
+  name: Explode
+  nameWithType: HatchBoundaryPath.Polyline.Explode
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Explode
+- uid: System.Collections.Generic.List{netDxf.Entities.HatchBoundaryPath.Edge}
+  commentId: T:System.Collections.Generic.List{netDxf.Entities.HatchBoundaryPath.Edge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<HatchBoundaryPath.Edge>
+  nameWithType: List<HatchBoundaryPath.Edge>
+  fullName: System.Collections.Generic.List<netDxf.Entities.HatchBoundaryPath.Edge>
+  nameWithType.vb: List(Of HatchBoundaryPath.Edge)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Entities.HatchBoundaryPath.Edge)
+  name.vb: List(Of HatchBoundaryPath.Edge)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge
+    name: Edge
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom
+  href: netDxf.Entities.HatchBoundaryPath.Polyline.html#netDxf_Entities_HatchBoundaryPath_Polyline_ConvertFrom_netDxf_Entities_EntityObject_
+  name: ConvertFrom
+  nameWithType: HatchBoundaryPath.Polyline.ConvertFrom
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertFrom
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline
+  commentId: T:netDxf.Entities.HatchBoundaryPath.Polyline
+  parent: netDxf.Entities
+  href: netDxf.Entities.HatchBoundaryPath.html
+  name: HatchBoundaryPath.Polyline
+  nameWithType: HatchBoundaryPath.Polyline
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Polyline
+    name: Polyline
+    href: netDxf.Entities.HatchBoundaryPath.Polyline.html
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath
+    name: HatchBoundaryPath
+    href: netDxf.Entities.HatchBoundaryPath.html
+  - name: .
+  - uid: netDxf.Entities.HatchBoundaryPath.Polyline
+    name: Polyline
+    href: netDxf.Entities.HatchBoundaryPath.Polyline.html
+- uid: netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo
+  parent: netDxf.Entities.HatchBoundaryPath.Edge
+  href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_ConvertTo
+  name: ConvertTo()
+  nameWithType: HatchBoundaryPath.Edge.ConvertTo()
+  fullName: netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo()
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo
+    name: ConvertTo
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_ConvertTo
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge.ConvertTo
+    name: ConvertTo
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_ConvertTo
+  - name: (
+  - name: )
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo
+  href: netDxf.Entities.HatchBoundaryPath.Polyline.html#netDxf_Entities_HatchBoundaryPath_Polyline_ConvertTo
+  name: ConvertTo
+  nameWithType: HatchBoundaryPath.Polyline.ConvertTo
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.ConvertTo
+- uid: netDxf.Entities.HatchBoundaryPath.Edge.Clone
+  commentId: M:netDxf.Entities.HatchBoundaryPath.Edge.Clone
+  parent: netDxf.Entities.HatchBoundaryPath.Edge
+  href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_Clone
+  name: Clone()
+  nameWithType: HatchBoundaryPath.Edge.Clone()
+  fullName: netDxf.Entities.HatchBoundaryPath.Edge.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge.Clone
+    name: Clone
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.HatchBoundaryPath.Edge.Clone
+    name: Clone
+    href: netDxf.Entities.HatchBoundaryPath.Edge.html#netDxf_Entities_HatchBoundaryPath_Edge_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.HatchBoundaryPath.Polyline.Clone*
+  commentId: Overload:netDxf.Entities.HatchBoundaryPath.Polyline.Clone
+  href: netDxf.Entities.HatchBoundaryPath.Polyline.html#netDxf_Entities_HatchBoundaryPath_Polyline_Clone
+  name: Clone
+  nameWithType: HatchBoundaryPath.Polyline.Clone
+  fullName: netDxf.Entities.HatchBoundaryPath.Polyline.Clone

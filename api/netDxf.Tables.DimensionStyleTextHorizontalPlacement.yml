@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  commentId: T:netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  id: DimensionStyleTextHorizontalPlacement
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLine2
+  - netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLines1
+  - netDxf.Tables.DimensionStyleTextHorizontalPlacement.Centered
+  - netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine1
+  - netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine2
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleTextHorizontalPlacement
+  nameWithType: DimensionStyleTextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  type: Enum
+  source:
+    id: DimensionStyleTextHorizontalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the vertical placement of dimension text in relation to the dimension line.
+  example: []
+  syntax:
+    content: public enum DimensionStyleTextHorizontalPlacement
+    content.vb: Public Enum DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement.Centered
+  commentId: F:netDxf.Tables.DimensionStyleTextHorizontalPlacement.Centered
+  id: Centered
+  parent: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  langs:
+  - csharp
+  - vb
+  name: Centered
+  nameWithType: DimensionStyleTextHorizontalPlacement.Centered
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement.Centered
+  type: Field
+  source:
+    id: Centered
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Centers the dimension text along the dimension line between the extension lines.
+  example: []
+  syntax:
+    content: Centered = 0
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLines1
+  commentId: F:netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLines1
+  id: AtExtLines1
+  parent: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  langs:
+  - csharp
+  - vb
+  name: AtExtLines1
+  nameWithType: DimensionStyleTextHorizontalPlacement.AtExtLines1
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLines1
+  type: Field
+  source:
+    id: AtExtLines1
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Left-justifies the text with the first extension line along the dimension line.
+  example: []
+  syntax:
+    content: AtExtLines1 = 1
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLine2
+  commentId: F:netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLine2
+  id: AtExtLine2
+  parent: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  langs:
+  - csharp
+  - vb
+  name: AtExtLine2
+  nameWithType: DimensionStyleTextHorizontalPlacement.AtExtLine2
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement.AtExtLine2
+  type: Field
+  source:
+    id: AtExtLine2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Right-justifies the text with the second extension line along the dimension line.
+  example: []
+  syntax:
+    content: AtExtLine2 = 2
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine1
+  commentId: F:netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine1
+  id: OverExtLine1
+  parent: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  langs:
+  - csharp
+  - vb
+  name: OverExtLine1
+  nameWithType: DimensionStyleTextHorizontalPlacement.OverExtLine1
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine1
+  type: Field
+  source:
+    id: OverExtLine1
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Positions the text over or along the first extension line.
+  example: []
+  syntax:
+    content: OverExtLine1 = 3
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine2
+  commentId: F:netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine2
+  id: OverExtLine2
+  parent: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  langs:
+  - csharp
+  - vb
+  name: OverExtLine2
+  nameWithType: DimensionStyleTextHorizontalPlacement.OverExtLine2
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement.OverExtLine2
+  type: Field
+  source:
+    id: OverExtLine2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextHorizontalPlacement.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Positions the text over or along the second extension line.
+  example: []
+  syntax:
+    content: OverExtLine2 = 4
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  commentId: T:netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTextHorizontalPlacement.html
+  name: DimensionStyleTextHorizontalPlacement
+  nameWithType: DimensionStyleTextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement

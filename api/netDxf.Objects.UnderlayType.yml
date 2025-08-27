@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.UnderlayType
+  commentId: T:netDxf.Objects.UnderlayType
+  id: UnderlayType
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.UnderlayType.DGN
+  - netDxf.Objects.UnderlayType.DWF
+  - netDxf.Objects.UnderlayType.PDF
+  langs:
+  - csharp
+  - vb
+  name: UnderlayType
+  nameWithType: UnderlayType
+  fullName: netDxf.Objects.UnderlayType
+  type: Enum
+  source:
+    id: UnderlayType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/UnderlayType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Defines the different underlay documents available.
+  example: []
+  syntax:
+    content: public enum UnderlayType
+    content.vb: Public Enum UnderlayType
+- uid: netDxf.Objects.UnderlayType.DGN
+  commentId: F:netDxf.Objects.UnderlayType.DGN
+  id: DGN
+  parent: netDxf.Objects.UnderlayType
+  langs:
+  - csharp
+  - vb
+  name: DGN
+  nameWithType: UnderlayType.DGN
+  fullName: netDxf.Objects.UnderlayType.DGN
+  type: Field
+  source:
+    id: DGN
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/UnderlayType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: DGN
+  example: []
+  syntax:
+    content: DGN = 0
+    return:
+      type: netDxf.Objects.UnderlayType
+- uid: netDxf.Objects.UnderlayType.DWF
+  commentId: F:netDxf.Objects.UnderlayType.DWF
+  id: DWF
+  parent: netDxf.Objects.UnderlayType
+  langs:
+  - csharp
+  - vb
+  name: DWF
+  nameWithType: UnderlayType.DWF
+  fullName: netDxf.Objects.UnderlayType.DWF
+  type: Field
+  source:
+    id: DWF
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/UnderlayType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: DWF
+  example: []
+  syntax:
+    content: DWF = 1
+    return:
+      type: netDxf.Objects.UnderlayType
+- uid: netDxf.Objects.UnderlayType.PDF
+  commentId: F:netDxf.Objects.UnderlayType.PDF
+  id: PDF
+  parent: netDxf.Objects.UnderlayType
+  langs:
+  - csharp
+  - vb
+  name: PDF
+  nameWithType: UnderlayType.PDF
+  fullName: netDxf.Objects.UnderlayType.PDF
+  type: Field
+  source:
+    id: PDF
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/UnderlayType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: PDF
+  example: []
+  syntax:
+    content: PDF = 2
+    return:
+      type: netDxf.Objects.UnderlayType
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.UnderlayType
+  commentId: T:netDxf.Objects.UnderlayType
+  parent: netDxf.Objects
+  href: netDxf.Objects.UnderlayType.html
+  name: UnderlayType
+  nameWithType: UnderlayType
+  fullName: netDxf.Objects.UnderlayType

@@ -1,0 +1,3829 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyle
+  commentId: T:netDxf.Tables.DimensionStyle
+  id: DimensionStyle
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyle.#ctor(System.String)
+  - netDxf.Tables.DimensionStyle.AlternateUnits
+  - netDxf.Tables.DimensionStyle.AngularPrecision
+  - netDxf.Tables.DimensionStyle.ArrowSize
+  - netDxf.Tables.DimensionStyle.BlockChanged
+  - netDxf.Tables.DimensionStyle.CenterMarkSize
+  - netDxf.Tables.DimensionStyle.Clone
+  - netDxf.Tables.DimensionStyle.Clone(System.String)
+  - netDxf.Tables.DimensionStyle.DecimalSeparator
+  - netDxf.Tables.DimensionStyle.Default
+  - netDxf.Tables.DimensionStyle.DefaultName
+  - netDxf.Tables.DimensionStyle.DimAngularUnits
+  - netDxf.Tables.DimensionStyle.DimArrow1
+  - netDxf.Tables.DimensionStyle.DimArrow2
+  - netDxf.Tables.DimensionStyle.DimBaselineSpacing
+  - netDxf.Tables.DimensionStyle.DimLengthUnits
+  - netDxf.Tables.DimensionStyle.DimLine1Off
+  - netDxf.Tables.DimensionStyle.DimLine2Off
+  - netDxf.Tables.DimensionStyle.DimLineColor
+  - netDxf.Tables.DimensionStyle.DimLineExtend
+  - netDxf.Tables.DimensionStyle.DimLineLinetype
+  - netDxf.Tables.DimensionStyle.DimLineLineweight
+  - netDxf.Tables.DimensionStyle.DimPrefix
+  - netDxf.Tables.DimensionStyle.DimRoundoff
+  - netDxf.Tables.DimensionStyle.DimScaleLinear
+  - netDxf.Tables.DimensionStyle.DimScaleOverall
+  - netDxf.Tables.DimensionStyle.DimSuffix
+  - netDxf.Tables.DimensionStyle.ExtLine1Linetype
+  - netDxf.Tables.DimensionStyle.ExtLine1Off
+  - netDxf.Tables.DimensionStyle.ExtLine2Linetype
+  - netDxf.Tables.DimensionStyle.ExtLine2Off
+  - netDxf.Tables.DimensionStyle.ExtLineColor
+  - netDxf.Tables.DimensionStyle.ExtLineExtend
+  - netDxf.Tables.DimensionStyle.ExtLineFixed
+  - netDxf.Tables.DimensionStyle.ExtLineFixedLength
+  - netDxf.Tables.DimensionStyle.ExtLineLineweight
+  - netDxf.Tables.DimensionStyle.ExtLineOffset
+  - netDxf.Tables.DimensionStyle.FitDimLineForce
+  - netDxf.Tables.DimensionStyle.FitDimLineInside
+  - netDxf.Tables.DimensionStyle.FitOptions
+  - netDxf.Tables.DimensionStyle.FitTextInside
+  - netDxf.Tables.DimensionStyle.FitTextMove
+  - netDxf.Tables.DimensionStyle.FractionType
+  - netDxf.Tables.DimensionStyle.GetReferences
+  - netDxf.Tables.DimensionStyle.HasReferences
+  - netDxf.Tables.DimensionStyle.Iso25
+  - netDxf.Tables.DimensionStyle.LeaderArrow
+  - netDxf.Tables.DimensionStyle.LengthPrecision
+  - netDxf.Tables.DimensionStyle.LinetypeChanged
+  - netDxf.Tables.DimensionStyle.OnBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  - netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  - netDxf.Tables.DimensionStyle.Owner
+  - netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+  - netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+  - netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyle.SuppressZeroFeet
+  - netDxf.Tables.DimensionStyle.SuppressZeroInches
+  - netDxf.Tables.DimensionStyle.TextColor
+  - netDxf.Tables.DimensionStyle.TextDirection
+  - netDxf.Tables.DimensionStyle.TextFillColor
+  - netDxf.Tables.DimensionStyle.TextFractionHeightScale
+  - netDxf.Tables.DimensionStyle.TextHeight
+  - netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+  - netDxf.Tables.DimensionStyle.TextInsideAlign
+  - netDxf.Tables.DimensionStyle.TextOffset
+  - netDxf.Tables.DimensionStyle.TextOutsideAlign
+  - netDxf.Tables.DimensionStyle.TextStyle
+  - netDxf.Tables.DimensionStyle.TextStyleChanged
+  - netDxf.Tables.DimensionStyle.TextVerticalPlacement
+  - netDxf.Tables.DimensionStyle.Tolerances
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyle
+  nameWithType: DimensionStyle
+  fullName: netDxf.Tables.DimensionStyle
+  type: Class
+  source:
+    id: DimensionStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 36
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Represents a dimension style.
+  example: []
+  syntax:
+    content: 'public class DimensionStyle : TableObject, ICloneable, IComparable, IComparable<TableObject>, IEquatable<TableObject>'
+    content.vb: Public Class DimensionStyle Inherits TableObject Implements ICloneable, IComparable, IComparable(Of TableObject), IEquatable(Of TableObject)
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Tables.TableObject
+  implements:
+  - System.ICloneable
+  - System.IComparable
+  - System.IComparable{netDxf.Tables.TableObject}
+  - System.IEquatable{netDxf.Tables.TableObject}
+  inheritedMembers:
+  - netDxf.Tables.TableObject.NameChanged
+  - netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  - netDxf.Tables.TableObject.Name
+  - netDxf.Tables.TableObject.IsReserved
+  - netDxf.Tables.TableObject.InvalidCharacters
+  - netDxf.Tables.TableObject.IsValidName(System.String)
+  - netDxf.Tables.TableObject.ToString
+  - netDxf.Tables.TableObject.CompareTo(System.Object)
+  - netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  - netDxf.Tables.TableObject.GetHashCode
+  - netDxf.Tables.TableObject.Equals(System.Object)
+  - netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Tables.DimensionStyle.LinetypeChanged
+  commentId: E:netDxf.Tables.DimensionStyle.LinetypeChanged
+  id: LinetypeChanged
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: LinetypeChanged
+  nameWithType: DimensionStyle.LinetypeChanged
+  fullName: netDxf.Tables.DimensionStyle.LinetypeChanged
+  type: Event
+  source:
+    id: LinetypeChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 42
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: public event DimensionStyle.LinetypeChangedEventHandler LinetypeChanged
+    return:
+      type: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+    content.vb: Public Event LinetypeChanged As DimensionStyle.LinetypeChangedEventHandler
+- uid: netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  id: OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: DimensionStyle.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  type: Method
+  source:
+    id: OnLinetypeChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 43
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: protected virtual Linetype OnLinetypeChangedEvent(Linetype oldLinetype, Linetype newLinetype)
+    parameters:
+    - id: oldLinetype
+      type: netDxf.Tables.Linetype
+    - id: newLinetype
+      type: netDxf.Tables.Linetype
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Protected Overridable Function OnLinetypeChangedEvent(oldLinetype As Linetype, newLinetype As Linetype) As Linetype
+  overload: netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent*
+- uid: netDxf.Tables.DimensionStyle.TextStyleChanged
+  commentId: E:netDxf.Tables.DimensionStyle.TextStyleChanged
+  id: TextStyleChanged
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextStyleChanged
+  nameWithType: DimensionStyle.TextStyleChanged
+  fullName: netDxf.Tables.DimensionStyle.TextStyleChanged
+  type: Event
+  source:
+    id: TextStyleChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 56
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: public event DimensionStyle.TextStyleChangedEventHandler TextStyleChanged
+    return:
+      type: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+    content.vb: Public Event TextStyleChanged As DimensionStyle.TextStyleChangedEventHandler
+- uid: netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  commentId: M:netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  id: OnTextStyleChangedEvent(netDxf.Tables.TextStyle,netDxf.Tables.TextStyle)
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: OnTextStyleChangedEvent(TextStyle, TextStyle)
+  nameWithType: DimensionStyle.OnTextStyleChangedEvent(TextStyle, TextStyle)
+  fullName: netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent(netDxf.Tables.TextStyle, netDxf.Tables.TextStyle)
+  type: Method
+  source:
+    id: OnTextStyleChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 57
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: protected virtual TextStyle OnTextStyleChangedEvent(TextStyle oldTextStyle, TextStyle newTextStyle)
+    parameters:
+    - id: oldTextStyle
+      type: netDxf.Tables.TextStyle
+    - id: newTextStyle
+      type: netDxf.Tables.TextStyle
+    return:
+      type: netDxf.Tables.TextStyle
+    content.vb: Protected Overridable Function OnTextStyleChangedEvent(oldTextStyle As TextStyle, newTextStyle As TextStyle) As TextStyle
+  overload: netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent*
+- uid: netDxf.Tables.DimensionStyle.BlockChanged
+  commentId: E:netDxf.Tables.DimensionStyle.BlockChanged
+  id: BlockChanged
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: BlockChanged
+  nameWithType: DimensionStyle.BlockChanged
+  fullName: netDxf.Tables.DimensionStyle.BlockChanged
+  type: Event
+  source:
+    id: BlockChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 70
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: public event DimensionStyle.BlockChangedEventHandler BlockChanged
+    return:
+      type: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+    content.vb: Public Event BlockChanged As DimensionStyle.BlockChangedEventHandler
+- uid: netDxf.Tables.DimensionStyle.OnBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  commentId: M:netDxf.Tables.DimensionStyle.OnBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  id: OnBlockChangedEvent(netDxf.Blocks.Block,netDxf.Blocks.Block)
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: OnBlockChangedEvent(Block, Block)
+  nameWithType: DimensionStyle.OnBlockChangedEvent(Block, Block)
+  fullName: netDxf.Tables.DimensionStyle.OnBlockChangedEvent(netDxf.Blocks.Block, netDxf.Blocks.Block)
+  type: Method
+  source:
+    id: OnBlockChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 71
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  syntax:
+    content: protected virtual Block OnBlockChangedEvent(Block oldBlock, Block newBlock)
+    parameters:
+    - id: oldBlock
+      type: netDxf.Blocks.Block
+    - id: newBlock
+      type: netDxf.Blocks.Block
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Protected Overridable Function OnBlockChangedEvent(oldBlock As Block, newBlock As Block) As Block
+  overload: netDxf.Tables.DimensionStyle.OnBlockChangedEvent*
+- uid: netDxf.Tables.DimensionStyle.DefaultName
+  commentId: F:netDxf.Tables.DimensionStyle.DefaultName
+  id: DefaultName
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DefaultName
+  nameWithType: DimensionStyle.DefaultName
+  fullName: netDxf.Tables.DimensionStyle.DefaultName
+  type: Field
+  source:
+    id: DefaultName
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 166
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Default dimension style name.
+  example: []
+  syntax:
+    content: public const string DefaultName = "Standard"
+    return:
+      type: System.String
+    content.vb: Public Const DefaultName As String = "Standard"
+- uid: netDxf.Tables.DimensionStyle.Default
+  commentId: P:netDxf.Tables.DimensionStyle.Default
+  id: Default
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: DimensionStyle.Default
+  fullName: netDxf.Tables.DimensionStyle.Default
+  type: Property
+  source:
+    id: Default
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 171
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the default dimension style.
+  example: []
+  syntax:
+    content: public static DimensionStyle Default { get; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyle
+    content.vb: Public Shared ReadOnly Property [Default] As DimensionStyle
+  overload: netDxf.Tables.DimensionStyle.Default*
+- uid: netDxf.Tables.DimensionStyle.Iso25
+  commentId: P:netDxf.Tables.DimensionStyle.Iso25
+  id: Iso25
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Iso25
+  nameWithType: DimensionStyle.Iso25
+  fullName: netDxf.Tables.DimensionStyle.Iso25
+  type: Property
+  source:
+    id: Iso25
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 179
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the ISO-25 dimension style as defined in AutoCad.
+  example: []
+  syntax:
+    content: public static DimensionStyle Iso25 { get; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyle
+    content.vb: Public Shared ReadOnly Property Iso25 As DimensionStyle
+  overload: netDxf.Tables.DimensionStyle.Iso25*
+- uid: netDxf.Tables.DimensionStyle.#ctor(System.String)
+  commentId: M:netDxf.Tables.DimensionStyle.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyle(string)
+  nameWithType: DimensionStyle.DimensionStyle(string)
+  fullName: netDxf.Tables.DimensionStyle.DimensionStyle(string)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 224
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Initializes a new instance of the <code>DimensionStyle</code> class.
+  example: []
+  syntax:
+    content: public DimensionStyle(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The dimension style name.
+    content.vb: Public Sub New(name As String)
+  overload: netDxf.Tables.DimensionStyle.#ctor*
+  nameWithType.vb: DimensionStyle.New(String)
+  fullName.vb: netDxf.Tables.DimensionStyle.New(String)
+  name.vb: New(String)
+- uid: netDxf.Tables.DimensionStyle.DimLineColor
+  commentId: P:netDxf.Tables.DimensionStyle.DimLineColor
+  id: DimLineColor
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLineColor
+  nameWithType: DimensionStyle.DimLineColor
+  fullName: netDxf.Tables.DimensionStyle.DimLineColor
+  type: Property
+  source:
+    id: DimLineColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 325
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or set the color assigned to dimension lines, arrowheads, and dimension leader lines. (DIMCLRD)
+  remarks: >-
+    Default: ByBlock<br />
+
+    Only indexed AciColors are supported.
+  example: []
+  syntax:
+    content: public AciColor DimLineColor { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property DimLineColor As AciColor
+  overload: netDxf.Tables.DimensionStyle.DimLineColor*
+- uid: netDxf.Tables.DimensionStyle.DimLineLinetype
+  commentId: P:netDxf.Tables.DimensionStyle.DimLineLinetype
+  id: DimLineLinetype
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLineLinetype
+  nameWithType: DimensionStyle.DimLineLinetype
+  fullName: netDxf.Tables.DimensionStyle.DimLineLinetype
+  type: Property
+  source:
+    id: DimLineLinetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 340
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the line type of the dimension line. (DIMLTYPE)
+  remarks: 'Default: ByBlock'
+  example: []
+  syntax:
+    content: public Linetype DimLineLinetype { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Public Property DimLineLinetype As Linetype
+  overload: netDxf.Tables.DimensionStyle.DimLineLinetype*
+- uid: netDxf.Tables.DimensionStyle.DimLineLineweight
+  commentId: P:netDxf.Tables.DimensionStyle.DimLineLineweight
+  id: DimLineLineweight
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLineLineweight
+  nameWithType: DimensionStyle.DimLineLineweight
+  fullName: netDxf.Tables.DimensionStyle.DimLineLineweight
+  type: Property
+  source:
+    id: DimLineLineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 359
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the line weight to dimension lines. (DIMLWD)
+  remarks: 'Default: ByBlock'
+  example: []
+  syntax:
+    content: public Lineweight DimLineLineweight { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Lineweight
+    content.vb: Public Property DimLineLineweight As Lineweight
+  overload: netDxf.Tables.DimensionStyle.DimLineLineweight*
+- uid: netDxf.Tables.DimensionStyle.DimLine1Off
+  commentId: P:netDxf.Tables.DimensionStyle.DimLine1Off
+  id: DimLine1Off
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLine1Off
+  nameWithType: DimensionStyle.DimLine1Off
+  fullName: netDxf.Tables.DimensionStyle.DimLine1Off
+  type: Property
+  source:
+    id: DimLine1Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 372
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the first dimension line. (DIMSD1)
+  remarks: >-
+    Default: false<br />
+
+    To completely suppress the dimension line set both <code>DimLine1Off</code> and <code>DimLine2Off</code> to false.
+  example: []
+  syntax:
+    content: public bool DimLine1Off { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DimLine1Off As Boolean
+  overload: netDxf.Tables.DimensionStyle.DimLine1Off*
+- uid: netDxf.Tables.DimensionStyle.DimLine2Off
+  commentId: P:netDxf.Tables.DimensionStyle.DimLine2Off
+  id: DimLine2Off
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLine2Off
+  nameWithType: DimensionStyle.DimLine2Off
+  fullName: netDxf.Tables.DimensionStyle.DimLine2Off
+  type: Property
+  source:
+    id: DimLine2Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 385
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the second dimension line. (DIMSD2)
+  remarks: >-
+    Default: false<br />
+
+    To completely suppress the dimension line set both <code>DimLine1Off</code> and <code>DimLine2Off</code> to false.
+  example: []
+  syntax:
+    content: public bool DimLine2Off { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DimLine2Off As Boolean
+  overload: netDxf.Tables.DimensionStyle.DimLine2Off*
+- uid: netDxf.Tables.DimensionStyle.DimLineExtend
+  commentId: P:netDxf.Tables.DimensionStyle.DimLineExtend
+  id: DimLineExtend
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLineExtend
+  nameWithType: DimensionStyle.DimLineExtend
+  fullName: netDxf.Tables.DimensionStyle.DimLineExtend
+  type: Property
+  source:
+    id: DimLineExtend
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 398
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: >-
+    Gets or sets the distance the dimension line extends beyond the extension line when
+
+    oblique, architectural tick, integral, or no marks are drawn for arrowheads. (DIMDLE)
+  remarks: 'Default: 0.0'
+  example: []
+  syntax:
+    content: public double DimLineExtend { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property DimLineExtend As Double
+  overload: netDxf.Tables.DimensionStyle.DimLineExtend*
+- uid: netDxf.Tables.DimensionStyle.DimBaselineSpacing
+  commentId: P:netDxf.Tables.DimensionStyle.DimBaselineSpacing
+  id: DimBaselineSpacing
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimBaselineSpacing
+  nameWithType: DimensionStyle.DimBaselineSpacing
+  fullName: netDxf.Tables.DimensionStyle.DimBaselineSpacing
+  type: Property
+  source:
+    id: DimBaselineSpacing
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 419
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the spacing of the dimension lines in baseline dimensions. (DIMDLI)
+  remarks: >-
+    Default: 0.38<br />
+
+    This value is stored only for information purposes.
+
+    Base dimensions are a compound entity made of several dimensions, there is no actual DXF entity that represents that.
+  example: []
+  syntax:
+    content: public double DimBaselineSpacing { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property DimBaselineSpacing As Double
+  overload: netDxf.Tables.DimensionStyle.DimBaselineSpacing*
+- uid: netDxf.Tables.DimensionStyle.ExtLineColor
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineColor
+  id: ExtLineColor
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineColor
+  nameWithType: DimensionStyle.ExtLineColor
+  fullName: netDxf.Tables.DimensionStyle.ExtLineColor
+  type: Property
+  source:
+    id: ExtLineColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 439
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the color assigned to extension lines, center marks, and centerlines. (DIMCLRE)
+  remarks: >-
+    Default: ByBlock<br />
+
+    Only indexed AciColors are supported.
+  example: []
+  syntax:
+    content: public AciColor ExtLineColor { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property ExtLineColor As AciColor
+  overload: netDxf.Tables.DimensionStyle.ExtLineColor*
+- uid: netDxf.Tables.DimensionStyle.ExtLine1Linetype
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLine1Linetype
+  id: ExtLine1Linetype
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLine1Linetype
+  nameWithType: DimensionStyle.ExtLine1Linetype
+  fullName: netDxf.Tables.DimensionStyle.ExtLine1Linetype
+  type: Property
+  source:
+    id: ExtLine1Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 454
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the line type of the first extension line. (DIMLTEX1)
+  remarks: 'Default: ByBlock'
+  example: []
+  syntax:
+    content: public Linetype ExtLine1Linetype { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Public Property ExtLine1Linetype As Linetype
+  overload: netDxf.Tables.DimensionStyle.ExtLine1Linetype*
+- uid: netDxf.Tables.DimensionStyle.ExtLine2Linetype
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLine2Linetype
+  id: ExtLine2Linetype
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLine2Linetype
+  nameWithType: DimensionStyle.ExtLine2Linetype
+  fullName: netDxf.Tables.DimensionStyle.ExtLine2Linetype
+  type: Property
+  source:
+    id: ExtLine2Linetype
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 473
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the line type of the second extension line. (DIMLTEX2)
+  remarks: 'Default: ByBlock'
+  example: []
+  syntax:
+    content: public Linetype ExtLine2Linetype { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.Linetype
+    content.vb: Public Property ExtLine2Linetype As Linetype
+  overload: netDxf.Tables.DimensionStyle.ExtLine2Linetype*
+- uid: netDxf.Tables.DimensionStyle.ExtLineLineweight
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineLineweight
+  id: ExtLineLineweight
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineLineweight
+  nameWithType: DimensionStyle.ExtLineLineweight
+  fullName: netDxf.Tables.DimensionStyle.ExtLineLineweight
+  type: Property
+  source:
+    id: ExtLineLineweight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 492
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets line weight of extension lines. (DIMLWE)
+  remarks: 'Default: ByBlock'
+  example: []
+  syntax:
+    content: public Lineweight ExtLineLineweight { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Lineweight
+    content.vb: Public Property ExtLineLineweight As Lineweight
+  overload: netDxf.Tables.DimensionStyle.ExtLineLineweight*
+- uid: netDxf.Tables.DimensionStyle.ExtLine1Off
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLine1Off
+  id: ExtLine1Off
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLine1Off
+  nameWithType: DimensionStyle.ExtLine1Off
+  fullName: netDxf.Tables.DimensionStyle.ExtLine1Off
+  type: Property
+  source:
+    id: ExtLine1Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 504
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the first extension line. (DIMSE1)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool ExtLine1Off { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ExtLine1Off As Boolean
+  overload: netDxf.Tables.DimensionStyle.ExtLine1Off*
+- uid: netDxf.Tables.DimensionStyle.ExtLine2Off
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLine2Off
+  id: ExtLine2Off
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLine2Off
+  nameWithType: DimensionStyle.ExtLine2Off
+  fullName: netDxf.Tables.DimensionStyle.ExtLine2Off
+  type: Property
+  source:
+    id: ExtLine2Off
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 516
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses display of the second extension line. (DIMSE2)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool ExtLine2Off { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ExtLine2Off As Boolean
+  overload: netDxf.Tables.DimensionStyle.ExtLine2Off*
+- uid: netDxf.Tables.DimensionStyle.ExtLineOffset
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineOffset
+  id: ExtLineOffset
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineOffset
+  nameWithType: DimensionStyle.ExtLineOffset
+  fullName: netDxf.Tables.DimensionStyle.ExtLineOffset
+  type: Property
+  source:
+    id: ExtLineOffset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 528
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets how far extension lines are offset from origin points. (DIMEXO)
+  remarks: 'Default: 0.0625'
+  example: []
+  syntax:
+    content: public double ExtLineOffset { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ExtLineOffset As Double
+  overload: netDxf.Tables.DimensionStyle.ExtLineOffset*
+- uid: netDxf.Tables.DimensionStyle.ExtLineExtend
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineExtend
+  id: ExtLineExtend
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineExtend
+  nameWithType: DimensionStyle.ExtLineExtend
+  fullName: netDxf.Tables.DimensionStyle.ExtLineExtend
+  type: Property
+  source:
+    id: ExtLineExtend
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 547
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets how far to extend the extension line beyond the dimension line. (DIMEXE)
+  remarks: 'Default: 0.18'
+  example: []
+  syntax:
+    content: public double ExtLineExtend { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ExtLineExtend As Double
+  overload: netDxf.Tables.DimensionStyle.ExtLineExtend*
+- uid: netDxf.Tables.DimensionStyle.ExtLineFixed
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineFixed
+  id: ExtLineFixed
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineFixed
+  nameWithType: DimensionStyle.ExtLineFixed
+  fullName: netDxf.Tables.DimensionStyle.ExtLineFixed
+  type: Property
+  source:
+    id: ExtLineFixed
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 566
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Enables fixed length extension lines. (DIMFXLON)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool ExtLineFixed { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ExtLineFixed As Boolean
+  overload: netDxf.Tables.DimensionStyle.ExtLineFixed*
+- uid: netDxf.Tables.DimensionStyle.ExtLineFixedLength
+  commentId: P:netDxf.Tables.DimensionStyle.ExtLineFixedLength
+  id: ExtLineFixedLength
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ExtLineFixedLength
+  nameWithType: DimensionStyle.ExtLineFixedLength
+  fullName: netDxf.Tables.DimensionStyle.ExtLineFixedLength
+  type: Property
+  source:
+    id: ExtLineFixedLength
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 578
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the total length of the extension lines starting from the dimension line toward the dimension origin. (DIMFXL)
+  remarks: 'Default: 1.0'
+  example: []
+  syntax:
+    content: public double ExtLineFixedLength { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ExtLineFixedLength As Double
+  overload: netDxf.Tables.DimensionStyle.ExtLineFixedLength*
+- uid: netDxf.Tables.DimensionStyle.DimArrow1
+  commentId: P:netDxf.Tables.DimensionStyle.DimArrow1
+  id: DimArrow1
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimArrow1
+  nameWithType: DimensionStyle.DimArrow1
+  fullName: netDxf.Tables.DimensionStyle.DimArrow1
+  type: Property
+  source:
+    id: DimArrow1
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 601
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the arrowhead block for the first end of the dimension line. (DIMBLK1)
+  remarks: 'Default: null. Closed filled.'
+  example: []
+  syntax:
+    content: public Block DimArrow1 { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Property DimArrow1 As Block
+  overload: netDxf.Tables.DimensionStyle.DimArrow1*
+- uid: netDxf.Tables.DimensionStyle.DimArrow2
+  commentId: P:netDxf.Tables.DimensionStyle.DimArrow2
+  id: DimArrow2
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimArrow2
+  nameWithType: DimensionStyle.DimArrow2
+  fullName: netDxf.Tables.DimensionStyle.DimArrow2
+  type: Property
+  source:
+    id: DimArrow2
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 613
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the arrowhead block for the second end of the dimension line. (DIMBLK2)
+  remarks: 'Default: null. Closed filled.'
+  example: []
+  syntax:
+    content: public Block DimArrow2 { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Property DimArrow2 As Block
+  overload: netDxf.Tables.DimensionStyle.DimArrow2*
+- uid: netDxf.Tables.DimensionStyle.LeaderArrow
+  commentId: P:netDxf.Tables.DimensionStyle.LeaderArrow
+  id: LeaderArrow
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: LeaderArrow
+  nameWithType: DimensionStyle.LeaderArrow
+  fullName: netDxf.Tables.DimensionStyle.LeaderArrow
+  type: Property
+  source:
+    id: LeaderArrow
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 625
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the arrowhead block for leaders. (DIMLDRBLK)
+  remarks: 'Default: null. Closed filled.'
+  example: []
+  syntax:
+    content: public Block LeaderArrow { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Blocks.Block
+    content.vb: Public Property LeaderArrow As Block
+  overload: netDxf.Tables.DimensionStyle.LeaderArrow*
+- uid: netDxf.Tables.DimensionStyle.ArrowSize
+  commentId: P:netDxf.Tables.DimensionStyle.ArrowSize
+  id: ArrowSize
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: ArrowSize
+  nameWithType: DimensionStyle.ArrowSize
+  fullName: netDxf.Tables.DimensionStyle.ArrowSize
+  type: Property
+  source:
+    id: ArrowSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 637
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the size of dimension line and leader line arrowheads. Also controls the size of hook lines. (DIMASZ)
+  remarks: 'Default: 0.18'
+  example: []
+  syntax:
+    content: public double ArrowSize { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property ArrowSize As Double
+  overload: netDxf.Tables.DimensionStyle.ArrowSize*
+- uid: netDxf.Tables.DimensionStyle.CenterMarkSize
+  commentId: P:netDxf.Tables.DimensionStyle.CenterMarkSize
+  id: CenterMarkSize
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: CenterMarkSize
+  nameWithType: DimensionStyle.CenterMarkSize
+  fullName: netDxf.Tables.DimensionStyle.CenterMarkSize
+  type: Property
+  source:
+    id: CenterMarkSize
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 663
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Controls the drawing of circle or arc center marks and centerlines. (DIMCEN)
+  remarks: >-
+    Default: 0.09<br />
+
+    0 - No center marks or lines are drawn.<br />
+
+    greater than 0 - Center marks are drawn.<br />
+
+    lower than 0 - Center marks and centerlines are drawn.<br />
+
+    The absolute value specifies the size of the center mark or center line. 
+
+    The size of the center line is the length of the center line segment that extends outside the circle or arc.
+
+    It is also the size of the gap between the center mark and the start of the center line. 
+
+    The size of the center mark is the distance from the center of the circle or arc to the end of the center mark.
+  example: []
+  syntax:
+    content: public double CenterMarkSize { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property CenterMarkSize As Double
+  overload: netDxf.Tables.DimensionStyle.CenterMarkSize*
+- uid: netDxf.Tables.DimensionStyle.TextStyle
+  commentId: P:netDxf.Tables.DimensionStyle.TextStyle
+  id: TextStyle
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextStyle
+  nameWithType: DimensionStyle.TextStyle
+  fullName: netDxf.Tables.DimensionStyle.TextStyle
+  type: Property
+  source:
+    id: TextStyle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 679
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the text style of the dimension. (DIMTXTSTY)
+  remarks: 'Default: Standard'
+  example: []
+  syntax:
+    content: public TextStyle TextStyle { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.TextStyle
+    content.vb: Public Property TextStyle As TextStyle
+  overload: netDxf.Tables.DimensionStyle.TextStyle*
+- uid: netDxf.Tables.DimensionStyle.TextColor
+  commentId: P:netDxf.Tables.DimensionStyle.TextColor
+  id: TextColor
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextColor
+  nameWithType: DimensionStyle.TextColor
+  fullName: netDxf.Tables.DimensionStyle.TextColor
+  type: Property
+  source:
+    id: TextColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 699
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or set the color of dimension text. (DIMCLRT)
+  remarks: >-
+    Default: ByBlock<br />
+
+    Only indexed AciColors are supported.
+  example: []
+  syntax:
+    content: public AciColor TextColor { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property TextColor As AciColor
+  overload: netDxf.Tables.DimensionStyle.TextColor*
+- uid: netDxf.Tables.DimensionStyle.TextFillColor
+  commentId: P:netDxf.Tables.DimensionStyle.TextFillColor
+  id: TextFillColor
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextFillColor
+  nameWithType: DimensionStyle.TextFillColor
+  fullName: netDxf.Tables.DimensionStyle.TextFillColor
+  type: Property
+  source:
+    id: TextFillColor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 715
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or set the background color of dimension text. Set to null to specify no color. (DIMTFILLCLR)
+  remarks: >-
+    Default: null<br />
+
+    Only indexed AciColors are supported.
+  example: []
+  syntax:
+    content: public AciColor TextFillColor { get; set; }
+    parameters: []
+    return:
+      type: netDxf.AciColor
+    content.vb: Public Property TextFillColor As AciColor
+  overload: netDxf.Tables.DimensionStyle.TextFillColor*
+- uid: netDxf.Tables.DimensionStyle.TextHeight
+  commentId: P:netDxf.Tables.DimensionStyle.TextHeight
+  id: TextHeight
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextHeight
+  nameWithType: DimensionStyle.TextHeight
+  fullName: netDxf.Tables.DimensionStyle.TextHeight
+  type: Property
+  source:
+    id: TextHeight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 727
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the height of dimension text, unless the current text style has a fixed height. (DIMTXT)
+  remarks: 'Default: 0.18'
+  example: []
+  syntax:
+    content: public double TextHeight { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TextHeight As Double
+  overload: netDxf.Tables.DimensionStyle.TextHeight*
+- uid: netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+  commentId: P:netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+  id: TextHorizontalPlacement
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextHorizontalPlacement
+  nameWithType: DimensionStyle.TextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+  type: Property
+  source:
+    id: TextHorizontalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 746
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the horizontal positioning of dimension text. (DIMJUST)
+  remarks: 'Default: Centered'
+  example: []
+  syntax:
+    content: public DimensionStyleTextHorizontalPlacement TextHorizontalPlacement { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+    content.vb: Public Property TextHorizontalPlacement As DimensionStyleTextHorizontalPlacement
+  overload: netDxf.Tables.DimensionStyle.TextHorizontalPlacement*
+- uid: netDxf.Tables.DimensionStyle.TextVerticalPlacement
+  commentId: P:netDxf.Tables.DimensionStyle.TextVerticalPlacement
+  id: TextVerticalPlacement
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextVerticalPlacement
+  nameWithType: DimensionStyle.TextVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyle.TextVerticalPlacement
+  type: Property
+  source:
+    id: TextVerticalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 758
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the vertical position of text in relation to the dimension line. (DIMTAD)
+  remarks: 'Default: Centered'
+  example: []
+  syntax:
+    content: public DimensionStyleTextVerticalPlacement TextVerticalPlacement { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTextVerticalPlacement
+    content.vb: Public Property TextVerticalPlacement As DimensionStyleTextVerticalPlacement
+  overload: netDxf.Tables.DimensionStyle.TextVerticalPlacement*
+- uid: netDxf.Tables.DimensionStyle.TextOffset
+  commentId: P:netDxf.Tables.DimensionStyle.TextOffset
+  id: TextOffset
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextOffset
+  nameWithType: DimensionStyle.TextOffset
+  fullName: netDxf.Tables.DimensionStyle.TextOffset
+  type: Property
+  source:
+    id: TextOffset
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 771
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the distance around the dimension text when the dimension line breaks to accommodate dimension text. (DIMGAP)
+  remarks: >-
+    Default: 0.09<br />
+
+    Displays a rectangular frame around the dimension text when negative values are used.
+  example: []
+  syntax:
+    content: public double TextOffset { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TextOffset As Double
+  overload: netDxf.Tables.DimensionStyle.TextOffset*
+- uid: netDxf.Tables.DimensionStyle.TextInsideAlign
+  commentId: P:netDxf.Tables.DimensionStyle.TextInsideAlign
+  id: TextInsideAlign
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextInsideAlign
+  nameWithType: DimensionStyle.TextInsideAlign
+  fullName: netDxf.Tables.DimensionStyle.TextInsideAlign
+  type: Property
+  source:
+    id: TextInsideAlign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 783
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets if the dimension text is placed horizontally when inside extension lines. (DIMTIH)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool TextInsideAlign { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property TextInsideAlign As Boolean
+  overload: netDxf.Tables.DimensionStyle.TextInsideAlign*
+- uid: netDxf.Tables.DimensionStyle.TextOutsideAlign
+  commentId: P:netDxf.Tables.DimensionStyle.TextOutsideAlign
+  id: TextOutsideAlign
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextOutsideAlign
+  nameWithType: DimensionStyle.TextOutsideAlign
+  fullName: netDxf.Tables.DimensionStyle.TextOutsideAlign
+  type: Property
+  source:
+    id: TextOutsideAlign
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 795
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets if the dimension text is placed horizontally when outside extension lines. (DIMTOH)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool TextOutsideAlign { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property TextOutsideAlign As Boolean
+  overload: netDxf.Tables.DimensionStyle.TextOutsideAlign*
+- uid: netDxf.Tables.DimensionStyle.TextDirection
+  commentId: P:netDxf.Tables.DimensionStyle.TextDirection
+  id: TextDirection
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextDirection
+  nameWithType: DimensionStyle.TextDirection
+  fullName: netDxf.Tables.DimensionStyle.TextDirection
+  type: Property
+  source:
+    id: TextDirection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 807
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the direction of the dimension text. (DIMTXTDIRECTION)
+  remarks: 'Default: LeftToRight'
+  example: []
+  syntax:
+    content: public DimensionStyleTextDirection TextDirection { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTextDirection
+    content.vb: Public Property TextDirection As DimensionStyleTextDirection
+  overload: netDxf.Tables.DimensionStyle.TextDirection*
+- uid: netDxf.Tables.DimensionStyle.TextFractionHeightScale
+  commentId: P:netDxf.Tables.DimensionStyle.TextFractionHeightScale
+  id: TextFractionHeightScale
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: TextFractionHeightScale
+  nameWithType: DimensionStyle.TextFractionHeightScale
+  fullName: netDxf.Tables.DimensionStyle.TextFractionHeightScale
+  type: Property
+  source:
+    id: TextFractionHeightScale
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 821
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the scale of fractions relative to dimension text height. (DIMTFAC)
+  remarks: >-
+    Default: 1.0<br />
+
+    This value is only applicable to Architectural and Fractional units, and also
+
+    controls the height factor applied to the tolerance text in relation with the dimension text height.
+  example: []
+  syntax:
+    content: public double TextFractionHeightScale { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TextFractionHeightScale As Double
+  overload: netDxf.Tables.DimensionStyle.TextFractionHeightScale*
+- uid: netDxf.Tables.DimensionStyle.FitDimLineForce
+  commentId: P:netDxf.Tables.DimensionStyle.FitDimLineForce
+  id: FitDimLineForce
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FitDimLineForce
+  nameWithType: DimensionStyle.FitDimLineForce
+  fullName: netDxf.Tables.DimensionStyle.FitDimLineForce
+  type: Property
+  source:
+    id: FitDimLineForce
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 844
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the drawing of a dimension line between the extension lines even when the text is placed outside the extension lines. (DIMTOFL)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool FitDimLineForce { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FitDimLineForce As Boolean
+  overload: netDxf.Tables.DimensionStyle.FitDimLineForce*
+- uid: netDxf.Tables.DimensionStyle.FitDimLineInside
+  commentId: P:netDxf.Tables.DimensionStyle.FitDimLineInside
+  id: FitDimLineInside
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FitDimLineInside
+  nameWithType: DimensionStyle.FitDimLineInside
+  fullName: netDxf.Tables.DimensionStyle.FitDimLineInside
+  type: Property
+  source:
+    id: FitDimLineInside
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 859
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the drawing of the dimension line and arrowheads even if not enough space is available inside the extension lines. (DIMSOXD)
+  remarks: >-
+    Default: true<br />
+
+    If not enough space is available inside the extension lines and FitTextInside is true,
+
+    setting FitDimLineInside to false suppresses the arrowheads. If FitDimLineInside is false,
+
+    FitDimLineInside has no effect.
+  example: []
+  syntax:
+    content: public bool FitDimLineInside { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FitDimLineInside As Boolean
+  overload: netDxf.Tables.DimensionStyle.FitDimLineInside*
+- uid: netDxf.Tables.DimensionStyle.DimScaleOverall
+  commentId: P:netDxf.Tables.DimensionStyle.DimScaleOverall
+  id: DimScaleOverall
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimScaleOverall
+  nameWithType: DimensionStyle.DimScaleOverall
+  fullName: netDxf.Tables.DimensionStyle.DimScaleOverall
+  type: Property
+  source:
+    id: DimScaleOverall
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 873
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Get or set the overall scale factor applied to dimensioning variables that specify sizes, distances, or offsets. (DIMSCALE)
+  remarks: >-
+    Default: 1.0<br />
+
+    DIMSCALE does not affect measured lengths, coordinates, or angles.<br />
+
+    DIMSCALE values of zero are not supported, any imported drawing with a zero value will set the scale to the default 1.0.
+  example: []
+  syntax:
+    content: public double DimScaleOverall { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property DimScaleOverall As Double
+  overload: netDxf.Tables.DimensionStyle.DimScaleOverall*
+- uid: netDxf.Tables.DimensionStyle.FitOptions
+  commentId: P:netDxf.Tables.DimensionStyle.FitOptions
+  id: FitOptions
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FitOptions
+  nameWithType: DimensionStyle.FitOptions
+  fullName: netDxf.Tables.DimensionStyle.FitOptions
+  type: Property
+  source:
+    id: FitOptions
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 893
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the placement of text and arrowheads based on the space available between the extension lines. (DIMATFIT)
+  remarks: >-
+    Default: BestFit<br />
+
+    Not implemented in the dimension drawing.
+  example: []
+  syntax:
+    content: public DimensionStyleFitOptions FitOptions { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleFitOptions
+    content.vb: Public Property FitOptions As DimensionStyleFitOptions
+  overload: netDxf.Tables.DimensionStyle.FitOptions*
+- uid: netDxf.Tables.DimensionStyle.FitTextInside
+  commentId: P:netDxf.Tables.DimensionStyle.FitTextInside
+  id: FitTextInside
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FitTextInside
+  nameWithType: DimensionStyle.FitTextInside
+  fullName: netDxf.Tables.DimensionStyle.FitTextInside
+  type: Property
+  source:
+    id: FitTextInside
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 905
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the drawing of text between the extension lines. (DIMTIX)
+  remarks: 'Default: false'
+  example: []
+  syntax:
+    content: public bool FitTextInside { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property FitTextInside As Boolean
+  overload: netDxf.Tables.DimensionStyle.FitTextInside*
+- uid: netDxf.Tables.DimensionStyle.FitTextMove
+  commentId: P:netDxf.Tables.DimensionStyle.FitTextMove
+  id: FitTextMove
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FitTextMove
+  nameWithType: DimensionStyle.FitTextMove
+  fullName: netDxf.Tables.DimensionStyle.FitTextMove
+  type: Property
+  source:
+    id: FitTextMove
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 917
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the position of the text when it's moved either manually or automatically. (DIMTMOVE)
+  remarks: 'Default: BesideDimLine'
+  example: []
+  syntax:
+    content: public DimensionStyleFitTextMove FitTextMove { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleFitTextMove
+    content.vb: Public Property FitTextMove As DimensionStyleFitTextMove
+  overload: netDxf.Tables.DimensionStyle.FitTextMove*
+- uid: netDxf.Tables.DimensionStyle.AngularPrecision
+  commentId: P:netDxf.Tables.DimensionStyle.AngularPrecision
+  id: AngularPrecision
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: AngularPrecision
+  nameWithType: DimensionStyle.AngularPrecision
+  fullName: netDxf.Tables.DimensionStyle.AngularPrecision
+  type: Property
+  source:
+    id: AngularPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 935
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the number of precision places displayed in angular dimensions. (DIMADEC)
+  remarks: >-
+    Default: 0<br />
+
+    If set to -1 angular dimensions display the number of decimal places specified by LengthPrecision.
+
+    It is recommended to use values in the range 0 to 8.
+  example: []
+  syntax:
+    content: public short AngularPrecision { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property AngularPrecision As Short
+  overload: netDxf.Tables.DimensionStyle.AngularPrecision*
+- uid: netDxf.Tables.DimensionStyle.LengthPrecision
+  commentId: P:netDxf.Tables.DimensionStyle.LengthPrecision
+  id: LengthPrecision
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: LengthPrecision
+  nameWithType: DimensionStyle.LengthPrecision
+  fullName: netDxf.Tables.DimensionStyle.LengthPrecision
+  type: Property
+  source:
+    id: LengthPrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 956
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the number of decimal places displayed for the primary units of a dimension. (DIMDEC)
+  remarks: >-
+    Default: 2<br />
+
+    It is recommended to use values in the range 0 to 8.<br />
+
+    For architectural and fractional the precision used for the minimum fraction is 1/2^LinearDecimalPlaces.
+  example: []
+  syntax:
+    content: public short LengthPrecision { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property LengthPrecision As Short
+  overload: netDxf.Tables.DimensionStyle.LengthPrecision*
+- uid: netDxf.Tables.DimensionStyle.DimPrefix
+  commentId: P:netDxf.Tables.DimensionStyle.DimPrefix
+  id: DimPrefix
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimPrefix
+  nameWithType: DimensionStyle.DimPrefix
+  fullName: netDxf.Tables.DimensionStyle.DimPrefix
+  type: Property
+  source:
+    id: DimPrefix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 975
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the text prefix for the dimension. (DIMPOST)
+  remarks: 'Default: string.Empty'
+  example: []
+  syntax:
+    content: public string DimPrefix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DimPrefix As String
+  overload: netDxf.Tables.DimensionStyle.DimPrefix*
+- uid: netDxf.Tables.DimensionStyle.DimSuffix
+  commentId: P:netDxf.Tables.DimensionStyle.DimSuffix
+  id: DimSuffix
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimSuffix
+  nameWithType: DimensionStyle.DimSuffix
+  fullName: netDxf.Tables.DimensionStyle.DimSuffix
+  type: Property
+  source:
+    id: DimSuffix
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 987
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the text suffix for the dimension. (DIMPOST)
+  remarks: 'Default: string.Empty'
+  example: []
+  syntax:
+    content: public string DimSuffix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DimSuffix As String
+  overload: netDxf.Tables.DimensionStyle.DimSuffix*
+- uid: netDxf.Tables.DimensionStyle.DecimalSeparator
+  commentId: P:netDxf.Tables.DimensionStyle.DecimalSeparator
+  id: DecimalSeparator
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DecimalSeparator
+  nameWithType: DimensionStyle.DecimalSeparator
+  fullName: netDxf.Tables.DimensionStyle.DecimalSeparator
+  type: Property
+  source:
+    id: DecimalSeparator
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 999
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets a single-character decimal separator to use when creating dimensions whose unit format is decimal. (DIMDSEP)
+  remarks: 'Default: "."'
+  example: []
+  syntax:
+    content: public char DecimalSeparator { get; set; }
+    parameters: []
+    return:
+      type: System.Char
+    content.vb: Public Property DecimalSeparator As Char
+  overload: netDxf.Tables.DimensionStyle.DecimalSeparator*
+- uid: netDxf.Tables.DimensionStyle.DimScaleLinear
+  commentId: P:netDxf.Tables.DimensionStyle.DimScaleLinear
+  id: DimScaleLinear
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimScaleLinear
+  nameWithType: DimensionStyle.DimScaleLinear
+  fullName: netDxf.Tables.DimensionStyle.DimScaleLinear
+  type: Property
+  source:
+    id: DimScaleLinear
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1013
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets a scale factor for linear dimension measurements. (DIMLFAC)
+  remarks: >-
+    All linear dimension distances, including radii, diameters, and coordinates, are multiplied by DimScaleLinear before being converted to dimension text.<br />
+
+    Positive values of DimScaleLinear are applied to dimensions in both model space and paper space; negative values are applied to paper space only.<br />
+
+    DimScaleLinear has no effect on angular dimensions.
+  example: []
+  syntax:
+    content: public double DimScaleLinear { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property DimScaleLinear As Double
+  overload: netDxf.Tables.DimensionStyle.DimScaleLinear*
+- uid: netDxf.Tables.DimensionStyle.DimLengthUnits
+  commentId: P:netDxf.Tables.DimensionStyle.DimLengthUnits
+  id: DimLengthUnits
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimLengthUnits
+  nameWithType: DimensionStyle.DimLengthUnits
+  fullName: netDxf.Tables.DimensionStyle.DimLengthUnits
+  type: Property
+  source:
+    id: DimLengthUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1036
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the units for all dimension types except angular. (DIMLUNIT)
+  remarks: >-
+    Scientific<br />
+
+    Decimal<br />
+
+    Engineering<br />
+
+    Architectural<br />
+
+    Fractional
+  example: []
+  syntax:
+    content: public LinearUnitType DimLengthUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.LinearUnitType
+    content.vb: Public Property DimLengthUnits As LinearUnitType
+  overload: netDxf.Tables.DimensionStyle.DimLengthUnits*
+- uid: netDxf.Tables.DimensionStyle.DimAngularUnits
+  commentId: P:netDxf.Tables.DimensionStyle.DimAngularUnits
+  id: DimAngularUnits
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimAngularUnits
+  nameWithType: DimensionStyle.DimAngularUnits
+  fullName: netDxf.Tables.DimensionStyle.DimAngularUnits
+  type: Property
+  source:
+    id: DimAngularUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1051
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the units format for angular dimensions. (DIMAUNIT)
+  remarks: >-
+    Decimal degrees<br />
+
+    Degrees/minutes/seconds<br />
+
+    Gradians<br />
+
+    Radians
+  example: []
+  syntax:
+    content: public AngleUnitType DimAngularUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.AngleUnitType
+    content.vb: Public Property DimAngularUnits As AngleUnitType
+  overload: netDxf.Tables.DimensionStyle.DimAngularUnits*
+- uid: netDxf.Tables.DimensionStyle.FractionType
+  commentId: P:netDxf.Tables.DimensionStyle.FractionType
+  id: FractionType
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: FractionType
+  nameWithType: DimensionStyle.FractionType
+  fullName: netDxf.Tables.DimensionStyle.FractionType
+  type: Property
+  source:
+    id: FractionType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1072
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the fraction format when DIMLUNIT is set to Architectural or Fractional. (DIMFRAC)
+  remarks: >-
+    Horizontal stacking<br />
+
+    Diagonal stacking<br />
+
+    Not stacked (for example, 1/2)
+  example: []
+  syntax:
+    content: public FractionFormatType FractionType { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Units.FractionFormatType
+    content.vb: Public Property FractionType As FractionFormatType
+  overload: netDxf.Tables.DimensionStyle.FractionType*
+- uid: netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+  id: SuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearLeadingZeros
+  nameWithType: DimensionStyle.SuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+  type: Property
+  source:
+    id: SuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1084
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal dimensions; for example, 0.5000 becomes .5000. (DIMZIN)
+  remarks: This value is part of the DIMZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressLinearLeadingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressLinearLeadingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros*
+- uid: netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+  id: SuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearTrailingZeros
+  nameWithType: DimensionStyle.SuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+  type: Property
+  source:
+    id: SuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1096
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal dimensions. (DIMZIN)
+  remarks: This value is part of the DIMZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressLinearTrailingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressLinearTrailingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros*
+- uid: netDxf.Tables.DimensionStyle.SuppressZeroFeet
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressZeroFeet
+  id: SuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroFeet
+  nameWithType: DimensionStyle.SuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyle.SuppressZeroFeet
+  type: Property
+  source:
+    id: SuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1108
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural dimensions. (DIMZIN)
+  remarks: This value is part of the DIMZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressZeroFeet { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressZeroFeet As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressZeroFeet*
+- uid: netDxf.Tables.DimensionStyle.SuppressZeroInches
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressZeroInches
+  id: SuppressZeroInches
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroInches
+  nameWithType: DimensionStyle.SuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyle.SuppressZeroInches
+  type: Property
+  source:
+    id: SuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1120
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural dimensions. (DIMZIN)
+  remarks: This value is part of the DIMZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressZeroInches { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressZeroInches As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressZeroInches*
+- uid: netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+  id: SuppressAngularLeadingZeros
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressAngularLeadingZeros
+  nameWithType: DimensionStyle.SuppressAngularLeadingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+  type: Property
+  source:
+    id: SuppressAngularLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1132
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in angular decimal dimensions. (DIMZIN)
+  remarks: This value is part of the DIMAZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressAngularLeadingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressAngularLeadingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros*
+- uid: netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+  commentId: P:netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+  id: SuppressAngularTrailingZeros
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: SuppressAngularTrailingZeros
+  nameWithType: DimensionStyle.SuppressAngularTrailingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+  type: Property
+  source:
+    id: SuppressAngularTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1144
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in angular decimal dimensions. (DIMZIN)
+  remarks: This value is part of the DIMAZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressAngularTrailingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressAngularTrailingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros*
+- uid: netDxf.Tables.DimensionStyle.DimRoundoff
+  commentId: P:netDxf.Tables.DimensionStyle.DimRoundoff
+  id: DimRoundoff
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: DimRoundoff
+  nameWithType: DimensionStyle.DimRoundoff
+  fullName: netDxf.Tables.DimensionStyle.DimRoundoff
+  type: Property
+  source:
+    id: DimRoundoff
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1160
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the value to round all dimensioning distances. (DIMRND)
+  remarks: >-
+    Default: 0 (no rounding off).<br />
+
+    If DIMRND is set to 0.25, all distances round to the nearest 0.25 unit.
+
+    If you set DIMRND to 1.0, all distances round to the nearest integer.
+
+    Note that the number of digits edited after the decimal point depends on the precision set by DIMDEC.
+
+    DIMRND does not apply to angular dimensions.
+  example: []
+  syntax:
+    content: public double DimRoundoff { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property DimRoundoff As Double
+  overload: netDxf.Tables.DimensionStyle.DimRoundoff*
+- uid: netDxf.Tables.DimensionStyle.AlternateUnits
+  commentId: P:netDxf.Tables.DimensionStyle.AlternateUnits
+  id: AlternateUnits
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: AlternateUnits
+  nameWithType: DimensionStyle.AlternateUnits
+  fullName: netDxf.Tables.DimensionStyle.AlternateUnits
+  type: Property
+  source:
+    id: AlternateUnits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1181
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the alternate units format for dimensions.
+  remarks: Alternative units are not applicable for angular dimensions.
+  example: []
+  syntax:
+    content: public DimensionStyleAlternateUnits AlternateUnits { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleAlternateUnits
+    content.vb: Public Property AlternateUnits As DimensionStyleAlternateUnits
+  overload: netDxf.Tables.DimensionStyle.AlternateUnits*
+- uid: netDxf.Tables.DimensionStyle.Tolerances
+  commentId: P:netDxf.Tables.DimensionStyle.Tolerances
+  id: Tolerances
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Tolerances
+  nameWithType: DimensionStyle.Tolerances
+  fullName: netDxf.Tables.DimensionStyle.Tolerances
+  type: Property
+  source:
+    id: Tolerances
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1197
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the tolerances format for dimensions.
+  example: []
+  syntax:
+    content: public DimensionStyleTolerances Tolerances { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTolerances
+    content.vb: Public Property Tolerances As DimensionStyleTolerances
+  overload: netDxf.Tables.DimensionStyle.Tolerances*
+- uid: netDxf.Tables.DimensionStyle.Owner
+  commentId: P:netDxf.Tables.DimensionStyle.Owner
+  id: Owner
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: DimensionStyle.Owner
+  fullName: netDxf.Tables.DimensionStyle.Owner
+  type: Property
+  source:
+    id: Owner
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1211
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the owner of the actual dimension style.
+  example: []
+  syntax:
+    content: public DimensionStyles Owner { get; }
+    parameters: []
+    return:
+      type: netDxf.Collections.DimensionStyles
+    content.vb: Public Property Owner As DimensionStyles
+  overload: netDxf.Tables.DimensionStyle.Owner*
+- uid: netDxf.Tables.DimensionStyle.HasReferences
+  commentId: M:netDxf.Tables.DimensionStyle.HasReferences
+  id: HasReferences
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: HasReferences()
+  nameWithType: DimensionStyle.HasReferences()
+  fullName: netDxf.Tables.DimensionStyle.HasReferences()
+  type: Method
+  source:
+    id: HasReferences
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1231
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Checks if this instance has been referenced by other DxfObjects.
+  remarks: This method returns the same value as the HasReferences method that can be found in the TableObjects class.
+  example: []
+  syntax:
+    content: public override bool HasReferences()
+    return:
+      type: System.Boolean
+      description: >-
+        Returns true if this instance has been referenced by other DxfObjects, false otherwise.
+
+        It will always return false if this instance does not belong to a document.
+    content.vb: Public Overrides Function HasReferences() As Boolean
+  overridden: netDxf.Tables.TableObject.HasReferences
+  overload: netDxf.Tables.DimensionStyle.HasReferences*
+- uid: netDxf.Tables.DimensionStyle.GetReferences
+  commentId: M:netDxf.Tables.DimensionStyle.GetReferences
+  id: GetReferences
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: GetReferences()
+  nameWithType: DimensionStyle.GetReferences()
+  fullName: netDxf.Tables.DimensionStyle.GetReferences()
+  type: Method
+  source:
+    id: GetReferences
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1246
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets the list of DxfObjects referenced by this instance.
+  remarks: This method returns the same list as the GetReferences method that can be found in the TableObjects class.
+  example: []
+  syntax:
+    content: public override List<DxfObjectReference> GetReferences()
+    return:
+      type: System.Collections.Generic.List{netDxf.DxfObjectReference}
+      description: >-
+        A list of DxfObjectReference that contains the DxfObject referenced by this instance and the number of times it does.
+
+        It will return null if this instance does not belong to a document.
+    content.vb: Public Overrides Function GetReferences() As List(Of DxfObjectReference)
+  overridden: netDxf.Tables.TableObject.GetReferences
+  overload: netDxf.Tables.DimensionStyle.GetReferences*
+- uid: netDxf.Tables.DimensionStyle.Clone(System.String)
+  commentId: M:netDxf.Tables.DimensionStyle.Clone(System.String)
+  id: Clone(System.String)
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Clone(string)
+  nameWithType: DimensionStyle.Clone(string)
+  fullName: netDxf.Tables.DimensionStyle.Clone(string)
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1256
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Creates a new DimensionStyle that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override TableObject Clone(string newName)
+    parameters:
+    - id: newName
+      type: System.String
+      description: DimensionStyle name of the copy.
+    return:
+      type: netDxf.Tables.TableObject
+      description: A new DimensionStyle that is a copy of this instance.
+    content.vb: Public Overrides Function Clone(newName As String) As TableObject
+  overridden: netDxf.Tables.TableObject.Clone(System.String)
+  overload: netDxf.Tables.DimensionStyle.Clone*
+  nameWithType.vb: DimensionStyle.Clone(String)
+  fullName.vb: netDxf.Tables.DimensionStyle.Clone(String)
+  name.vb: Clone(String)
+- uid: netDxf.Tables.DimensionStyle.Clone
+  commentId: M:netDxf.Tables.DimensionStyle.Clone
+  id: Clone
+  parent: netDxf.Tables.DimensionStyle
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: DimensionStyle.Clone()
+  fullName: netDxf.Tables.DimensionStyle.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyle.cs
+    startLine: 1341
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Creates a new DimensionStyle that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new DimensionStyle that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Tables.TableObject.Clone
+  overload: netDxf.Tables.DimensionStyle.Clone*
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: netDxf.Tables.TableObject
+  commentId: T:netDxf.Tables.TableObject
+  parent: netDxf.Tables
+  href: netDxf.Tables.TableObject.html
+  name: TableObject
+  nameWithType: TableObject
+  fullName: netDxf.Tables.TableObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.IComparable
+  commentId: T:System.IComparable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  name: IComparable
+  nameWithType: IComparable
+  fullName: System.IComparable
+- uid: System.IComparable{netDxf.Tables.TableObject}
+  commentId: T:System.IComparable{netDxf.Tables.TableObject}
+  parent: System
+  definition: System.IComparable`1
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<TableObject>
+  nameWithType: IComparable<TableObject>
+  fullName: System.IComparable<netDxf.Tables.TableObject>
+  nameWithType.vb: IComparable(Of TableObject)
+  fullName.vb: System.IComparable(Of netDxf.Tables.TableObject)
+  name.vb: IComparable(Of TableObject)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: System.IEquatable{netDxf.Tables.TableObject}
+  commentId: T:System.IEquatable{netDxf.Tables.TableObject}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<TableObject>
+  nameWithType: IEquatable<TableObject>
+  fullName: System.IEquatable<netDxf.Tables.TableObject>
+  nameWithType.vb: IEquatable(Of TableObject)
+  fullName.vb: System.IEquatable(Of netDxf.Tables.TableObject)
+  name.vb: IEquatable(Of TableObject)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.Tables.TableObject.NameChanged
+  commentId: E:netDxf.Tables.TableObject.NameChanged
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_NameChanged
+  name: NameChanged
+  nameWithType: TableObject.NameChanged
+  fullName: netDxf.Tables.TableObject.NameChanged
+- uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  commentId: M:netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  name: OnNameChangedEvent(string, string)
+  nameWithType: TableObject.OnNameChangedEvent(string, string)
+  fullName: netDxf.Tables.TableObject.OnNameChangedEvent(string, string)
+  nameWithType.vb: TableObject.OnNameChangedEvent(String, String)
+  fullName.vb: netDxf.Tables.TableObject.OnNameChangedEvent(String, String)
+  name.vb: OnNameChangedEvent(String, String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+    name: OnNameChangedEvent
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.OnNameChangedEvent(System.String,System.String)
+    name: OnNameChangedEvent
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_OnNameChangedEvent_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.TableObject.Name
+  commentId: P:netDxf.Tables.TableObject.Name
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Name
+  name: Name
+  nameWithType: TableObject.Name
+  fullName: netDxf.Tables.TableObject.Name
+- uid: netDxf.Tables.TableObject.IsReserved
+  commentId: P:netDxf.Tables.TableObject.IsReserved
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsReserved
+  name: IsReserved
+  nameWithType: TableObject.IsReserved
+  fullName: netDxf.Tables.TableObject.IsReserved
+- uid: netDxf.Tables.TableObject.InvalidCharacters
+  commentId: P:netDxf.Tables.TableObject.InvalidCharacters
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_InvalidCharacters
+  name: InvalidCharacters
+  nameWithType: TableObject.InvalidCharacters
+  fullName: netDxf.Tables.TableObject.InvalidCharacters
+- uid: netDxf.Tables.TableObject.IsValidName(System.String)
+  commentId: M:netDxf.Tables.TableObject.IsValidName(System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  name: IsValidName(string)
+  nameWithType: TableObject.IsValidName(string)
+  fullName: netDxf.Tables.TableObject.IsValidName(string)
+  nameWithType.vb: TableObject.IsValidName(String)
+  fullName.vb: netDxf.Tables.TableObject.IsValidName(String)
+  name.vb: IsValidName(String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.IsValidName(System.String)
+    name: IsValidName
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.IsValidName(System.String)
+    name: IsValidName
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_IsValidName_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.TableObject.ToString
+  commentId: M:netDxf.Tables.TableObject.ToString
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  name: ToString()
+  nameWithType: TableObject.ToString()
+  fullName: netDxf.Tables.TableObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.ToString
+    name: ToString
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.ToString
+    name: ToString
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+  commentId: M:netDxf.Tables.TableObject.CompareTo(System.Object)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  name: CompareTo(object)
+  nameWithType: TableObject.CompareTo(object)
+  fullName: netDxf.Tables.TableObject.CompareTo(object)
+  nameWithType.vb: TableObject.CompareTo(Object)
+  fullName.vb: netDxf.Tables.TableObject.CompareTo(Object)
+  name.vb: CompareTo(Object)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.CompareTo(System.Object)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  commentId: M:netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  name: CompareTo(TableObject)
+  nameWithType: TableObject.CompareTo(TableObject)
+  fullName: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.CompareTo(netDxf.Tables.TableObject)
+    name: CompareTo
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_CompareTo_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.Tables.TableObject.GetHashCode
+  commentId: M:netDxf.Tables.TableObject.GetHashCode
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  name: GetHashCode()
+  nameWithType: TableObject.GetHashCode()
+  fullName: netDxf.Tables.TableObject.GetHashCode()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.GetHashCode
+    name: GetHashCode
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.GetHashCode
+    name: GetHashCode
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetHashCode
+  - name: (
+  - name: )
+- uid: netDxf.Tables.TableObject.Equals(System.Object)
+  commentId: M:netDxf.Tables.TableObject.Equals(System.Object)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  name: Equals(object)
+  nameWithType: TableObject.Equals(object)
+  fullName: netDxf.Tables.TableObject.Equals(object)
+  nameWithType.vb: TableObject.Equals(Object)
+  fullName.vb: netDxf.Tables.TableObject.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Equals(System.Object)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Equals(System.Object)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  commentId: M:netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  name: Equals(TableObject)
+  nameWithType: TableObject.Equals(TableObject)
+  fullName: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Equals(netDxf.Tables.TableObject)
+    name: Equals
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Equals_netDxf_Tables_TableObject_
+  - name: (
+  - uid: netDxf.Tables.TableObject
+    name: TableObject
+    href: netDxf.Tables.TableObject.html
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+  commentId: T:netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle.LinetypeChangedEventHandler
+  nameWithType: DimensionStyle.LinetypeChangedEventHandler
+  fullName: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler
+    name: LinetypeChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.LinetypeChangedEventHandler.html
+- uid: netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent*
+  commentId: Overload:netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent
+  nameWithType: DimensionStyle.OnLinetypeChangedEvent
+  fullName: netDxf.Tables.DimensionStyle.OnLinetypeChangedEvent
+- uid: netDxf.Tables.Linetype
+  commentId: T:netDxf.Tables.Linetype
+  parent: netDxf.Tables
+  href: netDxf.Tables.Linetype.html
+  name: Linetype
+  nameWithType: Linetype
+  fullName: netDxf.Tables.Linetype
+- uid: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+  commentId: T:netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle.TextStyleChangedEventHandler
+  nameWithType: DimensionStyle.TextStyleChangedEventHandler
+  fullName: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+    name: TextStyleChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler
+    name: TextStyleChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.TextStyleChangedEventHandler.html
+- uid: netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent*
+  commentId: Overload:netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_OnTextStyleChangedEvent_netDxf_Tables_TextStyle_netDxf_Tables_TextStyle_
+  name: OnTextStyleChangedEvent
+  nameWithType: DimensionStyle.OnTextStyleChangedEvent
+  fullName: netDxf.Tables.DimensionStyle.OnTextStyleChangedEvent
+- uid: netDxf.Tables.TextStyle
+  commentId: T:netDxf.Tables.TextStyle
+  parent: netDxf.Tables
+  href: netDxf.Tables.TextStyle.html
+  name: TextStyle
+  nameWithType: TextStyle
+  fullName: netDxf.Tables.TextStyle
+- uid: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+  commentId: T:netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle.BlockChangedEventHandler
+  nameWithType: DimensionStyle.BlockChangedEventHandler
+  fullName: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+    name: BlockChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.BlockChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Tables.DimensionStyle
+    name: DimensionStyle
+    href: netDxf.Tables.DimensionStyle.html
+  - name: .
+  - uid: netDxf.Tables.DimensionStyle.BlockChangedEventHandler
+    name: BlockChangedEventHandler
+    href: netDxf.Tables.DimensionStyle.BlockChangedEventHandler.html
+- uid: netDxf.Tables.DimensionStyle.OnBlockChangedEvent*
+  commentId: Overload:netDxf.Tables.DimensionStyle.OnBlockChangedEvent
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_OnBlockChangedEvent_netDxf_Blocks_Block_netDxf_Blocks_Block_
+  name: OnBlockChangedEvent
+  nameWithType: DimensionStyle.OnBlockChangedEvent
+  fullName: netDxf.Tables.DimensionStyle.OnBlockChangedEvent
+- uid: netDxf.Blocks.Block
+  commentId: T:netDxf.Blocks.Block
+  parent: netDxf.Blocks
+  href: netDxf.Blocks.Block.html
+  name: Block
+  nameWithType: Block
+  fullName: netDxf.Blocks.Block
+- uid: netDxf.Blocks
+  commentId: N:netDxf.Blocks
+  href: netDxf.html
+  name: netDxf.Blocks
+  nameWithType: netDxf.Blocks
+  fullName: netDxf.Blocks
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Blocks
+    name: Blocks
+    href: netDxf.Blocks.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: netDxf.Tables.DimensionStyle.Default*
+  commentId: Overload:netDxf.Tables.DimensionStyle.Default
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_Default
+  name: Default
+  nameWithType: DimensionStyle.Default
+  fullName: netDxf.Tables.DimensionStyle.Default
+- uid: netDxf.Tables.DimensionStyle
+  commentId: T:netDxf.Tables.DimensionStyle
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyle.html
+  name: DimensionStyle
+  nameWithType: DimensionStyle
+  fullName: netDxf.Tables.DimensionStyle
+- uid: netDxf.Tables.DimensionStyle.Iso25*
+  commentId: Overload:netDxf.Tables.DimensionStyle.Iso25
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_Iso25
+  name: Iso25
+  nameWithType: DimensionStyle.Iso25
+  fullName: netDxf.Tables.DimensionStyle.Iso25
+- uid: netDxf.Tables.DimensionStyle.#ctor*
+  commentId: Overload:netDxf.Tables.DimensionStyle.#ctor
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle__ctor_System_String_
+  name: DimensionStyle
+  nameWithType: DimensionStyle.DimensionStyle
+  fullName: netDxf.Tables.DimensionStyle.DimensionStyle
+  nameWithType.vb: DimensionStyle.New
+  fullName.vb: netDxf.Tables.DimensionStyle.New
+  name.vb: New
+- uid: netDxf.Tables.DimensionStyle.DimLineColor*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLineColor
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLineColor
+  name: DimLineColor
+  nameWithType: DimensionStyle.DimLineColor
+  fullName: netDxf.Tables.DimensionStyle.DimLineColor
+- uid: netDxf.AciColor
+  commentId: T:netDxf.AciColor
+  parent: netDxf
+  href: netDxf.AciColor.html
+  name: AciColor
+  nameWithType: AciColor
+  fullName: netDxf.AciColor
+- uid: netDxf.Tables.DimensionStyle.DimLineLinetype*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLineLinetype
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLineLinetype
+  name: DimLineLinetype
+  nameWithType: DimensionStyle.DimLineLinetype
+  fullName: netDxf.Tables.DimensionStyle.DimLineLinetype
+- uid: netDxf.Tables.DimensionStyle.DimLineLineweight*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLineLineweight
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLineLineweight
+  name: DimLineLineweight
+  nameWithType: DimensionStyle.DimLineLineweight
+  fullName: netDxf.Tables.DimensionStyle.DimLineLineweight
+- uid: netDxf.Lineweight
+  commentId: T:netDxf.Lineweight
+  parent: netDxf
+  href: netDxf.Lineweight.html
+  name: Lineweight
+  nameWithType: Lineweight
+  fullName: netDxf.Lineweight
+- uid: netDxf.Tables.DimensionStyle.DimLine1Off*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLine1Off
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLine1Off
+  name: DimLine1Off
+  nameWithType: DimensionStyle.DimLine1Off
+  fullName: netDxf.Tables.DimensionStyle.DimLine1Off
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Tables.DimensionStyle.DimLine2Off*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLine2Off
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLine2Off
+  name: DimLine2Off
+  nameWithType: DimensionStyle.DimLine2Off
+  fullName: netDxf.Tables.DimensionStyle.DimLine2Off
+- uid: netDxf.Tables.DimensionStyle.DimLineExtend*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLineExtend
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLineExtend
+  name: DimLineExtend
+  nameWithType: DimensionStyle.DimLineExtend
+  fullName: netDxf.Tables.DimensionStyle.DimLineExtend
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Tables.DimensionStyle.DimBaselineSpacing*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimBaselineSpacing
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimBaselineSpacing
+  name: DimBaselineSpacing
+  nameWithType: DimensionStyle.DimBaselineSpacing
+  fullName: netDxf.Tables.DimensionStyle.DimBaselineSpacing
+- uid: netDxf.Tables.DimensionStyle.ExtLineColor*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineColor
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineColor
+  name: ExtLineColor
+  nameWithType: DimensionStyle.ExtLineColor
+  fullName: netDxf.Tables.DimensionStyle.ExtLineColor
+- uid: netDxf.Tables.DimensionStyle.ExtLine1Linetype*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLine1Linetype
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLine1Linetype
+  name: ExtLine1Linetype
+  nameWithType: DimensionStyle.ExtLine1Linetype
+  fullName: netDxf.Tables.DimensionStyle.ExtLine1Linetype
+- uid: netDxf.Tables.DimensionStyle.ExtLine2Linetype*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLine2Linetype
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLine2Linetype
+  name: ExtLine2Linetype
+  nameWithType: DimensionStyle.ExtLine2Linetype
+  fullName: netDxf.Tables.DimensionStyle.ExtLine2Linetype
+- uid: netDxf.Tables.DimensionStyle.ExtLineLineweight*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineLineweight
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineLineweight
+  name: ExtLineLineweight
+  nameWithType: DimensionStyle.ExtLineLineweight
+  fullName: netDxf.Tables.DimensionStyle.ExtLineLineweight
+- uid: netDxf.Tables.DimensionStyle.ExtLine1Off*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLine1Off
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLine1Off
+  name: ExtLine1Off
+  nameWithType: DimensionStyle.ExtLine1Off
+  fullName: netDxf.Tables.DimensionStyle.ExtLine1Off
+- uid: netDxf.Tables.DimensionStyle.ExtLine2Off*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLine2Off
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLine2Off
+  name: ExtLine2Off
+  nameWithType: DimensionStyle.ExtLine2Off
+  fullName: netDxf.Tables.DimensionStyle.ExtLine2Off
+- uid: netDxf.Tables.DimensionStyle.ExtLineOffset*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineOffset
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineOffset
+  name: ExtLineOffset
+  nameWithType: DimensionStyle.ExtLineOffset
+  fullName: netDxf.Tables.DimensionStyle.ExtLineOffset
+- uid: netDxf.Tables.DimensionStyle.ExtLineExtend*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineExtend
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineExtend
+  name: ExtLineExtend
+  nameWithType: DimensionStyle.ExtLineExtend
+  fullName: netDxf.Tables.DimensionStyle.ExtLineExtend
+- uid: netDxf.Tables.DimensionStyle.ExtLineFixed*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineFixed
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineFixed
+  name: ExtLineFixed
+  nameWithType: DimensionStyle.ExtLineFixed
+  fullName: netDxf.Tables.DimensionStyle.ExtLineFixed
+- uid: netDxf.Tables.DimensionStyle.ExtLineFixedLength*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ExtLineFixedLength
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ExtLineFixedLength
+  name: ExtLineFixedLength
+  nameWithType: DimensionStyle.ExtLineFixedLength
+  fullName: netDxf.Tables.DimensionStyle.ExtLineFixedLength
+- uid: netDxf.Tables.DimensionStyle.DimArrow1*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimArrow1
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimArrow1
+  name: DimArrow1
+  nameWithType: DimensionStyle.DimArrow1
+  fullName: netDxf.Tables.DimensionStyle.DimArrow1
+- uid: netDxf.Tables.DimensionStyle.DimArrow2*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimArrow2
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimArrow2
+  name: DimArrow2
+  nameWithType: DimensionStyle.DimArrow2
+  fullName: netDxf.Tables.DimensionStyle.DimArrow2
+- uid: netDxf.Tables.DimensionStyle.LeaderArrow*
+  commentId: Overload:netDxf.Tables.DimensionStyle.LeaderArrow
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_LeaderArrow
+  name: LeaderArrow
+  nameWithType: DimensionStyle.LeaderArrow
+  fullName: netDxf.Tables.DimensionStyle.LeaderArrow
+- uid: netDxf.Tables.DimensionStyle.ArrowSize*
+  commentId: Overload:netDxf.Tables.DimensionStyle.ArrowSize
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_ArrowSize
+  name: ArrowSize
+  nameWithType: DimensionStyle.ArrowSize
+  fullName: netDxf.Tables.DimensionStyle.ArrowSize
+- uid: netDxf.Tables.DimensionStyle.CenterMarkSize*
+  commentId: Overload:netDxf.Tables.DimensionStyle.CenterMarkSize
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_CenterMarkSize
+  name: CenterMarkSize
+  nameWithType: DimensionStyle.CenterMarkSize
+  fullName: netDxf.Tables.DimensionStyle.CenterMarkSize
+- uid: netDxf.Tables.DimensionStyle.TextStyle*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextStyle
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextStyle
+  name: TextStyle
+  nameWithType: DimensionStyle.TextStyle
+  fullName: netDxf.Tables.DimensionStyle.TextStyle
+- uid: netDxf.Tables.DimensionStyle.TextColor*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextColor
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextColor
+  name: TextColor
+  nameWithType: DimensionStyle.TextColor
+  fullName: netDxf.Tables.DimensionStyle.TextColor
+- uid: netDxf.Tables.DimensionStyle.TextFillColor*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextFillColor
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextFillColor
+  name: TextFillColor
+  nameWithType: DimensionStyle.TextFillColor
+  fullName: netDxf.Tables.DimensionStyle.TextFillColor
+- uid: netDxf.Tables.DimensionStyle.TextHeight*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextHeight
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextHeight
+  name: TextHeight
+  nameWithType: DimensionStyle.TextHeight
+  fullName: netDxf.Tables.DimensionStyle.TextHeight
+- uid: netDxf.Tables.DimensionStyle.TextHorizontalPlacement*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextHorizontalPlacement
+  name: TextHorizontalPlacement
+  nameWithType: DimensionStyle.TextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyle.TextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  commentId: T:netDxf.Tables.DimensionStyleTextHorizontalPlacement
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTextHorizontalPlacement.html
+  name: DimensionStyleTextHorizontalPlacement
+  nameWithType: DimensionStyleTextHorizontalPlacement
+  fullName: netDxf.Tables.DimensionStyleTextHorizontalPlacement
+- uid: netDxf.Tables.DimensionStyle.TextVerticalPlacement*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextVerticalPlacement
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextVerticalPlacement
+  name: TextVerticalPlacement
+  nameWithType: DimensionStyle.TextVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyle.TextVerticalPlacement
+- uid: netDxf.Tables.DimensionStyleTextVerticalPlacement
+  commentId: T:netDxf.Tables.DimensionStyleTextVerticalPlacement
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTextVerticalPlacement.html
+  name: DimensionStyleTextVerticalPlacement
+  nameWithType: DimensionStyleTextVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleTextVerticalPlacement
+- uid: netDxf.Tables.DimensionStyle.TextOffset*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextOffset
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextOffset
+  name: TextOffset
+  nameWithType: DimensionStyle.TextOffset
+  fullName: netDxf.Tables.DimensionStyle.TextOffset
+- uid: netDxf.Tables.DimensionStyle.TextInsideAlign*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextInsideAlign
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextInsideAlign
+  name: TextInsideAlign
+  nameWithType: DimensionStyle.TextInsideAlign
+  fullName: netDxf.Tables.DimensionStyle.TextInsideAlign
+- uid: netDxf.Tables.DimensionStyle.TextOutsideAlign*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextOutsideAlign
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextOutsideAlign
+  name: TextOutsideAlign
+  nameWithType: DimensionStyle.TextOutsideAlign
+  fullName: netDxf.Tables.DimensionStyle.TextOutsideAlign
+- uid: netDxf.Tables.DimensionStyle.TextDirection*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextDirection
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextDirection
+  name: TextDirection
+  nameWithType: DimensionStyle.TextDirection
+  fullName: netDxf.Tables.DimensionStyle.TextDirection
+- uid: netDxf.Tables.DimensionStyleTextDirection
+  commentId: T:netDxf.Tables.DimensionStyleTextDirection
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTextDirection.html
+  name: DimensionStyleTextDirection
+  nameWithType: DimensionStyleTextDirection
+  fullName: netDxf.Tables.DimensionStyleTextDirection
+- uid: netDxf.Tables.DimensionStyle.TextFractionHeightScale*
+  commentId: Overload:netDxf.Tables.DimensionStyle.TextFractionHeightScale
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_TextFractionHeightScale
+  name: TextFractionHeightScale
+  nameWithType: DimensionStyle.TextFractionHeightScale
+  fullName: netDxf.Tables.DimensionStyle.TextFractionHeightScale
+- uid: netDxf.Tables.DimensionStyle.FitDimLineForce*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FitDimLineForce
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FitDimLineForce
+  name: FitDimLineForce
+  nameWithType: DimensionStyle.FitDimLineForce
+  fullName: netDxf.Tables.DimensionStyle.FitDimLineForce
+- uid: netDxf.Tables.DimensionStyle.FitDimLineInside*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FitDimLineInside
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FitDimLineInside
+  name: FitDimLineInside
+  nameWithType: DimensionStyle.FitDimLineInside
+  fullName: netDxf.Tables.DimensionStyle.FitDimLineInside
+- uid: netDxf.Tables.DimensionStyle.DimScaleOverall*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimScaleOverall
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimScaleOverall
+  name: DimScaleOverall
+  nameWithType: DimensionStyle.DimScaleOverall
+  fullName: netDxf.Tables.DimensionStyle.DimScaleOverall
+- uid: netDxf.Tables.DimensionStyle.FitOptions*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FitOptions
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FitOptions
+  name: FitOptions
+  nameWithType: DimensionStyle.FitOptions
+  fullName: netDxf.Tables.DimensionStyle.FitOptions
+- uid: netDxf.Tables.DimensionStyleFitOptions
+  commentId: T:netDxf.Tables.DimensionStyleFitOptions
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleFitOptions.html
+  name: DimensionStyleFitOptions
+  nameWithType: DimensionStyleFitOptions
+  fullName: netDxf.Tables.DimensionStyleFitOptions
+- uid: netDxf.Tables.DimensionStyle.FitTextInside*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FitTextInside
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FitTextInside
+  name: FitTextInside
+  nameWithType: DimensionStyle.FitTextInside
+  fullName: netDxf.Tables.DimensionStyle.FitTextInside
+- uid: netDxf.Tables.DimensionStyle.FitTextMove*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FitTextMove
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FitTextMove
+  name: FitTextMove
+  nameWithType: DimensionStyle.FitTextMove
+  fullName: netDxf.Tables.DimensionStyle.FitTextMove
+- uid: netDxf.Tables.DimensionStyleFitTextMove
+  commentId: T:netDxf.Tables.DimensionStyleFitTextMove
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleFitTextMove.html
+  name: DimensionStyleFitTextMove
+  nameWithType: DimensionStyleFitTextMove
+  fullName: netDxf.Tables.DimensionStyleFitTextMove
+- uid: netDxf.Tables.DimensionStyle.AngularPrecision*
+  commentId: Overload:netDxf.Tables.DimensionStyle.AngularPrecision
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_AngularPrecision
+  name: AngularPrecision
+  nameWithType: DimensionStyle.AngularPrecision
+  fullName: netDxf.Tables.DimensionStyle.AngularPrecision
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short
+- uid: netDxf.Tables.DimensionStyle.LengthPrecision*
+  commentId: Overload:netDxf.Tables.DimensionStyle.LengthPrecision
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_LengthPrecision
+  name: LengthPrecision
+  nameWithType: DimensionStyle.LengthPrecision
+  fullName: netDxf.Tables.DimensionStyle.LengthPrecision
+- uid: netDxf.Tables.DimensionStyle.DimPrefix*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimPrefix
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimPrefix
+  name: DimPrefix
+  nameWithType: DimensionStyle.DimPrefix
+  fullName: netDxf.Tables.DimensionStyle.DimPrefix
+- uid: netDxf.Tables.DimensionStyle.DimSuffix*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimSuffix
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimSuffix
+  name: DimSuffix
+  nameWithType: DimensionStyle.DimSuffix
+  fullName: netDxf.Tables.DimensionStyle.DimSuffix
+- uid: netDxf.Tables.DimensionStyle.DecimalSeparator*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DecimalSeparator
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DecimalSeparator
+  name: DecimalSeparator
+  nameWithType: DimensionStyle.DecimalSeparator
+  fullName: netDxf.Tables.DimensionStyle.DecimalSeparator
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: netDxf.Tables.DimensionStyle.DimScaleLinear*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimScaleLinear
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimScaleLinear
+  name: DimScaleLinear
+  nameWithType: DimensionStyle.DimScaleLinear
+  fullName: netDxf.Tables.DimensionStyle.DimScaleLinear
+- uid: netDxf.Tables.DimensionStyle.DimLengthUnits*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimLengthUnits
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimLengthUnits
+  name: DimLengthUnits
+  nameWithType: DimensionStyle.DimLengthUnits
+  fullName: netDxf.Tables.DimensionStyle.DimLengthUnits
+- uid: netDxf.Units.LinearUnitType
+  commentId: T:netDxf.Units.LinearUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.LinearUnitType.html
+  name: LinearUnitType
+  nameWithType: LinearUnitType
+  fullName: netDxf.Units.LinearUnitType
+- uid: netDxf.Units
+  commentId: N:netDxf.Units
+  href: netDxf.html
+  name: netDxf.Units
+  nameWithType: netDxf.Units
+  fullName: netDxf.Units
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Units
+    name: Units
+    href: netDxf.Units.html
+- uid: netDxf.Tables.DimensionStyle.DimAngularUnits*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimAngularUnits
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimAngularUnits
+  name: DimAngularUnits
+  nameWithType: DimensionStyle.DimAngularUnits
+  fullName: netDxf.Tables.DimensionStyle.DimAngularUnits
+- uid: netDxf.Units.AngleUnitType
+  commentId: T:netDxf.Units.AngleUnitType
+  parent: netDxf.Units
+  href: netDxf.Units.AngleUnitType.html
+  name: AngleUnitType
+  nameWithType: AngleUnitType
+  fullName: netDxf.Units.AngleUnitType
+- uid: netDxf.Tables.DimensionStyle.FractionType*
+  commentId: Overload:netDxf.Tables.DimensionStyle.FractionType
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_FractionType
+  name: FractionType
+  nameWithType: DimensionStyle.FractionType
+  fullName: netDxf.Tables.DimensionStyle.FractionType
+- uid: netDxf.Units.FractionFormatType
+  commentId: T:netDxf.Units.FractionFormatType
+  parent: netDxf.Units
+  href: netDxf.Units.FractionFormatType.html
+  name: FractionFormatType
+  nameWithType: FractionFormatType
+  fullName: netDxf.Units.FractionFormatType
+- uid: netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressLinearLeadingZeros
+  name: SuppressLinearLeadingZeros
+  nameWithType: DimensionStyle.SuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressLinearLeadingZeros
+- uid: netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressLinearTrailingZeros
+  name: SuppressLinearTrailingZeros
+  nameWithType: DimensionStyle.SuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressLinearTrailingZeros
+- uid: netDxf.Tables.DimensionStyle.SuppressZeroFeet*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressZeroFeet
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressZeroFeet
+  name: SuppressZeroFeet
+  nameWithType: DimensionStyle.SuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyle.SuppressZeroFeet
+- uid: netDxf.Tables.DimensionStyle.SuppressZeroInches*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressZeroInches
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressZeroInches
+  name: SuppressZeroInches
+  nameWithType: DimensionStyle.SuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyle.SuppressZeroInches
+- uid: netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressAngularLeadingZeros
+  name: SuppressAngularLeadingZeros
+  nameWithType: DimensionStyle.SuppressAngularLeadingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressAngularLeadingZeros
+- uid: netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_SuppressAngularTrailingZeros
+  name: SuppressAngularTrailingZeros
+  nameWithType: DimensionStyle.SuppressAngularTrailingZeros
+  fullName: netDxf.Tables.DimensionStyle.SuppressAngularTrailingZeros
+- uid: netDxf.Tables.DimensionStyle.DimRoundoff*
+  commentId: Overload:netDxf.Tables.DimensionStyle.DimRoundoff
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_DimRoundoff
+  name: DimRoundoff
+  nameWithType: DimensionStyle.DimRoundoff
+  fullName: netDxf.Tables.DimensionStyle.DimRoundoff
+- uid: netDxf.Tables.DimensionStyle.AlternateUnits*
+  commentId: Overload:netDxf.Tables.DimensionStyle.AlternateUnits
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_AlternateUnits
+  name: AlternateUnits
+  nameWithType: DimensionStyle.AlternateUnits
+  fullName: netDxf.Tables.DimensionStyle.AlternateUnits
+- uid: netDxf.Tables.DimensionStyleAlternateUnits
+  commentId: T:netDxf.Tables.DimensionStyleAlternateUnits
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleAlternateUnits.html
+  name: DimensionStyleAlternateUnits
+  nameWithType: DimensionStyleAlternateUnits
+  fullName: netDxf.Tables.DimensionStyleAlternateUnits
+- uid: netDxf.Tables.DimensionStyle.Tolerances*
+  commentId: Overload:netDxf.Tables.DimensionStyle.Tolerances
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_Tolerances
+  name: Tolerances
+  nameWithType: DimensionStyle.Tolerances
+  fullName: netDxf.Tables.DimensionStyle.Tolerances
+- uid: netDxf.Tables.DimensionStyleTolerances
+  commentId: T:netDxf.Tables.DimensionStyleTolerances
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTolerances.html
+  name: DimensionStyleTolerances
+  nameWithType: DimensionStyleTolerances
+  fullName: netDxf.Tables.DimensionStyleTolerances
+- uid: netDxf.Tables.DimensionStyle.Owner*
+  commentId: Overload:netDxf.Tables.DimensionStyle.Owner
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_Owner
+  name: Owner
+  nameWithType: DimensionStyle.Owner
+  fullName: netDxf.Tables.DimensionStyle.Owner
+- uid: netDxf.Collections.DimensionStyles
+  commentId: T:netDxf.Collections.DimensionStyles
+  parent: netDxf.Collections
+  href: netDxf.Collections.DimensionStyles.html
+  name: DimensionStyles
+  nameWithType: DimensionStyles
+  fullName: netDxf.Collections.DimensionStyles
+- uid: netDxf.Collections
+  commentId: N:netDxf.Collections
+  href: netDxf.html
+  name: netDxf.Collections
+  nameWithType: netDxf.Collections
+  fullName: netDxf.Collections
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Collections
+    name: Collections
+    href: netDxf.Collections.html
+- uid: netDxf.Tables.TableObject.HasReferences
+  commentId: M:netDxf.Tables.TableObject.HasReferences
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  name: HasReferences()
+  nameWithType: TableObject.HasReferences()
+  fullName: netDxf.Tables.TableObject.HasReferences()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.HasReferences
+    name: HasReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.HasReferences
+    name: HasReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_HasReferences
+  - name: (
+  - name: )
+- uid: netDxf.Tables.DimensionStyle.HasReferences*
+  commentId: Overload:netDxf.Tables.DimensionStyle.HasReferences
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_HasReferences
+  name: HasReferences
+  nameWithType: DimensionStyle.HasReferences
+  fullName: netDxf.Tables.DimensionStyle.HasReferences
+- uid: netDxf.Tables.TableObject.GetReferences
+  commentId: M:netDxf.Tables.TableObject.GetReferences
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  name: GetReferences()
+  nameWithType: TableObject.GetReferences()
+  fullName: netDxf.Tables.TableObject.GetReferences()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.GetReferences
+    name: GetReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.GetReferences
+    name: GetReferences
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_GetReferences
+  - name: (
+  - name: )
+- uid: netDxf.Tables.DimensionStyle.GetReferences*
+  commentId: Overload:netDxf.Tables.DimensionStyle.GetReferences
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_GetReferences
+  name: GetReferences
+  nameWithType: DimensionStyle.GetReferences
+  fullName: netDxf.Tables.DimensionStyle.GetReferences
+- uid: System.Collections.Generic.List{netDxf.DxfObjectReference}
+  commentId: T:System.Collections.Generic.List{netDxf.DxfObjectReference}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DxfObjectReference>
+  nameWithType: List<DxfObjectReference>
+  fullName: System.Collections.Generic.List<netDxf.DxfObjectReference>
+  nameWithType.vb: List(Of DxfObjectReference)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.DxfObjectReference)
+  name.vb: List(Of DxfObjectReference)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.DxfObjectReference
+    name: DxfObjectReference
+    href: netDxf.DxfObjectReference.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.DxfObjectReference
+    name: DxfObjectReference
+    href: netDxf.DxfObjectReference.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Tables.TableObject.Clone(System.String)
+  commentId: M:netDxf.Tables.TableObject.Clone(System.String)
+  parent: netDxf.Tables.TableObject
+  isExternal: true
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  name: Clone(string)
+  nameWithType: TableObject.Clone(string)
+  fullName: netDxf.Tables.TableObject.Clone(string)
+  nameWithType.vb: TableObject.Clone(String)
+  fullName.vb: netDxf.Tables.TableObject.Clone(String)
+  name.vb: Clone(String)
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Clone(System.String)
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Clone(System.String)
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: netDxf.Tables.DimensionStyle.Clone*
+  commentId: Overload:netDxf.Tables.DimensionStyle.Clone
+  href: netDxf.Tables.DimensionStyle.html#netDxf_Tables_DimensionStyle_Clone_System_String_
+  name: Clone
+  nameWithType: DimensionStyle.Clone
+  fullName: netDxf.Tables.DimensionStyle.Clone
+- uid: netDxf.Tables.TableObject.Clone
+  commentId: M:netDxf.Tables.TableObject.Clone
+  parent: netDxf.Tables.TableObject
+  href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  name: Clone()
+  nameWithType: TableObject.Clone()
+  fullName: netDxf.Tables.TableObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Tables.TableObject.Clone
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Tables.TableObject.Clone
+    name: Clone
+    href: netDxf.Tables.TableObject.html#netDxf_Tables_TableObject_Clone
+  - name: (
+  - name: )

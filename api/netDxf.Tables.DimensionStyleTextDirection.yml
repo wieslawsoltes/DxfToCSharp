@@ -1,0 +1,106 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyleTextDirection
+  commentId: T:netDxf.Tables.DimensionStyleTextDirection
+  id: DimensionStyleTextDirection
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyleTextDirection.LeftToRight
+  - netDxf.Tables.DimensionStyleTextDirection.RightToLeft
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleTextDirection
+  nameWithType: DimensionStyleTextDirection
+  fullName: netDxf.Tables.DimensionStyleTextDirection
+  type: Enum
+  source:
+    id: DimensionStyleTextDirection
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextDirection.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Specifies the direction of the dimension text.
+  example: []
+  syntax:
+    content: public enum DimensionStyleTextDirection
+    content.vb: Public Enum DimensionStyleTextDirection
+- uid: netDxf.Tables.DimensionStyleTextDirection.LeftToRight
+  commentId: F:netDxf.Tables.DimensionStyleTextDirection.LeftToRight
+  id: LeftToRight
+  parent: netDxf.Tables.DimensionStyleTextDirection
+  langs:
+  - csharp
+  - vb
+  name: LeftToRight
+  nameWithType: DimensionStyleTextDirection.LeftToRight
+  fullName: netDxf.Tables.DimensionStyleTextDirection.LeftToRight
+  type: Field
+  source:
+    id: LeftToRight
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextDirection.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Displays dimension text in a Left-to-Right reading style.
+  example: []
+  syntax:
+    content: LeftToRight = 0
+    return:
+      type: netDxf.Tables.DimensionStyleTextDirection
+- uid: netDxf.Tables.DimensionStyleTextDirection.RightToLeft
+  commentId: F:netDxf.Tables.DimensionStyleTextDirection.RightToLeft
+  id: RightToLeft
+  parent: netDxf.Tables.DimensionStyleTextDirection
+  langs:
+  - csharp
+  - vb
+  name: RightToLeft
+  nameWithType: DimensionStyleTextDirection.RightToLeft
+  fullName: netDxf.Tables.DimensionStyleTextDirection.RightToLeft
+  type: Field
+  source:
+    id: RightToLeft
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTextDirection.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Displays dimension text in a Right-to-Left reading style.
+  example: []
+  syntax:
+    content: RightToLeft = 1
+    return:
+      type: netDxf.Tables.DimensionStyleTextDirection
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: netDxf.Tables.DimensionStyleTextDirection
+  commentId: T:netDxf.Tables.DimensionStyleTextDirection
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTextDirection.html
+  name: DimensionStyleTextDirection
+  nameWithType: DimensionStyleTextDirection
+  fullName: netDxf.Tables.DimensionStyleTextDirection

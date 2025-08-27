@@ -1,0 +1,206 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Objects.PlotType
+  commentId: T:netDxf.Objects.PlotType
+  id: PlotType
+  parent: netDxf.Objects
+  children:
+  - netDxf.Objects.PlotType.DrawingExtents
+  - netDxf.Objects.PlotType.DrawingLimits
+  - netDxf.Objects.PlotType.LastScreenDisplay
+  - netDxf.Objects.PlotType.LayoutInformation
+  - netDxf.Objects.PlotType.View
+  - netDxf.Objects.PlotType.Window
+  langs:
+  - csharp
+  - vb
+  name: PlotType
+  nameWithType: PlotType
+  fullName: netDxf.Objects.PlotType
+  type: Enum
+  source:
+    id: PlotType
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 30
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Defines the portion of paper space to output to the media.
+  example: []
+  syntax:
+    content: public enum PlotType
+    content.vb: Public Enum PlotType
+- uid: netDxf.Objects.PlotType.LastScreenDisplay
+  commentId: F:netDxf.Objects.PlotType.LastScreenDisplay
+  id: LastScreenDisplay
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: LastScreenDisplay
+  nameWithType: PlotType.LastScreenDisplay
+  fullName: netDxf.Objects.PlotType.LastScreenDisplay
+  type: Field
+  source:
+    id: LastScreenDisplay
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Last screen display
+  example: []
+  syntax:
+    content: LastScreenDisplay = 0
+    return:
+      type: netDxf.Objects.PlotType
+- uid: netDxf.Objects.PlotType.DrawingExtents
+  commentId: F:netDxf.Objects.PlotType.DrawingExtents
+  id: DrawingExtents
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: DrawingExtents
+  nameWithType: PlotType.DrawingExtents
+  fullName: netDxf.Objects.PlotType.DrawingExtents
+  type: Field
+  source:
+    id: DrawingExtents
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 40
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Drawing extents.
+  example: []
+  syntax:
+    content: DrawingExtents = 1
+    return:
+      type: netDxf.Objects.PlotType
+- uid: netDxf.Objects.PlotType.DrawingLimits
+  commentId: F:netDxf.Objects.PlotType.DrawingLimits
+  id: DrawingLimits
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: DrawingLimits
+  nameWithType: PlotType.DrawingLimits
+  fullName: netDxf.Objects.PlotType.DrawingLimits
+  type: Field
+  source:
+    id: DrawingLimits
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 45
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Drawing limits.
+  example: []
+  syntax:
+    content: DrawingLimits = 2
+    return:
+      type: netDxf.Objects.PlotType
+- uid: netDxf.Objects.PlotType.View
+  commentId: F:netDxf.Objects.PlotType.View
+  id: View
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: View
+  nameWithType: PlotType.View
+  fullName: netDxf.Objects.PlotType.View
+  type: Field
+  source:
+    id: View
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 50
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: View specified by the plot view name.
+  example: []
+  syntax:
+    content: View = 3
+    return:
+      type: netDxf.Objects.PlotType
+- uid: netDxf.Objects.PlotType.Window
+  commentId: F:netDxf.Objects.PlotType.Window
+  id: Window
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: Window
+  nameWithType: PlotType.Window
+  fullName: netDxf.Objects.PlotType.Window
+  type: Field
+  source:
+    id: Window
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 55
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Window specified by the upper-right and bottom-left window corners.
+  example: []
+  syntax:
+    content: Window = 4
+    return:
+      type: netDxf.Objects.PlotType
+- uid: netDxf.Objects.PlotType.LayoutInformation
+  commentId: F:netDxf.Objects.PlotType.LayoutInformation
+  id: LayoutInformation
+  parent: netDxf.Objects.PlotType
+  langs:
+  - csharp
+  - vb
+  name: LayoutInformation
+  nameWithType: PlotType.LayoutInformation
+  fullName: netDxf.Objects.PlotType.LayoutInformation
+  type: Field
+  source:
+    id: LayoutInformation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Objects/PlotType.cs
+    startLine: 60
+  assemblies:
+  - netDxf
+  namespace: netDxf.Objects
+  summary: Layout information.
+  example: []
+  syntax:
+    content: LayoutInformation = 5
+    return:
+      type: netDxf.Objects.PlotType
+references:
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Objects.PlotType
+  commentId: T:netDxf.Objects.PlotType
+  parent: netDxf.Objects
+  href: netDxf.Objects.PlotType.html
+  name: PlotType
+  nameWithType: PlotType
+  fullName: netDxf.Objects.PlotType

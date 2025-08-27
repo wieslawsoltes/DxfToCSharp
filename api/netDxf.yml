@@ -1,0 +1,298 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf
+  commentId: N:netDxf
+  id: netDxf
+  children:
+  - netDxf.AciColor
+  - netDxf.BezierCurve
+  - netDxf.BezierCurveCubic
+  - netDxf.BezierCurveQuadratic
+  - netDxf.BoundingRectangle
+  - netDxf.ClippingBoundary
+  - netDxf.ClippingBoundaryType
+  - netDxf.CoordinateSystem
+  - netDxf.DxfDocument
+  - netDxf.DxfObject
+  - netDxf.DxfObject.XDataAddAppRegEventHandler
+  - netDxf.DxfObject.XDataRemoveAppRegEventHandler
+  - netDxf.DxfObjectCode
+  - netDxf.DxfObjectReference
+  - netDxf.Lineweight
+  - netDxf.MathHelper
+  - netDxf.Matrix2
+  - netDxf.Matrix3
+  - netDxf.Matrix4
+  - netDxf.StringEnum`1
+  - netDxf.StringValueAttribute
+  - netDxf.Symbols
+  - netDxf.Transparency
+  - netDxf.Vector2
+  - netDxf.Vector3
+  - netDxf.Vector4
+  - netDxf.XData
+  - netDxf.XDataCode
+  - netDxf.XDataRecord
+  langs:
+  - csharp
+  - vb
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+  type: Namespace
+  assemblies:
+  - netDxf
+references:
+- uid: netDxf.AciColor
+  commentId: T:netDxf.AciColor
+  parent: netDxf
+  href: netDxf.AciColor.html
+  name: AciColor
+  nameWithType: AciColor
+  fullName: netDxf.AciColor
+- uid: netDxf.BezierCurve
+  commentId: T:netDxf.BezierCurve
+  parent: netDxf
+  href: netDxf.BezierCurve.html
+  name: BezierCurve
+  nameWithType: BezierCurve
+  fullName: netDxf.BezierCurve
+- uid: netDxf.BezierCurveCubic
+  commentId: T:netDxf.BezierCurveCubic
+  href: netDxf.BezierCurveCubic.html
+  name: BezierCurveCubic
+  nameWithType: BezierCurveCubic
+  fullName: netDxf.BezierCurveCubic
+- uid: netDxf.BezierCurveQuadratic
+  commentId: T:netDxf.BezierCurveQuadratic
+  href: netDxf.BezierCurveQuadratic.html
+  name: BezierCurveQuadratic
+  nameWithType: BezierCurveQuadratic
+  fullName: netDxf.BezierCurveQuadratic
+- uid: netDxf.BoundingRectangle
+  commentId: T:netDxf.BoundingRectangle
+  parent: netDxf
+  href: netDxf.BoundingRectangle.html
+  name: BoundingRectangle
+  nameWithType: BoundingRectangle
+  fullName: netDxf.BoundingRectangle
+- uid: netDxf.ClippingBoundary
+  commentId: T:netDxf.ClippingBoundary
+  parent: netDxf
+  href: netDxf.ClippingBoundary.html
+  name: ClippingBoundary
+  nameWithType: ClippingBoundary
+  fullName: netDxf.ClippingBoundary
+- uid: netDxf.ClippingBoundaryType
+  commentId: T:netDxf.ClippingBoundaryType
+  parent: netDxf
+  href: netDxf.ClippingBoundaryType.html
+  name: ClippingBoundaryType
+  nameWithType: ClippingBoundaryType
+  fullName: netDxf.ClippingBoundaryType
+- uid: netDxf.CoordinateSystem
+  commentId: T:netDxf.CoordinateSystem
+  parent: netDxf
+  href: netDxf.CoordinateSystem.html
+  name: CoordinateSystem
+  nameWithType: CoordinateSystem
+  fullName: netDxf.CoordinateSystem
+- uid: netDxf.DxfDocument
+  commentId: T:netDxf.DxfDocument
+  parent: netDxf
+  href: netDxf.DxfDocument.html
+  name: DxfDocument
+  nameWithType: DxfDocument
+  fullName: netDxf.DxfDocument
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: netDxf.DxfObject.XDataAddAppRegEventHandler
+  commentId: T:netDxf.DxfObject.XDataAddAppRegEventHandler
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject.XDataAddAppRegEventHandler
+  nameWithType: DxfObject.XDataAddAppRegEventHandler
+  fullName: netDxf.DxfObject.XDataAddAppRegEventHandler
+  spec.csharp:
+  - uid: netDxf.DxfObject
+    name: DxfObject
+    href: netDxf.DxfObject.html
+  - name: .
+  - uid: netDxf.DxfObject.XDataAddAppRegEventHandler
+    name: XDataAddAppRegEventHandler
+    href: netDxf.DxfObject.XDataAddAppRegEventHandler.html
+  spec.vb:
+  - uid: netDxf.DxfObject
+    name: DxfObject
+    href: netDxf.DxfObject.html
+  - name: .
+  - uid: netDxf.DxfObject.XDataAddAppRegEventHandler
+    name: XDataAddAppRegEventHandler
+    href: netDxf.DxfObject.XDataAddAppRegEventHandler.html
+- uid: netDxf.DxfObject.XDataRemoveAppRegEventHandler
+  commentId: T:netDxf.DxfObject.XDataRemoveAppRegEventHandler
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject.XDataRemoveAppRegEventHandler
+  nameWithType: DxfObject.XDataRemoveAppRegEventHandler
+  fullName: netDxf.DxfObject.XDataRemoveAppRegEventHandler
+  spec.csharp:
+  - uid: netDxf.DxfObject
+    name: DxfObject
+    href: netDxf.DxfObject.html
+  - name: .
+  - uid: netDxf.DxfObject.XDataRemoveAppRegEventHandler
+    name: XDataRemoveAppRegEventHandler
+    href: netDxf.DxfObject.XDataRemoveAppRegEventHandler.html
+  spec.vb:
+  - uid: netDxf.DxfObject
+    name: DxfObject
+    href: netDxf.DxfObject.html
+  - name: .
+  - uid: netDxf.DxfObject.XDataRemoveAppRegEventHandler
+    name: XDataRemoveAppRegEventHandler
+    href: netDxf.DxfObject.XDataRemoveAppRegEventHandler.html
+- uid: netDxf.DxfObjectCode
+  commentId: T:netDxf.DxfObjectCode
+  href: netDxf.DxfObjectCode.html
+  name: DxfObjectCode
+  nameWithType: DxfObjectCode
+  fullName: netDxf.DxfObjectCode
+- uid: netDxf.DxfObjectReference
+  commentId: T:netDxf.DxfObjectReference
+  href: netDxf.DxfObjectReference.html
+  name: DxfObjectReference
+  nameWithType: DxfObjectReference
+  fullName: netDxf.DxfObjectReference
+- uid: netDxf.Lineweight
+  commentId: T:netDxf.Lineweight
+  parent: netDxf
+  href: netDxf.Lineweight.html
+  name: Lineweight
+  nameWithType: Lineweight
+  fullName: netDxf.Lineweight
+- uid: netDxf.MathHelper
+  commentId: T:netDxf.MathHelper
+  href: netDxf.MathHelper.html
+  name: MathHelper
+  nameWithType: MathHelper
+  fullName: netDxf.MathHelper
+- uid: netDxf.Matrix2
+  commentId: T:netDxf.Matrix2
+  parent: netDxf
+  href: netDxf.Matrix2.html
+  name: Matrix2
+  nameWithType: Matrix2
+  fullName: netDxf.Matrix2
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Matrix4
+  commentId: T:netDxf.Matrix4
+  parent: netDxf
+  href: netDxf.Matrix4.html
+  name: Matrix4
+  nameWithType: Matrix4
+  fullName: netDxf.Matrix4
+- uid: netDxf.StringEnum`1
+  commentId: T:netDxf.StringEnum`1
+  href: netDxf.StringEnum-1.html
+  name: StringEnum<T>
+  nameWithType: StringEnum<T>
+  fullName: netDxf.StringEnum<T>
+  nameWithType.vb: StringEnum(Of T)
+  fullName.vb: netDxf.StringEnum(Of T)
+  name.vb: StringEnum(Of T)
+  spec.csharp:
+  - uid: netDxf.StringEnum`1
+    name: StringEnum
+    href: netDxf.StringEnum-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: netDxf.StringEnum`1
+    name: StringEnum
+    href: netDxf.StringEnum-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: netDxf.StringValueAttribute
+  commentId: T:netDxf.StringValueAttribute
+  parent: netDxf
+  href: netDxf.StringValueAttribute.html
+  name: StringValueAttribute
+  nameWithType: StringValueAttribute
+  fullName: netDxf.StringValueAttribute
+- uid: netDxf.Symbols
+  commentId: T:netDxf.Symbols
+  href: netDxf.Symbols.html
+  name: Symbols
+  nameWithType: Symbols
+  fullName: netDxf.Symbols
+- uid: netDxf.Transparency
+  commentId: T:netDxf.Transparency
+  parent: netDxf
+  href: netDxf.Transparency.html
+  name: Transparency
+  nameWithType: Transparency
+  fullName: netDxf.Transparency
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Vector4
+  commentId: T:netDxf.Vector4
+  parent: netDxf
+  href: netDxf.Vector4.html
+  name: Vector4
+  nameWithType: Vector4
+  fullName: netDxf.Vector4
+- uid: netDxf.XData
+  commentId: T:netDxf.XData
+  parent: netDxf
+  href: netDxf.XData.html
+  name: XData
+  nameWithType: XData
+  fullName: netDxf.XData
+- uid: netDxf.XDataCode
+  commentId: T:netDxf.XDataCode
+  parent: netDxf
+  href: netDxf.XDataCode.html
+  name: XDataCode
+  nameWithType: XDataCode
+  fullName: netDxf.XDataCode
+- uid: netDxf.XDataRecord
+  commentId: T:netDxf.XDataRecord
+  parent: netDxf
+  href: netDxf.XDataRecord.html
+  name: XDataRecord
+  nameWithType: XDataRecord
+  fullName: netDxf.XDataRecord
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf

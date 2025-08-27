@@ -1,0 +1,1540 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Image
+  commentId: T:netDxf.Entities.Image
+  id: Image
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,System.Double,System.Double)
+  - netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,netDxf.Vector2)
+  - netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,System.Double,System.Double)
+  - netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,netDxf.Vector2)
+  - netDxf.Entities.Image.Brightness
+  - netDxf.Entities.Image.Clipping
+  - netDxf.Entities.Image.ClippingBoundary
+  - netDxf.Entities.Image.Clone
+  - netDxf.Entities.Image.Contrast
+  - netDxf.Entities.Image.Definition
+  - netDxf.Entities.Image.DisplayOptions
+  - netDxf.Entities.Image.Fade
+  - netDxf.Entities.Image.Height
+  - netDxf.Entities.Image.ImageDefinitionChanged
+  - netDxf.Entities.Image.OnImageDefinitionChangedEvent(netDxf.Objects.ImageDefinition,netDxf.Objects.ImageDefinition)
+  - netDxf.Entities.Image.Position
+  - netDxf.Entities.Image.Rotation
+  - netDxf.Entities.Image.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  - netDxf.Entities.Image.Uvector
+  - netDxf.Entities.Image.Vvector
+  - netDxf.Entities.Image.Width
+  langs:
+  - csharp
+  - vb
+  name: Image
+  nameWithType: Image
+  fullName: netDxf.Entities.Image
+  type: Class
+  source:
+    id: Image
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents a raster image <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class Image : EntityObject, ICloneable'
+    content.vb: Public Class Image Inherits EntityObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Image.ImageDefinitionChanged
+  commentId: E:netDxf.Entities.Image.ImageDefinitionChanged
+  id: ImageDefinitionChanged
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: ImageDefinitionChanged
+  nameWithType: Image.ImageDefinitionChanged
+  fullName: netDxf.Entities.Image.ImageDefinitionChanged
+  type: Event
+  source:
+    id: ImageDefinitionChanged
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 41
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: public event Image.ImageDefinitionChangedEventHandler ImageDefinitionChanged
+    return:
+      type: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+    content.vb: Public Event ImageDefinitionChanged As Image.ImageDefinitionChangedEventHandler
+- uid: netDxf.Entities.Image.OnImageDefinitionChangedEvent(netDxf.Objects.ImageDefinition,netDxf.Objects.ImageDefinition)
+  commentId: M:netDxf.Entities.Image.OnImageDefinitionChangedEvent(netDxf.Objects.ImageDefinition,netDxf.Objects.ImageDefinition)
+  id: OnImageDefinitionChangedEvent(netDxf.Objects.ImageDefinition,netDxf.Objects.ImageDefinition)
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: OnImageDefinitionChangedEvent(ImageDefinition, ImageDefinition)
+  nameWithType: Image.OnImageDefinitionChangedEvent(ImageDefinition, ImageDefinition)
+  fullName: netDxf.Entities.Image.OnImageDefinitionChangedEvent(netDxf.Objects.ImageDefinition, netDxf.Objects.ImageDefinition)
+  type: Method
+  source:
+    id: OnImageDefinitionChangedEvent
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 42
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  syntax:
+    content: protected virtual ImageDefinition OnImageDefinitionChangedEvent(ImageDefinition oldImageDefinition, ImageDefinition newImageDefinition)
+    parameters:
+    - id: oldImageDefinition
+      type: netDxf.Objects.ImageDefinition
+    - id: newImageDefinition
+      type: netDxf.Objects.ImageDefinition
+    return:
+      type: netDxf.Objects.ImageDefinition
+    content.vb: Protected Overridable Function OnImageDefinitionChangedEvent(oldImageDefinition As ImageDefinition, newImageDefinition As ImageDefinition) As ImageDefinition
+  overload: netDxf.Entities.Image.OnImageDefinitionChangedEvent*
+- uid: netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,netDxf.Vector2)
+  commentId: M:netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,netDxf.Vector2)
+  id: '#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,netDxf.Vector2)'
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Image(ImageDefinition, Vector2, Vector2)
+  nameWithType: Image.Image(ImageDefinition, Vector2, Vector2)
+  fullName: netDxf.Entities.Image.Image(netDxf.Objects.ImageDefinition, netDxf.Vector2, netDxf.Vector2)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 86
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Image</code> class.
+  example: []
+  syntax:
+    content: public Image(ImageDefinition imageDefinition, Vector2 position, Vector2 size)
+    parameters:
+    - id: imageDefinition
+      type: netDxf.Objects.ImageDefinition
+      description: Image definition.
+    - id: position
+      type: netDxf.Vector2
+      description: Image <xref href="netDxf.Vector2?text=position" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    - id: size
+      type: netDxf.Vector2
+      description: Image <xref href="netDxf.Vector2?text=size" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    content.vb: Public Sub New(imageDefinition As ImageDefinition, position As Vector2, size As Vector2)
+  overload: netDxf.Entities.Image.#ctor*
+  nameWithType.vb: Image.New(ImageDefinition, Vector2, Vector2)
+  fullName.vb: netDxf.Entities.Image.New(netDxf.Objects.ImageDefinition, netDxf.Vector2, netDxf.Vector2)
+  name.vb: New(ImageDefinition, Vector2, Vector2)
+- uid: netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,netDxf.Vector2)
+  commentId: M:netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,netDxf.Vector2)
+  id: '#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,netDxf.Vector2)'
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Image(ImageDefinition, Vector3, Vector2)
+  nameWithType: Image.Image(ImageDefinition, Vector3, Vector2)
+  fullName: netDxf.Entities.Image.Image(netDxf.Objects.ImageDefinition, netDxf.Vector3, netDxf.Vector2)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 97
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Image</code> class.
+  example: []
+  syntax:
+    content: public Image(ImageDefinition imageDefinition, Vector3 position, Vector2 size)
+    parameters:
+    - id: imageDefinition
+      type: netDxf.Objects.ImageDefinition
+      description: Image definition.
+    - id: position
+      type: netDxf.Vector3
+      description: Image <xref href="netDxf.Vector3?text=position" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    - id: size
+      type: netDxf.Vector2
+      description: Image <xref href="netDxf.Vector2?text=size" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    content.vb: Public Sub New(imageDefinition As ImageDefinition, position As Vector3, size As Vector2)
+  overload: netDxf.Entities.Image.#ctor*
+  nameWithType.vb: Image.New(ImageDefinition, Vector3, Vector2)
+  fullName.vb: netDxf.Entities.Image.New(netDxf.Objects.ImageDefinition, netDxf.Vector3, netDxf.Vector2)
+  name.vb: New(ImageDefinition, Vector3, Vector2)
+- uid: netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,System.Double,System.Double)
+  commentId: M:netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,System.Double,System.Double)
+  id: '#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector2,System.Double,System.Double)'
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Image(ImageDefinition, Vector2, double, double)
+  nameWithType: Image.Image(ImageDefinition, Vector2, double, double)
+  fullName: netDxf.Entities.Image.Image(netDxf.Objects.ImageDefinition, netDxf.Vector2, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 109
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Image</code> class.
+  example: []
+  syntax:
+    content: public Image(ImageDefinition imageDefinition, Vector2 position, double width, double height)
+    parameters:
+    - id: imageDefinition
+      type: netDxf.Objects.ImageDefinition
+      description: Image definition.
+    - id: position
+      type: netDxf.Vector2
+      description: Image <xref href="netDxf.Vector2?text=position" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    - id: width
+      type: System.Double
+      description: Image width in world coordinates.
+    - id: height
+      type: System.Double
+      description: Image height in world coordinates.
+    content.vb: Public Sub New(imageDefinition As ImageDefinition, position As Vector2, width As Double, height As Double)
+  overload: netDxf.Entities.Image.#ctor*
+  nameWithType.vb: Image.New(ImageDefinition, Vector2, Double, Double)
+  fullName.vb: netDxf.Entities.Image.New(netDxf.Objects.ImageDefinition, netDxf.Vector2, Double, Double)
+  name.vb: New(ImageDefinition, Vector2, Double, Double)
+- uid: netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,System.Double,System.Double)
+  commentId: M:netDxf.Entities.Image.#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,System.Double,System.Double)
+  id: '#ctor(netDxf.Objects.ImageDefinition,netDxf.Vector3,System.Double,System.Double)'
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Image(ImageDefinition, Vector3, double, double)
+  nameWithType: Image.Image(ImageDefinition, Vector3, double, double)
+  fullName: netDxf.Entities.Image.Image(netDxf.Objects.ImageDefinition, netDxf.Vector3, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 121
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Image</code> class.
+  example: []
+  syntax:
+    content: public Image(ImageDefinition imageDefinition, Vector3 position, double width, double height)
+    parameters:
+    - id: imageDefinition
+      type: netDxf.Objects.ImageDefinition
+      description: Image definition.
+    - id: position
+      type: netDxf.Vector3
+      description: Image <xref href="netDxf.Vector3?text=position" data-throw-if-not-resolved="false"></xref> in world coordinates.
+    - id: width
+      type: System.Double
+      description: Image width in world coordinates.
+    - id: height
+      type: System.Double
+      description: Image height in world coordinates.
+    content.vb: Public Sub New(imageDefinition As ImageDefinition, position As Vector3, width As Double, height As Double)
+  overload: netDxf.Entities.Image.#ctor*
+  nameWithType.vb: Image.New(ImageDefinition, Vector3, Double, Double)
+  fullName.vb: netDxf.Entities.Image.New(netDxf.Objects.ImageDefinition, netDxf.Vector3, Double, Double)
+  name.vb: New(ImageDefinition, Vector3, Double, Double)
+- uid: netDxf.Entities.Image.Position
+  commentId: P:netDxf.Entities.Image.Position
+  id: Position
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: Image.Position
+  fullName: netDxf.Entities.Image.Position
+  type: Property
+  source:
+    id: Position
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 153
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image <xref href="netDxf.Vector3?text=position" data-throw-if-not-resolved="false"></xref> in world coordinates.
+  example: []
+  syntax:
+    content: public Vector3 Position { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property Position As Vector3
+  overload: netDxf.Entities.Image.Position*
+- uid: netDxf.Entities.Image.Uvector
+  commentId: P:netDxf.Entities.Image.Uvector
+  id: Uvector
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Uvector
+  nameWithType: Image.Uvector
+  fullName: netDxf.Entities.Image.Uvector
+  type: Property
+  source:
+    id: Uvector
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 162
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image <xref href="netDxf.Vector2?text=U-vector" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector2 Uvector { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property Uvector As Vector2
+  overload: netDxf.Entities.Image.Uvector*
+- uid: netDxf.Entities.Image.Vvector
+  commentId: P:netDxf.Entities.Image.Vvector
+  id: Vvector
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Vvector
+  nameWithType: Image.Vvector
+  fullName: netDxf.Entities.Image.Vvector
+  type: Property
+  source:
+    id: Vvector
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 179
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image <xref href="netDxf.Vector2?text=V-vector" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector2 Vvector { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector2
+    content.vb: Public Property Vvector As Vector2
+  overload: netDxf.Entities.Image.Vvector*
+- uid: netDxf.Entities.Image.Height
+  commentId: P:netDxf.Entities.Image.Height
+  id: Height
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Image.Height
+  fullName: netDxf.Entities.Image.Height
+  type: Property
+  source:
+    id: Height
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 196
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the height of the image in drawing units.
+  example: []
+  syntax:
+    content: public double Height { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Height As Double
+  overload: netDxf.Entities.Image.Height*
+- uid: netDxf.Entities.Image.Width
+  commentId: P:netDxf.Entities.Image.Width
+  id: Width
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Image.Width
+  fullName: netDxf.Entities.Image.Width
+  type: Property
+  source:
+    id: Width
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 212
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the width of the image in drawing units.
+  example: []
+  syntax:
+    content: public double Width { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Width As Double
+  overload: netDxf.Entities.Image.Width*
+- uid: netDxf.Entities.Image.Rotation
+  commentId: P:netDxf.Entities.Image.Rotation
+  id: Rotation
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: Image.Rotation
+  fullName: netDxf.Entities.Image.Rotation
+  type: Property
+  source:
+    id: Rotation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 229
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image rotation in degrees.
+  remarks: The image rotation is the angle of the U-vector.
+  example: []
+  syntax:
+    content: public double Rotation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Rotation As Double
+  overload: netDxf.Entities.Image.Rotation*
+- uid: netDxf.Entities.Image.Definition
+  commentId: P:netDxf.Entities.Image.Definition
+  id: Definition
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Definition
+  nameWithType: Image.Definition
+  fullName: netDxf.Entities.Image.Definition
+  type: Property
+  source:
+    id: Definition
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 248
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets the <xref href="netDxf.Objects.ImageDefinition?text=image+definition" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public ImageDefinition Definition { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Objects.ImageDefinition
+    content.vb: Public Property Definition As ImageDefinition
+  overload: netDxf.Entities.Image.Definition*
+- uid: netDxf.Entities.Image.Clipping
+  commentId: P:netDxf.Entities.Image.Clipping
+  id: Clipping
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Clipping
+  nameWithType: Image.Clipping
+  fullName: netDxf.Entities.Image.Clipping
+  type: Property
+  source:
+    id: Clipping
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 264
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: 'Gets or sets the clipping state: false = off, true = on.'
+  example: []
+  syntax:
+    content: public bool Clipping { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Clipping As Boolean
+  overload: netDxf.Entities.Image.Clipping*
+- uid: netDxf.Entities.Image.Brightness
+  commentId: P:netDxf.Entities.Image.Brightness
+  id: Brightness
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Brightness
+  nameWithType: Image.Brightness
+  fullName: netDxf.Entities.Image.Brightness
+  type: Property
+  source:
+    id: Brightness
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 273
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the brightness value (0-100; default = 50)
+  example: []
+  syntax:
+    content: public short Brightness { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property Brightness As Short
+  overload: netDxf.Entities.Image.Brightness*
+- uid: netDxf.Entities.Image.Contrast
+  commentId: P:netDxf.Entities.Image.Contrast
+  id: Contrast
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Contrast
+  nameWithType: Image.Contrast
+  fullName: netDxf.Entities.Image.Contrast
+  type: Property
+  source:
+    id: Contrast
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 289
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the contrast value (0-100; default = 50)
+  example: []
+  syntax:
+    content: public short Contrast { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property Contrast As Short
+  overload: netDxf.Entities.Image.Contrast*
+- uid: netDxf.Entities.Image.Fade
+  commentId: P:netDxf.Entities.Image.Fade
+  id: Fade
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Fade
+  nameWithType: Image.Fade
+  fullName: netDxf.Entities.Image.Fade
+  type: Property
+  source:
+    id: Fade
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 305
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the fade value (0-100; default = 0)
+  example: []
+  syntax:
+    content: public short Fade { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property Fade As Short
+  overload: netDxf.Entities.Image.Fade*
+- uid: netDxf.Entities.Image.DisplayOptions
+  commentId: P:netDxf.Entities.Image.DisplayOptions
+  id: DisplayOptions
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: DisplayOptions
+  nameWithType: Image.DisplayOptions
+  fullName: netDxf.Entities.Image.DisplayOptions
+  type: Property
+  source:
+    id: DisplayOptions
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 321
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image display options.
+  example: []
+  syntax:
+    content: public ImageDisplayFlags DisplayOptions { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Entities.ImageDisplayFlags
+    content.vb: Public Property DisplayOptions As ImageDisplayFlags
+  overload: netDxf.Entities.Image.DisplayOptions*
+- uid: netDxf.Entities.Image.ClippingBoundary
+  commentId: P:netDxf.Entities.Image.ClippingBoundary
+  id: ClippingBoundary
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: ClippingBoundary
+  nameWithType: Image.ClippingBoundary
+  fullName: netDxf.Entities.Image.ClippingBoundary
+  type: Property
+  source:
+    id: ClippingBoundary
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 334
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the image clipping boundary.
+  remarks: >-
+    The vertexes coordinates of the clipping boundary are expressed in local coordinates of the image in pixels.
+
+    Set as null to restore the default clipping boundary, full image.
+  example: []
+  syntax:
+    content: public ClippingBoundary ClippingBoundary { get; set; }
+    parameters: []
+    return:
+      type: netDxf.ClippingBoundary
+    content.vb: Public Property ClippingBoundary As ClippingBoundary
+  overload: netDxf.Entities.Image.ClippingBoundary*
+- uid: netDxf.Entities.Image.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Image.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Image.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Image.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 350
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.Image.TransformBy*
+- uid: netDxf.Entities.Image.Clone
+  commentId: M:netDxf.Entities.Image.Clone
+  id: Clone
+  parent: netDxf.Entities.Image
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Image.Clone()
+  fullName: netDxf.Entities.Image.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Image.cs
+    startLine: 409
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Image that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new Image that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.Image.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+  commentId: T:netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+  parent: netDxf.Entities
+  href: netDxf.Entities.Image.html
+  name: Image.ImageDefinitionChangedEventHandler
+  nameWithType: Image.ImageDefinitionChangedEventHandler
+  fullName: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+  spec.csharp:
+  - uid: netDxf.Entities.Image
+    name: Image
+    href: netDxf.Entities.Image.html
+  - name: .
+  - uid: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+    name: ImageDefinitionChangedEventHandler
+    href: netDxf.Entities.Image.ImageDefinitionChangedEventHandler.html
+  spec.vb:
+  - uid: netDxf.Entities.Image
+    name: Image
+    href: netDxf.Entities.Image.html
+  - name: .
+  - uid: netDxf.Entities.Image.ImageDefinitionChangedEventHandler
+    name: ImageDefinitionChangedEventHandler
+    href: netDxf.Entities.Image.ImageDefinitionChangedEventHandler.html
+- uid: netDxf.Entities.Image.OnImageDefinitionChangedEvent*
+  commentId: Overload:netDxf.Entities.Image.OnImageDefinitionChangedEvent
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_OnImageDefinitionChangedEvent_netDxf_Objects_ImageDefinition_netDxf_Objects_ImageDefinition_
+  name: OnImageDefinitionChangedEvent
+  nameWithType: Image.OnImageDefinitionChangedEvent
+  fullName: netDxf.Entities.Image.OnImageDefinitionChangedEvent
+- uid: netDxf.Objects.ImageDefinition
+  commentId: T:netDxf.Objects.ImageDefinition
+  parent: netDxf.Objects
+  href: netDxf.Objects.ImageDefinition.html
+  name: ImageDefinition
+  nameWithType: ImageDefinition
+  fullName: netDxf.Objects.ImageDefinition
+- uid: netDxf.Objects
+  commentId: N:netDxf.Objects
+  href: netDxf.html
+  name: netDxf.Objects
+  nameWithType: netDxf.Objects
+  fullName: netDxf.Objects
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Objects
+    name: Objects
+    href: netDxf.Objects.html
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: netDxf.Entities.Image.#ctor*
+  commentId: Overload:netDxf.Entities.Image.#ctor
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image__ctor_netDxf_Objects_ImageDefinition_netDxf_Vector2_netDxf_Vector2_
+  name: Image
+  nameWithType: Image.Image
+  fullName: netDxf.Entities.Image.Image
+  nameWithType.vb: Image.New
+  fullName.vb: netDxf.Entities.Image.New
+  name.vb: New
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Entities.Image.Position*
+  commentId: Overload:netDxf.Entities.Image.Position
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Position
+  name: Position
+  nameWithType: Image.Position
+  fullName: netDxf.Entities.Image.Position
+- uid: netDxf.Entities.Image.Uvector*
+  commentId: Overload:netDxf.Entities.Image.Uvector
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Uvector
+  name: Uvector
+  nameWithType: Image.Uvector
+  fullName: netDxf.Entities.Image.Uvector
+- uid: netDxf.Entities.Image.Vvector*
+  commentId: Overload:netDxf.Entities.Image.Vvector
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Vvector
+  name: Vvector
+  nameWithType: Image.Vvector
+  fullName: netDxf.Entities.Image.Vvector
+- uid: netDxf.Entities.Image.Height*
+  commentId: Overload:netDxf.Entities.Image.Height
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Height
+  name: Height
+  nameWithType: Image.Height
+  fullName: netDxf.Entities.Image.Height
+- uid: netDxf.Entities.Image.Width*
+  commentId: Overload:netDxf.Entities.Image.Width
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Width
+  name: Width
+  nameWithType: Image.Width
+  fullName: netDxf.Entities.Image.Width
+- uid: netDxf.Entities.Image.Rotation*
+  commentId: Overload:netDxf.Entities.Image.Rotation
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Rotation
+  name: Rotation
+  nameWithType: Image.Rotation
+  fullName: netDxf.Entities.Image.Rotation
+- uid: netDxf.Entities.Image.Definition*
+  commentId: Overload:netDxf.Entities.Image.Definition
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Definition
+  name: Definition
+  nameWithType: Image.Definition
+  fullName: netDxf.Entities.Image.Definition
+- uid: netDxf.Entities.Image.Clipping*
+  commentId: Overload:netDxf.Entities.Image.Clipping
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Clipping
+  name: Clipping
+  nameWithType: Image.Clipping
+  fullName: netDxf.Entities.Image.Clipping
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Entities.Image.Brightness*
+  commentId: Overload:netDxf.Entities.Image.Brightness
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Brightness
+  name: Brightness
+  nameWithType: Image.Brightness
+  fullName: netDxf.Entities.Image.Brightness
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short
+- uid: netDxf.Entities.Image.Contrast*
+  commentId: Overload:netDxf.Entities.Image.Contrast
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Contrast
+  name: Contrast
+  nameWithType: Image.Contrast
+  fullName: netDxf.Entities.Image.Contrast
+- uid: netDxf.Entities.Image.Fade*
+  commentId: Overload:netDxf.Entities.Image.Fade
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Fade
+  name: Fade
+  nameWithType: Image.Fade
+  fullName: netDxf.Entities.Image.Fade
+- uid: netDxf.Entities.Image.DisplayOptions*
+  commentId: Overload:netDxf.Entities.Image.DisplayOptions
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_DisplayOptions
+  name: DisplayOptions
+  nameWithType: Image.DisplayOptions
+  fullName: netDxf.Entities.Image.DisplayOptions
+- uid: netDxf.Entities.ImageDisplayFlags
+  commentId: T:netDxf.Entities.ImageDisplayFlags
+  parent: netDxf.Entities
+  href: netDxf.Entities.ImageDisplayFlags.html
+  name: ImageDisplayFlags
+  nameWithType: ImageDisplayFlags
+  fullName: netDxf.Entities.ImageDisplayFlags
+- uid: netDxf.Entities.Image.ClippingBoundary*
+  commentId: Overload:netDxf.Entities.Image.ClippingBoundary
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_ClippingBoundary
+  name: ClippingBoundary
+  nameWithType: Image.ClippingBoundary
+  fullName: netDxf.Entities.Image.ClippingBoundary
+- uid: netDxf.ClippingBoundary
+  commentId: T:netDxf.ClippingBoundary
+  parent: netDxf
+  href: netDxf.ClippingBoundary.html
+  name: ClippingBoundary
+  nameWithType: ClippingBoundary
+  fullName: netDxf.ClippingBoundary
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.Image.TransformBy*
+  commentId: Overload:netDxf.Entities.Image.TransformBy
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Image.TransformBy
+  fullName: netDxf.Entities.Image.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Image.Clone*
+  commentId: Overload:netDxf.Entities.Image.Clone
+  href: netDxf.Entities.Image.html#netDxf_Entities_Image_Clone
+  name: Clone
+  nameWithType: Image.Clone
+  fullName: netDxf.Entities.Image.Clone

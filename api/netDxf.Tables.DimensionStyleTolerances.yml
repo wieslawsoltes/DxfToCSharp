@@ -1,0 +1,944 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Tables.DimensionStyleTolerances
+  commentId: T:netDxf.Tables.DimensionStyleTolerances
+  id: DimensionStyleTolerances
+  parent: netDxf.Tables
+  children:
+  - netDxf.Tables.DimensionStyleTolerances.#ctor
+  - netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+  - netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+  - netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+  - netDxf.Tables.DimensionStyleTolerances.Clone
+  - netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+  - netDxf.Tables.DimensionStyleTolerances.LowerLimit
+  - netDxf.Tables.DimensionStyleTolerances.Precision
+  - netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+  - netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+  - netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+  - netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+  - netDxf.Tables.DimensionStyleTolerances.UpperLimit
+  - netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleTolerances
+  nameWithType: DimensionStyleTolerances
+  fullName: netDxf.Tables.DimensionStyleTolerances
+  type: Class
+  source:
+    id: DimensionStyleTolerances
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 32
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Represents the way tolerances are formatted in dimension entities
+  example: []
+  syntax:
+    content: 'public class DimensionStyleTolerances : ICloneable'
+    content.vb: Public Class DimensionStyleTolerances Implements ICloneable
+  inheritance:
+  - System.Object
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Tables.DimensionStyleTolerances.#ctor
+  commentId: M:netDxf.Tables.DimensionStyleTolerances.#ctor
+  id: '#ctor'
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: DimensionStyleTolerances()
+  nameWithType: DimensionStyleTolerances.DimensionStyleTolerances()
+  fullName: netDxf.Tables.DimensionStyleTolerances.DimensionStyleTolerances()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 59
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Initializes a new instance of the <code>TolerancesFormat</code> class.
+  example: []
+  syntax:
+    content: public DimensionStyleTolerances()
+    content.vb: Public Sub New()
+  overload: netDxf.Tables.DimensionStyleTolerances.#ctor*
+  nameWithType.vb: DimensionStyleTolerances.New()
+  fullName.vb: netDxf.Tables.DimensionStyleTolerances.New()
+  name.vb: New()
+- uid: netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+  id: DisplayMethod
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: DisplayMethod
+  nameWithType: DimensionStyleTolerances.DisplayMethod
+  fullName: netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+  type: Property
+  source:
+    id: DisplayMethod
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 87
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the method for calculating the tolerance. (DIMTOL)
+  remarks: 'Default: None'
+  example: []
+  syntax:
+    content: public DimensionStyleTolerancesDisplayMethod DisplayMethod { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTolerancesDisplayMethod
+    content.vb: Public Property DisplayMethod As DimensionStyleTolerancesDisplayMethod
+  overload: netDxf.Tables.DimensionStyleTolerances.DisplayMethod*
+- uid: netDxf.Tables.DimensionStyleTolerances.UpperLimit
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.UpperLimit
+  id: UpperLimit
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: UpperLimit
+  nameWithType: DimensionStyleTolerances.UpperLimit
+  fullName: netDxf.Tables.DimensionStyleTolerances.UpperLimit
+  type: Property
+  source:
+    id: UpperLimit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 99
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the maximum or upper tolerance value. When you select Symmetrical in DisplayMethod, this value is used for the tolerance. (DIMTP)
+  remarks: 'Default: 0.0'
+  example: []
+  syntax:
+    content: public double UpperLimit { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property UpperLimit As Double
+  overload: netDxf.Tables.DimensionStyleTolerances.UpperLimit*
+- uid: netDxf.Tables.DimensionStyleTolerances.LowerLimit
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.LowerLimit
+  id: LowerLimit
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: LowerLimit
+  nameWithType: DimensionStyleTolerances.LowerLimit
+  fullName: netDxf.Tables.DimensionStyleTolerances.LowerLimit
+  type: Property
+  source:
+    id: LowerLimit
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 111
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the minimum or lower tolerance value. (DIMTM)
+  remarks: 'Default: 0.0'
+  example: []
+  syntax:
+    content: public double LowerLimit { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property LowerLimit As Double
+  overload: netDxf.Tables.DimensionStyleTolerances.LowerLimit*
+- uid: netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+  id: VerticalPlacement
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: VerticalPlacement
+  nameWithType: DimensionStyleTolerances.VerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+  type: Property
+  source:
+    id: VerticalPlacement
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 123
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the text vertical placement for symmetrical and deviation tolerances. (DIMTOLJ)
+  remarks: 'Default: Middle'
+  example: []
+  syntax:
+    content: public DimensionStyleTolerancesVerticalPlacement VerticalPlacement { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Tables.DimensionStyleTolerancesVerticalPlacement
+    content.vb: Public Property VerticalPlacement As DimensionStyleTolerancesVerticalPlacement
+  overload: netDxf.Tables.DimensionStyleTolerances.VerticalPlacement*
+- uid: netDxf.Tables.DimensionStyleTolerances.Precision
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.Precision
+  id: Precision
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: Precision
+  nameWithType: DimensionStyleTolerances.Precision
+  fullName: netDxf.Tables.DimensionStyleTolerances.Precision
+  type: Property
+  source:
+    id: Precision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 136
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the number of decimal places. (DIMTDEC)
+  remarks: >-
+    Default: 4<br />
+
+    It is recommended to use values in the range 0 to 8.
+  example: []
+  syntax:
+    content: public short Precision { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property Precision As Short
+  overload: netDxf.Tables.DimensionStyleTolerances.Precision*
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+  id: SuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearLeadingZeros
+  nameWithType: DimensionStyleTolerances.SuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+  type: Property
+  source:
+    id: SuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 155
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal tolerance units. (DIMTZIN)
+  remarks: This value is part of the DIMTZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressLinearLeadingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressLinearLeadingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros*
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+  id: SuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: SuppressLinearTrailingZeros
+  nameWithType: DimensionStyleTolerances.SuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+  type: Property
+  source:
+    id: SuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 167
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal tolerance units. (DIMTZIN)
+  remarks: This value is part of the DIMTZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressLinearTrailingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressLinearTrailingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros*
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+  id: SuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroFeet
+  nameWithType: DimensionStyleTolerances.SuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+  type: Property
+  source:
+    id: SuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 179
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural tolerance units. (DIMTZIN)
+  remarks: This value is part of the DIMTZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressZeroFeet { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressZeroFeet As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet*
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+  id: SuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: SuppressZeroInches
+  nameWithType: DimensionStyleTolerances.SuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+  type: Property
+  source:
+    id: SuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 191
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural tolerance units. (DIMTZIN)
+  remarks: This value is part of the DIMTZIN variable.
+  example: []
+  syntax:
+    content: public bool SuppressZeroInches { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SuppressZeroInches As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches*
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+  id: AlternatePrecision
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: AlternatePrecision
+  nameWithType: DimensionStyleTolerances.AlternatePrecision
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+  type: Property
+  source:
+    id: AlternatePrecision
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 204
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Gets or sets the number of decimal places of the tolerance alternate units. (DIMALTTD)
+  remarks: >-
+    Default: 2<br />
+
+    It is recommended to use values in the range 0 to 8.
+  example: []
+  syntax:
+    content: public short AlternatePrecision { get; set; }
+    parameters: []
+    return:
+      type: System.Int16
+    content.vb: Public Property AlternatePrecision As Short
+  overload: netDxf.Tables.DimensionStyleTolerances.AlternatePrecision*
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  id: AlternateSuppressLinearLeadingZeros
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: AlternateSuppressLinearLeadingZeros
+  nameWithType: DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  type: Property
+  source:
+    id: AlternateSuppressLinearLeadingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 221
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses leading zeros in linear decimal alternate tolerance units. (DIMALTTZ)
+  remarks: This value is part of the DIMALTTZ variable.
+  example: []
+  syntax:
+    content: public bool AlternateSuppressLinearLeadingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AlternateSuppressLinearLeadingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros*
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  id: AlternateSuppressLinearTrailingZeros
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: AlternateSuppressLinearTrailingZeros
+  nameWithType: DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  type: Property
+  source:
+    id: AlternateSuppressLinearTrailingZeros
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 231
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses trailing zeros in linear decimal alternate tolerance units. (DIMALTTZ)
+  remarks: This value is part of the DIMALTTZ variable.
+  example: []
+  syntax:
+    content: public bool AlternateSuppressLinearTrailingZeros { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AlternateSuppressLinearTrailingZeros As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros*
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+  id: AlternateSuppressZeroFeet
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: AlternateSuppressZeroFeet
+  nameWithType: DimensionStyleTolerances.AlternateSuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+  type: Property
+  source:
+    id: AlternateSuppressZeroFeet
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 241
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero feet in architectural alternate tolerance units. (DIMALTTZ)
+  remarks: This value is part of the DIMALTTZ variable.
+  example: []
+  syntax:
+    content: public bool AlternateSuppressZeroFeet { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AlternateSuppressZeroFeet As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet*
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+  commentId: P:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+  id: AlternateSuppressZeroInches
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: AlternateSuppressZeroInches
+  nameWithType: DimensionStyleTolerances.AlternateSuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+  type: Property
+  source:
+    id: AlternateSuppressZeroInches
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 251
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Suppresses zero inches in architectural alternate tolerance units. (DIMALTTZ)
+  remarks: This value is part of the DIMALTTZ variable.
+  example: []
+  syntax:
+    content: public bool AlternateSuppressZeroInches { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AlternateSuppressZeroInches As Boolean
+  overload: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches*
+- uid: netDxf.Tables.DimensionStyleTolerances.Clone
+  commentId: M:netDxf.Tables.DimensionStyleTolerances.Clone
+  id: Clone
+  parent: netDxf.Tables.DimensionStyleTolerances
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: DimensionStyleTolerances.Clone()
+  fullName: netDxf.Tables.DimensionStyleTolerances.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Tables/DimensionStyleTolerances.cs
+    startLine: 265
+  assemblies:
+  - netDxf
+  namespace: netDxf.Tables
+  summary: Creates a new <code>DimensionStyle.TolerancesFormat</code> that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+      description: A new <code>DimensionStyle.TolerancesFormat</code> that is a copy of this instance.
+    content.vb: Public Function Clone() As Object
+  overload: netDxf.Tables.DimensionStyleTolerances.Clone*
+  implements:
+  - System.ICloneable.Clone
+references:
+- uid: netDxf.Tables
+  commentId: N:netDxf.Tables
+  href: netDxf.html
+  name: netDxf.Tables
+  nameWithType: netDxf.Tables
+  fullName: netDxf.Tables
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Tables
+    name: Tables
+    href: netDxf.Tables.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf.Tables.DimensionStyleTolerances.#ctor*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.#ctor
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances__ctor
+  name: DimensionStyleTolerances
+  nameWithType: DimensionStyleTolerances.DimensionStyleTolerances
+  fullName: netDxf.Tables.DimensionStyleTolerances.DimensionStyleTolerances
+  nameWithType.vb: DimensionStyleTolerances.New
+  fullName.vb: netDxf.Tables.DimensionStyleTolerances.New
+  name.vb: New
+- uid: netDxf.Tables.DimensionStyleTolerances.DisplayMethod*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_DisplayMethod
+  name: DisplayMethod
+  nameWithType: DimensionStyleTolerances.DisplayMethod
+  fullName: netDxf.Tables.DimensionStyleTolerances.DisplayMethod
+- uid: netDxf.Tables.DimensionStyleTolerancesDisplayMethod
+  commentId: T:netDxf.Tables.DimensionStyleTolerancesDisplayMethod
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTolerancesDisplayMethod.html
+  name: DimensionStyleTolerancesDisplayMethod
+  nameWithType: DimensionStyleTolerancesDisplayMethod
+  fullName: netDxf.Tables.DimensionStyleTolerancesDisplayMethod
+- uid: netDxf.Tables.DimensionStyleTolerances.UpperLimit*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.UpperLimit
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_UpperLimit
+  name: UpperLimit
+  nameWithType: DimensionStyleTolerances.UpperLimit
+  fullName: netDxf.Tables.DimensionStyleTolerances.UpperLimit
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Tables.DimensionStyleTolerances.LowerLimit*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.LowerLimit
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_LowerLimit
+  name: LowerLimit
+  nameWithType: DimensionStyleTolerances.LowerLimit
+  fullName: netDxf.Tables.DimensionStyleTolerances.LowerLimit
+- uid: netDxf.Tables.DimensionStyleTolerances.VerticalPlacement*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_VerticalPlacement
+  name: VerticalPlacement
+  nameWithType: DimensionStyleTolerances.VerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleTolerances.VerticalPlacement
+- uid: netDxf.Tables.DimensionStyleTolerancesVerticalPlacement
+  commentId: T:netDxf.Tables.DimensionStyleTolerancesVerticalPlacement
+  parent: netDxf.Tables
+  href: netDxf.Tables.DimensionStyleTolerancesVerticalPlacement.html
+  name: DimensionStyleTolerancesVerticalPlacement
+  nameWithType: DimensionStyleTolerancesVerticalPlacement
+  fullName: netDxf.Tables.DimensionStyleTolerancesVerticalPlacement
+- uid: netDxf.Tables.DimensionStyleTolerances.Precision*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.Precision
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_Precision
+  name: Precision
+  nameWithType: DimensionStyleTolerances.Precision
+  fullName: netDxf.Tables.DimensionStyleTolerances.Precision
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_SuppressLinearLeadingZeros
+  name: SuppressLinearLeadingZeros
+  nameWithType: DimensionStyleTolerances.SuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressLinearLeadingZeros
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_SuppressLinearTrailingZeros
+  name: SuppressLinearTrailingZeros
+  nameWithType: DimensionStyleTolerances.SuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressLinearTrailingZeros
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_SuppressZeroFeet
+  name: SuppressZeroFeet
+  nameWithType: DimensionStyleTolerances.SuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressZeroFeet
+- uid: netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_SuppressZeroInches
+  name: SuppressZeroInches
+  nameWithType: DimensionStyleTolerances.SuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleTolerances.SuppressZeroInches
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternatePrecision*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_AlternatePrecision
+  name: AlternatePrecision
+  nameWithType: DimensionStyleTolerances.AlternatePrecision
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternatePrecision
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_AlternateSuppressLinearLeadingZeros
+  name: AlternateSuppressLinearLeadingZeros
+  nameWithType: DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearLeadingZeros
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_AlternateSuppressLinearTrailingZeros
+  name: AlternateSuppressLinearTrailingZeros
+  nameWithType: DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressLinearTrailingZeros
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_AlternateSuppressZeroFeet
+  name: AlternateSuppressZeroFeet
+  nameWithType: DimensionStyleTolerances.AlternateSuppressZeroFeet
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroFeet
+- uid: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_AlternateSuppressZeroInches
+  name: AlternateSuppressZeroInches
+  nameWithType: DimensionStyleTolerances.AlternateSuppressZeroInches
+  fullName: netDxf.Tables.DimensionStyleTolerances.AlternateSuppressZeroInches
+- uid: netDxf.Tables.DimensionStyleTolerances.Clone*
+  commentId: Overload:netDxf.Tables.DimensionStyleTolerances.Clone
+  href: netDxf.Tables.DimensionStyleTolerances.html#netDxf_Tables_DimensionStyleTolerances_Clone
+  name: Clone
+  nameWithType: DimensionStyleTolerances.Clone
+  fullName: netDxf.Tables.DimensionStyleTolerances.Clone
+- uid: System.ICloneable.Clone
+  commentId: M:System.ICloneable.Clone
+  parent: System.ICloneable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  name: Clone()
+  nameWithType: ICloneable.Clone()
+  fullName: System.ICloneable.Clone()
+  spec.csharp:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
+  - name: (
+  - name: )

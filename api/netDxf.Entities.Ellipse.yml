@@ -1,0 +1,1472 @@
+### YamlMime:ManagedReference
+items:
+- uid: netDxf.Entities.Ellipse
+  commentId: T:netDxf.Entities.Ellipse
+  id: Ellipse
+  parent: netDxf.Entities
+  children:
+  - netDxf.Entities.Ellipse.#ctor
+  - netDxf.Entities.Ellipse.#ctor(netDxf.Vector2,System.Double,System.Double)
+  - netDxf.Entities.Ellipse.#ctor(netDxf.Vector3,System.Double,System.Double)
+  - netDxf.Entities.Ellipse.Center
+  - netDxf.Entities.Ellipse.Clone
+  - netDxf.Entities.Ellipse.EndAngle
+  - netDxf.Entities.Ellipse.IsFullEllipse
+  - netDxf.Entities.Ellipse.MajorAxis
+  - netDxf.Entities.Ellipse.MinorAxis
+  - netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter(System.Double)
+  - netDxf.Entities.Ellipse.PolygonalVertexes(System.Int32)
+  - netDxf.Entities.Ellipse.Rotation
+  - netDxf.Entities.Ellipse.SetAxis(System.Double,System.Double)
+  - netDxf.Entities.Ellipse.StartAngle
+  - netDxf.Entities.Ellipse.Thickness
+  - netDxf.Entities.Ellipse.ToPolyline2D(System.Int32)
+  - netDxf.Entities.Ellipse.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: Ellipse
+  nameWithType: Ellipse
+  fullName: netDxf.Entities.Ellipse
+  type: Class
+  source:
+    id: Ellipse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 35
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Represents an ellipse <xref href="netDxf.Entities.EntityObject?text=entity" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class Ellipse : EntityObject, ICloneable'
+    content.vb: Public Class Ellipse Inherits EntityObject Implements ICloneable
+  inheritance:
+  - System.Object
+  - netDxf.DxfObject
+  - netDxf.Entities.EntityObject
+  implements:
+  - System.ICloneable
+  inheritedMembers:
+  - netDxf.Entities.EntityObject.LayerChanged
+  - netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  - netDxf.Entities.EntityObject.LinetypeChanged
+  - netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  - netDxf.Entities.EntityObject.Reactors
+  - netDxf.Entities.EntityObject.Type
+  - netDxf.Entities.EntityObject.Color
+  - netDxf.Entities.EntityObject.Layer
+  - netDxf.Entities.EntityObject.Linetype
+  - netDxf.Entities.EntityObject.Lineweight
+  - netDxf.Entities.EntityObject.Transparency
+  - netDxf.Entities.EntityObject.LinetypeScale
+  - netDxf.Entities.EntityObject.IsVisible
+  - netDxf.Entities.EntityObject.Normal
+  - netDxf.Entities.EntityObject.Owner
+  - netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  - netDxf.Entities.EntityObject.ToString
+  - netDxf.DxfObject.XDataAddAppReg
+  - netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.XDataRemoveAppReg
+  - netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  - netDxf.DxfObject.CodeName
+  - netDxf.DxfObject.Handle
+  - netDxf.DxfObject.XData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: netDxf.Entities.Ellipse.#ctor
+  commentId: M:netDxf.Entities.Ellipse.#ctor
+  id: '#ctor'
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Ellipse()
+  nameWithType: Ellipse.Ellipse()
+  fullName: netDxf.Entities.Ellipse.Ellipse()
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 208
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Ellipse</code> class.
+  example: []
+  syntax:
+    content: public Ellipse()
+    content.vb: Public Sub New()
+  overload: netDxf.Entities.Ellipse.#ctor*
+  nameWithType.vb: Ellipse.New()
+  fullName.vb: netDxf.Entities.Ellipse.New()
+  name.vb: New()
+- uid: netDxf.Entities.Ellipse.#ctor(netDxf.Vector2,System.Double,System.Double)
+  commentId: M:netDxf.Entities.Ellipse.#ctor(netDxf.Vector2,System.Double,System.Double)
+  id: '#ctor(netDxf.Vector2,System.Double,System.Double)'
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Ellipse(Vector2, double, double)
+  nameWithType: Ellipse.Ellipse(Vector2, double, double)
+  fullName: netDxf.Entities.Ellipse.Ellipse(netDxf.Vector2, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 224
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Ellipse</code> class.
+  remarks: >-
+    The center Z coordinate represents the elevation of the ellipse along the normal.
+
+    The major axis is always measured along the ellipse local X axis,
+
+    while the minor axis is along the local Y axis.
+  example: []
+  syntax:
+    content: public Ellipse(Vector2 center, double majorAxis, double minorAxis)
+    parameters:
+    - id: center
+      type: netDxf.Vector2
+      description: Ellipse <xref href="netDxf.Vector2?text=center" data-throw-if-not-resolved="false"></xref> in object coordinates.
+    - id: majorAxis
+      type: System.Double
+      description: Ellipse major axis.
+    - id: minorAxis
+      type: System.Double
+      description: Ellipse minor axis.
+    content.vb: Public Sub New(center As Vector2, majorAxis As Double, minorAxis As Double)
+  overload: netDxf.Entities.Ellipse.#ctor*
+  nameWithType.vb: Ellipse.New(Vector2, Double, Double)
+  fullName.vb: netDxf.Entities.Ellipse.New(netDxf.Vector2, Double, Double)
+  name.vb: New(Vector2, Double, Double)
+- uid: netDxf.Entities.Ellipse.#ctor(netDxf.Vector3,System.Double,System.Double)
+  commentId: M:netDxf.Entities.Ellipse.#ctor(netDxf.Vector3,System.Double,System.Double)
+  id: '#ctor(netDxf.Vector3,System.Double,System.Double)'
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Ellipse(Vector3, double, double)
+  nameWithType: Ellipse.Ellipse(Vector3, double, double)
+  fullName: netDxf.Entities.Ellipse.Ellipse(netDxf.Vector3, double, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 240
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Initializes a new instance of the <code>Ellipse</code> class.
+  remarks: >-
+    The center Z coordinate represents the elevation of the ellipse along the normal.
+
+    The major axis is always measured along the ellipse local X axis,
+
+    while the minor axis is along the local Y axis.
+  example: []
+  syntax:
+    content: public Ellipse(Vector3 center, double majorAxis, double minorAxis)
+    parameters:
+    - id: center
+      type: netDxf.Vector3
+      description: Ellipse <xref href="netDxf.Vector3?text=center" data-throw-if-not-resolved="false"></xref> in object coordinates.
+    - id: majorAxis
+      type: System.Double
+      description: Ellipse major axis.
+    - id: minorAxis
+      type: System.Double
+      description: Ellipse minor axis.
+    content.vb: Public Sub New(center As Vector3, majorAxis As Double, minorAxis As Double)
+  overload: netDxf.Entities.Ellipse.#ctor*
+  nameWithType.vb: Ellipse.New(Vector3, Double, Double)
+  fullName.vb: netDxf.Entities.Ellipse.New(netDxf.Vector3, Double, Double)
+  name.vb: New(Vector3, Double, Double)
+- uid: netDxf.Entities.Ellipse.Center
+  commentId: P:netDxf.Entities.Ellipse.Center
+  id: Center
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: Ellipse.Center
+  fullName: netDxf.Entities.Ellipse.Center
+  type: Property
+  source:
+    id: Center
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 275
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse <xref href="netDxf.Vector3?text=center" data-throw-if-not-resolved="false"></xref> in world coordinates.
+  example: []
+  syntax:
+    content: public Vector3 Center { get; set; }
+    parameters: []
+    return:
+      type: netDxf.Vector3
+    content.vb: Public Property Center As Vector3
+  overload: netDxf.Entities.Ellipse.Center*
+- uid: netDxf.Entities.Ellipse.MajorAxis
+  commentId: P:netDxf.Entities.Ellipse.MajorAxis
+  id: MajorAxis
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: MajorAxis
+  nameWithType: Ellipse.MajorAxis
+  fullName: netDxf.Entities.Ellipse.MajorAxis
+  type: Property
+  source:
+    id: MajorAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 285
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse mayor axis.
+  remarks: The major axis is always measured along the ellipse local X axis.
+  example: []
+  syntax:
+    content: public double MajorAxis { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property MajorAxis As Double
+  overload: netDxf.Entities.Ellipse.MajorAxis*
+- uid: netDxf.Entities.Ellipse.MinorAxis
+  commentId: P:netDxf.Entities.Ellipse.MinorAxis
+  id: MinorAxis
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: MinorAxis
+  nameWithType: Ellipse.MinorAxis
+  fullName: netDxf.Entities.Ellipse.MinorAxis
+  type: Property
+  source:
+    id: MinorAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 294
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse minor axis.
+  remarks: The minor axis is always measured along the ellipse local Y axis.
+  example: []
+  syntax:
+    content: public double MinorAxis { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property MinorAxis As Double
+  overload: netDxf.Entities.Ellipse.MinorAxis*
+- uid: netDxf.Entities.Ellipse.Rotation
+  commentId: P:netDxf.Entities.Ellipse.Rotation
+  id: Rotation
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: Ellipse.Rotation
+  fullName: netDxf.Entities.Ellipse.Rotation
+  type: Property
+  source:
+    id: Rotation
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 302
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse local rotation in degrees along its normal.
+  example: []
+  syntax:
+    content: public double Rotation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Rotation As Double
+  overload: netDxf.Entities.Ellipse.Rotation*
+- uid: netDxf.Entities.Ellipse.StartAngle
+  commentId: P:netDxf.Entities.Ellipse.StartAngle
+  id: StartAngle
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: StartAngle
+  nameWithType: Ellipse.StartAngle
+  fullName: netDxf.Entities.Ellipse.StartAngle
+  type: Property
+  source:
+    id: StartAngle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 312
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse start angle in degrees.
+  remarks: To get a full ellipse set the start angle equal to the end angle.
+  example: []
+  syntax:
+    content: public double StartAngle { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property StartAngle As Double
+  overload: netDxf.Entities.Ellipse.StartAngle*
+- uid: netDxf.Entities.Ellipse.EndAngle
+  commentId: P:netDxf.Entities.Ellipse.EndAngle
+  id: EndAngle
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: EndAngle
+  nameWithType: Ellipse.EndAngle
+  fullName: netDxf.Entities.Ellipse.EndAngle
+  type: Property
+  source:
+    id: EndAngle
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 322
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse end angle in degrees.
+  remarks: To get a full ellipse set the end angle equal to the start angle.
+  example: []
+  syntax:
+    content: public double EndAngle { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property EndAngle As Double
+  overload: netDxf.Entities.Ellipse.EndAngle*
+- uid: netDxf.Entities.Ellipse.Thickness
+  commentId: P:netDxf.Entities.Ellipse.Thickness
+  id: Thickness
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Thickness
+  nameWithType: Ellipse.Thickness
+  fullName: netDxf.Entities.Ellipse.Thickness
+  type: Property
+  source:
+    id: Thickness
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 331
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Gets or sets the ellipse thickness.
+  example: []
+  syntax:
+    content: public double Thickness { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Thickness As Double
+  overload: netDxf.Entities.Ellipse.Thickness*
+- uid: netDxf.Entities.Ellipse.IsFullEllipse
+  commentId: P:netDxf.Entities.Ellipse.IsFullEllipse
+  id: IsFullEllipse
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: IsFullEllipse
+  nameWithType: Ellipse.IsFullEllipse
+  fullName: netDxf.Entities.Ellipse.IsFullEllipse
+  type: Property
+  source:
+    id: IsFullEllipse
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 341
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Checks if the actual instance is a full ellipse.
+  remarks: An ellipse is considered full when its start and end angles are equal.
+  example: []
+  syntax:
+    content: public bool IsFullEllipse { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsFullEllipse As Boolean
+  overload: netDxf.Entities.Ellipse.IsFullEllipse*
+- uid: netDxf.Entities.Ellipse.SetAxis(System.Double,System.Double)
+  commentId: M:netDxf.Entities.Ellipse.SetAxis(System.Double,System.Double)
+  id: SetAxis(System.Double,System.Double)
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: SetAxis(double, double)
+  nameWithType: Ellipse.SetAxis(double, double)
+  fullName: netDxf.Entities.Ellipse.SetAxis(double, double)
+  type: Method
+  source:
+    id: SetAxis
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 358
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Sets the ellipse major and minor axis from the two parameters.
+  remarks: It is not required that axis1 is greater than axis2. The larger value will be assigned as major axis and the lower as minor axis.
+  example: []
+  syntax:
+    content: public void SetAxis(double axis1, double axis2)
+    parameters:
+    - id: axis1
+      type: System.Double
+      description: Ellipse axis.
+    - id: axis2
+      type: System.Double
+      description: Ellipse axis.
+    content.vb: Public Sub SetAxis(axis1 As Double, axis2 As Double)
+  overload: netDxf.Entities.Ellipse.SetAxis*
+  nameWithType.vb: Ellipse.SetAxis(Double, Double)
+  fullName.vb: netDxf.Entities.Ellipse.SetAxis(Double, Double)
+  name.vb: SetAxis(Double, Double)
+- uid: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter(System.Double)
+  commentId: M:netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter(System.Double)
+  id: PolarCoordinateRelativeToCenter(System.Double)
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: PolarCoordinateRelativeToCenter(double)
+  nameWithType: Ellipse.PolarCoordinateRelativeToCenter(double)
+  fullName: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter(double)
+  type: Method
+  source:
+    id: PolarCoordinateRelativeToCenter
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 387
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Calculate the local point on the ellipse for a given angle relative to the center.
+  example: []
+  syntax:
+    content: public Vector2 PolarCoordinateRelativeToCenter(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: Angle in degrees.
+    return:
+      type: netDxf.Vector2
+      description: A local point on the ellipse for the given angle relative to the center.
+    content.vb: Public Function PolarCoordinateRelativeToCenter(angle As Double) As Vector2
+  overload: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter*
+  nameWithType.vb: Ellipse.PolarCoordinateRelativeToCenter(Double)
+  fullName.vb: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter(Double)
+  name.vb: PolarCoordinateRelativeToCenter(Double)
+- uid: netDxf.Entities.Ellipse.PolygonalVertexes(System.Int32)
+  commentId: M:netDxf.Entities.Ellipse.PolygonalVertexes(System.Int32)
+  id: PolygonalVertexes(System.Int32)
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: PolygonalVertexes(int)
+  nameWithType: Ellipse.PolygonalVertexes(int)
+  fullName: netDxf.Entities.Ellipse.PolygonalVertexes(int)
+  type: Method
+  source:
+    id: PolygonalVertexes
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 407
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the ellipse in a list of vertexes.
+  example: []
+  syntax:
+    content: public List<Vector2> PolygonalVertexes(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: System.Collections.Generic.List{netDxf.Vector2}
+      description: A list vertexes that represents the ellipse expressed in object coordinate system.
+    content.vb: Public Function PolygonalVertexes(precision As Integer) As List(Of Vector2)
+  overload: netDxf.Entities.Ellipse.PolygonalVertexes*
+  nameWithType.vb: Ellipse.PolygonalVertexes(Integer)
+  fullName.vb: netDxf.Entities.Ellipse.PolygonalVertexes(Integer)
+  name.vb: PolygonalVertexes(Integer)
+- uid: netDxf.Entities.Ellipse.ToPolyline2D(System.Int32)
+  commentId: M:netDxf.Entities.Ellipse.ToPolyline2D(System.Int32)
+  id: ToPolyline2D(System.Int32)
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: ToPolyline2D(int)
+  nameWithType: Ellipse.ToPolyline2D(int)
+  fullName: netDxf.Entities.Ellipse.ToPolyline2D(int)
+  type: Method
+  source:
+    id: ToPolyline2D
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 466
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Converts the ellipse in a Polyline2D.
+  example: []
+  syntax:
+    content: public Polyline2D ToPolyline2D(int precision)
+    parameters:
+    - id: precision
+      type: System.Int32
+      description: Number of vertexes generated.
+    return:
+      type: netDxf.Entities.Polyline2D
+      description: A new instance of <xref href="netDxf.Entities.Polyline2D?text=Polyline2D" data-throw-if-not-resolved="false"></xref> that represents the ellipse.
+    content.vb: Public Function ToPolyline2D(precision As Integer) As Polyline2D
+  overload: netDxf.Entities.Ellipse.ToPolyline2D*
+  nameWithType.vb: Ellipse.ToPolyline2D(Integer)
+  fullName.vb: netDxf.Entities.Ellipse.ToPolyline2D(Integer)
+  name.vb: ToPolyline2D(Integer)
+- uid: netDxf.Entities.Ellipse.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.Ellipse.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  id: TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: Ellipse.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.Ellipse.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  type: Method
+  source:
+    id: TransformBy
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 502
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Moves, scales, and/or rotates the current entity given a 3x3 transformation matrix and a translation vector.
+  remarks: Matrix3 adopts the convention of using column vectors to represent a transformation matrix.
+  example: []
+  syntax:
+    content: public override void TransformBy(Matrix3 transformation, Vector3 translation)
+    parameters:
+    - id: transformation
+      type: netDxf.Matrix3
+      description: Transformation matrix.
+    - id: translation
+      type: netDxf.Vector3
+      description: Translation vector.
+    content.vb: Public Overrides Sub TransformBy(transformation As Matrix3, translation As Vector3)
+  overridden: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  overload: netDxf.Entities.Ellipse.TransformBy*
+- uid: netDxf.Entities.Ellipse.Clone
+  commentId: M:netDxf.Entities.Ellipse.Clone
+  id: Clone
+  parent: netDxf.Entities.Ellipse
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Ellipse.Clone()
+  fullName: netDxf.Entities.Ellipse.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: /Users/wieslawsoltes/GitHub/DxfToCSharp/external/netDxf/netDxf/Entities/Ellipse.cs
+    startLine: 632
+  assemblies:
+  - netDxf
+  namespace: netDxf.Entities
+  summary: Creates a new Ellipse that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public override object Clone()
+    return:
+      type: System.Object
+      description: A new Ellipse that is a copy of this instance.
+    content.vb: Public Overrides Function Clone() As Object
+  overridden: netDxf.Entities.EntityObject.Clone
+  overload: netDxf.Entities.Ellipse.Clone*
+references:
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  href: netDxf.Entities.EntityObject.html
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  href: netDxf.html
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    href: netDxf.html
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    href: netDxf.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: netDxf.DxfObject
+  commentId: T:netDxf.DxfObject
+  parent: netDxf
+  href: netDxf.DxfObject.html
+  name: DxfObject
+  nameWithType: DxfObject
+  fullName: netDxf.DxfObject
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
+- uid: netDxf.Entities.EntityObject.LayerChanged
+  commentId: E:netDxf.Entities.EntityObject.LayerChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LayerChanged
+  name: LayerChanged
+  nameWithType: EntityObject.LayerChanged
+  fullName: netDxf.Entities.EntityObject.LayerChanged
+- uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  commentId: M:netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  name: OnLayerChangedEvent(Layer, Layer)
+  nameWithType: EntityObject.OnLayerChangedEvent(Layer, Layer)
+  fullName: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer, netDxf.Tables.Layer)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLayerChangedEvent(netDxf.Tables.Layer,netDxf.Tables.Layer)
+    name: OnLayerChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLayerChangedEvent_netDxf_Tables_Layer_netDxf_Tables_Layer_
+  - name: (
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Layer
+    name: Layer
+    href: netDxf.Tables.Layer.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.LinetypeChanged
+  commentId: E:netDxf.Entities.EntityObject.LinetypeChanged
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeChanged
+  name: LinetypeChanged
+  nameWithType: EntityObject.LinetypeChanged
+  fullName: netDxf.Entities.EntityObject.LinetypeChanged
+- uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  commentId: M:netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  name: OnLinetypeChangedEvent(Linetype, Linetype)
+  nameWithType: EntityObject.OnLinetypeChangedEvent(Linetype, Linetype)
+  fullName: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype, netDxf.Tables.Linetype)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.OnLinetypeChangedEvent(netDxf.Tables.Linetype,netDxf.Tables.Linetype)
+    name: OnLinetypeChangedEvent
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_OnLinetypeChangedEvent_netDxf_Tables_Linetype_netDxf_Tables_Linetype_
+  - name: (
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Tables.Linetype
+    name: Linetype
+    href: netDxf.Tables.Linetype.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.Reactors
+  commentId: P:netDxf.Entities.EntityObject.Reactors
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Reactors
+  name: Reactors
+  nameWithType: EntityObject.Reactors
+  fullName: netDxf.Entities.EntityObject.Reactors
+- uid: netDxf.Entities.EntityObject.Type
+  commentId: P:netDxf.Entities.EntityObject.Type
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Type
+  name: Type
+  nameWithType: EntityObject.Type
+  fullName: netDxf.Entities.EntityObject.Type
+- uid: netDxf.Entities.EntityObject.Color
+  commentId: P:netDxf.Entities.EntityObject.Color
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Color
+  name: Color
+  nameWithType: EntityObject.Color
+  fullName: netDxf.Entities.EntityObject.Color
+- uid: netDxf.Entities.EntityObject.Layer
+  commentId: P:netDxf.Entities.EntityObject.Layer
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Layer
+  name: Layer
+  nameWithType: EntityObject.Layer
+  fullName: netDxf.Entities.EntityObject.Layer
+- uid: netDxf.Entities.EntityObject.Linetype
+  commentId: P:netDxf.Entities.EntityObject.Linetype
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Linetype
+  name: Linetype
+  nameWithType: EntityObject.Linetype
+  fullName: netDxf.Entities.EntityObject.Linetype
+- uid: netDxf.Entities.EntityObject.Lineweight
+  commentId: P:netDxf.Entities.EntityObject.Lineweight
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Lineweight
+  name: Lineweight
+  nameWithType: EntityObject.Lineweight
+  fullName: netDxf.Entities.EntityObject.Lineweight
+- uid: netDxf.Entities.EntityObject.Transparency
+  commentId: P:netDxf.Entities.EntityObject.Transparency
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Transparency
+  name: Transparency
+  nameWithType: EntityObject.Transparency
+  fullName: netDxf.Entities.EntityObject.Transparency
+- uid: netDxf.Entities.EntityObject.LinetypeScale
+  commentId: P:netDxf.Entities.EntityObject.LinetypeScale
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_LinetypeScale
+  name: LinetypeScale
+  nameWithType: EntityObject.LinetypeScale
+  fullName: netDxf.Entities.EntityObject.LinetypeScale
+- uid: netDxf.Entities.EntityObject.IsVisible
+  commentId: P:netDxf.Entities.EntityObject.IsVisible
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_IsVisible
+  name: IsVisible
+  nameWithType: EntityObject.IsVisible
+  fullName: netDxf.Entities.EntityObject.IsVisible
+- uid: netDxf.Entities.EntityObject.Normal
+  commentId: P:netDxf.Entities.EntityObject.Normal
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Normal
+  name: Normal
+  nameWithType: EntityObject.Normal
+  fullName: netDxf.Entities.EntityObject.Normal
+- uid: netDxf.Entities.EntityObject.Owner
+  commentId: P:netDxf.Entities.EntityObject.Owner
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Owner
+  name: Owner
+  nameWithType: EntityObject.Owner
+  fullName: netDxf.Entities.EntityObject.Owner
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  name: TransformBy(Matrix4)
+  nameWithType: EntityObject.TransformBy(Matrix4)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix4)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix4_
+  - name: (
+  - uid: netDxf.Matrix4
+    name: Matrix4
+    href: netDxf.Matrix4.html
+  - name: )
+- uid: netDxf.Entities.EntityObject.ToString
+  commentId: M:netDxf.Entities.EntityObject.ToString
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  name: ToString()
+  nameWithType: EntityObject.ToString()
+  fullName: netDxf.Entities.EntityObject.ToString()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.ToString
+    name: ToString
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_ToString
+  - name: (
+  - name: )
+- uid: netDxf.DxfObject.XDataAddAppReg
+  commentId: E:netDxf.DxfObject.XDataAddAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataAddAppReg
+  name: XDataAddAppReg
+  nameWithType: DxfObject.XDataAddAppReg
+  fullName: netDxf.DxfObject.XDataAddAppReg
+- uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataAddAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataAddAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataAddAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataAddAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataAddAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.XDataRemoveAppReg
+  commentId: E:netDxf.DxfObject.XDataRemoveAppReg
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XDataRemoveAppReg
+  name: XDataRemoveAppReg
+  nameWithType: DxfObject.XDataRemoveAppReg
+  fullName: netDxf.DxfObject.XDataRemoveAppReg
+- uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  commentId: M:netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  name: OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  nameWithType: DxfObject.OnXDataRemoveAppRegEvent(ApplicationRegistry)
+  fullName: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+  spec.csharp:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.DxfObject.OnXDataRemoveAppRegEvent(netDxf.Tables.ApplicationRegistry)
+    name: OnXDataRemoveAppRegEvent
+    href: netDxf.DxfObject.html#netDxf_DxfObject_OnXDataRemoveAppRegEvent_netDxf_Tables_ApplicationRegistry_
+  - name: (
+  - uid: netDxf.Tables.ApplicationRegistry
+    name: ApplicationRegistry
+    href: netDxf.Tables.ApplicationRegistry.html
+  - name: )
+- uid: netDxf.DxfObject.CodeName
+  commentId: P:netDxf.DxfObject.CodeName
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_CodeName
+  name: CodeName
+  nameWithType: DxfObject.CodeName
+  fullName: netDxf.DxfObject.CodeName
+- uid: netDxf.DxfObject.Handle
+  commentId: P:netDxf.DxfObject.Handle
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_Handle
+  name: Handle
+  nameWithType: DxfObject.Handle
+  fullName: netDxf.DxfObject.Handle
+- uid: netDxf.DxfObject.XData
+  commentId: P:netDxf.DxfObject.XData
+  parent: netDxf.DxfObject
+  href: netDxf.DxfObject.html#netDxf_DxfObject_XData
+  name: XData
+  nameWithType: DxfObject.XData
+  fullName: netDxf.DxfObject.XData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: netDxf
+  commentId: N:netDxf
+  href: netDxf.html
+  name: netDxf
+  nameWithType: netDxf
+  fullName: netDxf
+- uid: netDxf.Entities.Ellipse.#ctor*
+  commentId: Overload:netDxf.Entities.Ellipse.#ctor
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse__ctor
+  name: Ellipse
+  nameWithType: Ellipse.Ellipse
+  fullName: netDxf.Entities.Ellipse.Ellipse
+  nameWithType.vb: Ellipse.New
+  fullName.vb: netDxf.Entities.Ellipse.New
+  name.vb: New
+- uid: netDxf.Vector2
+  commentId: T:netDxf.Vector2
+  parent: netDxf
+  href: netDxf.Vector2.html
+  name: Vector2
+  nameWithType: Vector2
+  fullName: netDxf.Vector2
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: netDxf.Vector3
+  commentId: T:netDxf.Vector3
+  parent: netDxf
+  href: netDxf.Vector3.html
+  name: Vector3
+  nameWithType: Vector3
+  fullName: netDxf.Vector3
+- uid: netDxf.Entities.Ellipse.Center*
+  commentId: Overload:netDxf.Entities.Ellipse.Center
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_Center
+  name: Center
+  nameWithType: Ellipse.Center
+  fullName: netDxf.Entities.Ellipse.Center
+- uid: netDxf.Entities.Ellipse.MajorAxis*
+  commentId: Overload:netDxf.Entities.Ellipse.MajorAxis
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_MajorAxis
+  name: MajorAxis
+  nameWithType: Ellipse.MajorAxis
+  fullName: netDxf.Entities.Ellipse.MajorAxis
+- uid: netDxf.Entities.Ellipse.MinorAxis*
+  commentId: Overload:netDxf.Entities.Ellipse.MinorAxis
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_MinorAxis
+  name: MinorAxis
+  nameWithType: Ellipse.MinorAxis
+  fullName: netDxf.Entities.Ellipse.MinorAxis
+- uid: netDxf.Entities.Ellipse.Rotation*
+  commentId: Overload:netDxf.Entities.Ellipse.Rotation
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_Rotation
+  name: Rotation
+  nameWithType: Ellipse.Rotation
+  fullName: netDxf.Entities.Ellipse.Rotation
+- uid: netDxf.Entities.Ellipse.StartAngle*
+  commentId: Overload:netDxf.Entities.Ellipse.StartAngle
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_StartAngle
+  name: StartAngle
+  nameWithType: Ellipse.StartAngle
+  fullName: netDxf.Entities.Ellipse.StartAngle
+- uid: netDxf.Entities.Ellipse.EndAngle*
+  commentId: Overload:netDxf.Entities.Ellipse.EndAngle
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_EndAngle
+  name: EndAngle
+  nameWithType: Ellipse.EndAngle
+  fullName: netDxf.Entities.Ellipse.EndAngle
+- uid: netDxf.Entities.Ellipse.Thickness*
+  commentId: Overload:netDxf.Entities.Ellipse.Thickness
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_Thickness
+  name: Thickness
+  nameWithType: Ellipse.Thickness
+  fullName: netDxf.Entities.Ellipse.Thickness
+- uid: netDxf.Entities.Ellipse.IsFullEllipse*
+  commentId: Overload:netDxf.Entities.Ellipse.IsFullEllipse
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_IsFullEllipse
+  name: IsFullEllipse
+  nameWithType: Ellipse.IsFullEllipse
+  fullName: netDxf.Entities.Ellipse.IsFullEllipse
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Entities.Ellipse.SetAxis*
+  commentId: Overload:netDxf.Entities.Ellipse.SetAxis
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_SetAxis_System_Double_System_Double_
+  name: SetAxis
+  nameWithType: Ellipse.SetAxis
+  fullName: netDxf.Entities.Ellipse.SetAxis
+- uid: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter*
+  commentId: Overload:netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_PolarCoordinateRelativeToCenter_System_Double_
+  name: PolarCoordinateRelativeToCenter
+  nameWithType: Ellipse.PolarCoordinateRelativeToCenter
+  fullName: netDxf.Entities.Ellipse.PolarCoordinateRelativeToCenter
+- uid: netDxf.Entities.Ellipse.PolygonalVertexes*
+  commentId: Overload:netDxf.Entities.Ellipse.PolygonalVertexes
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_PolygonalVertexes_System_Int32_
+  name: PolygonalVertexes
+  nameWithType: Ellipse.PolygonalVertexes
+  fullName: netDxf.Entities.Ellipse.PolygonalVertexes
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.List{netDxf.Vector2}
+  commentId: T:System.Collections.Generic.List{netDxf.Vector2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector2>
+  nameWithType: List<Vector2>
+  fullName: System.Collections.Generic.List<netDxf.Vector2>
+  nameWithType.vb: List(Of Vector2)
+  fullName.vb: System.Collections.Generic.List(Of netDxf.Vector2)
+  name.vb: List(Of Vector2)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: netDxf.Vector2
+    name: Vector2
+    href: netDxf.Vector2.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: netDxf.Entities.Polyline2D
+  commentId: T:netDxf.Entities.Polyline2D
+  parent: netDxf.Entities
+  href: netDxf.Entities.Polyline2D.html
+  name: Polyline2D
+  nameWithType: Polyline2D
+  fullName: netDxf.Entities.Polyline2D
+- uid: netDxf.Entities.Ellipse.ToPolyline2D*
+  commentId: Overload:netDxf.Entities.Ellipse.ToPolyline2D
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_ToPolyline2D_System_Int32_
+  name: ToPolyline2D
+  nameWithType: Ellipse.ToPolyline2D
+  fullName: netDxf.Entities.Ellipse.ToPolyline2D
+- uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  commentId: M:netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy(Matrix3, Vector3)
+  nameWithType: EntityObject.TransformBy(Matrix3, Vector3)
+  fullName: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3, netDxf.Vector3)
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.TransformBy(netDxf.Matrix3,netDxf.Vector3)
+    name: TransformBy
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  - name: (
+  - uid: netDxf.Matrix3
+    name: Matrix3
+    href: netDxf.Matrix3.html
+  - name: ','
+  - name: " "
+  - uid: netDxf.Vector3
+    name: Vector3
+    href: netDxf.Vector3.html
+  - name: )
+- uid: netDxf.Entities.Ellipse.TransformBy*
+  commentId: Overload:netDxf.Entities.Ellipse.TransformBy
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_TransformBy_netDxf_Matrix3_netDxf_Vector3_
+  name: TransformBy
+  nameWithType: Ellipse.TransformBy
+  fullName: netDxf.Entities.Ellipse.TransformBy
+- uid: netDxf.Matrix3
+  commentId: T:netDxf.Matrix3
+  parent: netDxf
+  href: netDxf.Matrix3.html
+  name: Matrix3
+  nameWithType: Matrix3
+  fullName: netDxf.Matrix3
+- uid: netDxf.Entities.EntityObject.Clone
+  commentId: M:netDxf.Entities.EntityObject.Clone
+  parent: netDxf.Entities.EntityObject
+  href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  name: Clone()
+  nameWithType: EntityObject.Clone()
+  fullName: netDxf.Entities.EntityObject.Clone()
+  spec.csharp:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: netDxf.Entities.EntityObject.Clone
+    name: Clone
+    href: netDxf.Entities.EntityObject.html#netDxf_Entities_EntityObject_Clone
+  - name: (
+  - name: )
+- uid: netDxf.Entities.Ellipse.Clone*
+  commentId: Overload:netDxf.Entities.Ellipse.Clone
+  href: netDxf.Entities.Ellipse.html#netDxf_Entities_Ellipse_Clone
+  name: Clone
+  nameWithType: Ellipse.Clone
+  fullName: netDxf.Entities.Ellipse.Clone
