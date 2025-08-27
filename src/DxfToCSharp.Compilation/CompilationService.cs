@@ -40,10 +40,38 @@ public class CompilationService
         var references = GetMetadataReferences();
 
         var assemblyName = "GeneratedDxf_" + Guid.NewGuid().ToString("N");
-        var tempDir = Path.Combine(Path.GetTempPath(), "DxfToCSharp");
+        
+        // Secure path construction to prevent path traversal attacks
+        var baseTempPath = Path.GetTempPath();
+        var tempDir = Path.Combine(baseTempPath, "DxfToCSharp");
+        
+        // Validate that the resulting path is still within the temp directory
+        var normalizedTempDir = Path.GetFullPath(tempDir);
+        var normalizedBasePath = Path.GetFullPath(baseTempPath);
+        if (!normalizedTempDir.StartsWith(normalizedBasePath, StringComparison.OrdinalIgnoreCase))
+        {
+            throw new InvalidOperationException("Invalid path detected - potential path traversal attempt");
+        }
+        
         Directory.CreateDirectory(tempDir);
+        
+        // Validate assembly name contains only safe characters
+        if (assemblyName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+        {
+            throw new ArgumentException("Assembly name contains invalid characters");
+        }
+        
         var dllPath = Path.Combine(tempDir, assemblyName + ".dll");
         var pdbPath = Path.Combine(tempDir, assemblyName + ".pdb");
+        
+        // Validate that the resulting file paths are still within the temp directory
+        var normalizedDllPath = Path.GetFullPath(dllPath);
+        var normalizedPdbPath = Path.GetFullPath(pdbPath);
+        if (!normalizedDllPath.StartsWith(normalizedTempDir, StringComparison.OrdinalIgnoreCase) ||
+            !normalizedPdbPath.StartsWith(normalizedTempDir, StringComparison.OrdinalIgnoreCase))
+        {
+            throw new InvalidOperationException("Invalid file path detected - potential path traversal attempt");
+        }
 
         var compilation = CSharpCompilation.Create(
             assemblyName,
@@ -135,7 +163,30 @@ public class CompilationService
             var dxf = ExecuteCreateMethod(assemblyPath);
             if (dxf != null)
             {
-                var tempFile = Path.Combine(Path.GetTempPath(), "DxfToCSharp", "Generated_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".dxf");
+                // Secure path construction to prevent path traversal attacks
+                var baseTempPath = Path.GetTempPath();
+                var fileName = "Generated_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".dxf";
+                
+                // Validate filename contains only safe characters
+                if (fileName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+                {
+                    throw new ArgumentException("Generated filename contains invalid characters");
+                }
+                
+                var tempDir = Path.Combine(baseTempPath, "DxfToCSharp");
+                var tempFile = Path.Combine(tempDir, fileName);
+                
+                // Validate that the resulting paths are still within the temp directory
+                var normalizedTempDir = Path.GetFullPath(tempDir);
+                var normalizedBasePath = Path.GetFullPath(baseTempPath);
+                var normalizedTempFile = Path.GetFullPath(tempFile);
+                
+                if (!normalizedTempDir.StartsWith(normalizedBasePath, StringComparison.OrdinalIgnoreCase) ||
+                    !normalizedTempFile.StartsWith(normalizedTempDir, StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new InvalidOperationException("Invalid path detected - potential path traversal attempt");
+                }
+                
                 Directory.CreateDirectory(Path.GetDirectoryName(tempFile)!);
                 dxf.Save(tempFile);
                 return "Executed successfully. Saved DXF to: " + tempFile;
