@@ -148,12 +148,18 @@ To enable full functionality, configure these repository secrets:
    - Verify the API key has permission to publish packages
    - Ensure package versions are unique (no duplicates)
 
-2. **macOS Build Fails**
+2. **Symbol Package Publishing Fails**
+   - Error: "The package does not contain any symbol (.pdb) files"
+   - Solution: Ensure `DebugType` is set to `portable` and `DebugSymbols` is `true`
+   - The workflow now explicitly sets these properties during build
+   - Symbol packages are pushed separately from main packages
+
+3. **macOS Build Fails**
    - Check that the app manifest is valid
    - Verify Avalonia dependencies are compatible with macOS
    - Ensure create-dmg tool installation succeeds
 
-3. **Windows Build Fails**
+4. **Windows Build Fails**
    - Check that all dependencies support the target runtime
    - Verify single-file publishing settings are correct
    - Ensure trimming doesn't remove required assemblies
