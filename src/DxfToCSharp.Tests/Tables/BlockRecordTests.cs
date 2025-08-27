@@ -105,11 +105,12 @@ public class BlockRecordTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalBlock.Name, finalDoc.Blocks.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

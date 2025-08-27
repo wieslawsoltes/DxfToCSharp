@@ -197,8 +197,9 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         Assert.NotNull(finalDoc);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }

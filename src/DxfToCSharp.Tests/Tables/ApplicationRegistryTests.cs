@@ -106,8 +106,9 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
         assertions(originalAppReg, loadedAppReg);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }

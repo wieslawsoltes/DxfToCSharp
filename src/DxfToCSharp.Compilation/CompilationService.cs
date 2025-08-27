@@ -201,7 +201,10 @@ public class CompilationService
             {
                 var drawingAssembly = AppDomain.CurrentDomain.GetAssemblies()
                     .FirstOrDefault(a => a.GetName().Name == "System.Drawing.Primitives");
-                TryAddReference(drawingAssembly);
+                if (drawingAssembly != null)
+                {
+                    TryAddReference(drawingAssembly);
+                }
             }
             catch
             {
@@ -223,7 +226,10 @@ public class CompilationService
         try
         {
             var appAsm = Assembly.GetEntryAssembly();
-            TryAddReference(appAsm);
+            if (appAsm != null)
+            {
+                TryAddReference(appAsm);
+            }
         }
         catch
         {

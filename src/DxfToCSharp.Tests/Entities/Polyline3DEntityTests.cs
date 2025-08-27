@@ -195,7 +195,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         });
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         try
         {
@@ -208,5 +208,6 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         {
             // Ignore cleanup errors
         }
+        base.Dispose();
     }
 }

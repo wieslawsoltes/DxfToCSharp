@@ -9,7 +9,7 @@ namespace DxfToCSharp.Tests.Objects;
 
 public class LayerStateTests : RoundTripTestBase, IDisposable
 {
-    private readonly string _tempDirectory = Path.Combine(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
+    private new readonly string _tempDirectory = Path.Combine(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
     [Fact]
     public void LayerState_GenerationOptions_ShouldBeRespected()
     {
@@ -279,12 +279,13 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         Assert.Equal(AciColor.FromCadIndex(100), layerState.Properties["Layer099"].Color);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup temp directory
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

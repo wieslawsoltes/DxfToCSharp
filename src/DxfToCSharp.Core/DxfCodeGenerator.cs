@@ -1518,7 +1518,7 @@ public class DxfCodeGenerator
             GenerateEntityPropertiesCore(sb, mtext, baseIndent);
             if (mtext.Style?.Name != "Standard")
             {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name)},");
+                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name!)},");
             }
             if (mtext.RectangleWidth > 0)
             {
@@ -1557,7 +1557,7 @@ public class DxfCodeGenerator
             GenerateEntityPropertiesCore(sb, mtext, baseIndent);
             if (mtext.Style?.Name != "Standard")
             {
-                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name)},");
+                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(mtext.Style.Name!)},");
             }
             if (mtext.RectangleWidth > 0)
             {
@@ -2203,7 +2203,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}}})");
             sb.AppendLine($"{baseIndent}{{");
             GenerateEntityPropertiesCore(sb, leader, baseIndent + "    ");
-            GenerateLeaderAdvancedProperties(sb, leader, null, baseIndent + "    ");
+            GenerateLeaderAdvancedProperties(sb, leader, null!, baseIndent + "    ");
             sb.AppendLine($"{baseIndent}}});");
         }
     }
@@ -3528,7 +3528,7 @@ public class DxfCodeGenerator
             case Enum enumValue:
                 return $"{enumValue.GetType().Name}.{enumValue}";
             default:
-                return value.ToString();
+                return value.ToString() ?? string.Empty;
         }
     }
 
@@ -3572,7 +3572,7 @@ public class DxfCodeGenerator
         // Style
         if (text.Style?.Name != "Standard")
         {
-            sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name)},");
+            sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name!)},");
         }
 
         // Rotation
@@ -3613,11 +3613,11 @@ public class DxfCodeGenerator
         {
             if (string.IsNullOrEmpty(entityName))
             {
-                sb.AppendLine($"{baseIndent}    Style = dimStyle{SafeName(leader.Style.Name)},");
+                sb.AppendLine($"{baseIndent}    Style = dimStyle{SafeName(leader.Style.Name!)},");
             }
             else
             {
-                sb.AppendLine($"{baseIndent}{entityName}.Style = dimStyle{SafeName(leader.Style.Name)};");
+                sb.AppendLine($"{baseIndent}{entityName}.Style = dimStyle{SafeName(leader.Style.Name!)};");
             }
         }
 

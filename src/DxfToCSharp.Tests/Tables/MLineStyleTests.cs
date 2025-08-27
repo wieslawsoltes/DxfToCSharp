@@ -206,8 +206,9 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         validator(originalObjects, recreatedDoc);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }

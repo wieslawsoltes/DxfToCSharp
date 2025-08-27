@@ -37,7 +37,7 @@ public partial class DxfGeneratorOptionsControl : UserControl, IViewFor<DxfGener
             .Where(vm => vm != null)
             .Subscribe(vm =>
             {
-                vm.OptionsChanged
+                vm!.OptionsChanged
                     .Subscribe(options => OptionsChanged?.Invoke(this, new OptionsChangedEventArgs(options)));
             });
     }

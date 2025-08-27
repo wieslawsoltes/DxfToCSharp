@@ -160,7 +160,7 @@ public class HatchEntityTests : RoundTripTestBase, IDisposable
         });
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         try
         {
@@ -173,5 +173,6 @@ public class HatchEntityTests : RoundTripTestBase, IDisposable
         {
             // Ignore cleanup errors
         }
+        base.Dispose();
     }
 }

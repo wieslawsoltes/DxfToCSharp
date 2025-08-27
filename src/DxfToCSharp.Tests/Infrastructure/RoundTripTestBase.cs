@@ -30,7 +30,7 @@ public abstract class RoundTripTestBase
     /// </summary>
     protected void PerformRoundTripTest<T>(T originalEntity, Action<T, T> validator) where T : EntityObject
     {
-        PerformRoundTripTest(originalEntity, validator, null);
+        PerformRoundTripTest(originalEntity, validator, null!);
     }
 
     /// <summary>

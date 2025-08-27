@@ -222,11 +222,12 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalLinetype.Name, finalDoc.Linetypes.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

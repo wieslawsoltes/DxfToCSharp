@@ -475,12 +475,13 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         Assert.DoesNotContain("// Header variables (drawing variables)", generatedCode);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup temp directory
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

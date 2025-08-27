@@ -82,12 +82,13 @@ public class MLineStyleObjectTests : RoundTripTestBase, IDisposable
         Assert.DoesNotContain("MLineStyle objects (stored in dictionaries - not directly accessible)", code);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup temp directory
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

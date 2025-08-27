@@ -8,6 +8,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Platform.Storage;
 using AvaloniaEdit;
 using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
@@ -96,8 +97,7 @@ public partial class MainWindow : Window
         if (_fileWatchingCheckBox != null)
         {
             _fileWatchingCheckBox.IsChecked = true; // Default to enabled
-            _fileWatchingCheckBox.Checked += OnFileWatchingToggled;
-            _fileWatchingCheckBox.Unchecked += OnFileWatchingToggled;
+            _fileWatchingCheckBox.IsCheckedChanged += OnFileWatchingToggled;
         }
 
         // Setup cleanup on window close
@@ -190,18 +190,28 @@ public partial class MainWindow : Window
 
     private async void OnOpenClicked(object? sender, RoutedEventArgs e)
     {
-        var ofd = new OpenFileDialog
+        var storageProvider = StorageProvider;
+        if (storageProvider == null) return;
+
+        var fileTypeChoices = new[]
+        {
+            new FilePickerFileType("DXF files")
+            {
+                Patterns = new[] { "*.dxf" }
+            },
+            FilePickerFileTypes.All
+        };
+
+        var pickerOptions = new FilePickerOpenOptions
         {
             Title = "Open DXF",
             AllowMultiple = false,
-            Filters =
-            {
-                new FileDialogFilter { Name = "DXF files", Extensions = { "dxf" } },
-                new FileDialogFilter { Name = "All files", Extensions = { "*" } }
-            }
+            FileTypeFilter = fileTypeChoices
         };
-        var result = await ofd.ShowAsync(this);
-        var path = result?.FirstOrDefault();
+
+        var result = await storageProvider.OpenFilePickerAsync(pickerOptions);
+        var file = result?.FirstOrDefault();
+        var path = file?.Path.LocalPath;
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             return;
 

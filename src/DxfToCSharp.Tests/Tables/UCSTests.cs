@@ -326,11 +326,12 @@ public class UCSTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalUCS.Name, finalDoc.UCSs.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

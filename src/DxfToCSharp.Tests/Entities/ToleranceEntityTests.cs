@@ -47,8 +47,9 @@ public class ToleranceEntityTests : RoundTripTestBase, IDisposable
         });
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }

@@ -330,11 +330,12 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalDimStyle.Name, finalDoc.DimensionStyles.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

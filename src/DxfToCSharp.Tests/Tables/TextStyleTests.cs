@@ -271,11 +271,12 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalTextStyle.Name, finalDoc.TextStyles.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

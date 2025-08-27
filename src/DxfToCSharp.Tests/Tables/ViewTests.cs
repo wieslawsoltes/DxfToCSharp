@@ -155,8 +155,9 @@ public class ViewTests : RoundTripTestBase, IDisposable
         assertAction(originalView, originalView);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }

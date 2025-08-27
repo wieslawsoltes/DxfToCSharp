@@ -345,11 +345,12 @@ public class VPortTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalVPort.Name, finalDoc.VPorts.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

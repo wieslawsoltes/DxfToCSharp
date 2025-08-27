@@ -162,11 +162,12 @@ public class LayerTests : RoundTripTestBase, IDisposable
         Assert.Contains(originalLayer.Name, finalDoc.Layers.Names);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         if (Directory.Exists(_tempDirectory))
         {
             Directory.Delete(_tempDirectory, true);
         }
+        base.Dispose();
     }
 }

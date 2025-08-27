@@ -115,8 +115,9 @@ public class ShapeStyleTests : RoundTripTestBase, IDisposable
         assertAction(originalShapeStyle, originalShapeStyle);
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         // Cleanup if needed
+        base.Dispose();
     }
 }
