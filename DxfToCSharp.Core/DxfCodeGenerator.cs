@@ -1314,9 +1314,9 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}var entity{point.Handle} = ");
             sb.AppendLine($"{baseIndent}new Point(");
-            sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
+            sb.AppendLine($"{baseIndent}    new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
             sb.AppendLine($"{baseIndent}{{");
-            GenerateEntityPropertiesCore(sb, point, baseIndent);
+            GenerateEntityPropertiesCore(sb, point, baseIndent + "    ");
             sb.AppendLine($"{baseIndent}}};");
             sb.AppendLine($"{baseIndent}doc.Entities.Add(entity{point.Handle});");
         }
@@ -1324,11 +1324,11 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}doc.Entities.Add(");
             sb.AppendLine($"{baseIndent}new Point(");
-            sb.AppendLine($"            new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
-            sb.AppendLine("        {");
-            GenerateEntityPropertiesCore(sb, point, "        ");
-            sb.AppendLine("        }");
-            sb.AppendLine("        );");
+            sb.AppendLine($"{baseIndent}    new Vector3({F(point.Position.X)}, {F(point.Position.Y)}, {F(point.Position.Z)}))");
+            sb.AppendLine($"{baseIndent}{{");
+            GenerateEntityPropertiesCore(sb, point, baseIndent + "    ");
+            sb.AppendLine($"{baseIndent}}}");
+            sb.AppendLine($"{baseIndent});");
         }
     }
 
@@ -2008,7 +2008,7 @@ public class DxfCodeGenerator
                         var entityObj = edge.ConvertTo();
                         if (entityObj != null)
                         {
-                            GenerateBoundaryEntity(sb, entityObj, options, i);
+                            GenerateBoundaryEntity(sb, entityObj, options, i, baseIndent);
                         }
                     }
                 }
@@ -2095,39 +2095,39 @@ public class DxfCodeGenerator
         sb.AppendLine();
     }
 
-    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options, int pathIndex)
+    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options, int pathIndex, string baseIndent)
     {
         // Generate entity creation code for boundary paths without properties
-        sb.AppendLine($"            pathEntities{pathIndex}.Add(");
+        sb.AppendLine($"{baseIndent}    pathEntities{pathIndex}.Add(");
         
         switch (entity)
         {
             case Line line:
-                GenerateLineConstructor(sb, line, "            ");
+                GenerateLineConstructor(sb, line, baseIndent + "    ");
                 break;
             case Arc arc:
-                GenerateArcConstructor(sb, arc, "            ");
+                GenerateArcConstructor(sb, arc, baseIndent + "    ");
                 break;
             case Circle circle:
-                GenerateCircleConstructor(sb, circle, "            ");
+                GenerateCircleConstructor(sb, circle, baseIndent + "    ");
                 break;
             case Polyline2D poly2d:
-                GeneratePolyline2DConstructor(sb, poly2d, "            ");
+                GeneratePolyline2DConstructor(sb, poly2d, baseIndent + "    ");
                 break;
             case Ellipse ellipse:
-                GenerateEllipseConstructor(sb, ellipse, "            ");
+                GenerateEllipseConstructor(sb, ellipse, baseIndent + "    ");
                 break;
             case Spline spline:
-                GenerateSplineConstructor(sb, spline, "            ");
+                GenerateSplineConstructor(sb, spline, baseIndent + "    ");
                 break;
             default:
                 // Fallback for other entity types
-                sb.AppendLine($"            // Unsupported boundary entity type: {entity.GetType().Name}");
-                sb.AppendLine("            null");
+                sb.AppendLine($"{baseIndent}    // Unsupported boundary entity type: {entity.GetType().Name}");
+                sb.AppendLine($"{baseIndent}    null");
                 break;
         }
         
-        sb.AppendLine("            );");
+        sb.AppendLine($"{baseIndent}    );");
     }
 
     private void GenerateWipeout(StringBuilder sb, Wipeout wipeout, bool asVariable = false, string baseIndent = "")
@@ -2212,19 +2212,19 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.FirstVertex.X)}, {F(face3d.FirstVertex.Y)}, {F(face3d.FirstVertex.Z)}),");
         sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.SecondVertex.X)}, {F(face3d.SecondVertex.Y)}, {F(face3d.SecondVertex.Z)}),");
         sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.ThirdVertex.X)}, {F(face3d.ThirdVertex.Y)}, {F(face3d.ThirdVertex.Z)}),");
-        sb.AppendLine($"            new Vector3({F(face3d.FourthVertex.X)}, {F(face3d.FourthVertex.Y)}, {F(face3d.FourthVertex.Z)}))");
-        sb.AppendLine("        {");
-        GenerateEntityPropertiesCore(sb, face3d, "        ");
+        sb.AppendLine($"{baseIndent}    new Vector3({F(face3d.FourthVertex.X)}, {F(face3d.FourthVertex.Y)}, {F(face3d.FourthVertex.Z)}))");
+        sb.AppendLine($"{baseIndent}{{");
+        GenerateEntityPropertiesCore(sb, face3d, baseIndent + "    ");
         
         // EdgeFlags
         if (face3d.EdgeFlags != Face3DEdgeFlags.None)
         {
             var edgeFlagsStr = GenerateEnumFlags(face3d.EdgeFlags);
-            sb.AppendLine($"            EdgeFlags = {edgeFlagsStr},");
+            sb.AppendLine($"{baseIndent}    EdgeFlags = {edgeFlagsStr},");
         }
         
-        sb.AppendLine("        }");
-        sb.AppendLine("        );");
+        sb.AppendLine($"{baseIndent}}}");
+        sb.AppendLine($"{baseIndent});");
     }
 
     private void GenerateLinearDimension(StringBuilder sb, LinearDimension dimension, string baseIndent = "")
