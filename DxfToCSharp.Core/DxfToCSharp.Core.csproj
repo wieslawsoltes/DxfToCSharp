@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>
     <PackageId>DxfToCSharp.Core</PackageId>
     <Description>A library for generating C# code from DXF documents using netDxf</Description>
     <PackageTags>dxf;cad;code-generation;netdxf;csharp</PackageTags>
