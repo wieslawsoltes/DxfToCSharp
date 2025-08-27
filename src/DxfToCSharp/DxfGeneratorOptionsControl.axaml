@@ -52,7 +52,6 @@
       <CheckBox Content="Text" Margin="20,2,0,2" IsChecked="{Binding GenerateTextEntities}" />
       <CheckBox Content="MText" Margin="20,2,0,2" IsChecked="{Binding GenerateMTextEntities}" />
       <CheckBox Content="Points" Margin="20,2,0,2" IsChecked="{Binding GeneratePointEntities}" />
-      <CheckBox Content="Attributes" Margin="20,2,0,2" IsChecked="{Binding GenerateAttributeEntities}" />
       <CheckBox Content="Inserts (Blocks)" Margin="20,2,0,2" IsChecked="{Binding GenerateInsertEntities}" />
       <CheckBox Content="Solids" Margin="20,2,0,2" IsChecked="{Binding GenerateSolidEntities}" />
       <CheckBox Content="3D Faces" Margin="20,2,0,2" IsChecked="{Binding GenerateFace3dEntities}" />

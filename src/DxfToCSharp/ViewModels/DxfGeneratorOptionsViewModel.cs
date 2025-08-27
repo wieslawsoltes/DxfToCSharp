@@ -273,14 +273,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _generatePointEntities, value);
     }
 
-    private bool _generateAttributeEntities = true;
-
-    public bool GenerateAttributeEntities
-    {
-        get => _generateAttributeEntities;
-        set => this.RaiseAndSetIfChanged(ref _generateAttributeEntities, value);
-    }
-
     private bool _generateInsertEntities = true;
 
     public bool GenerateInsertEntities
@@ -575,7 +567,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
                 line && arc && attributeDefinition && circle && ellipse && polyline && polyline2D && polyline3D && spline && text && mtext && point);
 
         var entitiesGroup1b = Observable.CombineLatest(
-            this.WhenAnyValue(x => x.GenerateAttributeEntities),
             this.WhenAnyValue(x => x.GenerateInsertEntities),
             this.WhenAnyValue(x => x.GenerateHatchEntities),
             this.WhenAnyValue(x => x.GenerateSolidEntities),
@@ -583,8 +574,8 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             this.WhenAnyValue(x => x.GenerateWipeoutEntities),
             this.WhenAnyValue(x => x.GenerateLinearDimensionEntities),
             this.WhenAnyValue(x => x.GenerateAlignedDimensionEntities),
-            (attribute, insert, hatch, solid, face3d, wipeout, linearDim, alignedDim) =>
-                attribute && insert && hatch && solid && face3d && wipeout && linearDim && alignedDim);
+            (insert, hatch, solid, face3d, wipeout, linearDim, alignedDim) =>
+                insert && hatch && solid && face3d && wipeout && linearDim && alignedDim);
 
         var entitiesGroup1 = Observable.CombineLatest(
             entitiesGroup1a,
@@ -744,7 +735,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateTextEntities = value;
         GenerateMTextEntities = value;
         GeneratePointEntities = value;
-        GenerateAttributeEntities = value;
         GenerateInsertEntities = value;
         GenerateHatchEntities = value;
         GenerateSolidEntities = value;
@@ -829,7 +819,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
             GenerateTextEntities = GenerateTextEntities,
             GenerateMTextEntities = GenerateMTextEntities,
             GeneratePointEntities = GeneratePointEntities,
-            GenerateAttributeEntities = GenerateAttributeEntities,
             GenerateInsertEntities = GenerateInsertEntities,
             GenerateHatchEntities = GenerateHatchEntities,
             GenerateSolidEntities = GenerateSolidEntities,
@@ -897,7 +886,6 @@ public class DxfGeneratorOptionsViewModel : ReactiveObject
         GenerateTextEntities = options.GenerateTextEntities;
         GenerateMTextEntities = options.GenerateMTextEntities;
         GeneratePointEntities = options.GeneratePointEntities;
-        GenerateAttributeEntities = options.GenerateAttributeEntities;
         GenerateInsertEntities = options.GenerateInsertEntities;
         GenerateHatchEntities = options.GenerateHatchEntities;
         GenerateSolidEntities = options.GenerateSolidEntities;
