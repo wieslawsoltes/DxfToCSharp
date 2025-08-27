@@ -202,7 +202,7 @@ jobs:
         
     - name: Setup Pages
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      uses: actions/configure-pages@v4
+      uses: actions/configure-pages@v5
       
     - name: Upload to GitHub Pages
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
