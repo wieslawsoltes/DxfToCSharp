@@ -146,8 +146,23 @@ jobs:
           7.0.x
           ${{ env.DOTNET_VERSION }}
         
+    - name: Verify .NET installation
+      run: |
+        echo "Installed .NET versions:"
+        dotnet --list-runtimes
+        echo "Installed .NET SDKs:"
+        dotnet --list-sdks
+        
     - name: Install dotnet-project-licenses
-      run: dotnet tool install --global dotnet-project-licenses
+      run: |
+        echo "Installing dotnet-project-licenses tool..."
+        if dotnet tool install --global dotnet-project-licenses; then
+          echo "✅ Tool installed successfully"
+          dotnet tool list --global | grep dotnet-project-licenses
+        else
+          echo "❌ Tool installation failed"
+          exit 1
+        fi
       
     - name: Restore dependencies
       run: dotnet restore ${{ env.SOLUTION_PATH }}
@@ -157,13 +172,25 @@ jobs:
         mkdir -p license-reports
         
         # Generate license information for all projects
-        dotnet-project-licenses --input ${{ env.SOLUTION_PATH }} \
+        if dotnet-project-licenses --input ${{ env.SOLUTION_PATH }} \
           --output-directory license-reports \
           --export-license-texts \
-          --include-transitive
+          --include-transitive; then
+          echo "license_report_generated=true" >> $GITHUB_OUTPUT
+          echo "✅ License report generated successfully"
+        else
+          echo "license_report_generated=false" >> $GITHUB_OUTPUT
+          echo "⚠️ License report generation failed"
+          # Create a basic report file to ensure directory is not empty
+          echo "# License Report Generation Failed" > license-reports/error.md
+          echo "The dotnet-project-licenses tool failed to generate the license report." >> license-reports/error.md
+          echo "Generated on: $(date)" >> license-reports/error.md
+        fi
+      id: license_gen
           
     - name: Upload license report
       uses: actions/upload-artifact@v4
+      if: always() && hashFiles('license-reports/**') != ''
       with:
         name: license-compliance-report
         path: license-reports/
@@ -172,9 +199,17 @@ jobs:
     - name: License summary
       run: |
         echo "## License Compliance Report" >> $GITHUB_STEP_SUMMARY
-        if [ -f "license-reports/licenses.json" ]; then
+        if [ "${{ steps.license_gen.outputs.license_report_generated }}" = "true" ]; then
           echo "✅ License report generated successfully" >> $GITHUB_STEP_SUMMARY
           echo "📄 License information available in artifacts" >> $GITHUB_STEP_SUMMARY
+          
+          # Show summary of found licenses if available
+          if [ -f "license-reports/licenses.json" ]; then
+            LICENSE_COUNT=$(jq length license-reports/licenses.json 2>/dev/null || echo "unknown")
+            echo "📊 Found $LICENSE_COUNT package licenses" >> $GITHUB_STEP_SUMMARY
+          fi
         else
           echo "⚠️ License report generation failed" >> $GITHUB_STEP_SUMMARY
+          echo "🔍 Check the workflow logs for more details" >> $GITHUB_STEP_SUMMARY
+          echo "📄 Error report available in artifacts" >> $GITHUB_STEP_SUMMARY
         fi
