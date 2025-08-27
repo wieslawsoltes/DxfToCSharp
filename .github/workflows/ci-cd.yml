@@ -1,0 +1,305 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ published ]
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+  APP_PROJECT_PATH: './DxfToCSharp/DxfToCSharp.csproj'
+  CORE_PROJECT_PATH: './DxfToCSharp.Core/DxfToCSharp.Core.csproj'
+  TOOL_PROJECT_PATH: './DxfToCSharp.Tool/DxfToCSharp.Tool.csproj'
+  COMPILATION_PROJECT_PATH: './DxfToCSharp.Compilation/DxfToCSharp.Compilation.csproj'
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build
+      run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+      
+    - name: Test
+      run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --configuration Release --verbosity normal
+
+  build-macos:
+    name: Build macOS App
+    runs-on: macos-latest
+    needs: test
+    if: github.event_name == 'release' || github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Publish macOS App
+      run: |
+        dotnet publish ${{ env.APP_PROJECT_PATH }} \
+          --configuration Release \
+          --runtime osx-x64 \
+          --self-contained true \
+          --output ./publish/macos-x64 \
+          -p:PublishSingleFile=true \
+          -p:PublishTrimmed=true \
+          -p:TrimMode=partial
+          
+    - name: Create macOS App Bundle
+      run: |
+        mkdir -p ./publish/DxfToCSharp.app/Contents/MacOS
+        mkdir -p ./publish/DxfToCSharp.app/Contents/Resources
+        
+        # Copy executable
+        cp ./publish/macos-x64/DxfToCSharp ./publish/DxfToCSharp.app/Contents/MacOS/
+        
+        # Create Info.plist
+        cat > ./publish/DxfToCSharp.app/Contents/Info.plist << EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+        <dict>
+            <key>CFBundleExecutable</key>
+            <string>DxfToCSharp</string>
+            <key>CFBundleIdentifier</key>
+            <string>com.wieslawsoltes.dxftocsharp</string>
+            <key>CFBundleName</key>
+            <string>DxfToCSharp</string>
+            <key>CFBundleVersion</key>
+            <string>1.0.0</string>
+            <key>CFBundleShortVersionString</key>
+            <string>1.0.0</string>
+            <key>CFBundlePackageType</key>
+            <string>APPL</string>
+            <key>LSMinimumSystemVersion</key>
+            <string>10.15</string>
+        </dict>
+        </plist>
+        EOF
+        
+    - name: Create macOS DMG
+      run: |
+        # Install create-dmg if not available
+        if ! command -v create-dmg &> /dev/null; then
+          brew install create-dmg
+        fi
+        
+        create-dmg \
+          --volname "DxfToCSharp" \
+          --window-pos 200 120 \
+          --window-size 600 300 \
+          --icon-size 100 \
+          --icon "DxfToCSharp.app" 175 120 \
+          --hide-extension "DxfToCSharp.app" \
+          --app-drop-link 425 120 \
+          "./publish/DxfToCSharp-macOS.dmg" \
+          "./publish/DxfToCSharp.app"
+          
+    - name: Upload macOS Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: DxfToCSharp-macOS
+        path: |
+          ./publish/DxfToCSharp-macOS.dmg
+          ./publish/DxfToCSharp.app
+
+  build-windows:
+    name: Build Windows App
+    runs-on: windows-latest
+    needs: test
+    if: github.event_name == 'release' || github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Publish Windows x64 App
+      run: |
+        dotnet publish ${{ env.APP_PROJECT_PATH }} `
+          --configuration Release `
+          --runtime win-x64 `
+          --self-contained true `
+          --output ./publish/windows-x64 `
+          -p:PublishSingleFile=true `
+          -p:PublishTrimmed=true `
+          -p:TrimMode=partial
+          
+    - name: Publish Windows x86 App
+      run: |
+        dotnet publish ${{ env.APP_PROJECT_PATH }} `
+          --configuration Release `
+          --runtime win-x86 `
+          --self-contained true `
+          --output ./publish/windows-x86 `
+          -p:PublishSingleFile=true `
+          -p:PublishTrimmed=true `
+          -p:TrimMode=partial
+          
+    - name: Create Windows Installer (x64)
+      run: |
+        # Create a simple zip package for now
+        Compress-Archive -Path ./publish/windows-x64/* -DestinationPath ./publish/DxfToCSharp-Windows-x64.zip
+        
+    - name: Create Windows Installer (x86)
+      run: |
+        # Create a simple zip package for now
+        Compress-Archive -Path ./publish/windows-x86/* -DestinationPath ./publish/DxfToCSharp-Windows-x86.zip
+        
+    - name: Upload Windows Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: DxfToCSharp-Windows
+        path: |
+          ./publish/DxfToCSharp-Windows-x64.zip
+          ./publish/DxfToCSharp-Windows-x86.zip
+
+  build-nuget:
+    name: Build and Publish NuGet Packages
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'release'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build Core Library
+      run: |
+        dotnet build ${{ env.CORE_PROJECT_PATH }} \
+          --configuration Release \
+          --no-restore
+          
+    - name: Build Compilation Library
+      run: |
+        dotnet build ${{ env.COMPILATION_PROJECT_PATH }} \
+          --configuration Release \
+          --no-restore
+          
+    - name: Build Tool
+      run: |
+        dotnet build ${{ env.TOOL_PROJECT_PATH }} \
+          --configuration Release \
+          --no-restore
+          
+    - name: Pack Core Library
+      run: |
+        dotnet pack ${{ env.CORE_PROJECT_PATH }} \
+          --configuration Release \
+          --no-build \
+          --output ./packages
+          
+    - name: Pack Compilation Library
+      run: |
+        dotnet pack ${{ env.COMPILATION_PROJECT_PATH }} \
+          --configuration Release \
+          --no-build \
+          --output ./packages
+          
+    - name: Pack Tool
+      run: |
+        dotnet pack ${{ env.TOOL_PROJECT_PATH }} \
+          --configuration Release \
+          --no-build \
+          --output ./packages
+          
+    - name: Upload NuGet Packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: NuGet-Packages
+        path: ./packages/*.nupkg
+        
+    - name: Upload Symbol Packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: Symbol-Packages
+        path: ./packages/*.snupkg
+        
+    - name: Publish to NuGet.org
+      if: github.event_name == 'release'
+      run: |
+        dotnet nuget push ./packages/*.nupkg \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --source https://api.nuget.org/v3/index.json \
+          --skip-duplicate
+
+  release:
+    name: Create Release Assets
+    runs-on: ubuntu-latest
+    needs: [build-macos, build-windows, build-nuget]
+    if: github.event_name == 'release'
+    steps:
+    - name: Download macOS Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: DxfToCSharp-macOS
+        path: ./artifacts/macos
+        
+    - name: Download Windows Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: DxfToCSharp-Windows
+        path: ./artifacts/windows
+        
+    - name: Download NuGet Packages
+      uses: actions/download-artifact@v4
+      with:
+        name: NuGet-Packages
+        path: ./artifacts/nuget
+        
+    - name: Download Symbol Packages
+      uses: actions/download-artifact@v4
+      with:
+        name: Symbol-Packages
+        path: ./artifacts/symbols
+        
+    - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ./artifacts/macos/DxfToCSharp-macOS.dmg
+          ./artifacts/windows/DxfToCSharp-Windows-x64.zip
+          ./artifacts/windows/DxfToCSharp-Windows-x86.zip
+          ./artifacts/nuget/*.nupkg
+          ./artifacts/symbols/*.snupkg
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,37 @@
+name: Validate Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/**'
+
+jobs:
+  validate:
+    name: Validate GitHub Actions Workflows
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate workflow files
+      run: |
+        echo "Validating workflow syntax..."
+        
+        # Check if workflow files are valid YAML
+        for file in .github/workflows/*.yml .github/workflows/*.yaml; do
+          if [ -f "$file" ]; then
+            echo "Checking $file..."
+            python3 -c "import yaml; yaml.safe_load(open('$file'))"
+            echo "✓ $file is valid YAML"
+          fi
+        done
+        
+        echo "All workflow files are valid!"
+    
+    - name: Check required secrets documentation
+      run: |
+        echo "Required secrets for CI/CD pipeline:"
+        echo "- NUGET_API_KEY: API key for publishing to NuGet.org"
+        echo "- GITHUB_TOKEN: Automatically provided by GitHub Actions"
+        echo ""
+        echo "Make sure to add NUGET_API_KEY to repository secrets for NuGet publishing to work."
