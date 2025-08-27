@@ -1,0 +1,16 @@
+{
+  "configProperties": {
+    "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+    "System.Reflection.NullabilityInfoContext.IsSupported": false,
+    "System.ComponentModel.TypeConverter.EnableUnsafeBinaryFormatterSerialization": false,
+    "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
+    "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
+    "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,
+    "System.StartupHookProvider.IsSupported": false,
+    "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
+    "System.Threading.Thread.EnableAutoreleasePool": false,
+    "Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability": false,
+    "System.Globalization.Invariant": false,
+    "System.Globalization.PredefinedCulturesOnly": false
+  }
+}
