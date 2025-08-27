@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxfToCSharp.Compilation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxfToCSharp.Tool", "DxfToCSharp.Tool\DxfToCSharp.Tool.csproj", "{464FB82F-A8D9-4928-B477-C9528319C168}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4A220F52-6203-44A4-8467-85AE2B40E916}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.Config = NuGet.Config
+		global.json = global.json
+		Directory.Packages.props = Directory.Packages.props
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

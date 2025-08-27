@@ -19,6 +19,4 @@
     <PackageReference Include="netDxf.netstandard" />
   </ItemGroup>
 
-
-
 </Project>
