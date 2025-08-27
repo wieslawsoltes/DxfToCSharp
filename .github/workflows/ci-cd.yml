@@ -207,19 +207,25 @@ jobs:
       run: |
         dotnet build ${{ env.CORE_PROJECT_PATH }} \
           --configuration Release \
-          --no-restore
+          --no-restore \
+          -p:DebugType=portable \
+          -p:DebugSymbols=true
           
     - name: Build Compilation Library
       run: |
         dotnet build ${{ env.COMPILATION_PROJECT_PATH }} \
           --configuration Release \
-          --no-restore
+          --no-restore \
+          -p:DebugType=portable \
+          -p:DebugSymbols=true
           
     - name: Build Tool
       run: |
         dotnet build ${{ env.TOOL_PROJECT_PATH }} \
           --configuration Release \
-          --no-restore
+          --no-restore \
+          -p:DebugType=portable \
+          -p:DebugSymbols=true
           
     - name: Pack Core Library
       run: |
@@ -254,13 +260,28 @@ jobs:
         name: Symbol-Packages
         path: ./packages/*.snupkg
         
-    - name: Publish to NuGet.org
+    - name: Publish packages to NuGet.org
       if: github.event_name == 'release'
       run: |
+        # Push main packages first
         dotnet nuget push ./packages/*.nupkg \
           --api-key ${{ secrets.NUGET_API_KEY }} \
           --source https://api.nuget.org/v3/index.json \
           --skip-duplicate
+          
+    - name: Publish symbols to NuGet.org
+      if: github.event_name == 'release'
+      run: |
+        # Push symbol packages separately
+        for file in ./packages/*.snupkg; do
+          if [ -f "$file" ]; then
+            echo "Publishing symbol package: $file"
+            dotnet nuget push "$file" \
+              --api-key ${{ secrets.NUGET_API_KEY }} \
+              --source https://api.nuget.org/v3/index.json \
+              --skip-duplicate || echo "Failed to push $file, continuing..."
+          fi
+        done
 
   release:
     name: Create Release Assets
