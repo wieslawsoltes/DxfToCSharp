@@ -1,0 +1,178 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1'  # Run weekly on Mondays at 6 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+
+jobs:
+  nuget-audit:
+    name: NuGet Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: List packages with vulnerabilities
+      run: |
+        echo "## NuGet Package Vulnerability Scan" >> $GITHUB_STEP_SUMMARY
+        echo "Scanning for vulnerable packages..." >> $GITHUB_STEP_SUMMARY
+        
+        # Check for vulnerable packages
+        VULN_OUTPUT=$(dotnet list package --vulnerable --include-transitive 2>&1 || true)
+        
+        if echo "$VULN_OUTPUT" | grep -q "no vulnerable packages"; then
+          echo "✅ No vulnerable packages found" >> $GITHUB_STEP_SUMMARY
+          echo "$VULN_OUTPUT" >> $GITHUB_STEP_SUMMARY
+        elif echo "$VULN_OUTPUT" | grep -q "vulnerable"; then
+          echo "⚠️ Vulnerable packages detected:" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$VULN_OUTPUT" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          # Set output for later steps
+          echo "vulnerabilities_found=true" >> $GITHUB_OUTPUT
+        else
+          echo "ℹ️ Vulnerability scan completed" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$VULN_OUTPUT" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        fi
+      id: vuln_scan
+      
+    - name: List deprecated packages
+      run: |
+        echo "## Deprecated Package Scan" >> $GITHUB_STEP_SUMMARY
+        echo "Scanning for deprecated packages..." >> $GITHUB_STEP_SUMMARY
+        
+        DEPRECATED_OUTPUT=$(dotnet list package --deprecated --include-transitive 2>&1 || true)
+        
+        if echo "$DEPRECATED_OUTPUT" | grep -q "no deprecated packages"; then
+          echo "✅ No deprecated packages found" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ Deprecated packages detected:" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$DEPRECATED_OUTPUT" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Check for outdated packages
+      run: |
+        echo "## Outdated Package Scan" >> $GITHUB_STEP_SUMMARY
+        echo "Scanning for outdated packages..." >> $GITHUB_STEP_SUMMARY
+        
+        OUTDATED_OUTPUT=$(dotnet list package --outdated --include-transitive 2>&1 || true)
+        
+        if echo "$OUTDATED_OUTPUT" | grep -q "no updates"; then
+          echo "✅ All packages are up to date" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "ℹ️ Outdated packages found:" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$OUTDATED_OUTPUT" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Generate security report
+      run: |
+        mkdir -p security-reports
+        
+        # Generate detailed vulnerability report
+        echo "# Security Audit Report" > security-reports/security-report.md
+        echo "Generated on: $(date)" >> security-reports/security-report.md
+        echo "" >> security-reports/security-report.md
+        
+        echo "## Vulnerable Packages" >> security-reports/security-report.md
+        dotnet list package --vulnerable --include-transitive >> security-reports/security-report.md 2>&1 || true
+        echo "" >> security-reports/security-report.md
+        
+        echo "## Deprecated Packages" >> security-reports/security-report.md
+        dotnet list package --deprecated --include-transitive >> security-reports/security-report.md 2>&1 || true
+        echo "" >> security-reports/security-report.md
+        
+        echo "## Outdated Packages" >> security-reports/security-report.md
+        dotnet list package --outdated --include-transitive >> security-reports/security-report.md 2>&1 || true
+        
+    - name: Upload security report
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-audit-report
+        path: security-reports/
+        retention-days: 30
+        
+    - name: Fail on critical vulnerabilities
+      if: steps.vuln_scan.outputs.vulnerabilities_found == 'true'
+      run: |
+        echo "❌ Critical vulnerabilities found in dependencies!"
+        echo "Please review the security report and update vulnerable packages."
+        # Uncomment the next line to fail the build on vulnerabilities
+        # exit 1
+        
+  license-check:
+    name: License Compliance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Install dotnet-project-licenses
+      run: dotnet tool install --global dotnet-project-licenses
+      
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Generate license report
+      run: |
+        mkdir -p license-reports
+        
+        # Generate license information for all projects
+        dotnet-project-licenses --input ${{ env.SOLUTION_PATH }} \
+          --output-directory license-reports \
+          --export-license-texts \
+          --include-transitive
+          
+    - name: Upload license report
+      uses: actions/upload-artifact@v4
+      with:
+        name: license-compliance-report
+        path: license-reports/
+        retention-days: 30
+        
+    - name: License summary
+      run: |
+        echo "## License Compliance Report" >> $GITHUB_STEP_SUMMARY
+        if [ -f "license-reports/licenses.json" ]; then
+          echo "✅ License report generated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "📄 License information available in artifacts" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ License report generation failed" >> $GITHUB_STEP_SUMMARY
+        fi

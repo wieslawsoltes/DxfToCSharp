@@ -1,0 +1,62 @@
+version: 2
+updates:
+  # Enable version updates for NuGet packages
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "wieslawsoltes"
+    assignees:
+      - "wieslawsoltes"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "nuget"
+    # Group updates for related packages
+    groups:
+      avalonia:
+        patterns:
+          - "Avalonia*"
+      microsoft-codeanalysis:
+        patterns:
+          - "Microsoft.CodeAnalysis*"
+      testing:
+        patterns:
+          - "xunit*"
+          - "Microsoft.NET.Test.Sdk"
+          - "coverlet*"
+      reactive:
+        patterns:
+          - "ReactiveUI*"
+          - "DynamicData"
+    # Ignore specific packages if needed
+    ignore:
+      - dependency-name: "netDxf*"
+        # Ignore patch updates for netDxf to avoid frequent updates
+        update-types: ["version-update:semver-patch"]
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "wieslawsoltes"
+    assignees:
+      - "wieslawsoltes"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"

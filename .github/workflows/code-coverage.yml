@@ -1,0 +1,114 @@
+name: Code Coverage
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+  TEST_PROJECT_PATH: './DxfToCSharp.Tests/DxfToCSharp.Tests.csproj'
+
+jobs:
+  coverage:
+    name: Code Coverage Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build
+      run: |
+        dotnet build ${{ env.SOLUTION_PATH }} \
+          --no-restore \
+          --configuration Release
+      
+    - name: Run tests with coverage
+      run: |
+        dotnet test ${{ env.TEST_PROJECT_PATH }} \
+          --no-build \
+          --configuration Release \
+          --verbosity normal \
+          --collect:"XPlat Code Coverage" \
+          --results-directory ./coverage \
+          --settings coverlet.runsettings
+          
+    - name: Install ReportGenerator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      
+    - name: Generate coverage report
+      run: |
+        reportgenerator \
+          "-reports:coverage/**/coverage.cobertura.xml" \
+          "-targetdir:coverage/report" \
+          "-reporttypes:Html;Cobertura;JsonSummary;Badges" \
+          "-verbosity:Info"
+          
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        file: ./coverage/report/Cobertura.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+        verbose: true
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        
+    - name: Upload coverage to Codacy
+      uses: codacy/codacy-coverage-reporter-action@v1
+      if: github.event_name == 'push'
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        coverage-reports: ./coverage/report/Cobertura.xml
+      continue-on-error: true
+        
+    - name: Comment coverage on PR
+      if: github.event_name == 'pull_request'
+      uses: 5monkeys/cobertura-action@master
+      with:
+        path: ./coverage/report/Cobertura.xml
+        minimum_coverage: 75
+        fail_below_threshold: false
+        show_missing: true
+        show_line: true
+        show_branch: true
+        
+    - name: Upload coverage artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: coverage-report
+        path: |
+          ./coverage/report/
+          ./coverage/**/coverage.cobertura.xml
+        retention-days: 30
+        
+    - name: Coverage Summary
+      run: |
+        echo "## Coverage Summary" >> $GITHUB_STEP_SUMMARY
+        if [ -f "./coverage/report/Summary.json" ]; then
+          echo "Coverage report generated successfully" >> $GITHUB_STEP_SUMMARY
+          # Extract coverage percentage from JSON summary
+          COVERAGE=$(cat ./coverage/report/Summary.json | grep -o '"linecoverage":[0-9.]*' | cut -d':' -f2)
+          echo "Line Coverage: ${COVERAGE}%" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "Coverage report generation failed" >> $GITHUB_STEP_SUMMARY
+        fi

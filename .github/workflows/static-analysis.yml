@@ -1,0 +1,247 @@
+name: Static Code Analysis
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+
+jobs:
+  dotnet-analyzers:
+    name: .NET Code Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0  # Shallow clones should be disabled for better analysis
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build solution
+      run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+      
+    - name: Run .NET Code Analysis
+      run: |
+        echo "## .NET Code Analysis Results" >> $GITHUB_STEP_SUMMARY
+        
+        # Run code analysis and capture output
+        ANALYSIS_OUTPUT=$(dotnet build ${{ env.SOLUTION_PATH }} --no-restore --verbosity normal --configuration Release 2>&1 || true)
+        
+        # Check for warnings and errors
+        WARNING_COUNT=$(echo "$ANALYSIS_OUTPUT" | grep -c "warning" || echo "0")
+        ERROR_COUNT=$(echo "$ANALYSIS_OUTPUT" | grep -c "error" || echo "0")
+        
+        echo "📊 **Analysis Summary:**" >> $GITHUB_STEP_SUMMARY
+        echo "- Warnings: $WARNING_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "- Errors: $ERROR_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Show warnings if any
+        if [ "$WARNING_COUNT" -gt "0" ]; then
+          echo "⚠️ **Warnings Found:**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$ANALYSIS_OUTPUT" | grep "warning" | head -20 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Show errors if any
+        if [ "$ERROR_COUNT" -gt "0" ]; then
+          echo "❌ **Errors Found:**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$ANALYSIS_OUTPUT" | grep "error" | head -20 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        if [ "$WARNING_COUNT" -eq "0" ] && [ "$ERROR_COUNT" -eq "0" ]; then
+          echo "✅ No code analysis issues found!" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Save full output to file
+        mkdir -p analysis-reports
+        echo "$ANALYSIS_OUTPUT" > analysis-reports/dotnet-analysis.log
+        
+    - name: Upload analysis report
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-analysis-report
+        path: analysis-reports/
+        retention-days: 30
+
+  sonarcloud:
+    name: SonarCloud Analysis
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0  # Shallow clones should be disabled for SonarCloud analysis
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+        
+    - name: Install SonarCloud scanner
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Begin SonarCloud analysis
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        if [ -n "$SONAR_TOKEN" ]; then
+          dotnet sonarscanner begin \
+            /k:"wieslawsoltes_DxfToCSharp" \
+            /o:"wieslawsoltes" \
+            /d:sonar.token="$SONAR_TOKEN" \
+            /d:sonar.host.url="https://sonarcloud.io" \
+            /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" \
+            /d:sonar.coverage.exclusions="**/*.Tests/**,**/Program.cs" \
+            /d:sonar.exclusions="**/bin/**,**/obj/**,**/*.Designer.cs,**/Migrations/**" \
+            /d:sonar.cpd.exclusions="**/Models/**,**/Entities/**"
+        else
+          echo "⚠️ SONAR_TOKEN not found. Skipping SonarCloud analysis."
+          echo "To enable SonarCloud analysis, add SONAR_TOKEN to repository secrets."
+          exit 0
+        fi
+        
+    - name: Build and analyze
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        if [ -n "$SONAR_TOKEN" ]; then
+          dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+        fi
+        
+    - name: Run tests with coverage
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        if [ -n "$SONAR_TOKEN" ]; then
+          dotnet test ${{ env.SOLUTION_PATH }} \
+            --no-build \
+            --configuration Release \
+            --collect:"XPlat Code Coverage" \
+            --settings coverlet.runsettings \
+            --results-directory ./TestResults/ \
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        fi
+        
+    - name: End SonarCloud analysis
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        if [ -n "$SONAR_TOKEN" ]; then
+          dotnet sonarscanner end /d:sonar.token="$SONAR_TOKEN"
+          echo "✅ SonarCloud analysis completed" >> $GITHUB_STEP_SUMMARY
+          echo "📊 View results at: https://sonarcloud.io/project/overview?id=wieslawsoltes_DxfToCSharp" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "ℹ️ SonarCloud analysis skipped (SONAR_TOKEN not configured)" >> $GITHUB_STEP_SUMMARY
+        fi
+
+  code-metrics:
+    name: Code Metrics
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Install code metrics tools
+      run: |
+        dotnet tool install --global dotnet-counters
+        
+    - name: Restore and build
+      run: |
+        dotnet restore ${{ env.SOLUTION_PATH }}
+        dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+        
+    - name: Generate code metrics
+      run: |
+        mkdir -p metrics-reports
+        
+        echo "## Code Metrics Report" > metrics-reports/code-metrics.md
+        echo "Generated on: $(date)" >> metrics-reports/code-metrics.md
+        echo "" >> metrics-reports/code-metrics.md
+        
+        # Count lines of code
+        echo "### Lines of Code" >> metrics-reports/code-metrics.md
+        find . -name "*.cs" -not -path "./bin/*" -not -path "./obj/*" -not -path "*/.git/*" | xargs wc -l | tail -1 >> metrics-reports/code-metrics.md
+        echo "" >> metrics-reports/code-metrics.md
+        
+        # Count files
+        echo "### File Statistics" >> metrics-reports/code-metrics.md
+        echo "C# Files: $(find . -name "*.cs" -not -path "./bin/*" -not -path "./obj/*" | wc -l)" >> metrics-reports/code-metrics.md
+        echo "Test Files: $(find . -name "*.Tests.cs" -o -name "*Test.cs" -o -name "*Tests.cs" | wc -l)" >> metrics-reports/code-metrics.md
+        echo "" >> metrics-reports/code-metrics.md
+        
+        # Project structure
+        echo "### Project Structure" >> metrics-reports/code-metrics.md
+        echo '```' >> metrics-reports/code-metrics.md
+        find . -name "*.csproj" -not -path "./bin/*" -not -path "./obj/*" >> metrics-reports/code-metrics.md
+        echo '```' >> metrics-reports/code-metrics.md
+        
+    - name: Upload metrics report
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-metrics-report
+        path: metrics-reports/
+        retention-days: 30
+        
+    - name: Metrics summary
+      run: |
+        echo "## Code Metrics Summary" >> $GITHUB_STEP_SUMMARY
+        
+        LOC=$(find . -name "*.cs" -not -path "./bin/*" -not -path "./obj/*" -not -path "*/.git/*" | xargs wc -l | tail -1 | awk '{print $1}')
+        FILES=$(find . -name "*.cs" -not -path "./bin/*" -not -path "./obj/*" | wc -l)
+        TEST_FILES=$(find . -name "*.Tests.cs" -o -name "*Test.cs" -o -name "*Tests.cs" | wc -l)
+        
+        echo "📊 **Project Statistics:**" >> $GITHUB_STEP_SUMMARY
+        echo "- Total Lines of Code: $LOC" >> $GITHUB_STEP_SUMMARY
+        echo "- C# Files: $FILES" >> $GITHUB_STEP_SUMMARY
+        echo "- Test Files: $TEST_FILES" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "$TEST_FILES" -gt "0" ] && [ "$FILES" -gt "0" ]; then
+          TEST_RATIO=$(echo "scale=2; $TEST_FILES * 100 / $FILES" | bc -l)
+          echo "- Test Coverage Ratio: ${TEST_RATIO}%" >> $GITHUB_STEP_SUMMARY
+        fi

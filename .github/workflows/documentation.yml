@@ -1,0 +1,313 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0  # Needed for git features in DocFX
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+      
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Build solution
+      run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+      
+    - name: Create docs directory structure
+      run: |
+        mkdir -p docs
+        
+        # Create getting started guide if it doesn't exist
+        if [ ! -f "docs/getting-started.md" ]; then
+          cat > docs/getting-started.md << 'EOF'
+        # Getting Started with DxfToCSharp
+        
+        DxfToCSharp is a .NET library for converting DXF files to C# code.
+        
+        ## Installation
+        
+        Install the package via NuGet:
+        
+        ```bash
+        dotnet add package DxfToCSharp
+        ```
+        
+        ## Basic Usage
+        
+        ```csharp
+        // Example usage will be added here
+        ```
+        
+        ## Next Steps
+        
+        - Check out the [API Reference](api-reference.md)
+        - See [Examples](examples.md) for more detailed usage
+        EOF
+        fi
+        
+        # Create API reference guide if it doesn't exist
+        if [ ! -f "docs/api-reference.md" ]; then
+          cat > docs/api-reference.md << 'EOF'
+        # API Reference
+        
+        This section provides detailed information about the DxfToCSharp API.
+        
+        ## Core Classes
+        
+        The main classes you'll work with include:
+        
+        - **DxfParser** - For parsing DXF files
+        - **CodeGenerator** - For generating C# code
+        - **CompilationService** - For compiling generated code
+        
+        For detailed API documentation, see the [API Documentation](../api/) section.
+        EOF
+        fi
+        
+        # Create examples guide if it doesn't exist
+        if [ ! -f "docs/examples.md" ]; then
+          cat > docs/examples.md << 'EOF'
+        # Examples
+        
+        This section contains practical examples of using DxfToCSharp.
+        
+        ## Basic DXF Parsing
+        
+        ```csharp
+        // Example code will be added here
+        ```
+        
+        ## Code Generation
+        
+        ```csharp
+        // Example code will be added here
+        ```
+        
+        ## Advanced Usage
+        
+        ```csharp
+        // Advanced examples will be added here
+        ```
+        EOF
+        fi
+        
+        # Create contributing guide if it doesn't exist
+        if [ ! -f "docs/contributing.md" ]; then
+          cat > docs/contributing.md << 'EOF'
+        # Contributing to DxfToCSharp
+        
+        We welcome contributions to DxfToCSharp! Here's how you can help:
+        
+        ## Development Setup
+        
+        1. Fork the repository
+        2. Clone your fork
+        3. Install .NET 9 SDK
+        4. Run `dotnet restore`
+        5. Run `dotnet build`
+        
+        ## Running Tests
+        
+        ```bash
+        dotnet test
+        ```
+        
+        ## Code Style
+        
+        We use EditorConfig and dotnet format for consistent code style:
+        
+        ```bash
+        dotnet format
+        ```
+        
+        ## Submitting Changes
+        
+        1. Create a feature branch
+        2. Make your changes
+        3. Add tests if applicable
+        4. Ensure all tests pass
+        5. Submit a pull request
+        EOF
+        fi
+        
+    - name: Generate API metadata
+      run: |
+        echo "## Generating API Documentation" >> $GITHUB_STEP_SUMMARY
+        echo "Running DocFX metadata generation..." >> $GITHUB_STEP_SUMMARY
+        
+        # Generate API metadata
+        docfx metadata docfx.json
+        
+        if [ $? -eq 0 ]; then
+          echo "✅ API metadata generated successfully" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ API metadata generation failed" >> $GITHUB_STEP_SUMMARY
+          exit 1
+        fi
+        
+    - name: Build documentation site
+      run: |
+        echo "## Building Documentation Site" >> $GITHUB_STEP_SUMMARY
+        echo "Running DocFX build..." >> $GITHUB_STEP_SUMMARY
+        
+        # Build the documentation site
+        docfx build docfx.json
+        
+        if [ $? -eq 0 ]; then
+          echo "✅ Documentation site built successfully" >> $GITHUB_STEP_SUMMARY
+          echo "📁 Output directory: _site" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ Documentation build failed" >> $GITHUB_STEP_SUMMARY
+          exit 1
+        fi
+        
+    - name: Upload documentation artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation-site
+        path: _site/
+        retention-days: 30
+        
+    - name: Setup Pages
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: actions/configure-pages@v4
+      
+    - name: Upload to GitHub Pages
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site/
+        
+    - name: Generate documentation report
+      run: |
+        mkdir -p doc-reports
+        
+        echo "# Documentation Build Report" > doc-reports/build-report.md
+        echo "Generated on: $(date)" >> doc-reports/build-report.md
+        echo "" >> doc-reports/build-report.md
+        
+        echo "## Build Status" >> doc-reports/build-report.md
+        echo "✅ Documentation built successfully" >> doc-reports/build-report.md
+        echo "" >> doc-reports/build-report.md
+        
+        echo "## Generated Files" >> doc-reports/build-report.md
+        if [ -d "_site" ]; then
+          echo "Site files generated:" >> doc-reports/build-report.md
+          find _site -type f -name "*.html" | wc -l | xargs echo "- HTML files:" >> doc-reports/build-report.md
+          find _site -type f -name "*.css" | wc -l | xargs echo "- CSS files:" >> doc-reports/build-report.md
+          find _site -type f -name "*.js" | wc -l | xargs echo "- JavaScript files:" >> doc-reports/build-report.md
+        fi
+        
+        echo "" >> doc-reports/build-report.md
+        echo "## API Coverage" >> doc-reports/build-report.md
+        if [ -d "api" ]; then
+          find api -name "*.yml" | wc -l | xargs echo "- API files generated:" >> doc-reports/build-report.md
+        fi
+        
+    - name: Upload documentation report
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation-build-report
+        path: doc-reports/
+        retention-days: 30
+
+  deploy-docs:
+    name: Deploy Documentation
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: build-docs
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      
+    - name: Documentation deployment summary
+      run: |
+        echo "## 📚 Documentation Deployed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Documentation has been successfully deployed to GitHub Pages" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **Documentation URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "The documentation includes:" >> $GITHUB_STEP_SUMMARY
+        echo "- 📖 Getting Started Guide" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔧 API Reference" >> $GITHUB_STEP_SUMMARY
+        echo "- 💡 Examples and Tutorials" >> $GITHUB_STEP_SUMMARY
+        echo "- 🤝 Contributing Guidelines" >> $GITHUB_STEP_SUMMARY
+
+  validate-links:
+    name: Validate Documentation Links
+    needs: build-docs
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Download documentation artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: documentation-site
+        path: _site/
+        
+    - name: Install link checker
+      run: npm install -g markdown-link-check
+      
+    - name: Check documentation links
+      run: |
+        echo "## Link Validation Report" >> $GITHUB_STEP_SUMMARY
+        
+        # Check markdown files for broken links
+        LINK_ERRORS=0
+        
+        for file in $(find docs -name "*.md" 2>/dev/null || echo ""); do
+          if [ -f "$file" ]; then
+            echo "Checking links in $file..."
+            if ! markdown-link-check "$file" --quiet; then
+              LINK_ERRORS=$((LINK_ERRORS + 1))
+            fi
+          fi
+        done
+        
+        if [ $LINK_ERRORS -eq 0 ]; then
+          echo "✅ All documentation links are valid" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ Found $LINK_ERRORS files with broken links" >> $GITHUB_STEP_SUMMARY
+          echo "Please check the link validation output above" >> $GITHUB_STEP_SUMMARY
+        fi

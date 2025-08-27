@@ -1,0 +1,243 @@
+name: Code Formatting
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SOLUTION_PATH: './DxfToCSharp.sln'
+
+jobs:
+  format-check:
+    name: Code Format Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Check code formatting
+      run: |
+        echo "## Code Formatting Check" >> $GITHUB_STEP_SUMMARY
+        echo "Checking code formatting with dotnet format..." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Run dotnet format in verify mode (doesn't modify files)
+        FORMAT_OUTPUT=$(dotnet format ${{ env.SOLUTION_PATH }} --verify-no-changes --verbosity diagnostic 2>&1 || echo "FORMATTING_ISSUES_FOUND")
+        
+        if echo "$FORMAT_OUTPUT" | grep -q "FORMATTING_ISSUES_FOUND"; then
+          echo "❌ **Code formatting issues found!**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The following files need formatting:" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$FORMAT_OUTPUT" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "💡 **To fix formatting issues:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "dotnet format ${{ env.SOLUTION_PATH }}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          
+          # Set output for later steps
+          echo "formatting_issues=true" >> $GITHUB_OUTPUT
+        else
+          echo "✅ **All files are properly formatted!**" >> $GITHUB_STEP_SUMMARY
+          echo "formatting_issues=false" >> $GITHUB_OUTPUT
+        fi
+        
+        # Save detailed output
+        mkdir -p formatting-reports
+        echo "$FORMAT_OUTPUT" > formatting-reports/format-check.log
+      id: format_check
+      
+    - name: Check EditorConfig compliance
+      run: |
+        echo "## EditorConfig Compliance" >> $GITHUB_STEP_SUMMARY
+        
+        # Check if .editorconfig exists
+        if [ -f ".editorconfig" ]; then
+          echo "✅ .editorconfig file found" >> $GITHUB_STEP_SUMMARY
+          
+          # Run dotnet format with EditorConfig rules
+          EDITORCONFIG_OUTPUT=$(dotnet format ${{ env.SOLUTION_PATH }} --include-generated --verify-no-changes 2>&1 || echo "EDITORCONFIG_ISSUES_FOUND")
+          
+          if echo "$EDITORCONFIG_OUTPUT" | grep -q "EDITORCONFIG_ISSUES_FOUND"; then
+            echo "⚠️ EditorConfig compliance issues found" >> $GITHUB_STEP_SUMMARY
+            echo "editorconfig_issues=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ All files comply with EditorConfig rules" >> $GITHUB_STEP_SUMMARY
+            echo "editorconfig_issues=false" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "$EDITORCONFIG_OUTPUT" > formatting-reports/editorconfig-check.log
+        else
+          echo "⚠️ .editorconfig file not found" >> $GITHUB_STEP_SUMMARY
+          echo "editorconfig_issues=false" >> $GITHUB_OUTPUT
+        fi
+      id: editorconfig_check
+      
+    - name: Analyze code style
+      run: |
+        echo "## Code Style Analysis" >> $GITHUB_STEP_SUMMARY
+        
+        # Run dotnet format analyzers
+        ANALYZER_OUTPUT=$(dotnet format analyzers ${{ env.SOLUTION_PATH }} --verify-no-changes --verbosity diagnostic 2>&1 || echo "ANALYZER_ISSUES_FOUND")
+        
+        if echo "$ANALYZER_OUTPUT" | grep -q "ANALYZER_ISSUES_FOUND"; then
+          echo "⚠️ **Code style analyzer issues found**" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "$ANALYZER_OUTPUT" | head -20 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "analyzer_issues=true" >> $GITHUB_OUTPUT
+        else
+          echo "✅ **No code style analyzer issues found**" >> $GITHUB_STEP_SUMMARY
+          echo "analyzer_issues=false" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "$ANALYZER_OUTPUT" > formatting-reports/analyzer-check.log
+      id: analyzer_check
+      
+    - name: Generate formatting report
+      run: |
+        # Create comprehensive formatting report
+        echo "# Code Formatting Report" > formatting-reports/formatting-report.md
+        echo "Generated on: $(date)" >> formatting-reports/formatting-report.md
+        echo "" >> formatting-reports/formatting-report.md
+        
+        echo "## Summary" >> formatting-reports/formatting-report.md
+        echo "- Format Check: ${{ steps.format_check.outputs.formatting_issues == 'true' && '❌ Issues Found' || '✅ Passed' }}" >> formatting-reports/formatting-report.md
+        echo "- EditorConfig: ${{ steps.editorconfig_check.outputs.editorconfig_issues == 'true' && '⚠️ Issues Found' || '✅ Passed' }}" >> formatting-reports/formatting-report.md
+        echo "- Analyzers: ${{ steps.analyzer_check.outputs.analyzer_issues == 'true' && '⚠️ Issues Found' || '✅ Passed' }}" >> formatting-reports/formatting-report.md
+        echo "" >> formatting-reports/formatting-report.md
+        
+        if [ "${{ steps.format_check.outputs.formatting_issues }}" = "true" ]; then
+          echo "## Formatting Issues" >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+          cat formatting-reports/format-check.log >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+          echo "" >> formatting-reports/formatting-report.md
+        fi
+        
+        if [ "${{ steps.editorconfig_check.outputs.editorconfig_issues }}" = "true" ]; then
+          echo "## EditorConfig Issues" >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+          cat formatting-reports/editorconfig-check.log >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+          echo "" >> formatting-reports/formatting-report.md
+        fi
+        
+        if [ "${{ steps.analyzer_check.outputs.analyzer_issues }}" = "true" ]; then
+          echo "## Analyzer Issues" >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+          cat formatting-reports/analyzer-check.log >> formatting-reports/formatting-report.md
+          echo '```' >> formatting-reports/formatting-report.md
+        fi
+        
+    - name: Upload formatting report
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-formatting-report
+        path: formatting-reports/
+        retention-days: 30
+        
+    - name: Comment on PR (if formatting issues)
+      if: github.event_name == 'pull_request' && steps.format_check.outputs.formatting_issues == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          let comment = '## 🎨 Code Formatting Issues\n\n';
+          comment += '❌ This pull request has code formatting issues that need to be addressed.\n\n';
+          comment += '### How to fix:\n';
+          comment += '```bash\n';
+          comment += 'dotnet format ${{ env.SOLUTION_PATH }}\n';
+          comment += '```\n\n';
+          comment += '### Or run specific formatters:\n';
+          comment += '```bash\n';
+          comment += '# Format whitespace\n';
+          comment += 'dotnet format whitespace ${{ env.SOLUTION_PATH }}\n\n';
+          comment += '# Format style\n';
+          comment += 'dotnet format style ${{ env.SOLUTION_PATH }}\n\n';
+          comment += '# Format analyzers\n';
+          comment += 'dotnet format analyzers ${{ env.SOLUTION_PATH }}\n';
+          comment += '```\n\n';
+          comment += '💡 **Tip:** Consider setting up a pre-commit hook to automatically format code before committing.';
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+          
+    - name: Fail on formatting issues
+      if: steps.format_check.outputs.formatting_issues == 'true'
+      run: |
+        echo "❌ Code formatting issues found!"
+        echo "Please run 'dotnet format ${{ env.SOLUTION_PATH }}' to fix formatting issues."
+        exit 1
+
+  format-fix:
+    name: Auto-fix Formatting (Draft PR)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.draft == true
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        submodules: recursive
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+      
+    - name: Auto-fix formatting
+      run: |
+        echo "🔧 Auto-fixing code formatting for draft PR..."
+        
+        # Apply formatting fixes
+        dotnet format ${{ env.SOLUTION_PATH }}
+        
+        # Check if any files were changed
+        if git diff --quiet; then
+          echo "✅ No formatting changes needed"
+          echo "formatting_applied=false" >> $GITHUB_OUTPUT
+        else
+          echo "🎨 Formatting changes applied"
+          echo "formatting_applied=true" >> $GITHUB_OUTPUT
+        fi
+      id: auto_fix
+      
+    - name: Commit formatting changes
+      if: steps.auto_fix.outputs.formatting_applied == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "🎨 Auto-fix code formatting"
+        git push
+        
+        echo "✅ Formatting changes committed and pushed" >> $GITHUB_STEP_SUMMARY
