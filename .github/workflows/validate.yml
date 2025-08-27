@@ -15,6 +15,7 @@ jobs:
     
     - name: Validate workflow files
       run: |
+        set -e
         echo "Validating workflow syntax..."
         
         # Check if workflow files are valid YAML
@@ -30,6 +31,7 @@ jobs:
     
     - name: Check required secrets documentation
       run: |
+        set -e
         echo "Required secrets for CI/CD pipeline:"
         echo "- NUGET_API_KEY: API key for publishing to NuGet.org"
         echo "- GITHUB_TOKEN: Automatically provided by GitHub Actions"

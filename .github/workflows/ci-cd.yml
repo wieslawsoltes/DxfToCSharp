@@ -122,6 +122,7 @@ jobs:
       
     - name: Build Core Library
       run: |
+        set -e
         dotnet build ${{ env.CORE_PROJECT_PATH }} \
           --configuration Release \
           --no-restore \
@@ -130,6 +131,7 @@ jobs:
           
     - name: Build Compilation Library
       run: |
+        set -e
         dotnet build ${{ env.COMPILATION_PROJECT_PATH }} \
           --configuration Release \
           --no-restore \
@@ -138,6 +140,7 @@ jobs:
           
     - name: Build Tool
       run: |
+        set -e
         dotnet build ${{ env.TOOL_PROJECT_PATH }} \
           --configuration Release \
           --no-restore \
@@ -146,6 +149,7 @@ jobs:
           
     - name: Pack Core Library
       run: |
+        set -e
         dotnet pack ${{ env.CORE_PROJECT_PATH }} \
           --configuration Release \
           --no-build \
@@ -153,6 +157,7 @@ jobs:
           
     - name: Pack Compilation Library
       run: |
+        set -e
         dotnet pack ${{ env.COMPILATION_PROJECT_PATH }} \
           --configuration Release \
           --no-build \
@@ -160,6 +165,7 @@ jobs:
           
     - name: Pack Tool
       run: |
+        set -e
         dotnet pack ${{ env.TOOL_PROJECT_PATH }} \
           --configuration Release \
           --no-build \
@@ -197,6 +203,7 @@ jobs:
         
     - name: Publish packages to NuGet.org
       run: |
+        set -e
         # Push main packages first
         dotnet nuget push ./packages/*.nupkg \
           --api-key ${{ secrets.NUGET_API_KEY }} \
@@ -205,14 +212,17 @@ jobs:
           
     - name: Publish symbols to NuGet.org
       run: |
+        set -e
         # Push symbol packages separately
         for file in ./packages/*.snupkg; do
           if [ -f "$file" ]; then
             echo "Publishing symbol package: $file"
-            dotnet nuget push "$file" \
+            if ! dotnet nuget push "$file" \
               --api-key ${{ secrets.NUGET_API_KEY }} \
               --source https://api.nuget.org/v3/index.json \
-              --skip-duplicate || echo "Failed to push $file, continuing..."
+              --skip-duplicate; then
+              echo "Failed to push $file, continuing..."
+            fi
           fi
         done
 
