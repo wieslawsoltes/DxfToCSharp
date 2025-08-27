@@ -74,11 +74,13 @@ jobs:
         
     - name: Upload coverage to Codacy
       uses: codacy/codacy-coverage-reporter-action@v1
-      if: github.event_name == 'push' && secrets.CODACY_PROJECT_TOKEN
+      if: github.event_name == 'push' && env.CODACY_PROJECT_TOKEN != ''
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         coverage-reports: ./coverage/report/Cobertura.xml
       continue-on-error: true
+      env:
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         
     - name: Comment coverage on PR
       if: github.event_name == 'pull_request'
