@@ -126,7 +126,7 @@ public class CompilationService
     {
         // Find the first public static class with a static Create method that returns DxfDocument
         var type = assembly.GetTypes()
-            .FirstOrDefault(t => t.IsClass && t.IsSealed && t.IsAbstract && // static class
+            .FirstOrDefault(t => t is { IsClass: true, IsSealed: true, IsAbstract: true } && // static class
                                  t.GetMethod("Create", BindingFlags.Public | BindingFlags.Static) != null);
 
         if (type == null)

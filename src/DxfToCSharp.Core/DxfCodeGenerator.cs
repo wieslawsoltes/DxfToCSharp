@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using netDxf;
@@ -11,6 +12,7 @@ using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Core;
 
+[SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
 public class DxfCodeGenerator
 {
     private static string F(double v) => v.ToString("G17", CultureInfo.InvariantCulture);
@@ -47,8 +49,8 @@ public class DxfCodeGenerator
     private readonly HashSet<string> _usedUCS = new();
     private readonly HashSet<string> _usedVPorts = new();
     private readonly HashSet<string> _entitiesNeedingVariables = new();
-    private int _insertCounter = 0;
-    private int _entityCounter = 0;
+    private int _insertCounter;
+    private int _entityCounter;
 
     public string Generate(DxfDocument doc, string? sourcePath, string? className = null, DxfCodeGenerationOptions? options = null)
     {
@@ -267,7 +269,7 @@ public class DxfCodeGenerator
         // Generate AciColor properties
         if (headerVars.CeColor.Index != AciColor.ByLayer.Index)
         {
-            if (headerVars.CeColor.Index >= 0 && headerVars.CeColor.Index <= 255)
+            if (headerVars.CeColor.Index is >= 0 and <= 255)
             {
                 tempSb.AppendLine($"{baseIndent}doc.DrawingVariables.CeColor = new AciColor({headerVars.CeColor.Index});");
             }
@@ -443,29 +445,29 @@ public class DxfCodeGenerator
             // Check for text entities that use text styles
             if (options.GenerateTextStyles)
             {
-                if (entity is Text text && text.Style != null)
+                if (entity is Text { Style: not null } text)
                     _usedTextStyles.Add(text.Style.Name);
-                else if (entity is MText mtext && mtext.Style != null)
+                else if (entity is MText { Style: not null } mtext)
                     _usedTextStyles.Add(mtext.Style.Name);
             }
 
             // Check for Insert entities that use blocks
-            if (options.GenerateBlocks && entity is Insert insert && insert.Block != null)
+            if (options.GenerateBlocks && entity is Insert { Block: not null } insert)
                 _usedBlocks.Add(insert.Block.Name);
 
             // Check for Leader entities that use dimension styles
             if (options.GenerateDimensionStyles)
             {
-                if (entity is Leader leader && leader.Style != null)
+                if (entity is Leader { Style: not null } leader)
                     _usedDimensionStyles.Add(leader.Style.Name);
 
                 // Check for Dimension entities that use dimension styles
-                if (entity is Dimension dimension && dimension.Style != null)
+                if (entity is Dimension { Style: not null } dimension)
                     _usedDimensionStyles.Add(dimension.Style.Name);
             }
 
             // Check for MLine entities that use multiline styles
-            if (options.GenerateMLineStyles && entity is MLine mline && mline.Style != null)
+            if (options.GenerateMLineStyles && entity is MLine { Style: not null } mline)
                 _usedMLineStyles.Add(mline.Style.Name);
         }
 
@@ -715,7 +717,7 @@ public class DxfCodeGenerator
                             {
                                 if (attDef.Color.Index == 0)
                                     sb.AppendLine($"{baseIndent}    Color = AciColor.ByBlock,");
-                                else if (attDef.Color.Index >= 1 && attDef.Color.Index <= 255)
+                                else if (attDef.Color.Index is >= 1 and <= 255)
                                     sb.AppendLine($"{baseIndent}    Color = new AciColor({attDef.Color.Index}),");
                             }
                             if (attDef.Linetype != null && attDef.Linetype.Name != "ByLayer" && attDef.Linetype.Name != "Continuous")
@@ -897,7 +899,7 @@ public class DxfCodeGenerator
         // Generate ApplicationRegistry definitions (if any custom ones)
         if (options.GenerateApplicationRegistryObjects && doc.ApplicationRegistries.Count > 0)
         {
-            var customAppRegs = doc.ApplicationRegistries.Where(ar => ar.Name != "ACAD");
+            var customAppRegs = doc.ApplicationRegistries.Where(ar => ar.Name != "ACAD").ToList();
             if (customAppRegs.Any())
             {
                 if (options.GenerateDetailedComments)
@@ -991,7 +993,7 @@ public class DxfCodeGenerator
                 GenerateInsert(sb, insert, needsVariable, baseIndent);
                 break;
             case Hatch hatch when options.GenerateHatchEntities:
-                GenerateHatch(sb, hatch, options, needsVariable, baseIndent);
+                GenerateHatch(sb, hatch, needsVariable, baseIndent);
                 break;
             case Wipeout wipeout when options.GenerateWipeoutEntities:
                 GenerateWipeout(sb, wipeout, needsVariable, baseIndent);
@@ -1002,28 +1004,28 @@ public class DxfCodeGenerator
             case Face3D face3d when options.GenerateFace3dEntities:
                 GenerateFace3D(sb, face3d, baseIndent);
                 break;
-            case LinearDimension linearDim when options.GenerateDimensionEntities && options.GenerateLinearDimensionEntities:
+            case LinearDimension linearDim when options is { GenerateDimensionEntities: true, GenerateLinearDimensionEntities: true }:
                 GenerateLinearDimension(sb, linearDim, baseIndent);
                 break;
-            case AlignedDimension alignedDim when options.GenerateDimensionEntities && options.GenerateAlignedDimensionEntities:
+            case AlignedDimension alignedDim when options is { GenerateDimensionEntities: true, GenerateAlignedDimensionEntities: true }:
                 GenerateAlignedDimension(sb, alignedDim, baseIndent);
                 break;
-            case RadialDimension radialDim when options.GenerateDimensionEntities && options.GenerateRadialDimensionEntities:
+            case RadialDimension radialDim when options is { GenerateDimensionEntities: true, GenerateRadialDimensionEntities: true }:
                 GenerateRadialDimension(sb, radialDim, baseIndent);
                 break;
-            case DiametricDimension diametricDim when options.GenerateDimensionEntities && options.GenerateDiametricDimensionEntities:
+            case DiametricDimension diametricDim when options is { GenerateDimensionEntities: true, GenerateDiametricDimensionEntities: true }:
                 GenerateDiametricDimension(sb, diametricDim, baseIndent);
                 break;
-            case Angular2LineDimension angular2LineDim when options.GenerateDimensionEntities && options.GenerateAngular2LineDimensionEntities:
+            case Angular2LineDimension angular2LineDim when options is { GenerateDimensionEntities: true, GenerateAngular2LineDimensionEntities: true }:
                 GenerateAngular2LineDimension(sb, angular2LineDim, baseIndent);
                 break;
-            case Angular3PointDimension angular3PointDim when options.GenerateDimensionEntities && options.GenerateAngular3PointDimensionEntities:
+            case Angular3PointDimension angular3PointDim when options is { GenerateDimensionEntities: true, GenerateAngular3PointDimensionEntities: true }:
                 GenerateAngular3PointDimension(sb, angular3PointDim, baseIndent);
                 break;
-            case OrdinateDimension ordinateDim when options.GenerateDimensionEntities && options.GenerateOrdinateDimensionEntities:
+            case OrdinateDimension ordinateDim when options is { GenerateDimensionEntities: true, GenerateOrdinateDimensionEntities: true }:
                 GenerateOrdinateDimension(sb, ordinateDim, baseIndent);
                 break;
-            case ArcLengthDimension arcLengthDim when options.GenerateDimensionEntities && options.GenerateArcLengthDimensionEntities:
+            case ArcLengthDimension arcLengthDim when options is { GenerateDimensionEntities: true, GenerateArcLengthDimensionEntities: true }:
                 GenerateArcLengthDimension(sb, arcLengthDim, baseIndent);
                 break;
             case Ray ray when options.GenerateRayEntities:
@@ -1100,7 +1102,7 @@ public class DxfCodeGenerator
         if (options.GenerateLayoutObjects && doc.Layouts.Count > 0)
         {
             // Skip the default "Model" layout as it's automatically created
-            var customLayouts = doc.Layouts.Where(layout => !string.Equals(layout.Name, "Model", StringComparison.OrdinalIgnoreCase));
+            var customLayouts = doc.Layouts.Where(layout => !string.Equals(layout.Name, "Model", StringComparison.OrdinalIgnoreCase)).ToList();
             if (customLayouts.Any())
             {
                 if (options.GenerateDetailedComments)
@@ -1118,7 +1120,7 @@ public class DxfCodeGenerator
         // Generate Image Definitions
         if (options.GenerateImageDefinitionObjects)
         {
-            var imageDefinitions = doc.ImageDefinitions.Items.Where(item => item != null);
+            var imageDefinitions = doc.ImageDefinitions.Items.Where(item => item != null).ToList();
             if (imageDefinitions.Any())
             {
                 if (options.GenerateDetailedComments)
@@ -1136,10 +1138,11 @@ public class DxfCodeGenerator
         // Generate Underlay Definitions
         if (options.GenerateUnderlayDefinitionObjects)
         {
-            var underlayDefinitions = doc.UnderlayDgnDefinitions.Items.Cast<UnderlayDefinition>()
+            var underlayDefinitions = doc.UnderlayDgnDefinitions.Items
                 .Concat(doc.UnderlayDwfDefinitions.Items.Cast<UnderlayDefinition>())
-                .Concat(doc.UnderlayPdfDefinitions.Items.Cast<UnderlayDefinition>())
-                .Where(item => item != null);
+                .Concat(doc.UnderlayPdfDefinitions.Items)
+                .Where(item => item != null)
+                .ToList();
             if (underlayDefinitions.Any())
             {
                 if (options.GenerateDetailedComments)
@@ -1190,14 +1193,11 @@ public class DxfCodeGenerator
         }
 
         // Generate MLineStyle objects
-        if (options.GenerateMLineStyleObjects)
-        {
+        if (options is { GenerateMLineStyleObjects: true, GenerateDetailedComments: true })
             // Note: MLineStyle objects are typically stored in dictionaries
             // This is a placeholder for when MLineStyle access is available
-            if (options.GenerateDetailedComments)
-            {
-                sb.AppendLine($"{baseIndent}// MLineStyle objects (stored in dictionaries - not directly accessible)");
-            }
+        {
+            sb.AppendLine($"{baseIndent}// MLineStyle objects (stored in dictionaries - not directly accessible)");
         }
     }
 
@@ -1402,7 +1402,7 @@ public class DxfCodeGenerator
         {
             if (spline.Color.Index == 0)
                 sb.AppendLine($"{baseIndent}    splineEntity.Color = AciColor.ByBlock;");
-            else if (spline.Color.Index >= 1 && spline.Color.Index <= 255)
+            else if (spline.Color.Index is >= 1 and <= 255)
                 sb.AppendLine($"{baseIndent}    splineEntity.Color = new AciColor({spline.Color.Index});");
         }
 
@@ -1605,84 +1605,6 @@ public class DxfCodeGenerator
         sb.AppendLine($"{indent}    {F(ellipse.MajorAxis)}, {F(ellipse.MinorAxis)})");
     }
 
-    private void GenerateEntityProperties(StringBuilder sb, EntityObject entity)
-    {
-        sb.AppendLine("        {");
-
-        // Layer
-        if (entity.Layer != null && _usedLayers.Contains(entity.Layer.Name))
-        {
-            sb.AppendLine($"            Layer = layer{SafeName(entity.Layer.Name)},");
-        }
-
-        // Color (if not ByLayer)
-        if (entity.Color.Index != 256) // 256 = ByLayer
-        {
-            if (entity.Color.Index == 0)
-                sb.AppendLine($"            Color = AciColor.ByBlock,");
-            else if (entity.Color.Index >= 1 && entity.Color.Index <= 255)
-                sb.AppendLine($"            Color = new AciColor({entity.Color.Index}),");
-            // Note: TrueColor emission omitted to avoid API differences across versions
-        }
-
-        // Linetype
-        if (entity.Linetype != null && entity.Linetype.Name != "ByLayer" && entity.Linetype.Name != "Continuous")
-        {
-            if (entity.Linetype.Name == "ByBlock")
-                sb.AppendLine($"            Linetype = Linetype.ByBlock,");
-            else
-                sb.AppendLine($"            Linetype = linetype{SafeName(entity.Linetype.Name)},");
-        }
-
-        // Lineweight
-        if (entity.Lineweight != Lineweight.ByLayer)
-        {
-            sb.AppendLine($"            Lineweight = Lineweight.{entity.Lineweight},");
-        }
-
-        // Linetype scale
-        if (Math.Abs(entity.LinetypeScale - 1.0) > 1e-10)
-        {
-            sb.AppendLine($"            LinetypeScale = {F(entity.LinetypeScale)},");
-        }
-
-        // Thickness (only for entities that support it in netDxf 3.0.1)
-        if (entity is Line line && Math.Abs(line.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"            Thickness = {F(line.Thickness)},");
-        }
-        else if (entity is Arc arc && Math.Abs(arc.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"            Thickness = {F(arc.Thickness)},");
-        }
-        else if (entity is Circle circle && Math.Abs(circle.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"            Thickness = {F(circle.Thickness)},");
-        }
-        else if (entity is Polyline2D poly2d && Math.Abs(poly2d.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"            Thickness = {F(poly2d.Thickness)},");
-        }
-        else if (entity is Solid solid && Math.Abs(solid.Thickness) > 1e-10)
-        {
-            sb.AppendLine($"            Thickness = {F(solid.Thickness)},");
-        }
-
-        // Normal (if not default 0,0,1)
-        var n = entity.Normal;
-        if (Math.Abs(n.X) > 1e-12 || Math.Abs(n.Y) > 1e-12 || Math.Abs(n.Z - 1.0) > 1e-12)
-        {
-            sb.AppendLine($"            Normal = new Vector3({F(n.X)}, {F(n.Y)}, {F(n.Z)}),");
-        }
-
-        sb.AppendLine("        }");
-    }
-
-    private void GenerateEntityPropertiesCore(StringBuilder sb, EntityObject entity)
-    {
-        GenerateEntityPropertiesCore(sb, entity, "        ");
-    }
-
     private void GenerateEntityPropertiesCore(StringBuilder sb, EntityObject entity, string baseIndent)
     {
         // Layer
@@ -1700,7 +1622,7 @@ public class DxfCodeGenerator
         {
             if (entity.Color.Index == 0)
                 sb.AppendLine($"{baseIndent}    Color = AciColor.ByBlock,");
-            else if (entity.Color.Index >= 1 && entity.Color.Index <= 255)
+            else if (entity.Color.Index is >= 1 and <= 255)
                 sb.AppendLine($"{baseIndent}    Color = new AciColor({entity.Color.Index}),");
         }
 
@@ -1774,7 +1696,7 @@ public class DxfCodeGenerator
             {
                 sb.AppendLine($"{baseIndent}    Transparency = Transparency.ByBlock,");
             }
-            else if (entity.Transparency.Value >= 0 && entity.Transparency.Value <= 90)
+            else if (entity.Transparency.Value is >= 0 and <= 90)
             {
                 sb.AppendLine($"{baseIndent}    Transparency = new Transparency({entity.Transparency.Value}),");
             }
@@ -1794,7 +1716,7 @@ public class DxfCodeGenerator
         }
 
         // Reactors (if any exist)
-        if (entity.Reactors != null && entity.Reactors.Count > 0)
+        if (entity.Reactors is { Count: > 0 })
         {
             sb.AppendLine($"{baseIndent}    // Note: Reactors property is read-only and managed internally by netDxf");
             sb.AppendLine($"{baseIndent}    // {entity.Reactors.Count} reactor(s) attached to this entity");
@@ -1876,7 +1798,7 @@ public class DxfCodeGenerator
         {
             return;
         }
-        var safeBlk = SafeName(blkName!);
+        var safeBlk = SafeName(blkName);
         var insertVarName = $"ins_{safeBlk}_{_insertCounter++}";
 
         if (asVariable)
@@ -1893,7 +1815,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}}};");
 
             // Attributes
-            if (insert.Attributes != null && insert.Attributes.Count > 0)
+            if (insert.Attributes is { Count: > 0 })
             {
                 foreach (var att in insert.Attributes)
                 {
@@ -1922,7 +1844,7 @@ public class DxfCodeGenerator
             sb.AppendLine($"{baseIndent}}};");
 
             // Attributes
-            if (insert.Attributes != null && insert.Attributes.Count > 0)
+            if (insert.Attributes is { Count: > 0 })
             {
                 foreach (var att in insert.Attributes)
                 {
@@ -1961,7 +1883,7 @@ public class DxfCodeGenerator
         return safeName;
     }
 
-    private void GenerateHatch(StringBuilder sb, Hatch hatch, DxfCodeGenerationOptions options, bool asVariable = false, string baseIndent = "        ")
+    private void GenerateHatch(StringBuilder sb, Hatch hatch, bool asVariable = false, string baseIndent = "        ")
     {
         // Generate Hatch with boundary paths reconstruction
         var patternName = hatch.Pattern?.Name ?? "SOLID";
@@ -1972,7 +1894,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    var boundaryPaths = new List<HatchBoundaryPath>();");
 
         // Reconstruct boundary paths from existing hatch boundary paths
-        if (hatch.BoundaryPaths != null && hatch.BoundaryPaths.Count > 0)
+        if (hatch.BoundaryPaths is { Count: > 0 })
         {
             for (var i = 0; i < hatch.BoundaryPaths.Count; i++)
             {
@@ -1988,7 +1910,7 @@ public class DxfCodeGenerator
                         var entityObj = edge.ConvertTo();
                         if (entityObj != null)
                         {
-                            GenerateBoundaryEntity(sb, entityObj, options, i, baseIndent);
+                            GenerateBoundaryEntity(sb, entityObj, i, baseIndent);
                         }
                     }
                 }
@@ -2075,7 +1997,7 @@ public class DxfCodeGenerator
         sb.AppendLine();
     }
 
-    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, DxfCodeGenerationOptions options, int pathIndex, string baseIndent)
+    private void GenerateBoundaryEntity(StringBuilder sb, EntityObject entity, int pathIndex, string baseIndent)
     {
         // Generate entity creation code for boundary paths without properties
         sb.AppendLine($"{baseIndent}    pathEntities{pathIndex}.Add(");
@@ -2151,7 +2073,7 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}var entity{leader.Handle} = new Leader(new List<Vector2>");
             sb.AppendLine($"{baseIndent}{{");
-            if (leader.Vertexes != null && leader.Vertexes.Count > 0)
+            if (leader.Vertexes is { Count: > 0 })
             {
                 for (var i = 0; i < leader.Vertexes.Count; i++)
                 {
@@ -2169,7 +2091,7 @@ public class DxfCodeGenerator
         {
             sb.AppendLine($"{baseIndent}doc.Entities.Add(new Leader(new List<Vector2>");
             sb.AppendLine($"{baseIndent}{{");
-            if (leader.Vertexes != null && leader.Vertexes.Count > 0)
+            if (leader.Vertexes is { Count: > 0 })
             {
                 for (var i = 0; i < leader.Vertexes.Count; i++)
                 {
@@ -2441,7 +2363,7 @@ public class DxfCodeGenerator
         sb.AppendLine($"{baseIndent}    // MLine entity with vertices");
         sb.AppendLine($"{baseIndent}    var mlineVertices = new List<Vector2>();");
 
-        if (mline.Vertexes != null && mline.Vertexes.Count > 0)
+        if (mline.Vertexes is { Count: > 0 })
         {
             foreach (var vertex in mline.Vertexes)
             {
@@ -2622,7 +2544,7 @@ public class DxfCodeGenerator
 
         // Generate mesh edges if they exist
         var entityName = asVariable ? $"mesh{_entityCounter++}" : "mesh";
-        if (mesh.Edges != null && mesh.Edges.Count > 0)
+        if (mesh.Edges is { Count: > 0 })
         {
             sb.AppendLine($"{baseIndent}var meshEdges = new List<MeshEdge>");
             sb.AppendLine($"{baseIndent}{{");
@@ -3455,7 +3377,7 @@ public class DxfCodeGenerator
     private void GenerateDimensionStyleOverrides(StringBuilder sb, Dimension dimension, string entityVariableName, string baseIndent)
     {
         // Generate style overrides if any exist
-        if (dimension.StyleOverrides != null && dimension.StyleOverrides.Count > 0)
+        if (dimension.StyleOverrides is { Count: > 0 })
         {
             sb.AppendLine($"{baseIndent}// Style overrides:");
             foreach (var kvp in dimension.StyleOverrides)

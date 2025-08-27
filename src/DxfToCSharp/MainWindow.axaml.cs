@@ -75,7 +75,7 @@ public partial class MainWindow : Window
             _rightTextBox.Options.EnableEmailHyperlinks = false;
 
             // Ensure document is initialized with at least one line to prevent TextMate issues
-            if (_rightTextBox.Document != null && _rightTextBox.Document.LineCount == 0)
+            if (_rightTextBox.Document is { LineCount: 0 })
             {
                 _rightTextBox.Document.Insert(0, " ");
             }
@@ -139,7 +139,7 @@ public partial class MainWindow : Window
                     try
                     {
                         // Additional null check before TextMate operations
-                        if (_rightTextBox?.Document != null && _rightTextBox.TextArea != null)
+                        if (_rightTextBox is { Document: not null, TextArea: not null })
                         {
                             // Ensure the document has at least one line to prevent TMModel.InvalidateLine exceptions
                             if (_rightTextBox.Document.LineCount == 0)
@@ -618,7 +618,7 @@ public partial class MainWindow : Window
             try
             {
                 // Ensure document is ready before creating foldings
-                if (_leftTextBox.Document != null && _leftTextBox.Document.TextLength > 0)
+                if (_leftTextBox.Document is { TextLength: > 0 })
                 {
                     var foldingStrategy = new DxfFoldingStrategy();
                     var newFoldings = foldingStrategy.CreateNewFoldings(_leftTextBox.Document, out var firstErrorOffset);
@@ -650,7 +650,7 @@ public partial class MainWindow : Window
             try
             {
                 // Ensure document is ready before creating foldings
-                if (_rightTextBox.Document != null && _rightTextBox.Document.TextLength > 0)
+                if (_rightTextBox.Document is { TextLength: > 0 })
                 {
                     var foldingStrategy = new CSharpFoldingStrategy();
                     var newFoldings = foldingStrategy.CreateNewFoldings(_rightTextBox.Document, out var firstErrorOffset);
