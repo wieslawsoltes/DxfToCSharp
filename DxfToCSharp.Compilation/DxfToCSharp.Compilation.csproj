@@ -2,16 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DxfToCSharp.Compilation</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Wiesław Šoltés</Authors>
     <Description>Shared compilation service for DxfToCSharp projects</Description>
     <PackageTags>dxf;cad;code-generation;netdxf;csharp;compilation</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/wieslawsoltes/DxfToCSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/wieslawsoltes/DxfToCSharp</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>

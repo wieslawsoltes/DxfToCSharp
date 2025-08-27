@@ -2,17 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DxfToCSharp.Core</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Wiesław Šoltés</Authors>
     <Description>A library for generating C# code from DXF documents using netDxf</Description>
     <PackageTags>dxf;cad;code-generation;netdxf;csharp</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/wieslawsoltes/DxfToCSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/wieslawsoltes/DxfToCSharp</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-
   </PropertyGroup>
 
   <ItemGroup>

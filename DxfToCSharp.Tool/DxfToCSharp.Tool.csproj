@@ -6,15 +6,10 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>dxf2cs</ToolCommandName>
     <PackageId>DxfToCSharp.Tool</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Wiesław Šoltés</Authors>
     <Description>A dotnet tool for generating C# code from DXF files using DxfToCSharp.Core</Description>
     <PackageTags>dxf;cad;code-generation;netdxf;csharp;dotnet-tool</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/wieslawsoltes/DxfToCSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/wieslawsoltes/DxfToCSharp</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>false</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
