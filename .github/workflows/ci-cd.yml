@@ -8,6 +8,11 @@ on:
   release:
     types: [ published ]
 
+permissions:
+  contents: write
+  packages: write
+  actions: read
+
 env:
   DOTNET_VERSION: '9.0.x'
   SOLUTION_PATH: './DxfToCSharp.sln'
