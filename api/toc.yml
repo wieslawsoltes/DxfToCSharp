@@ -1,0 +1,13 @@
+### YamlMime:TableOfContent
+items:
+- uid: DxfToCSharp.Core
+  name: DxfToCSharp.Core
+  type: Namespace
+  items:
+  - uid: DxfToCSharp.Core.DxfCodeGenerationOptions
+    name: DxfCodeGenerationOptions
+    type: Class
+  - uid: DxfToCSharp.Core.DxfCodeGenerator
+    name: DxfCodeGenerator
+    type: Class
+memberLayout: SamePage
