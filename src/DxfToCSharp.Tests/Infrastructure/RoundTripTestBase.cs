@@ -140,7 +140,7 @@ public abstract class RoundTripTestBase
 
         if (!result.Success)
         {
-            System.IO.File.WriteAllText("compilation_error.txt", $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{code}");
+            File.WriteAllText("compilation_error.txt", $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{code}");
             throw new InvalidOperationException($"Compilation failed:\n{result.Output}\n\nGenerated code:\n{code}");
         }
 
@@ -167,7 +167,7 @@ public abstract class RoundTripTestBase
     /// <summary>
     /// Helper method to compare Vector3 values with tolerance
     /// </summary>
-    protected static void AssertVector3Equal(netDxf.Vector3 expected, netDxf.Vector3 actual, double tolerance = 1e-10)
+    protected static void AssertVector3Equal(Vector3 expected, Vector3 actual, double tolerance = 1e-10)
     {
         AssertDoubleEqual(expected.X, actual.X, tolerance);
         AssertDoubleEqual(expected.Y, actual.Y, tolerance);
@@ -177,7 +177,7 @@ public abstract class RoundTripTestBase
     /// <summary>
     /// Helper method to compare Vector2 values with tolerance
     /// </summary>
-    protected static void AssertVector2Equal(netDxf.Vector2 expected, netDxf.Vector2 actual, double tolerance = 1e-10)
+    protected static void AssertVector2Equal(Vector2 expected, Vector2 actual, double tolerance = 1e-10)
     {
         AssertDoubleEqual(expected.X, actual.X, tolerance);
         AssertDoubleEqual(expected.Y, actual.Y, tolerance);

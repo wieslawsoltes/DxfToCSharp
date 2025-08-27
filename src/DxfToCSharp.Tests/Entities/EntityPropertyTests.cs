@@ -114,7 +114,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
     [Fact]
     public void EntityProperties_ThicknessSupport_Point_ShouldGenerate()
     {
-        var point = new netDxf.Entities.Point(new Vector3(10, 20, 30)) { Thickness = 0.5 };
+        var point = new Point(new Vector3(10, 20, 30)) { Thickness = 0.5 };
         PerformRoundTripTest(point, (original, recreated) =>
         {
             AssertDoubleEqual(original.Thickness, recreated.Thickness);

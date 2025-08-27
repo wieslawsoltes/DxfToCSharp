@@ -16,7 +16,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.ImageDefinitions.Add(imageDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, imageDef, (original, loaded) =>
@@ -42,7 +42,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.ImageDefinitions.Add(tiffImage);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformMultipleObjectsRoundTripTest(originalDoc, new[] { pngImage, bmpImage, tiffImage }, (originals, loaded) =>
@@ -70,7 +70,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.ImageDefinitions.Add(imageDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, imageDef, (original, loaded) =>
@@ -91,7 +91,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.ImageDefinitions.Add(imageDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, imageDef, (original, loaded) =>

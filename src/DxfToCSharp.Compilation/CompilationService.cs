@@ -238,8 +238,8 @@ public class CompilationService
         // Core system assemblies
         TryAddReference(typeof(object).Assembly);
         TryAddReference(typeof(Console).Assembly);
-        TryAddReference(typeof(System.Collections.Generic.List<>).Assembly);
-        TryAddReference(typeof(System.Linq.Enumerable).Assembly);
+        TryAddReference(typeof(List<>).Assembly);
+        TryAddReference(typeof(Enumerable).Assembly);
         TryAddReference(typeof(Uri).Assembly);
 
         // netDxf

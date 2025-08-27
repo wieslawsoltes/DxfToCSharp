@@ -16,7 +16,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         originalDoc.Layouts.Add(layout);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, layout, (original, loaded) =>
@@ -36,7 +36,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         originalDoc.Layouts.Add(layout);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, layout, (original, loaded) =>
@@ -53,21 +53,21 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         var layout = new Layout("CustomLayout")
         {
             TabOrder = 5,
-            MinLimit = new netDxf.Vector2(-100, -100),
-            MaxLimit = new netDxf.Vector2(100, 100),
-            MinExtents = new netDxf.Vector3(-50, -50, 0),
-            MaxExtents = new netDxf.Vector3(50, 50, 0),
-            BasePoint = new netDxf.Vector3(10, 20, 0),
+            MinLimit = new Vector2(-100, -100),
+            MaxLimit = new Vector2(100, 100),
+            MinExtents = new Vector3(-50, -50, 0),
+            MaxExtents = new Vector3(50, 50, 0),
+            BasePoint = new Vector3(10, 20, 0),
             Elevation = 5.0,
-            UcsOrigin = new netDxf.Vector3(1, 2, 3),
-            UcsXAxis = new netDxf.Vector3(1, 0, 0),
-            UcsYAxis = new netDxf.Vector3(0, 1, 0)
+            UcsOrigin = new Vector3(1, 2, 3),
+            UcsXAxis = new Vector3(1, 0, 0),
+            UcsYAxis = new Vector3(0, 1, 0)
             // Note: IsPaperSpace is read-only and determined by the layout type
         };
         originalDoc.Layouts.Add(layout);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, layout, (original, loaded) =>
@@ -101,7 +101,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         originalDoc.Layouts.Add(layout3);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformMultipleObjectsRoundTripTest(originalDoc, new[] { layout1, layout2, layout3 }, (originals, loaded) =>

@@ -313,11 +313,6 @@ public record DxfCodeGenerationOptions
     public bool GenerateShapeEntities { get; set; } = true;
 
     /// <summary>
-    /// Gets or sets a value indicating whether to generate attribute entities.
-    /// </summary>
-    public bool GenerateAttributeEntities { get; set; } = true;
-
-    /// <summary>
     /// Gets or sets a value indicating whether to generate tolerance entities.
     /// </summary>
     public bool GenerateToleranceEntities { get; set; } = true;

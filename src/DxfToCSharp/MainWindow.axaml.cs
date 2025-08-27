@@ -318,7 +318,7 @@ public partial class MainWindow : Window
                 ShowError("No generated code to compile.");
                 return;
             }
-            var scripting = new Services.CSharpScriptingService();
+            var scripting = new CSharpScriptingService();
             var comp = scripting.Compile(code);
             if (!comp.Success || string.IsNullOrEmpty(comp.AssemblyPath))
             {

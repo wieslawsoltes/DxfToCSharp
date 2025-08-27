@@ -15,7 +15,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.UnderlayPdfDefinitions.Add(pdfDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, pdfDef, (original, loaded) =>
@@ -34,7 +34,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.UnderlayDwfDefinitions.Add(dwfDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, dwfDef, (original, loaded) =>
@@ -53,7 +53,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.UnderlayDgnDefinitions.Add(dgnDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, dgnDef, (original, loaded) =>
@@ -77,7 +77,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.UnderlayDgnDefinitions.Add(dgnDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformMultipleUnderlayTypesRoundTripTest(originalDoc, pdfDef, dwfDef, dgnDef, (originalPdf, originalDwf, originalDgn, loadedDoc) =>
@@ -111,7 +111,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         originalDoc.UnderlayPdfDefinitions.Add(pdfDef);
 
         // Add at least one entity to make the document valid
-        originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
+        originalDoc.Entities.Add(new netDxf.Entities.Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
         // Act & Assert
         PerformObjectRoundTripTest(originalDoc, pdfDef, (original, loaded) =>
