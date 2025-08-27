@@ -11,6 +11,9 @@ using DxfToCSharp.Core;
 using DxfToCSharp.Services;
 using netDxf;
 using TextMateSharp.Grammars;
+#if DEBUG
+using Avalonia.Diagnostics;
+#endif
 
 namespace DxfToCSharp;
 
@@ -40,7 +43,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 #if DEBUG
-        this.AttachDevTools();
+        AttachDevTools(); // Commented out to avoid compilation issues
 #endif
         _leftTextBox = this.FindControl<TextEditor>("LeftTextBox");
         _rightTextBox = this.FindControl<TextEditor>("RightTextBox");
@@ -177,10 +180,20 @@ public partial class MainWindow : Window
                     }
                 });
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
                 // Log TextMate initialization errors but don't crash the application
                 System.Diagnostics.Debug.WriteLine($"TextMate initialization error: {ex.Message}");
+            }
+            catch (ArgumentException ex)
+            {
+                // Log TextMate initialization errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"TextMate initialization error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Log unexpected TextMate initialization errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"Unexpected TextMate initialization error: {ex.Message}");
             }
         }
     }
@@ -254,11 +267,43 @@ public partial class MainWindow : Window
             SetupFileWatcher();
 
         }
+        catch (FileNotFoundException ex)
+        {
+            ShowError("DXF file not found: " + ex.Message + "\n" + ex.StackTrace);
+            SetRightText(""); // Clear generated code editor
+            ShowNotification("DXF file not found: " + ex.Message, true);
+            _loadedDocument = null;
+            _loadedFilePath = null;
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            ShowError("Access denied: " + ex.Message + "\n" + ex.StackTrace);
+            SetRightText(""); // Clear generated code editor
+            ShowNotification("Access denied to DXF file: " + ex.Message, true);
+            _loadedDocument = null;
+            _loadedFilePath = null;
+        }
+        catch (IOException ex)
+        {
+            ShowError("I/O error: " + ex.Message + "\n" + ex.StackTrace);
+            SetRightText(""); // Clear generated code editor
+            ShowNotification("I/O error reading DXF file: " + ex.Message, true);
+            _loadedDocument = null;
+            _loadedFilePath = null;
+        }
+        catch (ArgumentException ex)
+        {
+            ShowError("Invalid DXF format: " + ex.Message + "\n" + ex.StackTrace);
+            SetRightText(""); // Clear generated code editor
+            ShowNotification("Invalid DXF format: " + ex.Message, true);
+            _loadedDocument = null;
+            _loadedFilePath = null;
+        }
         catch (Exception ex)
         {
-            ShowError("Error: " + ex.Message + "\n" + ex.StackTrace);
+            ShowError("Unexpected error: " + ex.Message + "\n" + ex.StackTrace);
             SetRightText(""); // Clear generated code editor
-            ShowNotification("Failed to load DXF file: " + ex.Message, true);
+            ShowNotification("Unexpected error loading DXF file: " + ex.Message, true);
             _loadedDocument = null;
             _loadedFilePath = null;
         }
@@ -300,10 +345,25 @@ public partial class MainWindow : Window
                 ShowNotification(output, isError: false);
             }
         }
-        catch (Exception ex)
+        catch (InvalidOperationException ex)
         {
             ShowError("Execution error:\n" + ex);
             ShowNotification("Execution error occurred. Check errors tab for details.", isError: true);
+        }
+        catch (ArgumentException ex)
+        {
+            ShowError("Argument error:\n" + ex);
+            ShowNotification("Argument error occurred. Check errors tab for details.", isError: true);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            ShowError("Access denied:\n" + ex);
+            ShowNotification("Access denied. Check errors tab for details.", isError: true);
+        }
+        catch (Exception ex)
+        {
+            ShowError("Unexpected execution error:\n" + ex);
+            ShowNotification("Unexpected execution error occurred. Check errors tab for details.", isError: true);
         }
     }
 
@@ -342,7 +402,7 @@ public partial class MainWindow : Window
                             UpdateRightFolding();
                         }
                     }
-                    catch (Exception ex)
+                    catch (InvalidOperationException ex)
                     {
                         // Fallback: set text without TextMate features if there's an error
                         System.Diagnostics.Debug.WriteLine($"Text update error: {ex.Message}");
@@ -359,11 +419,53 @@ public partial class MainWindow : Window
                             System.Diagnostics.Debug.WriteLine($"Fallback text setting error: {fallbackEx.Message}");
                         }
                     }
+                    catch (ArgumentException ex)
+                    {
+                        // Fallback: set text without TextMate features if there's an error
+                        System.Diagnostics.Debug.WriteLine($"Text update error: {ex.Message}");
+                        try
+                        {
+                            if (_rightTextBox?.Document != null)
+                            {
+                                var fallbackText = text ?? " "; // Ensure non-empty text
+                                _rightTextBox.Text = fallbackText;
+                            }
+                        }
+                        catch (Exception fallbackEx)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Fallback text setting error: {fallbackEx.Message}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Fallback: set text without TextMate features if there's an unexpected error
+                        System.Diagnostics.Debug.WriteLine($"Unexpected text update error: {ex.Message}");
+                        try
+                        {
+                            if (_rightTextBox?.Document != null)
+                            {
+                                var fallbackText = text ?? " "; // Ensure non-empty text
+                                _rightTextBox.Text = fallbackText;
+                            }
+                        }
+                        catch (Exception fallbackEx)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Fallback text setting error: {fallbackEx.Message}");
+                        }
+                    }
                 });
+            }
+            catch (InvalidOperationException ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"SetRightText error: {ex.Message}");
+            }
+            catch (ArgumentException ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"SetRightText error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"SetRightText error: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Unexpected SetRightText error: {ex.Message}");
             }
         }
         if (_rightTabControl != null)
@@ -411,9 +513,17 @@ public partial class MainWindow : Window
                 SetRightText(generatedCode);
                 ClearErrors();
             }
+            catch (ArgumentException ex)
+            {
+                ShowError("Invalid argument regenerating code: " + ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                ShowError("Invalid operation regenerating code: " + ex.Message);
+            }
             catch (Exception ex)
             {
-                ShowError("Error regenerating code: " + ex.Message);
+                ShowError("Unexpected error regenerating code: " + ex.Message);
             }
         }
     }
@@ -453,6 +563,28 @@ public partial class MainWindow : Window
                     var generatedCode = generator.Generate(doc, _loadedFilePath, null, options);
                     SetRightText(generatedCode);
                     ClearErrors();
+                }
+            }
+            catch (ArgumentException)
+            {
+                // Don't show errors for partial/invalid DXF content while typing
+                // Only clear the generated code if parsing fails
+                _loadedDocument = null;
+                // Don't clear _loadedFilePath here if it's a valid file path
+                if (_loadedFilePath == "<from_editor>" || string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+                {
+                    _loadedFilePath = null;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // Don't show errors for partial/invalid DXF content while typing
+                // Only clear the generated code if parsing fails
+                _loadedDocument = null;
+                // Don't clear _loadedFilePath here if it's a valid file path
+                if (_loadedFilePath == "<from_editor>" || string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
+                {
+                    _loadedFilePath = null;
                 }
             }
             catch (Exception)
@@ -495,10 +627,20 @@ public partial class MainWindow : Window
                     _leftFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
                 }
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
                 // Log folding errors but don't crash the application
                 System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+            }
+            catch (ArgumentException ex)
+            {
+                // Log folding errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Log unexpected folding errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"Unexpected folding update error: {ex.Message}");
             }
         }
     }
@@ -517,10 +659,20 @@ public partial class MainWindow : Window
                     _rightFoldingManager.UpdateFoldings(newFoldings, firstErrorOffset);
                 }
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
                 // Log folding errors but don't crash the application
                 System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+            }
+            catch (ArgumentException ex)
+            {
+                // Log folding errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"Folding update error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Log unexpected folding errors but don't crash the application
+                System.Diagnostics.Debug.WriteLine($"Unexpected folding update error: {ex.Message}");
             }
         }
     }
@@ -579,10 +731,24 @@ public partial class MainWindow : Window
             // Enable events after all setup is complete
             _fileWatcher.EnableRaisingEvents = true;
         }
+        catch (UnauthorizedAccessException ex)
+        {
+            ShowError($"Failed to setup file watching: {ex.Message}");
+            ShowNotification($"File watching setup failed: {ex.Message}", true);
+        }
+        catch (ArgumentException ex)
+        {
+            ShowError($"Failed to setup file watching: {ex.Message}");
+            ShowNotification($"File watching setup failed: {ex.Message}", true);
+        }
+        catch (IOException ex)
+        {
+            ShowError($"Failed to setup file watching: {ex.Message}");
+            ShowNotification($"File watching setup failed: {ex.Message}", true);
+        }
         catch (Exception ex)
         {
-
-            ShowError($"Failed to setup file watching: {ex.Message}");
+            ShowError($"Unexpected error setting up file watching: {ex.Message}");
             ShowNotification($"File watching setup failed: {ex.Message}", true);
         }
     }
@@ -695,20 +861,63 @@ public partial class MainWindow : Window
                         ShowNotification("Failed to reload DXF file", true);
                     }
                 }
+                catch (InvalidOperationException ex)
+                {
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
+                catch (ArgumentException ex)
+                {
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
+                catch (FileNotFoundException ex)
+                {
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
+                catch (IOException ex)
+                {
+                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowNotification($"Error reloading file: {ex.Message}", true);
+                }
                 catch (Exception ex)
                 {
-
-                    ShowError($"Error reloading file: {ex.Message}");
+                    ShowError($"Unexpected error reloading file: {ex.Message}");
                     ShowNotification($"Error reloading file: {ex.Message}", true);
                 }
 
                 return Task.CompletedTask;
             });
         }
+        catch (InvalidOperationException ex)
+        {
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
+        catch (ArgumentException ex)
+        {
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
+        catch (FileNotFoundException ex)
+        {
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
+        catch (IOException ex)
+        {
+            ShowNotification($"File watching error: {ex.Message}", true);
+        }
         catch (Exception ex)
         {
-
-            ShowNotification($"File watching error: {ex.Message}", true);
+            ShowNotification($"Unexpected file watching error: {ex.Message}", true);
         }
         finally
         {

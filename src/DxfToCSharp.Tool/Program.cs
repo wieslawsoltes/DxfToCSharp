@@ -102,9 +102,45 @@ class Program
                     noHeader, noUsing, noClass, noTables, noEntities, noObjects);
                 context.ExitCode = 0;
             }
+            catch (FileNotFoundException ex)
+            {
+                Console.Error.WriteLine($"File not found: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                context.ExitCode = 1;
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.Error.WriteLine($"Directory not found: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                context.ExitCode = 1;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.Error.WriteLine($"Access denied: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                context.ExitCode = 1;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.Error.WriteLine($"Operation error: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                context.ExitCode = 1;
+            }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Unexpected error: {ex.Message}");
                 if (verbose)
                 {
                     Console.Error.WriteLine(ex.StackTrace);
@@ -248,9 +284,45 @@ class Program
                 Console.WriteLine($"Generated: {outputFilePath}");
                 processedCount++;
             }
+            catch (FileNotFoundException ex)
+            {
+                Console.Error.WriteLine($"DXF file not found {dxfFile}: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                errorCount++;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.Error.WriteLine($"Access denied to {dxfFile}: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                errorCount++;
+            }
+            catch (IOException ex)
+            {
+                Console.Error.WriteLine($"I/O error processing {dxfFile}: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                errorCount++;
+            }
+            catch (ArgumentException ex)
+            {
+                Console.Error.WriteLine($"Invalid argument for {dxfFile}: {ex.Message}");
+                if (verbose)
+                {
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                errorCount++;
+            }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"Error processing {dxfFile}: {ex.Message}");
+                Console.Error.WriteLine($"Unexpected error processing {dxfFile}: {ex.Message}");
                 if (verbose)
                 {
                     Console.Error.WriteLine(ex.StackTrace);
