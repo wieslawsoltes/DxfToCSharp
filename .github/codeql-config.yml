@@ -13,6 +13,7 @@ queries:
         - cs/uncontrolled-format-string
         - cs/floating-point-equality
         - cs/imprecise-floating-point-comparison
+        - cs/equality-on-floats
         - cs/double-checked-locking
         - cs/unsafe-double-checked-locking
         # Additional floating point related warnings
@@ -20,6 +21,17 @@ queries:
         - cs/integer-overflow-tainted
         - cs/arithmetic-with-extreme-values
   - uses: security-and-quality
+    exclude:
+      id:
+        # Exclude floating point comparison queries from security-and-quality suite as well
+        - cs/comparison-with-nan
+        - cs/loss-of-precision
+        - cs/floating-point-equality
+        - cs/imprecise-floating-point-comparison
+        - cs/equality-on-floats
+        - cs/divide-by-zero
+        - cs/integer-overflow-tainted
+        - cs/arithmetic-with-extreme-values
 
 # Paths to exclude from analysis
 paths-ignore:
