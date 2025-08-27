@@ -5,8 +5,7 @@ disable-default-queries: false
 
 queries:
   - uses: security-extended
-  - uses: security-and-quality
-  - exclude:
+    exclude:
       id:
         # Exclude floating point comparison queries
         - cs/comparison-with-nan
@@ -20,6 +19,7 @@ queries:
         - cs/divide-by-zero
         - cs/integer-overflow-tainted
         - cs/arithmetic-with-extreme-values
+  - uses: security-and-quality
 
 # Paths to exclude from analysis
 paths-ignore:
