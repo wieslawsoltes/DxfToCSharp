@@ -3535,9 +3535,12 @@ public class DxfCodeGenerator
     private void GenerateTextAdvancedProperties(StringBuilder sb, Text text, string baseIndent)
     {
         // Style
-        if (text.Style?.Name != "Standard")
+        if (text.Style != null)
         {
-            sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name!)},");
+            if (text.Style.Name != "Standard")
+            {
+                sb.AppendLine($"{baseIndent}    Style = textStyle{SafeName(text.Style.Name!)},");
+            }
         }
 
         // Rotation
@@ -3574,15 +3577,18 @@ public class DxfCodeGenerator
     private void GenerateLeaderAdvancedProperties(StringBuilder sb, Leader leader, string entityName, string baseIndent)
     {
         // Style property
-        if (leader.Style?.Name != "Standard")
+        if (leader.Style != null)
         {
-            if (string.IsNullOrEmpty(entityName))
+            if (leader.Style.Name != "Standard")
             {
-                sb.AppendLine($"{baseIndent}    Style = dimStyle{SafeName(leader.Style.Name!)},");
-            }
-            else
-            {
-                sb.AppendLine($"{baseIndent}{entityName}.Style = dimStyle{SafeName(leader.Style.Name!)};");
+                if (string.IsNullOrEmpty(entityName))
+                {
+                    sb.AppendLine($"{baseIndent}    Style = dimStyle{SafeName(leader.Style.Name!)},");
+                }
+                else
+                {
+                    sb.AppendLine($"{baseIndent}{entityName}.Style = dimStyle{SafeName(leader.Style.Name!)};");
+                }
             }
         }
 
