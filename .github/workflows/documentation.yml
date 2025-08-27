@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         submodules: recursive
         fetch-depth: 0  # Needed for git features in DocFX
@@ -278,7 +278,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       
     - name: Download documentation artifacts
       uses: actions/download-artifact@v4
