@@ -35,7 +35,8 @@
         "files": [
           "docs/**.md",
           "docs/**/toc.yml",
-          "toc.yml"
+          "toc.yml",
+          "index.md"
         ],
         "exclude": [
           "**/bin/**",
@@ -74,7 +75,7 @@
     "keepFileLink": false,
     "disableGitFeatures": false,
     "globalMetadata": {
-      "_appTitle": "DxfToCSharp API Documentation",
+      "_appTitle": "DxfToCSharp Documentation",
       "_appName": "DxfToCSharp",
       "_appLogoUrl": "https://wieslawsoltes.github.io/DxfToCSharp/",
       "_appFooter": "DxfToCSharp - Convert DXF files to C# code",
@@ -86,6 +87,9 @@
         "branch": "main"
       },
       "_gitUrlPattern": "github"
+    },
+    "sitemap": {
+      "baseUrl": "https://wieslawsoltes.github.io/DxfToCSharp/"
     }
   }
 }
