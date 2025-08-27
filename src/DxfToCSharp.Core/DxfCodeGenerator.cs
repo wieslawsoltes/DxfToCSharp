@@ -1194,8 +1194,8 @@ public class DxfCodeGenerator
 
         // Generate MLineStyle objects
         if (options is { GenerateMLineStyleObjects: true, GenerateDetailedComments: true })
-            // Note: MLineStyle objects are typically stored in dictionaries
-            // This is a placeholder for when MLineStyle access is available
+        // Note: MLineStyle objects are typically stored in dictionaries
+        // This is a placeholder for when MLineStyle access is available
         {
             sb.AppendLine($"{baseIndent}// MLineStyle objects (stored in dictionaries - not directly accessible)");
         }
