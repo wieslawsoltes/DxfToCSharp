@@ -191,7 +191,8 @@ public partial class MainWindow : Window
     private async void OnOpenClicked(object? sender, RoutedEventArgs e)
     {
         var storageProvider = StorageProvider;
-        if (storageProvider == null) return;
+        if (storageProvider == null)
+            return;
 
         var fileTypeChoices = new[]
         {
