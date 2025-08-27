@@ -15,7 +15,7 @@ public abstract class RoundTripTestBase
     {
         _generator = new DxfCodeGenerator();
         _compilationService = new CompilationService();
-        _tempDirectory = Path.Combine(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
+        _tempDirectory = Path.Join(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
         Directory.CreateDirectory(_tempDirectory);
     }
 
@@ -49,7 +49,7 @@ public abstract class RoundTripTestBase
         originalDoc.Entities.Add(originalEntity);
 
         // Step 2: Save to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 3: Load DXF file
@@ -74,7 +74,7 @@ public abstract class RoundTripTestBase
         validator(originalEntity, (T)recreatedEntity);
 
         // Step 7: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);
@@ -99,7 +99,7 @@ public abstract class RoundTripTestBase
         originalDoc.Entities.Add(originalEntity);
 
         // Step 2: Save to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 3: Load DXF file
@@ -123,7 +123,7 @@ public abstract class RoundTripTestBase
         validator(originalEntity, (TOutput)recreatedEntity);
 
         // Step 7: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);

@@ -240,7 +240,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
     private void PerformTextStyleRoundTripTest(DxfDocument originalDoc, TextStyle originalTextStyle, Action<TextStyle, TextStyle> validator)
     {
         // Step 1: Save to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -264,7 +264,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         validator(originalTextStyle, recreatedTextStyle);
 
         // Step 6: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);

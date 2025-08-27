@@ -74,7 +74,7 @@ public class BlockRecordTests : RoundTripTestBase, IDisposable
     private void PerformBlockRecordRoundTripTest(DxfDocument originalDoc, Block originalBlock, Action<Block, Block> validator)
     {
         // Step 1: Save to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -98,7 +98,7 @@ public class BlockRecordTests : RoundTripTestBase, IDisposable
         validator(originalBlock, recreatedBlock);
 
         // Step 6: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);

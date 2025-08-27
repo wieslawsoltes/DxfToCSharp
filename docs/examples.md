@@ -104,7 +104,7 @@ foreach (string dxfFile in Directory.GetFiles(inputDirectory, "*.dxf"))
     string fileName = Path.GetFileNameWithoutExtension(dxfFile);
     string code = generator.GenerateCode(dxfFile);
     
-    string outputPath = Path.Combine(outputDirectory, $"{fileName}.cs");
+    string outputPath = Path.Join(outputDirectory, $"{fileName}.cs");
     File.WriteAllText(outputPath, code);
     
     Console.WriteLine($"Generated: {outputPath}");

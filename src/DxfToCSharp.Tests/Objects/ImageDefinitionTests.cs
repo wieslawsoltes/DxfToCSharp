@@ -106,7 +106,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
     private void PerformObjectRoundTripTest<T>(DxfDocument originalDoc, T originalObject, Action<T, T> validator) where T : class
     {
         // Step 1: Save original document to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -146,7 +146,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         validator(originalObject, recreatedObject);
 
         // Step 8: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);
@@ -155,7 +155,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
     private void PerformMultipleObjectsRoundTripTest(DxfDocument originalDoc, ImageDefinition[] originalObjects, Action<ImageDefinition[], ICollection<ImageDefinition>> validator)
     {
         // Step 1: Save original document to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -175,7 +175,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         validator(originalObjects, recreatedDoc.ImageDefinitions.Items);
 
         // Step 6: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);

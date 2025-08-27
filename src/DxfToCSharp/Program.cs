@@ -39,7 +39,7 @@ class Program
     {
         try
         {
-            var logPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "DxfToCSharp_crash.log");
+            var logPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "DxfToCSharp_crash.log");
             var logEntry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] CRASH: {ex}\n\n";
             File.AppendAllText(logPath, logEntry);
         }

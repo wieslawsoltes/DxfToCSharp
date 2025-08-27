@@ -99,7 +99,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         originalDoc.Entities.Add(originalPolyline);
 
-        var tempPath = Path.Combine(Path.GetTempPath(), "test_single_vertex.dxf");
+        var tempPath = Path.Join(Path.GetTempPath(), "test_single_vertex.dxf");
         originalDoc.Save(tempPath);
 
         var loadedDoc = DxfDocument.Load(tempPath);
@@ -124,7 +124,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         originalDoc.Entities.Add(originalPolyline);
 
-        var tempPath = Path.Combine(Path.GetTempPath(), "test_empty_vertex.dxf");
+        var tempPath = Path.Join(Path.GetTempPath(), "test_empty_vertex.dxf");
         originalDoc.Save(tempPath);
 
         var loadedDoc = DxfDocument.Load(tempPath);

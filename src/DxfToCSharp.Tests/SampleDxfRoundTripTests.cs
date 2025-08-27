@@ -20,14 +20,14 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
     {
         // Use relative paths from the project root
         var projectRoot = GetProjectRoot();
-        _sampleDxfPath = Path.Combine(projectRoot, "external", "netDxf", "TestDxfDocument", "sample.dxf");
-        _sampleBinaryDxfPath = Path.Combine(projectRoot, "external", "netDxf", "TestDxfDocument", "sample binary.dxf");
+        _sampleDxfPath = Path.Join(projectRoot, "external", "netDxf", "TestDxfDocument", "sample.dxf");
+        _sampleBinaryDxfPath = Path.Join(projectRoot, "external", "netDxf", "TestDxfDocument", "sample binary.dxf");
     }
 
     private static string GetProjectRoot()
     {
         var currentDir = Directory.GetCurrentDirectory();
-        while (currentDir != null && !File.Exists(Path.Combine(currentDir, "DxfToCSharp.sln")))
+        while (currentDir != null && !File.Exists(Path.Join(currentDir, "DxfToCSharp.sln")))
         {
             currentDir = Directory.GetParent(currentDir)?.FullName;
         }
@@ -52,7 +52,7 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
         Assert.NotEmpty(generatedCode);
 
         // Save generated code for inspection
-        var codeOutputPath = Path.Combine(_tempDirectory, "sample_generated.cs");
+        var codeOutputPath = Path.Join(_tempDirectory, "sample_generated.cs");
         File.WriteAllText(codeOutputPath, generatedCode);
 
         // Verify compilation succeeds
@@ -60,7 +60,7 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
 
         if (!result.Success)
         {
-            var errorOutputPath = Path.Combine(_tempDirectory, "compilation_errors.txt");
+            var errorOutputPath = Path.Join(_tempDirectory, "compilation_errors.txt");
             File.WriteAllText(errorOutputPath, $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{generatedCode}");
             throw new InvalidOperationException($"Compilation failed. See {errorOutputPath} for details.\n{result.Output}");
         }
@@ -87,7 +87,7 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
         Assert.NotEmpty(generatedCode);
 
         // Save generated code for inspection
-        var codeOutputPath = Path.Combine(_tempDirectory, "sample_binary_generated.cs");
+        var codeOutputPath = Path.Join(_tempDirectory, "sample_binary_generated.cs");
         File.WriteAllText(codeOutputPath, generatedCode);
 
         // Verify compilation succeeds
@@ -95,7 +95,7 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
 
         if (!result.Success)
         {
-            var errorOutputPath = Path.Combine(_tempDirectory, "sample_binary_compilation_errors.txt");
+            var errorOutputPath = Path.Join(_tempDirectory, "sample_binary_compilation_errors.txt");
             File.WriteAllText(errorOutputPath, $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{generatedCode}");
             throw new InvalidOperationException($"Compilation failed. See {errorOutputPath} for details.\n{result.Output}");
         }

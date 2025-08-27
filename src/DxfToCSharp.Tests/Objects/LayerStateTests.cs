@@ -9,7 +9,7 @@ namespace DxfToCSharp.Tests.Objects;
 
 public class LayerStateTests : RoundTripTestBase, IDisposable
 {
-    private new readonly string _tempDirectory = Path.Combine(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
+    private new readonly string _tempDirectory = Path.Join(Path.GetTempPath(), "DxfToCSharpTests", Guid.NewGuid().ToString());
     [Fact]
     public void LayerState_GenerationOptions_ShouldBeRespected()
     {

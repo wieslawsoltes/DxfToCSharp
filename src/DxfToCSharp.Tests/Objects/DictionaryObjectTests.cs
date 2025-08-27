@@ -9,7 +9,7 @@ namespace DxfToCSharp.Tests.Objects
 
         public DictionaryObjectTests()
         {
-            _tempDirectory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+            _tempDirectory = Path.Join(Path.GetTempPath(), Guid.NewGuid().ToString());
             Directory.CreateDirectory(_tempDirectory);
         }
 

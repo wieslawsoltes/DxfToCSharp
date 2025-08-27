@@ -124,7 +124,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
     private void PerformObjectRoundTripTest<T>(DxfDocument originalDoc, T originalObject, Action<T, T> validator) where T : UnderlayDefinition
     {
         // Step 1: Save original document to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -184,7 +184,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         validator(originalObject, recreatedObject);
 
         // Step 8: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);
@@ -198,7 +198,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         Action<UnderlayPdfDefinition, UnderlayDwfDefinition, UnderlayDgnDefinition, DxfDocument> validator)
     {
         // Step 1: Save original document to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -218,7 +218,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         validator(originalPdf, originalDwf, originalDgn, recreatedDoc);
 
         // Step 6: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);

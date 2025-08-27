@@ -242,7 +242,7 @@ class Program
                 // Determine output file path
                 var outputFileName = Path.GetFileNameWithoutExtension(dxfFile) + ".cs";
                 var finalOutputDir = outputDir ?? Path.GetDirectoryName(dxfFile) ?? Environment.CurrentDirectory;
-                var outputFilePath = Path.Combine(finalOutputDir, outputFileName);
+                var outputFilePath = Path.Join(finalOutputDir, outputFileName);
 
                 // Ensure output directory exists
                 Directory.CreateDirectory(finalOutputDir);

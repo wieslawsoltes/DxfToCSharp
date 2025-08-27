@@ -188,7 +188,7 @@ public class InsertEntityTests : RoundTripTestBase
         originalDoc.Entities.Add(insert3);
 
         // Save and reload
-        var tempPath = Path.Combine(Path.GetTempPath(), "multiple_inserts_test.dxf");
+        var tempPath = Path.Join(Path.GetTempPath(), "multiple_inserts_test.dxf");
         originalDoc.Save(tempPath);
         var loadedDoc = DxfDocument.Load(tempPath);
 

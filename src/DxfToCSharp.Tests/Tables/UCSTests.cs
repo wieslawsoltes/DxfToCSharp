@@ -265,7 +265,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
     private void PerformUCSRoundTripTest(DxfDocument originalDoc, UCS originalUCS, Action<UCS, UCS> validator)
     {
         // Step 1: Save to DXF file
-        var originalDxfPath = Path.Combine(_tempDirectory, "original.dxf");
+        var originalDxfPath = Path.Join(_tempDirectory, "original.dxf");
         originalDoc.Save(originalDxfPath);
 
         // Step 2: Load DXF file
@@ -319,7 +319,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         validator(originalUCS, recreatedUCS);
 
         // Step 6: Save recreated document and verify it can be loaded
-        var recreatedDxfPath = Path.Combine(_tempDirectory, "recreated.dxf");
+        var recreatedDxfPath = Path.Join(_tempDirectory, "recreated.dxf");
         recreatedDoc.Save(recreatedDxfPath);
         var finalDoc = DxfDocument.Load(recreatedDxfPath);
         Assert.NotNull(finalDoc);
