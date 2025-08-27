@@ -23,7 +23,7 @@ dotnet publish $PROJECT_PATH `
   --runtime win-x64 `
   --self-contained true `
   --output $OUTPUT_DIR `
-  -p:PublishSingleFile=true
+  -p:PublishSingleFile=false
 
 # Create ZIP archive
 Write-Host "Creating ZIP archive..."

@@ -26,7 +26,7 @@ dotnet publish "$PROJECT_PATH" \
   --runtime win-x86 \
   --self-contained true \
   --output "$OUTPUT_DIR" \
-  -p:PublishSingleFile=true
+  -p:PublishSingleFile=false
 
 # Create ZIP archive
 echo "Creating ZIP archive..."
