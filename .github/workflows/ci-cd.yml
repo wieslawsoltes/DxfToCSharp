@@ -69,17 +69,16 @@ jobs:
           --runtime osx-x64 \
           --self-contained true \
           --output ./publish/macos-x64 \
-          -p:PublishSingleFile=true \
-          -p:PublishTrimmed=true \
-          -p:TrimMode=partial
+          -p:PublishSingleFile=true
           
     - name: Create macOS App Bundle
       run: |
         mkdir -p ./publish/DxfToCSharp.app/Contents/MacOS
         mkdir -p ./publish/DxfToCSharp.app/Contents/Resources
         
-        # Copy executable
+        # Copy executable and set permissions
         cp ./publish/macos-x64/DxfToCSharp ./publish/DxfToCSharp.app/Contents/MacOS/
+        chmod +x ./publish/DxfToCSharp.app/Contents/MacOS/DxfToCSharp
         
         # Create Info.plist
         cat > ./publish/DxfToCSharp.app/Contents/Info.plist << EOF
@@ -101,35 +100,47 @@ jobs:
             <string>APPL</string>
             <key>LSMinimumSystemVersion</key>
             <string>10.15</string>
+            <key>NSHighResolutionCapable</key>
+            <true/>
         </dict>
         </plist>
         EOF
         
-    - name: Create macOS DMG
+    - name: Create macOS ZIP Package
       run: |
-        # Install create-dmg if not available
-        if ! command -v create-dmg &> /dev/null; then
-          brew install create-dmg
-        fi
+        # Create installation instructions
+        cat > ./publish/INSTALL_MACOS.txt << EOF
+        DxfToCSharp for macOS - Installation Instructions
+        ===============================================
         
-        create-dmg \
-          --volname "DxfToCSharp" \
-          --window-pos 200 120 \
-          --window-size 600 300 \
-          --icon-size 100 \
-          --icon "DxfToCSharp.app" 175 120 \
-          --hide-extension "DxfToCSharp.app" \
-          --app-drop-link 425 120 \
-          "./publish/DxfToCSharp-macOS.dmg" \
-          "./publish/DxfToCSharp.app"
+        This is an unsigned macOS application. To install and run:
+        
+        1. Extract the ZIP file
+        2. Move DxfToCSharp.app to your Applications folder (optional)
+        3. Right-click on DxfToCSharp.app and select "Open"
+        4. Click "Open" when macOS warns about the unsigned app
+        
+        Alternative method if the above doesn't work:
+        1. Open Terminal
+        2. Run: sudo xattr -rd com.apple.quarantine /path/to/DxfToCSharp.app
+        3. Double-click the app to run
+        
+        Note: You only need to do this once. After the first run, 
+        you can launch the app normally.
+        EOF
+        
+        # Create ZIP package
+        cd ./publish
+        zip -r DxfToCSharp-macOS.zip DxfToCSharp.app INSTALL_MACOS.txt
+        cd ..
           
     - name: Upload macOS Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: DxfToCSharp-macOS
         path: |
-          ./publish/DxfToCSharp-macOS.dmg
-          ./publish/DxfToCSharp.app
+          ./publish/DxfToCSharp-macOS.zip
+          ./publish/INSTALL_MACOS.txt
 
   build-windows:
     name: Build Windows App
@@ -156,9 +167,7 @@ jobs:
           --runtime win-x64 `
           --self-contained true `
           --output ./publish/windows-x64 `
-          -p:PublishSingleFile=true `
-          -p:PublishTrimmed=true `
-          -p:TrimMode=partial
+          -p:PublishSingleFile=true
           
     - name: Publish Windows x86 App
       run: |
@@ -167,9 +176,7 @@ jobs:
           --runtime win-x86 `
           --self-contained true `
           --output ./publish/windows-x86 `
-          -p:PublishSingleFile=true `
-          -p:PublishTrimmed=true `
-          -p:TrimMode=partial
+          -p:PublishSingleFile=true
           
     - name: Create Windows Installer (x64)
       run: |
@@ -322,7 +329,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ./artifacts/macos/DxfToCSharp-macOS.dmg
+          ./artifacts/macos/DxfToCSharp-macOS.zip
           ./artifacts/windows/DxfToCSharp-Windows-x64.zip
           ./artifacts/windows/DxfToCSharp-Windows-x86.zip
           ./artifacts/nuget/*.nupkg
