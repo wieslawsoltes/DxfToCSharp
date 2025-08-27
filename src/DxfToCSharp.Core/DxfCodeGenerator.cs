@@ -1961,7 +1961,7 @@ public class DxfCodeGenerator
             else
             {
                 sb.AppendLine($"{baseIndent}    var pattern = new HatchPattern(\"{Escape(patternName)}\");");
-                
+
                 if (hatch.Pattern != null)
                 {
                     // Set pattern properties if they differ from defaults
