@@ -1,10 +1,6 @@
-using System;
-using System.IO;
-using System.Linq;
 using DxfToCSharp.Core;
 using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
-using Xunit;
 
 namespace DxfToCSharp.Tests;
 
