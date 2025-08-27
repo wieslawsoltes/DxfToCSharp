@@ -51,10 +51,6 @@ class Program
         {
             // Ignore logging errors to prevent recursive crashes - insufficient permissions
         }
-        catch (DirectoryNotFoundException)
-        {
-            // Ignore logging errors to prevent recursive crashes - directory not found
-        }
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
