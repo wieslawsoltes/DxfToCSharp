@@ -13,7 +13,7 @@ permissions:
 env:
   DOTNET_VERSION: '9.0.x'
   SOLUTION_PATH: './DxfToCSharp.sln'
-  TEST_PROJECT_PATH: './DxfToCSharp.Tests/DxfToCSharp.Tests.csproj'
+  TEST_PROJECT_PATH: './src/DxfToCSharp.Tests/DxfToCSharp.Tests.csproj'
 
 jobs:
   coverage:
