@@ -70,12 +70,3 @@ jobs:
         category: "/language:${{matrix.language}}"
         # Upload results even if there are errors
         upload: true
-        
-    # Optional: Upload SARIF file as artifact for manual review
-    - name: Upload SARIF file
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: codeql-sarif-${{ matrix.language }}
-        path: ../results/*.sarif
-        retention-days: 30
