@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -60,7 +60,7 @@ public class ShapeStyleTests : RoundTripTestBase, IDisposable
         // Arrange
         var appReg = new ApplicationRegistry("TestApp");
         var shapeStyle = new ShapeStyle("ShapeStyleWithXData", "xdata.shx");
-        
+
         var xdata = new XData(appReg);
         xdata.XDataRecord.Add(new XDataRecord(XDataCode.String, "Test XData"));
         shapeStyle.XData.Add(xdata);
@@ -109,7 +109,7 @@ public class ShapeStyleTests : RoundTripTestBase, IDisposable
         // Note: Due to DxfReader implementation, ShapeStyle objects get auto-generated names during loading
         // (e.g., "ShapeStyle - 1", "ShapeStyle - 2"), so we cannot rely on name-based lookup.
         // Instead, we'll compare the original ShapeStyle with itself to test the properties.
-        
+
         // Perform assertions comparing the original ShapeStyle with itself
         // This tests that the ShapeStyle properties are correctly set and accessible
         assertAction(originalShapeStyle, originalShapeStyle);

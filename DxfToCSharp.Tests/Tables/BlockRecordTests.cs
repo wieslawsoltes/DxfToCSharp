@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Blocks;
-using DxfToCSharp.Tests.Infrastructure;
 using netDxf.Entities;
 
 namespace DxfToCSharp.Tests.Tables;
@@ -16,11 +16,11 @@ public class BlockRecordTests : RoundTripTestBase, IDisposable
         {
             Description = "Test block for record testing"
         };
-        
+
         // Add some entities to the block
         originalBlock.Entities.Add(new Line(new Vector2(0, 0), new Vector2(10, 10)));
         originalDoc.Blocks.Add(originalBlock);
-        
+
         // Create an insert to reference the block
         var insert = new Insert(originalBlock, new Vector3(0, 0, 0));
         originalDoc.Entities.Add(insert);
@@ -43,13 +43,13 @@ public class BlockRecordTests : RoundTripTestBase, IDisposable
         {
             Description = "Block with multiple entities"
         };
-        
+
         // Add multiple entities to the block
         originalBlock.Entities.Add(new Line(new Vector2(0, 0), new Vector2(10, 10)));
         originalBlock.Entities.Add(new Circle(new Vector3(5, 5, 0), 3));
         originalBlock.Entities.Add(new Point(new Vector3(10, 0, 0)));
         originalDoc.Blocks.Add(originalBlock);
-        
+
         // Create an insert to reference the block
         var insert = new Insert(originalBlock, new Vector3(0, 0, 0));
         originalDoc.Entities.Add(insert);

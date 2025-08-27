@@ -8,12 +8,12 @@ using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using netDxf;
-using DxfToCSharp.Core;
 using AvaloniaEdit;
 using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
+using DxfToCSharp.Core;
 using DxfToCSharp.Services;
+using netDxf;
 using TextMateSharp.Grammars;
 
 namespace DxfToCSharp;
@@ -51,46 +51,46 @@ public partial class MainWindow : Window
         _errorsTextBox = this.FindControl<TextBox>("ErrorsTextBox");
         this.FindControl<TabControl>("LeftTabControl");
         _rightTabControl = this.FindControl<TabControl>("RightTabControl");
-            
+
         // Initialize notification manager
         _notificationManager = new WindowNotificationManager(this)
         {
             Position = NotificationPosition.TopRight,
             MaxItems = 3
         };
-            
+
         // Configure text editors to prevent TextMate exceptions
         if (_leftTextBox != null)
         {
             _leftTextBox.SyntaxHighlighting = null;
             _leftTextBox.Options.EnableHyperlinks = false;
             _leftTextBox.Options.EnableEmailHyperlinks = false;
-                
+
             // Enable folding for left text editor (DXF content)
             _leftFoldingManager = FoldingManager.Install(_leftTextBox.TextArea);
             UpdateLeftFolding();
         }
-            
+
         if (_rightTextBox != null)
         {
             _rightTextBox.SyntaxHighlighting = null;
             _rightTextBox.Options.EnableHyperlinks = false;
             _rightTextBox.Options.EnableEmailHyperlinks = false;
-                
+
             // Ensure document is initialized with at least one line to prevent TextMate issues
             if (_rightTextBox.Document != null && _rightTextBox.Document.LineCount == 0)
             {
                 _rightTextBox.Document.Insert(0, " ");
             }
-                
+
             // Enable folding for right text editor (C# code)
             _rightFoldingManager = FoldingManager.Install(_rightTextBox.TextArea);
             UpdateRightFolding();
         }
-            
+
         // Initialize options control
         _optionsControl = this.FindControl<DxfGeneratorOptionsControl>("OptionsControl");
-        
+
         // Initialize file watching checkbox
         _fileWatchingCheckBox = this.FindControl<CheckBox>("FileWatchingCheckBox");
         if (_fileWatchingCheckBox != null)
@@ -99,38 +99,38 @@ public partial class MainWindow : Window
             _fileWatchingCheckBox.Checked += OnFileWatchingToggled;
             _fileWatchingCheckBox.Unchecked += OnFileWatchingToggled;
         }
-        
+
         // Setup cleanup on window close
         Closed += (_, _) => CleanupFileWatcher();
-        
+
         // Set up event handler for options changes
         if (_optionsControl != null)
         {
             _optionsControl.SetAllOptions(new DxfCodeGenerationOptions());
             _optionsControl.OptionsChanged += OnOptionsChanged;
         }
-            
+
         // Set up text editor event handler for DXF content changes
         if (_leftTextBox != null)
         {
             _leftTextBox.TextChanged += OnDxfContentChanged;
             _leftTextBox.TextChanged += (_, _) => UpdateLeftFolding();
         }
-            
+
         // Set up text editor event handler for C# code changes
         if (_rightTextBox != null)
         {
             _rightTextBox.TextChanged += (_, _) => UpdateRightFolding();
         }
-            
+
         InitializeTextMate();
     }
-    
+
     private void OnOptionsChanged(object? sender, OptionsChangedEventArgs e)
     {
         RegenerateCodeIfLoaded();
     }
-        
+
     private async void InitializeTextMate()
     {
         if (_rightTextBox != null)
@@ -150,7 +150,7 @@ public partial class MainWindow : Window
                             {
                                 _rightTextBox.Document.Insert(0, " "); // Insert a space to ensure at least one line
                             }
-                                
+
                             var registryOptions = new RegistryOptions(ThemeName.DarkPlus);
                             var textMateInstallation = _rightTextBox.InstallTextMate(registryOptions);
                             var language = registryOptions.GetLanguageByExtension(".cs");
@@ -236,10 +236,10 @@ public partial class MainWindow : Window
             var generatedCode = generator.Generate(doc, path, null, options);
             SetRightText(generatedCode);
             ClearErrors();
-            
+
             // Setup file watching if enabled
             SetupFileWatcher();
-            
+
         }
         catch (Exception ex)
         {
@@ -308,21 +308,21 @@ public partial class MainWindow : Window
                         // Ensure document exists before any operations
                         if (_rightTextBox.Document == null)
                             return;
-                            
+
                         // Safely clear and set text to prevent TextMate threading issues
                         var textToSet = text ?? "";
-                            
+
                         // If text is empty, ensure we have at least a space to prevent TMModel issues
                         if (string.IsNullOrEmpty(textToSet))
                         {
                             textToSet = " ";
                         }
-                            
+
                         _rightTextBox.Text = textToSet;
-                            
+
                         // Use async delay for better performance
                         await Task.Delay(10);
-                            
+
                         // Update folding after text is set
                         if (_rightTextBox.Document != null)
                         {
@@ -381,11 +381,11 @@ public partial class MainWindow : Window
                 type: isError ? NotificationType.Error : NotificationType.Success,
                 expiration: TimeSpan.FromSeconds(5)
             );
-                
+
             _notificationManager.Show(notification);
         }
     }
-   
+
     private void RegenerateCodeIfLoaded()
     {
         if (_loadedDocument != null && !string.IsNullOrEmpty(_loadedFilePath))
@@ -420,12 +420,12 @@ public partial class MainWindow : Window
                 // Parse DXF content from text editor
                 using var stream = new MemoryStream(Encoding.UTF8.GetBytes(_leftTextBox.Text));
                 var doc = DxfDocument.Load(stream);
-                    
+
                 if (doc != null)
                 {
                     // Update stored document for regeneration
                     _loadedDocument = doc;
-                    
+
                     // Only set _loadedFilePath to "<from_editor>" if we don't have a real file path
                     // This preserves file watching functionality when a file is loaded via dialog
                     if (string.IsNullOrEmpty(_loadedFilePath) || !File.Exists(_loadedFilePath))
@@ -433,7 +433,7 @@ public partial class MainWindow : Window
                         _loadedFilePath = "<from_editor>"; // Indicate content is from editor
                     }
                     // If we have a valid file path, keep it for file watching
-                        
+
                     // Generate code with current options
                     var generator = new DxfCodeGenerator();
                     var options = GetOptionsFromUI();
@@ -489,7 +489,7 @@ public partial class MainWindow : Window
             }
         }
     }
-        
+
     private void UpdateRightFolding()
     {
         if (_rightFoldingManager != null && _rightTextBox != null)
@@ -562,7 +562,7 @@ public partial class MainWindow : Window
             _fileWatcher.Renamed += OnFileRenamed;
             _fileWatcher.Changed += OnFileChanged;
             _fileWatcher.Error += OnFileWatcherError;
-            
+
             // Enable events after all setup is complete
             _fileWatcher.EnableRaisingEvents = true;
         }
@@ -709,7 +709,7 @@ public partial class MainWindow : Window
     private void OnFileWatcherError(object sender, ErrorEventArgs e)
     {
         ShowNotification($"File watching error: {e.GetException().Message}", true);
-        
+
         // Try to restart the file watcher
         try
         {

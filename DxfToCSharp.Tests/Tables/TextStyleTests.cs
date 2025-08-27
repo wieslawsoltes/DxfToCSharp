@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -24,7 +24,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(originalTextStyle);
-        
+
         var text = new Text("Hello World", new Vector3(10, 10, 0), 2.5)
         {
             Style = originalTextStyle
@@ -61,7 +61,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(originalTextStyle);
-        
+
         var mtext = new MText("Asian text sample", new Vector3(0, 0, 0), 3.0, 100.0)
         {
             Style = originalTextStyle
@@ -98,7 +98,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(originalTextStyle);
-        
+
         var text = new Text("Bold Arial Text", new Vector3(20, 20, 0), 4.0)
         {
             Style = originalTextStyle
@@ -137,7 +137,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(originalTextStyle);
-        
+
         var text = new Text("Vertical Text", new Vector3(30, 30, 0), 1.5)
         {
             Style = originalTextStyle
@@ -168,7 +168,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         // Default style is already in the document, but let's add a text that uses it
-        
+
         var text = new Text("Default Style Text", new Vector3(0, 0, 0), 2.0)
         {
             Style = originalTextStyle
@@ -207,7 +207,7 @@ public class TextStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this text style
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(originalTextStyle);
-        
+
         var text = new Text("Extreme Values", new Vector3(40, 40, 0), 3.0)
         {
             Style = originalTextStyle

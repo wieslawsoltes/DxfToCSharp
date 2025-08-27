@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -48,7 +48,7 @@ public class RayEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(4), // Cyan
             Lineweight = Lineweight.W25
         };
-        
+
         var originalRay = new Ray(
             new Vector3(5, 5, 0),
             new Vector3(1, 0, 0))

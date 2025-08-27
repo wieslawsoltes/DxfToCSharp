@@ -121,8 +121,8 @@ class Program
         return await rootCommand.InvokeAsync(args);
     }
 
-    private static async Task ProcessInputsAsync(string[] inputs, string? outputDir, string? className, 
-        string? namespaceName, bool recursive, bool verbose, bool noHeader, bool noUsing, bool noClass, 
+    private static async Task ProcessInputsAsync(string[] inputs, string? outputDir, string? className,
+        string? namespaceName, bool recursive, bool verbose, bool noHeader, bool noUsing, bool noClass,
         bool noTables, bool noEntities, bool noObjects)
     {
         var dxfFiles = new List<string>();
@@ -146,7 +146,7 @@ class Program
                 var searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
                 var foundFiles = Directory.GetFiles(input, "*.dxf", searchOption);
                 dxfFiles.AddRange(foundFiles);
-                
+
                 if (verbose)
                 {
                     Console.WriteLine($"Found {foundFiles.Length} DXF files in directory: {input}");
@@ -227,7 +227,7 @@ class Program
                 };
 
                 // Determine class name
-                var finalClassName = className ?? 
+                var finalClassName = className ??
                     Path.GetFileNameWithoutExtension(dxfFile).Replace(" ", "").Replace("-", "_") + "Generator";
 
                 // Generate C# code
@@ -265,7 +265,7 @@ class Program
         }
 
         Console.WriteLine($"\nCompleted: {processedCount} files processed successfully, {errorCount} errors.");
-        
+
         if (errorCount > 0)
         {
             throw new InvalidOperationException($"Processing completed with {errorCount} error(s).");

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Objects;
 using netDxf.Units;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -14,7 +14,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var imageDef = new ImageDefinition("TestImage", "test_image.jpg", 800, 72.0, 600, 72.0, ImageResolutionUnits.Inches);
         originalDoc.ImageDefinitions.Add(imageDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -36,11 +36,11 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         var pngImage = new ImageDefinition("PngImage", "image.png", 1024, 72.0, 768, 72.0, ImageResolutionUnits.Inches);
         var bmpImage = new ImageDefinition("BmpImage", "image.bmp", 640, 72.0, 480, 72.0, ImageResolutionUnits.Inches);
         var tiffImage = new ImageDefinition("TiffImage", "image.tiff", 1920, 72.0, 1080, 72.0, ImageResolutionUnits.Inches);
-        
+
         originalDoc.ImageDefinitions.Add(pngImage);
         originalDoc.ImageDefinitions.Add(bmpImage);
         originalDoc.ImageDefinitions.Add(tiffImage);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -48,7 +48,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         PerformMultipleObjectsRoundTripTest(originalDoc, new[] { pngImage, bmpImage, tiffImage }, (originals, loaded) =>
         {
             Assert.Equal(originals.Length, loaded.Count);
-            
+
             foreach (var original in originals)
             {
                 var loadedImageDef = loaded.FirstOrDefault(img => img.Name == original.Name);
@@ -68,7 +68,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var imageDef = new ImageDefinition("Image_Name-123", "path/to/image file-123.jpg", 500, 72.0, 300, 72.0, ImageResolutionUnits.Inches);
         originalDoc.ImageDefinitions.Add(imageDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -89,7 +89,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var imageDef = new ImageDefinition("LargeImage", "large_image.tiff", 4096, 72.0, 4096, 72.0, ImageResolutionUnits.Inches);
         originalDoc.ImageDefinitions.Add(imageDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -120,7 +120,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
             var originalImageDef = originalObject as ImageDefinition;
             loadedObject = loadedDoc.ImageDefinitions.Items.FirstOrDefault(img => img.Name == originalImageDef?.Name) as T;
         }
-        
+
         Assert.NotNull(loadedObject);
 
         // Step 4: Generate C# code from the loaded document
@@ -139,7 +139,7 @@ public class ImageDefinitionTests : RoundTripTestBase, IDisposable
             var originalImageDef = originalObject as ImageDefinition;
             recreatedObject = recreatedDoc.ImageDefinitions.Items.FirstOrDefault(img => img.Name == originalImageDef?.Name) as T;
         }
-        
+
         Assert.NotNull(recreatedObject);
 
         // Step 7: Validate the recreated object matches the original

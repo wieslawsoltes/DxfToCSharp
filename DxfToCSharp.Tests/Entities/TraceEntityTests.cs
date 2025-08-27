@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 

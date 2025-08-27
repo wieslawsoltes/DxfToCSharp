@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -13,20 +13,20 @@ public class GroupTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         var group = new Group("TestGroup");
-        
+
         // Add some entities to the group
         var line1 = new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0));
         var line2 = new Line(new Vector3(10, 0, 0), new Vector3(20, 10, 0));
         var circle = new Circle(new Vector3(5, 5, 0), 2.5);
-        
+
         originalDoc.Entities.Add(line1);
         originalDoc.Entities.Add(line2);
         originalDoc.Entities.Add(circle);
-        
+
         group.Entities.Add(line1);
         group.Entities.Add(line2);
         group.Entities.Add(circle);
-        
+
         originalDoc.Groups.Add(group);
 
         // Act & Assert
@@ -36,7 +36,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Entities.Count, loaded.Entities.Count);
             Assert.Equal(original.Description, loaded.Description);
             Assert.Equal(original.IsSelectable, loaded.IsSelectable);
-            
+
             // Verify that the group contains the expected entity types
             Assert.Contains(loaded.Entities, e => e is Line);
             Assert.Contains(loaded.Entities, e => e is Circle);
@@ -50,7 +50,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var group = new Group("EmptyGroup");
         originalDoc.Groups.Add(group);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
@@ -69,7 +69,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var group = new Group("Test_Group-123");
         originalDoc.Groups.Add(group);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(1, 1, 0)));
 
@@ -92,12 +92,12 @@ public class GroupTests : RoundTripTestBase, IDisposable
             Description = "Test group description",
             IsSelectable = false
         };
-        
+
         // Add some entities to the group
         var line = new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0));
         originalDoc.Entities.Add(line);
         group.Entities.Add(line);
-        
+
         originalDoc.Groups.Add(group);
 
         // Act & Assert
@@ -127,7 +127,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
             var originalGroup = originalObject as Group;
             loadedObject = loadedDoc.Groups.FirstOrDefault(g => g.Name == originalGroup?.Name) as T;
         }
-        
+
         Assert.NotNull(loadedObject);
 
         // Step 4: Generate C# code from the loaded document
@@ -146,7 +146,7 @@ public class GroupTests : RoundTripTestBase, IDisposable
             var originalGroup = originalObject as Group;
             recreatedObject = recreatedDoc.Groups.FirstOrDefault(g => g.Name == originalGroup?.Name) as T;
         }
-        
+
         Assert.NotNull(recreatedObject);
 
         // Step 7: Validate the recreated object matches the original

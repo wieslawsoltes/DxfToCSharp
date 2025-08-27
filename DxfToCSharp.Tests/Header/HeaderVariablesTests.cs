@@ -1,9 +1,9 @@
-using netDxf;
-using netDxf.Header;
-using netDxf.Units;
-using netDxf.Entities;
-using netDxf.Tables;
 using DxfToCSharp.Tests.Infrastructure;
+using netDxf;
+using netDxf.Entities;
+using netDxf.Header;
+using netDxf.Tables;
+using netDxf.Units;
 
 namespace DxfToCSharp.Tests.Header;
 
@@ -31,7 +31,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.DrawingVariables.SplineSegs = 12;
         originalDoc.DrawingVariables.SurfU = 10;
         originalDoc.DrawingVariables.SurfV = 8;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -68,7 +68,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.InsUnits = DrawingUnits.Millimeters;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -85,7 +85,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.InsBase = new Vector3(10, 20, 5);
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -110,7 +110,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.DrawingVariables.CMLStyle = "TestMLineStyle";
         originalDoc.DrawingVariables.DimStyle = "TestDimStyle";
         originalDoc.DrawingVariables.TextStyle = "TestTextStyle";
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -143,7 +143,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.AcadVer = DxfVersion.AutoCad2018;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -162,7 +162,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var originalDoc = new DxfDocument();
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -248,12 +248,12 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var testDate = new DateTime(2023, 6, 15, 14, 30, 45);
         var testDateUtc = new DateTime(2023, 6, 15, 14, 30, 45, DateTimeKind.Utc);
-        
+
         originalDoc.DrawingVariables.TdCreate = testDate;
         originalDoc.DrawingVariables.TduCreate = testDateUtc;
         originalDoc.DrawingVariables.TdUpdate = testDate.AddDays(1);
         originalDoc.DrawingVariables.TduUpdate = testDateUtc.AddDays(1);
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -266,15 +266,15 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.DrawingVariables.TdCreate.Day, loaded.DrawingVariables.TdCreate.Day);
             Assert.Equal(original.DrawingVariables.TdCreate.Hour, loaded.DrawingVariables.TdCreate.Hour);
             Assert.Equal(original.DrawingVariables.TdCreate.Minute, loaded.DrawingVariables.TdCreate.Minute);
-            
+
             Assert.Equal(original.DrawingVariables.TduCreate.Year, loaded.DrawingVariables.TduCreate.Year);
             Assert.Equal(original.DrawingVariables.TduCreate.Month, loaded.DrawingVariables.TduCreate.Month);
             Assert.Equal(original.DrawingVariables.TduCreate.Day, loaded.DrawingVariables.TduCreate.Day);
-            
+
             Assert.Equal(original.DrawingVariables.TdUpdate.Year, loaded.DrawingVariables.TdUpdate.Year);
             Assert.Equal(original.DrawingVariables.TdUpdate.Month, loaded.DrawingVariables.TdUpdate.Month);
             Assert.Equal(original.DrawingVariables.TdUpdate.Day, loaded.DrawingVariables.TdUpdate.Day);
-            
+
             Assert.Equal(original.DrawingVariables.TduUpdate.Year, loaded.DrawingVariables.TduUpdate.Year);
             Assert.Equal(original.DrawingVariables.TduUpdate.Month, loaded.DrawingVariables.TduUpdate.Month);
             Assert.Equal(original.DrawingVariables.TduUpdate.Day, loaded.DrawingVariables.TduUpdate.Day);
@@ -287,7 +287,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.TdinDwg = new TimeSpan(2, 15, 30, 45); // 2 days, 15 hours, 30 minutes, 45 seconds
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -307,7 +307,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.LastSavedBy = "TestUser";
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -327,7 +327,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         // Arrange
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.CeColor = new AciColor(5); // Red color
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -346,7 +346,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         // Note: Angbase and Angdir have internal setters, so we can't test them directly
         // They are set internally by the DXF loading process
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -366,7 +366,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         originalDoc.DrawingVariables.CMLJust = MLineJustification.Bottom;
         originalDoc.DrawingVariables.CMLScale = 15.5;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -388,7 +388,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         var testUCS = new UCS("TestUCS", new Vector3(10, 20, 30), new Vector3(1, 0, 0), new Vector3(0, 1, 0));
         originalDoc.UCSs.Add(testUCS);
         originalDoc.DrawingVariables.CurrentUCS = testUCS;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -408,7 +408,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var originalDoc = new DxfDocument();
-        
+
         // Set all newly supported properties to non-default values
         // Note: Angbase and Angdir have internal setters, so we skip them in tests
         originalDoc.DrawingVariables.CeColor = new AciColor(3);
@@ -420,11 +420,11 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         originalDoc.DrawingVariables.TdUpdate = new DateTime(2023, 6, 15, 15, 30, 0);
         originalDoc.DrawingVariables.TduUpdate = new DateTime(2023, 6, 15, 15, 30, 0, DateTimeKind.Utc);
         originalDoc.DrawingVariables.TdinDwg = new TimeSpan(1, 5, 15, 30);
-        
+
         var testUCS = new UCS("GeneratorTestUCS", new Vector3(5, 10, 15), new Vector3(1, 0, 0), new Vector3(0, 1, 0));
         originalDoc.UCSs.Add(testUCS);
         originalDoc.DrawingVariables.CurrentUCS = testUCS;
-        
+
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
 
@@ -451,7 +451,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var originalDoc = new DxfDocument();
-        
+
         // Keep all default values - no changes to header variables
         // Add a simple entity to make the document valid
         originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(10, 10, 0)));
@@ -470,7 +470,7 @@ public class HeaderVariablesTests : RoundTripTestBase, IDisposable
         Assert.DoesNotContain("doc.DrawingVariables.TduUpdate", generatedCode);
         Assert.DoesNotContain("doc.DrawingVariables.TdinDwg", generatedCode);
         Assert.DoesNotContain("doc.DrawingVariables.CurrentUCS", generatedCode);
-        
+
         // Should not contain header variables section at all
         Assert.DoesNotContain("// Header variables (drawing variables)", generatedCode);
     }

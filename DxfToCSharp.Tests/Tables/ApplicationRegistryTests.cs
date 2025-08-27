@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -54,7 +54,7 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
         // Arrange
         var appReg = new ApplicationRegistry("TestApp");
         var originalAppReg = new ApplicationRegistry("AppWithXData");
-        
+
         var xdata = new XData(appReg);
         xdata.XDataRecord.Add(new XDataRecord(XDataCode.String, "Test XData"));
         originalAppReg.XData.Add(xdata);
@@ -101,7 +101,7 @@ public class ApplicationRegistryTests : RoundTripTestBase, IDisposable
 
         // Verify basic properties
         Assert.NotNull(loadedAppReg);
-        
+
         // Run custom assertions
         assertions(originalAppReg, loadedAppReg);
     }

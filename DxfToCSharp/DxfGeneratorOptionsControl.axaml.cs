@@ -2,9 +2,9 @@ using System;
 using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Controls;
-using ReactiveUI;
 using DxfToCSharp.Core;
 using DxfToCSharp.ViewModels;
+using ReactiveUI;
 
 namespace DxfToCSharp;
 
@@ -25,13 +25,13 @@ public partial class DxfGeneratorOptionsControl : UserControl, IViewFor<DxfGener
         set => ViewModel = (DxfGeneratorOptionsViewModel?)value;
     }
     public event EventHandler<OptionsChangedEventArgs>? OptionsChanged;
-        
+
     public DxfGeneratorOptionsControl()
     {
         InitializeComponent();
         ViewModel = new DxfGeneratorOptionsViewModel();
         DataContext = ViewModel;
-        
+
         // Subscribe to view model changes to raise OptionsChanged event
         this.WhenAnyValue(x => x.ViewModel)
             .Where(vm => vm != null)

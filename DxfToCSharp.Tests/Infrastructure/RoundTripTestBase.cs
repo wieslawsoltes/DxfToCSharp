@@ -1,7 +1,7 @@
+using DxfToCSharp.Compilation;
+using DxfToCSharp.Core;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Core;
-using DxfToCSharp.Compilation;
 
 namespace DxfToCSharp.Tests.Infrastructure;
 
@@ -58,7 +58,7 @@ public abstract class RoundTripTestBase
         Assert.Single(loadedDoc.Entities.All);
 
         // Step 4: Generate C# code from the loaded document
-        var generatedCode = options != null 
+        var generatedCode = options != null
             ? _generator.Generate(loadedDoc, originalDxfPath, null, options)
             : _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
@@ -90,8 +90,8 @@ public abstract class RoundTripTestBase
     /// 5. Compile and execute code
     /// 6. Validate the recreated document
     /// </summary>
-    protected void PerformRoundTripTest<TInput, TOutput>(TInput originalEntity, Action<TInput, TOutput> validator) 
-        where TInput : EntityObject 
+    protected void PerformRoundTripTest<TInput, TOutput>(TInput originalEntity, Action<TInput, TOutput> validator)
+        where TInput : EntityObject
         where TOutput : EntityObject
     {
         // Step 1: Create DXF document with the entity
@@ -111,7 +111,7 @@ public abstract class RoundTripTestBase
         var generatedCode = _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-        
+
         // Step 5: Compile and execute the generated code
         var recreatedDoc = CompileAndExecuteCode(generatedCode);
         Assert.NotNull(recreatedDoc);
@@ -137,7 +137,7 @@ public abstract class RoundTripTestBase
     {
         // Compile to memory using shared service
         var result = _compilationService.CompileToMemory(code);
-        
+
         if (!result.Success)
         {
             System.IO.File.WriteAllText("compilation_error.txt", $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{code}");
@@ -145,7 +145,7 @@ public abstract class RoundTripTestBase
         }
 
         Assert.NotNull(result.Assembly);
-        
+
         // Execute the Create method
         var document = _compilationService.ExecuteCreateMethod(result.Assembly);
         Assert.NotNull(document);
@@ -160,7 +160,7 @@ public abstract class RoundTripTestBase
     /// </summary>
     protected static void AssertDoubleEqual(double expected, double actual, double tolerance = 1e-10)
     {
-        Assert.True(Math.Abs(expected - actual) < tolerance, 
+        Assert.True(Math.Abs(expected - actual) < tolerance,
             $"Expected {expected}, but got {actual}. Difference: {Math.Abs(expected - actual)}");
     }
 

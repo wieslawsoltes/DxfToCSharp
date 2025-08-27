@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -30,7 +30,7 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(20, 20, 0),
             new Vector3(30, 20, 0)
         };
-        
+
         var originalPolygonMesh = new PolygonMesh(u, v, vertices);
         originalPolygonMesh.DensityU = 6;
         originalPolygonMesh.DensityV = 6;
@@ -44,12 +44,12 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.U, recreated.U);
             Assert.Equal(original.V, recreated.V);
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
-            
+
             for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
-            
+
             Assert.Equal(original.DensityU, recreated.DensityU);
             Assert.Equal(original.DensityV, recreated.DensityV);
             Assert.Equal(original.SmoothType, recreated.SmoothType);
@@ -73,7 +73,7 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(5, 5, 1),
             new Vector3(10, 5, 0)
         };
-        
+
         var originalPolygonMesh = new PolygonMesh(u, v, vertices);
 
         // Act & Assert
@@ -82,7 +82,7 @@ public class PolygonMeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.U, recreated.U);
             Assert.Equal(original.V, recreated.V);
             Assert.Equal(original.Vertexes.Length, recreated.Vertexes.Length);
-            
+
             for (var i = 0; i < original.Vertexes.Length; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);

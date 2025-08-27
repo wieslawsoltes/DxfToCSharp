@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -25,7 +25,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -54,7 +54,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -81,7 +81,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyline, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -112,7 +112,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             AssertDoubleEqual(original.Thickness, recreated.Thickness);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -131,7 +131,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(4), // Cyan
             Lineweight = Lineweight.Default
         };
-        
+
         var vertices = new List<Polyline2DVertex>
         {
             new Polyline2DVertex(0, 0),
@@ -149,7 +149,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.Layer.Name, recreated.Layer.Name);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -176,7 +176,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyline, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -202,7 +202,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyline, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -233,7 +233,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.Color.Index, recreated.Color.Index);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -264,7 +264,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -286,7 +286,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
             new Polyline2DVertex(10, 10),
             new Polyline2DVertex(0, 10)
         };
-        
+
         var originalPolyline2D = new Polyline2D(vertices, false);
 
         // Act & Assert
@@ -294,7 +294,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -324,7 +324,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(
@@ -379,7 +379,7 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
         PerformRoundTripTest(originalPolyline2D, (original, recreated) =>
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(

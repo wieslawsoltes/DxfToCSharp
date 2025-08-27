@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Objects;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -13,7 +13,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var pdfDef = new UnderlayPdfDefinition("TestPdf", "test.pdf");
         originalDoc.UnderlayPdfDefinitions.Add(pdfDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -32,7 +32,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var dwfDef = new UnderlayDwfDefinition("TestDwf", "test.dwf");
         originalDoc.UnderlayDwfDefinitions.Add(dwfDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -51,7 +51,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var dgnDef = new UnderlayDgnDefinition("TestDgn", "test.dgn");
         originalDoc.UnderlayDgnDefinitions.Add(dgnDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -71,11 +71,11 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         var pdfDef = new UnderlayPdfDefinition("PdfDoc", "document.pdf");
         var dwfDef = new UnderlayDwfDefinition("DwfDrawing", "drawing.dwf");
         var dgnDef = new UnderlayDgnDefinition("DgnDesign", "design.dgn");
-        
+
         originalDoc.UnderlayPdfDefinitions.Add(pdfDef);
         originalDoc.UnderlayDwfDefinitions.Add(dwfDef);
         originalDoc.UnderlayDgnDefinitions.Add(dgnDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -87,13 +87,13 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
             Assert.NotNull(loadedPdf);
             Assert.Equal(originalPdf.Name, loadedPdf.Name);
             Assert.Equal(originalPdf.File, loadedPdf.File);
-            
+
             // Verify DWF definition
             var loadedDwf = loadedDoc.UnderlayDwfDefinitions.Items.FirstOrDefault(d => d.Name == originalDwf.Name);
             Assert.NotNull(loadedDwf);
             Assert.Equal(originalDwf.Name, loadedDwf.Name);
             Assert.Equal(originalDwf.File, loadedDwf.File);
-            
+
             // Verify DGN definition
             var loadedDgn = loadedDoc.UnderlayDgnDefinitions.Items.FirstOrDefault(d => d.Name == originalDgn.Name);
             Assert.NotNull(loadedDgn);
@@ -109,7 +109,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var pdfDef = new UnderlayPdfDefinition("Pdf_Name-123", "path/to/file name-123.pdf");
         originalDoc.UnderlayPdfDefinitions.Add(pdfDef);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -148,7 +148,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
             var originalDgn = originalObject as UnderlayDgnDefinition;
             loadedObject = loadedDoc.UnderlayDgnDefinitions.Items.FirstOrDefault(d => d.Name == originalDgn?.Name) as T;
         }
-        
+
         Assert.NotNull(loadedObject);
 
         // Step 4: Generate C# code from the loaded document
@@ -177,7 +177,7 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
             var originalDgn = originalObject as UnderlayDgnDefinition;
             recreatedObject = recreatedDoc.UnderlayDgnDefinitions.Items.FirstOrDefault(d => d.Name == originalDgn?.Name) as T;
         }
-        
+
         Assert.NotNull(recreatedObject);
 
         // Step 7: Validate the recreated object matches the original
@@ -191,9 +191,9 @@ public class UnderlayDefinitionTests : RoundTripTestBase, IDisposable
     }
 
     private void PerformMultipleUnderlayTypesRoundTripTest(
-        DxfDocument originalDoc, 
-        UnderlayPdfDefinition originalPdf, 
-        UnderlayDwfDefinition originalDwf, 
+        DxfDocument originalDoc,
+        UnderlayPdfDefinition originalPdf,
+        UnderlayDwfDefinition originalDwf,
         UnderlayDgnDefinition originalDgn,
         Action<UnderlayPdfDefinition, UnderlayDwfDefinition, UnderlayDgnDefinition, DxfDocument> validator)
     {

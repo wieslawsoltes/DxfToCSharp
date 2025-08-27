@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -56,7 +56,7 @@ public class SolidEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(1), // Red
             Lineweight = Lineweight.W40
         };
-        
+
         var originalSolid = new Solid(
             new Vector2(0, 0),
             new Vector2(25, 0),

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -79,7 +79,7 @@ public class EllipseEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(2), // Yellow
             Lineweight = Lineweight.Default
         };
-        
+
         var originalEllipse = new Ellipse(
             new Vector3(0, 0, 0),
             8.0,

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -111,7 +111,7 @@ public class InsertEntityTests : RoundTripTestBase
         {
             new Line(new Vector2(0, 0), new Vector2(10, 10))
         };
-        
+
         var attributeDefinitions = new List<AttributeDefinition>
         {
             new AttributeDefinition("PART_NUMBER")
@@ -129,10 +129,10 @@ public class InsertEntityTests : RoundTripTestBase
                 Height = 1.5
             }
         };
-        
+
         var block = new Block("PartBlock", blockEntities, attributeDefinitions);
         var originalInsert = new Insert(block, new Vector3(0, 0, 0));
-        
+
         // Modify attribute values
         originalInsert.Attributes.AttributeWithTag("PART_NUMBER").Value = "P123";
         originalInsert.Attributes.AttributeWithTag("DESCRIPTION").Value = "Modified Description";
@@ -142,7 +142,7 @@ public class InsertEntityTests : RoundTripTestBase
         {
             Assert.Equal(original.Block.Name, recreated.Block.Name);
             Assert.Equal(original.Attributes.Count, recreated.Attributes.Count);
-            
+
             foreach (var originalAtt in original.Attributes)
             {
                 var recreatedAtt = recreated.Attributes.FirstOrDefault(a => a.Tag == originalAtt.Tag);
@@ -164,7 +164,7 @@ public class InsertEntityTests : RoundTripTestBase
             new Circle(new Vector3(0, 0, 0), 3.0)
         };
         var block = new Block("CircleBlock", blockEntities);
-        
+
         var insert1 = new Insert(block, new Vector3(0, 0, 0))
         {
             Scale = new Vector3(1.0, 1.0, 1.0),
@@ -191,7 +191,7 @@ public class InsertEntityTests : RoundTripTestBase
         var tempPath = Path.Combine(Path.GetTempPath(), "multiple_inserts_test.dxf");
         originalDoc.Save(tempPath);
         var loadedDoc = DxfDocument.Load(tempPath);
-        
+
         // Act & Assert - Test each insert individually
         PerformRoundTripTest((Insert)insert1.Clone(), (original, recreated) =>
         {
@@ -200,7 +200,7 @@ public class InsertEntityTests : RoundTripTestBase
             AssertVector3Equal(original.Scale, recreated.Scale);
             AssertDoubleEqual(original.Rotation, recreated.Rotation);
         });
-        
+
         PerformRoundTripTest((Insert)insert2.Clone(), (original, recreated) =>
         {
             Assert.Equal(original.Block.Name, recreated.Block.Name);
@@ -208,7 +208,7 @@ public class InsertEntityTests : RoundTripTestBase
             AssertVector3Equal(original.Scale, recreated.Scale);
             AssertDoubleEqual(original.Rotation, recreated.Rotation);
         });
-        
+
         PerformRoundTripTest((Insert)insert3.Clone(), (original, recreated) =>
         {
             Assert.Equal(original.Block.Name, recreated.Block.Name);

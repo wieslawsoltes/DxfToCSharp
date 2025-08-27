@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -40,14 +40,14 @@ public class LeaderEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(2), // Yellow
             Lineweight = Lineweight.W30
         };
-        
+
         var vertices = new List<Vector2>
         {
             new Vector2(10, 10),
             new Vector2(30, 20),
             new Vector2(50, 30)
         };
-        
+
         var originalLeader = new Leader(vertices)
         {
             Layer = customLayer
@@ -71,7 +71,7 @@ public class LeaderEntityTests : RoundTripTestBase, IDisposable
             new Vector2(25, 12.5),
             new Vector2(50, 25)
         };
-        
+
         var originalLeader = new Leader(vertices)
         {
             Color = new AciColor(4) // Cyan

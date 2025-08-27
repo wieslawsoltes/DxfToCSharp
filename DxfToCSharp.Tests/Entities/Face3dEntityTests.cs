@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -56,7 +56,7 @@ public class Face3dEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(6), // Magenta
             Lineweight = Lineweight.W20
         };
-        
+
         var originalFace3d = new Face3D(
             new Vector3(0, 0, 0),
             new Vector3(25, 0, 0),

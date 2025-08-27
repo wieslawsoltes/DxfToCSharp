@@ -1,9 +1,9 @@
+using DxfToCSharp.Core;
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using netDxf.Tables;
 using netDxf.Objects;
-using DxfToCSharp.Tests.Infrastructure;
-using DxfToCSharp.Core;
+using netDxf.Tables;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -15,19 +15,19 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var doc = new DxfDocument();
-        
+
         // Create a simple document with layers
         var layer1 = new Layer("TestLayer1");
         var layer2 = new Layer("TestLayer2");
         doc.Layers.Add(layer1);
         doc.Layers.Add(layer2);
-        
+
         // Add some entities to use the layers
         doc.Entities.Add(new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0)) { Layer = layer1 });
         doc.Entities.Add(new Line(new Vector3(5, 5, 0), new Vector3(15, 15, 0)) { Layer = layer2 });
-        
+
         var generator = new DxfCodeGenerator();
-        
+
         // Test with LayerState generation enabled
         var optionsEnabled = new DxfCodeGenerationOptions
         {
@@ -35,7 +35,7 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
             GenerateDetailedComments = true
         };
         var codeEnabled = generator.Generate(doc, null, null, optionsEnabled);
-        
+
         // Test with LayerState generation disabled
         var optionsDisabled = new DxfCodeGenerationOptions
         {
@@ -43,12 +43,12 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
             GenerateDetailedComments = true
         };
         var codeDisabled = generator.Generate(doc, null, null, optionsDisabled);
-        
+
         // Assert
         Assert.Contains("LayerState objects", codeEnabled);
         Assert.DoesNotContain("LayerState objects", codeDisabled);
     }
-    
+
     [Fact]
     public void LayerState_WithDetailedComments_ShouldIncludeComments()
     {
@@ -57,22 +57,22 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         var layer = new Layer("TestLayer");
         doc.Layers.Add(layer);
         doc.Entities.Add(new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0)) { Layer = layer });
-        
+
         var generator = new DxfCodeGenerator();
         var options = new DxfCodeGenerationOptions
         {
             GenerateLayerStateObjects = true,
             GenerateDetailedComments = true
         };
-        
+
         // Act
         var code = generator.Generate(doc, null, null, options);
-        
+
         // Assert
         Assert.Contains("LayerState objects are internal to netDxf and not directly accessible", code);
         Assert.Contains("LayerState objects store layer property snapshots", code);
     }
-    
+
     [Fact]
     public void LayerState_WithoutDetailedComments_ShouldNotIncludeComments()
     {
@@ -81,21 +81,21 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         var layer = new Layer("TestLayer");
         doc.Layers.Add(layer);
         doc.Entities.Add(new Line(new Vector3(0, 0, 0), new Vector3(10, 10, 0)) { Layer = layer });
-        
+
         var generator = new DxfCodeGenerator();
         var options = new DxfCodeGenerationOptions
         {
             GenerateLayerStateObjects = true,
             GenerateDetailedComments = false
         };
-        
+
         // Act
         var code = generator.Generate(doc, null, null, options);
-        
+
         // Assert
         Assert.DoesNotContain("LayerState objects store layer property snapshots", code);
     }
-    
+
     [Fact]
     public void LayerState_Creation_ShouldSetPropertiesCorrectly()
     {
@@ -118,7 +118,7 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         Assert.Equal("Layer1", layerState.CurrentLayer);
         Assert.True(layerState.PaperSpace);
         Assert.Equal(2, layerState.Properties.Count);
-        
+
         // Verify Layer1 properties
         Assert.True(layerState.Properties.ContainsKey("Layer1"));
         var layer1Props = layerState.Properties["Layer1"];
@@ -127,7 +127,7 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         Assert.False(layer1Props.Flags.HasFlag(LayerPropertiesFlags.Hidden));
         Assert.False(layer1Props.Flags.HasFlag(LayerPropertiesFlags.Frozen));
         Assert.False(layer1Props.Flags.HasFlag(LayerPropertiesFlags.Locked));
-        
+
         // Verify Layer2 properties
         Assert.True(layerState.Properties.ContainsKey("Layer2"));
         var layer2Props = layerState.Properties["Layer2"];
@@ -186,35 +186,35 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var doc = new DxfDocument();
-        var layer1 = new Layer("TestLayer1") 
-        { 
-            Color = AciColor.Red, 
-            Lineweight = Lineweight.W20, 
-            IsVisible = true, 
-            IsFrozen = false, 
+        var layer1 = new Layer("TestLayer1")
+        {
+            Color = AciColor.Red,
+            Lineweight = Lineweight.W20,
+            IsVisible = true,
+            IsFrozen = false,
             IsLocked = false,
-             Transparency = new Transparency(50)
+            Transparency = new Transparency(50)
         };
-        var layer2 = new Layer("TestLayer2") 
-        { 
-            Color = AciColor.Blue, 
-            Lineweight = Lineweight.W30, 
-            IsVisible = false, 
-            IsFrozen = true, 
+        var layer2 = new Layer("TestLayer2")
+        {
+            Color = AciColor.Blue,
+            Lineweight = Lineweight.W30,
+            IsVisible = false,
+            IsFrozen = true,
             IsLocked = true,
-             Transparency = new Transparency(90)
+            Transparency = new Transparency(90)
         };
-        
+
         doc.Layers.Add(layer1);
         doc.Layers.Add(layer2);
-        
+
         var layerState = new LayerState("CompleteTestState", new[] { layer1, layer2 })
         {
             Description = "Complete test state",
             CurrentLayer = "TestLayer1",
             PaperSpace = true
         };
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLayerStateObjects = true,
@@ -269,11 +269,11 @@ public class LayerStateTests : RoundTripTestBase, IDisposable
         // Assert
         Assert.Equal("ManyLayersState", layerState.Name);
         Assert.Equal(100, layerState.Properties.Count);
-        
+
         // Verify first and last layers
         Assert.True(layerState.Properties.ContainsKey("Layer000"));
         Assert.True(layerState.Properties.ContainsKey("Layer099"));
-        
+
         // Verify colors are set correctly
         Assert.Equal(AciColor.FromCadIndex(1), layerState.Properties["Layer000"].Color);
         Assert.Equal(AciColor.FromCadIndex(100), layerState.Properties["Layer099"].Color);

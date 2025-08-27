@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -18,13 +18,13 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
             new LinetypeSimpleSegment(0.25),
             new LinetypeSimpleSegment(-0.25)
         };
-        
+
         var originalLinetype = new Linetype("TestLinetype", segments, "Test linetype description");
 
         // Create a document with an entity that uses this linetype
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(originalLinetype);
-        
+
         var line = new Line(new Vector2(0, 0), new Vector2(100, 100))
         {
             Linetype = originalLinetype
@@ -38,7 +38,7 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
             // NOTE: Linetype description and segments are not preserved by netDxf during DXF save/load operations
             // Assert.Equal(original.Description, recreated.Description);
             // Assert.Equal(original.Segments.Count, recreated.Segments.Count);
-            
+
             // for (int i = 0; i < original.Segments.Count; i++)
             // {
             //     Assert.Equal(original.Segments[i].Length, recreated.Segments[i].Length, 6);
@@ -55,7 +55,7 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this linetype
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(originalLinetype);
-        
+
         var circle = new Circle(new Vector3(50, 50, 0), 25)
         {
             Linetype = originalLinetype
@@ -82,7 +82,7 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this linetype
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(originalLinetype);
-        
+
         var polyline = new Polyline2D(new List<Polyline2DVertex>
         {
             new Polyline2DVertex(0, 0),
@@ -115,7 +115,7 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this linetype
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(originalLinetype);
-        
+
         var arc = new Arc(new Vector3(0, 0, 0), 50, 0, Math.PI)
         {
             Linetype = originalLinetype
@@ -146,13 +146,13 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
             new LinetypeSimpleSegment(0.25),
             new LinetypeSimpleSegment(-0.25)
         };
-        
+
         var originalLinetype = new Linetype("ComplexLinetype", segments, "Complex custom linetype");
 
         // Create a document with an entity that uses this linetype
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(originalLinetype);
-        
+
         var spline = new Spline(new List<Vector3>
         {
             new Vector3(0, 0, 0),
@@ -172,7 +172,7 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
             // Assert.Equal(original.Description, recreated.Description);
             // Assert.Equal(original.Segments.Count, recreated.Segments.Count);
             // Assert.Equal(original.Length(), recreated.Length(), 6);
-            
+
             // for (int i = 0; i < original.Segments.Count; i++)
             // {
             //     Assert.Equal(original.Segments[i].Length, recreated.Segments[i].Length, 6);

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -126,7 +126,7 @@ public class ArcLengthDimensionEntityTests : RoundTripTestBase, IDisposable
             DimScaleOverall = 2.0,
             TextHeight = 5.0
         };
-        
+
         var originalDimension = new ArcLengthDimension(
             new Vector2(20, 30),  // center point
             40.0,                 // radius

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -13,7 +13,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         // Arrange - Use the active viewport (only one allowed)
         var originalDoc = new DxfDocument();
         var originalVPort = originalDoc.Viewport; // Get the *Active viewport
-        
+
         // Modify the active viewport properties
         originalVPort.ViewCenter = new Vector2(50, 100);
         originalVPort.ViewHeight = 200;
@@ -24,11 +24,11 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.SnapMode = false;
 
         // Create a document with entities that use this viewport
-        
+
         // Add some entities to make the viewport meaningful
         var line = new Line(new Vector3(0, 0, 0), new Vector3(100, 100, 0));
         originalDoc.Entities.Add(line);
-        
+
         var circle = new Circle(new Vector3(50, 50, 0), 25);
         originalDoc.Entities.Add(circle);
 
@@ -58,7 +58,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         // Arrange - Use the active viewport (only one allowed)
         var originalDoc = new DxfDocument();
         var originalVPort = originalDoc.Viewport; // Get the *Active viewport
-        
+
         // Modify the active viewport properties
         originalVPort.SnapBasePoint = new Vector2(5, 10);
         originalVPort.SnapSpacing = new Vector2(2.5, 1.25);
@@ -67,7 +67,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.SnapMode = true;
 
         // Create a document with entities that use this viewport
-        
+
         // Add entities that would benefit from snap/grid
         var polyline = new Polyline2D(new[]
         {
@@ -100,7 +100,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         // Arrange - Use the active viewport (only one allowed)
         var originalDoc = new DxfDocument();
         var originalVPort = originalDoc.Viewport; // Get the *Active viewport
-        
+
         // Modify the active viewport properties for isometric view
         var isometricDirection = Vector3.Normalize(new Vector3(1, 1, 1));
         originalVPort.ViewCenter = new Vector2(0, 0);
@@ -114,7 +114,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.GridSpacing = new Vector2(10, 10);
 
         // Create a document with 3D entities
-        
+
         // Add 3D entities that would benefit from isometric view
         var face3d = new Face3D(
             new Vector3(0, 0, 0),
@@ -154,7 +154,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         // Arrange - Use the active viewport (only one allowed)
         var originalDoc = new DxfDocument();
         var originalVPort = originalDoc.Viewport; // Get the *Active viewport
-        
+
         // Modify the active viewport properties for wide aspect ratio
         originalVPort.ViewCenter = new Vector2(200, 50);
         originalVPort.ViewHeight = 100;
@@ -165,11 +165,11 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.SnapMode = false;
 
         // Create a document with wide entities
-        
+
         // Add a wide polyline that fits the viewport
         var wideLine = new Line(new Vector3(0, 50, 0), new Vector3(400, 50, 0));
         originalDoc.Entities.Add(wideLine);
-        
+
         var wideRect = new Polyline2D(new[]
         {
             new Vector2(50, 25),
@@ -205,7 +205,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         // Arrange - Use the active viewport (only one allowed)
         var originalDoc = new DxfDocument();
         var originalVPort = originalDoc.Viewport; // Get the *Active viewport
-        
+
         // Modify the active viewport properties
         originalVPort.ViewCenter = new Vector2(25, 25);
         originalVPort.ViewHeight = 150;
@@ -213,14 +213,14 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.SnapMode = true;
 
         // Create a document with the active viewport (already present)
-        
+
         // Add some basic entities
         var centerPoint = new Point(new Vector3(25, 25, 0))
         {
             Color = AciColor.Red
         };
         originalDoc.Entities.Add(centerPoint);
-        
+
         var boundaryCircle = new Circle(new Vector3(25, 25, 0), 75)
         {
             Color = AciColor.Blue
@@ -246,7 +246,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
     {
         // Create a document with detailed entities
         var originalDoc = new DxfDocument();
-        
+
         // Arrange - Modify the existing "*Active" VPort (cannot add new VPorts)
         var originalVPort = originalDoc.VPorts["*Active"];
         originalVPort.ViewCenter = new Vector2(10, 10);
@@ -259,14 +259,14 @@ public class VPortTests : RoundTripTestBase, IDisposable
         originalVPort.SnapSpacing = new Vector2(0.1, 0.1); // Fine snap spacing
         originalVPort.GridSpacing = new Vector2(1.0, 1.0); // Fine grid spacing
         originalVPort.SnapBasePoint = new Vector2(10, 10);
-        
+
         // Add detailed entities (small features)
         var detailCircle = new Circle(new Vector3(10, 10, 0), 2)
         {
             Color = AciColor.Green
         };
         originalDoc.Entities.Add(detailCircle);
-        
+
         var detailLines = new[]
         {
             new Line(new Vector3(8, 8, 0), new Vector3(12, 12, 0)),
@@ -326,7 +326,7 @@ public class VPortTests : RoundTripTestBase, IDisposable
         var generatedCode = _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-   
+
         // Step 4: Compile and execute the generated code
         var recreatedDoc = CompileAndExecuteCode(generatedCode);
         Assert.NotNull(recreatedDoc);

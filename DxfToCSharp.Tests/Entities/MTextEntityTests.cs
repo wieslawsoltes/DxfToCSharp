@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -74,7 +74,7 @@ public class MTextEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(4), // Cyan
             Lineweight = Lineweight.Default
         };
-        
+
         var originalMText = new MText(
             "Multi-line text\\Pwith custom layer",
             new Vector3(30, 40, 0),

@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Tests.Entities;
@@ -100,7 +100,7 @@ public class PointEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(7), // White
             Lineweight = Lineweight.Default
         };
-        
+
         var originalPoint = new PointEntity(
             new Vector3(50, 50, 0))
         {

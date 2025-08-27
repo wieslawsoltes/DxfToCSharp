@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -24,7 +24,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
@@ -51,7 +51,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
             Assert.True(recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
@@ -77,7 +77,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
@@ -98,18 +98,19 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         // Act
         var originalDoc = new DxfDocument();
         originalDoc.Entities.Add(originalPolyline);
-        
+
         var tempPath = Path.Combine(Path.GetTempPath(), "test_single_vertex.dxf");
         originalDoc.Save(tempPath);
-        
+
         var loadedDoc = DxfDocument.Load(tempPath);
-        
+
         // Assert
         // Note: DXF format limitation - single vertex polylines are not written to DXF file
         Assert.Empty(loadedDoc.Entities.All);
-        
+
         // Clean up
-        if (File.Exists(tempPath)) File.Delete(tempPath);
+        if (File.Exists(tempPath))
+            File.Delete(tempPath);
     }
 
     [Fact]
@@ -122,19 +123,20 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         // Act
         var originalDoc = new DxfDocument();
         originalDoc.Entities.Add(originalPolyline);
-        
+
         var tempPath = Path.Combine(Path.GetTempPath(), "test_empty_vertex.dxf");
         originalDoc.Save(tempPath);
-        
+
         var loadedDoc = DxfDocument.Load(tempPath);
-        
+
         // Assert
         // Note: DXF format limitation - empty polylines are not written to DXF file
         Assert.Empty(loadedDoc.Entities.All);
-        
+
         // Clean up
-         if (File.Exists(tempPath)) File.Delete(tempPath);
-     }
+        if (File.Exists(tempPath))
+            File.Delete(tempPath);
+    }
 
     [Fact]
     public void Polyline3D_ComplexPath_ShouldPreserveAllVertices()
@@ -159,7 +161,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
@@ -185,7 +187,7 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.IsClosed, recreated.IsClosed);
-            
+
             for (var i = 0; i < original.Vertexes.Count; i++)
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);

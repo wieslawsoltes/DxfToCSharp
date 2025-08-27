@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -12,8 +12,8 @@ public class UnderlayEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var underlayDefinition = new UnderlayDgnDefinition("test.dgn");
-        var originalUnderlay = new Underlay(underlayDefinition, 
-            new Vector3(10, 20, 0), 
+        var originalUnderlay = new Underlay(underlayDefinition,
+            new Vector3(10, 20, 0),
             1.5);
         originalUnderlay.Rotation = 45.0;
         originalUnderlay.Contrast = 75;
@@ -38,8 +38,8 @@ public class UnderlayEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var underlayDefinition = new UnderlayPdfDefinition("document.pdf");
-        var originalUnderlay = new Underlay(underlayDefinition, 
-            new Vector3(0, 0, 0), 
+        var originalUnderlay = new Underlay(underlayDefinition,
+            new Vector3(0, 0, 0),
             2.0);
         originalUnderlay.Rotation = 90.0;
         originalUnderlay.Contrast = 50;
@@ -62,8 +62,8 @@ public class UnderlayEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var underlayDefinition = new UnderlayDwfDefinition("drawing.dwf");
-        var originalUnderlay = new Underlay(underlayDefinition, 
-            new Vector3(-5, -10, 2), 
+        var originalUnderlay = new Underlay(underlayDefinition,
+            new Vector3(-5, -10, 2),
             0.5);
         originalUnderlay.Rotation = 180.0;
         originalUnderlay.Contrast = 100;

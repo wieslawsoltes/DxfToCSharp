@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 using Xunit.Abstractions;
 
 namespace DxfToCSharp.Tests.Tables;
@@ -27,11 +27,11 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add some entities to make the UCS meaningful
         var line = new Line(new Vector3(0, 0, 0), new Vector3(100, 100, 0));
         originalDoc.Entities.Add(line);
-        
+
         var circle = new Circle(new Vector3(50, 50, 0), 25);
         originalDoc.Entities.Add(circle);
 
@@ -65,7 +65,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add entities to demonstrate the UCS usage
         var polyline = new Polyline2D(new[]
         {
@@ -105,7 +105,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add a 3D face to demonstrate the UCS
         var face3d = new Face3D(
             new Vector3(0, 0, 0),
@@ -145,7 +145,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add a text entity to demonstrate the UCS
         var text = new Text("UCS Test", new Vector3(0, 0, 0), 5.0)
         {
@@ -183,7 +183,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add an arc to demonstrate the UCS
         var arc = new Arc(new Vector3(0, 0, 0), 30, 0, Math.PI)
         {
@@ -223,7 +223,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Create a document with entities that use this UCS
         var originalDoc = new DxfDocument();
         originalDoc.UCSs.Add(originalUCS);
-        
+
         // Add a spline to demonstrate the UCS
         var controlPoints = new Vector3[]
         {
@@ -271,7 +271,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Step 2: Load DXF file
         var loadedDoc = DxfDocument.Load(originalDxfPath);
         Assert.NotNull(loadedDoc);
-        
+
         // Debug: Print all UCS names in the loaded document
         _output.WriteLine($"Loaded UCS count: {loadedDoc.UCSs.Count}");
         foreach (var ucs in loadedDoc.UCSs.Items)
@@ -279,14 +279,14 @@ public class UCSTests : RoundTripTestBase, IDisposable
             _output.WriteLine($"  Found UCS: {ucs.Name}");
         }
         _output.WriteLine($"Looking for UCS: {originalUCS.Name}");
-        
+
         // Debug: Check what Names collection contains
         _output.WriteLine($"UCSs.Names count: {loadedDoc.UCSs.Names.Count()}");
         foreach (var name in loadedDoc.UCSs.Names)
         {
             _output.WriteLine($"  Name in Names collection: {name}");
         }
-        
+
         // Try using Contains method instead of Assert.Contains
         _output.WriteLine($"Contains check: {loadedDoc.UCSs.Contains(originalUCS.Name)}");
         Assert.True(loadedDoc.UCSs.Contains(originalUCS.Name), $"UCS '{originalUCS.Name}' not found in loaded document");
@@ -295,7 +295,7 @@ public class UCSTests : RoundTripTestBase, IDisposable
         var generatedCode = _generator.Generate(loadedDoc, originalDxfPath);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-        
+
         // Debug: Print the generated code to see if UCS is included
         _output.WriteLine("Generated code:");
         _output.WriteLine(generatedCode);
@@ -303,14 +303,14 @@ public class UCSTests : RoundTripTestBase, IDisposable
         // Step 4: Compile and execute the generated code
         var recreatedDoc = CompileAndExecuteCode(generatedCode);
         Assert.NotNull(recreatedDoc);
-        
+
         // Debug: Print all UCS names in the recreated document
         _output.WriteLine($"Recreated UCS count: {recreatedDoc.UCSs.Count}");
         foreach (var ucs in recreatedDoc.UCSs.Items)
         {
             _output.WriteLine($"  Found recreated UCS: {ucs.Name}");
         }
-        
+
         Assert.Contains(originalUCS.Name, recreatedDoc.UCSs.Names);
 
         // Step 5: Validate the recreated UCS matches the original

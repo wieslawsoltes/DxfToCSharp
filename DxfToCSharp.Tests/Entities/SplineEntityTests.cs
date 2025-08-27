@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -18,7 +18,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             new Vector3(20, -5, 0),
             new Vector3(30, 0, 0)
         };
-        
+
         // Note: netDxf automatically generates control points from fit points
         var originalSpline = new Spline(fitPoints);
 
@@ -28,7 +28,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             // netDxf generates control points from fit points, so we compare the generated ones
             Assert.Equal(original.ControlPoints.Count(), recreated.ControlPoints.Count());
             Assert.Equal(original.Degree, recreated.Degree);
-            
+
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
             for (var i = 0; i < originalPoints.Count; i++)
@@ -49,7 +49,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             new Vector3(20, 5, 0),
             new Vector3(30, 0, 0)
         };
-        
+
         // Note: netDxf automatically generates control points from fit points
         var originalSpline = new Spline(fitPoints);
 
@@ -59,7 +59,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             // netDxf generates control points from fit points, so we compare the generated ones
             Assert.Equal(original.ControlPoints.Count(), recreated.ControlPoints.Count());
             Assert.Equal(original.Degree, recreated.Degree);
-            
+
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
             for (var i = 0; i < originalPoints.Count; i++)
@@ -80,7 +80,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             new Vector3(20, -5, 12),
             new Vector3(30, 0, 5)
         };
-        
+
         // Note: netDxf automatically generates control points from fit points
         var originalSpline = new Spline(fitPoints);
 
@@ -90,7 +90,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             // netDxf generates control points from fit points, so we compare the generated ones
             Assert.Equal(original.ControlPoints.Count(), recreated.ControlPoints.Count());
             Assert.Equal(original.Degree, recreated.Degree);
-            
+
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
             for (var i = 0; i < originalPoints.Count; i++)
@@ -109,14 +109,14 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(7), // White
             Lineweight = Lineweight.Default
         };
-        
+
         var fitPoints = new List<Vector3>
         {
             new Vector3(0, 0, 0),
             new Vector3(5, 5, 0),
             new Vector3(10, 0, 0)
         };
-        
+
         // Note: netDxf automatically generates control points from fit points
         var originalSpline = new Spline(fitPoints)
         {
@@ -145,7 +145,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             new Vector3(8, 1, 0),
             new Vector3(10, 0, 0)
         };
-        
+
         // Note: netDxf automatically generates control points from fit points
         var originalSpline = new Spline(fitPoints); // Use default degree
 
@@ -155,7 +155,7 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             // netDxf generates control points from fit points, so we compare the generated ones
             Assert.Equal(original.ControlPoints.Count(), recreated.ControlPoints.Count());
             Assert.Equal(original.Degree, recreated.Degree);
-            
+
             var originalPoints = original.ControlPoints.ToList();
             var recreatedPoints = recreated.ControlPoints.ToList();
             for (var i = 0; i < originalPoints.Count; i++)

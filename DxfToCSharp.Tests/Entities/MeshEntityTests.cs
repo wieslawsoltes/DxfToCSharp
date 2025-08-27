@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -18,7 +18,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(0, 10, 0),
             new Vector3(5, 5, 5)
         };
-        
+
         var faces = new List<int[]>
         {
             new int[] { 0, 1, 4 },
@@ -27,7 +27,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             new int[] { 3, 0, 4 },
             new int[] { 0, 1, 2, 3 }
         };
-        
+
         var originalMesh = new Mesh(vertices, faces);
         originalMesh.SubdivisionLevel = 2;
 
@@ -39,7 +39,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
-            
+
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
             for (var i = 0; i < original.Faces.Count; i++)
             {
@@ -49,7 +49,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
                     Assert.Equal(original.Faces[i][j], recreated.Faces[i][j]);
                 }
             }
-            
+
             Assert.Equal(original.SubdivisionLevel, recreated.SubdivisionLevel);
         });
     }
@@ -65,12 +65,12 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(10, 10, 0),
             new Vector3(0, 10, 0)
         };
-        
+
         var faces = new List<int[]>
         {
             new int[] { 0, 1, 2, 3 }
         };
-        
+
         var edges = new List<MeshEdge>
         {
             new MeshEdge(0, 1),
@@ -78,7 +78,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             new MeshEdge(2, 3),
             new MeshEdge(3, 0)
         };
-        
+
         var originalMesh = new Mesh(vertices, faces, edges);
 
         // Act & Assert
@@ -87,7 +87,7 @@ public class MeshEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
             Assert.Equal(original.Edges.Count, recreated.Edges.Count);
-            
+
             for (var i = 0; i < original.Edges.Count; i++)
             {
                 Assert.Equal(original.Edges[i].StartVertexIndex, recreated.Edges[i].StartVertexIndex);

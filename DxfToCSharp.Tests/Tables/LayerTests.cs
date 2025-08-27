@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -26,7 +26,7 @@ public class LayerTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this layer
         var originalDoc = new DxfDocument();
         originalDoc.Layers.Add(originalLayer);
-        
+
         var line = new Line(new Vector2(0, 0), new Vector2(100, 100))
         {
             Layer = originalLayer
@@ -65,7 +65,7 @@ public class LayerTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this layer
         var originalDoc = new DxfDocument();
         originalDoc.Layers.Add(originalLayer);
-        
+
         var circle = new Circle(new Vector3(50, 50, 0), 25)
         {
             Layer = originalLayer
@@ -101,7 +101,7 @@ public class LayerTests : RoundTripTestBase, IDisposable
         // Create a document with an entity that uses this layer
         var originalDoc = new DxfDocument();
         originalDoc.Layers.Add(originalLayer);
-        
+
         var point = new Point(new Vector3(10, 20, 0))
         {
             Layer = originalLayer

@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -99,7 +99,7 @@ public class ViewTests : RoundTripTestBase, IDisposable
             Height = 100.0,
             Width = 150.0
         };
-        
+
         var xdata = new XData(appReg);
         xdata.XDataRecord.Add(new XDataRecord(XDataCode.String, "Test XData"));
         view.XData.Add(xdata);
@@ -144,11 +144,11 @@ public class ViewTests : RoundTripTestBase, IDisposable
         // Since Views collection is internal, we cannot test View objects directly
         // through the public API. This test is disabled as it requires internal access.
         // View objects are typically managed internally by the DXF document structure.
-        
+
         // For now, we'll just verify the View object properties are accessible
         Assert.NotNull(originalView);
         Assert.NotNull(originalView.Name);
-        
+
         // Since we can't do true round-trip testing without internal access,
         // we'll test the view against itself to verify property accessibility
         // This ensures the View class properties work correctly

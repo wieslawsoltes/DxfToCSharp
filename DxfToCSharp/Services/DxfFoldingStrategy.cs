@@ -18,20 +18,20 @@ public class DxfFoldingStrategy
     {
         firstErrorOffset = -1;
         var foldings = new List<NewFolding>();
-            
+
         if (document == null || document.TextLength == 0)
             return foldings;
 
         var lines = document.Lines.ToArray();
-   
+
         // Track section starts and ends
         var sectionStack = new Stack<(int startOffset, string sectionName)>();
-            
+
         for (var i = 0; i < lines.Length - 1; i++)
         {
             var currentLine = document.GetText(lines[i]);
             var nextLine = i + 1 < lines.Length ? document.GetText(lines[i + 1]) : "";
-                
+
             // Check for DXF section markers
             if (currentLine.Trim() == "0" && nextLine.Trim() == "SECTION")
             {
@@ -45,7 +45,7 @@ public class DxfFoldingStrategy
                         sectionName = sectionNameLine.Trim();
                     }
                 }
-                    
+
                 sectionStack.Push((lines[i].Offset, sectionName));
             }
             else if (currentLine.Trim() == "0" && nextLine.Trim() == "ENDSEC")
@@ -55,7 +55,7 @@ public class DxfFoldingStrategy
                 {
                     var (startOffset, sectionName) = sectionStack.Pop();
                     var endOffset = lines[i + 1].EndOffset;
-                        
+
                     if (endOffset > startOffset)
                     {
                         foldings.Add(new NewFolding(startOffset, endOffset)
@@ -71,7 +71,7 @@ public class DxfFoldingStrategy
             {
                 var entityType = nextLine.Trim();
                 var startOffset = lines[i].Offset;
-                    
+
                 // Find the end of this entity (next "0" code)
                 var endLineIndex = i + 2;
                 while (endLineIndex < lines.Length)
@@ -81,7 +81,7 @@ public class DxfFoldingStrategy
                         break;
                     endLineIndex++;
                 }
-                    
+
                 if (endLineIndex < lines.Length && endLineIndex > i + 2)
                 {
                     var endOffset = lines[endLineIndex - 1].EndOffset;
@@ -93,10 +93,10 @@ public class DxfFoldingStrategy
                 }
             }
         }
-            
+
         return foldings.OrderBy(f => f.StartOffset);
     }
-        
+
     /// <summary>
     /// Checks if the given string represents a DXF entity type.
     /// </summary>
@@ -115,7 +115,7 @@ public class DxfFoldingStrategy
             "TABLESTYLE", "CELLSTYLEMAP", "MENTALRAYRENDERSETTINGS",
             "ACAD_PROXY_ENTITY", "ACAD_PROXY_OBJECT"
         };
-            
+
         return entityTypes.Contains(value);
     }
 }

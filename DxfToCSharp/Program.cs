@@ -1,6 +1,6 @@
-using Avalonia;
 using System;
 using System.IO;
+using Avalonia;
 using Avalonia.ReactiveUI;
 
 namespace DxfToCSharp;
@@ -17,7 +17,7 @@ class Program
         {
             // Set up global exception handling
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
-            
+
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
         catch (Exception ex)
@@ -26,7 +26,7 @@ class Program
             throw;
         }
     }
-    
+
     private static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
     {
         if (e.ExceptionObject is Exception ex)
@@ -34,7 +34,7 @@ class Program
             LogCrash(ex);
         }
     }
-    
+
     private static void LogCrash(Exception ex)
     {
         try

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -40,7 +40,7 @@ public class ShapeEntityTests : RoundTripTestBase, IDisposable
         // First, check what shape names are available in the SHX file
         var availableShapeNames = ShapeStyle.NamesFromFile(_shapeFilePath);
         Assert.True(availableShapeNames.Count > 0, "No shapes found in SHX file");
-        
+
         // Use the first available shape name instead of hardcoded "1"
         var validShapeName = availableShapeNames.First();
         var validShape = new Shape(validShapeName, shapeStyle,
@@ -68,11 +68,11 @@ public class ShapeEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var shapeStyle = new ShapeStyle("AnotherStyle", _shapeFilePath);
-        
+
         // Get available shape names and use the second one if available, otherwise use the first
         var availableShapeNames = ShapeStyle.NamesFromFile(_shapeFilePath);
         Assert.True(availableShapeNames.Count > 0, "No shapes found in SHX file");
-        
+
         var validShapeName = availableShapeNames.Count > 1 ? availableShapeNames[1] : availableShapeNames[0];
         var originalShape = new Shape(validShapeName, shapeStyle,
             new Vector3(-5, -10, 2),

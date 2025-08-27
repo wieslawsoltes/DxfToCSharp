@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -48,7 +48,7 @@ public class XLineEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(5), // Blue
             Lineweight = Lineweight.W35
         };
-        
+
         var originalXLine = new XLine(
             new Vector3(10, 10, 0),
             new Vector3(1, 0, 0))

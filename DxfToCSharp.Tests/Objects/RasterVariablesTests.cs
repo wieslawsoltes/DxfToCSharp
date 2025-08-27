@@ -106,7 +106,7 @@ namespace DxfToCSharp.Tests.Objects
             doc.RasterVariables.DisplayFrame = false;
             doc.RasterVariables.DisplayQuality = ImageDisplayQuality.Draft;
             doc.RasterVariables.Units = ImageUnits.Millimeters;
-            
+
             var options = new DxfCodeGenerationOptions
             {
                 GenerateRasterVariablesObjects = true,
@@ -130,7 +130,7 @@ namespace DxfToCSharp.Tests.Objects
             var doc = new DxfDocument();
             doc.RasterVariables.DisplayFrame = false;
             doc.RasterVariables.DisplayQuality = ImageDisplayQuality.Draft;
-            
+
             var options = new DxfCodeGenerationOptions
             {
                 GenerateRasterVariablesObjects = false
@@ -153,8 +153,8 @@ namespace DxfToCSharp.Tests.Objects
             // Arrange
             var doc = new DxfDocument();
             doc.RasterVariables.DisplayFrame = false; // Non-default
-            // DisplayQuality and Units remain default
-            
+                                                      // DisplayQuality and Units remain default
+
             var options = new DxfCodeGenerationOptions
             {
                 GenerateRasterVariablesObjects = true,

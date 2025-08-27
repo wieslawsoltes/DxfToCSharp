@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -18,7 +18,7 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(0, 10, 0),
             new Vector3(5, 5, 5)
         };
-        
+
         var faces = new List<short[]>
         {
             new short[] { 1, 2, 5 },
@@ -27,7 +27,7 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
             new short[] { 4, 1, 5 },
             new short[] { 1, 2, 3, 4 }
         };
-        
+
         var originalPolyfaceMesh = new PolyfaceMesh(vertices, faces);
 
         // Act & Assert
@@ -38,7 +38,7 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
-            
+
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
             for (var i = 0; i < original.Faces.Count; i++)
             {
@@ -62,13 +62,13 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
             new Vector3(10, 10, 0),
             new Vector3(0, 10, 0)
         };
-        
+
         var faces = new List<PolyfaceMeshFace>
         {
             new PolyfaceMeshFace(new short[] { 1, 2, 3 }),
             new PolyfaceMeshFace(new short[] { 1, 3, 4 })
         };
-        
+
         var originalPolyfaceMesh = new PolyfaceMesh(vertices, faces);
 
         // Act & Assert
@@ -79,7 +79,7 @@ public class PolyfaceMeshEntityTests : RoundTripTestBase, IDisposable
             {
                 AssertVector3Equal(original.Vertexes[i], recreated.Vertexes[i]);
             }
-            
+
             Assert.Equal(original.Faces.Count, recreated.Faces.Count);
             for (var i = 0; i < original.Faces.Count; i++)
             {

@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -92,7 +92,7 @@ public class TextEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(3), // Green
             Lineweight = Lineweight.Default
         };
-        
+
         var originalText = new Text(
             "Layer Text",
             new Vector3(50, 50, 0),

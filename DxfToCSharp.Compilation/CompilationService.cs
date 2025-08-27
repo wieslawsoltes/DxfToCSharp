@@ -104,7 +104,7 @@ public class CompilationService
         var type = assembly.GetTypes()
             .FirstOrDefault(t => t.IsClass && t.IsSealed && t.IsAbstract && // static class
                                  t.GetMethod("Create", BindingFlags.Public | BindingFlags.Static) != null);
-            
+
         if (type == null)
             throw new InvalidOperationException("No static class with a 'Create' method found in compiled assembly.");
 
@@ -158,7 +158,7 @@ public class CompilationService
     private static MetadataReference[] GetMetadataReferences()
     {
         var references = new List<MetadataReference>();
-        
+
         // Helper method to safely add metadata reference
         void TryAddReference(Assembly assembly)
         {
@@ -167,14 +167,14 @@ public class CompilationService
                 references.Add(MetadataReference.CreateFromFile(assembly.Location));
             }
         }
-        
+
         // Core system assemblies
         TryAddReference(typeof(object).Assembly);
         TryAddReference(typeof(Console).Assembly);
         TryAddReference(typeof(System.Collections.Generic.List<>).Assembly);
         TryAddReference(typeof(System.Linq.Enumerable).Assembly);
         TryAddReference(typeof(Uri).Assembly);
-                
+
         // netDxf
         TryAddReference(typeof(DxfDocument).Assembly);
 

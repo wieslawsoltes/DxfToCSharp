@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -48,7 +48,7 @@ public class LineEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(5), // Blue
             Lineweight = Lineweight.Default
         };
-        
+
         var originalLine = new Line(
             new Vector3(0, 0, 0),
             new Vector3(100, 100, 0))

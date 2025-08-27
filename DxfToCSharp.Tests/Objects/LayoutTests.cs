@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Collections;
 using netDxf.Objects;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -14,7 +14,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var layout = new Layout("TestLayout");
         originalDoc.Layouts.Add(layout);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -34,7 +34,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         var layout = new Layout("Layout_Test-123");
         originalDoc.Layouts.Add(layout);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -65,7 +65,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
             // Note: IsPaperSpace is read-only and determined by the layout type
         };
         originalDoc.Layouts.Add(layout);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -95,11 +95,11 @@ public class LayoutTests : RoundTripTestBase, IDisposable
         var layout1 = new Layout("Layout1");
         var layout2 = new Layout("Layout2");
         var layout3 = new Layout("Layout3");
-        
+
         originalDoc.Layouts.Add(layout1);
         originalDoc.Layouts.Add(layout2);
         originalDoc.Layouts.Add(layout3);
-        
+
         // Add at least one entity to make the document valid
         originalDoc.Entities.Add(new netDxf.Entities.Line(netDxf.Vector3.Zero, new netDxf.Vector3(1, 1, 0)));
 
@@ -109,7 +109,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
             // Exclude the default Model layout from the count
             var customLayouts = loaded.Where(l => !string.Equals(l.Name, "Model", StringComparison.OrdinalIgnoreCase)).ToList();
             Assert.Equal(originals.Length, customLayouts.Count);
-            
+
             foreach (var original in originals)
             {
                 var loadedLayout = loaded.FirstOrDefault(l => l.Name == original.Name);
@@ -136,7 +136,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
             var originalLayout = originalObject as Layout;
             loadedObject = loadedDoc.Layouts.FirstOrDefault(l => l.Name == originalLayout?.Name) as T;
         }
-        
+
         Assert.NotNull(loadedObject);
 
         // Step 4: Generate C# code from the loaded document
@@ -155,7 +155,7 @@ public class LayoutTests : RoundTripTestBase, IDisposable
             var originalLayout = originalObject as Layout;
             recreatedObject = recreatedDoc.Layouts.FirstOrDefault(l => l.Name == originalLayout?.Name) as T;
         }
-        
+
         Assert.NotNull(recreatedObject);
 
         // Step 7: Validate the recreated object matches the original

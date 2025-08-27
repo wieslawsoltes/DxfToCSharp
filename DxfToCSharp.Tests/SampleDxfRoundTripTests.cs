@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Linq;
-using Xunit;
-using netDxf;
-using DxfToCSharp.Tests.Infrastructure;
 using DxfToCSharp.Core;
+using DxfToCSharp.Tests.Infrastructure;
+using netDxf;
+using Xunit;
 
 namespace DxfToCSharp.Tests;
 
@@ -23,7 +23,7 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
         _sampleDxfPath = Path.Combine(projectRoot, "netDxf", "TestDxfDocument", "sample.dxf");
         _sampleBinaryDxfPath = Path.Combine(projectRoot, "netDxf", "TestDxfDocument", "sample binary.dxf");
     }
-    
+
     private static string GetProjectRoot()
     {
         var currentDir = Directory.GetCurrentDirectory();
@@ -39,32 +39,32 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
     {
         // Arrange
         Assert.True(File.Exists(_sampleDxfPath), $"Sample DXF file not found at: {_sampleDxfPath}");
-        
+
         // Act
         var originalDoc = DxfDocument.Load(_sampleDxfPath);
         Assert.NotNull(originalDoc);
-        
+
         // Generate C# code with all options enabled (defaults)
         var options = new DxfCodeGenerationOptions();
-        
+
         var generatedCode = _generator.Generate(originalDoc, _sampleDxfPath, null, options);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-        
+
         // Save generated code for inspection
         var codeOutputPath = Path.Combine(_tempDirectory, "sample_generated.cs");
         File.WriteAllText(codeOutputPath, generatedCode);
-        
+
         // Verify compilation succeeds
         var result = _compilationService.CompileToMemory(generatedCode);
-        
+
         if (!result.Success)
         {
             var errorOutputPath = Path.Combine(_tempDirectory, "compilation_errors.txt");
             File.WriteAllText(errorOutputPath, $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{generatedCode}");
             throw new InvalidOperationException($"Compilation failed. See {errorOutputPath} for details.\n{result.Output}");
         }
-        
+
         Assert.True(result.Success, "Generated code should compile successfully");
         Assert.NotNull(result.Assembly);
     }
@@ -74,32 +74,32 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
     {
         // Arrange
         Assert.True(File.Exists(_sampleBinaryDxfPath), $"Sample binary DXF file not found at: {_sampleBinaryDxfPath}");
-        
+
         // Act
         var originalDoc = DxfDocument.Load(_sampleBinaryDxfPath);
         Assert.NotNull(originalDoc);
-        
+
         // Generate C# code with all options enabled (defaults)
         var options = new DxfCodeGenerationOptions();
-        
+
         var generatedCode = _generator.Generate(originalDoc, _sampleBinaryDxfPath, null, options);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
-        
+
         // Save generated code for inspection
         var codeOutputPath = Path.Combine(_tempDirectory, "sample_binary_generated.cs");
         File.WriteAllText(codeOutputPath, generatedCode);
-        
+
         // Verify compilation succeeds
         var result = _compilationService.CompileToMemory(generatedCode);
-        
+
         if (!result.Success)
         {
             var errorOutputPath = Path.Combine(_tempDirectory, "sample_binary_compilation_errors.txt");
             File.WriteAllText(errorOutputPath, $"COMPILATION ERROR:\n{result.Output}\n\nGENERATED CODE:\n{generatedCode}");
             throw new InvalidOperationException($"Compilation failed. See {errorOutputPath} for details.\n{result.Output}");
         }
-        
+
         Assert.True(result.Success, "Generated code should compile successfully");
         Assert.NotNull(result.Assembly);
     }

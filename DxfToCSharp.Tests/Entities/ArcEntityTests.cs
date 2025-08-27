@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -116,7 +116,7 @@ public class ArcEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(2), // Yellow
             Lineweight = Lineweight.Default
         };
-        
+
         var originalArc = new Arc(
             new Vector3(25, 25, 0),
             15.0,

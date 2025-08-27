@@ -5,9 +5,9 @@ namespace DxfToCSharp.Services;
 public class CSharpScriptingService
 {
     private readonly CompilationService _compilationService;
-        
+
     public record CompilationResult(bool Success, string? AssemblyPath, string Output);
-        
+
     public CSharpScriptingService()
     {
         _compilationService = new CompilationService();

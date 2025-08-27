@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Blocks;
 
@@ -54,13 +54,13 @@ public class BlockTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.Block.Name, recreated.Block.Name);
             Assert.Equal(original.Block.Entities.Count, recreated.Block.Entities.Count);
-            
+
             // Check that we have the expected entity types
             var originalLines = original.Block.Entities.OfType<Line>().Count();
             var originalCircles = original.Block.Entities.OfType<Circle>().Count();
             var recreatedLines = recreated.Block.Entities.OfType<Line>().Count();
             var recreatedCircles = recreated.Block.Entities.OfType<Circle>().Count();
-            
+
             Assert.Equal(originalLines, recreatedLines);
             Assert.Equal(originalCircles, recreatedCircles);
         });
@@ -74,7 +74,7 @@ public class BlockTests : RoundTripTestBase, IDisposable
         {
             new Line(new Vector2(0, 0), new Vector2(10, 10))
         };
-        
+
         var attributeDefinitions = new List<AttributeDefinition>
         {
             new AttributeDefinition("TAG1")
@@ -92,7 +92,7 @@ public class BlockTests : RoundTripTestBase, IDisposable
                 Height = 1.5
             }
         };
-        
+
         var originalBlock = new Block("BlockWithAttributes", entities, attributeDefinitions);
         var originalInsert = new Insert(originalBlock, new Vector3(0, 0, 0));
 
@@ -102,7 +102,7 @@ public class BlockTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Block.Name, recreated.Block.Name);
             Assert.Equal(original.Block.AttributeDefinitions.Count, recreated.Block.AttributeDefinitions.Count);
             Assert.Equal(original.Attributes.Count, recreated.Attributes.Count);
-            
+
             // Check attribute definitions
             foreach (var originalAttDef in original.Block.AttributeDefinitions.Values)
             {

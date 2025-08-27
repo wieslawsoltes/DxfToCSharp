@@ -1,9 +1,9 @@
+using DxfToCSharp.Core;
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
-using DxfToCSharp.Core;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -18,7 +18,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Arrange
         var customLayer = new Layer("TestLayer") { Color = new AciColor(5) };
         var customLinetype = new Linetype("TestLinetype");
-        
+
         var line = new Line(new Vector3(0, 0, 0), new Vector3(100, 100, 0))
         {
             Layer = customLayer,
@@ -160,16 +160,16 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var line = new Line(Vector3.Zero, Vector3.UnitX);
-        
+
         // Act & Assert - Test that reactors comment is generated when detailed comments are enabled
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         // Create a group and add the entity to it, which will add a reactor
         var group = new Group("TestGroup");
         group.Entities.Add(line);
         doc.Groups.Add(group);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateDetailedComments = true,
@@ -193,7 +193,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - ByLayer color should not generate Color property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -216,7 +216,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - ByLayer lineweight should not generate Lineweight property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -239,7 +239,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - Default linetype scale should not generate LinetypeScale property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -262,7 +262,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - Default transparency should not generate Transparency property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -285,7 +285,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - Default visibility should not generate IsVisible property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -308,7 +308,7 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         // Act & Assert - Default normal should not generate Normal property assignment
         var doc = new DxfDocument();
         doc.Entities.Add(line);
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -333,11 +333,11 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         {
             AssertVector3Equal(original.Normal, recreated.Normal);
         });
-        
+
         // Also verify code generation includes Normal property
         var doc = new DxfDocument();
         doc.Entities.Add((Line)line.Clone());
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -364,11 +364,11 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
         {
             Assert.Equal(original.IsVisible, recreated.IsVisible);
         });
-        
+
         // Also verify code generation includes IsVisible property
         var doc = new DxfDocument();
         doc.Entities.Add((Line)line.Clone());
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,
@@ -388,26 +388,26 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
             Color = new AciColor(1), // Red
             Thickness = 2.0
         };
-        
+
         var line2 = new Line(Vector3.Zero, Vector3.UnitY)
         {
             Color = AciColor.FromTrueColor(System.Drawing.Color.Blue.ToArgb()),
             LinetypeScale = 0.5
         };
-        
+
         var circle = new Circle(Vector3.Zero, 10)
         {
             Transparency = new Transparency(64),
             IsVisible = false
         };
-        
+
         // Act & Assert - Test each entity individually with round-trip testing
         PerformRoundTripTest(line1, (original, recreated) =>
         {
             Assert.Equal(original.Color.Index, recreated.Color.Index);
             AssertDoubleEqual(original.Thickness, recreated.Thickness);
         });
-        
+
         PerformRoundTripTest(line2, (original, recreated) =>
         {
             Assert.True(original.Color.UseTrueColor);
@@ -417,19 +417,19 @@ public class EntityPropertyTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Color.B, recreated.Color.B);
             AssertDoubleEqual(original.LinetypeScale, recreated.LinetypeScale);
         });
-        
+
         PerformRoundTripTest(circle, (original, recreated) =>
         {
             Assert.Equal(original.Transparency.Value, recreated.Transparency.Value);
             Assert.Equal(original.IsVisible, recreated.IsVisible);
         });
-        
+
         // Also verify code generation includes all expected properties
         var doc = new DxfDocument();
         doc.Entities.Add((Line)line1.Clone());
         doc.Entities.Add((Line)line2.Clone());
         doc.Entities.Add((Circle)circle.Clone());
-        
+
         var options = new DxfCodeGenerationOptions
         {
             GenerateLineEntities = true,

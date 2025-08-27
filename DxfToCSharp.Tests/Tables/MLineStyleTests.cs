@@ -1,8 +1,8 @@
+using DxfToCSharp.Core;
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
-using DxfToCSharp.Core;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -23,14 +23,14 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an MLine that uses this style
         var originalDoc = new DxfDocument();
         originalDoc.MlineStyles.Add(originalMLineStyle);
-        
+
         var vertices = new List<Vector2>
         {
             new Vector2(0, 0),
             new Vector2(100, 0),
             new Vector2(100, 100)
         };
-        
+
         var mline = new MLine(vertices)
         {
             Style = originalMLineStyle
@@ -57,7 +57,7 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
             new MLineStyleElement(0.5) { Color = AciColor.Red },
             new MLineStyleElement(-0.5) { Color = AciColor.Blue }
         };
-        
+
         var originalMLineStyle = new MLineStyle("TestMLineStyleWithElements", elements)
         {
             Description = "Test multiline style with elements"
@@ -66,13 +66,13 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an MLine that uses this style
         var originalDoc = new DxfDocument();
         originalDoc.MlineStyles.Add(originalMLineStyle);
-        
+
         var vertices = new List<Vector2>
         {
             new Vector2(0, 0),
             new Vector2(100, 0)
         };
-        
+
         var mline = new MLine(vertices)
         {
             Style = originalMLineStyle
@@ -85,7 +85,7 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Name, recreated.Name);
             Assert.Equal(original.Description, recreated.Description);
             Assert.Equal(original.Elements.Count, recreated.Elements.Count);
-            
+
             for (var i = 0; i < original.Elements.Count; i++)
             {
                 Assert.Equal(original.Elements[i].Offset, recreated.Elements[i].Offset, 6);
@@ -106,13 +106,13 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         // Create a document with an MLine that uses this style
         var originalDoc = new DxfDocument();
         originalDoc.MlineStyles.Add(originalMLineStyle);
-        
+
         var vertices = new List<Vector2>
         {
             new Vector2(0, 0),
             new Vector2(50, 50)
         };
-        
+
         var mline = new MLine(vertices)
         {
             Style = originalMLineStyle
@@ -134,7 +134,7 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         var mlineStyle1 = new MLineStyle("Style1") { Description = "First style" };
         var mlineStyle2 = new MLineStyle("Style2") { Description = "Second style" };
         var mlineStyle3 = new MLineStyle("Style3") { Description = "Third style" };
-        
+
         var originalMLineStyles = new[] { mlineStyle1, mlineStyle2, mlineStyle3 };
 
         // Act & Assert
@@ -179,7 +179,7 @@ public class MLineStyleTests : RoundTripTestBase, IDisposable
         foreach (var style in originalObjects)
         {
             originalDoc.MlineStyles.Add(style);
-            
+
             // Create an MLine entity that uses this style
             var vertices = new List<Vector2>
             {

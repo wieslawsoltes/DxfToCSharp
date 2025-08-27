@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -56,7 +56,7 @@ public class LinearDimensionEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(3), // Green
             Lineweight = Lineweight.W15
         };
-        
+
         var originalDimension = new LinearDimension(
             new Vector2(10, 10),
             new Vector2(60, 10),

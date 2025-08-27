@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -43,7 +43,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(7), // White
             Lineweight = Lineweight.Default
         };
-        
+
         var boundaryVertices = new List<Vector2>
         {
             new Vector2(10, 10),
@@ -51,7 +51,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
             new Vector2(50, 50),
             new Vector2(10, 50)
         };
-        
+
         var originalWipeout = new Wipeout(boundaryVertices)
         {
             Layer = customLayer
@@ -114,7 +114,7 @@ public class WipeoutEntityTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.ClippingBoundary.Vertexes.Count, recreated.ClippingBoundary.Vertexes.Count);
             for (var i = 0; i < original.ClippingBoundary.Vertexes.Count; i++)
             {
-            var originalVertex = original.ClippingBoundary.Vertexes[i];
+                var originalVertex = original.ClippingBoundary.Vertexes[i];
                 var recreatedVertex = recreated.ClippingBoundary.Vertexes[i];
                 AssertDoubleEqual(originalVertex.X, recreatedVertex.X);
                 AssertDoubleEqual(originalVertex.Y, recreatedVertex.Y);

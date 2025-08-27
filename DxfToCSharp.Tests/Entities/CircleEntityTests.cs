@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -120,7 +120,7 @@ public class CircleEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(6), // Magenta
             Lineweight = Lineweight.Default
         };
-        
+
         var originalCircle = new Circle(
             new Vector3(50, 50, 0),
             25.0)

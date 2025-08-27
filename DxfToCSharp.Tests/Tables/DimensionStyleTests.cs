@@ -1,8 +1,8 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
 using netDxf.Units;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -28,12 +28,12 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         // Create a document with a dimension that uses this style
         var originalDoc = new DxfDocument();
         originalDoc.DimensionStyles.Add(originalDimStyle);
-        
+
         var line1 = new Line(new Vector2(0, 0), new Vector2(100, 0));
         var line2 = new Line(new Vector2(0, 50), new Vector2(100, 50));
         originalDoc.Entities.Add(line1);
         originalDoc.Entities.Add(line2);
-        
+
         var dimension = new LinearDimension(line1, 25, 0.0)
         {
             Style = originalDimStyle
@@ -66,7 +66,7 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
             Height = 0.15,
             WidthFactor = 0.8
         };
-        
+
         var originalDimStyle = new DimensionStyle("TextDimStyle")
         {
             TextStyle = customTextStyle,
@@ -82,10 +82,10 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         originalDoc.TextStyles.Add(customTextStyle);
         originalDoc.DimensionStyles.Add(originalDimStyle);
-        
+
         var circle = new Circle(new Vector3(50, 50, 0), 25);
         originalDoc.Entities.Add(circle);
-        
+
         var radialDim = new RadialDimension(circle, 0.0)
         {
             Style = originalDimStyle
@@ -130,10 +130,10 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         // Create a document with a dimension that uses this style
         var originalDoc = new DxfDocument();
         originalDoc.DimensionStyles.Add(originalDimStyle);
-        
+
         var arc = new Arc(new Vector3(0, 0, 0), 30, 0, Math.PI / 2);
         originalDoc.Entities.Add(arc);
-        
+
         var angularDim = new Angular2LineDimension(Vector2.Zero, Vector2.UnitX * 40, Vector2.Zero, Vector2.UnitY * 40, 35)
         {
             Style = originalDimStyle
@@ -165,7 +165,7 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var dashedLinetype = Linetype.Dashed;
-        
+
         var originalDimStyle = new DimensionStyle("LineStyle")
         {
             DimLineLinetype = dashedLinetype,
@@ -185,10 +185,10 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         var originalDoc = new DxfDocument();
         originalDoc.Linetypes.Add(dashedLinetype);
         originalDoc.DimensionStyles.Add(originalDimStyle);
-        
+
         var diameter = new Circle(new Vector3(0, 0, 0), 40);
         originalDoc.Entities.Add(diameter);
-        
+
         var diametricDim = new DiametricDimension(new Vector2(0, 0), new Vector2(60, 0))
         {
             Style = originalDimStyle
@@ -223,10 +223,10 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         // Create a document with a dimension that uses the default style
         var originalDoc = new DxfDocument();
         // Default style is already in the document
-        
+
         var line = new Line(new Vector2(0, 0), new Vector2(50, 0));
         originalDoc.Entities.Add(line);
-        
+
         var dimension = new LinearDimension(line, 10.0, 0.0)
         {
             Style = originalDimStyle
@@ -256,10 +256,10 @@ public class DimensionStyleTests : RoundTripTestBase, IDisposable
         // Create a document with a dimension that uses the ISO-25 style
         var originalDoc = new DxfDocument();
         originalDoc.DimensionStyles.Add(originalDimStyle);
-        
+
         var line = new Line(new Vector2(0, 0), new Vector2(100, 0));
         originalDoc.Entities.Add(line);
-        
+
         var dimension = new LinearDimension(line, 15.0, 0.0)
         {
             Style = originalDimStyle

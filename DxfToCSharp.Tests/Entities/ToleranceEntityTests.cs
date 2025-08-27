@@ -1,6 +1,6 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -11,7 +11,7 @@ public class ToleranceEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var toleranceEntry = new ToleranceEntry();
-        var originalTolerance = new Tolerance(toleranceEntry, 
+        var originalTolerance = new Tolerance(toleranceEntry,
             new Vector3(25, 30, 0));
         originalTolerance.TextHeight = 2.5;
         originalTolerance.Rotation = 30.0;
@@ -32,7 +32,7 @@ public class ToleranceEntityTests : RoundTripTestBase, IDisposable
     {
         // Arrange
         var toleranceEntry = new ToleranceEntry();
-        var originalTolerance = new Tolerance(toleranceEntry, 
+        var originalTolerance = new Tolerance(toleranceEntry,
             new Vector3(-10, -15, 5));
         originalTolerance.TextHeight = 5.0;
         originalTolerance.Rotation = 180.0;

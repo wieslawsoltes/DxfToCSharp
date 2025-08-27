@@ -1,7 +1,7 @@
+using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
-using DxfToCSharp.Tests.Infrastructure;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -63,14 +63,14 @@ public class MLineEntityTests : RoundTripTestBase, IDisposable
             Color = new AciColor(4), // Cyan
             Lineweight = Lineweight.W50
         };
-        
+
         var vertices = new List<Vector2>
         {
             new Vector2(10, 10),
             new Vector2(30, 20),
             new Vector2(50, 30)
         };
-        
+
         var originalMLine = new MLine(vertices)
         {
             Layer = customLayer
@@ -94,7 +94,7 @@ public class MLineEntityTests : RoundTripTestBase, IDisposable
             new Vector2(25, 12.5),
             new Vector2(50, 25)
         };
-        
+
         var originalMLine = new MLine(vertices)
         {
             Color = new AciColor(5) // Blue
