@@ -59,80 +59,11 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         
-    - name: Restore dependencies
-      run: dotnet restore ${{ env.SOLUTION_PATH }}
-      
-    - name: Publish macOS App
-      run: |
-        dotnet publish ${{ env.APP_PROJECT_PATH }} \
-          --configuration Release \
-          --runtime osx-x64 \
-          --self-contained true \
-          --output ./publish/macos-x64 \
-          -p:PublishSingleFile=true
-          
-    - name: Create macOS App Bundle
-      run: |
-        mkdir -p ./publish/DxfToCSharp.app/Contents/MacOS
-        mkdir -p ./publish/DxfToCSharp.app/Contents/Resources
+    - name: Make build script executable
+      run: chmod +x ./scripts/build-macos.sh
         
-        # Copy executable and set permissions
-        cp ./publish/macos-x64/DxfToCSharp ./publish/DxfToCSharp.app/Contents/MacOS/
-        chmod +x ./publish/DxfToCSharp.app/Contents/MacOS/DxfToCSharp
-        
-        # Create Info.plist
-        cat > ./publish/DxfToCSharp.app/Contents/Info.plist << EOF
-        <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-        <plist version="1.0">
-        <dict>
-            <key>CFBundleExecutable</key>
-            <string>DxfToCSharp</string>
-            <key>CFBundleIdentifier</key>
-            <string>com.wieslawsoltes.dxftocsharp</string>
-            <key>CFBundleName</key>
-            <string>DxfToCSharp</string>
-            <key>CFBundleVersion</key>
-            <string>1.0.0</string>
-            <key>CFBundleShortVersionString</key>
-            <string>1.0.0</string>
-            <key>CFBundlePackageType</key>
-            <string>APPL</string>
-            <key>LSMinimumSystemVersion</key>
-            <string>10.15</string>
-            <key>NSHighResolutionCapable</key>
-            <true/>
-        </dict>
-        </plist>
-        EOF
-        
-    - name: Create macOS ZIP Package
-      run: |
-        # Create installation instructions
-        cat > ./publish/INSTALL_MACOS.txt << EOF
-        DxfToCSharp for macOS - Installation Instructions
-        ===============================================
-        
-        This is an unsigned macOS application. To install and run:
-        
-        1. Extract the ZIP file
-        2. Move DxfToCSharp.app to your Applications folder (optional)
-        3. Right-click on DxfToCSharp.app and select "Open"
-        4. Click "Open" when macOS warns about the unsigned app
-        
-        Alternative method if the above doesn't work:
-        1. Open Terminal
-        2. Run: sudo xattr -rd com.apple.quarantine /path/to/DxfToCSharp.app
-        3. Double-click the app to run
-        
-        Note: You only need to do this once. After the first run, 
-        you can launch the app normally.
-        EOF
-        
-        # Create ZIP package
-        cd ./publish
-        zip -r DxfToCSharp-macOS.zip DxfToCSharp.app INSTALL_MACOS.txt
-        cd ..
+    - name: Build macOS App
+      run: ./scripts/build-macos.sh
           
     - name: Upload macOS Artifacts
       uses: actions/upload-artifact@v4
@@ -157,36 +88,11 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         
-    - name: Restore dependencies
-      run: dotnet restore ${{ env.SOLUTION_PATH }}
-      
-    - name: Publish Windows x64 App
-      run: |
-        dotnet publish ${{ env.APP_PROJECT_PATH }} `
-          --configuration Release `
-          --runtime win-x64 `
-          --self-contained true `
-          --output ./publish/windows-x64 `
-          -p:PublishSingleFile=true
+    - name: Build Windows x64 App
+      run: ./scripts/build-windows-x64.ps1
           
-    - name: Publish Windows x86 App
-      run: |
-        dotnet publish ${{ env.APP_PROJECT_PATH }} `
-          --configuration Release `
-          --runtime win-x86 `
-          --self-contained true `
-          --output ./publish/windows-x86 `
-          -p:PublishSingleFile=true
-          
-    - name: Create Windows Installer (x64)
-      run: |
-        # Create a simple zip package for now
-        Compress-Archive -Path ./publish/windows-x64/* -DestinationPath ./publish/DxfToCSharp-Windows-x64.zip
-        
-    - name: Create Windows Installer (x86)
-      run: |
-        # Create a simple zip package for now
-        Compress-Archive -Path ./publish/windows-x86/* -DestinationPath ./publish/DxfToCSharp-Windows-x86.zip
+    - name: Build Windows x86 App
+      run: ./scripts/build-windows-x86.ps1
         
     - name: Upload Windows Artifacts
       uses: actions/upload-artifact@v4
