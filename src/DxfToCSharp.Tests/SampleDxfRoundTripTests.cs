@@ -20,8 +20,8 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
     {
         // Use relative paths from the project root
         var projectRoot = GetProjectRoot();
-        _sampleDxfPath = Path.Combine(projectRoot, "netDxf", "TestDxfDocument", "sample.dxf");
-        _sampleBinaryDxfPath = Path.Combine(projectRoot, "netDxf", "TestDxfDocument", "sample binary.dxf");
+        _sampleDxfPath = Path.Combine(projectRoot, "external", "netDxf", "TestDxfDocument", "sample.dxf");
+        _sampleBinaryDxfPath = Path.Combine(projectRoot, "external", "netDxf", "TestDxfDocument", "sample binary.dxf");
     }
 
     private static string GetProjectRoot()
