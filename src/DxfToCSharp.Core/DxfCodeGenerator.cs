@@ -428,7 +428,7 @@ public class DxfCodeGenerator
             {
                 sb.AppendLine($"{baseIndent}// Header variables (drawing variables)");
             }
-            sb.Append(tempSb.ToString());
+            sb.Append(tempSb);
             sb.AppendLine();
         }
     }
@@ -891,7 +891,7 @@ public class DxfCodeGenerator
                     sb.AppendLine($"{baseIndent}// VPort (Viewport) configuration");
                 }
                 sb.AppendLine($"{baseIndent}var activeViewport = doc.Viewport;");
-                sb.Append(viewportCode.ToString());
+                sb.Append(viewportCode);
                 sb.AppendLine();
             }
         }
