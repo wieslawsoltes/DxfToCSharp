@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net9.0</TargetFrameworks>
+    <TargetFramework>net9.0</TargetFramework>
     <PackageId>DxfToCSharp.Compilation</PackageId>
     <Description>Shared compilation service for DxfToCSharp projects</Description>
     <PackageTags>dxf;cad;code-generation;netdxf;csharp;compilation</PackageTags>
