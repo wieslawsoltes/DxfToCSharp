@@ -103,10 +103,9 @@ jobs:
           ./publish/DxfToCSharp-Windows-x86.zip
 
   build-nuget:
-    name: Build and Publish NuGet Packages
+    name: Build NuGet Packages
     runs-on: ubuntu-latest
     needs: test
-    if: github.event_name == 'release'
     steps:
     - uses: actions/checkout@v4
       with:
@@ -177,9 +176,26 @@ jobs:
       with:
         name: Symbol-Packages
         path: ./packages/*.snupkg
+
+  publish-nuget:
+    name: Publish NuGet Packages
+    runs-on: ubuntu-latest
+    needs: build-nuget
+    if: github.event_name == 'release'
+    steps:
+    - name: Download NuGet Packages
+      uses: actions/download-artifact@v4
+      with:
+        name: NuGet-Packages
+        path: ./packages
+        
+    - name: Download Symbol Packages
+      uses: actions/download-artifact@v4
+      with:
+        name: Symbol-Packages
+        path: ./packages
         
     - name: Publish packages to NuGet.org
-      if: github.event_name == 'release'
       run: |
         # Push main packages first
         dotnet nuget push ./packages/*.nupkg \
@@ -188,7 +204,6 @@ jobs:
           --skip-duplicate
           
     - name: Publish symbols to NuGet.org
-      if: github.event_name == 'release'
       run: |
         # Push symbol packages separately
         for file in ./packages/*.snupkg; do
@@ -204,7 +219,7 @@ jobs:
   release:
     name: Create Release Assets
     runs-on: ubuntu-latest
-    needs: [build-macos, build-windows, build-nuget]
+    needs: [build-macos, build-windows, publish-nuget]
     if: github.event_name == 'release'
     steps:
     - name: Download macOS Artifacts
