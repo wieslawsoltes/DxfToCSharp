@@ -290,3 +290,4 @@ tools/**
 # macOS
 .DS_Store
 /_site
+/api
