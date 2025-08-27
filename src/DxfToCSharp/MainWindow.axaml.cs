@@ -1,4 +1,5 @@
 using System.Text;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
@@ -11,9 +12,6 @@ using DxfToCSharp.Core;
 using DxfToCSharp.Services;
 using netDxf;
 using TextMateSharp.Grammars;
-#if DEBUG
-using Avalonia.Diagnostics;
-#endif
 
 namespace DxfToCSharp;
 
@@ -43,7 +41,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 #if DEBUG
-        AttachDevTools(); // Commented out to avoid compilation issues
+        this.AttachDevTools(); // Commented out to avoid compilation issues
 #endif
         _leftTextBox = this.FindControl<TextEditor>("LeftTextBox");
         _rightTextBox = this.FindControl<TextEditor>("RightTextBox");
