@@ -184,9 +184,17 @@ public class CompilationService
             TryAddReference(Assembly.Load("System.Runtime"));
             TryAddReference(Assembly.Load("System.Collections"));
         }
-        catch
+        catch (FileNotFoundException)
         {
-            // Ignore if not available
+            // Ignore if assembly not available
+        }
+        catch (FileLoadException)
+        {
+            // Ignore if assembly cannot be loaded
+        }
+        catch (BadImageFormatException)
+        {
+            // Ignore if assembly format is invalid
         }
 
         // Add System.Drawing.Primitives reference for Color type
@@ -194,7 +202,7 @@ public class CompilationService
         {
             TryAddReference(Assembly.Load("System.Drawing.Primitives"));
         }
-        catch
+        catch (FileNotFoundException)
         {
             // Try alternative approach for System.Drawing.Primitives
             try
@@ -206,10 +214,22 @@ public class CompilationService
                     TryAddReference(drawingAssembly);
                 }
             }
-            catch
+            catch (FileNotFoundException)
             {
                 // Ignore if System.Drawing.Primitives is not available
             }
+            catch (FileLoadException)
+            {
+                // Ignore if System.Drawing.Primitives cannot be loaded
+            }
+        }
+        catch (FileLoadException)
+        {
+            // Ignore if System.Drawing.Primitives cannot be loaded
+        }
+        catch (BadImageFormatException)
+        {
+            // Ignore if System.Drawing.Primitives format is invalid
         }
 
         // Add reference to netstandard if available
@@ -217,9 +237,17 @@ public class CompilationService
         {
             TryAddReference(Assembly.Load("netstandard"));
         }
-        catch
+        catch (FileNotFoundException)
         {
             // Ignore if netstandard is not available
+        }
+        catch (FileLoadException)
+        {
+            // Ignore if netstandard cannot be loaded
+        }
+        catch (BadImageFormatException)
+        {
+            // Ignore if netstandard format is invalid
         }
 
         // Add entry assembly if available (for Avalonia app)
@@ -231,9 +259,17 @@ public class CompilationService
                 TryAddReference(appAsm);
             }
         }
-        catch
+        catch (FileNotFoundException)
         {
-            // Ignore if not available
+            // Ignore if entry assembly not available
+        }
+        catch (FileLoadException)
+        {
+            // Ignore if entry assembly cannot be loaded
+        }
+        catch (BadImageFormatException)
+        {
+            // Ignore if entry assembly format is invalid
         }
 
         // Add any other relevant loaded assemblies
@@ -255,9 +291,17 @@ public class CompilationService
                     }
                 }
             }
-            catch
+            catch (NotSupportedException)
             {
                 // Some dynamic assemblies don't have a location
+            }
+            catch (FileNotFoundException)
+            {
+                // Assembly file not found
+            }
+            catch (InvalidOperationException)
+            {
+                // Assembly operation not supported
             }
         }
 

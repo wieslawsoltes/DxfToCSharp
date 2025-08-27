@@ -204,10 +204,15 @@ public class Polyline3DEntityTests : RoundTripTestBase, IDisposable
                 Directory.Delete(_tempDirectory, true);
             }
         }
-        catch
+        catch (IOException)
         {
-            // Ignore cleanup errors
+            // Ignore cleanup errors - directory may be in use
         }
+        catch (UnauthorizedAccessException)
+        {
+            // Ignore cleanup errors - insufficient permissions
+        }
+
         base.Dispose();
     }
 }

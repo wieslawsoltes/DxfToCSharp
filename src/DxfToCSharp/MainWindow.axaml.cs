@@ -171,7 +171,14 @@ public partial class MainWindow : Window
                                 _rightTextBox.SyntaxHighlighting = null;
                             }
                         }
-                        catch { /* Ignore cleanup errors */ }
+                        catch (InvalidOperationException)
+                        {
+                            // Ignore cleanup errors - UI element may be disposed
+                        }
+                        catch (NullReferenceException)
+                        {
+                            // Ignore cleanup errors - UI element may be null
+                        }
                     }
                 });
             }

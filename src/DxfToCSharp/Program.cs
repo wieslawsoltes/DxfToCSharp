@@ -43,9 +43,17 @@ class Program
             var logEntry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] CRASH: {ex}\n\n";
             File.AppendAllText(logPath, logEntry);
         }
-        catch
+        catch (IOException)
         {
-            // Ignore logging errors to prevent recursive crashes
+            // Ignore logging errors to prevent recursive crashes - file may be in use
+        }
+        catch (UnauthorizedAccessException)
+        {
+            // Ignore logging errors to prevent recursive crashes - insufficient permissions
+        }
+        catch (DirectoryNotFoundException)
+        {
+            // Ignore logging errors to prevent recursive crashes - directory not found
         }
     }
 
