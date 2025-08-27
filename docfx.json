@@ -76,6 +76,7 @@
     "globalMetadata": {
       "_appTitle": "DxfToCSharp API Documentation",
       "_appName": "DxfToCSharp",
+      "_appLogoUrl": "https://wieslawsoltes.github.io/DxfToCSharp/",
       "_appFooter": "DxfToCSharp - Convert DXF files to C# code",
       "_enableSearch": true,
       "_enableNewTab": true,
