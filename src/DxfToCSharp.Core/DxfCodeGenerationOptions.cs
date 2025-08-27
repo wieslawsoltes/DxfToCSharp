@@ -76,6 +76,11 @@ public record DxfCodeGenerationOptions
     public bool GenerateVPorts { get; init; } = true;
 
     /// <summary>
+    /// Whether to generate View definitions
+    /// </summary>
+    public bool GenerateViews { get; init; } = true;
+
+    /// <summary>
     /// Whether to generate Group objects
     /// </summary>
     public bool GenerateGroupObjects { get; init; } = true;
