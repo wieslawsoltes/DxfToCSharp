@@ -16,10 +16,10 @@ permissions:
 env:
   DOTNET_VERSION: '9.0.x'
   SOLUTION_PATH: './DxfToCSharp.sln'
-  APP_PROJECT_PATH: './DxfToCSharp/DxfToCSharp.csproj'
-  CORE_PROJECT_PATH: './DxfToCSharp.Core/DxfToCSharp.Core.csproj'
-  TOOL_PROJECT_PATH: './DxfToCSharp.Tool/DxfToCSharp.Tool.csproj'
-  COMPILATION_PROJECT_PATH: './DxfToCSharp.Compilation/DxfToCSharp.Compilation.csproj'
+  APP_PROJECT_PATH: './src/DxfToCSharp/DxfToCSharp.csproj'
+  CORE_PROJECT_PATH: './src/DxfToCSharp.Core/DxfToCSharp.Core.csproj'
+  TOOL_PROJECT_PATH: './src/DxfToCSharp.Tool/DxfToCSharp.Tool.csproj'
+  COMPILATION_PROJECT_PATH: './src/DxfToCSharp.Compilation/DxfToCSharp.Compilation.csproj'
 
 jobs:
   test:

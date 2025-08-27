@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "DxfToCSharp.Core/*.csproj"
+            "src/DxfToCSharp.Core/*.csproj"
           ],
           "exclude": [
             "**/bin/**",

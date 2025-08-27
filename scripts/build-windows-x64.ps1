@@ -2,7 +2,7 @@
 Write-Host "Building DxfToCSharp for Windows x64..."
 
 # Configuration
-$PROJECT_PATH = "DxfToCSharp/DxfToCSharp.csproj"
+$PROJECT_PATH = "src/DxfToCSharp/DxfToCSharp.csproj"
 $OUTPUT_DIR = "./publish/windows-x64"
 $APP_NAME = "DxfToCSharp"
 $ZIP_NAME = "./publish/DxfToCSharp-Windows-x64.zip"

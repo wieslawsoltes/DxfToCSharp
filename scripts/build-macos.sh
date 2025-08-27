@@ -5,7 +5,7 @@ set -e
 echo "Building DxfToCSharp for macOS..."
 
 # Configuration
-PROJECT_PATH="DxfToCSharp/DxfToCSharp.csproj"
+PROJECT_PATH="src/DxfToCSharp/DxfToCSharp.csproj"
 OUTPUT_DIR="./publish/macos-x64"
 APP_NAME="DxfToCSharp"
 APP_BUNDLE="${APP_NAME}.app"
