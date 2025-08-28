@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="netDxf.netstandard" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
   </ItemGroup>
 
 </Project>

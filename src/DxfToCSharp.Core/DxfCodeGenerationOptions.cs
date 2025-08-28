@@ -6,11 +6,6 @@ namespace DxfToCSharp.Core;
 public record DxfCodeGenerationOptions
 {
     /// <summary>
-    /// Whether to post-process the generated code using Roslyn NormalizeWhitespace for consistent formatting
-    /// </summary>
-    public bool FormatWithRoslyn { get; init; } = true;
-
-    /// <summary>
     /// Custom class name for the generated code (null for default)
     /// </summary>
     public string? CustomClassName { get; init; }
