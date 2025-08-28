@@ -462,7 +462,8 @@ public class DxfCodeGenerator
             {
                 foreach (var l in vp.FrozenLayers)
                 {
-                    if (l != null) _usedLayers.Add(l.Name);
+                    if (l != null)
+                        _usedLayers.Add(l.Name);
                 }
             }
             if (options.GenerateLinetypes && entity.Linetype != null)
