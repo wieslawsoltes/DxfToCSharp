@@ -81,6 +81,29 @@ public class UnderlayEntityTests : RoundTripTestBase, IDisposable
         });
     }
 
+    [Fact]
+    public void Underlay_WithClippingBoundary_ShouldRoundTrip()
+    {
+        // Arrange
+        var def = new UnderlayPdfDefinition("doc.pdf");
+        var original = new Underlay(def, new Vector3(1, 2, 0), 1.0)
+        {
+            Rotation = 10.0,
+            Contrast = 60,
+            Fade = 20
+        };
+        // Rectangular boundary
+        original.ClippingBoundary = new ClippingBoundary(new Vector2(0, 0), new Vector2(5, 5));
+
+        // Act & Assert
+        PerformRoundTripTest(original, (o, r) =>
+        {
+            Assert.NotNull(r.ClippingBoundary);
+            Assert.Equal(ClippingBoundaryType.Rectangular, r.ClippingBoundary.Type);
+            Assert.Equal(2, r.ClippingBoundary.Vertexes.Count);
+        });
+    }
+
     public override void Dispose()
     {
         // Cleanup if needed
