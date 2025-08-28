@@ -224,22 +224,7 @@ public abstract class RoundTripTestBase
         string formatted;
         try
         {
-            using var workspace = new AdhocWorkspace();
-            var opt = workspace.Options
-                .WithChangedOption(FormattingOptions.UseTabs, LanguageNames.CSharp, false)
-                .WithChangedOption(FormattingOptions.IndentationSize, LanguageNames.CSharp, 4)
-                .WithChangedOption(FormattingOptions.TabSize, LanguageNames.CSharp, 4)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInTypes, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInMethods, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInProperties, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAccessors, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousMethods, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInControlBlocks, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousTypes, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInObjectCollectionArrayInitializers, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInObjectInit, true)
-                .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInAnonymousTypes, true);
-            formatted = Formatter.Format(root, workspace, opt).ToFullString();
+            formatted = DxfCodeGenerator.Format(root).ToFullString();
         }
         catch
         {

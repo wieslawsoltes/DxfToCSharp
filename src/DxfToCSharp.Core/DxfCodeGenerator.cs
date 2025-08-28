@@ -20,42 +20,6 @@ namespace DxfToCSharp.Core;
 [SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
 public class DxfCodeGenerator
 {
-    private static string F(double v)
-    {
-        // Always emit a representation that is unequivocally a double literal.
-        // This avoids cases where values like 0 are rendered as "0" (an int literal),
-        // which can cause runtime type mismatches when boxed into object (e.g., XData double requirements).
-        var s = v.ToString("G17", CultureInfo.InvariantCulture);
-        if (!s.Contains(".") && !s.Contains("e") && !s.Contains("E"))
-        {
-            s += ".0";
-        }
-        return s;
-    }
-
-    private string GenerateEnumFlags<T>(T enumValue) where T : Enum
-    {
-        var enumType = typeof(T);
-        var enumName = enumType.Name;
-        var value = Convert.ToInt32(enumValue);
-
-        if (value == 0)
-        {
-            return $"{enumName}.None";
-        }
-
-        var flags = new List<string>();
-        foreach (var enumVal in Enum.GetValues(enumType))
-        {
-            var intVal = Convert.ToInt32(enumVal);
-            if (intVal != 0 && (value & intVal) == intVal)
-            {
-                flags.Add($"{enumName}.{enumVal}");
-            }
-        }
-
-        return flags.Count > 0 ? string.Join(" | ", flags) : $"{enumName}.None";
-    }
     private readonly HashSet<string> _usedLayers = new();
     private readonly HashSet<string> _usedLinetypes = new();
     private readonly HashSet<string> _usedTextStyles = new();
@@ -147,47 +111,53 @@ public class DxfCodeGenerator
 
         var code = sb.ToString();
 
-        if (options.FormatWithRoslyn)
+        if (!options.FormatWithRoslyn)
         {
-            try
-            {
-                var tree = CSharpSyntaxTree.ParseText(code);
-                var root = tree.GetRoot();
+            return code;
+        }
 
-                // root = root.NormalizeWhitespace();
-                // return root.ToFullString();
+        try
+        {
+            var tree = CSharpSyntaxTree.ParseText(code);
+            var root = tree.GetRoot();
 
-                root = new EmptyInitializerRemover().Visit(root);
-                root = new SemicolonJoiner().Visit(root);
+            root = root.NormalizeWhitespace();
 
-                using var workspace = new AdhocWorkspace();
-                var opt = workspace.Options
-                    .WithChangedOption(FormattingOptions.UseTabs, LanguageNames.CSharp, false)
-                    .WithChangedOption(FormattingOptions.IndentationSize, LanguageNames.CSharp, 4)
-                    .WithChangedOption(FormattingOptions.TabSize, LanguageNames.CSharp, 4)
-                    .WithChangedOption(CSharpFormattingOptions.IndentBlock, true)
-                    .WithChangedOption(CSharpFormattingOptions.WrappingPreserveSingleLine, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInTypes, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInMethods, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInProperties, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAccessors, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousMethods, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInControlBlocks, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousTypes, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInObjectCollectionArrayInitializers, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInObjectInit, true)
-                    .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInAnonymousTypes, true);
+            root = new EmptyInitializerRemover().Visit(root);
+            root = new SemicolonJoiner().Visit(root);
 
-                var formatted = Formatter.Format(root, workspace, opt);
-                code = formatted.ToFullString();
-            }
-            catch
-            {
-                // If Roslyn formatting fails for any reason, fall back to unformatted code
-            }
+            code = Format(root).ToFullString();
+        }
+        catch
+        {
+            // If Roslyn formatting fails for any reason, fall back to unformatted code
         }
 
         return code;
+    }
+
+    public static SyntaxNode Format(SyntaxNode root)
+    {
+        using var workspace = new AdhocWorkspace();
+        var opt = workspace.Options
+            .WithChangedOption(FormattingOptions.UseTabs, LanguageNames.CSharp, false)
+            .WithChangedOption(FormattingOptions.IndentationSize, LanguageNames.CSharp, 4)
+            .WithChangedOption(FormattingOptions.TabSize, LanguageNames.CSharp, 4)
+            .WithChangedOption(CSharpFormattingOptions.IndentBlock, true)
+            .WithChangedOption(CSharpFormattingOptions.WrappingPreserveSingleLine, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInTypes, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInMethods, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInProperties, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAccessors, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousMethods, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInControlBlocks, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInAnonymousTypes, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLinesForBracesInObjectCollectionArrayInitializers, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInObjectInit, true)
+            .WithChangedOption(CSharpFormattingOptions.NewLineForMembersInAnonymousTypes, true);
+
+        var formatted = Formatter.Format(root, workspace, opt);
+        return formatted;
     }
 
     private sealed class EmptyInitializerRemover : CSharpSyntaxRewriter
@@ -239,8 +209,42 @@ public class DxfCodeGenerator
         }
     }
 
-    // No ArgumentListExpander; formatter lacks robust argument wrapping controls,
-    // so constructor calls are emitted multi-line directly by the generator methods.
+    private static string F(double v)
+    {
+        // Always emit a representation that is unequivocally a double literal.
+        // This avoids cases where values like 0 are rendered as "0" (an int literal),
+        // which can cause runtime type mismatches when boxed into object (e.g., XData double requirements).
+        var s = v.ToString("G17", CultureInfo.InvariantCulture);
+        if (!s.Contains(".") && !s.Contains("e") && !s.Contains("E"))
+        {
+            s += ".0";
+        }
+        return s;
+    }
+
+    private string GenerateEnumFlags<T>(T enumValue) where T : Enum
+    {
+        var enumType = typeof(T);
+        var enumName = enumType.Name;
+        var value = Convert.ToInt32(enumValue);
+
+        if (value == 0)
+        {
+            return $"{enumName}.None";
+        }
+
+        var flags = new List<string>();
+        foreach (var enumVal in Enum.GetValues(enumType))
+        {
+            var intVal = Convert.ToInt32(enumVal);
+            if (intVal != 0 && (value & intVal) == intVal)
+            {
+                flags.Add($"{enumName}.{enumVal}");
+            }
+        }
+
+        return flags.Count > 0 ? string.Join(" | ", flags) : $"{enumName}.None";
+    }
 
     private void GenerateHeader(StringBuilder sb, string? sourcePath, DxfCodeGenerationOptions options)
     {
