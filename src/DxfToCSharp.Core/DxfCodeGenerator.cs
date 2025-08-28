@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using netDxf;
@@ -12,7 +11,6 @@ using PointEntity = netDxf.Entities.Point;
 
 namespace DxfToCSharp.Core;
 
-[SuppressMessage("ReSharper", "CompareOfFloatsByEqualityOperator")]
 public class DxfCodeGenerator
 {
     private static string F(double v)
