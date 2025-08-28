@@ -158,7 +158,6 @@ public class DxfCodeGenerator
             }
             sb.AppendLine($"/// Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
             sb.AppendLine("/// </auto-generated>");
-            sb.AppendLine();
         }
 
         if (options.GenerateUsingStatements)
@@ -1020,7 +1019,7 @@ public class DxfCodeGenerator
     {
         if (options.GenerateDetailedComments)
         {
-            sb.AppendLine($"        // {entity.GetType().Name}: {entity.Handle}");
+            sb.AppendLine($"{baseIndent}// {entity.GetType().Name}: {entity.Handle}");
         }
 
         // Check if this entity needs to be generated as a variable
@@ -1140,7 +1139,7 @@ public class DxfCodeGenerator
             default:
                 if (options.GenerateDetailedComments)
                 {
-                    sb.AppendLine($"        // Skipped entity type: {entity.GetType().Name}");
+                    sb.AppendLine($"{baseIndent}// Skipped entity type: {entity.GetType().Name}");
                 }
                 break;
         }
