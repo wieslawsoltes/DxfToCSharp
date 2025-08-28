@@ -2,6 +2,7 @@ using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Objects;
+using netDxf.Tables;
 
 namespace DxfToCSharp.Tests.Objects;
 
@@ -107,6 +108,74 @@ public class GroupTests : RoundTripTestBase, IDisposable
             Assert.Equal(original.Description, loaded.Description);
             Assert.Equal(original.IsSelectable, loaded.IsSelectable);
             Assert.Equal(original.Entities.Count, loaded.Entities.Count);
+        });
+    }
+
+    [Fact]
+    public void Group_WithLeaderHavingLayerNormalAndStyle_ShouldRoundTrip()
+    {
+        // Arrange
+        var originalDoc = new DxfDocument();
+
+        // Create supporting table items
+        var layer = new Layer("A_DIMS_1");
+        var dimStyle = new DimensionStyle("ARCHARR");
+
+        // Create a leader with vertices and rich properties
+        var leaderVertices = new List<Vector2>
+        {
+            new Vector2(67.272926027580525, 39.367131761563769),
+            new Vector2(71.469465482275595, 17.152184782696391),
+            new Vector2(87.039747634560172, 17.152184782696391)
+        };
+        var leader = new Leader(leaderVertices)
+        {
+            Layer = layer,
+            Normal = new Vector3(0.0, 0.0, -1.0),
+            ShowArrowhead = false,
+            Style = dimStyle
+        };
+
+        // Add to document and group to force variable-style generation path
+        originalDoc.Entities.Add(leader);
+        var group = new Group("LeaderGroup");
+        group.Entities.Add(leader);
+        originalDoc.Groups.Add(group);
+
+        // Add one more entity to ensure document has minimal geometry
+        originalDoc.Entities.Add(new Line(Vector3.Zero, new Vector3(1, 1, 0)));
+
+        // Act & Assert
+        PerformObjectRoundTripTest(originalDoc, group, (Group original, Group recreated) =>
+        {
+            Assert.Equal(original.Name, recreated.Name);
+            Assert.Equal(original.Entities.Count, recreated.Entities.Count);
+
+            // Find leader in both original and recreated groups
+            var originalLeader = original.Entities.OfType<Leader>().FirstOrDefault();
+            var recreatedLeader = recreated.Entities.OfType<Leader>().FirstOrDefault();
+            Assert.NotNull(originalLeader);
+            Assert.NotNull(recreatedLeader);
+
+            // Vertices
+            Assert.Equal(originalLeader!.Vertexes.Count, recreatedLeader!.Vertexes.Count);
+            for (int i = 0; i < originalLeader.Vertexes.Count; i++)
+            {
+                AssertDoubleEqual(originalLeader.Vertexes[i].X, recreatedLeader.Vertexes[i].X);
+                AssertDoubleEqual(originalLeader.Vertexes[i].Y, recreatedLeader.Vertexes[i].Y);
+            }
+
+            // Layer name
+            Assert.Equal(originalLeader.Layer?.Name, recreatedLeader.Layer?.Name);
+
+            // Normal
+            AssertVector3Equal(originalLeader.Normal, recreatedLeader.Normal);
+
+            // Style (by name)
+            Assert.Equal(originalLeader.Style?.Name, recreatedLeader.Style?.Name);
+
+            // ShowArrowhead
+            Assert.Equal(originalLeader.ShowArrowhead, recreatedLeader.ShowArrowhead);
         });
     }
 

@@ -47,6 +47,9 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
 
+        // Validate indentation and brace balance on generated code
+        ValidateIndentationAndBraces(generatedCode);
+
         // Save generated code for inspection
         var codeOutputPath = Path.Join(_tempDirectory, "sample_generated.cs");
         File.WriteAllText(codeOutputPath, generatedCode);
@@ -81,6 +84,9 @@ public class SampleDxfRoundTripTests : RoundTripTestBase
         var generatedCode = _generator.Generate(originalDoc, _sampleBinaryDxfPath, null, options);
         Assert.NotNull(generatedCode);
         Assert.NotEmpty(generatedCode);
+
+        // Validate indentation and brace balance on generated code
+        ValidateIndentationAndBraces(generatedCode);
 
         // Save generated code for inspection
         var codeOutputPath = Path.Join(_tempDirectory, "sample_binary_generated.cs");
