@@ -10,6 +10,7 @@ using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
 using DxfToCSharp.Core;
 using DxfToCSharp.Services;
+using DxfToCSharp.Compilation;
 using netDxf;
 using TextMateSharp.Grammars;
 
@@ -362,6 +363,111 @@ public partial class MainWindow : Window
         {
             ShowError("Unexpected execution error:\n" + ex);
             ShowNotification("Unexpected execution error occurred. Check errors tab for details.", isError: true);
+        }
+    }
+
+    private async void OnSaveDxfClicked(object? sender, RoutedEventArgs e)
+    {
+        try
+        {
+            ClearErrors();
+
+            var storageProvider = StorageProvider;
+            if (storageProvider == null)
+                return;
+
+            var code = _rightTextBox?.Text ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(code))
+            {
+                ShowError("No generated code to compile.");
+                return;
+            }
+
+            // Compile the current code to an assembly on disk
+            var compiler = new CompilationService();
+            var comp = compiler.CompileToFile(code);
+            if (!comp.Success || string.IsNullOrEmpty(comp.AssemblyPath))
+            {
+                ShowError("Compilation failed:\n" + comp.Output);
+                ShowNotification("Compilation failed. Check errors tab for details.", isError: true);
+                return;
+            }
+
+            // Execute the Create() method to obtain the DxfDocument
+            DxfDocument? dxfDoc;
+            try
+            {
+                dxfDoc = compiler.ExecuteCreateMethod(comp.AssemblyPath);
+            }
+            catch (Exception ex)
+            {
+                ShowError("Execution failed: " + ex.Message);
+                ShowNotification("Execution failed. Check errors tab for details.", isError: true);
+                return;
+            }
+
+            if (dxfDoc == null)
+            {
+                ShowError("Create method returned null.");
+                ShowNotification("Create method returned null.", isError: true);
+                return;
+            }
+
+            // Ask user where to save the DXF
+            var fileTypeChoices = new[]
+            {
+                new FilePickerFileType("DXF files")
+                {
+                    Patterns = new[] { "*.dxf" }
+                },
+                FilePickerFileTypes.All
+            };
+
+            var suggestedName = !string.IsNullOrWhiteSpace(_loadedFilePath) && _loadedFilePath != "<from_editor>"
+                ? Path.GetFileNameWithoutExtension(_loadedFilePath) + "_generated.dxf"
+                : "Generated.dxf";
+
+            var saveOptions = new FilePickerSaveOptions
+            {
+                Title = "Save DXF",
+                SuggestedFileName = suggestedName,
+                DefaultExtension = "dxf",
+                FileTypeChoices = fileTypeChoices
+            };
+
+            var targetFile = await storageProvider.SaveFilePickerAsync(saveOptions);
+            var savePath = targetFile?.Path.LocalPath;
+            if (string.IsNullOrWhiteSpace(savePath))
+            {
+                // User cancelled
+                return;
+            }
+
+            try
+            {
+                dxfDoc.Save(savePath);
+                ShowNotification($"DXF saved to: {savePath}", isError: false);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                ShowError("Access denied: " + ex.Message);
+                ShowNotification("Access denied saving file.", isError: true);
+            }
+            catch (IOException ex)
+            {
+                ShowError("I/O error: " + ex.Message);
+                ShowNotification("I/O error saving file.", isError: true);
+            }
+            catch (Exception ex)
+            {
+                ShowError("Unexpected error: " + ex.Message);
+                ShowNotification("Unexpected error saving file.", isError: true);
+            }
+        }
+        catch (Exception ex)
+        {
+            ShowError("Unexpected error: " + ex.Message);
+            ShowNotification("Unexpected error. Check errors tab for details.", isError: true);
         }
     }
 
