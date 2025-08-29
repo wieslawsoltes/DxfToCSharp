@@ -8,9 +8,9 @@ using Avalonia.Platform.Storage;
 using AvaloniaEdit;
 using AvaloniaEdit.Folding;
 using AvaloniaEdit.TextMate;
+using DxfToCSharp.Compilation;
 using DxfToCSharp.Core;
 using DxfToCSharp.Services;
-using DxfToCSharp.Compilation;
 using netDxf;
 using TextMateSharp.Grammars;
 
