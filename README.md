@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/.NET-9.0-512BD4?style=flat-square&logo=dotnet" alt=".NET 9.0" />
-  <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platform" />
 </p>
 
@@ -164,16 +164,7 @@ We welcome contributions! Please see our [Contributing Guidelines](.github/CONTR
 
 ## 📄 License
 
-This project is licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0).
-
-- ✅ **Commercial use** - Permitted with source disclosure
-- ✅ **Modification** - Permitted with source disclosure  
-- ✅ **Distribution** - Permitted with source disclosure
-- ✅ **Patent use** - Permitted
-- ❌ **Liability** - Limited
-- ❌ **Warranty** - None
-
-**Important**: If you use this software in a network service, you must make the source code available to users of that service.
+This project is licensed under the **MIT**.
 
 See the [LICENSE](LICENSE) file for the complete license text.
 
