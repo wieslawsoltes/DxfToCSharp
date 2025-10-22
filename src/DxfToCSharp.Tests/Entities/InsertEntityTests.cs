@@ -2,6 +2,7 @@ using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Entities;
+using netDxf.Tables;
 
 namespace DxfToCSharp.Tests.Entities;
 
@@ -152,6 +153,51 @@ public class InsertEntityTests : RoundTripTestBase
                 AssertVector3Equal(originalAtt.Position, recreatedAtt.Position);
                 AssertDoubleEqual(originalAtt.Height, recreatedAtt.Height);
             }
+        });
+    }
+
+    [Fact]
+    public void Insert_WithPropertyOverrides_ShouldPreserveOverrides()
+    {
+        // Arrange
+        var blockEntities = new List<EntityObject>
+        {
+            new Line(new Vector2(0, 0), new Vector2(10, 0))
+        };
+        var block = new Block("OverrideBlock", blockEntities);
+
+        var customLayer = new Layer("InsertLayer")
+        {
+            Color = new AciColor(2),
+            Lineweight = Lineweight.W40
+        };
+
+        var linetypeSegments = new List<LinetypeSegment>
+        {
+            new LinetypeSimpleSegment(0.4),
+            new LinetypeSimpleSegment(-0.2)
+        };
+        var customLinetype = new Linetype("InsertLinetype", linetypeSegments, "Insert linetype");
+
+        var originalInsert = new Insert(block, new Vector3(5, 5, 0))
+        {
+            Layer = customLayer,
+            Color = new AciColor(120),
+            Linetype = customLinetype,
+            Lineweight = Lineweight.W20,
+            LinetypeScale = 0.75,
+            Transparency = new Transparency(30)
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalInsert, (original, recreated) =>
+        {
+            Assert.Equal(original.Layer.Name, recreated.Layer.Name);
+            Assert.Equal(original.Color.Index, recreated.Color.Index);
+            Assert.Equal(original.Linetype.Name, recreated.Linetype.Name);
+            Assert.Equal(original.Lineweight, recreated.Lineweight);
+            AssertDoubleEqual(original.LinetypeScale, recreated.LinetypeScale);
+            Assert.Equal(original.Transparency.Value, recreated.Transparency.Value);
         });
     }
 

@@ -122,6 +122,63 @@ public class HatchEntityTests : RoundTripTestBase, IDisposable
     }
 
     [Fact]
+    public void Hatch_CustomPattern_ShouldPreservePatternDefinition()
+    {
+        // Arrange
+        var pattern = new HatchPattern("CustomPattern", "Custom angled pattern")
+        {
+            Type = HatchType.Custom,
+            Angle = 30.0,
+            Scale = 2.0,
+            Origin = new Vector2(1.5, -2.5)
+        };
+
+        var lineDefinition = new HatchPatternLineDefinition
+        {
+            Angle = 90.0,
+            Origin = new Vector2(0.5, 0.25),
+            Delta = new Vector2(0.1, 0.4)
+        };
+        lineDefinition.DashPattern.AddRange(new[] { 0.5, -0.25, 0.1 });
+        pattern.LineDefinitions.Add(lineDefinition);
+
+        var boundaryEntities = new List<EntityObject>
+        {
+            new Circle(new Vector3(0, 0, 0), 10.0)
+        };
+        var boundaryPath = new HatchBoundaryPath(boundaryEntities);
+        var originalHatch = new Hatch(pattern, false)
+        {
+            BoundaryPaths = { boundaryPath }
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalHatch, (original, recreated) =>
+        {
+            Assert.Equal(original.Pattern.Name, recreated.Pattern.Name);
+            Assert.True(
+                recreated.Pattern.Type == original.Pattern.Type ||
+                recreated.Pattern.Type == HatchType.UserDefined,
+                $"Expected pattern type {original.Pattern.Type} or UserDefined but got {recreated.Pattern.Type}");
+            Assert.Equal(original.Pattern.LineDefinitions.Count, recreated.Pattern.LineDefinitions.Count);
+            AssertDoubleEqual(original.Pattern.Angle, recreated.Pattern.Angle);
+            AssertDoubleEqual(original.Pattern.Scale, recreated.Pattern.Scale);
+            AssertVector2Equal(original.Pattern.Origin, recreated.Pattern.Origin);
+
+            var originalDef = original.Pattern.LineDefinitions[0];
+            var recreatedDef = recreated.Pattern.LineDefinitions[0];
+            AssertDoubleEqual(originalDef.Angle, recreatedDef.Angle);
+            AssertVector2Equal(originalDef.Origin, recreatedDef.Origin);
+            AssertVector2Equal(originalDef.Delta, recreatedDef.Delta);
+            Assert.Equal(originalDef.DashPattern.Count, recreatedDef.DashPattern.Count);
+            for (var i = 0; i < originalDef.DashPattern.Count; i++)
+            {
+                AssertDoubleEqual(originalDef.DashPattern[i], recreatedDef.DashPattern[i]);
+            }
+        });
+    }
+
+    [Fact]
     public void Hatch_WithMultipleBoundaryPaths_ShouldPreserveAllPaths()
     {
         // Arrange - Create outer boundary

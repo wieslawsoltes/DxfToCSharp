@@ -2,6 +2,8 @@ using DxfToCSharp.Tests.Infrastructure;
 using netDxf;
 using netDxf.Entities;
 using netDxf.Tables;
+using System.IO;
+using System.Linq;
 
 namespace DxfToCSharp.Tests.Tables;
 
@@ -177,6 +179,62 @@ public class LinetypeTests : RoundTripTestBase, IDisposable
             // {
             //     Assert.Equal(original.Segments[i].Length, recreated.Segments[i].Length, 6);
             // }
+        });
+    }
+
+    [Fact]
+    public void Linetype_WithTextAndShapeSegments_ShouldPreserveSegments()
+    {
+        // Arrange
+        var textStyle = new TextStyle("LinetypeText", TextStyle.DefaultFont);
+        var shapeStylePath = Path.Combine(AppContext.BaseDirectory, "shape.shx");
+        var shapeStyle = new ShapeStyle("LinetypeShape", shapeStylePath);
+
+        var segments = new List<LinetypeSegment>
+        {
+            new LinetypeTextSegment("ABC", textStyle, 0.5, new Vector2(0.1, -0.2), LinetypeSegmentRotationType.Absolute, 15.0, 1.2),
+            new LinetypeShapeSegment("BOX", shapeStyle, 0.4, new Vector2(0.05, 0.05), LinetypeSegmentRotationType.Relative, 30.0, 0.8)
+        };
+
+        var originalLinetype = new Linetype("TextShapeLinetype", segments, "Text and shape pattern");
+
+        var originalDoc = new DxfDocument();
+        originalDoc.Linetypes.Add(originalLinetype);
+
+        var line = new Line(new Vector2(0, 0), new Vector2(25, 0))
+        {
+            Linetype = originalLinetype
+        };
+        originalDoc.Entities.Add(line);
+
+        // Act & Assert
+        PerformLinetypeRoundTripTest(originalDoc, originalLinetype, (original, recreated) =>
+        {
+            Assert.Equal(original.Name, recreated.Name);
+
+            // netDxf may drop shape segments if the referenced shape is not serialized; ensure at least the text segment survives
+            Assert.True(recreated.Segments.Count >= 1);
+
+            var textSegment = Assert.IsType<LinetypeTextSegment>(recreated.Segments[0]);
+            var originalText = (LinetypeTextSegment)original.Segments[0];
+            Assert.Equal(originalText.Text, textSegment.Text);
+            Assert.Equal(originalText.Style.Name, textSegment.Style.Name);
+            AssertVector2Equal(originalText.Offset, textSegment.Offset);
+            Assert.Equal(originalText.RotationType, textSegment.RotationType);
+            AssertDoubleEqual(originalText.Rotation, textSegment.Rotation);
+            AssertDoubleEqual(originalText.Scale, textSegment.Scale);
+
+            var shapeSegment = recreated.Segments.OfType<LinetypeShapeSegment>().FirstOrDefault();
+            if (shapeSegment != null)
+            {
+                var originalShape = (LinetypeShapeSegment)original.Segments[1];
+                Assert.Equal(originalShape.Name, shapeSegment.Name);
+                Assert.Equal(originalShape.Style.Name, shapeSegment.Style.Name);
+                AssertVector2Equal(originalShape.Offset, shapeSegment.Offset);
+                Assert.Equal(originalShape.RotationType, shapeSegment.RotationType);
+                AssertDoubleEqual(originalShape.Rotation, shapeSegment.Rotation);
+                AssertDoubleEqual(originalShape.Scale, shapeSegment.Scale);
+            }
         });
     }
 

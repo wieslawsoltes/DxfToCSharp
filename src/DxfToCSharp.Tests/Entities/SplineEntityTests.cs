@@ -164,4 +164,63 @@ public class SplineEntityTests : RoundTripTestBase, IDisposable
             }
         });
     }
+
+    [Fact]
+    public void Spline_WithExplicitControlPointsWeightsAndKnots_ShouldPreserveDetailedData()
+    {
+        // Arrange - build a cubic spline with explicit weights and knots
+        var controlPoints = new List<Vector3>
+        {
+            new Vector3(0, 0, 0),
+            new Vector3(5, 10, 0),
+            new Vector3(10, 5, 0),
+            new Vector3(15, 0, 0)
+        };
+
+        var weights = new List<double> { 1.0, 0.75, 1.25, 1.0 };
+        var knots = new List<double> { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0 };
+
+        var originalSpline = new Spline(controlPoints, weights, knots, 3, false)
+        {
+            StartTangent = new Vector3(1, 0, 0),
+            EndTangent = new Vector3(1, -1, 0)
+        };
+
+        // Act & Assert
+        PerformRoundTripTest(originalSpline, (original, recreated) =>
+        {
+            Assert.Equal(original.ControlPoints.Length, recreated.ControlPoints.Length);
+            Assert.Equal(original.Weights.Length, recreated.Weights.Length);
+            Assert.Equal(original.Knots.Length, recreated.Knots.Length);
+            Assert.Equal(original.Degree, recreated.Degree);
+            Assert.Equal(original.IsClosedPeriodic, recreated.IsClosedPeriodic);
+
+            for (var i = 0; i < original.ControlPoints.Length; i++)
+            {
+                AssertVector3Equal(original.ControlPoints[i], recreated.ControlPoints[i]);
+            }
+
+            for (var i = 0; i < original.Weights.Length; i++)
+            {
+                AssertDoubleEqual(original.Weights[i], recreated.Weights[i]);
+            }
+
+            for (var i = 0; i < original.Knots.Length; i++)
+            {
+                AssertDoubleEqual(original.Knots[i], recreated.Knots[i]);
+            }
+
+            if (original.StartTangent.HasValue)
+            {
+                Assert.True(recreated.StartTangent.HasValue);
+                AssertVector3Equal(original.StartTangent.Value, recreated.StartTangent.Value);
+            }
+
+            if (original.EndTangent.HasValue)
+            {
+                Assert.True(recreated.EndTangent.HasValue);
+                AssertVector3Equal(original.EndTangent.Value, recreated.EndTangent.Value);
+            }
+        });
+    }
 }

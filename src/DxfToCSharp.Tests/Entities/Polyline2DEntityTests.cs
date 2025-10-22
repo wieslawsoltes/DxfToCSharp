@@ -93,6 +93,31 @@ public class Polyline2DEntityTests : RoundTripTestBase, IDisposable
     }
 
     [Fact]
+    public void Polyline2D_WithVariableWidths_ShouldPreserveVertexWidths()
+    {
+        // Arrange
+        var vertices = new List<Polyline2DVertex>
+        {
+            new Polyline2DVertex(0, 0) { StartWidth = 0.25, EndWidth = 0.5 },
+            new Polyline2DVertex(5, 2) { StartWidth = 0.5, EndWidth = 0.25 },
+            new Polyline2DVertex(10, 0) { StartWidth = 0.75, EndWidth = 0.75 }
+        };
+        var originalPolyline = new Polyline2D(vertices, false);
+
+        // Act & Assert
+        PerformRoundTripTest(originalPolyline, (original, recreated) =>
+        {
+            Assert.Equal(original.Vertexes.Count, recreated.Vertexes.Count);
+
+            for (var i = 0; i < original.Vertexes.Count; i++)
+            {
+                AssertDoubleEqual(original.Vertexes[i].StartWidth, recreated.Vertexes[i].StartWidth);
+                AssertDoubleEqual(original.Vertexes[i].EndWidth, recreated.Vertexes[i].EndWidth);
+            }
+        });
+    }
+
+    [Fact]
     public void Polyline2D_WithThickness_ShouldPreserveThickness()
     {
         // Arrange
