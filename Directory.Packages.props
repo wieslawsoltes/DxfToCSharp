@@ -14,7 +14,7 @@
     <PackageVersion Include="netDxf.netstandard" Version="3.0.1" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.14.0" />
-    <PackageVersion Include="ReactiveUI" Version="20.4.1" />
+    <PackageVersion Include="ReactiveUI" Version="22.2.1" />
     <PackageVersion Include="ReactiveUI.Avalonia" Version="14.7.1" />
     <PackageVersion Include="DynamicData" Version="9.4.1" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
