@@ -151,7 +151,7 @@ jobs:
         fi
         
     - name: Upload formatting report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: code-formatting-report
         path: formatting-reports/

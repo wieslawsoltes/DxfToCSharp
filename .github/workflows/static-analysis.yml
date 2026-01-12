@@ -81,7 +81,7 @@ jobs:
         echo "$ANALYSIS_OUTPUT" > analysis-reports/dotnet-analysis.log
         
     - name: Upload analysis report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: dotnet-analysis-report
         path: analysis-reports/
@@ -222,7 +222,7 @@ jobs:
         echo '```' >> metrics-reports/code-metrics.md
         
     - name: Upload metrics report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: code-metrics-report
         path: metrics-reports/

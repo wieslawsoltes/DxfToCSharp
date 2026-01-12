@@ -81,7 +81,7 @@ jobs:
         fi
         
     - name: Upload documentation artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: documentation-site
         path: _site/
@@ -124,7 +124,7 @@ jobs:
         fi
         
     - name: Upload documentation report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: documentation-build-report
         path: doc-reports/

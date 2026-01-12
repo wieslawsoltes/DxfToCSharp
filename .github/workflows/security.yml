@@ -116,7 +116,7 @@ jobs:
         dotnet list package --outdated --include-transitive >> security-reports/security-report.md 2>&1 || true
         
     - name: Upload security report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: security-audit-report
         path: security-reports/
@@ -189,7 +189,7 @@ jobs:
       id: license_gen
           
     - name: Upload license report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: always() && hashFiles('license-reports/**') != ''
       with:
         name: license-compliance-report

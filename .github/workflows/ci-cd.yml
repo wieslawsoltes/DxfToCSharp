@@ -66,7 +66,7 @@ jobs:
       run: ./scripts/build-macos.sh
           
     - name: Upload macOS Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: DxfToCSharp-macOS
         path: |
@@ -95,7 +95,7 @@ jobs:
       run: ./scripts/build-windows-x86.ps1
         
     - name: Upload Windows Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: DxfToCSharp-Windows
         path: |
@@ -172,13 +172,13 @@ jobs:
           --output ./packages
           
     - name: Upload NuGet Packages
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: NuGet-Packages
         path: ./packages/*.nupkg
         
     - name: Upload Symbol Packages
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: Symbol-Packages
         path: ./packages/*.snupkg
